@@ -1,0 +1,257 @@
+.access-gate {
+  position: relative;
+  width: 100%;
+  height: var(--app-height);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(79, 209, 219, 0.12), transparent 48%),
+    radial-gradient(circle at 20% 15%, rgba(234, 131, 36, 0.1), transparent 42%),
+    linear-gradient(165deg, #0b1c24 0%, #122830 42%, #1a3340 100%);
+}
+
+.access-gate__fade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(94, 234, 212, 0.18), transparent 42%),
+    linear-gradient(165deg, rgba(11, 28, 36, 0.15), rgba(255, 255, 255, 0.94));
+  transition: opacity 1.15s ease;
+}
+
+.access-gate--zooming .access-gate__overlay {
+  opacity: 0;
+  transform: scale(1.03);
+  filter: blur(4px);
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s ease,
+    filter 0.85s ease;
+}
+
+.access-gate--exiting .access-gate__fade {
+  opacity: 1;
+}
+
+.access-gate--exiting .globe-canvas {
+  filter: blur(18px) brightness(1.35);
+  transform: scale(1.12);
+  opacity: 0.25;
+  transition:
+    filter 1.15s ease,
+    transform 1.15s ease,
+    opacity 1.15s ease;
+}
+
+.access-gate--exiting {
+  background: #f4f7f8;
+  transition: background 1.1s ease;
+}
+
+.globe-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    filter 1.1s ease,
+    transform 1.1s ease,
+    opacity 1.1s ease;
+}
+
+.globe-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.access-gate__overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 2rem 1.5rem;
+  pointer-events: none;
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s ease,
+    filter 0.85s ease;
+}
+
+.access-gate__panel {
+  width: min(100%, 420px);
+  padding: 2rem 2rem 2.25rem;
+  border-radius: 20px;
+  background: rgba(8, 28, 36, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+  pointer-events: auto;
+  animation: access-panel-in 700ms ease both;
+}
+
+@keyframes access-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.access-gate__logo {
+  display: block;
+  width: min(180px, 58%);
+  height: auto;
+  margin: 0 auto 1.75rem;
+}
+
+.access-gate__eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  text-align: center;
+}
+
+.access-gate__title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  text-align: center;
+}
+
+.access-gate__subtitle {
+  margin: 0 0 1.5rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: center;
+}
+
+.access-gate__form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.access-gate__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.access-gate__input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #244651;
+  font: inherit;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.access-gate__input:focus {
+  outline: none;
+  border-color: var(--beta-orange);
+  box-shadow: 0 0 0 3px rgba(234, 131, 36, 0.28);
+}
+
+.access-gate__input--error {
+  border-color: #ffb4b4;
+  box-shadow: 0 0 0 3px rgba(255, 120, 120, 0.22);
+}
+
+.access-gate__error {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #ffd0d0;
+}
+
+.access-gate__submit {
+  margin-top: 0.35rem;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--beta-orange);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 160ms ease, opacity 160ms ease, background 160ms ease;
+}
+
+.access-gate__submit:hover:not(:disabled) {
+  background: #f2933d;
+  transform: translateY(-1px);
+}
+
+.access-gate__submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.access-gate__granted {
+  text-align: center;
+  animation: access-granted-in 500ms ease both;
+}
+
+@keyframes access-granted-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.access-gate__granted-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.85rem;
+  border-radius: 50%;
+  background: rgba(234, 131, 36, 0.18);
+  border: 1px solid rgba(234, 131, 36, 0.55);
+  color: #ffd9b8;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.access-gate__granted-title {
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.access-gate__granted-copy {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 640px) {
+  .access-gate__panel {
+    padding: 1.5rem 1.25rem 1.75rem;
+  }
+}

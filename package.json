@@ -1,0 +1,35 @@
+{
+  "name": "high-streets-interactive-map",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "convert": "node scripts/convert-xlsx.mjs",
+    "convert:vacancies": "node scripts/convert-vacancies-xlsx.mjs",
+    "convert:all": "npm run convert",
+    "convert:shopping-centers": "node scripts/convert-shopping-centers-xlsx.mjs",
+    "geocode": "node scripts/geocode.mjs",
+    "resolve-logos": "node scripts/resolve-logos.mjs"
+  },
+  "dependencies": {
+    "@googlemaps/markerclusterer": "^2.5.3",
+    "@vis.gl/react-google-maps": "^1.5.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.16.0",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.185.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "xlsx": "^0.18.5"
+  }
+}

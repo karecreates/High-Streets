@@ -1,0 +1,1389 @@
+{
+  "sourceFile": "shopping_centers.xlsx",
+  "generatedAt": "2026-07-14T23:29:21.195Z",
+  "centers": [
+    {
+      "centerName": "Malibu Country Mart",
+      "slug": "malibu-country-mart",
+      "tenants": [
+        {
+          "name": "9026- Eyes",
+          "logoDomain": "9026eyes.com",
+          "hasLogo": true,
+          "website": "https://9026eyes.com",
+          "suite": "20",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Alfred Coffee",
+          "logoDomain": "alfred.la",
+          "hasLogo": true,
+          "website": "https://alfred.la",
+          "suite": "7",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "alicia adams alpaca",
+          "logoDomain": "aliciaadamsalpaca.com",
+          "hasLogo": true,
+          "website": "https://aliciaadamsalpaca.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "All Points North Lodge",
+          "logoDomain": "apnlodge.com",
+          "hasLogo": true,
+          "website": "https://apnlodge.com",
+          "suite": "E5",
+          "unitStatus": "Occupied",
+          "spaceSf": "1100"
+        },
+        {
+          "name": "All Things Bell",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "3A",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Aloha Collection",
+          "logoDomain": "aloha-collection.com",
+          "hasLogo": true,
+          "website": "https://aloha-collection.com",
+          "suite": "21",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Ambience Skin & Body",
+          "logoDomain": "ambienceskinandbody.com",
+          "hasLogo": true,
+          "website": "https://ambienceskinandbody.com",
+          "suite": "E2",
+          "unitStatus": "Occupied",
+          "spaceSf": "1300"
+        },
+        {
+          "name": "American Vintage",
+          "logoDomain": "americanvintage-store.com",
+          "hasLogo": true,
+          "website": "https://americanvintage-store.com",
+          "suite": "13",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bleusalt",
+          "logoDomain": "bleusalt.com",
+          "hasLogo": true,
+          "website": "https://bleusalt.com",
+          "suite": "19",
+          "unitStatus": "Occupied",
+          "spaceSf": "1000"
+        },
+        {
+          "name": "Brandy Melville",
+          "logoDomain": "brandymelville.co.uk",
+          "hasLogo": true,
+          "website": "https://brandymelville.co.uk",
+          "suite": "12",
+          "unitStatus": "Occupied",
+          "spaceSf": "2000"
+        },
+        {
+          "name": "CB2",
+          "logoDomain": "cb2.com",
+          "hasLogo": true,
+          "website": "https://cb2.com",
+          "suite": "A1",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "Cherry Malibu",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Chrome Hearts",
+          "logoDomain": "chromehearts.com",
+          "hasLogo": true,
+          "website": "https://chromehearts.com",
+          "suite": "1A",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cie Sparks Salon",
+          "logoDomain": "ciesparkssalon.com",
+          "hasLogo": true,
+          "website": "https://ciesparkssalon.com",
+          "suite": "22",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Coldwell Banker Commercial",
+          "logoDomain": "cbcworldwide.com",
+          "hasLogo": true,
+          "website": "https://cbcworldwide.com",
+          "suite": "D2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Creo Arthouse",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "23",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Crown",
+          "logoDomain": "crown.com",
+          "hasLogo": true,
+          "website": "https://crown.com",
+          "suite": "D3",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Daily Calm Wellness",
+          "logoDomain": "daily-calm.net",
+          "hasLogo": true,
+          "website": "https://daily-calm.net",
+          "suite": "E1",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "Double RL & Co.",
+          "logoDomain": "ralphlauren.com",
+          "hasLogo": true,
+          "website": "https://ralphlauren.com",
+          "suite": "B",
+          "unitStatus": "Occupied",
+          "spaceSf": "1405"
+        },
+        {
+          "name": "Encore",
+          "logoDomain": "encore.market",
+          "hasLogo": true,
+          "website": "https://encore.market",
+          "suite": "7",
+          "unitStatus": "Occupied",
+          "spaceSf": "1010"
+        },
+        {
+          "name": "Everything But Water",
+          "logoDomain": "everythingbutwater.com",
+          "hasLogo": true,
+          "website": "https://everythingbutwater.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Faherty Brand",
+          "logoDomain": "fahertybrand.com",
+          "hasLogo": true,
+          "website": "https://fahertybrand.com",
+          "suite": "5A",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "gorjana",
+          "logoDomain": "gorjana.com",
+          "hasLogo": true,
+          "website": "https://gorjana.com",
+          "suite": "4",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Henry Beguelin",
+          "logoDomain": "henrybeguelin.it",
+          "hasLogo": true,
+          "website": "https://henrybeguelin.it",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "John Varvatos",
+          "logoDomain": "johnvarvatos.com",
+          "hasLogo": true,
+          "website": "https://johnvarvatos.com",
+          "suite": "9B",
+          "unitStatus": "Occupied",
+          "spaceSf": "1000"
+        },
+        {
+          "name": "John's Garden",
+          "logoDomain": "johnsgardenmalibu.com",
+          "hasLogo": true,
+          "website": "https://johnsgardenmalibu.com",
+          "suite": "1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "K Chocolatier By Diane Kron",
+          "logoDomain": "dianekronchocolates.com",
+          "hasLogo": true,
+          "website": "https://dianekronchocolates.com",
+          "suite": "2A",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "L'Agence",
+          "logoDomain": "lagence.com",
+          "hasLogo": true,
+          "website": "https://lagence.com",
+          "suite": "6",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "LA Sculpt",
+          "logoDomain": "lasculptstudio.com.au",
+          "hasLogo": true,
+          "website": "https://lasculptstudio.com.au",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Lucky's Steakhouse",
+          "logoDomain": "luckys-steakhouse.com",
+          "hasLogo": true,
+          "website": "https://luckys-steakhouse.com",
+          "suite": "18",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "M. FREDRIC",
+          "logoDomain": "mfredric.com",
+          "hasLogo": true,
+          "website": "https://mfredric.com",
+          "suite": "A3",
+          "unitStatus": "Occupied",
+          "spaceSf": "1721"
+        },
+        {
+          "name": "Madison",
+          "logoDomain": "madisonlosangeles.com",
+          "hasLogo": true,
+          "website": "https://madisonlosangeles.com",
+          "suite": "5",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Magnolia Pearl",
+          "logoDomain": "magnoliapearl.com",
+          "hasLogo": true,
+          "website": "https://magnoliapearl.com",
+          "suite": "2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Malibu Car Wash",
+          "logoDomain": "malibucarwashes.com",
+          "hasLogo": true,
+          "website": "https://malibucarwashes.com",
+          "suite": "F1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Malibu Colony Co.",
+          "logoDomain": "malibucolonyco.com",
+          "hasLogo": true,
+          "website": "https://malibucolonyco.com",
+          "suite": "8",
+          "unitStatus": "Occupied",
+          "spaceSf": "2538"
+        },
+        {
+          "name": "Malibu Grooming Company",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "D7",
+          "unitStatus": "Occupied",
+          "spaceSf": "1800"
+        },
+        {
+          "name": "Malibu Mutt's Grill",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Malibu Shaman",
+          "logoDomain": "malibushaman.com",
+          "hasLogo": true,
+          "website": "https://malibushaman.com",
+          "suite": "B3",
+          "unitStatus": "Occupied",
+          "spaceSf": "1100"
+        },
+        {
+          "name": "NAGA LA",
+          "logoDomain": "nagalosangeles.com",
+          "hasLogo": true,
+          "website": "https://nagalosangeles.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Náti",
+          "logoDomain": "nti.com",
+          "hasLogo": true,
+          "website": "https://nti.com",
+          "suite": "14",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Nenergy",
+          "logoDomain": "nenergy.nl",
+          "hasLogo": true,
+          "website": "https://nenergy.nl",
+          "suite": "B2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Nomad",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "17",
+          "unitStatus": "Occupied",
+          "spaceSf": "1100"
+        },
+        {
+          "name": "Oliver Peoples",
+          "logoDomain": "oliverpeoples.com",
+          "hasLogo": true,
+          "website": "https://oliverpeoples.com",
+          "suite": "8",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Outerknown",
+          "logoDomain": "outerknown.com",
+          "hasLogo": true,
+          "website": "https://outerknown.com",
+          "suite": "9",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Paige",
+          "logoDomain": "paige.com",
+          "hasLogo": true,
+          "website": "https://paige.com",
+          "suite": "A",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Ralph Lauren",
+          "logoDomain": "ralphlauren.com",
+          "hasLogo": true,
+          "website": "https://ralphlauren.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Scott's Malibu Market",
+          "logoDomain": "scottsmalibumarket.com",
+          "hasLogo": true,
+          "website": "https://scottsmalibumarket.com",
+          "suite": "3",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Starbucks",
+          "logoDomain": "starbucks.com",
+          "hasLogo": true,
+          "website": "https://starbucks.com",
+          "suite": "3900-A",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "SunLife Organics",
+          "logoDomain": "sunlifeorganics.com",
+          "hasLogo": true,
+          "website": "https://sunlifeorganics.com",
+          "suite": "3",
+          "unitStatus": "Occupied",
+          "spaceSf": "1500"
+        },
+        {
+          "name": "Taverna Tony",
+          "logoDomain": "tavernatony.com",
+          "hasLogo": true,
+          "website": "https://tavernatony.com",
+          "suite": "B1",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "The Bunker",
+          "logoDomain": "thebunkerny.com",
+          "hasLogo": true,
+          "website": "https://thebunkerny.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The New West",
+          "logoDomain": "thenewwest.co",
+          "hasLogo": true,
+          "website": "https://thenewwest.co",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Pointe Malibu Recovery Center",
+          "logoDomain": "thepointemalibu.com",
+          "hasLogo": true,
+          "website": "https://thepointemalibu.com",
+          "suite": "E4A",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Toy Crazy",
+          "logoDomain": "toycrazy.com.au",
+          "hasLogo": true,
+          "website": "https://toycrazy.com.au",
+          "suite": "D6",
+          "unitStatus": "Occupied",
+          "spaceSf": "1500"
+        },
+        {
+          "name": "Tra di Noi",
+          "logoDomain": "tradinoimalibu.com",
+          "hasLogo": true,
+          "website": "https://tradinoimalibu.com",
+          "suite": "8A",
+          "unitStatus": "Occupied",
+          "spaceSf": "2278"
+        },
+        {
+          "name": "Veritas Yoga",
+          "logoDomain": "veritas-yoga.com",
+          "hasLogo": true,
+          "website": "https://veritas-yoga.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Vince",
+          "logoDomain": "vince.com",
+          "hasLogo": true,
+          "website": "https://vince.com",
+          "suite": "10",
+          "unitStatus": "Occupied",
+          "spaceSf": "797"
+        },
+        {
+          "name": "Vuori",
+          "logoDomain": "vuoriclothing.com",
+          "hasLogo": true,
+          "website": "https://vuoriclothing.com",
+          "suite": "C",
+          "unitStatus": "Occupied",
+          "spaceSf": "1600"
+        },
+        {
+          "name": "Westside Estate Agency",
+          "logoDomain": "weahomes.com",
+          "hasLogo": true,
+          "website": "https://weahomes.com",
+          "suite": "5",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        }
+      ],
+      "vacancies": [
+        {
+          "label": "Suite 9C",
+          "suite": "9C",
+          "spaceSf": null,
+          "spaceLabel": "Malibu Country Mart - Suite 9C -  sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite C2",
+          "suite": "C2",
+          "spaceSf": null,
+          "spaceLabel": "Malibu Country Mart - Suite C2 -  sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite E8A",
+          "suite": "E8A",
+          "spaceSf": null,
+          "spaceLabel": "Malibu Country Mart - Suite E8A -  sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Available space",
+          "suite": null,
+          "spaceSf": null,
+          "spaceLabel": "a1LTR000007Nq6j",
+          "unitStatus": "Vacant"
+        }
+      ]
+    },
+    {
+      "centerName": "Malibu Village",
+      "slug": "malibu-village",
+      "tenants": [
+        {
+          "name": "Broad Street Coffee Cafe Co.",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "Broad Street Oyster Co.",
+          "logoDomain": "broadstreetoyster.com",
+          "hasLogo": true,
+          "website": "https://broadstreetoyster.com",
+          "suite": "3874A",
+          "unitStatus": "Occupied",
+          "spaceSf": "2580"
+        },
+        {
+          "name": "Catch Surf",
+          "logoDomain": "catchsurf.com",
+          "hasLogo": true,
+          "website": "https://catchsurf.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "4033"
+        },
+        {
+          "name": "Chipotle",
+          "logoDomain": "chipotle.com",
+          "hasLogo": true,
+          "website": "https://chipotle.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "1100"
+        },
+        {
+          "name": "Colony Cleaners",
+          "logoDomain": "colonycleanersonline.com",
+          "hasLogo": true,
+          "website": "https://colonycleanersonline.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "1800"
+        },
+        {
+          "name": "European Shoe Repair",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "1800"
+        },
+        {
+          "name": "First Bank",
+          "logoDomain": "firstbank.com",
+          "hasLogo": true,
+          "website": "https://firstbank.com",
+          "suite": "3850",
+          "unitStatus": "Occupied",
+          "spaceSf": "1700"
+        },
+        {
+          "name": "Fred Segal",
+          "logoDomain": "fredsegal.com",
+          "hasLogo": true,
+          "website": "https://fredsegal.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "1200"
+        },
+        {
+          "name": "Kitson",
+          "logoDomain": "kitsonpartners.com",
+          "hasLogo": true,
+          "website": "https://kitsonpartners.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Kreation Organic",
+          "logoDomain": "kreationjuice.com",
+          "hasLogo": true,
+          "website": "https://kreationjuice.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "LiveWire",
+          "logoDomain": "livewire.com",
+          "hasLogo": true,
+          "website": "https://livewire.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Lululemon Athletica",
+          "logoDomain": "lululemon.co.nz",
+          "hasLogo": true,
+          "website": "https://lululemon.co.nz",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "2000"
+        },
+        {
+          "name": "Malibu Village Books",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Marine Layer",
+          "logoDomain": "marinelayer.com",
+          "hasLogo": true,
+          "website": "https://marinelayer.com",
+          "suite": null,
+          "unitStatus": "Available (Off Market)",
+          "spaceSf": "767"
+        },
+        {
+          "name": "Marmalade Cafe",
+          "logoDomain": "marmaladecafe.com",
+          "hasLogo": true,
+          "website": "https://marmaladecafe.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "3200"
+        },
+        {
+          "name": "RES IPSA",
+          "logoDomain": "res-ipsa.com",
+          "hasLogo": true,
+          "website": "https://res-ipsa.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "1120"
+        },
+        {
+          "name": "Sephora",
+          "logoDomain": "sephora.com",
+          "hasLogo": true,
+          "website": "https://sephora.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "5200"
+        },
+        {
+          "name": "Shell Gas",
+          "logoDomain": "darnestownshell.com",
+          "hasLogo": true,
+          "website": "https://darnestownshell.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "Surfing Cowboys",
+          "logoDomain": "surfingcowboys.com",
+          "hasLogo": true,
+          "website": "https://surfingcowboys.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "1100"
+        },
+        {
+          "name": "The Alcove",
+          "logoDomain": "thealcove.org",
+          "hasLogo": true,
+          "website": "https://thealcove.org",
+          "suite": "3838",
+          "unitStatus": "Occupied",
+          "spaceSf": "6060"
+        },
+        {
+          "name": "The Mindry",
+          "logoDomain": "themindry.com",
+          "hasLogo": true,
+          "website": "https://themindry.com",
+          "suite": "3874B",
+          "unitStatus": "Occupied",
+          "spaceSf": "2206"
+        },
+        {
+          "name": "Third Space",
+          "logoDomain": "thirdspacelearning.com",
+          "hasLogo": true,
+          "website": "https://thirdspacelearning.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Traveler Surf Club & Coastal Outpost",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "3862",
+          "unitStatus": "Occupied",
+          "spaceSf": "1487"
+        },
+        {
+          "name": "VIBAe x Alma Mater",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "3884",
+          "unitStatus": "Occupied",
+          "spaceSf": "1056"
+        },
+        {
+          "name": "Wells Fargo Bank",
+          "logoDomain": "wellsfargobank.com",
+          "hasLogo": true,
+          "website": "https://wellsfargobank.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "3354"
+        },
+        {
+          "name": "WITTMORE",
+          "logoDomain": "wittmore.com",
+          "hasLogo": true,
+          "website": "https://wittmore.com",
+          "suite": "3832",
+          "unitStatus": "Occupied",
+          "spaceSf": "936"
+        }
+      ],
+      "vacancies": [
+        {
+          "label": "Suite 3840",
+          "suite": "3840",
+          "spaceSf": null,
+          "spaceLabel": "Malibu Village - Suite 3840 -  sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 3846",
+          "suite": "3846",
+          "spaceSf": "1338",
+          "spaceLabel": "Malibu Village - Suite 3846 - 1,338 sf",
+          "unitStatus": "Vacant"
+        }
+      ]
+    },
+    {
+      "centerName": "Santa Monica Place",
+      "slug": "santa-monica-place",
+      "tenants": [
+        {
+          "name": "All Saints",
+          "logoDomain": "allsaints.com",
+          "hasLogo": true,
+          "website": "https://allsaints.com",
+          "suite": "152",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Arte Museum",
+          "logoDomain": "artemuseum.com",
+          "hasLogo": true,
+          "website": "https://artemuseum.com",
+          "suite": "122",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bric's Milano",
+          "logoDomain": "bricsmilano.com",
+          "hasLogo": true,
+          "website": "https://bricsmilano.com",
+          "suite": "242",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "BRIGGS & RILEY",
+          "logoDomain": "briggs-riley.com",
+          "hasLogo": true,
+          "website": "https://briggs-riley.com",
+          "suite": "242",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Brilliant Earth",
+          "logoDomain": "brilliantearth.com",
+          "hasLogo": true,
+          "website": "https://brilliantearth.com",
+          "suite": "100",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "CAYTON CHILDREN'S MUSEUM",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "374",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Club Studio",
+          "logoDomain": "clubstudiofitness.com",
+          "hasLogo": true,
+          "website": "https://clubstudiofitness.com",
+          "suite": "301",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Din Tai Fung",
+          "logoDomain": "dtf.com",
+          "hasLogo": true,
+          "website": "https://dtf.com",
+          "suite": "FC-01",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "ELIE TAHARI",
+          "logoDomain": "elietahari.com",
+          "hasLogo": true,
+          "website": "https://elietahari.com",
+          "suite": "164",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "EXPERT DOJO",
+          "logoDomain": "expertdojo.com",
+          "hasLogo": true,
+          "website": "https://expertdojo.com",
+          "suite": "308",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Hugo Boss",
+          "logoDomain": "hugoboss.com",
+          "hasLogo": true,
+          "website": "https://hugoboss.com",
+          "suite": "162",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "iCell",
+          "logoDomain": "i-cell.co",
+          "hasLogo": true,
+          "website": "https://i-cell.co",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Intimissimi",
+          "logoDomain": "intimissimi.com",
+          "hasLogo": true,
+          "website": "https://intimissimi.com",
+          "suite": "126",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Johnny Was",
+          "logoDomain": "johnnywas.com",
+          "hasLogo": true,
+          "website": "https://johnnywas.com",
+          "suite": "124",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "LOULOU",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "300",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Nike",
+          "logoDomain": "nike.com",
+          "hasLogo": true,
+          "website": "https://nike.com",
+          "suite": "118",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Paige",
+          "logoDomain": "paige.com",
+          "hasLogo": true,
+          "website": "https://paige.com",
+          "suite": "132",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Pandora Jewelry",
+          "logoDomain": "pandora-jewelry.com",
+          "hasLogo": true,
+          "website": "https://pandora-jewelry.com",
+          "suite": "234",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "PIECES LOS ANGELES",
+          "logoDomain": "pieceslosangeles.com",
+          "hasLogo": true,
+          "website": "https://pieceslosangeles.com",
+          "suite": "149",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "PURPLE",
+          "logoDomain": "purple.com",
+          "hasLogo": true,
+          "website": "https://purple.com",
+          "suite": "208",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sbarro",
+          "logoDomain": "sbarro.com",
+          "hasLogo": true,
+          "website": "https://sbarro.com",
+          "suite": "FC-5",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "SEA OF SILVER",
+          "logoDomain": "seaofsilversm.com",
+          "hasLogo": true,
+          "website": "https://seaofsilversm.com",
+          "suite": "204",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Solstice Sunglasses",
+          "logoDomain": "solsticesunglasses.com",
+          "hasLogo": true,
+          "website": "https://solsticesunglasses.com",
+          "suite": "205",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Taranis",
+          "logoDomain": "taranis.com",
+          "hasLogo": true,
+          "website": "https://taranis.com",
+          "suite": "238",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Tenshoppe",
+          "logoDomain": "tenshoppe.com",
+          "hasLogo": true,
+          "website": "https://tenshoppe.com",
+          "suite": "212",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "TESLA",
+          "logoDomain": "tesla.com",
+          "hasLogo": true,
+          "website": "https://tesla.com",
+          "suite": "120",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Cheesecake Factory",
+          "logoDomain": "thecheesecakefactory.com",
+          "hasLogo": true,
+          "website": "https://thecheesecakefactory.com",
+          "suite": "306",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Curious Palate",
+          "logoDomain": "thecuriouspalate.com",
+          "hasLogo": true,
+          "website": "https://thecuriouspalate.com",
+          "suite": "321",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "THE GOURMANDISE SCHOOL",
+          "logoDomain": "thegourmandiseschool.com",
+          "hasLogo": true,
+          "website": "https://thegourmandiseschool.com",
+          "suite": "323",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Tumi",
+          "logoDomain": "tumi.com",
+          "hasLogo": true,
+          "website": "https://tumi.com",
+          "suite": "242",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Untuckit",
+          "logoDomain": "untuckit.com",
+          "hasLogo": true,
+          "website": "https://untuckit.com",
+          "suite": "246",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        }
+      ],
+      "vacancies": [
+        {
+          "label": "Suite 104",
+          "suite": "104",
+          "spaceSf": null,
+          "spaceLabel": "Santa Monica Place - Suite 104 -  sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 106",
+          "suite": "106",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 106 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 132",
+          "suite": "132",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 132 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 134",
+          "suite": "134",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 134 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 136",
+          "suite": "136",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 136 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 140",
+          "suite": "140",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 140 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 144",
+          "suite": "144",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 144 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 146",
+          "suite": "146",
+          "spaceSf": "5470",
+          "spaceLabel": "Santa Monica Place - Suite 146 - 5,470 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 149",
+          "suite": "149",
+          "spaceSf": "2835",
+          "spaceLabel": "Santa Monica Place - Suite 149 - 2,835 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 153",
+          "suite": "153",
+          "spaceSf": "1255",
+          "spaceLabel": "Santa Monica Place - Suite 153 - 1,255 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 153",
+          "suite": "153",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 153 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 156",
+          "suite": "156",
+          "spaceSf": "565",
+          "spaceLabel": "Santa Monica Place - Suite 156 - 565 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 158",
+          "suite": "158",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 158 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 159",
+          "suite": "159",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 159 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 160",
+          "suite": "160",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 160 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 166",
+          "suite": "166",
+          "spaceSf": "2569",
+          "spaceLabel": "Santa Monica Place - Suite 166 - 2,569 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 168",
+          "suite": "168",
+          "spaceSf": "2607",
+          "spaceLabel": "Santa Monica Place - Suite 168 - 2,607 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 202",
+          "suite": "202",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 202 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 210",
+          "suite": "210",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 210 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 215",
+          "suite": "215",
+          "spaceSf": "3000",
+          "spaceLabel": "Santa Monica Place - Suite 215 - 3,000 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 215",
+          "suite": "215",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 215 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 220",
+          "suite": "220",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 220 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 228",
+          "suite": "228",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 228 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 232",
+          "suite": "232",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 232 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 236",
+          "suite": "236",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 236 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 238",
+          "suite": "238",
+          "spaceSf": "756",
+          "spaceLabel": "Santa Monica Place - Suite 238 - 756 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 239",
+          "suite": "239",
+          "spaceSf": "657",
+          "spaceLabel": "Santa Monica Place - Suite 239 - 657 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 240",
+          "suite": "240",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 240 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 244",
+          "suite": "244",
+          "spaceSf": "2645",
+          "spaceLabel": "Santa Monica Place - Suite 244 - 2,645 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 244",
+          "suite": "244",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 244 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 248",
+          "suite": "248",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 248 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 249",
+          "suite": "249",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 249 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 250",
+          "suite": "250",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 250 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 304",
+          "suite": "304",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 304 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite 326",
+          "suite": "326",
+          "spaceSf": "0",
+          "spaceLabel": "Santa Monica Place - Suite 326 - 0 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite S16",
+          "suite": "S16",
+          "spaceSf": "60",
+          "spaceLabel": "Santa Monica Place - Suite S16 - 60 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite U24A",
+          "suite": "U24A",
+          "spaceSf": "60",
+          "spaceLabel": "Santa Monica Place - Suite U24A - 60 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite V29",
+          "suite": "V29",
+          "spaceSf": "60",
+          "spaceLabel": "Santa Monica Place - Suite V29 - 60 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite V31",
+          "suite": "V31",
+          "spaceSf": "60",
+          "spaceLabel": "Santa Monica Place - Suite V31 - 60 sf",
+          "unitStatus": "Vacant"
+        }
+      ]
+    }
+  ]
+}
