@@ -1,11 +1,30 @@
 import type { Tenant } from "../types/tenant";
 import { TenantLogo } from "./TenantLogo";
+import { isUsableBrandLogoDomain } from "../utils/logoDev";
 
 interface InfoWindowContentProps {
   tenant: Tenant;
 }
 
+function tenantWebsite(tenant: Tenant): string | null {
+  const candidates = [tenant.logoDomain, tenant.domain];
+  for (const raw of candidates) {
+    const value = raw?.trim();
+    if (!value) continue;
+    const host = value
+      .replace(/^https?:\/\//i, "")
+      .replace(/^www\./i, "")
+      .split("/")[0];
+    // Never surface Instagram/etc. as the tenant "website" when it's only a
+    // social placeholder — those are not brand sites.
+    if (host && isUsableBrandLogoDomain(host)) return host;
+  }
+  return null;
+}
+
 export function InfoWindowContent({ tenant }: InfoWindowContentProps) {
+  const websiteDomain = tenantWebsite(tenant);
+
   return (
     <article className="info-window">
       <header className="info-window__header">
@@ -34,16 +53,16 @@ export function InfoWindowContent({ tenant }: InfoWindowContentProps) {
             <dd>{tenant.highStreet.replace(/^Street - /, "")}</dd>
           </>
         )}
-        {tenant.costarUrl && (
+        {websiteDomain && (
           <>
-            <dt>CoStar</dt>
+            <dt>Website</dt>
             <dd>
               <a
-                href={tenant.costarUrl}
+                href={`https://${websiteDomain}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View property in CoStar
+                {websiteDomain}
               </a>
             </dd>
           </>

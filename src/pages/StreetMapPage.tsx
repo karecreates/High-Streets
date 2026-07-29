@@ -1,13 +1,18 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import {
   MapControlsBar,
   type MapDisplayMode,
 } from "../components/MapControlsBar";
+import { MajorTenantsToggle } from "../components/MajorTenantsToggle";
 import { PillButton } from "../components/PillButton";
+import { StaticModeChrome } from "../components/StaticModeChrome";
 import { TenantMapView } from "../components/TenantMap";
 import { useStreetTenants, useStreetVacancies } from "../context/TenantsContext";
+import { useMajorTenantsFilter } from "../hooks/useMajorTenantsFilter";
+import { useStaticMapMode } from "../hooks/useStaticMapMode";
 import { getCorridorBySlug, getCorridorDetail } from "../data/highStreets";
+import { getMasterMapId } from "../utils/mapConfig";
 import { groupVacanciesByLocation } from "../utils/groupVacanciesByLocation";
 import { isNamedTenant } from "../utils/tenantDisplay";
 import type { VacancyLocationGroup } from "../types/vacancy";
@@ -27,6 +32,7 @@ export function StreetMapPage() {
   const tenants = useStreetTenants(corridor?.dataKey ?? "");
   const vacancies = useStreetVacancies(corridor?.dataKey ?? "");
   const [displayMode, setDisplayMode] = useState<MapDisplayMode>("both");
+  const [majorTenantsOnly, setMajorTenantsOnly] = useState(false);
   const [showMeteredParking, setShowMeteredParking] = useState(true);
   const [showParkingLots, setShowParkingLots] = useState(false);
   const [focusedVacancyGroupKey, setFocusedVacancyGroupKey] = useState<
@@ -35,6 +41,15 @@ export function StreetMapPage() {
   const [introZoomComplete, setIntroZoomComplete] = useState(
     () => !locationState?.introZoom
   );
+  const mapFrameRef = useRef<HTMLDivElement>(null);
+  const { staticMode, enterStaticMode, exitStaticMode } =
+    useStaticMapMode(mapFrameRef);
+
+  const {
+    tenants: mapTenants,
+    filtering: majorTenantsFiltering,
+    majorCount,
+  } = useMajorTenantsFilter(tenants, majorTenantsOnly);
 
   const introTarget = useMemo(() => {
     if (!locationState?.introZoom) return null;
@@ -52,15 +67,24 @@ export function StreetMapPage() {
     [vacancies]
   );
 
-  const tenantsCount = useMemo(
-    () =>
-      tenants.filter(
-        (tenant) =>
-          tenant.lat != null &&
-          tenant.lng != null &&
-          isNamedTenant(tenant.tenantName)
-      ).length,
-    [tenants]
+  const tenantsCount = useMemo(() => {
+    if (majorTenantsOnly) return majorCount;
+    return tenants.filter(
+      (tenant) =>
+        tenant.lat != null &&
+        tenant.lng != null &&
+        isNamedTenant(tenant.tenantName)
+    ).length;
+  }, [majorCount, majorTenantsOnly, tenants]);
+
+  const handleMajorTenantsChange = useCallback(
+    (active: boolean) => {
+      setMajorTenantsOnly(active);
+      if (active && displayMode === "vacancies") {
+        setDisplayMode("both");
+      }
+    },
+    [displayMode]
   );
 
   const handleVacancyFocus = useCallback(
@@ -91,25 +115,45 @@ export function StreetMapPage() {
 
   return (
     <div className="street-page street-page--map">
-      <div className="map-fullscreen">
-        <PillButton to={`/street/${slug}`} className="map-fullscreen__back">
-          ← Back
-        </PillButton>
+      <div
+        ref={mapFrameRef}
+        className={`map-fullscreen${staticMode ? " map-fullscreen--static" : ""}`}
+      >
+        {!staticMode ? (
+          <PillButton to={`/street/${slug}`} className="map-fullscreen__back">
+            ← Back
+          </PillButton>
+        ) : null}
 
-        <MapControlsBar
-          tenantsCount={tenantsCount}
-          vacancyGroups={vacancyGroups}
-          displayMode={displayMode}
-          onDisplayModeChange={setDisplayMode}
-          onVacancyFocus={handleVacancyFocus}
-          showMeteredParking={showMeteredParking}
-          showParkingLots={showParkingLots}
-          onMeteredParkingChange={setShowMeteredParking}
-          onParkingLotsChange={setShowParkingLots}
+        {!staticMode ? (
+          <div className="map-fullscreen__controls-row">
+            <MapControlsBar
+              tenantsCount={tenantsCount}
+              vacancyGroups={vacancyGroups}
+              displayMode={displayMode}
+              onDisplayModeChange={setDisplayMode}
+              onVacancyFocus={handleVacancyFocus}
+              showMeteredParking={showMeteredParking}
+              showParkingLots={showParkingLots}
+              onMeteredParkingChange={setShowMeteredParking}
+              onParkingLotsChange={setShowParkingLots}
+            />
+            <MajorTenantsToggle
+              active={majorTenantsOnly}
+              filtering={majorTenantsFiltering}
+              onChange={handleMajorTenantsChange}
+            />
+          </div>
+        ) : null}
+
+        <StaticModeChrome
+          staticMode={staticMode}
+          onEnter={enterStaticMode}
+          onExit={exitStaticMode}
         />
 
         <TenantMapView
-          tenants={tenants}
+          tenants={mapTenants}
           vacancies={vacancies}
           defaultCenter={mapCenter}
           defaultZoom={mapZoom}
@@ -124,6 +168,8 @@ export function StreetMapPage() {
             introTarget && !introZoomComplete ? introTarget : undefined
           }
           onIntroZoomComplete={() => setIntroZoomComplete(true)}
+          mapIdOverride={getMasterMapId()}
+          staticMode={staticMode}
         />
       </div>
     </div>

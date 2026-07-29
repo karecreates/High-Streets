@@ -7850,5 +7850,561 @@
   "cayton-childrens-museum.com": {
     "status": 404,
     "sha1": null
+  },
+  "21choicesfrozenyogurt.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "klyn.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "pasadenaantiquemall.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "wagyumastershabuhouse.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "topdrawer.com": {
+    "status": 200,
+    "sha1": "a143fa2d06ac"
+  },
+  "goodfeetstore.com": {
+    "status": 200,
+    "sha1": "938be6e0873f"
+  },
+  "westfieldartswoodsdavy.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "bankofmontreal.com": {
+    "status": 200,
+    "sha1": "3226963e0a5c"
+  },
+  "happynailsandspa.com": {
+    "status": 200,
+    "sha1": "9cfab7d6a147"
+  },
+  "k-lyn.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "pasadena-antique-mall.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "westfieldartsmichaeltodd.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "wagyu-master-shabu-house.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "westfield-arts-woods-davy.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "21-choices-frozen-yogurt.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "westfieldartsbernardjtonyrosenthal.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "westfieldartsjunkaneko.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "westfieldartsstanbitters.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "mandonia.com": {
+    "status": 200,
+    "sha1": "96649fa436d8"
+  },
+  "westfield-arts-michael-todd.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "westfield-arts-bernard-j-tony-rosenthal.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "videoandaudiocenter.com": {
+    "status": 200,
+    "sha1": "d0410e65ffa7"
+  },
+  "terrainanthropologie.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "westfield-arts-jun-kaneko.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "westfield-arts-stan-bitters.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "oakfort.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "minamotokitchoan.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "gelsonsmarket.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "sugarnail.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "tosaisushi.com": {
+    "status": 200,
+    "sha1": "ab995a22098c"
+  },
+  "superpeach.com": {
+    "status": 200,
+    "sha1": "d855795a6711"
+  },
+  "terrain-anthropologie.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "fuwateriyakigrill.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "oak-fort.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "minamoto-kitchoan.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "familylounge.com": {
+    "status": 200,
+    "sha1": "907fa9d85201"
+  },
+  "sugar-nail.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "gelsons-market.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "fuwa-teriyaki-grill.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "cottononkids.com": {
+    "status": 200,
+    "sha1": "2af1c2ab9993"
+  },
+  "ulosangeles.com": {
+    "status": 200,
+    "sha1": "b048aa170067"
+  },
+  "cafknotted.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "85degreesbakerycafe.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "vicaraavedasalonspa.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "lucyzahranandco.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "casadani.com": {
+    "status": 200,
+    "sha1": "b2bdbbfc104e"
+  },
+  "caf-knotted.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "rabbitladders.com": {
+    "status": 200,
+    "sha1": "a237444cb766"
+  },
+  "peetscoffee.com": {
+    "status": 200,
+    "sha1": "7e42e1faf22b"
+  },
+  "trattoriaamici.com": {
+    "status": 200,
+    "sha1": "1ea000d67beb"
+  },
+  "lucy-zahran-and-co.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "residenceleasingoffice.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "vicara-aveda-salonspa.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "85-degrees-bakery-cafe.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "offlinebyaerie.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "residence-leasing-office.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "quatrinehome.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "westcoastcenterfororthopedicsurgeryandsportsmedicine.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "naildit.com": {
+    "status": 200,
+    "sha1": "37f208c45411"
+  },
+  "saintandsecond.com": {
+    "status": 200,
+    "sha1": "26ea9e01ba57"
+  },
+  "nakedmedspa.com": {
+    "status": 200,
+    "sha1": "1ea000d67beb"
+  },
+  "offline-by-aerie.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "west-coast-center-for-orthopedic-surgery-and-sports-medicine.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "quatrine-home.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "centurycityoptometry.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "manhattanbeachendodontics.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "manhattanbeachsurgerycenter.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "skylinepitch.com": {
+    "status": 200,
+    "sha1": "209308bcfb56"
+  },
+  "managementoffice.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "minuteshours.com": {
+    "status": 200,
+    "sha1": "051ec9c0a6f7"
+  },
+  "century-city-optometry.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "manhattan-beach-surgery-center.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "banterandblisscandleco.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "chilisgrillandbar.com": {
+    "status": 200,
+    "sha1": "9cfab7d6a147"
+  },
+  "management-office.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "manhattan-beach-endodontics.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "bunkersurfandskate.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "delvansvfsportswear.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "maisnails.com": {
+    "status": 200,
+    "sha1": "6640b0faaad0"
+  },
+  "nomadmalibu.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "martshoerepair.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "nagalosangeles.com": {
+    "status": 200,
+    "sha1": "6fcc6287e452"
+  },
+  "banter-and-bliss-candle-co.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "bunker-surf-and-skate.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "sidmashburn.com": {
+    "status": 200,
+    "sha1": "d1462e436f08"
+  },
+  "mediterraneanfusioncuisinebyserras.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "del-vans-vf-sportswear.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "nomad-malibu.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "studiocityperiodontics.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "mart-shoe-repair.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "charlottebash.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "mediterranean-fusion-cuisine-by-serras.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "aheutsche.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "hollyandhudson.com": {
+    "status": 200,
+    "sha1": "95bc6566adef"
+  },
+  "graciebarrabrazilianmartialarts.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "beyondneedlemedspa.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "reecekitchenandbath.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "charlotte-bash.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "suzistylzsalon.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "femmefatalenails.com": {
+    "status": 200,
+    "sha1": "5401a89ceb46"
+  },
+  "veyepoptometry.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "reece-kitchen-and-bath.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "dancersbarre.com": {
+    "status": 200,
+    "sha1": "24a70da98a67"
+  },
+  "a-heutsche.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "suzistylz-salon.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "mpsmokeshop.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "gracie-barra-brazilian-martial-arts.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "nirvananailsalon.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "veyep-optometry.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "beyond-needle-med-spa.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "cafematcha.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "mp-smoke-shop.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "studio-city-periodontics.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "istanbulshome.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "nirvana-nail-salon.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "dolceandgabbanadandg.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "santamonicaartmuseum.com": {
+    "status": 200,
+    "sha1": "38dd90838421"
+  },
+  "istanbuls-home.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "todsshoes.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "studiocitypsychic.com": {
+    "status": 200,
+    "sha1": "5848be88ba7a"
+  },
+  "dolce-and-gabbana-d-and-g.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "detoxcyclehouse.com": {
+    "status": 200,
+    "sha1": "a4b7a10d72b9"
+  },
+  "pacificamedicalspa.com": {
+    "status": 200,
+    "sha1": "35ff142b6d89"
+  },
+  "loukabeverlyhills.com": {
+    "status": 200,
+    "sha1": "595c5c82b8ea"
+  },
+  "260samplesales.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "cafe-matcha.com": {
+    "status": 200,
+    "sha1": "3d4b23d3d7b5"
+  },
+  "tods-shoes.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "renemancini.com": {
+    "status": 200,
+    "sha1": "4c6525ad26a7"
+  },
+  "choicecontemporary.com": {
+    "status": 200,
+    "sha1": "9373561ab435"
+  },
+  "solsugarstudio.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "260-sample-sales.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "venicemetalworx.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "no275salon.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "venice-metal-worx.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "francobeverlyhills.com": {
+    "status": 200,
+    "sha1": "211842a2e4c4"
+  },
+  "beverlyhillsdiamondclub.com": {
+    "status": 200,
+    "sha1": "299ffdc1f3f5"
+  },
+  "no-275-salon.com": {
+    "status": 404,
+    "sha1": null
+  },
+  "lovebakedwings.com": {
+    "status": 200,
+    "sha1": "38b5473c3be2"
+  },
+  "sol-sugar-studio.com": {
+    "status": 404,
+    "sha1": null
   }
 }

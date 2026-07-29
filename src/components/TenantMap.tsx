@@ -6,11 +6,15 @@ import { InfoWindow, Map, useMap } from "@vis.gl/react-google-maps";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { USE_LOGO_DEV_MARKERS } from "../config/mapMarkers";
 import { MAP_Z_INDEX } from "../config/mapZIndex";
+import type { ShoppingCenter } from "../data/shoppingCenters";
+import { useLogoProvider } from "../hooks/useLogoProvider";
+import { useMapZoom } from "../hooks/useMapZoom";
 import type { Tenant } from "../types/tenant";
 import type { Vacancy } from "../types/vacancy";
 import { createBetaClusterRenderer } from "../utils/createClusterRenderer";
 import { createCalloutIcon } from "../utils/createCalloutIcon";
 import { createGroupedLogoMarkerIcon } from "../utils/createGroupedLogoMarkerIcon";
+import type { DashboardMapLocation } from "../utils/dashboardMapLocations";
 import {
   groupTenantsByLocation,
   type TenantLocationGroup,
@@ -25,6 +29,9 @@ import { LACountyParkingLotsLayer } from "./LACountyParkingLotsLayer";
 import { LADOTParkingLayer } from "./LADOTParkingLayer";
 import { MapFocus, type MapFocusTarget } from "./MapFocus";
 import { MapIntroZoom, type MapIntroTarget } from "./MapIntroZoom";
+import { MapChromeVisibility } from "./MapChromeVisibility";
+import { MasterCorridorCalloutsLayer } from "./MasterCorridorCalloutsLayer";
+import { ShoppingCenterPinsLayer } from "./ShoppingCenterPinsLayer";
 import { StreetViewControl } from "./StreetViewControl";
 import { VacancyMarkers } from "./VacancyMarkers";
 import { MapTypeToggle } from "./MapTypeToggle";
@@ -35,6 +42,9 @@ const DEFAULT_ZOOM = 6;
 /** Cluster until mid street-level; individual markers at 17+ */
 const CLUSTER_MAX_ZOOM = 16;
 const CLUSTER_RADIUS = 72;
+
+/** Master map: street tenants appear at this zoom and above. */
+export const MASTER_MAP_TENANT_REVEAL_ZOOM = 14;
 
 export interface TenantMapViewProps {
   tenants: Tenant[];
@@ -58,6 +68,27 @@ export interface TenantMapViewProps {
   /** Cinematic zoom when entering from the access gate */
   introZoom?: MapIntroTarget;
   onIntroZoomComplete?: () => void;
+  /** Shopping center logo pins (master map) */
+  shoppingCenters?: ShoppingCenter[];
+  onShoppingCenterSelect?: (center: ShoppingCenter) => void;
+  /** Extra lat/lngs to include when auto-fitting bounds (e.g. center logos) */
+  extraFitPositions?: google.maps.LatLngLiteral[];
+  /**
+   * Master map: hide street tenants/vacancies until zoomed in;
+   * show high-street / district callouts while zoomed out.
+   */
+  zoomGatedStreetMarkers?: boolean;
+  corridorCallouts?: DashboardMapLocation[];
+  onCorridorCalloutSelect?: (slug: string) => void;
+  /** Bypass zoom gate (e.g. active tenant search). */
+  forceShowStreetMarkers?: boolean;
+  /**
+   * Optional Map ID override (cloud-styled interactive map).
+   * When set, JSON `styles` are omitted so the cloud style can apply.
+   */
+  mapIdOverride?: string;
+  /** Hide map UI chrome for screenshot / static books capture. */
+  staticMode?: boolean;
 }
 
 async function resolveMarkerIcon(
@@ -79,14 +110,17 @@ function ClusteredMarkers({
   autoFitBounds,
   defaultCenter,
   defaultZoom,
+  extraFitPositions = [],
 }: {
   locationGroups: TenantLocationGroup[];
   onSelect: (group: TenantLocationGroup) => void;
   autoFitBounds: boolean;
   defaultCenter?: google.maps.LatLngLiteral;
   defaultZoom?: number;
+  extraFitPositions?: google.maps.LatLngLiteral[];
 }) {
   const map = useMap();
+  const [logoProvider] = useLogoProvider();
   const markersRef = useRef<google.maps.Marker[]>([]);
   const clustererRef = useRef<MarkerClusterer | null>(null);
   const listenersRef = useRef<google.maps.MapsEventListener[]>([]);
@@ -108,7 +142,7 @@ function ClusteredMarkers({
     markersRef.current.forEach((m) => m.setMap(null));
     markersRef.current = [];
 
-    if (!locationGroups.length) return;
+    if (!locationGroups.length && !extraFitPositions.length) return;
 
     const markers = locationGroups.map((group) => {
       const title =
@@ -134,32 +168,37 @@ function ClusteredMarkers({
     });
 
     markersRef.current = markers;
-    clustererRef.current = new MarkerClusterer({
-      map,
-      markers,
-      algorithm: new SuperClusterAlgorithm({
-        maxZoom: CLUSTER_MAX_ZOOM,
-        radius: CLUSTER_RADIUS,
-      }),
-      renderer: clusterRenderer,
-      onClusterClick: (_event, cluster, clusterMap) => {
-        if (cluster.bounds) {
-          clusterMap.fitBounds(cluster.bounds, {
-            top: 56,
-            right: 56,
-            bottom: 56,
-            left: 56,
-          });
-        }
-      },
-    });
+
+    if (markers.length) {
+      clustererRef.current = new MarkerClusterer({
+        map,
+        markers,
+        algorithm: new SuperClusterAlgorithm({
+          maxZoom: CLUSTER_MAX_ZOOM,
+          radius: CLUSTER_RADIUS,
+        }),
+        renderer: clusterRenderer,
+        onClusterClick: (_event, cluster, clusterMap) => {
+          if (cluster.bounds) {
+            clusterMap.fitBounds(cluster.bounds, {
+              top: 56,
+              right: 56,
+              bottom: 56,
+              left: 56,
+            });
+          }
+        },
+      });
+    }
 
     if (!fittedRef.current) {
-      if (autoFitBounds && locationGroups.length >= 1) {
+      const fitPoints = [
+        ...locationGroups.map((g) => ({ lat: g.lat, lng: g.lng })),
+        ...extraFitPositions,
+      ];
+      if (autoFitBounds && fitPoints.length >= 1) {
         const bounds = new google.maps.LatLngBounds();
-        locationGroups.forEach((g) =>
-          bounds.extend({ lat: g.lat, lng: g.lng })
-        );
+        fitPoints.forEach((point) => bounds.extend(point));
         map.fitBounds(bounds, { top: 56, right: 56, bottom: 56, left: 56 });
       } else if (defaultCenter) {
         map.setCenter(defaultCenter);
@@ -183,6 +222,8 @@ function ClusteredMarkers({
     defaultCenter,
     defaultZoom,
     clusterRenderer,
+    extraFitPositions,
+    logoProvider,
   ]);
 
   return null;
@@ -200,10 +241,33 @@ function MapWithTenants({
   onVacancyFocusComplete,
   showMeteredParking = true,
   showParkingLots = false,
+  shoppingCenters = [],
+  onShoppingCenterSelect,
+  extraFitPositions = [],
+  zoomGatedStreetMarkers = false,
+  corridorCallouts = [],
+  onCorridorCalloutSelect,
+  forceShowStreetMarkers = false,
+  staticMode = false,
 }: TenantMapViewProps) {
   const [selected, setSelected] = useState<TenantLocationGroup | null>(null);
-  const showTenants = displayMode !== "vacancies";
-  const showVacancies = displayMode !== "tenants";
+  const zoom = useMapZoom();
+
+  useEffect(() => {
+    if (staticMode) setSelected(null);
+  }, [staticMode]);
+  const streetMarkersVisible =
+    !zoomGatedStreetMarkers ||
+    forceShowStreetMarkers ||
+    (zoom != null && zoom >= MASTER_MAP_TENANT_REVEAL_ZOOM);
+  const corridorCalloutsVisible =
+    zoomGatedStreetMarkers &&
+    corridorCallouts.length > 0 &&
+    !forceShowStreetMarkers &&
+    (zoom == null || zoom < MASTER_MAP_TENANT_REVEAL_ZOOM);
+
+  const showTenants = displayMode !== "vacancies" && streetMarkersVisible;
+  const showVacancies = displayMode !== "tenants" && streetMarkersVisible;
   const mapTenants = useMemo(
     () =>
       tenants.filter(
@@ -223,15 +287,29 @@ function MapWithTenants({
   return (
     <>
       <MapFocus focus={mapFocus} />
-      <MapTypeToggle />
-      <StreetViewControl />
-      {showTenants ? (
+      <MapChromeVisibility visible={!staticMode} />
+      {!staticMode ? <MapTypeToggle /> : null}
+      {!staticMode ? <StreetViewControl /> : null}
+      {showTenants || extraFitPositions.length ? (
         <ClusteredMarkers
-          locationGroups={locationGroups}
-          onSelect={setSelected}
+          locationGroups={showTenants ? locationGroups : []}
+          onSelect={staticMode ? () => undefined : setSelected}
           autoFitBounds={autoFitBounds ?? true}
           defaultCenter={mapFocus?.center ?? defaultCenter}
           defaultZoom={mapFocus?.zoom ?? defaultZoom}
+          extraFitPositions={extraFitPositions}
+        />
+      ) : null}
+      {corridorCalloutsVisible && onCorridorCalloutSelect ? (
+        <MasterCorridorCalloutsLayer
+          locations={corridorCallouts}
+          onSelect={onCorridorCalloutSelect}
+        />
+      ) : null}
+      {shoppingCenters.length && onShoppingCenterSelect ? (
+        <ShoppingCenterPinsLayer
+          centers={shoppingCenters}
+          onSelect={onShoppingCenterSelect}
         />
       ) : null}
       {showVacancies ? (
@@ -239,11 +317,12 @@ function MapWithTenants({
           locationGroups={vacancyGroups}
           focusGroupKey={focusedVacancyGroupKey}
           onFocusComplete={onVacancyFocusComplete}
+          staticMode={staticMode}
         />
       ) : null}
       {showMeteredParking ? <LADOTParkingLayer enabled /> : null}
       {showParkingLots ? <LACountyParkingLotsLayer enabled /> : null}
-      {selected && (
+      {selected && showTenants && !staticMode ? (
         <InfoWindow
           position={{ lat: selected.lat, lng: selected.lng }}
           onCloseClick={() => setSelected(null)}
@@ -253,7 +332,7 @@ function MapWithTenants({
         >
           <GroupedInfoWindowContent tenants={selected.tenants} />
         </InfoWindow>
-      )}
+      ) : null}
     </>
   );
 }
@@ -273,8 +352,18 @@ export function TenantMapView({
   showParkingLots = false,
   introZoom,
   onIntroZoomComplete,
+  shoppingCenters = [],
+  onShoppingCenterSelect,
+  extraFitPositions = [],
+  zoomGatedStreetMarkers = false,
+  corridorCallouts = [],
+  onCorridorCalloutSelect,
+  forceShowStreetMarkers = false,
+  mapIdOverride,
+  staticMode = false,
 }: TenantMapViewProps) {
-  const mapId = getMapId();
+  const mapId = mapIdOverride ?? getMapId();
+  const useCloudStyle = Boolean(mapIdOverride);
   const shouldAutoFit = autoFitBounds && !mapFocus;
   const mapTenants = tenants.filter(
     (t) => t.lat != null && t.lng != null && isNamedTenant(t.tenantName)
@@ -285,11 +374,17 @@ export function TenantMapView({
   const showVacancies = displayMode !== "tenants";
   const hasVisibleMarkers =
     (showTenants && mapTenants.length > 0) ||
-    (showVacancies && vacancyGroups.length > 0);
+    (showVacancies && vacancyGroups.length > 0) ||
+    shoppingCenters.length > 0 ||
+    corridorCallouts.length > 0;
 
   return (
-    <div className={`map-shell ${embedded ? "map-shell--embedded" : ""}`}>
-      {!hasVisibleMarkers ? (
+    <div
+      className={`map-shell ${embedded ? "map-shell--embedded" : ""}${
+        staticMode ? " map-shell--static" : ""
+      }`}
+    >
+      {!hasVisibleMarkers && !staticMode ? (
         <div className="map-empty-overlay">
           <p>
             {displayMode === "vacancies"
@@ -307,10 +402,11 @@ export function TenantMapView({
         defaultZoom={defaultZoom}
         {...(mapId ? { mapId } : {})}
         gestureHandling="greedy"
-        fullscreenControl={!embedded}
+        zoomControl={!staticMode}
+        fullscreenControl={!embedded && !staticMode}
         mapTypeControl={false}
         streetViewControl={false}
-        styles={MAP_STYLES_WITH_STREET_LABELS}
+        {...(useCloudStyle ? {} : { styles: MAP_STYLES_WITH_STREET_LABELS })}
       >
         {introZoom ? (
           <MapIntroZoom target={introZoom} onComplete={onIntroZoomComplete} />
@@ -327,6 +423,14 @@ export function TenantMapView({
           onVacancyFocusComplete={onVacancyFocusComplete}
           showMeteredParking={showMeteredParking}
           showParkingLots={showParkingLots}
+          shoppingCenters={shoppingCenters}
+          onShoppingCenterSelect={onShoppingCenterSelect}
+          extraFitPositions={extraFitPositions}
+          zoomGatedStreetMarkers={zoomGatedStreetMarkers}
+          corridorCallouts={corridorCallouts}
+          onCorridorCalloutSelect={onCorridorCalloutSelect}
+          forceShowStreetMarkers={forceShowStreetMarkers}
+          staticMode={staticMode}
         />
       </Map>
     </div>

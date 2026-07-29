@@ -1,0 +1,81 @@
+/** Major city/district labels for the dashboard overview map (reference overlay style). */
+
+export type DashboardDistrictTier = "primary" | "secondary" | "tertiary";
+
+export interface DashboardDistrictLabel {
+  name: string;
+  position: { lat: number; lng: number };
+  tier: DashboardDistrictTier;
+}
+
+export const DASHBOARD_DISTRICT_LABELS: DashboardDistrictLabel[] = [
+  { name: "Los Angeles", position: { lat: 34.06, lng: -118.28 }, tier: "primary" },
+
+  { name: "Santa Monica", position: { lat: 34.02, lng: -118.48 }, tier: "secondary" },
+  { name: "Pasadena", position: { lat: 34.15, lng: -118.14 }, tier: "secondary" },
+  { name: "Long Beach", position: { lat: 33.77, lng: -118.17 }, tier: "secondary" },
+  { name: "Glendale", position: { lat: 34.15, lng: -118.26 }, tier: "secondary" },
+  { name: "Burbank", position: { lat: 34.19, lng: -118.31 }, tier: "secondary" },
+  { name: "Thousand Oaks", position: { lat: 34.18, lng: -118.84 }, tier: "secondary" },
+  { name: "Santa Clarita", position: { lat: 34.39, lng: -118.54 }, tier: "secondary" },
+  { name: "Simi Valley", position: { lat: 34.27, lng: -118.78 }, tier: "secondary" },
+  { name: "Torrance", position: { lat: 33.84, lng: -118.34 }, tier: "secondary" },
+  { name: "Anaheim", position: { lat: 33.84, lng: -117.91 }, tier: "secondary" },
+  { name: "Malibu", position: { lat: 34.03, lng: -118.78 }, tier: "secondary" },
+
+  { name: "Beverly Hills", position: { lat: 34.07, lng: -118.4 }, tier: "tertiary" },
+  { name: "West Hollywood", position: { lat: 34.09, lng: -118.37 }, tier: "tertiary" },
+  { name: "Hollywood", position: { lat: 34.1, lng: -118.33 }, tier: "tertiary" },
+  { name: "Culver City", position: { lat: 34.02, lng: -118.4 }, tier: "tertiary" },
+  { name: "Inglewood", position: { lat: 33.96, lng: -118.35 }, tier: "tertiary" },
+  { name: "Manhattan Beach", position: { lat: 33.88, lng: -118.41 }, tier: "tertiary" },
+  { name: "Redondo Beach", position: { lat: 33.85, lng: -118.39 }, tier: "tertiary" },
+  { name: "Downey", position: { lat: 33.94, lng: -118.13 }, tier: "tertiary" },
+  { name: "Whittier", position: { lat: 33.98, lng: -118.03 }, tier: "tertiary" },
+  { name: "Arcadia", position: { lat: 34.14, lng: -118.04 }, tier: "tertiary" },
+  { name: "Alhambra", position: { lat: 34.095, lng: -118.13 }, tier: "tertiary" },
+  { name: "Monterey Park", position: { lat: 34.06, lng: -118.12 }, tier: "tertiary" },
+  { name: "Montebello", position: { lat: 34.01, lng: -118.11 }, tier: "tertiary" },
+  { name: "West Covina", position: { lat: 34.07, lng: -117.91 }, tier: "tertiary" },
+  { name: "Fullerton", position: { lat: 33.87, lng: -117.93 }, tier: "tertiary" },
+  { name: "Orange", position: { lat: 33.79, lng: -117.85 }, tier: "tertiary" },
+
+  { name: "Agoura Hills", position: { lat: 34.14, lng: -118.76 }, tier: "tertiary" },
+  { name: "Calabasas", position: { lat: 34.14, lng: -118.66 }, tier: "tertiary" },
+  { name: "Hidden Hills", position: { lat: 34.16, lng: -118.66 }, tier: "tertiary" },
+  { name: "Encino", position: { lat: 34.16, lng: -118.52 }, tier: "tertiary" },
+  { name: "Studio City", position: { lat: 34.14, lng: -118.39 }, tier: "tertiary" },
+  { name: "North Hollywood", position: { lat: 34.17, lng: -118.38 }, tier: "tertiary" },
+  { name: "San Fernando", position: { lat: 34.28, lng: -118.44 }, tier: "tertiary" },
+  { name: "Monrovia", position: { lat: 34.15, lng: -117.99 }, tier: "tertiary" },
+  { name: "Glendora", position: { lat: 34.14, lng: -117.87 }, tier: "tertiary" },
+  { name: "Duarte", position: { lat: 34.14, lng: -117.97 }, tier: "tertiary" },
+  { name: "El Segundo", position: { lat: 33.92, lng: -118.42 }, tier: "tertiary" },
+  { name: "Hawthorne", position: { lat: 33.92, lng: -118.35 }, tier: "tertiary" },
+  { name: "Gardena", position: { lat: 33.89, lng: -118.31 }, tier: "tertiary" },
+  { name: "Carson", position: { lat: 33.83, lng: -118.26 }, tier: "tertiary" },
+  { name: "Compton", position: { lat: 33.9, lng: -118.22 }, tier: "tertiary" },
+  { name: "Ladera Heights", position: { lat: 33.99, lng: -118.37 }, tier: "tertiary" },
+  { name: "Palos Verdes", position: { lat: 33.79, lng: -118.39 }, tier: "tertiary" },
+  { name: "Lomita", position: { lat: 33.79, lng: -118.32 }, tier: "tertiary" },
+  { name: "Harbor City", position: { lat: 33.79, lng: -118.3 }, tier: "tertiary" },
+  { name: "Signal Hill", position: { lat: 33.8, lng: -118.17 }, tier: "tertiary" },
+  { name: "Norwalk", position: { lat: 33.9, lng: -118.08 }, tier: "tertiary" },
+  { name: "Lakewood", position: { lat: 33.85, lng: -118.13 }, tier: "tertiary" },
+  { name: "Bellflower", position: { lat: 33.88, lng: -118.12 }, tier: "tertiary" },
+  { name: "Cerritos", position: { lat: 33.86, lng: -118.06 }, tier: "tertiary" },
+  { name: "Paramount", position: { lat: 33.89, lng: -118.16 }, tier: "tertiary" },
+  { name: "Pico Rivera", position: { lat: 33.98, lng: -118.09 }, tier: "tertiary" },
+  { name: "Santa Fe Springs", position: { lat: 33.95, lng: -118.04 }, tier: "tertiary" },
+  { name: "La Mirada", position: { lat: 33.92, lng: -118.01 }, tier: "tertiary" },
+  { name: "La Habra", position: { lat: 33.93, lng: -117.95 }, tier: "tertiary" },
+  { name: "Brea", position: { lat: 33.92, lng: -117.9 }, tier: "tertiary" },
+  { name: "Buena Park", position: { lat: 33.87, lng: -118.0 }, tier: "tertiary" },
+  { name: "Cypress", position: { lat: 33.82, lng: -118.04 }, tier: "tertiary" },
+  { name: "Westminster", position: { lat: 33.76, lng: -118.0 }, tier: "tertiary" },
+  { name: "South Gate", position: { lat: 33.95, lng: -118.21 }, tier: "tertiary" },
+  { name: "Baldwin Park", position: { lat: 34.09, lng: -117.96 }, tier: "tertiary" },
+  { name: "Camarillo", position: { lat: 34.22, lng: -119.04 }, tier: "tertiary" },
+  { name: "Ventura", position: { lat: 34.27, lng: -119.22 }, tier: "tertiary" },
+  { name: "Moorpark", position: { lat: 34.29, lng: -118.88 }, tier: "tertiary" },
+];

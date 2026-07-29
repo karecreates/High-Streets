@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BetaLogo } from "../components/BetaLogo";
+import { DashboardOverviewMap } from "../components/DashboardOverviewMap";
 import { GlassNavButton } from "../components/GlassNavButton";
 import { HeroClickLottie } from "../components/HeroClickLottie";
 import {
@@ -31,6 +32,8 @@ export function DashboardPage() {
       : slides[0]?.slug ?? "";
   const [selectedSlug, setSelectedSlug] = useState(initialSlug);
   const [previewSlug, setPreviewSlug] = useState<string | null>(null);
+  const [showMappingVisual, setShowMappingVisual] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
   const [fromGate] = useState(() => Boolean(locationState.fromGate));
   const [revealed, setRevealed] = useState(() => !locationState.fromGate);
 
@@ -42,6 +45,24 @@ export function DashboardPage() {
     window.history.replaceState({}, document.title);
     return () => window.cancelAnimationFrame(frame);
   }, [fromGate]);
+
+  useEffect(() => {
+    if (!navOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setNavOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [navOpen]);
+
+  useEffect(() => {
+    if (!navOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [navOpen]);
 
   const displayCorridor = useMemo(() => {
     const slug = previewSlug ?? selectedSlug;
@@ -67,17 +88,21 @@ export function DashboardPage() {
   );
 
   const handleCorridorClick = (corridor: HighStreetCorridor) => {
+    if (!corridor.active && !getCorridorDetail(corridor.slug)) return;
+
     const hasDetailPage = Boolean(getCorridorDetail(corridor.slug));
+    const inCarousel = slides.some((slide) => slide.slug === corridor.slug);
 
     if (
-      corridor.category === "high-streets" ||
+      (corridor.category === "high-streets" && corridor.active) ||
       (corridor.category === "shopping-centers" && hasDetailPage) ||
       (corridor.category === "shopping-districts" && hasDetailPage)
     ) {
       setPreviewSlug(corridor.slug);
-      if (corridor.category === "high-streets") {
+      if (inCarousel) {
         setSelectedSlug(corridor.slug);
       }
+      setNavOpen(false);
       return;
     }
 
@@ -86,11 +111,13 @@ export function DashboardPage() {
       corridor.active &&
       getShoppingCenter(corridor.slug)
     ) {
+      setNavOpen(false);
       navigate(`/center/${corridor.slug}/map`);
       return;
     }
 
     if (corridor.dataKey) {
+      setNavOpen(false);
       navigate(`/map?corridor=${corridor.slug}`);
     }
   };
@@ -110,15 +137,54 @@ export function DashboardPage() {
     <div
       className={`dashboard dashboard--frame1${
         fromGate ? (revealed ? " dashboard--revealed" : " dashboard--entering") : ""
-      }`}
+      }${navOpen ? " dashboard--nav-open" : ""}`}
     >
-      <aside className="dashboard-sidebar">
-        <h1 className="dashboard-sidebar__title">HIGH STREET DASHBOARD</h1>
-        <p className="dashboard-sidebar__subtitle">All Corridors</p>
+      <button
+        type="button"
+        className="dashboard-nav-toggle"
+        aria-label={navOpen ? "Close corridor menu" : "Open corridor menu"}
+        aria-expanded={navOpen}
+        aria-controls="dashboard-sidebar"
+        onClick={() => setNavOpen((open) => !open)}
+      >
+        <span className="dashboard-nav-toggle__icon" aria-hidden>
+          <span />
+          <span />
+          <span />
+        </span>
+      </button>
+
+      <div
+        className="dashboard-nav-backdrop"
+        hidden={!navOpen}
+        onClick={() => setNavOpen(false)}
+      />
+
+      <aside
+        id="dashboard-sidebar"
+        className={`dashboard-sidebar${navOpen ? " dashboard-sidebar--open" : ""}`}
+      >
+        <div className="dashboard-sidebar__top">
+          <div>
+            <h1 className="dashboard-sidebar__title">HIGH STREET DASHBOARD</h1>
+            <p className="dashboard-sidebar__subtitle">All Corridors</p>
+          </div>
+          <button
+            type="button"
+            className="dashboard-sidebar__close"
+            aria-label="Close corridor menu"
+            onClick={() => setNavOpen(false)}
+          >
+            ×
+          </button>
+        </div>
         <button
           type="button"
           className="pill-btn pill-btn--primary dashboard-sidebar__master-map"
-          onClick={() => navigate("/map")}
+          onClick={() => {
+            setNavOpen(false);
+            navigate("/map");
+          }}
         >
           Master High Street Map
         </button>
@@ -132,7 +198,6 @@ export function DashboardPage() {
                 (c) => c.category === category
               ).map((corridor) => {
                 const hasData = Boolean(corridor.dataKey);
-                const isHighStreet = corridor.category === "high-streets";
                 const hasCorridorDetail = Boolean(getCorridorDetail(corridor.slug));
                 const hasCenterDetail =
                   corridor.category === "shopping-centers" && hasCorridorDetail;
@@ -142,6 +207,16 @@ export function DashboardPage() {
                   corridor.category === "shopping-centers" &&
                   corridor.active &&
                   (hasCenterDetail || Boolean(getShoppingCenter(corridor.slug)));
+                const isHighStreetReady =
+                  corridor.category === "high-streets" &&
+                  corridor.active &&
+                  hasCorridorDetail;
+                const isInteractive =
+                  isHighStreetReady ||
+                  hasCenterDetail ||
+                  hasDistrictDetail ||
+                  isShoppingCenterReady ||
+                  (corridor.active && hasData);
                 const isSelected = corridor.slug === displayCorridor?.slug;
 
                 return (
@@ -151,27 +226,22 @@ export function DashboardPage() {
                     className={`corridor-list__item ${
                       isSelected ? "corridor-list__item--active" : ""
                     } ${
-                      isHighStreet || hasCenterDetail || hasDistrictDetail
-                        ? "corridor-list__item--detail"
-                        : hasData || isShoppingCenterReady
-                          ? "corridor-list__item--map-only"
-                          : "corridor-list__item--pending"
+                      !isInteractive
+                        ? "corridor-list__item--pending"
+                        : isHighStreetReady || hasCenterDetail || hasDistrictDetail
+                          ? "corridor-list__item--detail"
+                          : "corridor-list__item--map-only"
                     }`}
                     onClick={() => handleCorridorClick(corridor)}
-                    disabled={
-                      !isHighStreet &&
-                      !hasData &&
-                      !isShoppingCenterReady &&
-                      !hasDistrictDetail
-                    }
+                    disabled={!isInteractive}
                     title={
-                      isHighStreet || hasCenterDetail || hasDistrictDetail
-                        ? `Preview ${corridor.name}`
-                        : isShoppingCenterReady
-                          ? `View ${corridor.name} directory map`
-                          : hasData
-                            ? `View ${corridor.name} on the master map`
-                            : `${corridor.name} — data coming soon`
+                      !isInteractive
+                        ? `${corridor.name} — data coming soon`
+                        : isHighStreetReady || hasCenterDetail || hasDistrictDetail
+                          ? `Preview ${corridor.name}`
+                          : isShoppingCenterReady
+                            ? `View ${corridor.name} directory map`
+                            : `View ${corridor.name} on the master map`
                     }
                   >
                     {corridor.name}
@@ -187,55 +257,78 @@ export function DashboardPage() {
       </aside>
 
       <section
-        className={`hero-panel${hasDetail ? " hero-panel--clickable" : ""}`}
-        aria-label="Corridor preview"
-        role={hasDetail ? "button" : undefined}
-        tabIndex={hasDetail ? 0 : undefined}
-        onClick={openDetail}
+        className={`hero-panel${
+          hasDetail && !showMappingVisual ? " hero-panel--clickable" : ""
+        }${showMappingVisual ? " hero-panel--mapping" : ""}`}
+        aria-label={showMappingVisual ? "Corridor overview map" : "Corridor preview"}
+        role={hasDetail && !showMappingVisual ? "button" : undefined}
+        tabIndex={hasDetail && !showMappingVisual ? 0 : undefined}
+        onClick={showMappingVisual ? undefined : openDetail}
         onKeyDown={(e) => {
+          if (showMappingVisual) return;
           if (hasDetail && (e.key === "Enter" || e.key === " ")) {
             e.preventDefault();
             openDetail();
           }
         }}
       >
-        {displayCorridor?.heroImage ? (
-          <img
-            key={displayCorridor.slug}
-            className="hero-panel__image"
-            src={displayCorridor.heroImage}
-            alt={`${displayCorridor.name}, ${displayCorridor.city}`}
-            style={
-              displayCorridor.heroObjectPosition
-                ? { objectPosition: displayCorridor.heroObjectPosition }
-                : undefined
-            }
-          />
+        <button
+          type="button"
+          className={`dashboard-view-toggle${
+            showMappingVisual ? " dashboard-view-toggle--active" : ""
+          }`}
+          aria-pressed={showMappingVisual}
+          onClick={(event) => {
+            event.stopPropagation();
+            setShowMappingVisual((current) => !current);
+          }}
+        >
+          {showMappingVisual ? "Hero Visual" : "Mapping Visual"}
+        </button>
+
+        {showMappingVisual ? (
+          <DashboardOverviewMap />
         ) : (
-          <div className="hero-panel__placeholder" />
+          <>
+            {displayCorridor?.heroImage ? (
+              <img
+                key={displayCorridor.slug}
+                className="hero-panel__image"
+                src={displayCorridor.heroImage}
+                alt={`${displayCorridor.name}, ${displayCorridor.city}`}
+                style={
+                  displayCorridor.heroObjectPosition
+                    ? { objectPosition: displayCorridor.heroObjectPosition }
+                    : undefined
+                }
+              />
+            ) : (
+              <div className="hero-panel__placeholder" />
+            )}
+            <div className="hero-panel__gradient" />
+            {hasDetail ? <HeroClickLottie /> : null}
+            <div className="hero-panel__caption">
+              <h2 className="hero-panel__name">
+                {displayCorridor?.name?.toUpperCase()}
+              </h2>
+              <p className="hero-panel__city">
+                {displayCorridor?.city?.toUpperCase()}
+              </p>
+            </div>
+            <div className="hero-panel__nav">
+              <GlassNavButton
+                direction="prev"
+                label="Previous corridor"
+                onClick={() => go(-1)}
+              />
+              <GlassNavButton
+                direction="next"
+                label="Next corridor"
+                onClick={() => go(1)}
+              />
+            </div>
+          </>
         )}
-        <div className="hero-panel__gradient" />
-        {hasDetail ? <HeroClickLottie /> : null}
-        <div className="hero-panel__caption">
-          <h2 className="hero-panel__name">
-            {displayCorridor?.name?.toUpperCase()}
-          </h2>
-          <p className="hero-panel__city">
-            {displayCorridor?.city?.toUpperCase()}
-          </p>
-        </div>
-        <div className="hero-panel__nav">
-          <GlassNavButton
-            direction="prev"
-            label="Previous corridor"
-            onClick={() => go(-1)}
-          />
-          <GlassNavButton
-            direction="next"
-            label="Next corridor"
-            onClick={() => go(1)}
-          />
-        </div>
       </section>
     </div>
   );

@@ -1,5 +1,6 @@
 /** Shared map overlay stacking — tenant/vacancy callouts stay above parking. */
 export const MAP_Z_INDEX = {
+  districtLabel: 20,
   parkingLotFill: 40,
   parkingMarker: 100,
   parkingInfo: 200,

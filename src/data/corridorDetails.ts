@@ -50,6 +50,58 @@ import gallerySunsetStrip1 from "@assets/Sunset Strip Photos/sunset_strip_1.jpg"
 import gallerySunsetStrip2 from "@assets/Sunset Strip Photos/sunset_strip_2.jpg";
 import gallerySunsetStrip3 from "@assets/Sunset Strip Photos/sunset_strip_3.jpg";
 import gallerySunsetStrip4 from "@assets/Sunset Strip Photos/sunset_strip_4.jpg";
+import galleryBrentwood1 from "@assets/Brentwood_Countrymart/Brentwood_1.jpg";
+import galleryBrentwood2 from "@assets/Brentwood_Countrymart/Brentwood_2.jpg";
+import galleryBrentwood3 from "@assets/Brentwood_Countrymart/Brentwood_3.jpg";
+import galleryBrentwood4 from "@assets/Brentwood_Countrymart/Brentwood_4.jpg";
+import galleryThePoint1 from "@assets/The Point Photos/The_Point_1.jpg";
+import galleryThePoint2 from "@assets/The Point Photos/The_Point_2.jpg";
+import galleryThePoint3 from "@assets/The Point Photos/The_Point_3.jpg";
+import galleryThePoint4 from "@assets/The Point Photos/The_Point_4.jpg";
+import galleryPlatform1 from "@assets/The Platform Photos/The_Platform_1.jpg";
+import galleryPlatform2 from "@assets/The Platform Photos/The_Platform_2.jpg";
+import galleryPlatform3 from "@assets/The Platform Photos/The_Platform_3.jpg";
+import galleryPlatform4 from "@assets/The Platform Photos/The_Platform_4.jpg";
+import galleryWestfield1 from "@assets/Westfield Century City Photos/Westfield_Century_City_1.jpg";
+import galleryWestfield2 from "@assets/Westfield Century City Photos/Westfield_Century_City_2.jpg";
+import galleryWestfield3 from "@assets/Westfield Century City Photos/Westfield_Century_City_3.jpg";
+import galleryWestfield4 from "@assets/Westfield Century City Photos/Westfield_Century_City_4.jpg";
+import galleryThirdStreet1 from "@assets/Third Street Promenade Photos/Third_Street_Promenade_1.jpg";
+import galleryThirdStreet2 from "@assets/Third Street Promenade Photos/Third_Street_Promenade_2.jpg";
+import galleryThirdStreet3 from "@assets/Third Street Promenade Photos/Third_Street_Promenade_3.jpg";
+import galleryThirdStreet4 from "@assets/Third Street Promenade Photos/Third_Street_Promenade_4.jpg";
+import galleryOldTownPasadena1 from "@assets/Old Town Pasadena Photos/Old_Town_Pasadena_1.jpg";
+import galleryOldTownPasadena2 from "@assets/Old Town Pasadena Photos/Old_Town_Pasadena_2.jpg";
+import galleryOldTownPasadena3 from "@assets/Old Town Pasadena Photos/Old_Town_Pasadena_3.jpg";
+import galleryOldTownPasadena4 from "@assets/Old Town Pasadena Photos/Old_Town_Pasadena_4.jpg";
+import galleryAmericana1 from "@assets/Americana at Brand Photos/Americana_at_Brand_1.jpg";
+import galleryAmericana2 from "@assets/Americana at Brand Photos/Americana_at_Brand_2.jpg";
+import galleryAmericana3 from "@assets/Americana at Brand Photos/Americana_at_Brand_3.jpg";
+import galleryAmericana4 from "@assets/Americana at Brand Photos/Americana_at_Brand_4.jpg";
+import galleryTheGrove1 from "@assets/The Grove Photos/The_Grove_1.jpg";
+import galleryTheGrove2 from "@assets/The Grove Photos/The_Grove_2.jpg";
+import galleryTheGrove3 from "@assets/The Grove Photos/The_Grove_3.jpg";
+import galleryTheGrove4 from "@assets/The Grove Photos/The_Grove_4.jpg";
+import galleryThePaseo1 from "@assets/The Paseo Photos/The_Paseo_1.jpg";
+import galleryThePaseo2 from "@assets/The Paseo Photos/The_Paseo_2.jpg";
+import galleryThePaseo3 from "@assets/The Paseo Photos/The_Paseo_3.jpg";
+import galleryThePaseo4 from "@assets/The Paseo Photos/The_Paseo_4.jpg";
+import galleryStudioCity1 from "@assets/Studio City Photos/Studio_City_1.jpg";
+import galleryStudioCity2 from "@assets/Studio City Photos/Studio_City_2.jpg";
+import galleryStudioCity3 from "@assets/Studio City Photos/Studio_City_3.jpg";
+import galleryStudioCity4 from "@assets/Studio City Photos/Studio_City_4.jpg";
+import gallerySportsmenLodge1 from "@assets/Sportsmens Lodge Photos/Sportsmens_Lodge_1.jpg";
+import gallerySportsmenLodge2 from "@assets/Sportsmens Lodge Photos/Sportsmens_Lodge_2.jpg";
+import gallerySportsmenLodge3 from "@assets/Sportsmens Lodge Photos/Sportsmens_Lodge_3.jpg";
+import gallerySportsmenLodge4 from "@assets/Sportsmens Lodge Photos/Sportsmens_Lodge_4.jpg";
+import galleryOneColorado1 from "@assets/One Colorado Photos/One_Colorado_1.jpg";
+import galleryOneColorado2 from "@assets/One Colorado Photos/One_Colorado_2.jpg";
+import galleryOneColorado3 from "@assets/One Colorado Photos/One_Colorado_3.jpg";
+import galleryOneColorado4 from "@assets/One Colorado Photos/One_Colorado_4.jpg";
+import galleryManhattanVillage1 from "@assets/Manhattan Village Photos/Manhattan_Village_1.webp";
+import galleryManhattanVillage2 from "@assets/Manhattan Village Photos/Manhattan_Village_2.webp";
+import galleryManhattanVillage3 from "@assets/Manhattan Village Photos/Manhattan_Village_3.jpg";
+import galleryManhattanVillage4 from "@assets/Manhattan Village Photos/Manhattan_Village_4.jpg";
 
 export interface GalleryImage {
   src: string;
@@ -104,21 +156,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryAbbotKinney4, alt: "Retail storefront on Abbot Kinney Blvd" },
     ],
     notableBrands: [
-      { name: "Erewhon Market", domain: "erewhon.com" },
       { name: "Adidas", domain: "adidas.com" },
-      { name: "Warby Parker", domain: "warbyparker.com" },
+      { name: "American Express", domain: "americanexpress.com" },
       { name: "Aesop", domain: "aesop.com" },
       { name: "Blue Bottle Coffee", domain: "bluebottlecoffee.com" },
-      { name: "Intelligentsia Coffee", domain: "intelligentsia.com" },
+      { name: "Equinox", domain: "equinox.com" },
       { name: "Salt & Straw", domain: "saltandstraw.com" },
-      { name: "Madewell", domain: "madewell.com" },
-      { name: "Everlane", domain: "everlane.com" },
-      { name: "Away", domain: "awaytravel.com" },
-      { name: "Vuori", domain: "vuoriclothing.com" },
+      { name: "Allbirds", domain: "allbirds.com" },
+      { name: "& Other Stories", domain: "and-other-stories.com" },
       { name: "Aviator Nation", domain: "aviatornation.com" },
-      { name: "Suit Supply", domain: "suitsupply.com" },
-      { name: "Le Labo", domain: "lelabofragrances.com" },
-      { name: "J.Crew", domain: "jcrew.com" },
+      { name: "Intelligentsia Coffee", domain: "intelligentsia.com" },
     ],
     bikeScore: 95,
     walkScore: 95,
@@ -153,21 +200,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryLaBrea4, alt: "La Brea Ave shopping district" },
     ],
     notableBrands: [
+      { name: "Trader Joe's", domain: "traderjoes.com" },
+      { name: "Sweetgreen", domain: "sweetgreen.com" },
+      { name: "Arc'teryx", domain: "arcteryx.com" },
       { name: "Carhartt", domain: "carhartt.com" },
       { name: "Stüssy", domain: "stussy.com" },
-      { name: "Undefeated", domain: "undefeated.com" },
       { name: "Stone Island", domain: "stoneisland.com" },
-      { name: "Arc'teryx", domain: "arcteryx.com" },
-      { name: "Sweetgreen", domain: "sweetgreen.com" },
-      { name: "Trader Joe's", domain: "traderjoes.com" },
+      { name: "Undefeated", domain: "undefeated.com" },
       { name: "Sugarfish", domain: "sugarfish.com" },
-      { name: "American Rag Cie", domain: "americanrag.com" },
-      { name: "Nudie Jeans", domain: "nudiejeans.com" },
-      { name: "Self Edge", domain: "selfedge.com" },
       { name: "Fjällräven", domain: "fjallraven.com" },
-      { name: "Garrett Leight", domain: "garrettleight.com" },
-      { name: "The Sycamore Kitchen", domain: "thesycamorekitchen.com" },
-      { name: "Aether Apparel", domain: "aetherapparel.com" },
+      { name: "American Rag Cie", domain: "americanrag.com" },
     ],
     bikeScore: 60,
     walkScore: 89,
@@ -196,20 +238,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryLarchmont4, alt: "Go Get Em Tiger on Larchmont Blvd" },
     ],
     notableBrands: [
-      { name: "Salt & Straw", domain: "saltandstraw.com" },
-      { name: "Bluemercury", domain: "bluemercury.com" },
       { name: "Starbucks", domain: "starbucks.com" },
+      { name: "Salt & Straw", domain: "saltandstraw.com" },
+      { name: "Aesop", domain: "aesop.com" },
+      { name: "Bluemercury", domain: "bluemercury.com" },
+      { name: "Jeni's Splendid Ice Cream", domain: "jenissplendidicecream.com" },
+      { name: "Beyond Yoga", domain: "beyondyoga.com" },
       { name: "Pressed Juicery", domain: "pressed.com" },
       { name: "Buck Mason", domain: "buckmason.com" },
-      { name: "The Shade Store", domain: "shadestore.com" },
-      { name: "Groundwork Coffee", domain: "groundworkcoffee.com" },
-      { name: "Go Get Em Tiger", domain: "gogetemtiger.com" },
-      { name: "Jeni's Splendid Ice Cream", domain: "jenissplendidicecream.com" },
       { name: "Sweet Lady Jane", domain: "sweetladyjane.com" },
-      { name: "Beyond Yoga", domain: "beyondyoga.com" },
-      { name: "Aesop", domain: "aesop.com" },
-      { name: "Sweetfin Poke", domain: "sweetfin.com" },
-      { name: "Burger Lounge", domain: "burgerlounge.com" },
       { name: "Credo Beauty", domain: "credobeauty.com" },
     ],
     bikeScore: 66,
@@ -242,21 +279,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryMelrose4, alt: "Melrose corridor shopping district" },
     ],
     notableBrands: [
+      { name: "Adidas", domain: "adidas.com" },
+      { name: "Ralph Lauren", domain: "ralphlauren.com" },
       { name: "Glossier", domain: "glossier.com" },
       { name: "Reformation", domain: "thereformation.com" },
-      { name: "Adidas", domain: "adidas.com" },
-      { name: "Alfred Coffee", domain: "alfred.la" },
-      { name: "Casper", domain: "casper.com" },
-      { name: "Away", domain: "awaytravel.com" },
-      { name: "Ralph Lauren", domain: "ralphlauren.com" },
-      { name: "Golden Goose", domain: "goldengoose.com" },
       { name: "Balmain", domain: "balmain.com" },
       { name: "Chloé", domain: "chloe.com" },
-      { name: "A.P.C.", domain: "apc.com" },
-      { name: "Sweet Lady Jane", domain: "sweetladyjane.com" },
-      { name: "Fred Segal", domain: "fredsegal.com" },
-      { name: "Joybird", domain: "joybird.com" },
+      { name: "Golden Goose", domain: "goldengoose.com" },
       { name: "TheRealReal", domain: "therealreal.com" },
+      { name: "Casper", domain: "casper.com" },
+      { name: "Away", domain: "awaytravel.com" },
     ],
     bikeScore: 62,
     walkScore: 88,
@@ -288,21 +320,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: gallerySaltStraw, alt: "Robertson Blvd corridor" },
     ],
     notableBrands: [
-      { name: "Herman Miller", domain: "hermanmiller.com" },
-      { name: "Kitson", domain: "kitsonpartners.com" },
       { name: "Starbucks", domain: "starbucks.com" },
-      { name: "Alfred Coffee", domain: "alfred.la" },
-      { name: "Cha Cha Matcha", domain: "chachamatcha.com" },
+      { name: "Blue Bottle Coffee", domain: "bluebottlecoffee.com" },
+      { name: "Herman Miller", domain: "hermanmiller.com" },
+      { name: "Bang & Olufsen", domain: "bang-olufsen.com" },
+      { name: "Armani Casa", domain: "armanicasa.com" },
       { name: "Technogym", domain: "technogym.com" },
       { name: "James Perse", domain: "jamesperse.com" },
-      { name: "Blue Bottle Coffee", domain: "bluebottlecoffee.com" },
-      { name: "Box Union", domain: "boxunion.com" },
-      { name: "Petrossian", domain: "petrosian.ca" },
-      { name: "Armani Casa", domain: "armanicasa.com" },
-      { name: "Bang & Olufsen", domain: "bang-olufsen.com" },
       { name: "Z Gallerie", domain: "zgallerie.com" },
-      { name: "Pizzana", domain: "pizzana.com" },
-      { name: "H.Lorenzo", domain: "hlorenzo.com" },
+      { name: "Alfred Coffee", domain: "alfred.la" },
+      { name: "Petrossian", domain: "petrosian.ca" },
     ],
     bikeScore: 62,
     walkScore: 93,
@@ -339,19 +366,14 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     notableBrands: [
       { name: "Warby Parker", domain: "warbyparker.com" },
       { name: "Sweetgreen", domain: "sweetgreen.com" },
-      { name: "La Colombe", domain: "lacolombe.com" },
       { name: "Madewell", domain: "madewell.com" },
-      { name: "Intelligentsia", domain: "intelligentsia.com" },
+      { name: "Shake Shack", domain: "shakeshack.com" },
       { name: "Aesop", domain: "aesop.com" },
+      { name: "Le Labo", domain: "lelabofragrances.com" },
+      { name: "Intelligentsia", domain: "intelligentsia.com" },
       { name: "Undefeated", domain: "undefeated.com" },
-      { name: "Alfred Coffee", domain: "alfred.la" },
-      { name: "Buck Mason", domain: "buckmason.com" },
-      { name: "Parachute Home", domain: "parachutehome.com" },
       { name: "Salt & Straw", domain: "saltandstraw.com" },
       { name: "A.P.C.", domain: "apc.com" },
-      { name: "Shake Shack", domain: "shakeshack.com" },
-      { name: "Le Labo", domain: "lelabofragrances.com" },
-      { name: "Clare V.", domain: "clarev.com" },
     ],
     bikeScore: 67,
     walkScore: 95,
@@ -372,6 +394,601 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     mapCenter: { lat: 34.087444, lng: -118.2754793 },
     mapZoom: 16,
   },
+  "third-street-promenade": {
+    title: "Third Street Promenade",
+    description:
+      "Located in the heart of Downtown Santa Monica, Third Street Promenade is the primary shopping, entertainment, and dining node on the Westside. The Third Street Promenade features three city blocks of luxury shops, local boutiques, and national retailers and is anchored by the Santa Monica Place mall on the South end of the street. The close proximity to the beach and the large concentration of surrounding office buildings gives the Third Street Promenade a unique combination of being a major tourist destination with a significant day time population.",
+    estimatedRents: "$84-$180 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: galleryThirdStreet1,
+        alt: "Third Street Promenade at night with overhead string lights",
+      },
+      {
+        src: galleryThirdStreet2,
+        alt: "Aerial view of Third Street Promenade on a sunny day",
+      },
+      {
+        src: galleryThirdStreet3,
+        alt: "Apple Store on Third Street Promenade",
+      },
+      {
+        src: galleryThirdStreet4,
+        alt: "Converse storefront on Third Street Promenade at night",
+      },
+    ],
+    notableBrands: [
+      { name: "Apple", domain: "apple.com" },
+      { name: "Nike", domain: "nike.com" },
+      { name: "Google", domain: "google.com" },
+      { name: "Adidas", domain: "adidas.com" },
+      { name: "Tesla", domain: "tesla.com" },
+      { name: "Starbucks", domain: "starbucks.com" },
+      { name: "Zara", domain: "zara.com" },
+      { name: "Lululemon", domain: "lululemon.com" },
+      { name: "Sephora", domain: "sephora.com" },
+      { name: "Uniqlo", domain: "uniqlo.com" },
+    ],
+    bikeScore: 85,
+    walkScore: 85,
+    areaStats: [
+      {
+        value: "$516M",
+        label: "RETAIL SALES ON THIRD STREET PROMENADE",
+      },
+      {
+        value: "$206M",
+        label: "IN SALES AT SANTA MONICA PLACE",
+      },
+      { value: "12M", label: "VISITORS ON THIRD STREET PROMENADE" },
+      {
+        value: "81%",
+        label: "VISITORS WALK TO GET AROUND SANTA MONICA",
+      },
+    ],
+    trafficCounts: [
+      { street: "Santa Monica Blvd", count: "21,000 CPD" },
+      { street: "2nd St", count: "9,000 CPD" },
+      { street: "14th St", count: "9,000 CPD" },
+      { street: "Wilshire Blvd", count: "24,000 CPD" },
+    ],
+    mapCenter: { lat: 34.01620096962028, lng: -118.49676476202528 },
+    mapZoom: 17,
+  },
+  "studio-city": {
+    title: "Studio City",
+    description:
+      "Studio City's Ventura Boulevard corridor is one of the San Fernando Valley's most established high-street shopping and dining districts. Centered around Laurel Canyon Boulevard and extending through the neighborhood's core, the corridor combines independent boutiques, destination restaurants, fitness and wellness concepts, specialty grocers and national retailers in a walkable urban setting. Its proximity to major studios and affluent residential neighborhoods supports a strong daytime and local customer base, while Sushi Row, the weekly farmers market and a steady pipeline of contemporary concepts give the district a distinct lifestyle identity.",
+    estimatedRents: "$50-$80 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: galleryStudioCity1,
+        alt: "Ventura Boulevard retail corridor in Studio City",
+      },
+      {
+        src: galleryStudioCity2,
+        alt: "Storefronts and streetscape in Studio City",
+      },
+      {
+        src: galleryStudioCity3,
+        alt: "Dining and shopping along Ventura Boulevard",
+      },
+      {
+        src: galleryStudioCity4,
+        alt: "Studio City high-street atmosphere",
+      },
+    ],
+    notableBrands: [
+      { name: "Trader Joe's", domain: "traderjoes.com" },
+      { name: "lululemon", domain: "lululemon.com" },
+      { name: "Urban Outfitters", domain: "urbanoutfitters.com" },
+      { name: "Joan's on Third", domain: "joansonthird.com" },
+      { name: "Alfred Coffee", domain: "alfred.la" },
+      { name: "Mendocino Farms", domain: "mendocinofarms.com" },
+      { name: "Starbucks", domain: "starbucks.com" },
+      { name: "Chipotle", domain: "chipotle.com" },
+      { name: "Panera Bread", domain: "panerabread.com" },
+      { name: "Road Runner Sports", domain: "roadrunnersports.com" },
+    ],
+    bikeScore: 55,
+    walkScore: 94,
+    areaStats: [
+      { value: "$153K", label: "AVG. HOUSEHOLD INCOME WITHIN ONE MILE" },
+      { value: "20.3K", label: "RESIDENTS WITHIN ONE MILE" },
+      { value: "15.5K", label: "DAYTIME POPULATION WITHIN ONE MILE" },
+      { value: "41K", label: "VEHICLES/DAY ON VENTURA BOULEVARD" },
+    ],
+    trafficCounts: [
+      { street: "Ventura Blvd", count: "41,000 CPD" },
+    ],
+    mapCenter: { lat: 34.1435, lng: -118.3955 },
+    mapZoom: 16,
+  },
+  "sportsmen-lodge": {
+    title: "Sportsmen's Lodge",
+    description:
+      "The Shops at Sportsmen's Lodge is a reimagined open-air shopping, dining and wellness destination on Ventura Boulevard at Coldwater Canyon in Studio City. Built on the site of the historic Hollywood gathering place, the center pairs mid-century-inspired architecture with mature landscaping, outdoor terraces and a walkable collection of best-in-class operators. Anchored by Erewhon and Equinox, it offers a curated mix of fashion, fitness, personal care and chef-driven restaurants that serves the affluent Studio City and Sherman Oaks communities.",
+    estimatedRents: "$65-$95 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: gallerySportsmenLodge1,
+        alt: "The Shops at Sportsmen's Lodge open-air promenade",
+      },
+      {
+        src: gallerySportsmenLodge2,
+        alt: "Retail storefronts at Sportsmen's Lodge",
+      },
+      {
+        src: gallerySportsmenLodge3,
+        alt: "Dining and outdoor terraces at Sportsmen's Lodge",
+      },
+      {
+        src: gallerySportsmenLodge4,
+        alt: "Streetscape at The Shops at Sportsmen's Lodge",
+      },
+    ],
+    notableBrands: [
+      { name: "Erewhon", domain: "erewhon.com" },
+      { name: "Equinox", domain: "equinox.com" },
+      { name: "Alo Yoga", domain: "aloyoga.com" },
+      { name: "Vuori", domain: "vuoriclothing.com" },
+      { name: "Reformation", domain: "thereformation.com" },
+      { name: "HOKA", domain: "hoka.com" },
+      { name: "Madewell", domain: "madewell.com" },
+      { name: "FP Movement", domain: "fpmovement.com" },
+      { name: "SUGARFISH", domain: "sugarfishsushi.com" },
+      { name: "UOVO", domain: "uovo.la" },
+    ],
+    bikeScore: 57,
+    walkScore: 87,
+    areaStats: [
+      { value: "$244K", label: "AVG. HOUSEHOLD INCOME WITHIN ONE MILE" },
+      { value: "19.5K", label: "RESIDENTS WITHIN ONE MILE" },
+      { value: "12.8K", label: "DAYTIME POPULATION WITHIN ONE MILE" },
+      { value: "94K SF", label: "OF PREMIER RETAIL SPACE" },
+    ],
+    trafficCounts: [
+      { street: "Ventura Blvd + Coldwater Canyon", count: "83,000+ CPD" },
+      { street: "Ventura Blvd", count: "45,000 CPD" },
+      { street: "Coldwater Canyon Ave", count: "38,000 CPD" },
+    ],
+    mapCenter: { lat: 34.14631696173862, lng: -118.4129050581419 },
+    mapZoom: 18,
+  },
+  "one-colorado": {
+    title: "One Colorado",
+    description:
+      "ONE Colorado is an award-winning mixed-use lifestyle destination spanning a full city block in the heart of Old Pasadena. Centered on a landscaped courtyard and a collection of restored historic buildings, the property combines fashion, beauty, wellness, dining, entertainment and creative office space in an intimate, walkable setting. Its curated tenant mix includes leading national brands and distinctive local operators, while frequent events and its location along Colorado Boulevard make it a key gathering place for residents, workers and regional visitors.",
+    estimatedRents: "$60-$100 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: galleryOneColorado1,
+        alt: "One Colorado courtyard and historic buildings in Old Pasadena",
+      },
+      {
+        src: galleryOneColorado2,
+        alt: "Retail storefronts at One Colorado",
+      },
+      {
+        src: galleryOneColorado3,
+        alt: "Dining and gathering spaces at One Colorado",
+      },
+      {
+        src: galleryOneColorado4,
+        alt: "Streetscape at One Colorado along Colorado Boulevard",
+      },
+    ],
+    notableBrands: [
+      { name: "Alo Yoga", domain: "aloyoga.com" },
+      { name: "Anthropologie", domain: "anthropologie.com" },
+      { name: "Nike", domain: "nike.com" },
+      { name: "Patagonia", domain: "patagonia.com" },
+      { name: "Sephora", domain: "sephora.com" },
+      { name: "Vuori", domain: "vuoriclothing.com" },
+      { name: "rag & bone", domain: "rag-bone.com" },
+      { name: "gorjana", domain: "gorjana.com" },
+      { name: "Salt & Straw", domain: "saltandstraw.com" },
+      { name: "Rothy's", domain: "rothys.com" },
+    ],
+    bikeScore: 73,
+    walkScore: 98,
+    areaStats: [
+      { value: "$140K", label: "AVG. HOUSEHOLD INCOME WITHIN ONE MILE" },
+      { value: "33.0K", label: "RESIDENTS WITHIN ONE MILE" },
+      { value: "83.3K", label: "DAYTIME POPULATION WITHIN ONE MILE" },
+      { value: "234K SF", label: "OF PREMIER RETAIL SPACE" },
+    ],
+    trafficCounts: [
+      { street: "Colorado Blvd", count: "19,381 CPD" },
+      { street: "Fair Oaks Ave", count: "24,431 CPD" },
+    ],
+    mapCenter: { lat: 34.14666478402269, lng: -118.15138820680242 },
+    mapZoom: 18,
+  },
+  "the-point": {
+    title: "The Point",
+    description:
+      "Located next door to Federal Realty's thriving shopping center Plaza El Segundo, The Point sits at the crossroads of Rosecrans Avenue and Pacific Coast Highway, two easily accessible routes in the South Bay. A new shopping, dining and meeting place, The Point is a destination for the community to gather.",
+    estimatedRents: "$50-$80 PSF/yr NNN",
+    galleryImages: [
+      { src: galleryThePoint1, alt: "Community lawn and stage at The Point" },
+      { src: galleryThePoint2, alt: "True Food Kitchen at The Point" },
+      { src: galleryThePoint3, alt: "Tocaya Organica at The Point" },
+      { src: galleryThePoint4, alt: "Nike storefront at The Point" },
+    ],
+    notableBrands: [
+      { name: "Nike", domain: "nike.com" },
+      { name: "Lululemon", domain: "lululemon.com" },
+      { name: "Warby Parker", domain: "warbyparker.com" },
+      { name: "Madewell", domain: "madewell.com" },
+      { name: "CAVA", domain: "cava.com" },
+      { name: "Athleta", domain: "athleta.com" },
+      { name: "Mendocino Farms", domain: "mendocinofarms.com" },
+      { name: "Van Leeuwen", domain: "vanleeuwenicecream.com" },
+      { name: "Pressed Juicery", domain: "pressed.com" },
+      { name: "YETI", domain: "yeti.com" },
+    ],
+    bikeScore: 50,
+    walkScore: 69,
+    areaStats: [
+      {
+        value: "$345K",
+        label: "AVG. HOUSEHOLD INCOME WITHIN 1 MILE",
+      },
+      {
+        value: "74.3%",
+        label:
+          "EDUCATION LEVEL OF THE IMMEDIATE POPULATION HAS A BACHELOR'S DEGREE OR HIGHER",
+      },
+      { value: "21.8K", label: "DAYTIME POPULATION" },
+    ],
+    trafficCounts: [
+      { street: "S Pacific Coast Hwy", count: "98,650 CPD" },
+      { street: "Rosecrans Ave", count: "53,905 CPD" },
+    ],
+    mapCenter: { lat: 33.90285063536709, lng: -118.39505288392672 },
+    mapZoom: 18,
+  },
+  "manhattan-village": {
+    title: "Manhattan Village",
+    description:
+      "Manhattan Village is the South Bay's premier lifestyle shopping destination, spanning approximately 648,000 square feet in the heart of Manhattan Beach. A recently redeveloped property, it pairs a renovated enclosed shopping center with a curated open-air expansion of retail and restaurant spaces. The mix reflects coastal chic and West Coast sophistication—national fashion and beauty brands, home furnishings, fitness, and chef-driven dining—serving one of Los Angeles County's most affluent beach communities.",
+    estimatedRents: "$55-$85 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: galleryManhattanVillage1,
+        alt: "Open-air promenade and retail at Manhattan Village",
+      },
+      {
+        src: galleryManhattanVillage2,
+        alt: "Storefronts at Manhattan Village",
+      },
+      {
+        src: galleryManhattanVillage3,
+        alt: "Dining and gathering spaces at Manhattan Village",
+      },
+      {
+        src: galleryManhattanVillage4,
+        alt: "Streetscape at Manhattan Village in Manhattan Beach",
+      },
+    ],
+    notableBrands: [
+      { name: "Apple", domain: "apple.com" },
+      { name: "Alo", domain: "aloyoga.com" },
+      { name: "Anthropologie", domain: "anthropologie.com" },
+      { name: "Macy's", domain: "macys.com" },
+      { name: "Sephora", domain: "sephora.com" },
+      { name: "Free People", domain: "freepeople.com" },
+      { name: "Pottery Barn", domain: "potterybarn.com" },
+      { name: "West Elm", domain: "westelm.com" },
+      { name: "Urban Outfitters", domain: "urbanoutfitters.com" },
+      { name: "Sweetgreen", domain: "sweetgreen.com" },
+    ],
+    bikeScore: 60,
+    walkScore: 87,
+    areaStats: [
+      { value: "$220K+", label: "AVG. HOUSEHOLD INCOME WITHIN ONE MILE" },
+      { value: "648K SF", label: "OF PREMIER RETAIL SPACE" },
+      { value: "53K SF", label: "OPEN-AIR RETAIL & RESTAURANT EXPANSION" },
+      { value: "88K CPD", label: "TRAFFIC ON SEPULVEDA BLVD CORRIDOR" },
+    ],
+    trafficCounts: [
+      { street: "Sepulveda Blvd", count: "88,000 CPD" },
+    ],
+    mapCenter: { lat: 33.89856223195897, lng: -118.39335182633175 },
+    mapZoom: 17,
+  },
+  platform: {
+    title: "Platform",
+    description:
+      "Opened in 2016, Platform is Culver City's preeminent lifestyle center bringing together innovative new-to-market retailers, trendy eateries, high-end boutiques, and creative office space. A repurposed auto dealership, Platform is covered in murals and an iconic rainbow façade painted by LA-based muralist Jen Stark. Located in the dynamic Hayden Tract neighborhood, Platform offers a unique shopping experience that touts itself as the \"centerpiece for LA's newest creative generation\".",
+    estimatedRents: "$80-$120 PSF/yr NNN",
+    galleryImages: [
+      { src: galleryPlatform1, alt: "Sweetgreen patio at Platform" },
+      { src: galleryPlatform2, alt: "Outdoor walkway at Platform" },
+      { src: galleryPlatform3, alt: "Boba Guys at Platform" },
+      { src: galleryPlatform4, alt: "Platform courtyard and murals" },
+    ],
+    notableBrands: [
+      { name: "Blue Bottle Coffee", domain: "bluebottlecoffee.com" },
+      { name: "Sweetgreen", domain: "sweetgreen.com" },
+      { name: "Van Leeuwen", domain: "vanleeuwenicecream.com" },
+      { name: "Reformation", domain: "thereformation.com" },
+      { name: "Boba Guys", domain: "bobaguys.com" },
+      { name: "LOQUI", domain: "eatloqui.com" },
+      { name: "Roberta's", domain: "robertas.com" },
+      { name: "Catbird", domain: "catbird.com" },
+      { name: "Miznon", domain: "miznon.com" },
+      { name: "Amber Interiors", domain: "amberinteriors.com" },
+    ],
+    bikeScore: 75,
+    walkScore: 84,
+    areaStats: [
+      {
+        value: "$1.2B",
+        label: "ESTIMATED TOTAL HOUSEHOLD EXPENDITURE IN 2018",
+      },
+      { value: "$640K", label: "MEDIAN HOME SALE PRICE" },
+      { value: "20K", label: "EMPLOYEES IN DOWNTOWN CULVER CITY" },
+      {
+        value: "52%",
+        label:
+          "OF THE IMMEDIATE POPULATION HAS A BACHELOR'S DEGREE OR HIGHER",
+      },
+    ],
+    trafficCounts: [
+      { street: "Washington Blvd", count: "24,000 CPD" },
+      { street: "National Blvd", count: "20,000 CPD" },
+    ],
+    mapCenter: { lat: 34.0272792218618, lng: -118.38773539031313 },
+    mapZoom: 18,
+  },
+  "americana-at-brand": {
+    title: "Americana at Brand",
+    description:
+      "The Americana at Brand is a premier open-air shopping, dining, and entertainment destination in the heart of Glendale. Designed as a walkable lifestyle center, it features a curated mix of luxury retailers, national brands, chef-driven restaurants, and cafés set around landscaped promenades, fountains, and a central park. The property attracts both local residents and regional visitors with notable tenants, seasonal events, and a polished, high-end atmosphere. Located adjacent to the Glendale Galleria, The Americana at Brand serves as one of the region's most prominent retail destinations.",
+    estimatedRents: "$150-$250 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: galleryAmericana1,
+        alt: "Americana at Brand central fountain and promenade",
+      },
+      {
+        src: galleryAmericana2,
+        alt: "Outdoor dining at Americana at Brand",
+      },
+      {
+        src: galleryAmericana3,
+        alt: "Retail storefronts at Americana at Brand",
+      },
+      {
+        src: galleryAmericana4,
+        alt: "Evening streetscape at Americana at Brand",
+      },
+    ],
+    notableBrands: [
+      { name: "Apple", domain: "apple.com" },
+      { name: "Tesla", domain: "tesla.com" },
+      { name: "Gucci", domain: "gucci.com" },
+      { name: "Tiffany & Co.", domain: "tiffany.com" },
+      { name: "Lululemon", domain: "lululemon.com" },
+      { name: "Anthropologie", domain: "anthropologie.com" },
+      { name: "Sephora", domain: "sephora.com" },
+      { name: "Barnes & Noble", domain: "barnesandnoble.com" },
+      { name: "H&M", domain: "hm.com" },
+      { name: "Adidas", domain: "adidas.com" },
+    ],
+    bikeScore: 64,
+    walkScore: 96,
+    areaStats: [
+      { value: "$85K", label: "AVG. HOUSEHOLD INCOME WITHIN ONE MILE" },
+      { value: "67.7K", label: "RESIDENTS WITHIN ONE MILE" },
+      { value: "88.9K", label: "DAYTIME POPULATION WITHIN ONE MILE" },
+      { value: "600K SF", label: "OF PREMIER RETAIL SPACE" },
+    ],
+    trafficCounts: [],
+    mapCenter: { lat: 34.14491618800622, lng: -118.25650632000237 },
+    mapZoom: 18,
+  },
+  "the-grove": {
+    title: "The Grove",
+    description:
+      "The Grove is a landmark open-air shopping, dining and entertainment destination in Los Angeles' Fairfax District. Designed as a walkable urban village, the property blends high-end retailers, flagship national brands, restaurants, an AMC cinema, landscaped streets, a central dancing fountain and its signature electric trolley. Connected to the Original Farmers Market, The Grove attracts local residents, regional shoppers and visitors from around the world with a highly curated tenant mix, year-round programming and a polished, experiential atmosphere.",
+    estimatedRents: "$75-$150 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: galleryTheGrove1,
+        alt: "The Grove dancing fountain and promenade",
+      },
+      {
+        src: galleryTheGrove2,
+        alt: "Retail storefronts at The Grove",
+      },
+      {
+        src: galleryTheGrove3,
+        alt: "Outdoor dining and streetscape at The Grove",
+      },
+      {
+        src: galleryTheGrove4,
+        alt: "Evening view of The Grove",
+      },
+    ],
+    notableBrands: [
+      { name: "Apple", domain: "apple.com" },
+      { name: "Gucci", domain: "gucci.com" },
+      { name: "Nordstrom", domain: "nordstrom.com" },
+      { name: "Nike", domain: "nike.com" },
+      { name: "Ralph Lauren", domain: "ralphlauren.com" },
+      { name: "Zara", domain: "zara.com" },
+      { name: "Aritzia", domain: "aritzia.com" },
+      { name: "Lululemon", domain: "lululemon.com" },
+      { name: "Sephora", domain: "sephora.com" },
+      { name: "Barnes & Noble", domain: "barnesandnoble.com" },
+    ],
+    bikeScore: 68,
+    walkScore: 96,
+    areaStats: [
+      { value: "$164K", label: "AVG. HOUSEHOLD INCOME WITHIN ONE MILE" },
+      { value: "46.3K", label: "RESIDENTS WITHIN ONE MILE" },
+      { value: "71.5K", label: "DAYTIME POPULATION WITHIN ONE MILE" },
+      { value: "575K SF", label: "OF PREMIER RETAIL SPACE" },
+    ],
+    trafficCounts: [
+      { street: "3rd St / Fairfax Ave", count: "40,378 CPD" },
+    ],
+    mapCenter: { lat: 34.07198357761211, lng: -118.35748715851972 },
+    mapZoom: 18,
+  },
+  "the-paseo": {
+    title: "The Paseo",
+    description:
+      "The Paseo is a mixed-use, open-air shopping, dining and entertainment destination in Pasadena's Civic Center district. Occupying a prominent stretch of Colorado Boulevard, the property combines retail, restaurants, fitness and cinema uses with the Hyatt Place hotel and residential lofts in an urban pedestrian setting. Its location across from the Pasadena Convention Center and Civic Auditorium, near major offices and cultural institutions, creates a customer base that includes downtown residents, workers, event attendees and regional visitors.",
+    estimatedRents: "$50-$80 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: galleryThePaseo1,
+        alt: "The Paseo open-air promenade in Pasadena",
+      },
+      {
+        src: galleryThePaseo2,
+        alt: "Retail and dining at The Paseo",
+      },
+      {
+        src: galleryThePaseo3,
+        alt: "Streetscape and storefronts at The Paseo",
+      },
+      {
+        src: galleryThePaseo4,
+        alt: "Evening atmosphere at The Paseo",
+      },
+    ],
+    notableBrands: [
+      { name: "DSW", domain: "dsw.com" },
+      { name: "Equinox", domain: "equinox.com" },
+      { name: "Hyatt Place", domain: "hyatt.com" },
+      { name: "Tommy Bahama", domain: "tommybahama.com" },
+      { name: "West Elm", domain: "westelm.com" },
+      { name: "Bath & Body Works", domain: "bathandbodyworks.com" },
+      { name: "LensCrafters", domain: "lenscrafters.com" },
+      { name: "Yard House", domain: "yardhouse.com" },
+      { name: "Regal Cinemas", domain: "regmovies.com" },
+      { name: "Salon Republic", domain: "salonrepublic.com" },
+    ],
+    bikeScore: 75,
+    walkScore: 96,
+    areaStats: [
+      { value: "$108K", label: "AVG. HOUSEHOLD INCOME WITHIN ONE MILE" },
+      { value: "38.3K", label: "RESIDENTS WITHIN ONE MILE" },
+      { value: "87.7K", label: "DAYTIME POPULATION WITHIN ONE MILE" },
+      { value: "380K SF", label: "OF PREMIER RETAIL SPACE" },
+    ],
+    trafficCounts: [
+      { street: "Colorado Blvd", count: "22,369 CPD" },
+      { street: "Marengo Ave", count: "19,804 CPD" },
+      { street: "Los Robles Ave", count: "15,664 CPD" },
+      { street: "Green St", count: "12,617 CPD" },
+    ],
+    mapCenter: { lat: 34.14585, lng: -118.14355 },
+    mapZoom: 18,
+  },
+  "westfield-century-city": {
+    title: "Westfield Century City",
+    description:
+      "Westfield Century City recently underwent a $800 million transformation, which added over 400,000 square feet for a total of over 1.2 million square feet, making it Westfield's West Coast flagship and one of the premier shopping centers in all of Southern California. This luxury outdoor shopping mecca features everything from luxury brands, new age entertainment, fitness, traditional department stores, and high end eateries.",
+    estimatedRents: "$80-$200 PSF/yr NNN",
+    galleryImages: [
+      { src: galleryWestfield1, alt: "Westfield Century City exterior at night" },
+      { src: galleryWestfield2, alt: "Outdoor walkway at Westfield Century City" },
+      { src: galleryWestfield3, alt: "Eataly at Westfield Century City" },
+      { src: galleryWestfield4, alt: "Central plaza at Westfield Century City" },
+    ],
+    notableBrands: [
+      { name: "Apple", domain: "apple.com" },
+      { name: "Tesla", domain: "tesla.com" },
+      { name: "Nordstrom", domain: "nordstrom.com" },
+      { name: "Lululemon", domain: "lululemon.com" },
+      { name: "Sephora", domain: "sephora.com" },
+      { name: "Adidas", domain: "adidas.com" },
+      { name: "Equinox", domain: "equinox.com" },
+      { name: "Free People", domain: "freepeople.com" },
+      { name: "Warby Parker", domain: "warbyparker.com" },
+      { name: "Aesop", domain: "aesop.com" },
+    ],
+    bikeScore: 65,
+    walkScore: 86,
+    areaStats: [
+      { value: "$1.1M", label: "MEDIAN HOME VALUE" },
+      { value: "19M", label: "ANNUAL VISITORS" },
+      {
+        value: "230K",
+        label: "EMPLOYEES WORKING WITHIN 2 MILES OF WESTFIELD CENTURY CITY",
+      },
+      {
+        value: "$200K",
+        label: "AVERAGE HOUSEHOLD INCOME WITHIN 1 MILE",
+      },
+      {
+        value: "69%",
+        label:
+          "EDUCATION LEVEL OF THE IMMEDIATE POPULATION HAS A BACHELOR'S DEGREE OR HIGHER",
+      },
+    ],
+    trafficCounts: [
+      { street: "Santa Monica Blvd", count: "64,000 CPD" },
+      { street: "Avenue of the Stars", count: "23,000 CPD" },
+    ],
+    mapCenter: { lat: 34.05876376913148, lng: -118.41905072261834 },
+    mapZoom: 18,
+  },
+  "brentwood-country-mart": {
+    title: "Brentwood Country Mart",
+    description:
+      "An open-air, barn themed 30,000 square foot marketplace, the Brentwood Country Mart combines hand picked boutiques and eclectic old-fashioned eateries to create one of the most unique shopping experiences in Los Angeles. Nestled in the affluent neighborhood of Brentwood known for its celebrity sightings, the Brentwood Country Mart attracts much of the surrounding locals as well as many tourists.",
+    estimatedRents: "$110-$190 PSF/yr NNN",
+    galleryImages: [
+      { src: galleryBrentwood1, alt: "Brentwood Country Mart barn exterior" },
+      { src: galleryBrentwood2, alt: "Brentwood Country Mart Since 1948 sign" },
+      { src: galleryBrentwood3, alt: "Outdoor walkway at Brentwood Country Mart" },
+      { src: galleryBrentwood4, alt: "Farmshop entrance at Brentwood Country Mart" },
+    ],
+    notableBrands: [
+      { name: "Goop", domain: "goop.com" },
+      { name: "Farmshop", domain: "farmshop.com" },
+      { name: "Diesel", domain: "diesel.com" },
+      { name: "James Perse", domain: "jamesperse.com" },
+      { name: "Jenni Kayne", domain: "jennikayne.com" },
+      { name: "Caffe Luxxe", domain: "caffeluxxe.com" },
+      { name: "Dôen", domain: "doen.com" },
+      { name: "Sezane", domain: "sezane.com" },
+      { name: "Sid Mashburn", domain: "sidmashburn.com" },
+      { name: "Sweet Rose Creamery", domain: "sweetrosecreamery.com" },
+    ],
+    bikeScore: 47,
+    walkScore: 35,
+    areaStats: [
+      { value: "$2.6M", label: "MEDIAN HOME VALUE" },
+      {
+        value: "$300K",
+        label:
+          "AVG. ANNUAL HOUSEHOLD INCOME OF RESIDENTS, SOME OF THE HIGHEST IN LOS ANGELES",
+      },
+      {
+        value: "1948",
+        label:
+          "BRENTWOOD COUNTRY MART WAS ESTABLISHED, ONE OF THE OLDEST SHOPPING CENTERS IN LOS ANGELES",
+      },
+      {
+        value: "70%",
+        label: "OF RESIDENTS 25 AND OLDER HAVE A FOUR-YEAR DEGREE",
+      },
+    ],
+    trafficCounts: [
+      { street: "San Vicente Blvd", count: "22,000 CPD" },
+      { street: "26th St", count: "14,000 CPD" },
+    ],
+    mapCenter: { lat: 34.047694038862915, lng: -118.49045143346667 },
+    mapZoom: 18,
+  },
   "malibu-country-mart": {
     title: "Malibu Country Mart",
     description:
@@ -384,18 +1001,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryMalibu4, alt: "John Varvatos at Malibu Country Mart" },
     ],
     notableBrands: [
-      { name: "SunLife Organics", domain: "sunlifeorganics.com" },
-      { name: "Double RL & Co.", domain: "ralphlauren.com" },
+      { name: "Ralph Lauren", domain: "ralphlauren.com" },
       { name: "Oliver Peoples", domain: "oliverpeoples.com" },
-      { name: "Chrome Hearts", domain: "chromehearts.com" },
-      { name: "Faherty", domain: "fahertybrand.com" },
       { name: "Brandy Melville", domain: "brandymelville.com" },
       { name: "Vuori", domain: "vuoriclothing.com" },
+      { name: "Vince", domain: "vince.com" },
+      { name: "Chrome Hearts", domain: "chromehearts.com" },
+      { name: "Faherty", domain: "fahertybrand.com" },
       { name: "Gorjana", domain: "gorjana.com" },
-      { name: "Madison Los Angeles", domain: "madisonlosangeles.com" },
       { name: "MR CHOW", domain: "mrchow.com" },
       { name: "Planet Blue", domain: "planetblue.com" },
-      { name: "Vince", domain: "vince.com" },
     ],
     bikeScore: 55,
     walkScore: 45,
@@ -431,21 +1046,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryMalibuVillage4, alt: "Lululemon storefront at Malibu Village" },
     ],
     notableBrands: [
-      { name: "Broad Street Oyster Co.", domain: "broadstreetoyster.com" },
-      { name: "Marine Layer", domain: "marinelayer.com" },
       { name: "Lululemon", domain: "lululemon.com" },
       { name: "Sephora", domain: "sephora.com" },
-      { name: "Catch Surf", domain: "catchsurf.com" },
-      { name: "Wittmore", domain: "wittmore.com" },
-      { name: "Marmalade Cafe", domain: "marmaladecafe.com" },
       { name: "Chipotle", domain: "chipotle.com" },
       { name: "Fred Segal", domain: "fredsegal.com" },
-      { name: "Kreation Organic", domain: "kreationjuice.com" },
-      { name: "Kitson", domain: "kitsonpartners.com" },
-      { name: "RES IPSA", domain: "res-ipsa.com" },
+      { name: "Marine Layer", domain: "marinelayer.com" },
       { name: "LiveWire", domain: "livewire.com" },
-      { name: "Surfing Cowboys", domain: "surfingcowboys.com" },
-      { name: "The Alcove", domain: "thealcove.org" },
+      { name: "Kitson", domain: "kitsonlosangeles.com" },
+      { name: "Marmalade Cafe", domain: "marmaladecafe.com" },
+      { name: "Catch Surf", domain: "catchsurf.com" },
+      { name: "Broad Street Oyster Co.", domain: "broadstreetoyster.com" },
     ],
     bikeScore: 55,
     walkScore: 45,
@@ -481,20 +1091,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: gallerySantaMonicaPlace4, alt: "Nordstrom and plaza at Santa Monica Place" },
     ],
     notableBrands: [
-      { name: "Pandora", domain: "pandora.net" },
-      { name: "Rolex", domain: "rolex.com" },
-      { name: "Aesop", domain: "aesop.com" },
-      { name: "Tesla", domain: "tesla.com" },
-      { name: "Gearys Rolex Boutique", domain: "gearys.com" },
-      { name: "Coach", domain: "coach.com" },
-      { name: "Drybar", domain: "drybarshops.com" },
-      { name: "Chubbies", domain: "chubbiesshorts.com" },
-      { name: "Disney", domain: "disney.com" },
       { name: "Nordstrom", domain: "nordstrom.com" },
-      { name: "Free People", domain: "freepeople.com" },
-      { name: "Barry's", domain: "barrys.com" },
       { name: "Nike", domain: "nike.com" },
+      { name: "Rolex", domain: "rolex.com" },
+      { name: "Tesla", domain: "tesla.com" },
+      { name: "Disney", domain: "disney.com" },
+      { name: "Coach", domain: "coach.com" },
       { name: "Hugo Boss", domain: "hugoboss.com" },
+      { name: "Free People", domain: "freepeople.com" },
+      { name: "Aesop", domain: "aesop.com" },
       { name: "Din Tai Fung", domain: "dintaifungusa.com" },
     ],
     bikeScore: 85,
@@ -531,20 +1136,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     ],
     notableBrands: [
       { name: "Skechers", domain: "skechers.com" },
-      { name: "Splendid", domain: "splendid.com" },
-      { name: "Vuori", domain: "vuoriclothing.com" },
+      { name: "Starbucks", domain: "starbucks.com" },
       { name: "Free People", domain: "freepeople.com" },
       { name: "Salt & Straw", domain: "saltandstraw.com" },
       { name: "Pressed Juicery", domain: "pressed.com" },
-      { name: "Starbucks", domain: "starbucks.com" },
-      { name: "Beyond Yoga", domain: "beyondyoga.com" },
-      { name: "The Shade Store", domain: "shadestore.com" },
-      { name: "Simmzy's", domain: "simmzys.com" },
-      { name: "The Arthur J", domain: "thearthurj.com" },
-      { name: "BLVD", domain: "blvd.com" },
+      { name: "Vuori", domain: "vuoriclothing.com" },
       { name: "Marine Layer", domain: "marinelayer.com" },
-      { name: "Kreation Organic", domain: "kreationjuice.com" },
+      { name: "Beyond Yoga", domain: "beyondyoga.com" },
       { name: "Everything But Water", domain: "everythingbutwater.com" },
+      { name: "Splendid", domain: "splendid.com" },
     ],
     bikeScore: 52,
     walkScore: 73,
@@ -565,6 +1165,66 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     mapCenter: { lat: 33.88637850892859, lng: -118.40589150089282 },
     mapZoom: 17,
   },
+  "old-town-pasadena": {
+    title: "Old Town Pasadena",
+    description:
+      "Located just off of the 710/134 Freeway interchange, approximately 15 minutes east of Downtown Los Angeles, Old Town Pasadena offers a sophisticated, well established shopping experience featuring name brand shops, high end eateries, and luxury boutiques. Colorado Boulevard, the primary east-west commercial corridor, is pedestrian friendly with wide, walkable streets and a vibrant night life. The surrounding community is well educated and affluent, nestled in a historic pocket of Los Angeles County which includes the Rose Bowl, CalTech, and the Huntington Library & Gardens.",
+    estimatedRents: "$90-$130 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: galleryOldTownPasadena1,
+        alt: "Patagonia storefront in a historic red brick building on Colorado Blvd",
+      },
+      {
+        src: galleryOldTownPasadena2,
+        alt: "Outdoor patio at Bodega in Old Town Pasadena",
+      },
+      {
+        src: galleryOldTownPasadena3,
+        alt: "Intelligentsia Coffee outdoor seating in Old Town Pasadena",
+      },
+      {
+        src: galleryOldTownPasadena4,
+        alt: "Tiffany & Co. and pedestrians at a Colorado Blvd intersection",
+      },
+    ],
+    notableBrands: [
+      { name: "Lovesac", domain: "lovesac.com" },
+      { name: "Equinox", domain: "equinox.com" },
+      { name: "Intelligentsia", domain: "intelligentsia.com" },
+      { name: "Lululemon", domain: "lululemon.com" },
+      { name: "Nike", domain: "nike.com" },
+      { name: "Patagonia", domain: "patagonia.com" },
+      { name: "Tesla", domain: "tesla.com" },
+      { name: "Warby Parker", domain: "warbyparker.com" },
+      { name: "Allbirds", domain: "allbirds.com" },
+      { name: "Apple", domain: "apple.com" },
+    ],
+    bikeScore: 95,
+    walkScore: 97,
+    areaStats: [
+      {
+        value: "$3.27B",
+        label: "ESTIMATED CONSUMER EXPENDITURE",
+      },
+      {
+        value: "$113K",
+        label: "AVG. HOUSEHOLD INCOME IN THE TRADE AREA",
+      },
+      {
+        value: "55%",
+        label:
+          "OF THE SURROUNDING POPULATION HAS A BACHELOR'S OR GRADUATE DEGREE",
+      },
+      { value: "52K", label: "EMPLOYEES WITHIN 1 MILE" },
+    ],
+    trafficCounts: [
+      { street: "Colorado Blvd", count: "22,000 CPD" },
+      { street: "Fair Oaks Ave", count: "31,000 CPD" },
+    ],
+    mapCenter: { lat: 34.14575060769234, lng: -118.14410287615394 },
+    mapZoom: 17,
+  },
   "culver-city": {
     title: "Culver City",
     description:
@@ -577,21 +1237,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryCulver4, alt: "Equinox entrance in Downtown Culver City" },
     ],
     notableBrands: [
+      { name: "IN-N-Out Burger", domain: "innoutburger.com" },
+      { name: "Trader Joe's", domain: "traderjoes.com" },
       { name: "CAVA", domain: "cava.com" },
       { name: "Tender Greens", domain: "tendergreens.com" },
-      { name: "Drybar", domain: "drybarshops.com" },
-      { name: "Trader Joe's", domain: "traderjoes.com" },
-      { name: "IN-N-Out Burger", domain: "innoutburger.com" },
       { name: "Ippudo", domain: "ippudo.com" },
+      { name: "Drybar", domain: "drybarshops.com" },
       { name: "Luna Grill", domain: "lunagrill.com" },
-      { name: "Citizen Public Market", domain: "citizenpublicmarket.com" },
-      { name: "Stanley's Wet Goods", domain: "stanleyswetgoods.com" },
       { name: "Breakfast Republic", domain: "breakfastrepublic.com" },
-      { name: "Cafe Vida", domain: "cafevida.net" },
-      { name: "Caffe Luxxe", domain: "caffeluxxe.com" },
-      { name: "33 Taps", domain: "33taps.com" },
-      { name: "Bacari", domain: "bacarirestaurants.com" },
-      { name: "Topson Downs", domain: "topsondowns.com" },
+      { name: "Sephora", domain: "sephora.com" },
+      { name: "Equinox", domain: "equinox.com" },
     ],
     bikeScore: 74,
     walkScore: 96,
@@ -627,20 +1282,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     ],
     notableBrands: [
       { name: "Whole Foods Market", domain: "wholefoodsmarket.com" },
-      { name: "Bardonna", domain: "bardonna.com" },
-      { name: "Sweetgreen", domain: "sweetgreen.com" },
       { name: "Williams-Sonoma", domain: "williams-sonoma.com" },
-      { name: "Sweet Lady Jane", domain: "sweetladyjane.com" },
+      { name: "Sweetgreen", domain: "sweetgreen.com" },
       { name: "Kiehl's", domain: "kiehls.com" },
-      { name: "Splendid", domain: "splendid.com" },
-      { name: "The Shade Store", domain: "shadestore.com" },
-      { name: "Kreation Organic", domain: "kreationjuice.com" },
-      { name: "Avocado", domain: "avocadogreenmattress.com" },
-      { name: "Drybar", domain: "drybar.com" },
+      { name: "Free People", domain: "freepeople.com" },
       { name: "Casper", domain: "casper.com" },
+      { name: "Drybar", domain: "drybar.com" },
       { name: "Brooklinen", domain: "brooklinen.com" },
       { name: "Van Leeuwen", domain: "vanleeuwenicecream.com" },
-      { name: "Free People", domain: "freepeople.com" },
+      { name: "Splendid", domain: "splendid.com" },
     ],
     bikeScore: 81,
     walkScore: 88,
@@ -671,21 +1321,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: gallerySunsetStrip4, alt: "Tocaya Organica on the Sunset Strip" },
     ],
     notableBrands: [
+      { name: "Supreme", domain: "supremenewyork.com" },
+      { name: "SKIMS", domain: "skims.com" },
       { name: "Equinox", domain: "equinox.com" },
+      { name: "SoulCycle", domain: "soul-cycle.com" },
+      { name: "Sweetgreen", domain: "sweetgreen.com" },
       { name: "Oliver Peoples", domain: "oliverpeoples.com" },
       { name: "Kith", domain: "kith.com" },
-      { name: "SunLife Organics", domain: "sunlifeorganics.com" },
-      { name: "Coffee Bean & Tea Leaf", domain: "coffeebean.com" },
-      { name: "H. Lorenzo", domain: "hlorenzo.com" },
       { name: "Bluemercury", domain: "bluemercury.com" },
       { name: "Drybar", domain: "drybarshops.com" },
-      { name: "Tocaya Organica", domain: "tocaya.com" },
-      { name: "Sweetgreen", domain: "sweetgreen.com" },
-      { name: "Supreme", domain: "supremenewyork.com" },
-      { name: "Next Health", domain: "next-health.com" },
-      { name: "SoulCycle", domain: "soul-cycle.com" },
       { name: "Alice + Olivia", domain: "aliceandolivia.com" },
-      { name: "SKIMS", domain: "skims.com" },
     ],
     bikeScore: 29,
     walkScore: 89,

@@ -11,6 +11,19 @@ import heroCulverCity from "@assets/Culver City Photos/culver_cover.jpg";
 import heroMontana from "@assets/Montana Photos/montana_cover.jpg";
 import heroRobertson from "@assets/Robertson Photos/robertson_cover.jpg";
 import heroSunsetStrip from "@assets/Sunset Strip Photos/sunset_strip_cover.jpg";
+import heroBrentwoodCountryMart from "@assets/Brentwood_Countrymart/Brentwood_Cover.jpg";
+import heroThePoint from "@assets/The Point Photos/The_Point_Cover.jpg";
+import heroPlatform from "@assets/The Platform Photos/The_Platform_Cover.jpg";
+import heroWestfieldCenturyCity from "@assets/Westfield Century City Photos/Westfield_Century_City_Cover.jpg";
+import heroThirdStreetPromenade from "@assets/Third Street Promenade Photos/Third_Street_Promenade_Cover.jpg";
+import heroOldTownPasadena from "@assets/Old Town Pasadena Photos/Old_Town_Pasadena_Cover.jpg";
+import heroAmericanaAtBrand from "@assets/Americana at Brand Photos/Americana_at_Brand_Cover.jpg";
+import heroTheGrove from "@assets/The Grove Photos/The_Grove_Cover.jpg";
+import heroThePaseo from "@assets/The Paseo Photos/The_Paseo_Cover.jpg";
+import heroStudioCity from "@assets/Studio City Photos/Studio_Cover.jpg";
+import heroSportsmenLodge from "@assets/Sportsmens Lodge Photos/Sportsmens_Lodge_Cover.jpg";
+import heroOneColorado from "@assets/One Colorado Photos/One_Colorado_Cover.jpg";
+import heroManhattanVillage from "@assets/Manhattan Village Photos/Manhattan_Village_Cover.jpg";
 
 export type CorridorCategory =
   | "high-streets"
@@ -108,6 +121,24 @@ export const HIGH_STREET_CORRIDORS: HighStreetCorridor[] = [
     heroImage: heroSilverlake,
     active: true,
   },
+  {
+    slug: "third-street-promenade",
+    name: "Third Street Promenade",
+    city: "Santa Monica, CA",
+    category: "high-streets",
+    dataKey: "Street - Third Street Promenade",
+    heroImage: heroThirdStreetPromenade,
+    active: true,
+  },
+  {
+    slug: "studio-city",
+    name: "Studio City",
+    city: "Studio City, CA",
+    category: "high-streets",
+    dataKey: "Street - Ventura Blvd",
+    heroImage: heroStudioCity,
+    active: true,
+  },
 
   // ——— SHOPPING DISTRICTS ———
   {
@@ -121,15 +152,32 @@ export const HIGH_STREET_CORRIDORS: HighStreetCorridor[] = [
   },
   {
     slug: "downtown-manhattan-beach",
-    name: "Downtown Manhattan Beach",
+    name: "Manhattan Beach",
     city: "Manhattan Beach, CA",
     category: "shopping-districts",
     dataKey: "Street - Manhattan Beach",
     heroImage: heroManhattanBeach,
     active: true,
   },
-  { slug: "downtown-la", name: "Downtown LA", city: "Los Angeles, CA", category: "shopping-districts", active: false },
-  { slug: "old-town-pasadena", name: "Studio City", city: "Pasadena, CA", category: "shopping-districts", active: false },
+  {
+    slug: "old-town-pasadena",
+    name: "Old Town Pasadena",
+    city: "Pasadena, CA",
+    category: "shopping-districts",
+    dataKey: "Street - Colorado Blvd",
+    heroImage: heroOldTownPasadena,
+    active: true,
+  },
+  {
+    slug: "one-colorado",
+    name: "One Colorado",
+    city: "Pasadena, CA",
+    category: "shopping-centers",
+    // Broader Old Pasadena corridor dataset (same source as Old Town Pasadena)
+    dataKey: "Street - Colorado Blvd",
+    heroImage: heroOneColorado,
+    active: true,
+  },
   {
     slug: "sunset-strip",
     name: "Sunset Strip",
@@ -140,11 +188,23 @@ export const HIGH_STREET_CORRIDORS: HighStreetCorridor[] = [
     active: true,
   },
 
-  // ——— SHOPPING CENTERS (data coming later) ———
-  { slug: "the-grove", name: "The Grove", city: "Los Angeles, CA", category: "shopping-centers", active: false },
-  { slug: "westfield-century-city", name: "Westfield Century City", city: "Los Angeles, CA", category: "shopping-centers", active: false },
-  { slug: "brentwood-country-mart", name: "Brentwood Country Mart", city: "Los Angeles, CA", category: "shopping-centers", active: false },
-  { slug: "the-point", name: "The Point", city: "El Segundo, CA", category: "shopping-centers", active: false },
+  // ——— SHOPPING CENTERS ———
+  {
+    slug: "americana-at-brand",
+    name: "Americana at Brand",
+    city: "Glendale, CA",
+    category: "shopping-centers",
+    heroImage: heroAmericanaAtBrand,
+    active: true,
+  },
+  {
+    slug: "brentwood-country-mart",
+    name: "Brentwood Country Mart",
+    city: "Los Angeles, CA",
+    category: "shopping-centers",
+    heroImage: heroBrentwoodCountryMart,
+    active: true,
+  },
   {
     slug: "malibu-country-mart",
     name: "Malibu Country Mart",
@@ -162,6 +222,22 @@ export const HIGH_STREET_CORRIDORS: HighStreetCorridor[] = [
     active: true,
   },
   {
+    slug: "manhattan-village",
+    name: "Manhattan Village",
+    city: "Manhattan Beach, CA",
+    category: "shopping-centers",
+    heroImage: heroManhattanVillage,
+    active: true,
+  },
+  {
+    slug: "platform",
+    name: "Platform",
+    city: "Culver City, CA",
+    category: "shopping-centers",
+    heroImage: heroPlatform,
+    active: true,
+  },
+  {
     slug: "santa-monica-place",
     name: "Santa Monica Place",
     city: "Santa Monica, CA",
@@ -169,13 +245,53 @@ export const HIGH_STREET_CORRIDORS: HighStreetCorridor[] = [
     heroImage: heroSantaMonicaPlace,
     active: true,
   },
-  { slug: "palisades-village", name: "Sportsmen's Lodge", city: "Pacific Palisades, CA", category: "shopping-centers", active: false },
-  { slug: "platform", name: "The Platform", city: "Culver City, CA", category: "shopping-centers", active: false },
+  {
+    slug: "sportsmen-lodge",
+    name: "Sportsmen's Lodge",
+    city: "Studio City, CA",
+    category: "shopping-centers",
+    heroImage: heroSportsmenLodge,
+    active: true,
+  },
+  {
+    slug: "the-grove",
+    name: "The Grove",
+    city: "Los Angeles, CA",
+    category: "shopping-centers",
+    heroImage: heroTheGrove,
+    active: true,
+  },
+  {
+    slug: "the-paseo",
+    name: "The Paseo",
+    city: "Pasadena, CA",
+    category: "shopping-centers",
+    heroImage: heroThePaseo,
+    active: true,
+  },
+  {
+    slug: "the-point",
+    name: "The Point",
+    city: "El Segundo, CA",
+    category: "shopping-centers",
+    heroImage: heroThePoint,
+    active: true,
+  },
+  {
+    slug: "westfield-century-city",
+    name: "Westfield Century City",
+    city: "Los Angeles, CA",
+    category: "shopping-centers",
+    heroImage: heroWestfieldCenturyCity,
+    active: true,
+  },
 ];
 
-/** Hero carousel — all high street corridors */
-export const HERO_SLIDES = HIGH_STREET_CORRIDORS.filter(
-  (c) => c.category === "high-streets"
+/** Hero carousel — all active corridors with hero art, in category order */
+export const HERO_SLIDES = CATEGORY_ORDER.flatMap((category) =>
+  HIGH_STREET_CORRIDORS.filter(
+    (c) => c.category === category && c.active && Boolean(c.heroImage)
+  )
 );
 
 export function getCorridorBySlug(slug: string): HighStreetCorridor | undefined {

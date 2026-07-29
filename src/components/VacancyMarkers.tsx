@@ -13,12 +13,15 @@ interface VacancyMarkersProps {
   locationGroups: VacancyLocationGroup[];
   focusGroupKey?: string | null;
   onFocusComplete?: () => void;
+  /** When true, markers stay visible but clicks / popups are disabled. */
+  staticMode?: boolean;
 }
 
 export function VacancyMarkers({
   locationGroups,
   focusGroupKey = null,
   onFocusComplete,
+  staticMode = false,
 }: VacancyMarkersProps) {
   const map = useMap();
   const markersRef = useRef<google.maps.Marker[]>([]);
@@ -48,8 +51,10 @@ export function VacancyMarkers({
         zIndex: VACANCY_MARKER_Z_INDEX,
       });
 
-      const listener = marker.addListener("click", () => setSelected(group));
-      listenersRef.current.push(listener);
+      if (!staticMode) {
+        const listener = marker.addListener("click", () => setSelected(group));
+        listenersRef.current.push(listener);
+      }
       marker.setMap(map);
 
       createVacancyPinIcon().then((icon) => {
@@ -68,10 +73,14 @@ export function VacancyMarkers({
       markersRef.current.forEach((m) => m.setMap(null));
       markersRef.current = [];
     };
-  }, [map, locationGroups]);
+  }, [map, locationGroups, staticMode]);
 
   useEffect(() => {
-    if (!map || !focusGroupKey) return;
+    if (staticMode) setSelected(null);
+  }, [staticMode]);
+
+  useEffect(() => {
+    if (!map || !focusGroupKey || staticMode) return;
 
     const group = locationGroups.find((item) => item.key === focusGroupKey);
     if (!group) {
@@ -87,9 +96,9 @@ export function VacancyMarkers({
 
     setSelected(group);
     onFocusComplete?.();
-  }, [focusGroupKey, locationGroups, map, onFocusComplete]);
+  }, [focusGroupKey, locationGroups, map, onFocusComplete, staticMode]);
 
-  if (!selected) return null;
+  if (!selected || staticMode) return null;
 
   return (
     <InfoWindow

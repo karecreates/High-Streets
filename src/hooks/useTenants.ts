@@ -4,9 +4,17 @@ import type { Tenant, TenantsDataset } from "../types/tenant";
 import type { VacanciesDataset, Vacancy } from "../types/vacancy";
 import { isNamedTenant } from "../utils/tenantDisplay";
 
-// Only corridors on the approved list show on the master map.
-const APPROVED_DATA_KEYS = new Set(
-  HIGH_STREET_CORRIDORS.flatMap((c) => (c.dataKey ? [c.dataKey] : []))
+/**
+ * Only active high streets + shopping districts from the dashboard sidebar.
+ * Shopping centers use logo pins / their own directory — not Excel street rows.
+ */
+export const SIDEBAR_TENANT_DATA_KEYS = new Set(
+  HIGH_STREET_CORRIDORS.filter(
+    (c) =>
+      c.active &&
+      Boolean(c.dataKey) &&
+      (c.category === "high-streets" || c.category === "shopping-districts")
+  ).flatMap((c) => (c.dataKey ? [c.dataKey] : []))
 );
 
 export function useTenants() {
@@ -55,7 +63,7 @@ export function useTenants() {
 
     return dataset.tenants.filter((tenant) => {
       if (!isNamedTenant(tenant.tenantName)) return false;
-      if (!APPROVED_DATA_KEYS.has(tenant.highStreet)) return false;
+      if (!SIDEBAR_TENANT_DATA_KEYS.has(tenant.highStreet)) return false;
       if (highStreet !== "all" && tenant.highStreet !== highStreet) {
         return false;
       }
@@ -72,7 +80,7 @@ export function useTenants() {
     const q = search.trim().toLowerCase();
 
     return vacanciesDataset.vacancies.filter((vacancy) => {
-      if (!APPROVED_DATA_KEYS.has(vacancy.highStreet)) return false;
+      if (!SIDEBAR_TENANT_DATA_KEYS.has(vacancy.highStreet)) return false;
       if (highStreet !== "all" && vacancy.highStreet !== highStreet) {
         return false;
       }
@@ -102,15 +110,21 @@ export function useTenants() {
         vacanciesVisible: 0,
       };
     }
-    const mapped = dataset.tenants.filter(
+    const sidebarTenants = dataset.tenants.filter((t) =>
+      SIDEBAR_TENANT_DATA_KEYS.has(t.highStreet)
+    );
+    const mapped = sidebarTenants.filter(
       (t) => t.lat != null && t.lng != null
     ).length;
-    const vacanciesTotal = vacanciesDataset?.vacancies.length ?? 0;
+    const vacanciesTotal =
+      vacanciesDataset?.vacancies.filter((v) =>
+        SIDEBAR_TENANT_DATA_KEYS.has(v.highStreet)
+      ).length ?? 0;
     return {
-      total: dataset.tenants.length,
+      total: sidebarTenants.length,
       mapped,
       visible: filtered.length,
-      needsGeocode: dataset.tenants.length - mapped,
+      needsGeocode: sidebarTenants.length - mapped,
       vacancies: vacanciesTotal,
       vacanciesVisible: filteredVacancies.length,
     };

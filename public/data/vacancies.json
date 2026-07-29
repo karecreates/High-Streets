@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-14T22:47:43.818Z",
-  "sourceFile": "MASTER HIGH STREET DATA.xlsx",
-  "totalRows": 326,
-  "geocodedCount": 326,
+  "generatedAt": "2026-07-28T23:11:29.006Z",
+  "sourceFile": "Occupied_AND_Vacant_Space_7.28.xlsx",
+  "totalRows": 323,
+  "geocodedCount": 323,
   "highStreets": [
     "Street - Abbot Kinney",
     "Street - Arts District",
@@ -561,14 +561,14 @@
     },
     {
       "id": "vacancy-49",
-      "address": "14 N Fair Oaks Ave",
-      "suite": "Ground Floor",
-      "space": "14 N Fair Oaks Ave - Suite Ground Floor - 5,000 sf",
+      "address": "19 S Fair Oaks Ave, Pasadena",
+      "suite": "",
+      "space": "19 S Fair Oaks Ave, Pasadena - Vacant - 700 sf",
       "highStreet": "Street - Colorado Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/256506/summary",
+      "costarUrl": "https://product.costar.com/detail/all-properties/7261369/summary",
       "unitStatus": "Vacant",
-      "lat": 34.1460449,
-      "lng": -118.1502492
+      "lat": 34.1453777,
+      "lng": -118.1506432
     },
     {
       "id": "vacancy-50",
@@ -594,9 +594,53 @@
     },
     {
       "id": "vacancy-52",
+      "address": "25 S Fair Oaks Ave, Pasadena",
+      "suite": "25 1/2",
+      "space": "25 S Fair Oaks Ave, Pasadena - Suite 25 1/2 - 700 sf",
+      "highStreet": "Street - Colorado Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/9983463/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1452858,
+      "lng": -118.1506012
+    },
+    {
+      "id": "vacancy-53",
+      "address": "2 East Colorado Boulevard, Pasadena",
+      "suite": "Entire 1st",
+      "space": "2 East Colorado Boulevard, Pasadena - Suite Entire 1st - 5,663 sf",
+      "highStreet": "Street - Colorado Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/256303/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1455518,
+      "lng": -118.1502731
+    },
+    {
+      "id": "vacancy-54",
+      "address": "33-35 E Colorado Blvd, Pasadena",
+      "suite": "Partial 1st",
+      "space": "33-35 E Colorado Blvd, Pasadena - Suite Partial 1st - 2,528 sf",
+      "highStreet": "Street - Colorado Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/256303/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1466271,
+      "lng": -118.0822889
+    },
+    {
+      "id": "vacancy-55",
+      "address": "33-35 E Colorado Blvd, Pasadena",
+      "suite": "Partial 2nd",
+      "space": "33-35 E Colorado Blvd, Pasadena - Suite Partial 2nd - 3,044 sf",
+      "highStreet": "Street - Colorado Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/256303/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1466271,
+      "lng": -118.0822889
+    },
+    {
+      "id": "vacancy-56",
       "address": "34 E Colorado Blvd, Pasadena",
-      "suite": "",
-      "space": "34 E Colorado Blvd, Pasadena - Vacant Storefront",
+      "suite": "30-32 E Colorado Blvd",
+      "space": "30-32 E Colorado Blvd",
       "highStreet": "Street - Colorado Blvd",
       "costarUrl": "https://product.costar.com/detail/all-properties/256303/summary",
       "unitStatus": "Vacant",
@@ -604,7 +648,7 @@
       "lng": -118.1497292
     },
     {
-      "id": "vacancy-53",
+      "id": "vacancy-57",
       "address": "38-46 E Colorado Blvd, Pasadena",
       "suite": "38-46 E Colorado Blvd",
       "space": "38-46 E Colorado Blvd, Pasadena - Suite 38-46 E Colorado Blvd - 6,500 sf",
@@ -615,7 +659,7 @@
       "lng": -118.0690999
     },
     {
-      "id": "vacancy-54",
+      "id": "vacancy-58",
       "address": "39 E Colorado Blvd",
       "suite": "39 E Colorado Blvd",
       "space": "39 E Colorado Blvd - Suite 39 E Colorado Blvd - 2,800 sf",
@@ -626,29 +670,29 @@
       "lng": -118.1496233
     },
     {
-      "id": "vacancy-55",
-      "address": "43 E Colorado Blvd, Pasadena",
-      "suite": "",
-      "space": "43 E Colorado Blvd, Pasadena - Vacant Storefront",
+      "id": "vacancy-59",
+      "address": "55-61 E Colorado Blvd, Pasadena",
+      "suite": "Partial 1st",
+      "space": "55-61 E Colorado Blvd",
       "highStreet": "Street - Colorado Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/5922088/summary",
+      "costarUrl": "https://product.costar.com/detail/all-properties/252234/summary",
       "unitStatus": "Vacant",
-      "lat": 34.14606,
-      "lng": -118.1495484
+      "lat": 34.1460697,
+      "lng": -118.1493084
     },
     {
-      "id": "vacancy-56",
-      "address": "58 W Colorado Blvd",
-      "suite": "60",
-      "space": "58 W Colorado Blvd - Suite 60 - 12,814 sf",
+      "id": "vacancy-60",
+      "address": "60-64 E Colorado Blvd",
+      "suite": "Level 1",
+      "space": "60-64 E Colorado Blvd - Suite Level 1 - 2,030 sf",
       "highStreet": "Street - Colorado Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/1489619/summary",
+      "costarUrl": "https://product.costar.com/detail/all-properties/82291/summary",
       "unitStatus": "Vacant",
-      "lat": 34.1456277,
-      "lng": -118.151801
+      "lat": 34.1455818,
+      "lng": -118.1491311
     },
     {
-      "id": "vacancy-57",
+      "id": "vacancy-61",
       "address": "88 W Colorado Blvd, Pasadena",
       "suite": "Entire BSMT",
       "space": "88 W Colorado Blvd, Pasadena - Suite Entire BSMT - 4,757 sf",
@@ -659,7 +703,18 @@
       "lng": -118.1523581
     },
     {
-      "id": "vacancy-58",
+      "id": "vacancy-62",
+      "address": "93 W Colorado Blvd, Pasadena",
+      "suite": "Entire 1st",
+      "space": "93 W Colorado Blvd, Pasadena - Suite Entire 1st - 2,640 sf",
+      "highStreet": "Street - Colorado Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/8166207/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1460488,
+      "lng": -118.1525309
+    },
+    {
+      "id": "vacancy-63",
       "address": "2836 E Coast Hwy",
       "suite": "",
       "space": "2836 E Coast Hwy - Vacant Storefront",
@@ -670,7 +725,7 @@
       "lng": -117.8722952
     },
     {
-      "id": "vacancy-59",
+      "id": "vacancy-64",
       "address": "Corona Del Mar Shopping Center",
       "suite": "",
       "space": "Corona Del Mar Shopping Center - Vacant - 1,200 sf",
@@ -681,7 +736,7 @@
       "lng": -117.8730142
     },
     {
-      "id": "vacancy-60",
+      "id": "vacancy-65",
       "address": "3749 Robertson Blvd",
       "suite": "",
       "space": "3749 Robertson Blvd - Vacant - 1,750 sf",
@@ -692,7 +747,7 @@
       "lng": -118.3904636
     },
     {
-      "id": "vacancy-61",
+      "id": "vacancy-66",
       "address": "3751 Robertson Blvd",
       "suite": "",
       "space": "3751 Robertson Blvd - Vacant - 400 sf",
@@ -703,7 +758,7 @@
       "lng": -118.3904557
     },
     {
-      "id": "vacancy-62",
+      "id": "vacancy-67",
       "address": "3809 Main Street",
       "suite": "",
       "space": "3809 Main Street - Vacant -  sf",
@@ -714,7 +769,7 @@
       "lng": -118.27417
     },
     {
-      "id": "vacancy-63",
+      "id": "vacancy-68",
       "address": "3816 Bagley Ave",
       "suite": "",
       "space": "3816 Bagley Ave - Vacant - 1,500 sf",
@@ -725,7 +780,7 @@
       "lng": -118.39457
     },
     {
-      "id": "vacancy-64",
+      "id": "vacancy-69",
       "address": "3849 Main Street",
       "suite": "",
       "space": "3849 Main Street - Vacant -  sf",
@@ -736,7 +791,7 @@
       "lng": -118.2743241
     },
     {
-      "id": "vacancy-65",
+      "id": "vacancy-70",
       "address": "3851 Main Street",
       "suite": "",
       "space": "3851 Main Street - Vacant - 500 sf",
@@ -747,7 +802,7 @@
       "lng": -118.2743241
     },
     {
-      "id": "vacancy-66",
+      "id": "vacancy-71",
       "address": "9000-9298 Venice Blvd",
       "suite": "",
       "space": "9000-9298 Venice Blvd - Vacant -  sf",
@@ -758,7 +813,7 @@
       "lng": -118.39097
     },
     {
-      "id": "vacancy-67",
+      "id": "vacancy-72",
       "address": "9300 Venice Blvd",
       "suite": "",
       "space": "9300 Venice Blvd - Vacant - 676 sf",
@@ -769,7 +824,7 @@
       "lng": -118.3941406
     },
     {
-      "id": "vacancy-68",
+      "id": "vacancy-73",
       "address": "9400-9412 Washington Blvd",
       "suite": "",
       "space": "9400-9412 Washington Blvd - Vacant -  sf",
@@ -780,7 +835,7 @@
       "lng": -118.3934364
     },
     {
-      "id": "vacancy-69",
+      "id": "vacancy-74",
       "address": "9400-9412 Washington Blvd",
       "suite": "",
       "space": "9400-9412 Washington Blvd - Vacant - 0 sf",
@@ -791,7 +846,7 @@
       "lng": -118.3934364
     },
     {
-      "id": "vacancy-70",
+      "id": "vacancy-75",
       "address": "9426-9432 Washington Blvd",
       "suite": "",
       "space": "9426-9432 Washington Blvd - Vacant - 1,635 sf",
@@ -802,7 +857,7 @@
       "lng": -118.3938168
     },
     {
-      "id": "vacancy-71",
+      "id": "vacancy-76",
       "address": "9447-9453 Culver Blvd",
       "suite": "",
       "space": "9447-9453 Culver Blvd - Vacant - 10,902 sf",
@@ -813,7 +868,7 @@
       "lng": -118.3949077
     },
     {
-      "id": "vacancy-72",
+      "id": "vacancy-77",
       "address": "9540 Washington Blvd",
       "suite": "",
       "space": "9540 Washington Blvd - Vacant - 7,280 sf",
@@ -824,7 +879,7 @@
       "lng": -118.3946881
     },
     {
-      "id": "vacancy-73",
+      "id": "vacancy-78",
       "address": "9543 Culver Blvd",
       "suite": "",
       "space": "9543 Culver Blvd - Vacant - 500 sf",
@@ -835,7 +890,7 @@
       "lng": -118.3955535
     },
     {
-      "id": "vacancy-74",
+      "id": "vacancy-79",
       "address": "9736 Venice Blvd",
       "suite": "",
       "space": "9736 Venice Blvd - Vacant - 3,500 sf",
@@ -846,7 +901,7 @@
       "lng": -118.3975119
     },
     {
-      "id": "vacancy-75",
+      "id": "vacancy-80",
       "address": "9901 -9915 Washington Blvd",
       "suite": "",
       "space": "9901 -9915 Washington Blvd - Vacant - 0 sf",
@@ -857,7 +912,7 @@
       "lng": -118.3981267
     },
     {
-      "id": "vacancy-76",
+      "id": "vacancy-81",
       "address": "9901 -9915 Washington Blvd",
       "suite": "",
       "space": "9901 -9915 Washington Blvd - Vacant -  sf",
@@ -868,7 +923,7 @@
       "lng": -118.3981267
     },
     {
-      "id": "vacancy-77",
+      "id": "vacancy-82",
       "address": "1055 S Coast Highway",
       "suite": "",
       "space": "1055 S Coast Highway - Vacant -  sf",
@@ -879,7 +934,7 @@
       "lng": -117.3709
     },
     {
-      "id": "vacancy-78",
+      "id": "vacancy-83",
       "address": "615 S Coast Highway 101",
       "suite": "",
       "space": "615 S Coast Highway 101 - Vacant - 500 sf",
@@ -890,7 +945,7 @@
       "lng": -117.2933864
     },
     {
-      "id": "vacancy-79",
+      "id": "vacancy-84",
       "address": "687 S Coast Highway 101",
       "suite": "",
       "space": "687 S Coast Highway 101 - Vacant -  sf",
@@ -901,7 +956,7 @@
       "lng": -117.2931453
     },
     {
-      "id": "vacancy-80",
+      "id": "vacancy-85",
       "address": "760 S Coast Highway 101",
       "suite": "",
       "space": "760 S Coast Highway 101 - Vacant - 3,445 sf",
@@ -912,7 +967,7 @@
       "lng": -117.2936587
     },
     {
-      "id": "vacancy-81",
+      "id": "vacancy-86",
       "address": "The Lumberyard",
       "suite": "B103",
       "space": "The Lumberyard - Suite B103 - 417 sf",
@@ -923,7 +978,7 @@
       "lng": -121.6491673
     },
     {
-      "id": "vacancy-82",
+      "id": "vacancy-87",
       "address": "The Lumberyard",
       "suite": "B105",
       "space": "The Lumberyard - Suite B105 - 1,591 sf",
@@ -934,7 +989,7 @@
       "lng": -121.6491673
     },
     {
-      "id": "vacancy-83",
+      "id": "vacancy-88",
       "address": "The Lumberyard",
       "suite": "B107",
       "space": "The Lumberyard - Suite B107 - 630 sf",
@@ -945,7 +1000,7 @@
       "lng": -121.6491673
     },
     {
-      "id": "vacancy-84",
+      "id": "vacancy-89",
       "address": "The Lumberyard",
       "suite": "C202",
       "space": "The Lumberyard - Suite C202 - 1,425 sf",
@@ -956,7 +1011,7 @@
       "lng": -121.6491673
     },
     {
-      "id": "vacancy-85",
+      "id": "vacancy-90",
       "address": "The Lumberyard",
       "suite": "C205",
       "space": "The Lumberyard - Suite C205 - 402 sf",
@@ -967,7 +1022,7 @@
       "lng": -121.6491673
     },
     {
-      "id": "vacancy-86",
+      "id": "vacancy-91",
       "address": "The Lumberyard",
       "suite": "C209",
       "space": "The Lumberyard - Suite C209 - 1,517 sf",
@@ -978,7 +1033,7 @@
       "lng": -121.6491673
     },
     {
-      "id": "vacancy-87",
+      "id": "vacancy-92",
       "address": "The Lumberyard",
       "suite": "J104",
       "space": "The Lumberyard - Suite J104 - 3,780 sf",
@@ -989,7 +1044,7 @@
       "lng": -121.6491673
     },
     {
-      "id": "vacancy-88",
+      "id": "vacancy-93",
       "address": "The Ranch At Rancho Santa Fe",
       "suite": "A-70",
       "space": "The Ranch At Rancho Santa Fe - Soul Of Yoga Institute",
@@ -1000,7 +1055,7 @@
       "lng": -117.2026129
     },
     {
-      "id": "vacancy-89",
+      "id": "vacancy-94",
       "address": "361-363 3rd St",
       "suite": "",
       "space": "361-363 3rd St - Vacant Storefront",
@@ -1011,7 +1066,7 @@
       "lng": -118.2428028
     },
     {
-      "id": "vacancy-90",
+      "id": "vacancy-95",
       "address": "470 S Coast Hwy",
       "suite": "",
       "space": "470 S Coast Hwy - Vacant Storefront",
@@ -1022,7 +1077,7 @@
       "lng": -117.782162
     },
     {
-      "id": "vacancy-91",
+      "id": "vacancy-96",
       "address": "1454 Garnet Ave",
       "suite": "1454 Garnet Ave",
       "space": "1454 Garnet Ave - Suite 1454 Garnet Ave - 5,600 sf",
@@ -1033,7 +1088,7 @@
       "lng": -118.2156571
     },
     {
-      "id": "vacancy-92",
+      "id": "vacancy-97",
       "address": "1980 Kettner Blvd",
       "suite": "20",
       "space": "1980 Kettner Blvd - Suite 20 - 6,000 sf",
@@ -1044,7 +1099,7 @@
       "lng": -117.1700395
     },
     {
-      "id": "vacancy-93",
+      "id": "vacancy-98",
       "address": "2215 Kettner Blvd",
       "suite": "",
       "space": "2215 Kettner Blvd - Vacant - 2,100 sf",
@@ -1055,7 +1110,7 @@
       "lng": -117.1706598
     },
     {
-      "id": "vacancy-94",
+      "id": "vacancy-99",
       "address": "2400 Kettner Blvd",
       "suite": "114",
       "space": "2400 Kettner Blvd - Suite 114 -  sf",
@@ -1066,7 +1121,7 @@
       "lng": -117.1719422
     },
     {
-      "id": "vacancy-95",
+      "id": "vacancy-100",
       "address": "2400 Kettner Blvd",
       "suite": "Lab 1",
       "space": "2400 Kettner Blvd - Suite Lab 1 -  sf",
@@ -1077,7 +1132,7 @@
       "lng": -117.1719422
     },
     {
-      "id": "vacancy-96",
+      "id": "vacancy-101",
       "address": "2400 Kettner Blvd",
       "suite": "101",
       "space": "2400 Kettner Blvd - Suite 101 -  sf",
@@ -1088,7 +1143,7 @@
       "lng": -117.1719422
     },
     {
-      "id": "vacancy-97",
+      "id": "vacancy-102",
       "address": "800 W Ivy St",
       "suite": "",
       "space": "800 W Ivy St - Vacant - 1,734 sf",
@@ -1099,7 +1154,7 @@
       "lng": -117.1705449
     },
     {
-      "id": "vacancy-98",
+      "id": "vacancy-103",
       "address": "801 W Hawthorn St",
       "suite": "1",
       "space": "801 W Hawthorn St - Suite 1 - 1,750 sf",
@@ -1110,7 +1165,7 @@
       "lng": -117.1700318
     },
     {
-      "id": "vacancy-99",
+      "id": "vacancy-104",
       "address": "895 Fourth Ave",
       "suite": "",
       "space": "895 Fourth Ave - Vacant -  sf",
@@ -1121,7 +1176,7 @@
       "lng": -117.1608614
     },
     {
-      "id": "vacancy-100",
+      "id": "vacancy-105",
       "address": "904 Fifth Ave",
       "suite": "",
       "space": "904 Fifth Ave - Vacant -  sf",
@@ -1132,18 +1187,7 @@
       "lng": -117.160455
     },
     {
-      "id": "vacancy-101",
-      "address": "1001 South Broadway",
-      "suite": "",
-      "space": "1001 South Broadway - Vacant -  sf",
-      "highStreet": "Street - Figueroa St",
-      "costarUrl": "https://product.costar.com/detail/all-properties/1390954/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0408256,
-      "lng": -118.2579157
-    },
-    {
-      "id": "vacancy-102",
+      "id": "vacancy-106",
       "address": "659 Flower Street",
       "suite": "659",
       "space": "659 Flower St - Suite 659 - 1,400 sf",
@@ -1154,7 +1198,7 @@
       "lng": -118.2588065
     },
     {
-      "id": "vacancy-103",
+      "id": "vacancy-107",
       "address": "877 S Figueroa St",
       "suite": "",
       "space": "877 S Figueroa St - Vacant -  sf",
@@ -1165,7 +1209,7 @@
       "lng": -118.2629158
     },
     {
-      "id": "vacancy-104",
+      "id": "vacancy-108",
       "address": "101-127 S La Brea Ave",
       "suite": "123",
       "space": "101-127 S La Brea Ave - Vacant Storefront",
@@ -1176,7 +1220,7 @@
       "lng": -118.3444124
     },
     {
-      "id": "vacancy-105",
+      "id": "vacancy-109",
       "address": "114 S La Brea Ave, Los Angeles",
       "suite": "114",
       "space": "114 S La Brea Ave, Los Angeles - Suite 114 - 2,700 sf",
@@ -1187,7 +1231,7 @@
       "lng": -118.3437508
     },
     {
-      "id": "vacancy-106",
+      "id": "vacancy-110",
       "address": "118-120 S La Brea Ave, Los Angeles",
       "suite": "118",
       "space": "118-120 S La Brea Ave, Los Angeles - Suite 118 - 1,070 sf",
@@ -1198,7 +1242,7 @@
       "lng": -118.3437851
     },
     {
-      "id": "vacancy-107",
+      "id": "vacancy-111",
       "address": "118-120 S La Brea Ave, Los Angeles",
       "suite": "120",
       "space": "118-120 S La Brea Ave, Los Angeles - Suite 120 - 973 sf",
@@ -1209,7 +1253,7 @@
       "lng": -118.3437851
     },
     {
-      "id": "vacancy-108",
+      "id": "vacancy-112",
       "address": "122-124 S La Brea Ave, Los Angeles",
       "suite": "124",
       "space": "122-124 S La Brea Ave, Los Angeles - Suite 124 - 995 sf",
@@ -1220,7 +1264,7 @@
       "lng": -118.34383
     },
     {
-      "id": "vacancy-109",
+      "id": "vacancy-113",
       "address": "122-124 S La Brea Ave, Los Angeles",
       "suite": "122",
       "space": "122-124 S La Brea Ave, Los Angeles - Suite 122 - 1,802 sf",
@@ -1231,7 +1275,7 @@
       "lng": -118.34383
     },
     {
-      "id": "vacancy-110",
+      "id": "vacancy-114",
       "address": "126-128 S La Brea Ave, Los Angeles",
       "suite": "126 partial 1st",
       "space": "126-128 S La Brea Ave, Los Angeles - Suite 126 partial 1st - 1,049 sf",
@@ -1242,7 +1286,7 @@
       "lng": -118.3437518
     },
     {
-      "id": "vacancy-111",
+      "id": "vacancy-115",
       "address": "126-128 S La Brea Ave, Los Angeles",
       "suite": "126 partial 2nd",
       "space": "126-128 S La Brea Ave, Los Angeles - Suite 126 partial 2nd - 494 sf",
@@ -1253,7 +1297,7 @@
       "lng": -118.3437518
     },
     {
-      "id": "vacancy-112",
+      "id": "vacancy-116",
       "address": "130 N La Brea Ave",
       "suite": "130",
       "space": "130 N La Brea Ave - Suite 130 - 2,400 sf",
@@ -1264,7 +1308,7 @@
       "lng": -118.3437992
     },
     {
-      "id": "vacancy-113",
+      "id": "vacancy-117",
       "address": "137 N La Brea Ave",
       "suite": "",
       "space": "137 N La Brea Ave - Vacant - 3,809 sf",
@@ -1275,7 +1319,7 @@
       "lng": -118.3442894
     },
     {
-      "id": "vacancy-114",
+      "id": "vacancy-118",
       "address": "138-144 S La Brea Ave, Los Angeles",
       "suite": "140-144",
       "space": "138-144 S La Brea Ave, Los Angeles - Suite 140-144 - 2,000 sf",
@@ -1286,7 +1330,7 @@
       "lng": -118.3437871
     },
     {
-      "id": "vacancy-115",
+      "id": "vacancy-119",
       "address": "150 S La Brea Ave, Los Angeles",
       "suite": "",
       "space": "150 S La Brea Ave, Los Angeles - Vacant - 5,520 sf",
@@ -1297,7 +1341,7 @@
       "lng": -118.343728
     },
     {
-      "id": "vacancy-116",
+      "id": "vacancy-120",
       "address": "152 N La Brea Ave",
       "suite": "Partial 1st",
       "space": "152 N La Brea Ave - Suite Partial 1st - 1,550 sf",
@@ -1308,7 +1352,7 @@
       "lng": -118.3437079
     },
     {
-      "id": "vacancy-117",
+      "id": "vacancy-121",
       "address": "159-165 S La Brea Ave, Los Angeles",
       "suite": "161",
       "space": "159-165 S La Brea Ave, Los Angeles - Suite 161 - 4,000 sf",
@@ -1319,7 +1363,7 @@
       "lng": -118.344364
     },
     {
-      "id": "vacancy-118",
+      "id": "vacancy-122",
       "address": "169 N La Brea Ave",
       "suite": "Partial GRND",
       "space": "169 N La Brea Ave - Suite Partial GRND - 7,000 sf",
@@ -1330,7 +1374,7 @@
       "lng": -118.3443244
     },
     {
-      "id": "vacancy-119",
+      "id": "vacancy-123",
       "address": "175-177 S La Brea Ave, Los Angeles",
       "suite": "175",
       "space": "175-177 S La Brea Ave, Los Angeles - Suite 175 - 659 sf",
@@ -1341,7 +1385,7 @@
       "lng": -118.344243
     },
     {
-      "id": "vacancy-120",
+      "id": "vacancy-124",
       "address": "200 S La Brea Ave, Los Angeles",
       "suite": "Partial 1st",
       "space": "200 S La Brea Ave, Los Angeles - Suite Partial 1st - 8,797 sf",
@@ -1352,7 +1396,7 @@
       "lng": -118.3437302
     },
     {
-      "id": "vacancy-121",
+      "id": "vacancy-125",
       "address": "323 S La Brea Ave",
       "suite": "Entire 1st",
       "space": "323 S La Brea Ave - Suite Entire 1st - 3,179 sf",
@@ -1363,7 +1407,7 @@
       "lng": -118.344351
     },
     {
-      "id": "vacancy-122",
+      "id": "vacancy-126",
       "address": "323 S La Brea Ave",
       "suite": "Entire MEZZ",
       "space": "323 S La Brea Ave - Suite Entire MEZZ - 2,271 sf",
@@ -1374,7 +1418,7 @@
       "lng": -118.344351
     },
     {
-      "id": "vacancy-123",
+      "id": "vacancy-127",
       "address": "124-148 N Larchmont Blvd, Los Angeles",
       "suite": "202 Partial 2nd",
       "space": "124-148 N Larchmont Blvd, Los Angeles - Suite 202 Partial 2nd - 883 sf",
@@ -1385,7 +1429,7 @@
       "lng": -118.3233952
     },
     {
-      "id": "vacancy-124",
+      "id": "vacancy-128",
       "address": "206-228 N Larchmont Blvd, Los Angeles",
       "suite": "226",
       "space": "206-228 N Larchmont Blvd, Los Angeles - Suite 226 - 10,135 sf",
@@ -1396,7 +1440,7 @@
       "lng": -118.3233659
     },
     {
-      "id": "vacancy-125",
+      "id": "vacancy-129",
       "address": "249 North Larchmont Boulevard",
       "suite": "249 Partial 1st",
       "space": "249 North Larchmont Boulevard - Suite 249 Partial 1st - 4,000 sf",
@@ -1407,7 +1451,7 @@
       "lng": -118.3240034
     },
     {
-      "id": "vacancy-126",
+      "id": "vacancy-130",
       "address": "251 N Larchmont Boulevard",
       "suite": "251 Partial 1st",
       "space": "251 N Larchmont Boulevard - Suite 251 Partial 1st - 535 sf",
@@ -1418,7 +1462,7 @@
       "lng": -118.3238903
     },
     {
-      "id": "vacancy-127",
+      "id": "vacancy-131",
       "address": "251 N Larchmont Boulevard",
       "suite": "251 Partial 2nd",
       "space": "251 N Larchmont Boulevard - Suite 251 Partial 2nd - 3,985 sf",
@@ -1429,7 +1473,7 @@
       "lng": -118.3238903
     },
     {
-      "id": "vacancy-128",
+      "id": "vacancy-132",
       "address": "251 N Larchmont Boulevard",
       "suite": "Partial 1st",
       "space": "251 N Larchmont Boulevard - Suite Partial 1st - 4,000 sf",
@@ -1440,7 +1484,7 @@
       "lng": -118.3238903
     },
     {
-      "id": "vacancy-129",
+      "id": "vacancy-133",
       "address": "316 N Larchmont Blvd",
       "suite": "",
       "space": "316 N Larchmont Blvd - Vacant -  sf",
@@ -1451,7 +1495,7 @@
       "lng": -118.3232785
     },
     {
-      "id": "vacancy-130",
+      "id": "vacancy-134",
       "address": "330-336 N Larchmont Blvd, Los Angeles",
       "suite": "",
       "space": "330-336 N Larchmont Blvd, Los Angeles - Vacant - 1,250 sf",
@@ -1462,7 +1506,7 @@
       "lng": -118.3233068
     },
     {
-      "id": "vacancy-131",
+      "id": "vacancy-135",
       "address": "418-420 N Larchmont Boulevard",
       "suite": "Suite 1, partial 2nd",
       "space": "418-420 N Larchmont Boulevard - Suite Suite 1, partial 2nd - 1,500 sf",
@@ -1473,7 +1517,7 @@
       "lng": -118.323311
     },
     {
-      "id": "vacancy-132",
+      "id": "vacancy-136",
       "address": "429 North Larchmont Boulevard",
       "suite": "",
       "space": "429 North Larchmont Boulevard - Vacant -  sf",
@@ -1484,7 +1528,7 @@
       "lng": -118.3240132
     },
     {
-      "id": "vacancy-133",
+      "id": "vacancy-137",
       "address": "501 N Larchmont Blvd, Los Angeles",
       "suite": "5301",
       "space": "501 N Larchmont Blvd, Los Angeles - Suite 5301 - 1,500 sf",
@@ -1495,7 +1539,7 @@
       "lng": -118.3239467
     },
     {
-      "id": "vacancy-134",
+      "id": "vacancy-138",
       "address": "512 N Larchmont Boulevard",
       "suite": "512",
       "space": "512 N Larchmont Boulevard - Suite 512 - 4,480 sf",
@@ -1506,7 +1550,7 @@
       "lng": -118.3234348
     },
     {
-      "id": "vacancy-135",
+      "id": "vacancy-139",
       "address": "5613 Melrose Avenue",
       "suite": "",
       "space": "5613 Melrose Avenue - Vacant -  sf",
@@ -1517,7 +1561,7 @@
       "lng": -118.3227339
     },
     {
-      "id": "vacancy-136",
+      "id": "vacancy-140",
       "address": "5615 Melrose Ave, Los Angeles",
       "suite": "",
       "space": "5615 Melrose Ave, Los Angeles - Vacant -  sf",
@@ -1528,7 +1572,7 @@
       "lng": -118.32269
     },
     {
-      "id": "vacancy-137",
+      "id": "vacancy-141",
       "address": "5635-5637 Melrose Ave, Los Angeles",
       "suite": "Entire 1st",
       "space": "5635-5637 Melrose Ave, Los Angeles - Suite Entire 1st - 6,000 sf",
@@ -1539,7 +1583,7 @@
       "lng": -118.3235015
     },
     {
-      "id": "vacancy-138",
+      "id": "vacancy-142",
       "address": "589 N Larchmont Boulevard",
       "suite": "Level 2",
       "space": "589 N Larchmont Boulevard - Suite Level 2 - 3,300 sf",
@@ -1550,7 +1594,7 @@
       "lng": -118.3239626
     },
     {
-      "id": "vacancy-139",
+      "id": "vacancy-143",
       "address": "606 N Larchmont Boulevard",
       "suite": "302",
       "space": "606 N Larchmont Boulevard - Suite 302 - 1,460 sf",
@@ -1561,7 +1605,7 @@
       "lng": -118.3233873
     },
     {
-      "id": "vacancy-140",
+      "id": "vacancy-144",
       "address": "606 N Larchmont Boulevard",
       "suite": "205",
       "space": "606 N Larchmont Boulevard - Suite 205 - 829 sf",
@@ -1572,7 +1616,7 @@
       "lng": -118.3233873
     },
     {
-      "id": "vacancy-141",
+      "id": "vacancy-145",
       "address": "606 N Larchmont Boulevard",
       "suite": "204",
       "space": "606 N Larchmont Boulevard - Suite 204 - 1,032 sf",
@@ -1583,7 +1627,7 @@
       "lng": -118.3233873
     },
     {
-      "id": "vacancy-142",
+      "id": "vacancy-146",
       "address": "606 N Larchmont Boulevard",
       "suite": "112",
       "space": "606 N Larchmont Boulevard - Suite 112 - 1,060 sf",
@@ -1594,7 +1638,7 @@
       "lng": -118.3233873
     },
     {
-      "id": "vacancy-143",
+      "id": "vacancy-147",
       "address": "622 N Larchmont Boulevard",
       "suite": "Partial 1st",
       "space": "622 N Larchmont Boulevard - Suite Partial 1st - 1,385 sf",
@@ -1605,7 +1649,7 @@
       "lng": -118.3233745
     },
     {
-      "id": "vacancy-144",
+      "id": "vacancy-148",
       "address": "626 N Larchmont Boulevard",
       "suite": "Entire 2nd",
       "space": "626 N Larchmont Boulevard - Suite Entire 2nd - 750 sf",
@@ -1616,7 +1660,7 @@
       "lng": -118.3233351
     },
     {
-      "id": "vacancy-145",
+      "id": "vacancy-149",
       "address": "626 N Larchmont Boulevard",
       "suite": "Entire 1st",
       "space": "626 N Larchmont Boulevard - Suite Entire 1st - 1,422 sf",
@@ -1627,7 +1671,7 @@
       "lng": -118.3233351
     },
     {
-      "id": "vacancy-146",
+      "id": "vacancy-150",
       "address": "643 Larchmont Blvd, Los Angeles",
       "suite": "",
       "space": "643 Larchmont Blvd, Los Angeles - Vacant -  sf",
@@ -1638,7 +1682,7 @@
       "lng": -118.324055
     },
     {
-      "id": "vacancy-147",
+      "id": "vacancy-151",
       "address": "1016 Manhattan Ave, Manhattan Beach",
       "suite": "",
       "space": "1016 Manhattan Ave, Manhattan Beach - Vacant -  sf",
@@ -1649,7 +1693,7 @@
       "lng": -118.4101075
     },
     {
-      "id": "vacancy-148",
+      "id": "vacancy-152",
       "address": "1112 Ocean Drive, Manhattan Beach",
       "suite": "",
       "space": "1112 Ocean Drive, Manhattan Beach - Vacant - 1,953 sf",
@@ -1660,7 +1704,7 @@
       "lng": -118.410971
     },
     {
-      "id": "vacancy-149",
+      "id": "vacancy-153",
       "address": "1112 Ocean Drive, Manhattan Beach",
       "suite": "",
       "space": "1112 Ocean Drive, Manhattan Beach - Vacant - 2,000 sf",
@@ -1671,7 +1715,7 @@
       "lng": -118.410971
     },
     {
-      "id": "vacancy-150",
+      "id": "vacancy-154",
       "address": "1140-1142 Highland Ave, Manhattan Beach",
       "suite": "",
       "space": "1140 Highland Ave, Manhattan Beach - Vacant -  sf",
@@ -1682,7 +1726,7 @@
       "lng": -118.4097837
     },
     {
-      "id": "vacancy-151",
+      "id": "vacancy-155",
       "address": "1141-1151 Manhattan Ave",
       "suite": "",
       "space": "1141-1151 Manhattan Ave - Vacant - 840 sf",
@@ -1693,7 +1737,7 @@
       "lng": -118.3991555
     },
     {
-      "id": "vacancy-152",
+      "id": "vacancy-156",
       "address": "1212 - 1220 Highland Ave",
       "suite": "",
       "space": "1212 - 1220 Highland Ave - Vacant -  sf",
@@ -1704,7 +1748,7 @@
       "lng": -117.9662074
     },
     {
-      "id": "vacancy-153",
+      "id": "vacancy-157",
       "address": "125 Manhattan Beach Blvd, Manhattan Beach",
       "suite": "",
       "space": "125 Manhattan Beach Blvd, Manhattan Beach - Vacant - 1,720 sf",
@@ -1715,7 +1759,7 @@
       "lng": -118.4112252
     },
     {
-      "id": "vacancy-154",
+      "id": "vacancy-158",
       "address": "213- 215 Manhattan Beach Blvd, Manhattan Beach",
       "suite": "",
       "space": "213- 215 Manhattan Beach Blvd, Manhattan Beach - Vacant - 4,816 sf",
@@ -1726,7 +1770,7 @@
       "lng": -118.4104686
     },
     {
-      "id": "vacancy-155",
+      "id": "vacancy-159",
       "address": "232 Manhattan Beach Blvd, Manhattan Beach",
       "suite": "",
       "space": "232 Manhattan Beach Blvd, Manhattan Beach - Vacant - 622 sf",
@@ -1737,7 +1781,7 @@
       "lng": -118.4097434
     },
     {
-      "id": "vacancy-156",
+      "id": "vacancy-160",
       "address": "308 Manhattan Beach Blvd, Manhattan Beach",
       "suite": "",
       "space": "308 Manhattan Beach Blvd, Manhattan Beach - Vacant -  sf",
@@ -1748,7 +1792,7 @@
       "lng": -118.4093204
     },
     {
-      "id": "vacancy-157",
+      "id": "vacancy-161",
       "address": "328 Manhattan Beach Blvd, Manhattan Beach",
       "suite": "",
       "space": "328 Manhattan Beach Blvd, Manhattan Beach - Vacant -  sf",
@@ -1759,7 +1803,7 @@
       "lng": -118.4088184
     },
     {
-      "id": "vacancy-158",
+      "id": "vacancy-162",
       "address": "605-611 N La Cienega Blvd, West Hollywood",
       "suite": "603 N La Cienega Blvd Level 2, Los Angeles, CA 900",
       "space": "605-611 N La Cienega Blvd, West Hollywood - Vacant Storefront",
@@ -1770,7 +1814,7 @@
       "lng": -118.3767509
     },
     {
-      "id": "vacancy-159",
+      "id": "vacancy-163",
       "address": "650 N La Cienega Blvd",
       "suite": "Level 2",
       "space": "650 N La Cienega Blvd - Suite Level 2 - 3,468 sf",
@@ -1781,7 +1825,7 @@
       "lng": -118.3761439
     },
     {
-      "id": "vacancy-160",
+      "id": "vacancy-164",
       "address": "650 N La Cienega Blvd",
       "suite": "Level 1",
       "space": "650 N La Cienega Blvd - Suite Level 1 - 10,595 sf",
@@ -1792,7 +1836,7 @@
       "lng": -118.3761439
     },
     {
-      "id": "vacancy-161",
+      "id": "vacancy-165",
       "address": "8011-8013 Melrose Ave",
       "suite": "8013",
       "space": "8011-8013 Melrose Ave - Suite 8013 - 2,955 sf",
@@ -1803,7 +1847,7 @@
       "lng": -118.3642286
     },
     {
-      "id": "vacancy-162",
+      "id": "vacancy-166",
       "address": "8017-8021 Melrose Ave",
       "suite": "8019",
       "space": "8017-8021 Melrose Ave - Suite 8019 - 1,300 sf",
@@ -1814,7 +1858,7 @@
       "lng": -118.364355
     },
     {
-      "id": "vacancy-163",
+      "id": "vacancy-167",
       "address": "8109-8113 1/2 Melrose Ave, Los Angeles",
       "suite": "Level 1",
       "space": "8109-8113 1/2 Melrose Ave, Los Angeles - Suite Level 1 - 2,000 sf",
@@ -1825,7 +1869,7 @@
       "lng": -118.2885395
     },
     {
-      "id": "vacancy-164",
+      "id": "vacancy-168",
       "address": "8115-8115 1/2 Melrose Ave, Los Angeles",
       "suite": "",
       "space": "8115-8115 1/2 Melrose Ave, Los Angeles - Vacant - 4,000 sf",
@@ -1836,7 +1880,7 @@
       "lng": -118.2885395
     },
     {
-      "id": "vacancy-165",
+      "id": "vacancy-169",
       "address": "8117-8127 Melrose Ave, Los Angeles",
       "suite": "8117 partial 1st floor",
       "space": "8117-8127 Melrose Ave, Los Angeles - Suite 8117 partial 1st floor - 979 sf",
@@ -1847,7 +1891,7 @@
       "lng": -118.3666092
     },
     {
-      "id": "vacancy-166",
+      "id": "vacancy-170",
       "address": "8117-8127 Melrose Ave, Los Angeles",
       "suite": "8119 partial 1st floor",
       "space": "8117-8127 Melrose Ave, Los Angeles - Suite 8119 partial 1st floor - 1,836 sf",
@@ -1858,7 +1902,7 @@
       "lng": -118.3666092
     },
     {
-      "id": "vacancy-167",
+      "id": "vacancy-171",
       "address": "8117-8127 Melrose Ave, Los Angeles",
       "suite": "8125 partial 1st floor",
       "space": "8117-8127 Melrose Ave, Los Angeles - Suite 8125 partial 1st floor - 2,407 sf",
@@ -1869,7 +1913,7 @@
       "lng": -118.3666092
     },
     {
-      "id": "vacancy-168",
+      "id": "vacancy-172",
       "address": "8151 MELROSE Ave, Los Angeles",
       "suite": "",
       "space": "8151 MELROSE Ave, Los Angeles - Vacant - 6,904 sf",
@@ -1880,7 +1924,7 @@
       "lng": -118.3672095
     },
     {
-      "id": "vacancy-169",
+      "id": "vacancy-173",
       "address": "8164-8168 Melrose Ave, Los Angeles",
       "suite": "Partial 1st",
       "space": "8164-8168 Melrose Ave, Los Angeles - Suite Partial 1st - 800 sf",
@@ -1891,7 +1935,7 @@
       "lng": -118.3675441
     },
     {
-      "id": "vacancy-170",
+      "id": "vacancy-174",
       "address": "8214-8216 Melrose Ave",
       "suite": "8214-8216",
       "space": "8214-8216 Melrose Ave - Suite 8214-8216 - 2,251 sf",
@@ -1902,7 +1946,7 @@
       "lng": -118.3686206
     },
     {
-      "id": "vacancy-171",
+      "id": "vacancy-175",
       "address": "8250-8256 Melrose Ave, Los Angeles",
       "suite": "Partial 1st",
       "space": "8250-8256 Melrose Ave, Los Angeles - Suite Partial 1st - 2,620 sf",
@@ -1913,7 +1957,7 @@
       "lng": -118.3692944
     },
     {
-      "id": "vacancy-172",
+      "id": "vacancy-176",
       "address": "8264-8268 Melrose Ave, Los Angeles",
       "suite": "8264",
       "space": "8264-8268 Melrose Ave, Los Angeles - Suite 8264 - 1,000 sf",
@@ -1924,7 +1968,7 @@
       "lng": -118.3697021
     },
     {
-      "id": "vacancy-173",
+      "id": "vacancy-177",
       "address": "8271 Melrose Ave",
       "suite": "200",
       "space": "8271 Melrose Ave - Suite 200 - 1,700 sf",
@@ -1935,7 +1979,7 @@
       "lng": -118.3696949
     },
     {
-      "id": "vacancy-174",
+      "id": "vacancy-178",
       "address": "8300-8306 Melrose Ave",
       "suite": "Partial 1st",
       "space": "8300-8306 Melrose Ave - Suite Partial 1st - 2,200 sf",
@@ -1946,7 +1990,7 @@
       "lng": -118.3705325
     },
     {
-      "id": "vacancy-175",
+      "id": "vacancy-179",
       "address": "8360 Melrose Ave, Los Angeles",
       "suite": "104",
       "space": "8360 Melrose Ave, Los Angeles - Suite 104 - 1,104 sf",
@@ -1957,7 +2001,7 @@
       "lng": -118.3723845
     },
     {
-      "id": "vacancy-176",
+      "id": "vacancy-180",
       "address": "8360 Melrose Ave, Los Angeles",
       "suite": "105",
       "space": "8360 Melrose Ave, Los Angeles - Suite 105 - 1,363 sf",
@@ -1968,7 +2012,7 @@
       "lng": -118.3723845
     },
     {
-      "id": "vacancy-177",
+      "id": "vacancy-181",
       "address": "8378-8384 Melrose Ave, Los Angeles",
       "suite": "8378 partial 1st",
       "space": "8378-8384 Melrose Ave, Los Angeles - Suite 8378 partial 1st - 2,000 sf",
@@ -1979,7 +2023,7 @@
       "lng": -118.3728326
     },
     {
-      "id": "vacancy-178",
+      "id": "vacancy-182",
       "address": "8378-8384 Melrose Ave, Los Angeles",
       "suite": "8382 partial 1st",
       "space": "8378-8384 Melrose Ave, Los Angeles - Suite 8382 partial 1st - 2,062 sf",
@@ -1990,7 +2034,7 @@
       "lng": -118.3728326
     },
     {
-      "id": "vacancy-179",
+      "id": "vacancy-183",
       "address": "8378-8384 Melrose Ave, Los Angeles",
       "suite": "8384 partial 1st",
       "space": "8378-8384 Melrose Ave, Los Angeles - Suite 8384 partial 1st - 2,073 sf",
@@ -2001,7 +2045,7 @@
       "lng": -118.3728326
     },
     {
-      "id": "vacancy-180",
+      "id": "vacancy-184",
       "address": "8378-8384 Melrose Ave, Los Angeles",
       "suite": "Penthouse",
       "space": "8378-8384 Melrose Ave, Los Angeles - Suite Penthouse - 2,422 sf",
@@ -2012,7 +2056,7 @@
       "lng": -118.3728326
     },
     {
-      "id": "vacancy-181",
+      "id": "vacancy-185",
       "address": "8378-8384 Melrose Ave, Los Angeles",
       "suite": "Entire 3rd floor",
       "space": "8378-8384 Melrose Ave, Los Angeles - Suite Entire 3rd floor - 7,422 sf",
@@ -2023,7 +2067,7 @@
       "lng": -118.3728326
     },
     {
-      "id": "vacancy-182",
+      "id": "vacancy-186",
       "address": "8378-8384 Melrose Ave, Los Angeles",
       "suite": "Entire 2nd floor",
       "space": "8378-8384 Melrose Ave, Los Angeles - Suite Entire 2nd floor - 5,400 sf",
@@ -2034,7 +2078,7 @@
       "lng": -118.3728326
     },
     {
-      "id": "vacancy-183",
+      "id": "vacancy-187",
       "address": "8400-8406 Melrose Ave, West Hollywood",
       "suite": "8406",
       "space": "8400-8406 Melrose Ave, West Hollywood - Suite 8406 - 1,438 sf",
@@ -2045,7 +2089,7 @@
       "lng": -118.3735264
     },
     {
-      "id": "vacancy-184",
+      "id": "vacancy-188",
       "address": "8412-8414 Melrose Ave, Los Angeles",
       "suite": "8414",
       "space": "8412-8414 Melrose Ave, Los Angeles - Suite 8414 - 1,470 sf",
@@ -2056,7 +2100,7 @@
       "lng": -118.373681
     },
     {
-      "id": "vacancy-185",
+      "id": "vacancy-189",
       "address": "8412-8414 Melrose Ave, Los Angeles",
       "suite": "8412",
       "space": "8412-8414 Melrose Ave, Los Angeles - Suite 8412 - 1,528 sf",
@@ -2067,7 +2111,7 @@
       "lng": -118.373681
     },
     {
-      "id": "vacancy-186",
+      "id": "vacancy-190",
       "address": "8420-8430 Melrose Ave, West Hollywood",
       "suite": "8422",
       "space": "8420-8430 Melrose Ave, West Hollywood - Suite 8422 - 2,117 sf",
@@ -2078,7 +2122,7 @@
       "lng": -118.3737469
     },
     {
-      "id": "vacancy-187",
+      "id": "vacancy-191",
       "address": "8461-8463 Melrose Ave, West Hollywood",
       "suite": "",
       "space": "8461-8463 Melrose Ave, West Hollywood - Vacant Storefront",
@@ -2089,7 +2133,7 @@
       "lng": -118.375417
     },
     {
-      "id": "vacancy-188",
+      "id": "vacancy-192",
       "address": "8469-8473 Melrose Ave",
       "suite": "8469",
       "space": "8469-8473 Melrose Ave - Vacant Storefront",
@@ -2100,7 +2144,7 @@
       "lng": -118.375607
     },
     {
-      "id": "vacancy-189",
+      "id": "vacancy-193",
       "address": "8479 Melrose Ave, West Hollywood",
       "suite": "Entire 1st floor",
       "space": "8479 Melrose Ave, West Hollywood - Suite Entire 1st floor - 4,010 sf",
@@ -2111,7 +2155,7 @@
       "lng": -118.3758925
     },
     {
-      "id": "vacancy-190",
+      "id": "vacancy-194",
       "address": "8500 Melrose Avenue, West Hollywood",
       "suite": "Partial 2nd",
       "space": "8500 Melrose Avenue, West Hollywood - Suite Partial 2nd - 1,174 sf",
@@ -2122,7 +2166,7 @@
       "lng": -118.3773304
     },
     {
-      "id": "vacancy-191",
+      "id": "vacancy-195",
       "address": "8500 Melrose Avenue, West Hollywood",
       "suite": "Partian ground",
       "space": "8500 Melrose Avenue, West Hollywood - Suite Partian ground - 4,157 sf",
@@ -2133,7 +2177,7 @@
       "lng": -118.3773304
     },
     {
-      "id": "vacancy-192",
+      "id": "vacancy-196",
       "address": "1021 Montana Ave, Santa Monica",
       "suite": "A",
       "space": "1021 Montana Ave, Santa Monica - Suite A - 302 sf",
@@ -2144,7 +2188,7 @@
       "lng": -118.4985595
     },
     {
-      "id": "vacancy-193",
+      "id": "vacancy-197",
       "address": "1201-1209 Montana Ave",
       "suite": "1205",
       "space": "1201-1209 Montana Ave - Suite 1205 - 850 sf",
@@ -2155,7 +2199,7 @@
       "lng": -118.4970911
     },
     {
-      "id": "vacancy-194",
+      "id": "vacancy-198",
       "address": "1302-1316 Montana Ave, Santa Monica",
       "suite": "1310 Entire 2nd",
       "space": "1302-1316 Montana Ave, Santa Monica - Suite 1310 Entire 2nd - 6,944 sf",
@@ -2166,7 +2210,7 @@
       "lng": -118.49579
     },
     {
-      "id": "vacancy-195",
+      "id": "vacancy-199",
       "address": "8840 Washington Blvd",
       "suite": "",
       "space": "8840 Washington Blvd - Vacant - 24,180 sf",
@@ -2177,7 +2221,7 @@
       "lng": -118.3877267
     },
     {
-      "id": "vacancy-196",
+      "id": "vacancy-200",
       "address": "100-104 S Robertson Blvd, Los Angeles",
       "suite": "",
       "space": "100-104 S Robertson Blvd, Los Angeles - Vacant -  sf",
@@ -2188,7 +2232,7 @@
       "lng": -118.3833473
     },
     {
-      "id": "vacancy-197",
+      "id": "vacancy-201",
       "address": "100-108 N Robertson Blvd, Los Angeles",
       "suite": "",
       "space": "100-108 N Robertson Blvd, Los Angeles - Vacant -  sf",
@@ -2199,7 +2243,7 @@
       "lng": -118.3834782
     },
     {
-      "id": "vacancy-198",
+      "id": "vacancy-202",
       "address": "101-109 S Robertson Blvd",
       "suite": "",
       "space": "101-109 S Robertson Blvd - Vacant -  sf",
@@ -2210,7 +2254,7 @@
       "lng": -118.383935
     },
     {
-      "id": "vacancy-199",
+      "id": "vacancy-203",
       "address": "111-117 S Robertson Blvd",
       "suite": "",
       "space": "111-117 S Robertson Blvd - Vacant -  sf",
@@ -2221,7 +2265,7 @@
       "lng": -118.3839753
     },
     {
-      "id": "vacancy-200",
+      "id": "vacancy-204",
       "address": "112-122 S Robertson Blvd, Los Angeles",
       "suite": "",
       "space": "112-122 S Robertson Blvd, Los Angeles - Vacant - 1,200 sf",
@@ -2232,7 +2276,7 @@
       "lng": -118.3835832
     },
     {
-      "id": "vacancy-201",
+      "id": "vacancy-205",
       "address": "116-120 N Robertson Blvd",
       "suite": "",
       "space": "116-120 N Robertson Blvd - Vacant - 0 sf",
@@ -2243,7 +2287,7 @@
       "lng": -118.3831734
     },
     {
-      "id": "vacancy-202",
+      "id": "vacancy-206",
       "address": "117-123 N Robertson Blvd, West Hollywood",
       "suite": "",
       "space": "117-123 N Robertson Blvd, West Hollywood - Vacant - 3,000 sf",
@@ -2254,7 +2298,7 @@
       "lng": -118.3840008
     },
     {
-      "id": "vacancy-203",
+      "id": "vacancy-207",
       "address": "117-123 N Robertson Blvd, West Hollywood",
       "suite": "",
       "space": "117-123 N Robertson Blvd, West Hollywood - Vacant - 1,500 sf",
@@ -2265,7 +2309,7 @@
       "lng": -118.3840008
     },
     {
-      "id": "vacancy-204",
+      "id": "vacancy-208",
       "address": "136-140 S Robertson Blvd, Los Angeles",
       "suite": "",
       "space": "136-140 S Robertson Blvd, Los Angeles - Vacant -  sf",
@@ -2276,7 +2320,7 @@
       "lng": -118.3835129
     },
     {
-      "id": "vacancy-205",
+      "id": "vacancy-209",
       "address": "141-145 S Robertson Blvd, Los Angeles",
       "suite": "",
       "space": "141-145 S Robertson Blvd, Los Angeles - Vacant -  sf",
@@ -2287,7 +2331,7 @@
       "lng": -118.3841197
     },
     {
-      "id": "vacancy-206",
+      "id": "vacancy-210",
       "address": "145 N Robertson Blvd, Los Angeles",
       "suite": "",
       "space": "145 N Robertson Blvd, Los Angeles - Vacant -  sf",
@@ -2298,7 +2342,7 @@
       "lng": -118.3840903
     },
     {
-      "id": "vacancy-207",
+      "id": "vacancy-211",
       "address": "302-306 N Robertson Blvd",
       "suite": "",
       "space": "302 N Robertson Blvd - Vacant -  sf",
@@ -2309,7 +2353,7 @@
       "lng": -118.3835381
     },
     {
-      "id": "vacancy-208",
+      "id": "vacancy-212",
       "address": "310-318 S Robertson Blvd, Los Angeles",
       "suite": "",
       "space": "310-318 S Robertson Blvd, Los Angeles - Vacant -  sf",
@@ -2320,7 +2364,7 @@
       "lng": -118.3835336
     },
     {
-      "id": "vacancy-209",
+      "id": "vacancy-213",
       "address": "320-322 S Robertson Blvd, Los Angeles",
       "suite": "",
       "space": "320-322 S Robertson Blvd, Los Angeles - Vacant -  sf",
@@ -2331,7 +2375,7 @@
       "lng": -118.38379
     },
     {
-      "id": "vacancy-210",
+      "id": "vacancy-214",
       "address": "370-372 N Robertson Blvd",
       "suite": "",
       "space": "370-372 N Robertson Blvd - Vacant - 0 sf",
@@ -2342,7 +2386,7 @@
       "lng": -118.3836002
     },
     {
-      "id": "vacancy-211",
+      "id": "vacancy-215",
       "address": "401 N Robertson Blvd",
       "suite": "",
       "space": "401 N Robertson Blvd - Vacant -  sf",
@@ -2353,7 +2397,7 @@
       "lng": -118.3845116
     },
     {
-      "id": "vacancy-212",
+      "id": "vacancy-216",
       "address": "454 N Robertson Blvd",
       "suite": "",
       "space": "454 N Robertson Blvd - Vacant -  sf",
@@ -2364,7 +2408,7 @@
       "lng": -118.384381
     },
     {
-      "id": "vacancy-213",
+      "id": "vacancy-217",
       "address": "474 N Robertson Blvd",
       "suite": "",
       "space": "474 N Robertson Blvd - Vacant -  sf",
@@ -2375,7 +2419,7 @@
       "lng": -118.3847535
     },
     {
-      "id": "vacancy-214",
+      "id": "vacancy-218",
       "address": "8730-8744 W 3rd St",
       "suite": "",
       "space": "8730-8744 W 3rd St - Vacant - 2,000 sf",
@@ -2386,29 +2430,62 @@
       "lng": -118.3830374
     },
     {
-      "id": "vacancy-215",
-      "address": "242-246 N Beverly Dr",
-      "suite": "242",
-      "space": "242 N Beverly Dr - Suite 242 - 7,500 sf",
+      "id": "vacancy-219",
+      "address": "233-269 N Beverly Dr - The Metro-Goldwyn-Mayer Building",
+      "suite": "",
+      "space": "233-269 N Beverly Dr - The Metro-Goldwyn-Mayer Building - Vacant -  sf",
       "highStreet": "Street - Rodeo",
-      "costarUrl": "https://product.costar.com/detail/lookup/1402523/lease",
+      "costarUrl": "https://product.costar.com/detail/all-properties/6938223/summary",
       "unitStatus": "Vacant",
-      "lat": 34.0680966,
-      "lng": -118.3998647
+      "lat": 34.0677444,
+      "lng": -118.3999845
     },
     {
-      "id": "vacancy-216",
-      "address": "300-314 N Beverly Dr",
-      "suite": "300",
-      "space": "300-314 N Beverly Dr - Suite 300 - 10,800 sf",
+      "id": "vacancy-220",
+      "address": "238-246 N Canon Dr",
+      "suite": "",
+      "space": "238-246 N Canon Dr - Vacant -  sf",
       "highStreet": "Street - Rodeo",
-      "costarUrl": "https://product.costar.com/detail/all-properties/822910/summary",
+      "costarUrl": "https://product.costar.com/detail/all-properties/6938223/summary",
       "unitStatus": "Vacant",
-      "lat": 34.0688029,
-      "lng": -118.4003914
+      "lat": 34.068757,
+      "lng": -118.398708
     },
     {
-      "id": "vacancy-217",
+      "id": "vacancy-221",
+      "address": "317-319 N Beverly Dr",
+      "suite": "Level 1",
+      "space": "317-319 N Beverly Dr - Suite Level 1 - 4,564 sf",
+      "highStreet": "Street - Rodeo",
+      "costarUrl": "https://product.costar.com/detail/lookup/10280011/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.0685938,
+      "lng": -118.4011047
+    },
+    {
+      "id": "vacancy-222",
+      "address": "317-319 N Beverly Dr",
+      "suite": "Level 2",
+      "space": "317-319 N Beverly Dr - Suite Level 2 - 5,535 sf",
+      "highStreet": "Street - Rodeo",
+      "costarUrl": "https://product.costar.com/detail/lookup/10280011/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.0685938,
+      "lng": -118.4011047
+    },
+    {
+      "id": "vacancy-223",
+      "address": "317-319 N Beverly Dr",
+      "suite": "Level 3",
+      "space": "317-319 N Beverly Dr - Suite Level 3 - 3,552 sf",
+      "highStreet": "Street - Rodeo",
+      "costarUrl": "https://product.costar.com/detail/lookup/10280011/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.0685938,
+      "lng": -118.4011047
+    },
+    {
+      "id": "vacancy-224",
       "address": "321-325 N Beverly Dr",
       "suite": "",
       "space": "321-325 N Beverly Dr - Boulmiche",
@@ -2419,18 +2496,7 @@
       "lng": -118.4010596
     },
     {
-      "id": "vacancy-218",
-      "address": "348 N Beverly Dr",
-      "suite": "1st Floor",
-      "space": "348 N Beverly Dr - Suite 1st Floor - 6,527 sf",
-      "highStreet": "Street - Rodeo",
-      "costarUrl": "https://product.costar.com/detail/all-properties/14909651/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0696225,
-      "lng": -118.401147
-    },
-    {
-      "id": "vacancy-219",
+      "id": "vacancy-225",
       "address": "418 N Rodeo Dr, Beverly Hills",
       "suite": "",
       "space": "418 N Rodeo Dr, Beverly Hills - Philipp Plein",
@@ -2441,40 +2507,18 @@
       "lng": -118.4032441
     },
     {
-      "id": "vacancy-220",
-      "address": "424 N Beverly Dr",
-      "suite": "Ground Floor",
-      "space": "424 N Beverly Dr - Suite Ground Floor - 7,290 sf",
+      "id": "vacancy-226",
+      "address": "420-428 N Beverly Dr",
+      "suite": "420 N Beverly Dr",
+      "space": "420 N Beverly Dr - Suite 420 N Beverly Dr - 9,195 sf",
       "highStreet": "Street - Rodeo",
       "costarUrl": "https://product.costar.com/detail/all-properties/840802/summary",
       "unitStatus": "Vacant",
-      "lat": 34.0705353,
-      "lng": -118.4021907
+      "lat": 34.0704415,
+      "lng": -118.4022107
     },
     {
-      "id": "vacancy-221",
-      "address": "425 N Canon Dr",
-      "suite": "1st Floor",
-      "space": "425 N Canon Dr - Suite 1st Floor - 7,800 sf",
-      "highStreet": "Street - Rodeo",
-      "costarUrl": "https://product.costar.com/detail/all-properties/4030410/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0709011,
-      "lng": -118.4015684
-    },
-    {
-      "id": "vacancy-222",
-      "address": "433-435 N Beverly Dr",
-      "suite": "435",
-      "space": "433-435 N Beverly Dr - Suite 435 - 4,500 sf",
-      "highStreet": "Street - Rodeo",
-      "costarUrl": "https://product.costar.com/detail/all-properties/6021527/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.07037770000001,
-      "lng": -118.4027779
-    },
-    {
-      "id": "vacancy-223",
+      "id": "vacancy-227",
       "address": "433-435 N Beverly Dr",
       "suite": "433",
       "space": "433-435 N Beverly Dr - Suite 433 - 1,000 sf",
@@ -2485,7 +2529,51 @@
       "lng": -118.4027779
     },
     {
-      "id": "vacancy-224",
+      "id": "vacancy-228",
+      "address": "437 N Rodeo Dr",
+      "suite": "",
+      "space": "437 N Rodeo Dr - Vacant -  sf",
+      "highStreet": "Street - Rodeo",
+      "costarUrl": "https://product.costar.com/detail/all-properties/251994/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.069689,
+      "lng": -118.4037002
+    },
+    {
+      "id": "vacancy-229",
+      "address": "449-465 N Beverly Dr",
+      "suite": "",
+      "space": "449-465 N Beverly Dr - Vacant - sf",
+      "highStreet": "Street - Rodeo",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5451633/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.0707602,
+      "lng": -118.4030061
+    },
+    {
+      "id": "vacancy-230",
+      "address": "457-459 N Rodeo Dr, Beverly Hills",
+      "suite": "",
+      "space": "457-459 N Rodeo Dr, Beverly Hills - Vacant -  sf",
+      "highStreet": "Street - Rodeo",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5805818/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.0700841,
+      "lng": -118.4043375
+    },
+    {
+      "id": "vacancy-231",
+      "address": "468 N Rodeo Dr, Beverly Hills",
+      "suite": "",
+      "space": "468 N Rodeo Dr, Beverly Hills - Vacant -  sf",
+      "highStreet": "Street - Rodeo",
+      "costarUrl": "https://product.costar.com/detail/all-properties/1547280/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.0706111,
+      "lng": -118.4039189
+    },
+    {
+      "id": "vacancy-232",
       "address": "9549-9551 Wilshire Blvd",
       "suite": "",
       "space": "9549-9551 Wilshire Blvd - Vacant Storefront",
@@ -2496,7 +2584,7 @@
       "lng": -118.401532
     },
     {
-      "id": "vacancy-225",
+      "id": "vacancy-233",
       "address": "9555-9557 Wilshire Blvd, Beverly Hills",
       "suite": "",
       "space": "9555-9557 Wilshire Blvd, Beverly Hills - Vacant Storefront",
@@ -2507,7 +2595,18 @@
       "lng": -118.4017937
     },
     {
-      "id": "vacancy-226",
+      "id": "vacancy-234",
+      "address": "9606 S Santa Monica Blvd",
+      "suite": "",
+      "space": "SPACE-00030",
+      "highStreet": "Street - Rodeo",
+      "costarUrl": "https://product.costar.com/detail/all-properties/6710848/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.0695431,
+      "lng": -118.4055945
+    },
+    {
+      "id": "vacancy-235",
       "address": "188 E 17th St",
       "suite": "101",
       "space": "188 E 17th St - Vacant Storefront",
@@ -2518,7 +2617,7 @@
       "lng": -117.9188426
     },
     {
-      "id": "vacancy-227",
+      "id": "vacancy-236",
       "address": "430-436 E 17th St",
       "suite": "",
       "space": "430-436 E 17th St - Vacant Storefront",
@@ -2529,7 +2628,7 @@
       "lng": -118.1872584
     },
     {
-      "id": "vacancy-228",
+      "id": "vacancy-237",
       "address": "440 E 17th St",
       "suite": "",
       "space": "440 E 17th St - Vacant Storefront",
@@ -2540,7 +2639,7 @@
       "lng": -117.9104171
     },
     {
-      "id": "vacancy-229",
+      "id": "vacancy-238",
       "address": "3333-3339 W Sunset Boulevard",
       "suite": "3333 Partial 1st",
       "space": "3333-3339 W Sunset Boulevard - Suite 3333 Partial 1st - 1,200 sf",
@@ -2551,7 +2650,7 @@
       "lng": -118.2754793
     },
     {
-      "id": "vacancy-230",
+      "id": "vacancy-239",
       "address": "3524-3536 W Sunset Blvd, Los Angeles",
       "suite": "3536",
       "space": "3524-3536 W Sunset Blvd, Los Angeles - Suite 3536 - 700 sf",
@@ -2562,7 +2661,7 @@
       "lng": -118.2769067
     },
     {
-      "id": "vacancy-231",
+      "id": "vacancy-240",
       "address": "3600 W Sunset Boulevard",
       "suite": "",
       "space": "3600 W Sunset Boulevard - Vacant - 13,382 sf",
@@ -2573,7 +2672,7 @@
       "lng": -118.27715
     },
     {
-      "id": "vacancy-232",
+      "id": "vacancy-241",
       "address": "3815-3821 W Sunset Blvd, Los Angeles",
       "suite": "3815 (Partial Level 1)",
       "space": "3815-3821 W Sunset Blvd, Los Angeles - Suite 3815 (Partial Level 1) - 987 sf",
@@ -2584,7 +2683,7 @@
       "lng": -118.2790436
     },
     {
-      "id": "vacancy-233",
+      "id": "vacancy-242",
       "address": "3900-3906 W Sunset Blvd, Los Angeles",
       "suite": "",
       "space": "3900-3906 W Sunset Blvd, Los Angeles - Vacant - 1,746 sf",
@@ -2595,7 +2694,7 @@
       "lng": -118.2798641
     },
     {
-      "id": "vacancy-234",
+      "id": "vacancy-243",
       "address": "4001-4005 W Sunset Blvd, Los Angeles",
       "suite": "Partial 1st",
       "space": "4001-4005 W Sunset Blvd, Los Angeles - Suite Partial 1st - 1,000 sf",
@@ -2606,7 +2705,7 @@
       "lng": -118.2803857
     },
     {
-      "id": "vacancy-235",
+      "id": "vacancy-244",
       "address": "4001-4005 W Sunset Blvd, Los Angeles",
       "suite": "Partial 2nd",
       "space": "4001-4005 W Sunset Blvd, Los Angeles - Suite Partial 2nd - 1,000 sf",
@@ -2617,7 +2716,7 @@
       "lng": -118.2803857
     },
     {
-      "id": "vacancy-236",
+      "id": "vacancy-245",
       "address": "4008-4014 Santa Monica Blvd",
       "suite": "",
       "space": "4008-4014 Santa Monica Blvd - Vacant -  sf",
@@ -2628,7 +2727,7 @@
       "lng": -118.4677246
     },
     {
-      "id": "vacancy-237",
+      "id": "vacancy-246",
       "address": "8519-8527 W Sunset Blvd",
       "suite": "",
       "space": "8519-8527 W Sunset Blvd - Vacant Storefront",
@@ -2639,7 +2738,7 @@
       "lng": -118.3771977
     },
     {
-      "id": "vacancy-238",
+      "id": "vacancy-247",
       "address": "8533 W Sunset Blvd",
       "suite": "Level 1",
       "space": "8533 W Sunset Blvd - Suite Level 1 - 3,340 sf",
@@ -2650,7 +2749,7 @@
       "lng": -118.3774242
     },
     {
-      "id": "vacancy-239",
+      "id": "vacancy-248",
       "address": "8533 W Sunset Blvd",
       "suite": "Level 2",
       "space": "8533 W Sunset Blvd - Suite Level 2 - 3,640 sf",
@@ -2661,7 +2760,7 @@
       "lng": -118.3774242
     },
     {
-      "id": "vacancy-240",
+      "id": "vacancy-249",
       "address": "8533 W Sunset Blvd",
       "suite": "Level 3",
       "space": "8533 W Sunset Blvd - Suite Level 3 - 3,640 sf",
@@ -2672,7 +2771,7 @@
       "lng": -118.3774242
     },
     {
-      "id": "vacancy-241",
+      "id": "vacancy-250",
       "address": "8533 W Sunset Blvd",
       "suite": "MEZZ",
       "space": "8533 W Sunset Blvd - Suite MEZZ - 1,220 sf",
@@ -2683,7 +2782,7 @@
       "lng": -118.3774242
     },
     {
-      "id": "vacancy-242",
+      "id": "vacancy-251",
       "address": "8539 Sunset Blvd",
       "suite": "13",
       "space": "8539 Sunset Blvd - Suite 13 - 600 sf",
@@ -2694,7 +2793,7 @@
       "lng": -118.3778904
     },
     {
-      "id": "vacancy-243",
+      "id": "vacancy-252",
       "address": "8555 Sunset Blvd, West Hollywood, CA 90069",
       "suite": "A-Partial 1st",
       "space": "8555 Sunset Blvd, West Hollywood, CA 90069 - Suite A-Partial 1st - 1,764 sf",
@@ -2705,7 +2804,7 @@
       "lng": -118.3782623
     },
     {
-      "id": "vacancy-244",
+      "id": "vacancy-253",
       "address": "8580 W Sunset Blvd",
       "suite": "300",
       "space": "8580 W Sunset Blvd - Suite 300 - 2,818 sf",
@@ -2716,7 +2815,7 @@
       "lng": -118.3785592
     },
     {
-      "id": "vacancy-245",
+      "id": "vacancy-254",
       "address": "8580 W Sunset Blvd",
       "suite": "100",
       "space": "8580 W Sunset Blvd - Suite 100 - 4,057 sf",
@@ -2727,7 +2826,7 @@
       "lng": -118.3785592
     },
     {
-      "id": "vacancy-246",
+      "id": "vacancy-255",
       "address": "8590 Sunset Blvd, West Hollywood",
       "suite": "Partial 1st",
       "space": "8590 Sunset Blvd, West Hollywood - Suite Partial 1st - 4,207 sf",
@@ -2738,7 +2837,7 @@
       "lng": -118.3788778
     },
     {
-      "id": "vacancy-247",
+      "id": "vacancy-256",
       "address": "8627-8673 W Sunset Blvd",
       "suite": "8659 Partial 1st",
       "space": "8627-8673 W Sunset Blvd - Suite 8659 Partial 1st - 988 sf",
@@ -2749,7 +2848,7 @@
       "lng": -118.3800237
     },
     {
-      "id": "vacancy-248",
+      "id": "vacancy-257",
       "address": "8644 W Sunset Blvd - Sunset Plaza",
       "suite": "8644",
       "space": "8644 W Sunset Blvd - Sunset Plaza - Suite 8644 - 2,127 sf",
@@ -2760,7 +2859,7 @@
       "lng": -118.3801137
     },
     {
-      "id": "vacancy-249",
+      "id": "vacancy-258",
       "address": "8752 W Sunset Blvd",
       "suite": "",
       "space": "8752 W Sunset Blvd - Vacant -  sf",
@@ -2771,7 +2870,7 @@
       "lng": -118.3818262
     },
     {
-      "id": "vacancy-250",
+      "id": "vacancy-259",
       "address": "8768 Sunset Blvd, West Hollywood, CA 90069",
       "suite": "",
       "space": "8768 Sunset Blvd, West Hollywood, CA 90069 - Vacant Storefront",
@@ -2782,7 +2881,7 @@
       "lng": -118.3824661
     },
     {
-      "id": "vacancy-251",
+      "id": "vacancy-260",
       "address": "8776-8778 W Sunset Blvd",
       "suite": "",
       "space": "8776-8778 W Sunset Blvd - Vacant Storefront",
@@ -2793,18 +2892,7 @@
       "lng": -118.3825838
     },
     {
-      "id": "vacancy-252",
-      "address": "1212 Third Street Promenade",
-      "suite": "",
-      "space": "1212 Third Street Promenade - Vintage Photo Booth",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/757197/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0179497,
-      "lng": -118.4993061
-    },
-    {
-      "id": "vacancy-253",
+      "id": "vacancy-261",
       "address": "1215 Third Street Promenade",
       "suite": "1215",
       "space": "1215 Third Street Promenade - Suite 1215 -  sf",
@@ -2815,18 +2903,7 @@
       "lng": -118.4985078
     },
     {
-      "id": "vacancy-254",
-      "address": "1219 Third Street Promenade",
-      "suite": "",
-      "space": "1219 Third Street Promenade - Santa Monica Art Museum",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/19634301/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0178931,
-      "lng": -118.4985157
-    },
-    {
-      "id": "vacancy-255",
+      "id": "vacancy-262",
       "address": "1220 Third Street Promenade",
       "suite": "Partial 1st",
       "space": "1220 Third Street Promenade - Suite Partial 1st - 3,818 sf",
@@ -2837,7 +2914,7 @@
       "lng": -118.49812
     },
     {
-      "id": "vacancy-256",
+      "id": "vacancy-263",
       "address": "1222 Third Street Promenade",
       "suite": "",
       "space": "1222 Third Street Promenade - Vacant - 15,000 sf",
@@ -2848,29 +2925,18 @@
       "lng": -118.4987555
     },
     {
-      "id": "vacancy-257",
-      "address": "1228 Third Street Promenade",
-      "suite": "Entire LL",
-      "space": "1228 Third Street Promenade - Suite Entire LL - 7,275 sf",
+      "id": "vacancy-264",
+      "address": "1227 3rd Street Promenade",
+      "suite": "1227",
+      "space": "1227 3rd Street Promenade",
       "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/6965753/summary",
+      "costarUrl": "https://product.costar.com/detail/all-properties/757203/summary",
       "unitStatus": "Vacant",
-      "lat": 34.0175046,
-      "lng": -118.4987451
+      "lat": 34.017907,
+      "lng": -118.498214
     },
     {
-      "id": "vacancy-258",
-      "address": "1228 Third Street Promenade",
-      "suite": "Entire 2nd",
-      "space": "1228 Third Street Promenade - Suite Entire 2nd - 3,700 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/6965753/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0175046,
-      "lng": -118.4987451
-    },
-    {
-      "id": "vacancy-259",
+      "id": "vacancy-265",
       "address": "1228 Third Street Promenade",
       "suite": "Entire 1st",
       "space": "1228 Third Street Promenade - Suite Entire 1st - 7,500 sf",
@@ -2881,7 +2947,7 @@
       "lng": -118.4987451
     },
     {
-      "id": "vacancy-260",
+      "id": "vacancy-266",
       "address": "1241-1251 3rd Street Promenade, Santa Monica",
       "suite": "1245",
       "space": "1241-1251 3rd Street Promenade, Santa Monica - Suite 1245 - 3,000 sf",
@@ -2892,7 +2958,7 @@
       "lng": -118.498006
     },
     {
-      "id": "vacancy-261",
+      "id": "vacancy-267",
       "address": "1241-1251 3rd Street Promenade, Santa Monica",
       "suite": "1247",
       "space": "1241-1251 3rd Street Promenade, Santa Monica - Suite 1247 - 7,500 sf",
@@ -2903,18 +2969,18 @@
       "lng": -118.498006
     },
     {
-      "id": "vacancy-262",
-      "address": "1313 3rd Street Promenade",
-      "suite": "Partial 2nd",
-      "space": "1313 3rd Street Promenade - Suite Partial 2nd - 500 sf",
+      "id": "vacancy-268",
+      "address": "1315 3rd Street Promenade",
+      "suite": "Partial 1st",
+      "space": "1315 3rd Street Promenade",
       "highStreet": "Street - Third Street Promenade",
       "costarUrl": "https://product.costar.com/detail/all-properties/6965849/summary",
       "unitStatus": "Vacant",
-      "lat": 34.0169386,
-      "lng": -118.4973674
+      "lat": 34.01672180000001,
+      "lng": -118.4969629
     },
     {
-      "id": "vacancy-263",
+      "id": "vacancy-269",
       "address": "1316-1320 3rd Street Promenade, Santa Monica",
       "suite": "109",
       "space": "1316-1320 3rd Street Promenade, Santa Monica - Suite 109 - 1,864 sf",
@@ -2925,7 +2991,7 @@
       "lng": -118.4975726
     },
     {
-      "id": "vacancy-264",
+      "id": "vacancy-270",
       "address": "1316-1320 3rd Street Promenade, Santa Monica",
       "suite": "111",
       "space": "1316-1320 3rd Street Promenade, Santa Monica - Suite 111 - 3,073 sf",
@@ -2936,7 +3002,7 @@
       "lng": -118.4975726
     },
     {
-      "id": "vacancy-265",
+      "id": "vacancy-271",
       "address": "1316-1320 3rd Street Promenade, Santa Monica",
       "suite": "107",
       "space": "1316-1320 3rd Street Promenade, Santa Monica - Suite 107 - 8,017 sf",
@@ -2947,7 +3013,7 @@
       "lng": -118.4975726
     },
     {
-      "id": "vacancy-266",
+      "id": "vacancy-272",
       "address": "1319-1323 Third Street Promenade",
       "suite": "1323",
       "space": "1319-1323 Third Street Promenade - Suite 1323 - 2,561 sf",
@@ -2958,7 +3024,7 @@
       "lng": -118.4968314
     },
     {
-      "id": "vacancy-267",
+      "id": "vacancy-273",
       "address": "1322 3rd Street Promenade, Santa Monica",
       "suite": "1322 Partial 1st",
       "space": "1322 3rd Street Promenade, Santa Monica - Suite 1322 Partial 1st - 6,033 sf",
@@ -2969,7 +3035,7 @@
       "lng": -118.4973902
     },
     {
-      "id": "vacancy-268",
+      "id": "vacancy-274",
       "address": "1322 3rd Street Promenade, Santa Monica",
       "suite": "1322-A",
       "space": "1322 3rd Street Promenade, Santa Monica - Suite 1322-A - 6,577 sf",
@@ -2980,7 +3046,7 @@
       "lng": -118.4973902
     },
     {
-      "id": "vacancy-269",
+      "id": "vacancy-275",
       "address": "1322 3rd Street Promenade, Santa Monica",
       "suite": "Partial 2nd",
       "space": "1322 3rd Street Promenade, Santa Monica - Suite Partial 2nd - 8,500 sf",
@@ -2991,7 +3057,7 @@
       "lng": -118.4973902
     },
     {
-      "id": "vacancy-270",
+      "id": "vacancy-276",
       "address": "1322 3rd Street Promenade, Santa Monica",
       "suite": "1322-B (Partial 2nd)",
       "space": "1322 3rd Street Promenade, Santa Monica - Suite 1322-B (Partial 2nd) - 13,005 sf",
@@ -3002,62 +3068,7 @@
       "lng": -118.4973902
     },
     {
-      "id": "vacancy-271",
-      "address": "1340 3rd Street Promenade, Santa Monica",
-      "suite": "1340-A",
-      "space": "1340 3rd Street Promenade, Santa Monica - Suite 1340-A - 3,600 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/5517200/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0159055,
-      "lng": -118.4968656
-    },
-    {
-      "id": "vacancy-272",
-      "address": "1340 3rd Street Promenade, Santa Monica",
-      "suite": "1340-B",
-      "space": "1340 3rd Street Promenade, Santa Monica - Suite 1340-B - 2,400 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/5517200/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0159055,
-      "lng": -118.4968656
-    },
-    {
-      "id": "vacancy-273",
-      "address": "1344 3rd Street Promenade, Santa Monica",
-      "suite": "",
-      "space": "1344 3rd Street Promenade, Santa Monica - Vacant - 3,000 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/757128/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0162,
-      "lng": -118.4972009
-    },
-    {
-      "id": "vacancy-274",
-      "address": "1348 3rd Street Promenade, Santa Monica",
-      "suite": "",
-      "space": "1348 3rd Street Promenade, Santa Monica - Vacant -  sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/4031689/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.01586,
-      "lng": -118.4967287
-    },
-    {
-      "id": "vacancy-275",
-      "address": "1348 3rd Street Promenade, Santa Monica",
-      "suite": "1348 3rd Street Promenade",
-      "space": "1348 3rd Street Promenade - Suite 1348 3rd Street Promenade - 2,200 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/4031689/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.01586,
-      "lng": -118.4967287
-    },
-    {
-      "id": "vacancy-276",
+      "id": "vacancy-277",
       "address": "1355 3rd Street Promenade",
       "suite": "BSMT",
       "space": "1355 3rd Street Promenade - Suite BSMT - 6,859 sf",
@@ -3068,7 +3079,7 @@
       "lng": -118.4960217
     },
     {
-      "id": "vacancy-277",
+      "id": "vacancy-278",
       "address": "1355 3rd Street Promenade",
       "suite": "Entire 4th",
       "space": "1355 3rd Street Promenade - Suite Entire 4th - 6,945 sf",
@@ -3079,7 +3090,7 @@
       "lng": -118.4960217
     },
     {
-      "id": "vacancy-278",
+      "id": "vacancy-279",
       "address": "1355 3rd Street Promenade",
       "suite": "Entire 3rd",
       "space": "1355 3rd Street Promenade - Suite Entire 3rd - 7,008 sf",
@@ -3090,21 +3101,10 @@
       "lng": -118.4960217
     },
     {
-      "id": "vacancy-279",
+      "id": "vacancy-280",
       "address": "1355 3rd Street Promenade",
       "suite": "Entire 2nd",
       "space": "1355 3rd Street Promenade - Suite Entire 2nd - 7,008 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0160579,
-      "lng": -118.4960217
-    },
-    {
-      "id": "vacancy-280",
-      "address": "1355 3rd Street Promenade",
-      "suite": "Entire 1st",
-      "space": "1348 3rd Street Promenade - Suite Entire 1st - 7,573 sf",
       "highStreet": "Street - Third Street Promenade",
       "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
       "unitStatus": "Vacant",
@@ -3125,17 +3125,6 @@
     {
       "id": "vacancy-282",
       "address": "1401-1409 Third Street Promenade",
-      "suite": "1407",
-      "space": "1401-1409 Third Street Promenade - Suite 1407 - 769 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/890809/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0156783,
-      "lng": -118.495862
-    },
-    {
-      "id": "vacancy-283",
-      "address": "1401-1409 Third Street Promenade",
       "suite": "1409 (partial 2nd)",
       "space": "1401-1409 Third Street Promenade - Suite 1409 (partial 2nd) - 3,297 sf",
       "highStreet": "Street - Third Street Promenade",
@@ -3145,7 +3134,7 @@
       "lng": -118.495862
     },
     {
-      "id": "vacancy-284",
+      "id": "vacancy-283",
       "address": "1426 3rd Street Promenade, Santa Monica",
       "suite": "",
       "space": "1426 3rd Street Promenade, Santa Monica - Vacant -  sf",
@@ -3156,29 +3145,7 @@
       "lng": -118.4956568
     },
     {
-      "id": "vacancy-285",
-      "address": "1427 3rd Street Promenade, Santa Monica",
-      "suite": "206",
-      "space": "1427 3rd Street Promenade, Santa Monica - Suite 206 - 1,100 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/584438/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0152347,
-      "lng": -118.4953624
-    },
-    {
-      "id": "vacancy-286",
-      "address": "1427 3rd Street Promenade, Santa Monica",
-      "suite": "201",
-      "space": "1427 3rd Street Promenade, Santa Monica - Suite 201 - 2,988 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/584438/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0152347,
-      "lng": -118.4953624
-    },
-    {
-      "id": "vacancy-287",
+      "id": "vacancy-284",
       "address": "1427 3rd Street Promenade, Santa Monica",
       "suite": "102",
       "space": "1427 3rd Street Promenade, Santa Monica - Suite 102 - 2,342 sf",
@@ -3189,7 +3156,7 @@
       "lng": -118.4953624
     },
     {
-      "id": "vacancy-288",
+      "id": "vacancy-285",
       "address": "1427 3rd Street Promenade, Santa Monica",
       "suite": "101",
       "space": "1427 3rd Street Promenade, Santa Monica - Suite 101 - 3,470 sf",
@@ -3200,7 +3167,7 @@
       "lng": -118.4953624
     },
     {
-      "id": "vacancy-289",
+      "id": "vacancy-286",
       "address": "1429 3rd St Promenade",
       "suite": "1429 3rd St Promenade",
       "space": "1429 3rd St Promenade - Suite 1429 3rd St Promenade - 3,582 sf",
@@ -3211,7 +3178,7 @@
       "lng": -118.495082
     },
     {
-      "id": "vacancy-290",
+      "id": "vacancy-287",
       "address": "1451-1457 3rd Street Promenade",
       "suite": "1451 B",
       "space": "1451-1457 3rd Street Promenade - Suite 1451 B - 1,239 sf",
@@ -3222,7 +3189,7 @@
       "lng": -118.494689
     },
     {
-      "id": "vacancy-291",
+      "id": "vacancy-288",
       "address": "1451-1457 3rd Street Promenade",
       "suite": "1451",
       "space": "1451-1457 3rd Street Promenade - Suite 1451 - 3,250 sf",
@@ -3233,7 +3200,7 @@
       "lng": -118.494689
     },
     {
-      "id": "vacancy-292",
+      "id": "vacancy-289",
       "address": "1451-1457 3rd Street Promenade",
       "suite": "1455",
       "space": "1451-1457 3rd Street Promenade - Suite 1455 - 3,537 sf",
@@ -3244,84 +3211,7 @@
       "lng": -118.494689
     },
     {
-      "id": "vacancy-293",
-      "address": "1451-1457 3rd Street Promenade",
-      "suite": "300",
-      "space": "1451-1457 3rd Street Promenade - Suite 300 - 1,939 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0147509,
-      "lng": -118.494689
-    },
-    {
-      "id": "vacancy-294",
-      "address": "1451-1457 3rd Street Promenade",
-      "suite": "350",
-      "space": "1451-1457 3rd Street Promenade - Suite 350 - 2,521 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0147509,
-      "lng": -118.494689
-    },
-    {
-      "id": "vacancy-295",
-      "address": "1451-1457 3rd Street Promenade",
-      "suite": "340",
-      "space": "1451-1457 3rd Street Promenade - Suite 340 - 3,099 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0147509,
-      "lng": -118.494689
-    },
-    {
-      "id": "vacancy-296",
-      "address": "1451-1457 3rd Street Promenade",
-      "suite": "335",
-      "space": "1451-1457 3rd Street Promenade - Suite 335 - 4,160 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0147509,
-      "lng": -118.494689
-    },
-    {
-      "id": "vacancy-297",
-      "address": "1451-1457 3rd Street Promenade",
-      "suite": "320",
-      "space": "1451-1457 3rd Street Promenade - Suite 320 - 4,979 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0147509,
-      "lng": -118.494689
-    },
-    {
-      "id": "vacancy-298",
-      "address": "1451-1457 3rd Street Promenade",
-      "suite": "305",
-      "space": "1451-1457 3rd Street Promenade - Suite 305 - 5,056 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0147509,
-      "lng": -118.494689
-    },
-    {
-      "id": "vacancy-299",
-      "address": "1451-1457 3rd Street Promenade",
-      "suite": "250",
-      "space": "1451-1457 3rd Street Promenade - Suite 250 - 2,055 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0147509,
-      "lng": -118.494689
-    },
-    {
-      "id": "vacancy-300",
+      "id": "vacancy-290",
       "address": "1452 3rd Street Promenade, Santa Monica",
       "suite": "Partial 1st",
       "space": "1452 3rd Street Promenade, Santa Monica - Suite Partial 1st - 1,200 sf",
@@ -3332,7 +3222,7 @@
       "lng": -118.4949415
     },
     {
-      "id": "vacancy-301",
+      "id": "vacancy-291",
       "address": "1452 3rd Street Promenade, Santa Monica",
       "suite": "Entire 1st",
       "space": "1452 3rd Street Promenade, Santa Monica - Suite Entire 1st - 5,127 sf",
@@ -3343,7 +3233,7 @@
       "lng": -118.4949415
     },
     {
-      "id": "vacancy-302",
+      "id": "vacancy-292",
       "address": "1452 3rd Street Promenade, Santa Monica",
       "suite": "Entire 3rd",
       "space": "1452 3rd Street Promenade, Santa Monica - Suite Entire 3rd - 4,000 sf",
@@ -3354,7 +3244,7 @@
       "lng": -118.4949415
     },
     {
-      "id": "vacancy-303",
+      "id": "vacancy-293",
       "address": "1452 3rd Street Promenade, Santa Monica",
       "suite": "Entire 2nd",
       "space": "1452 3rd Street Promenade, Santa Monica - Suite Entire 2nd - 7,459 sf",
@@ -3365,7 +3255,7 @@
       "lng": -118.4949415
     },
     {
-      "id": "vacancy-304",
+      "id": "vacancy-294",
       "address": "219-231 Arizona Ave",
       "suite": "450 (Partial PENT)",
       "space": "219-231 Arizona Ave - Suite 450 (Partial PENT) - 2,645 sf",
@@ -3376,7 +3266,7 @@
       "lng": -118.4981812
     },
     {
-      "id": "vacancy-305",
+      "id": "vacancy-295",
       "address": "301 Arizona Ave",
       "suite": "3rd (12 spaces)",
       "space": "301 Arizona Ave - Suite 3rd (12 spaces) - 7,623 sf",
@@ -3387,7 +3277,7 @@
       "lng": -118.4975726
     },
     {
-      "id": "vacancy-306",
+      "id": "vacancy-296",
       "address": "301 Arizona Ave",
       "suite": "2nd",
       "space": "301 Arizona Ave - Suite 2nd - 3,002 sf",
@@ -3398,7 +3288,7 @@
       "lng": -118.4975726
     },
     {
-      "id": "vacancy-307",
+      "id": "vacancy-297",
       "address": "304 Santa Monica Blvd, Santa Monica",
       "suite": "",
       "space": "304 Santa Monica Blvd, Santa Monica - Vacant - 1,600 sf",
@@ -3409,29 +3299,117 @@
       "lng": -118.4956453
     },
     {
-      "id": "vacancy-308",
-      "address": "12020-12050 Ventura Blvd, Studio City",
+      "id": "vacancy-298",
+      "address": "11925-11927 Ventura Boulevard",
+      "suite": "",
+      "space": "11925-11927 Ventura Boulevard - Vacant -  sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5438195/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1432476,
+      "lng": -118.3914706
+    },
+    {
+      "id": "vacancy-299",
+      "address": "11933 Ventura Boulevard",
+      "suite": "",
+      "space": "11933 Ventura Boulevard - Vacant -  sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5439338/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1432844,
+      "lng": -118.3916827
+    },
+    {
+      "id": "vacancy-300",
+      "address": "11960-12046 Ventura Blvd, Studio City",
       "suite": "",
       "space": "12020-12050 Ventura Blvd, Studio City - Vacant - 3,269 sf",
       "highStreet": "Street - Ventura Blvd",
       "costarUrl": "https://product.costar.com/detail/all-properties/1171754/summary",
       "unitStatus": "Vacant",
-      "lat": 34.1434972,
-      "lng": -118.393665
+      "lat": 34.1433427,
+      "lng": -118.3927377
     },
     {
-      "id": "vacancy-309",
-      "address": "12020-12050 Ventura Blvd, Studio City",
+      "id": "vacancy-301",
+      "address": "11960-12046 Ventura Blvd, Studio City",
       "suite": "",
       "space": "12020-12050 Ventura Blvd, Studio City - Vacant - 5,630 sf",
       "highStreet": "Street - Ventura Blvd",
       "costarUrl": "https://product.costar.com/detail/all-properties/1171754/summary",
       "unitStatus": "Vacant",
-      "lat": 34.1434972,
-      "lng": -118.393665
+      "lat": 34.1433427,
+      "lng": -118.3927377
     },
     {
-      "id": "vacancy-310",
+      "id": "vacancy-302",
+      "address": "12021 Ventura Blvd, Studio City",
+      "suite": "",
+      "space": "12021 Ventura Blvd, Studio City - Vacant -  sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/1338951/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1439272,
+      "lng": -118.3941887
+    },
+    {
+      "id": "vacancy-303",
+      "address": "12029-12035 Ventura Boulevard",
+      "suite": "",
+      "space": "12029-12035 Ventura Boulevard - Vacant -  sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/27897/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1438445,
+      "lng": -118.3944129
+    },
+    {
+      "id": "vacancy-304",
+      "address": "12050 Ventura Blvd",
+      "suite": "",
+      "space": "Laurel Promenade - Vacant - 1,625 sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5449629/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1432737,
+      "lng": -118.3945849
+    },
+    {
+      "id": "vacancy-305",
+      "address": "12050 Ventura Blvd",
+      "suite": "",
+      "space": "Laurel Promenade - Vacant - 3,269 sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5449629/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1432737,
+      "lng": -118.3945849
+    },
+    {
+      "id": "vacancy-306",
+      "address": "12050 Ventura Blvd",
+      "suite": "",
+      "space": "Laurel Promenade - Vacant - 1,210 sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5449629/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1432737,
+      "lng": -118.3945849
+    },
+    {
+      "id": "vacancy-307",
+      "address": "12101-12117 Ventura Boulevard",
+      "suite": "",
+      "space": "12101-12117 Ventura Boulevard - Vacant - 3,000 sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/1460972/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1442299,
+      "lng": -118.397141
+    },
+    {
+      "id": "vacancy-308",
       "address": "12101-12117 Ventura Boulevard",
       "suite": "",
       "space": "12101-12117 Ventura Boulevard - Vacant -  sf",
@@ -3442,10 +3420,32 @@
       "lng": -118.397141
     },
     {
+      "id": "vacancy-309",
+      "address": "12159-12161 Ventura Boulevard",
+      "suite": "",
+      "space": "12159-12161 Ventura Boulevard - Vacant -  sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5439739/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1436344,
+      "lng": -118.3973241
+    },
+    {
+      "id": "vacancy-310",
+      "address": "12196-12200 Ventura Boulevard",
+      "suite": "",
+      "space": "12196-12200 Ventura Boulevard - Vacant -  sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5444127/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.143068,
+      "lng": -118.3984696
+    },
+    {
       "id": "vacancy-311",
       "address": "12206 Ventura Blvd, Studio City",
       "suite": "",
-      "space": "12206 Ventura Blvd, Studio City - Vacant - 1,256 sf",
+      "space": "12206 Ventura Blvd, Studio City - The Closet Trading Company",
       "highStreet": "Street - Ventura Blvd",
       "costarUrl": "https://product.costar.com/detail/all-properties/888954/summary",
       "unitStatus": "Vacant",
@@ -3454,17 +3454,28 @@
     },
     {
       "id": "vacancy-312",
-      "address": "12240-12242 1/2 Ventura Boulevard",
-      "suite": "",
-      "space": "12240-12242 1/2 Ventura Boulevard - Vacant - 1,800 sf",
+      "address": "12215 Ventura Boulevard",
+      "suite": "211",
+      "space": "12215 Ventura Boulevard - Suite 211 -  sf",
       "highStreet": "Street - Ventura Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/4020491/summary",
+      "costarUrl": "https://product.costar.com/detail/all-properties/611295/summary",
       "unitStatus": "Vacant",
-      "lat": 34.1501047,
-      "lng": -118.4421104
+      "lat": 34.1440625,
+      "lng": -118.3989211
     },
     {
       "id": "vacancy-313",
+      "address": "12216 Ventura Blvd, Studio City",
+      "suite": "",
+      "space": "12216 Ventura Blvd, Studio City - Vacant -  sf",
+      "highStreet": "Street - Ventura Blvd",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5439244/summary",
+      "unitStatus": "Vacant",
+      "lat": 34.1429838,
+      "lng": -118.3991122
+    },
+    {
+      "id": "vacancy-314",
       "address": "12254-12258 Ventura Boulevard",
       "suite": "",
       "space": "12254-12258 Ventura Boulevard - Vacant -  sf",
@@ -3473,17 +3484,6 @@
       "unitStatus": "Vacant",
       "lat": 34.1429497,
       "lng": -118.4004213
-    },
-    {
-      "id": "vacancy-314",
-      "address": "12265 Ventura Blvd, Studio City",
-      "suite": "",
-      "space": "12265 Ventura Blvd, Studio City - Vacant - 1,239 sf",
-      "highStreet": "Street - Ventura Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/42206/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.143539,
-      "lng": -118.4003878
     },
     {
       "id": "vacancy-315",
@@ -3509,61 +3509,28 @@
     },
     {
       "id": "vacancy-317",
-      "address": "12323 Ventura Blvd, Studio City",
+      "address": "12436-12438 Ventura Blvd, Studio City",
       "suite": "",
-      "space": "12323 Ventura Blvd, Studio City - Vacant -  sf",
+      "space": "12436-12438 Ventura Blvd, Studio City - Vacant - 2,400 sf",
       "highStreet": "Street - Ventura Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/5438628/summary",
+      "costarUrl": "https://product.costar.com/detail/all-properties/5439651/summary",
       "unitStatus": "Vacant",
-      "lat": 34.1432169,
-      "lng": -118.4017235
+      "lat": 34.1425511,
+      "lng": -118.4043025
     },
     {
       "id": "vacancy-318",
-      "address": "12326-12334 Ventura Boulevard",
+      "address": "12532 Ventura Boulevard",
       "suite": "",
-      "space": "12326-12334 Ventura Boulevard - Vacant -  sf",
+      "space": "12532 Ventura Boulevard - Vacant - 3,500 sf",
       "highStreet": "Street - Ventura Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/6591647/summary",
+      "costarUrl": "https://product.costar.com/detail/all-properties/4506407/summary",
       "unitStatus": "Vacant",
-      "lat": 34.142823,
-      "lng": -118.4018046
+      "lat": 34.142652,
+      "lng": -118.4065661
     },
     {
       "id": "vacancy-319",
-      "address": "12336 Ventura Boulevard",
-      "suite": "",
-      "space": "12336 Ventura Boulevard - Vacant -  sf",
-      "highStreet": "Street - Ventura Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/15645801/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.1428148,
-      "lng": -118.402018
-    },
-    {
-      "id": "vacancy-320",
-      "address": "12345 Ventura Blvd, Studio City",
-      "suite": "Partial 1st",
-      "space": "12345 Ventura Blvd, Studio City - Suite Partial 1st - 3,641 sf",
-      "highStreet": "Street - Ventura Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/249928/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.1432655,
-      "lng": -118.402253
-    },
-    {
-      "id": "vacancy-321",
-      "address": "12348 Ventura Blvd, Studio City",
-      "suite": "",
-      "space": "12348 Ventura Blvd, Studio City - Vacant - 0 sf",
-      "highStreet": "Street - Ventura Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/851014/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.1426886,
-      "lng": -118.4024767
-    },
-    {
-      "id": "vacancy-322",
       "address": "12544-12548 Ventura Boulevard",
       "suite": "",
       "space": "12544-12548 Ventura Boulevard - Vacant -  sf",
@@ -3574,7 +3541,7 @@
       "lng": -118.4066818
     },
     {
-      "id": "vacancy-323",
+      "id": "vacancy-320",
       "address": "12555-12565 Ventura Blvd",
       "suite": "",
       "space": "12555-12565 Ventura Blvd - Vacant -  sf",
@@ -3585,7 +3552,7 @@
       "lng": -118.4069082
     },
     {
-      "id": "vacancy-324",
+      "id": "vacancy-321",
       "address": "17650 Ventura Blvd, Encino",
       "suite": "3",
       "space": "17650 Ventura Blvd, Encino - Former Fitness Studio",
@@ -3596,7 +3563,7 @@
       "lng": -118.5180388
     },
     {
-      "id": "vacancy-325",
+      "id": "vacancy-322",
       "address": "21926-21928 Ventura Blvd, Woodland Hills",
       "suite": "21928 Ventura Blvd",
       "space": "21926-21928 Ventura Blvd, Woodland Hills - Former Pilates Studio",
@@ -3607,7 +3574,7 @@
       "lng": -118.6048269
     },
     {
-      "id": "vacancy-326",
+      "id": "vacancy-323",
       "address": "Test 1",
       "suite": "",
       "space": "Test 1 - Vacant - 12,455,899 sf",

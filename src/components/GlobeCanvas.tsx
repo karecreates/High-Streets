@@ -2,13 +2,6 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { ABBOT_KINNEY_INTRO } from "../config/access";
 
-export type GlobePhase = "idle" | "granted" | "zooming" | "exiting";
-
-interface GlobeCanvasProps {
-  phase: GlobePhase;
-  onZoomComplete?: () => void;
-}
-
 const GLOBE_RADIUS = 1.35;
 const CAMERA_DISTANCE = 4.35;
 const EARTH_TOPOLOGY_URL = "/earth-topology.png";
@@ -116,13 +109,8 @@ function createStarfield(count: number) {
   );
 }
 
-export function GlobeCanvas({ phase, onZoomComplete }: GlobeCanvasProps) {
+export function GlobeCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const phaseRef = useRef(phase);
-  const onZoomCompleteRef = useRef(onZoomComplete);
-
-  phaseRef.current = phase;
-  onZoomCompleteRef.current = onZoomComplete;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -130,8 +118,7 @@ export function GlobeCanvas({ phase, onZoomComplete }: GlobeCanvasProps) {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
-    const startCamera = new THREE.Vector3(0, 0, CAMERA_DISTANCE);
-    camera.position.copy(startCamera);
+    camera.position.set(0, 0, CAMERA_DISTANCE);
     camera.lookAt(0, 0, 0);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -216,55 +203,10 @@ export function GlobeCanvas({ phase, onZoomComplete }: GlobeCanvasProps) {
     idleDot.position.copy(targetMarker);
     globeGroup.add(idleDot);
 
-    const markerMaterial = new THREE.MeshBasicMaterial({
-      color: BETA_ORANGE,
-      transparent: true,
-      opacity: 1,
-    });
-    const marker = new THREE.Mesh(
-      new THREE.SphereGeometry(0.032, 16, 16),
-      markerMaterial
-    );
-    marker.position.copy(targetMarker);
-    marker.visible = false;
-    globeGroup.add(marker);
-
-    const markerRingMaterial = new THREE.MeshBasicMaterial({
-      color: BETA_ORANGE,
-      transparent: true,
-      opacity: 0.38,
-      side: THREE.DoubleSide,
-    });
-    const markerRing = new THREE.Mesh(
-      new THREE.RingGeometry(0.042, 0.068, 32),
-      markerRingMaterial
-    );
-    markerRing.position.copy(targetMarker);
-    markerRing.lookAt(new THREE.Vector3(0, 0, 0));
-    markerRing.visible = false;
-    globeGroup.add(markerRing);
-
     const stars = createStarfield(700);
     scene.add(stars);
 
-    const zoomStartAltitude = 3.6;
-    const zoomEndAltitude = 0.18;
-    const rotationPhase = 0.32;
-
-    const placeOverheadCamera = (
-      markerWorld: THREE.Vector3,
-      altitude: number
-    ) => {
-      const normal = markerWorld.clone().normalize();
-      camera.position.copy(normal).multiplyScalar(GLOBE_RADIUS + altitude);
-      camera.up.set(0, 1, 0);
-      camera.lookAt(markerWorld);
-    };
-
     let animationFrame = 0;
-    let zoomStart = 0;
-    let zoomCompleted = false;
-    const zoomDuration = 3600;
     let idleRotation = targetRotationY;
 
     const resize = () => {
@@ -279,98 +221,18 @@ export function GlobeCanvas({ phase, onZoomComplete }: GlobeCanvasProps) {
     resizeObserver.observe(container);
     resize();
 
-    const getMarkerWorld = () => {
-      const world = targetMarker.clone();
-      globeGroup.localToWorld(world);
-      return world;
-    };
-
     const animate = (time: number) => {
       animationFrame = requestAnimationFrame(animate);
       outlineUniforms.time.value = time * 0.001;
 
-      const currentPhase = phaseRef.current;
-
       const blink = 0.55 + Math.sin(time * 0.007) * 0.45;
-
-      if (currentPhase === "idle") {
-        idleRotation += 0.002;
-        globeGroup.rotation.y = idleRotation;
-        stars.rotation.y += 0.0002;
-        idleDot.visible = true;
-        idleDotMaterial.opacity = 0.45 + blink * 0.55;
-        idleDot.scale.setScalar(0.82 + blink * 0.28);
-        marker.visible = false;
-        markerRing.visible = false;
-        camera.position.copy(startCamera);
-        camera.lookAt(0, 0, 0);
-      } else if (
-        currentPhase === "granted" ||
-        currentPhase === "zooming" ||
-        currentPhase === "exiting"
-      ) {
-        idleDot.visible = false;
-
-        let markerFade = 1;
-
-        if (currentPhase === "zooming" || currentPhase === "exiting") {
-          if (zoomStart === 0) zoomStart = time;
-          const progress = Math.min((time - zoomStart) / zoomDuration, 1);
-
-          if (progress < rotationPhase) {
-            const rotProgress = progress / rotationPhase;
-            const rotEased = 1 - Math.pow(1 - rotProgress, 3);
-            globeGroup.rotation.y = THREE.MathUtils.lerp(
-              idleRotation,
-              targetRotationY,
-              rotEased
-            );
-            camera.position.copy(startCamera);
-            camera.lookAt(getMarkerWorld());
-          } else {
-            globeGroup.rotation.y = targetRotationY;
-            const flyProgress = (progress - rotationPhase) / (1 - rotationPhase);
-            const flyEased = 1 - Math.pow(1 - flyProgress, 4);
-            markerFade = 1 - flyEased;
-            const markerWorld = getMarkerWorld();
-            const altitude = THREE.MathUtils.lerp(
-              zoomStartAltitude,
-              zoomEndAltitude,
-              flyEased
-            );
-            placeOverheadCamera(markerWorld, altitude);
-          }
-
-          if (progress >= 1 && !zoomCompleted) {
-            zoomCompleted = true;
-            onZoomCompleteRef.current?.();
-          }
-        } else {
-          globeGroup.rotation.y = THREE.MathUtils.lerp(
-            globeGroup.rotation.y,
-            targetRotationY,
-            0.04
-          );
-          const lookTarget = targetMarker.clone();
-          globeGroup.localToWorld(lookTarget);
-          camera.lookAt(lookTarget);
-        }
-
-        const showMarker =
-          currentPhase !== "exiting" && markerFade > 0.02;
-        marker.visible = showMarker;
-        markerRing.visible = showMarker;
-
-        if (showMarker) {
-          markerMaterial.opacity = blink * markerFade;
-          marker.scale.setScalar(0.88 + blink * 0.18);
-
-          markerRing.rotation.z += 0.018;
-          const ringPulse = 1 + Math.sin(time * 0.005) * 0.1;
-          markerRing.scale.set(ringPulse, ringPulse, ringPulse);
-          markerRingMaterial.opacity = (0.28 + blink * 0.18) * markerFade;
-        }
-      }
+      idleRotation += 0.002;
+      globeGroup.rotation.y = idleRotation;
+      stars.rotation.y += 0.0002;
+      idleDotMaterial.opacity = 0.45 + blink * 0.55;
+      idleDot.scale.setScalar(0.82 + blink * 0.28);
+      camera.position.set(0, 0, CAMERA_DISTANCE);
+      camera.lookAt(0, 0, 0);
 
       renderer.render(scene, camera);
     };

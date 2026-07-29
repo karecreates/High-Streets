@@ -10,6 +10,11 @@ import { ParkingLayerToggles } from "./ParkingLayerToggles";
 
 export type MapDisplayMode = "tenants" | "both" | "vacancies";
 
+export interface CorridorSelectGroup {
+  label: string;
+  options: { value: string; label: string }[];
+}
+
 const DISPLAY_MODES: { value: MapDisplayMode; label: string }[] = [
   { value: "tenants", label: "Occupied" },
   { value: "both", label: "Both" },
@@ -26,6 +31,11 @@ interface MapControlsBarProps {
   showParkingLots: boolean;
   onMeteredParkingChange: (enabled: boolean) => void;
   onParkingLotsChange: (enabled: boolean) => void;
+  /** Inline layout for embedding in a page header (master map). */
+  variant?: "floating" | "inline";
+  corridorGroups?: CorridorSelectGroup[];
+  corridorValue?: string;
+  onCorridorChange?: (value: string) => void;
 }
 
 export function MapControlsBar({
@@ -38,6 +48,10 @@ export function MapControlsBar({
   showParkingLots,
   onMeteredParkingChange,
   onParkingLotsChange,
+  variant = "floating",
+  corridorGroups,
+  corridorValue = "all",
+  onCorridorChange,
 }: MapControlsBarProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -83,8 +97,40 @@ export function MapControlsBar({
     setOpen(false);
   };
 
+  const showCorridorSelect =
+    Boolean(corridorGroups?.length) && typeof onCorridorChange === "function";
+
   return (
-    <div className="map-controls" ref={rootRef}>
+    <div
+      className={`map-controls${variant === "inline" ? " map-controls--inline" : ""}`}
+      ref={rootRef}
+    >
+      {showCorridorSelect ? (
+        <>
+          <label className="map-controls__corridor">
+            <span className="map-controls__corridor-label">Corridor</span>
+            <select
+              className="map-controls__corridor-select"
+              value={corridorValue}
+              onChange={(e) => onCorridorChange?.(e.target.value)}
+              aria-label="Select corridor"
+            >
+              <option value="all">All corridors</option>
+              {corridorGroups!.map((group) => (
+                <optgroup key={group.label} label={group.label}>
+                  {group.options.map((option) => (
+                    <option key={`${group.label}-${option.value}`} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
+          </label>
+          <div className="map-controls__divider" aria-hidden />
+        </>
+      ) : null}
+
       <div
         className="map-controls__segment"
         role="radiogroup"

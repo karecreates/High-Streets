@@ -1,14 +1,21 @@
+import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { AnimatedDisplay } from "../components/AnimatedDisplay";
 import { BrandLogoGrid } from "../components/BrandLogoGrid";
 import { BetaLogo } from "../components/BetaLogo";
 import { PillButton } from "../components/PillButton";
 import { ScoreRing } from "../components/ScoreRing";
+import { useDataset } from "../context/TenantsContext";
+import { getShoppingCenter } from "../data/shoppingCenters";
 import {
   CATEGORY_LABELS,
   getCorridorBySlug,
   getCorridorDetail,
 } from "../data/highStreets";
+import {
+  pickNotableBrandsFromCenterTenants,
+  pickNotableBrandsFromStreetTenants,
+} from "../utils/pickNotableBrands";
 
 function categoryEyebrow(category: string | undefined): string {
   if (!category) return "High Streets";
@@ -23,6 +30,8 @@ export function StreetDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
   const detail = slug ? getCorridorDetail(slug) : undefined;
+  const dataset = useDataset();
+  const shoppingCenter = slug ? getShoppingCenter(slug) : undefined;
 
   if (!corridor?.active || !detail) {
     return (
@@ -35,9 +44,37 @@ export function StreetDetailPage() {
 
   const staticLogos = detail.brandLogos;
 
-  const brandItems =
-    detail.notableBrands ??
-    detail.notableBrandNames?.map((name) => ({ name }));
+  // Large candidate pool: curated notables first, then ranked street tenants.
+  // BrandLogoGrid keeps only Brandfetch dark wordmarks (max 10) — no letters.
+  const brandItems = useMemo(() => {
+    const liveBrands =
+      corridor.category === "shopping-centers" && shoppingCenter
+        ? pickNotableBrandsFromCenterTenants(shoppingCenter.tenants, 60)
+        : corridor.dataKey && dataset
+          ? pickNotableBrandsFromStreetTenants(
+              dataset.tenants.filter((t) => t.highStreet === corridor.dataKey),
+              60
+            )
+          : [];
+
+    const curatedBrands = (detail.notableBrands ?? []).filter((b) =>
+      Boolean(b.domain)
+    );
+
+    const byDomain = new Map<string, { name: string; domain: string }>();
+    for (const brand of [...curatedBrands, ...liveBrands]) {
+      if (!brand.domain || byDomain.has(brand.domain)) continue;
+      byDomain.set(brand.domain, { name: brand.name, domain: brand.domain });
+    }
+    return [...byDomain.values()];
+  }, [
+    corridor.category,
+    corridor.dataKey,
+    dataset,
+    detail.notableBrands,
+    shoppingCenter,
+  ]);
+
   const mapPath =
     corridor.category === "shopping-centers"
       ? `/center/${slug}/map`
@@ -120,16 +157,12 @@ export function StreetDetailPage() {
 
             <div className="info-card info-card--brands info-card--compact">
               <div className="info-card__header">NOTABLE BRANDS</div>
-              {brandItems?.length ? (
-                <BrandLogoGrid brands={brandItems} />
+              {brandItems.length ? (
+                <BrandLogoGrid brands={brandItems} limit={10} />
               ) : staticLogos?.length ? (
-                <div className="brand-grid">
-                  {staticLogos.map((src, index) => (
-                    <div
-                      key={src}
-                      className="brand-grid__cell"
-                      style={{ animationDelay: `${index * 55}ms` }}
-                    >
+                <div className="brand-grid brand-grid--large">
+                  {staticLogos.slice(0, 10).map((src) => (
+                    <div key={src} className="brand-grid__cell">
                       <img src={src} alt="" loading="lazy" />
                     </div>
                   ))}

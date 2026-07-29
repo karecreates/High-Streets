@@ -6,7 +6,7 @@
     "imageUrl": "https://malibucountrymart.com/wp-content/uploads/2020/04/9026-Eyes-600x400-1.jpg",
     "website": "https://9026eyes.com",
     "domain": "9026eyes.com",
-    "logoDomain": "9026eyes.com"
+    "logoDomain": null
   },
   {
     "name": "Alfred Coffee",
@@ -229,9 +229,9 @@
     "category": "dining",
     "pageUrl": "https://malibucountrymart.com/luckys-steakhouse/",
     "imageUrl": "https://malibucountrymart.com/wp-content/uploads/2020/08/Luckys-new-photo.jpg",
-    "website": "https://luckysmalibu.com",
-    "domain": "luckysmalibu.com",
-    "logoDomain": "luckysmalibu.com"
+    "website": "https://luckys-steakhouse.com",
+    "domain": "luckys-steakhouse.com",
+    "logoDomain": "luckys-steakhouse.com"
   },
   {
     "name": "M.FREDRIC",
@@ -429,7 +429,7 @@
     "imageUrl": "https://malibucountrymart.com/wp-content/uploads/2020/04/Tra-Di-Noi-Pasta-scaled.jpg",
     "website": "https://tradinoimalibu.com",
     "domain": "tradinoimalibu.com",
-    "logoDomain": "tradinoimalibu.com"
+    "logoDomain": null
   },
   {
     "name": "Veritas Yoga",

@@ -26,6 +26,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
+import { isUsableBrandLogoDomain } from "./lib/logoDomains.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
@@ -158,6 +159,24 @@ function nameConcatRaw(name) {
  * literally being the name is high confidence regardless of the brand label.
  * The name+domain double-gate avoids traps like "Madewell" → madewellarchitects.
  */
+/**
+ * Auto-resolved domains that are almost never the right retail/restaurant logo
+ * for a high-street tenant (tech products, schools, foreign gov, etc.).
+ * Manual overrides can still force these when genuinely correct.
+ */
+function isImplausibleRetailDomain(domain) {
+  const d = String(domain ?? "").toLowerCase();
+  if (!d) return true;
+  if (!isUsableBrandLogoDomain(d)) return true;
+  return (
+    /\.(ai|dev|edu)(\/|$)/i.test(d) ||
+    /\.(go\.th|co\.th|ac\.uk)(\/|$)/i.test(d) ||
+    /(^|\.)(security|insurance)(\.|$)/i.test(d) ||
+    /partners\.com$/i.test(d) ||
+    /wordpress\./i.test(d)
+  );
+}
+
 function pickDomain(accountName, results) {
   if (!Array.isArray(results) || !results.length) return null;
   const queryTokens = tokenize(accountName);
@@ -165,11 +184,20 @@ function pickDomain(accountName, results) {
 
   const roots = new Set([queryTokens.join(""), nameConcatRaw(accountName)]);
 
+  const accept = (domain) =>
+    domain && !isImplausibleRetailDomain(domain) ? domain : null;
+
   const top = results[0];
-  if (top?.domain && matchStrength(queryTokens, top)) return top.domain;
+  if (top?.domain && matchStrength(queryTokens, top)) {
+    const d = accept(top.domain);
+    if (d) return d;
+  }
 
   for (const r of results.slice(0, 6)) {
-    if (r?.domain && roots.has(domainRoot(r.domain))) return r.domain;
+    if (r?.domain && roots.has(domainRoot(r.domain))) {
+      const d = accept(r.domain);
+      if (d) return d;
+    }
   }
 
   for (const r of results.slice(1, 5)) {
@@ -178,7 +206,8 @@ function pickDomain(accountName, results) {
       matchStrength(queryTokens, r) === "name-exact" &&
       roots.has(domainRoot(r.domain))
     ) {
-      return r.domain;
+      const d = accept(r.domain);
+      if (d) return d;
     }
   }
   return null;
@@ -272,7 +301,9 @@ fs.writeFileSync(searchCacheFile, JSON.stringify(searchCache, null, 2));
  */
 let overrides = {};
 if (fs.existsSync(overridesFile)) {
-  overrides = JSON.parse(fs.readFileSync(overridesFile, "utf8"));
+  const raw = JSON.parse(fs.readFileSync(overridesFile, "utf8"));
+  const { ["@byStreet"]: _byStreet, ...nameOverrides } = raw;
+  overrides = nameOverrides;
 }
 
 /** name -> domain | null (Brand Search pass) */
@@ -356,6 +387,7 @@ if (!skipDerive) {
       while (queue.length) {
         const name = queue.pop();
         for (const domain of candidateDomains(name)) {
+          if (isImplausibleRetailDomain(domain)) continue;
           const { status, sha1 } = await verifyDomain(domain);
           if (status === 200 && sha1 && !GENERIC_LOGO_HASHES.has(sha1)) {
             cache[name] = domain;
@@ -399,7 +431,9 @@ if (!skipDerive) {
 let overridden = 0;
 for (const name of names) {
   if (Object.prototype.hasOwnProperty.call(overrides, name)) {
-    cache[name] = overrides[name] || null;
+    const value = overrides[name] || null;
+    cache[name] =
+      value && isUsableBrandLogoDomain(value) ? value : null;
     overridden++;
   }
 }

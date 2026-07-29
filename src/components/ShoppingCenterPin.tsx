@@ -6,12 +6,18 @@ import { createShoppingCenterMarkerIcon } from "../utils/createShoppingCenterMar
 
 interface ShoppingCenterPinProps {
   center: ShoppingCenter;
-  onOpenDirectory: () => void;
+  onClick: () => void;
+  /** Keep logo pins above clustered street tenants on the master map. */
+  zIndex?: number;
+  /** Smaller logo callout for overview maps. */
+  compact?: boolean;
 }
 
 export function ShoppingCenterPin({
   center,
-  onOpenDirectory,
+  onClick,
+  zIndex = MAP_Z_INDEX.tenantMarker,
+  compact = false,
 }: ShoppingCenterPinProps) {
   const map = useMap();
 
@@ -23,22 +29,29 @@ export function ShoppingCenterPin({
       map,
       title: center.name,
       optimized: false,
-      zIndex: MAP_Z_INDEX.tenantMarker,
+      zIndex,
     });
 
     let cancelled = false;
-    createShoppingCenterMarkerIcon(center.logo).then((icon) => {
+    createShoppingCenterMarkerIcon(center.logo, {
+      lightBox: center.lightLogoMarker,
+      boxBg: center.logoMarkerBg,
+      compact,
+      placement: compact ? center.masterMapLogoPlacement : undefined,
+      logoWidth: compact ? center.masterMapLogoWidth : undefined,
+      logoCrop: center.logoCrop,
+    }).then((icon) => {
       if (!cancelled) marker.setIcon(icon);
     });
 
-    const listener = marker.addListener("click", onOpenDirectory);
+    const listener = marker.addListener("click", onClick);
 
     return () => {
       cancelled = true;
       listener.remove();
       marker.setMap(null);
     };
-  }, [map, center, onOpenDirectory]);
+  }, [map, center, onClick, zIndex, compact]);
 
   return null;
 }

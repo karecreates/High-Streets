@@ -4,51 +4,52 @@ import type {
   ShoppingCenterTenant,
   ShoppingCenterVacancy,
 } from "../data/shoppingCenters";
-import { getLogoDevImageUrl } from "../utils/logoDev";
+import { useLogoProvider } from "../hooks/useLogoProvider";
+import { loadBrandLogoImage } from "../utils/logoProvider";
+import { getLogoRouteOverride } from "../utils/logoRouteOverrides";
 
 interface ShoppingCenterDirectoryModalProps {
   center: ShoppingCenter;
   onClose: () => void;
 }
 
-function DirectoryLogoCell({ tenant }: { tenant: ShoppingCenterTenant }) {
-  const hasLogoDomain = Boolean(tenant.logoDomain);
+function DirectoryLogoCell({
+  tenant,
+  directoryHref,
+}: {
+  tenant: ShoppingCenterTenant;
+  directoryHref?: string;
+}) {
+  const [provider] = useLogoProvider();
+  const forceText =
+    !tenant.logoDomain || getLogoRouteOverride(tenant.logoDomain) === "text";
   const [logoSrc, setLogoSrc] = useState<string | null>(null);
-  const [showName, setShowName] = useState(!hasLogoDomain);
-  const href = tenant.website;
+  const [showName, setShowName] = useState(forceText);
+  const href = directoryHref ?? tenant.website;
 
   useEffect(() => {
-    const url = tenant.logoDomain ? getLogoDevImageUrl(tenant.logoDomain) : null;
-    if (!url) {
-      setLogoSrc(null);
-      setShowName(true);
-      return;
-    }
-
     let cancelled = false;
     setLogoSrc(null);
-    setShowName(false);
+    setShowName(forceText);
 
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.onload = () => {
-      if (!cancelled) {
-        setLogoSrc(url);
+    if (forceText || !tenant.logoDomain) return;
+
+    (async () => {
+      const img = await loadBrandLogoImage(tenant.logoDomain);
+      if (cancelled) return;
+      if (img?.src) {
+        setLogoSrc(img.src);
         setShowName(false);
-      }
-    };
-    img.onerror = () => {
-      if (!cancelled) {
+      } else {
         setLogoSrc(null);
         setShowName(true);
       }
-    };
-    img.src = url;
+    })();
 
     return () => {
       cancelled = true;
     };
-  }, [tenant.logoDomain]);
+  }, [tenant.logoDomain, provider, forceText]);
 
   const content = showName ? (
     <span className="shopping-center-directory__name">{tenant.name}</span>
@@ -104,19 +105,95 @@ function VacancyCard({ vacancy }: { vacancy: ShoppingCenterVacancy }) {
   );
 }
 
+function SitePlanLightbox({
+  centerName,
+  src,
+  onClose,
+}: {
+  centerName: string;
+  src: string;
+  onClose: () => void;
+}) {
+  const isPdf = /\.pdf(?:$|\?)/i.test(src);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.stopPropagation();
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown, true);
+    return () => window.removeEventListener("keydown", onKeyDown, true);
+  }, [onClose]);
+
+  return (
+    <div
+      className="shopping-center-site-plan"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${centerName} site plan`}
+      onClick={onClose}
+    >
+      <div
+        className="shopping-center-site-plan__panel"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <header className="shopping-center-site-plan__header">
+          <h3>{centerName} · Site Plan</h3>
+          <div className="shopping-center-site-plan__header-actions">
+            <a
+              className="shopping-center-site-plan__open"
+              href={src}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open in new tab
+            </a>
+            <button
+              type="button"
+              className="shopping-center-directory__close"
+              onClick={onClose}
+              aria-label="Close site plan"
+            >
+              ×
+            </button>
+          </div>
+        </header>
+        <div
+          className={`shopping-center-site-plan__body${
+            isPdf ? " shopping-center-site-plan__body--pdf" : ""
+          }`}
+        >
+          {isPdf ? (
+            <iframe
+              className="shopping-center-site-plan__pdf"
+              src={src}
+              title={`${centerName} site plan`}
+            />
+          ) : (
+            <img src={src} alt={`${centerName} site plan`} />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function ShoppingCenterDirectoryModal({
   center,
   onClose,
 }: ShoppingCenterDirectoryModalProps) {
   const hasVacancies = center.vacancies.length > 0;
+  const [sitePlanOpen, setSitePlanOpen] = useState(false);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape" && !sitePlanOpen) onClose();
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [onClose]);
+  }, [onClose, sitePlanOpen]);
 
   return (
     <div
@@ -133,7 +210,7 @@ export function ShoppingCenterDirectoryModal({
         onClick={(event) => event.stopPropagation()}
       >
         <header className="shopping-center-directory__header">
-          <div>
+          <div className="shopping-center-directory__header-copy">
             <h2 id="shopping-center-directory-title">{center.name}</h2>
             <p className="shopping-center-directory__meta">
               {center.tenants.length} tenants
@@ -143,6 +220,24 @@ export function ShoppingCenterDirectoryModal({
                   }`
                 : ""}
             </p>
+            {center.sitePlanUrl ? (
+              <a
+                className="shopping-center-directory__site-plan-btn"
+                href={center.sitePlanUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View site plan
+              </a>
+            ) : center.sitePlan ? (
+              <button
+                type="button"
+                className="shopping-center-directory__site-plan-btn"
+                onClick={() => setSitePlanOpen(true)}
+              >
+                View site plan
+              </button>
+            ) : null}
           </div>
           <button
             type="button"
@@ -180,12 +275,24 @@ export function ShoppingCenterDirectoryModal({
             </h3>
             <div className="shopping-center-directory__grid">
               {center.tenants.map((tenant) => (
-                <DirectoryLogoCell key={tenant.name} tenant={tenant} />
+                <DirectoryLogoCell
+                  key={tenant.name}
+                  tenant={tenant}
+                  directoryHref={center.tenantDirectoryUrl}
+                />
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      {sitePlanOpen && center.sitePlan ? (
+        <SitePlanLightbox
+          centerName={center.name}
+          src={center.sitePlan}
+          onClose={() => setSitePlanOpen(false)}
+        />
+      ) : null}
     </div>
   );
 }

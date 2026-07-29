@@ -23,7 +23,7 @@ function normalizeDomain(domain: string): string {
     .toLowerCase();
 }
 
-function tenantsShareBrand(a: Tenant, b: Tenant): boolean {
+export function tenantsShareBrand(a: Tenant, b: Tenant): boolean {
   // Same verified brand domain → same brand (strongest signal).
   const domainA = normalizeDomain(a.logoDomain || a.domain);
   const domainB = normalizeDomain(b.logoDomain || b.domain);

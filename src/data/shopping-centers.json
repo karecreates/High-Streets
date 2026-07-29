@@ -1,14 +1,300 @@
 {
-  "sourceFile": "shopping_centers.xlsx",
-  "generatedAt": "2026-07-14T23:29:21.195Z",
+  "sourceFile": "Shopping_Center_Occupied_AND_Vacant_7.028.xlsx",
+  "generatedAt": "2026-07-28T23:08:30.326Z",
   "centers": [
+    {
+      "centerName": "Brentwood Country Mart",
+      "slug": "brentwood-country-mart",
+      "tenants": [
+        {
+          "name": "Ann Mashbrun",
+          "logoDomain": "annscottage.com",
+          "hasLogo": true,
+          "website": "https://annscottage.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Barney's Gourmet Hamburgers",
+          "logoDomain": "barneyshamburgers.com",
+          "hasLogo": true,
+          "website": "https://barneyshamburgers.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Broken English",
+          "logoDomain": "brokenenglishjewelry.com",
+          "hasLogo": true,
+          "website": "https://brokenenglishjewelry.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Caffe Luxxe",
+          "logoDomain": "caffeluxxe.com",
+          "hasLogo": true,
+          "website": "https://caffeluxxe.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Clare V",
+          "logoDomain": "clarev.com",
+          "hasLogo": true,
+          "website": "https://clarev.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cos Bar",
+          "logoDomain": "cosbar.com",
+          "hasLogo": true,
+          "website": "https://cosbar.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cynthia Benjamin",
+          "logoDomain": "cynthia-benjamin.com",
+          "hasLogo": true,
+          "website": "https://cynthia-benjamin.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Diesel Bookstore",
+          "logoDomain": "dieselbookstore.com",
+          "hasLogo": true,
+          "website": "https://dieselbookstore.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Dôen",
+          "logoDomain": "shopdoen.com",
+          "hasLogo": true,
+          "website": "https://shopdoen.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Edelweiss Chocolates",
+          "logoDomain": "edelweisschocolates.com",
+          "hasLogo": true,
+          "website": "https://edelweisschocolates.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Farmshop",
+          "logoDomain": "farmshop.com",
+          "hasLogo": true,
+          "website": "https://farmshop.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Frida Taqueria",
+          "logoDomain": "fridatacosla.com",
+          "hasLogo": true,
+          "website": "https://fridatacosla.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Goop Kitchen",
+          "logoDomain": "goop.com",
+          "hasLogo": true,
+          "website": "https://goop.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Hudson Grace",
+          "logoDomain": "hudsongrace.com",
+          "hasLogo": true,
+          "website": "https://hudsongrace.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Irene Neuwirth",
+          "logoDomain": "ireneneuwirth.com",
+          "hasLogo": true,
+          "website": "https://ireneneuwirth.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "James Perse",
+          "logoDomain": "jamesperse.com",
+          "hasLogo": true,
+          "website": "https://jamesperse.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Jenni Kayne",
+          "logoDomain": "jennikayne.com",
+          "hasLogo": true,
+          "website": "https://jennikayne.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Lloyd's Barbershop",
+          "logoDomain": "lloydsbarbershop.com",
+          "hasLogo": true,
+          "website": "https://lloydsbarbershop.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Mart Shoe Repair",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Orlebar Brown",
+          "logoDomain": "orlebarbrown.com",
+          "hasLogo": true,
+          "website": "https://orlebarbrown.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Pippa Small Jewellery",
+          "logoDomain": "pippasmall.com",
+          "hasLogo": true,
+          "website": "https://pippasmall.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Poppy Store",
+          "logoDomain": "poppystores.com",
+          "hasLogo": true,
+          "website": "https://poppystores.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Reddi Chick",
+          "logoDomain": "reddichickbbq.com",
+          "hasLogo": true,
+          "website": "https://reddichickbbq.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sezane",
+          "logoDomain": "sezane.com",
+          "hasLogo": true,
+          "website": "https://sezane.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sid Mashburn",
+          "logoDomain": "sidmashburn.com",
+          "hasLogo": true,
+          "website": "https://sidmashburn.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sugar Paper",
+          "logoDomain": "sugarpaper.com",
+          "hasLogo": true,
+          "website": "https://sugarpaper.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sweet Rose Creamery",
+          "logoDomain": "sweetrosecreamery.com",
+          "hasLogo": true,
+          "website": "https://sweetrosecreamery.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Toy Crazy",
+          "logoDomain": "gotoycrazy.com",
+          "hasLogo": true,
+          "website": "https://gotoycrazy.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Turpan",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://turpan.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "US Post Office",
+          "logoDomain": "usps.com",
+          "hasLogo": true,
+          "website": "https://www.usps.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Varley",
+          "logoDomain": "varley.com",
+          "hasLogo": true,
+          "website": "https://varley.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        }
+      ],
+      "vacancies": []
+    },
     {
       "centerName": "Malibu Country Mart",
       "slug": "malibu-country-mart",
       "tenants": [
         {
-          "name": "9026- Eyes",
-          "logoDomain": "9026eyes.com",
+          "name": "9026-Eyes",
+          "logoDomain": null,
           "hasLogo": true,
           "website": "https://9026eyes.com",
           "suite": "20",
@@ -25,7 +311,7 @@
           "spaceSf": "500"
         },
         {
-          "name": "alicia adams alpaca",
+          "name": "Alicia Adams Alpaca",
           "logoDomain": "aliciaadamsalpaca.com",
           "hasLogo": true,
           "website": "https://aliciaadamsalpaca.com",
@@ -44,9 +330,9 @@
         },
         {
           "name": "All Things Bell",
-          "logoDomain": null,
-          "hasLogo": false,
-          "website": null,
+          "logoDomain": "allthingsbell.com",
+          "hasLogo": true,
+          "website": "https://allthingsbell.com",
           "suite": "3A",
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -89,9 +375,9 @@
         },
         {
           "name": "Brandy Melville",
-          "logoDomain": "brandymelville.co.uk",
+          "logoDomain": "brandymelville.com",
           "hasLogo": true,
-          "website": "https://brandymelville.co.uk",
+          "website": "https://brandymelville.com",
           "suite": "12",
           "unitStatus": "Occupied",
           "spaceSf": "2000"
@@ -107,9 +393,9 @@
         },
         {
           "name": "Cherry Malibu",
-          "logoDomain": null,
-          "hasLogo": false,
-          "website": null,
+          "logoDomain": "cherryla.com",
+          "hasLogo": true,
+          "website": "https://cherryla.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -124,10 +410,10 @@
           "spaceSf": null
         },
         {
-          "name": "Cie Sparks Salon",
-          "logoDomain": "ciesparkssalon.com",
+          "name": "Cie Salon",
+          "logoDomain": "ciesalon.com",
           "hasLogo": true,
-          "website": "https://ciesparkssalon.com",
+          "website": "https://ciesalon.com",
           "suite": "22",
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -143,18 +429,18 @@
         },
         {
           "name": "Creo Arthouse",
-          "logoDomain": null,
-          "hasLogo": false,
-          "website": null,
+          "logoDomain": "creoarthouse.com",
+          "hasLogo": true,
+          "website": "https://creoarthouse.com",
           "suite": "23",
           "unitStatus": "Occupied",
           "spaceSf": null
         },
         {
           "name": "Crown",
-          "logoDomain": "crown.com",
+          "logoDomain": "brazeautricot.com",
           "hasLogo": true,
-          "website": "https://crown.com",
+          "website": "https://brazeautricot.com",
           "suite": "D3",
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -179,9 +465,9 @@
         },
         {
           "name": "Encore",
-          "logoDomain": "encore.market",
-          "hasLogo": true,
-          "website": "https://encore.market",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
           "suite": "7",
           "unitStatus": "Occupied",
           "spaceSf": "1010"
@@ -196,7 +482,7 @@
           "spaceSf": null
         },
         {
-          "name": "Faherty Brand",
+          "name": "Faherty",
           "logoDomain": "fahertybrand.com",
           "hasLogo": true,
           "website": "https://fahertybrand.com",
@@ -250,7 +536,7 @@
           "spaceSf": null
         },
         {
-          "name": "L'Agence",
+          "name": "L'AGENCE",
           "logoDomain": "lagence.com",
           "hasLogo": true,
           "website": "https://lagence.com",
@@ -260,9 +546,9 @@
         },
         {
           "name": "LA Sculpt",
-          "logoDomain": "lasculptstudio.com.au",
+          "logoDomain": "lasculpt.com",
           "hasLogo": true,
-          "website": "https://lasculptstudio.com.au",
+          "website": "https://lasculpt.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -277,7 +563,7 @@
           "spaceSf": "500"
         },
         {
-          "name": "M. FREDRIC",
+          "name": "M.FREDRIC",
           "logoDomain": "mfredric.com",
           "hasLogo": true,
           "website": "https://mfredric.com",
@@ -322,19 +608,19 @@
           "spaceSf": "2538"
         },
         {
-          "name": "Malibu Grooming Company",
-          "logoDomain": null,
-          "hasLogo": false,
-          "website": null,
+          "name": "Malibu Grooming Co.",
+          "logoDomain": "malibugroomingco.com",
+          "hasLogo": true,
+          "website": "https://malibugroomingco.com",
           "suite": "D7",
           "unitStatus": "Occupied",
           "spaceSf": "1800"
         },
         {
           "name": "Malibu Mutt's Grill",
-          "logoDomain": null,
-          "hasLogo": false,
-          "website": null,
+          "logoDomain": "malibumuttsgrill.com",
+          "hasLogo": true,
+          "website": "https://malibumuttsgrill.com",
           "suite": "2",
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -349,7 +635,7 @@
           "spaceSf": "1100"
         },
         {
-          "name": "NAGA LA",
+          "name": "NAGA Los Angeles",
           "logoDomain": "nagalosangeles.com",
           "hasLogo": true,
           "website": "https://nagalosangeles.com",
@@ -359,27 +645,27 @@
         },
         {
           "name": "Náti",
-          "logoDomain": "nti.com",
+          "logoDomain": "natiboutique.com",
           "hasLogo": true,
-          "website": "https://nti.com",
+          "website": "https://natiboutique.com",
           "suite": "14",
           "unitStatus": "Occupied",
           "spaceSf": null
         },
         {
-          "name": "Nenergy",
-          "logoDomain": "nenergy.nl",
+          "name": "Nenergy Boost",
+          "logoDomain": "nenergyboost.com",
           "hasLogo": true,
-          "website": "https://nenergy.nl",
+          "website": "https://nenergyboost.com",
           "suite": "B2",
           "unitStatus": "Occupied",
           "spaceSf": null
         },
         {
-          "name": "Nomad",
-          "logoDomain": null,
-          "hasLogo": false,
-          "website": null,
+          "name": "Nomad Malibu",
+          "logoDomain": "nomadmalibu.com",
+          "hasLogo": true,
+          "website": "https://nomadmalibu.com",
           "suite": "17",
           "unitStatus": "Occupied",
           "spaceSf": "1100"
@@ -403,20 +689,11 @@
           "spaceSf": null
         },
         {
-          "name": "Paige",
+          "name": "PAIGE",
           "logoDomain": "paige.com",
           "hasLogo": true,
           "website": "https://paige.com",
           "suite": "A",
-          "unitStatus": "Occupied",
-          "spaceSf": null
-        },
-        {
-          "name": "Ralph Lauren",
-          "logoDomain": "ralphlauren.com",
-          "hasLogo": true,
-          "website": "https://ralphlauren.com",
-          "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
         },
@@ -457,19 +734,19 @@
           "spaceSf": "500"
         },
         {
-          "name": "The Bunker",
-          "logoDomain": "thebunkerny.com",
-          "hasLogo": true,
-          "website": "https://thebunkerny.com",
+          "name": "The Bunker Surf & Skate",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
         },
         {
           "name": "The New West",
-          "logoDomain": "thenewwest.co",
+          "logoDomain": "shopthenewwest.com",
           "hasLogo": true,
-          "website": "https://thenewwest.co",
+          "website": "https://shopthenewwest.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -485,16 +762,16 @@
         },
         {
           "name": "Toy Crazy",
-          "logoDomain": "toycrazy.com.au",
+          "logoDomain": "gotoycrazy.com",
           "hasLogo": true,
-          "website": "https://toycrazy.com.au",
+          "website": "https://gotoycrazy.com",
           "suite": "D6",
           "unitStatus": "Occupied",
           "spaceSf": "1500"
         },
         {
           "name": "Tra di Noi",
-          "logoDomain": "tradinoimalibu.com",
+          "logoDomain": null,
           "hasLogo": true,
           "website": "https://tradinoimalibu.com",
           "suite": "8A",
@@ -511,7 +788,7 @@
           "spaceSf": null
         },
         {
-          "name": "Vince",
+          "name": "Vince.",
           "logoDomain": "vince.com",
           "hasLogo": true,
           "website": "https://vince.com",
@@ -647,9 +924,9 @@
         },
         {
           "name": "Kitson",
-          "logoDomain": "kitsonpartners.com",
+          "logoDomain": "kitsonlosangeles.com",
           "hasLogo": true,
-          "website": "https://kitsonpartners.com",
+          "website": "https://kitsonlosangeles.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -674,9 +951,9 @@
         },
         {
           "name": "Lululemon Athletica",
-          "logoDomain": "lululemon.co.nz",
+          "logoDomain": "lululemon.com",
           "hasLogo": true,
-          "website": "https://lululemon.co.nz",
+          "website": "https://lululemon.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": "2000"
@@ -728,7 +1005,7 @@
         },
         {
           "name": "Shell Gas",
-          "logoDomain": "darnestownshell.com",
+          "logoDomain": null,
           "hasLogo": true,
           "website": "https://darnestownshell.com",
           "suite": null,
@@ -821,6 +1098,865 @@
           "suite": "3846",
           "spaceSf": "1338",
           "spaceLabel": "Malibu Village - Suite 3846 - 1,338 sf",
+          "unitStatus": "Vacant"
+        }
+      ]
+    },
+    {
+      "centerName": "Manhattan Village",
+      "slug": "manhattan-village",
+      "tenants": [
+        {
+          "name": "7th Avenue",
+          "logoDomain": "7thavenue.co",
+          "hasLogo": true,
+          "website": "https://7thavenue.co",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Aerie",
+          "logoDomain": "aerie.com",
+          "hasLogo": true,
+          "website": "https://aerie.com",
+          "suite": "A6",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Alo Yoga",
+          "logoDomain": "aloyoga.com",
+          "hasLogo": true,
+          "website": "https://aloyoga.com",
+          "suite": "N125",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Anthropologie",
+          "logoDomain": "anthropologie.com",
+          "hasLogo": true,
+          "website": "https://anthropologie.com",
+          "suite": "3100B",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Apple",
+          "logoDomain": "apple.com",
+          "hasLogo": true,
+          "website": "https://apple.com",
+          "suite": "B1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bank of America",
+          "logoDomain": "bankofamerica.com",
+          "hasLogo": true,
+          "website": "https://bankofamerica.com",
+          "suite": "3016",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Banter & Bliss Candle Co.",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "A1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bath and Body Works",
+          "logoDomain": "bathandbodyworks.com",
+          "hasLogo": true,
+          "website": "https://bathandbodyworks.com",
+          "suite": "D8",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Black Clover",
+          "logoDomain": "blackclover.com",
+          "hasLogo": true,
+          "website": "https://blackclover.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "BMO US",
+          "logoDomain": "bmo.com",
+          "hasLogo": true,
+          "website": "https://bmo.com",
+          "suite": "2612",
+          "unitStatus": "Occupied",
+          "spaceSf": "3602"
+        },
+        {
+          "name": "BOA Steakhouse",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://boasteak.com",
+          "suite": "3110",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "California Pizza Kitchen",
+          "logoDomain": "cpk.com",
+          "hasLogo": true,
+          "website": "https://cpk.com",
+          "suite": "3320",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cellat",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Kiosk",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Centerpoint Properties",
+          "logoDomain": "centerpoint.com",
+          "hasLogo": true,
+          "website": "https://centerpoint.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Chase Bank",
+          "logoDomain": "chase.com",
+          "hasLogo": true,
+          "website": "https://chase.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "4432"
+        },
+        {
+          "name": "Chili's Grill & Bar",
+          "logoDomain": "chilis.com",
+          "hasLogo": true,
+          "website": "https://chilis.com",
+          "suite": "2620",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Citibank",
+          "logoDomain": "citi.com",
+          "hasLogo": true,
+          "website": "https://citi.com",
+          "suite": "2710",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Coreology Fitness",
+          "logoDomain": "coreologyfitness.com",
+          "hasLogo": true,
+          "website": "https://coreologyfitness.com",
+          "suite": "S130",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Corepower Yoga",
+          "logoDomain": "corepoweryoga.com",
+          "hasLogo": true,
+          "website": "https://corepoweryoga.com",
+          "suite": "E16",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "CVS Pharmacy",
+          "logoDomain": "cvs.com",
+          "hasLogo": true,
+          "website": "https://cvs.com",
+          "suite": "2900",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Dan Modern Chinese",
+          "logoDomain": "danmodernchinese.com",
+          "hasLogo": true,
+          "website": "https://danmodernchinese.com",
+          "suite": "S140",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "DEL - Vans Inc. (VF Sportswear)",
+          "logoDomain": "vans.com",
+          "hasLogo": true,
+          "website": "https://vans.com",
+          "suite": "B2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Dermatology & Laser Center",
+          "logoDomain": "dermlasercenter.com",
+          "hasLogo": true,
+          "website": "https://dermlasercenter.com",
+          "suite": "Medical Plaza Suite 105/ 211",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Eclai",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "C8",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Faherty Brand",
+          "logoDomain": "fahertybrand.com",
+          "hasLogo": true,
+          "website": "https://fahertybrand.com",
+          "suite": "S120",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Free People",
+          "logoDomain": "freepeople.com",
+          "hasLogo": true,
+          "website": "https://freepeople.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "French Touch",
+          "logoDomain": "frenchtouchfund.com",
+          "hasLogo": true,
+          "website": "https://frenchtouchfund.com",
+          "suite": "D11",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Gap + Gap Kids",
+          "logoDomain": "gap.com",
+          "hasLogo": true,
+          "website": "https://gap.com",
+          "suite": "C4",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "gorjana",
+          "logoDomain": "gorjana.com",
+          "hasLogo": true,
+          "website": "https://gorjana.com",
+          "suite": "S115",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "HANDEL'S HOMEMADE ICE CREAM",
+          "logoDomain": "handelshomemadeicecream.com",
+          "hasLogo": true,
+          "website": "https://handelshomemadeicecream.com",
+          "suite": "N145",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Heyday",
+          "logoDomain": "heydayskincare.com",
+          "hasLogo": true,
+          "website": "https://heydayskincare.com",
+          "suite": "N110",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Holly & Hudson",
+          "logoDomain": "hollyandhudson.com",
+          "hasLogo": true,
+          "website": "https://hollyandhudson.com",
+          "suite": "C15",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Islands Restaurants",
+          "logoDomain": "islandsrestaurants.com",
+          "hasLogo": true,
+          "website": "https://islandsrestaurants.com",
+          "suite": "D1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "J.Jill",
+          "logoDomain": "jjill.com",
+          "hasLogo": true,
+          "website": "https://jjill.com",
+          "suite": "D4",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "JOEY Restaurants",
+          "logoDomain": "joeyrestaurants.com",
+          "hasLogo": true,
+          "website": "https://joeyrestaurants.com",
+          "suite": "3120",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Johnny Was",
+          "logoDomain": "johnnywas.com",
+          "hasLogo": true,
+          "website": "https://johnnywas.com",
+          "suite": "N130",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Kamana Palace",
+          "logoDomain": "kamana.co",
+          "hasLogo": true,
+          "website": "https://kamana.co",
+          "suite": "E17",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Kiehl's Since 1851",
+          "logoDomain": "kiehls.com",
+          "hasLogo": true,
+          "website": "https://kiehls.com",
+          "suite": "E5",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Las Olas",
+          "logoDomain": "lasolasvc.com",
+          "hasLogo": true,
+          "website": "https://lasolasvc.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Lovesac",
+          "logoDomain": "lovesac.com",
+          "hasLogo": true,
+          "website": "https://lovesac.com",
+          "suite": "D3",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "M. SKY",
+          "logoDomain": "msky.kz",
+          "hasLogo": true,
+          "website": "https://msky.kz",
+          "suite": "A5",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Mac Cosmetics",
+          "logoDomain": "maccosmetics.com",
+          "hasLogo": true,
+          "website": "https://maccosmetics.com",
+          "suite": "B5",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Macy's",
+          "logoDomain": "macys.com",
+          "hasLogo": true,
+          "website": "https://macys.com",
+          "suite": "3400",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Mai's Nails",
+          "logoDomain": "maisnails.com",
+          "hasLogo": true,
+          "website": "https://maisnails.com",
+          "suite": "D9",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Management Office",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Medical Plaza Suite 201",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Manhattan Beach Endodontics",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Medical Plaza Suite 101",
+          "unitStatus": null,
+          "spaceSf": null
+        },
+        {
+          "name": "Manhattan Beach Surgery Center",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Medical Plaza Suite 110",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Manhattan Village Concierge",
+          "logoDomain": "shopmanhattanvillage.com",
+          "hasLogo": true,
+          "website": "https://shopmanhattanvillage.com",
+          "suite": "Center Court",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Mercado",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "3212A",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Minutes + Hours",
+          "logoDomain": "minuteshours.com",
+          "hasLogo": true,
+          "website": "https://minuteshours.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Modern American Dentistry",
+          "logoDomain": "modernamericandentistry.com",
+          "hasLogo": true,
+          "website": "https://modernamericandentistry.com",
+          "suite": "Medical Plaza Suite 107",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Naked Med Spa",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://nakedmedspa.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Offline by Aerie",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Olive Garden",
+          "logoDomain": "olivegarden.com",
+          "hasLogo": true,
+          "website": "https://olivegarden.com",
+          "suite": "2610",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Pink",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "C10",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Pottery Barn",
+          "logoDomain": "potterybarn.com",
+          "hasLogo": true,
+          "website": "https://potterybarn.com",
+          "suite": "E10",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Quatrine Home",
+          "logoDomain": "quatrine.com",
+          "hasLogo": true,
+          "website": "https://quatrine.com",
+          "suite": "D6",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Rails",
+          "logoDomain": "rails.com",
+          "hasLogo": true,
+          "website": "https://rails.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Ralphs",
+          "logoDomain": "ralphs.com",
+          "hasLogo": true,
+          "website": "https://ralphs.com",
+          "suite": "2700",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Reborn Coffee",
+          "logoDomain": "reborncoffee.com",
+          "hasLogo": true,
+          "website": "https://reborncoffee.com",
+          "suite": "3180",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Rowan",
+          "logoDomain": "rowan.com",
+          "hasLogo": true,
+          "website": "https://rowan.com",
+          "suite": "N128",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Ruah",
+          "logoDomain": "ruah.org.au",
+          "hasLogo": true,
+          "website": "https://ruah.org.au",
+          "suite": "C12",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Saint & Second",
+          "logoDomain": "saintandsecond.com",
+          "hasLogo": true,
+          "website": "https://saintandsecond.com",
+          "suite": "S100",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sea Breeze Dental Group",
+          "logoDomain": "seabreezedentalgroup.com",
+          "hasLogo": true,
+          "website": "https://seabreezedentalgroup.com",
+          "suite": "Medical Plaza Suite 210",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "See's Candies",
+          "logoDomain": "sees.com",
+          "hasLogo": true,
+          "website": "https://sees.com",
+          "suite": "2614",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sephora",
+          "logoDomain": "sephora.com",
+          "hasLogo": true,
+          "website": "https://sephora.com",
+          "suite": "C2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "SideCar Doughnuts",
+          "logoDomain": "sidecardoughnuts.com",
+          "hasLogo": true,
+          "website": "https://sidecardoughnuts.com",
+          "suite": "G102",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Silverlake Ramen",
+          "logoDomain": "silverlakeramen.com",
+          "hasLogo": true,
+          "website": "https://silverlakeramen.com",
+          "suite": "N140",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Smashburger",
+          "logoDomain": "smashburger.com",
+          "hasLogo": true,
+          "website": "https://smashburger.com",
+          "suite": "G100",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Spectrum",
+          "logoDomain": "spectrum.com",
+          "hasLogo": true,
+          "website": "https://spectrum.com",
+          "suite": "H110",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Stein Optometric Center",
+          "logoDomain": "steinoptometriccenter.com",
+          "hasLogo": true,
+          "website": "https://steinoptometriccenter.com",
+          "suite": "E4",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sunglass Hut",
+          "logoDomain": "sunglasshut.com",
+          "hasLogo": true,
+          "website": "https://sunglasshut.com",
+          "suite": "E6",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "SunLife Organics",
+          "logoDomain": "sunlifeorganics.com",
+          "hasLogo": true,
+          "website": "https://sunlifeorganics.com",
+          "suite": "E14",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Super Sports",
+          "logoDomain": "supersports.co.th",
+          "hasLogo": true,
+          "website": "https://supersports.co.th",
+          "suite": "2930",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Supercuts",
+          "logoDomain": "supercuts.com",
+          "hasLogo": true,
+          "website": "https://supercuts.com",
+          "suite": "2920",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sushi Roku",
+          "logoDomain": "sushiroku.com",
+          "hasLogo": true,
+          "website": "https://sushiroku.com",
+          "suite": "3110",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sweetgreen",
+          "logoDomain": "sweetgreen.com",
+          "hasLogo": true,
+          "website": "https://sweetgreen.com",
+          "suite": "E18",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Tempur-Pedic",
+          "logoDomain": "tempurpedic.com",
+          "hasLogo": true,
+          "website": "https://tempurpedic.com",
+          "suite": "A2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The 1916 Company",
+          "logoDomain": "the1916company.com",
+          "hasLogo": true,
+          "website": "https://the1916company.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Coffee Bean & Tea Leaf",
+          "logoDomain": "coffeebean.com",
+          "hasLogo": true,
+          "website": "https://coffeebean.com",
+          "suite": "2616",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Game Chest",
+          "logoDomain": "thegamechest.com",
+          "hasLogo": true,
+          "website": "https://thegamechest.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Urban Outfitters",
+          "logoDomain": "urbanoutfitters.com",
+          "hasLogo": true,
+          "website": "https://urbanoutfitters.com",
+          "suite": "3100C",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Urban Plates",
+          "logoDomain": "urbanplates.com",
+          "hasLogo": true,
+          "website": "https://urbanplates.com",
+          "suite": "2650",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "US Bank",
+          "logoDomain": "usbank.com",
+          "hasLogo": true,
+          "website": "https://usbank.com",
+          "suite": "3300",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Victoria's Secret",
+          "logoDomain": "victoriassecret.com",
+          "hasLogo": true,
+          "website": "https://victoriassecret.com",
+          "suite": "C10",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Wells Fargo Bank",
+          "logoDomain": "wellsfargobank.com",
+          "hasLogo": true,
+          "website": "https://wellsfargobank.com",
+          "suite": "2910",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "West Coast Center for Orthopedic Surgery & Sports Medicine",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Medical Plaza Suite 208",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "West Coast Sports Medicine Foundation",
+          "logoDomain": "westcoastsports.ca",
+          "hasLogo": true,
+          "website": "https://westcoastsports.ca",
+          "suite": "Medical Plaza Suite 206",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "West Elm",
+          "logoDomain": "westelm.com",
+          "hasLogo": true,
+          "website": "https://westelm.com",
+          "suite": "3100A",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westside Pediatrics",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://westsidepediatrics.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Williams-Sonoma",
+          "logoDomain": "williams-sonoma.com",
+          "hasLogo": true,
+          "website": "https://williams-sonoma.com",
+          "suite": "A10",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "WILSON",
+          "logoDomain": "wilson.com",
+          "hasLogo": true,
+          "website": "https://wilson.com",
+          "suite": "N137",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Xclusive Auto Spa",
+          "logoDomain": "xclusiveautospa.net",
+          "hasLogo": true,
+          "website": "https://xclusiveautospa.net",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        }
+      ],
+      "vacancies": [
+        {
+          "label": "Available space",
+          "suite": null,
+          "spaceSf": "2666",
+          "spaceLabel": "N-137",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Available space",
+          "suite": null,
+          "spaceSf": "1929",
+          "spaceLabel": "S-110",
           "unitStatus": "Vacant"
         }
       ]
@@ -1384,6 +2520,4732 @@
           "unitStatus": "Vacant"
         }
       ]
+    },
+    {
+      "centerName": "The Americana at Brand",
+      "slug": "americana-at-brand",
+      "tenants": [
+        {
+          "name": "Alo Yoga",
+          "logoDomain": "aloyoga.com",
+          "hasLogo": true,
+          "website": "https://aloyoga.com",
+          "suite": "839",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "AMC",
+          "logoDomain": "amctheatres.com",
+          "hasLogo": true,
+          "website": "https://amctheatres.com",
+          "suite": "322",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Apple",
+          "logoDomain": "apple.com",
+          "hasLogo": true,
+          "website": "https://apple.com",
+          "suite": "877",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Aritzia",
+          "logoDomain": "aritzia.com",
+          "hasLogo": true,
+          "website": "https://aritzia.com",
+          "suite": "899",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bacari Restaurants",
+          "logoDomain": "bacarirestaurants.com",
+          "hasLogo": true,
+          "website": "https://bacarirestaurants.com",
+          "suite": "757",
+          "unitStatus": "Occupied",
+          "spaceSf": "2750"
+        },
+        {
+          "name": "Bacio di Latte",
+          "logoDomain": "baciodilatte.com.br",
+          "hasLogo": true,
+          "website": "https://baciodilatte.com.br",
+          "suite": "803",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Barnes & Noble",
+          "logoDomain": "barnesandnoble.com",
+          "hasLogo": true,
+          "website": "https://barnesandnoble.com",
+          "suite": "210",
+          "unitStatus": "Occupied",
+          "spaceSf": "25000"
+        },
+        {
+          "name": "Bhindi Jewelers",
+          "logoDomain": "bhindi.com",
+          "hasLogo": true,
+          "website": "https://bhindi.com",
+          "suite": "519",
+          "unitStatus": "Occupied",
+          "spaceSf": "7000"
+        },
+        {
+          "name": "Bottega Veneta",
+          "logoDomain": "bottegaveneta.com",
+          "hasLogo": true,
+          "website": "https://bottegaveneta.com",
+          "suite": "798",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bourbon Steak Los Angeles",
+          "logoDomain": "bourbonsteak.com",
+          "hasLogo": true,
+          "website": "https://bourbonsteak.com",
+          "suite": "191",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Brandy Melville",
+          "logoDomain": "brandymelville.com",
+          "hasLogo": true,
+          "website": "https://brandymelville.com",
+          "suite": "126",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Breitling",
+          "logoDomain": "breitling.com",
+          "hasLogo": true,
+          "website": "https://breitling.com",
+          "suite": "728",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Byredo",
+          "logoDomain": "byredo.com",
+          "hasLogo": true,
+          "website": "https://byredo.com",
+          "suite": "106",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Chagee Tea",
+          "logoDomain": "chagee.us",
+          "hasLogo": true,
+          "website": "https://chagee.us",
+          "suite": "775",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Chanel Fragrance and Beauty Boutique",
+          "logoDomain": "chanel.com",
+          "hasLogo": true,
+          "website": "https://chanel.com",
+          "suite": "779",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Chase Bank",
+          "logoDomain": "chase.com",
+          "hasLogo": true,
+          "website": "https://chase.com",
+          "suite": "101",
+          "unitStatus": null,
+          "spaceSf": "0"
+        },
+        {
+          "name": "Chick-fil-A",
+          "logoDomain": "chick-fil-a.com",
+          "hasLogo": true,
+          "website": "https://chick-fil-a.com",
+          "suite": "807",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cinnabon",
+          "logoDomain": "cinnabon.com",
+          "hasLogo": true,
+          "website": "https://cinnabon.com",
+          "suite": "658",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Converse",
+          "logoDomain": "converse.com",
+          "hasLogo": true,
+          "website": "https://converse.com",
+          "suite": "732",
+          "unitStatus": "Occupied",
+          "spaceSf": "2100"
+        },
+        {
+          "name": "Crumbl Cookies",
+          "logoDomain": "crumblcookies.com",
+          "hasLogo": true,
+          "website": "https://crumblcookies.com",
+          "suite": "157",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "David Yurman",
+          "logoDomain": "davidyurman.com",
+          "hasLogo": true,
+          "website": "https://davidyurman.com",
+          "suite": "853",
+          "unitStatus": "Occupied",
+          "spaceSf": "3000"
+        },
+        {
+          "name": "Deluca's Italian Deli",
+          "logoDomain": "delucasdeli.com",
+          "hasLogo": true,
+          "website": "https://delucasdeli.com",
+          "suite": "781",
+          "unitStatus": "Occupied",
+          "spaceSf": "1810"
+        },
+        {
+          "name": "Edikted",
+          "logoDomain": "edikted.com",
+          "hasLogo": true,
+          "website": "https://edikted.com",
+          "suite": "561",
+          "unitStatus": null,
+          "spaceSf": "0"
+        },
+        {
+          "name": "Frida Mexican Cuisine",
+          "logoDomain": "fridaamericana.com",
+          "hasLogo": true,
+          "website": "https://fridaamericana.com",
+          "suite": "750",
+          "unitStatus": "Occupied",
+          "spaceSf": "8000"
+        },
+        {
+          "name": "Golden Goose",
+          "logoDomain": "goldengoose.com",
+          "hasLogo": true,
+          "website": "https://goldengoose.com",
+          "suite": "710",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "gorjana",
+          "logoDomain": "gorjana.com",
+          "hasLogo": true,
+          "website": "https://gorjana.com",
+          "suite": "773",
+          "unitStatus": "Occupied",
+          "spaceSf": "1790"
+        },
+        {
+          "name": "Gucci",
+          "logoDomain": "gucci.com",
+          "hasLogo": true,
+          "website": "https://gucci.com",
+          "suite": "702",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "H&M",
+          "logoDomain": "hm.com",
+          "hasLogo": true,
+          "website": "https://hm.com",
+          "suite": "891",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Haagen Dazs",
+          "logoDomain": "haagendazs.com",
+          "hasLogo": true,
+          "website": "https://haagendazs.com",
+          "suite": "668",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Indochino",
+          "logoDomain": "indochino.com",
+          "hasLogo": true,
+          "website": "https://indochino.com",
+          "suite": "712",
+          "unitStatus": "Occupied",
+          "spaceSf": "1655"
+        },
+        {
+          "name": "Jersey Mikes",
+          "logoDomain": "jerseymikes.com",
+          "hasLogo": true,
+          "website": "https://jerseymikes.com",
+          "suite": "813",
+          "unitStatus": "Occupied",
+          "spaceSf": "1500"
+        },
+        {
+          "name": "Joe & The Juice",
+          "logoDomain": "joejuice.com",
+          "hasLogo": true,
+          "website": "https://joejuice.com",
+          "suite": "252 S Brand Blvd",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Keller Williams Realty",
+          "logoDomain": "kw.com",
+          "hasLogo": true,
+          "website": "https://kw.com",
+          "suite": "889",
+          "unitStatus": null,
+          "spaceSf": "0"
+        },
+        {
+          "name": "Kiehl's Since 1851",
+          "logoDomain": "kiehls.com",
+          "hasLogo": true,
+          "website": "https://kiehls.com",
+          "suite": "720",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Kreassive Pop-Up",
+          "logoDomain": "kreassive.com",
+          "hasLogo": true,
+          "website": "https://kreassive.com",
+          "suite": "680",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "La La Land Kind Cafe",
+          "logoDomain": "lalalandkindcafe.com",
+          "hasLogo": true,
+          "website": "https://lalalandkindcafe.com",
+          "suite": "763",
+          "unitStatus": "Occupied",
+          "spaceSf": "3523"
+        },
+        {
+          "name": "Le Pain Quotidien",
+          "logoDomain": "lepainquotidien.com",
+          "hasLogo": true,
+          "website": "https://lepainquotidien.com",
+          "suite": "730",
+          "unitStatus": "Occupied",
+          "spaceSf": "2327"
+        },
+        {
+          "name": "Le Shrimp Noodle Bar",
+          "logoDomain": "leshrimpnoodlebar.com",
+          "hasLogo": true,
+          "website": "https://leshrimpnoodlebar.com",
+          "suite": "177",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Louis Vuitton",
+          "logoDomain": "louisvuitton.com",
+          "hasLogo": true,
+          "website": "https://louisvuitton.com",
+          "suite": "790",
+          "unitStatus": null,
+          "spaceSf": "0"
+        },
+        {
+          "name": "Lululemon Athletica",
+          "logoDomain": "lululemon.com",
+          "hasLogo": true,
+          "website": "https://lululemon.com",
+          "suite": "529",
+          "unitStatus": "Occupied",
+          "spaceSf": "3000"
+        },
+        {
+          "name": "Mejuri",
+          "logoDomain": "mejuri.com",
+          "hasLogo": true,
+          "website": "https://mejuri.com",
+          "suite": "116",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Mendocino Farms",
+          "logoDomain": "mendocinofarms.com",
+          "hasLogo": true,
+          "website": "https://mendocinofarms.com",
+          "suite": "769",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Michelina Bakery",
+          "logoDomain": "michelinabakery.com",
+          "hasLogo": true,
+          "website": "https://michelinabakery.com",
+          "suite": "699",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Modern Animal",
+          "logoDomain": "modernanimal.com",
+          "hasLogo": true,
+          "website": "https://modernanimal.com",
+          "suite": "101-B",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Nail'd It!",
+          "logoDomain": "nailditsalon.com",
+          "hasLogo": true,
+          "website": "https://nailditsalon.com",
+          "suite": "817",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Nespresso",
+          "logoDomain": "nespresso.com",
+          "hasLogo": true,
+          "website": "https://nespresso.com",
+          "suite": "718",
+          "unitStatus": "Occupied",
+          "spaceSf": "4398"
+        },
+        {
+          "name": "Nike Well Collective",
+          "logoDomain": "nike.com",
+          "hasLogo": true,
+          "website": "https://nike.com",
+          "suite": "837",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Nordstrom",
+          "logoDomain": "nordstrom.com",
+          "hasLogo": true,
+          "website": "https://nordstrom.com",
+          "suite": "102",
+          "unitStatus": "Occupied",
+          "spaceSf": "129729"
+        },
+        {
+          "name": "Ombra Wine Bar",
+          "logoDomain": "ombrawinebar.com",
+          "hasLogo": true,
+          "website": "https://ombrawinebar.com",
+          "suite": "783",
+          "unitStatus": "Occupied",
+          "spaceSf": "6350"
+        },
+        {
+          "name": "Omega",
+          "logoDomain": "omegawatches.com",
+          "hasLogo": true,
+          "website": "https://omegawatches.com",
+          "suite": "716",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Paradise Dynasty Restaurant",
+          "logoDomain": "paradisegp.com",
+          "hasLogo": true,
+          "website": "https://paradisegp.com",
+          "suite": "177",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Philz Coffee",
+          "logoDomain": "philzcoffee.com",
+          "hasLogo": true,
+          "website": "https://philzcoffee.com",
+          "suite": "252 S Brand Blvd",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Pressed Juicery",
+          "logoDomain": "pressed.com",
+          "hasLogo": true,
+          "website": "https://pressed.com",
+          "suite": "132",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Ray Ban",
+          "logoDomain": "ray-ban.com",
+          "hasLogo": true,
+          "website": "https://ray-ban.com",
+          "suite": "220",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Rivian Automotive",
+          "logoDomain": "rivianautomotive.com",
+          "hasLogo": true,
+          "website": "https://rivianautomotive.com",
+          "suite": "161",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Saint Laurent",
+          "logoDomain": "ysl.com",
+          "hasLogo": true,
+          "website": "https://ysl.com",
+          "suite": "859",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Salt & Straw",
+          "logoDomain": "saltandstraw.com",
+          "hasLogo": true,
+          "website": "https://saltandstraw.com",
+          "suite": "767",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Samsung",
+          "logoDomain": "samsung.com",
+          "hasLogo": true,
+          "website": "https://samsung.com",
+          "suite": "250",
+          "unitStatus": "Occupied",
+          "spaceSf": "11132"
+        },
+        {
+          "name": "Seabutter Sushi",
+          "logoDomain": "seabutter.com",
+          "hasLogo": true,
+          "website": "https://seabutter.com",
+          "suite": "252 S Brand Blvd",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "See's Candies",
+          "logoDomain": "sees.com",
+          "hasLogo": true,
+          "website": "https://sees.com",
+          "suite": "112",
+          "unitStatus": "Occupied",
+          "spaceSf": "1200"
+        },
+        {
+          "name": "Sephora",
+          "logoDomain": "sephora.com",
+          "hasLogo": true,
+          "website": "https://sephora.com",
+          "suite": "230",
+          "unitStatus": "Occupied",
+          "spaceSf": "6000"
+        },
+        {
+          "name": "Shake Shack",
+          "logoDomain": "shakeshack.com",
+          "hasLogo": true,
+          "website": "https://shakeshack.com",
+          "suite": "252 S Brand Blvd",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "SKIMS",
+          "logoDomain": "skims.com",
+          "hasLogo": true,
+          "website": "https://skims.com",
+          "suite": "260",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Skyline Pitch",
+          "logoDomain": "skylinepitch.com",
+          "hasLogo": true,
+          "website": "https://skylinepitch.com",
+          "suite": "Level 8",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "SomiSomi",
+          "logoDomain": "somisomi.com",
+          "hasLogo": true,
+          "website": "https://somisomi.com",
+          "suite": "608",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Sur la Table",
+          "logoDomain": "surlatable.com",
+          "hasLogo": true,
+          "website": "https://surlatable.com",
+          "suite": "138",
+          "unitStatus": null,
+          "spaceSf": "0"
+        },
+        {
+          "name": "TESLA",
+          "logoDomain": "tesla.com",
+          "hasLogo": true,
+          "website": "https://tesla.com",
+          "suite": "539",
+          "unitStatus": "Occupied",
+          "spaceSf": "5093"
+        },
+        {
+          "name": "The Cheesecake Factory",
+          "logoDomain": "thecheesecakefactory.com",
+          "hasLogo": true,
+          "website": "https://thecheesecakefactory.com",
+          "suite": "511",
+          "unitStatus": "Occupied",
+          "spaceSf": "18000"
+        },
+        {
+          "name": "The Real Real",
+          "logoDomain": "therealreal.com",
+          "hasLogo": true,
+          "website": "https://therealreal.com",
+          "suite": "230 S Brand Blvd",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "The Residence Leasing Office",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "889",
+          "unitStatus": null,
+          "spaceSf": "0"
+        },
+        {
+          "name": "The Salon",
+          "logoDomain": "the-salon.net",
+          "hasLogo": true,
+          "website": "https://the-salon.net",
+          "suite": "811",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Shade Store, Inc.",
+          "logoDomain": "theshadestore.com",
+          "hasLogo": true,
+          "website": "https://www.theshadestore.com/",
+          "suite": "228 S Brand Blvd",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Tiffany & Co",
+          "logoDomain": "tiffany.com",
+          "hasLogo": true,
+          "website": "https://tiffany.com",
+          "suite": "863",
+          "unitStatus": "Occupied",
+          "spaceSf": "1500"
+        },
+        {
+          "name": "Trattoria Amici",
+          "logoDomain": "amicirestaurant.com",
+          "hasLogo": true,
+          "website": "https://amicirestaurant.com",
+          "suite": "783",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Tumi",
+          "logoDomain": "tumi.com",
+          "hasLogo": true,
+          "website": "https://tumi.com",
+          "suite": "777",
+          "unitStatus": "Occupied",
+          "spaceSf": "3000"
+        },
+        {
+          "name": "Undercover Fries",
+          "logoDomain": "undercoverfries.com",
+          "hasLogo": true,
+          "website": "https://undercoverfries.com",
+          "suite": "620",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Venchi",
+          "logoDomain": "venchi.com",
+          "hasLogo": true,
+          "website": "https://venchi.com",
+          "suite": "629",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Warby Parker",
+          "logoDomain": "warbyparker.com",
+          "hasLogo": true,
+          "website": "https://warbyparker.com",
+          "suite": "252",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Wetzel's Pretzels",
+          "logoDomain": "wetzels.com",
+          "hasLogo": true,
+          "website": "https://wetzels.com",
+          "suite": "689",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        }
+      ],
+      "vacancies": []
+    },
+    {
+      "centerName": "The Grove",
+      "slug": "the-grove",
+      "tenants": [
+        {
+          "name": "% arabica",
+          "logoDomain": "arabicacoffeeus.com",
+          "hasLogo": true,
+          "website": "https://arabicacoffeeus.com",
+          "suite": "K2",
+          "unitStatus": "Occupied",
+          "spaceSf": "15000"
+        },
+        {
+          "name": "Alma",
+          "logoDomain": "alma.mx",
+          "hasLogo": true,
+          "website": "https://alma.mx",
+          "suite": "H10",
+          "unitStatus": "Occupied",
+          "spaceSf": "5060"
+        },
+        {
+          "name": "Alo Yoga",
+          "logoDomain": "aloyoga.com",
+          "hasLogo": true,
+          "website": "https://aloyoga.com",
+          "suite": "G30",
+          "unitStatus": "Occupied",
+          "spaceSf": "3250"
+        },
+        {
+          "name": "AMC",
+          "logoDomain": "amctheatres.com",
+          "hasLogo": true,
+          "website": "https://amctheatres.com",
+          "suite": "L80",
+          "unitStatus": "Occupied",
+          "spaceSf": "101200"
+        },
+        {
+          "name": "American Beauty",
+          "logoDomain": "americanbeautysteakhouse.com",
+          "hasLogo": true,
+          "website": "https://americanbeautysteakhouse.com",
+          "suite": "Y80",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Apple",
+          "logoDomain": "apple.com",
+          "hasLogo": true,
+          "website": "https://apple.com",
+          "suite": "O80",
+          "unitStatus": "Occupied",
+          "spaceSf": "8000"
+        },
+        {
+          "name": "Arhaus",
+          "logoDomain": "arhaus.com",
+          "hasLogo": true,
+          "website": "https://arhaus.com",
+          "suite": "Z80",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Aritzia",
+          "logoDomain": "aritzia.com",
+          "hasLogo": true,
+          "website": "https://aritzia.com",
+          "suite": "F30",
+          "unitStatus": "Occupied",
+          "spaceSf": "2000"
+        },
+        {
+          "name": "Athletic Propulsion Labs",
+          "logoDomain": "athleticpropulsionlabs.com",
+          "hasLogo": true,
+          "website": "https://athleticpropulsionlabs.com",
+          "suite": "J-10B",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Banana Republic",
+          "logoDomain": "bananarepublic.com",
+          "hasLogo": true,
+          "website": "https://bananarepublic.com",
+          "suite": "K10",
+          "unitStatus": "Occupied",
+          "spaceSf": "18000"
+        },
+        {
+          "name": "Barnes & Noble",
+          "logoDomain": "barnesandnoble.com",
+          "hasLogo": true,
+          "website": "https://barnesandnoble.com",
+          "suite": "K30",
+          "unitStatus": "Occupied",
+          "spaceSf": "25000"
+        },
+        {
+          "name": "Blue Ribbon",
+          "logoDomain": "blueribbonrestaurants.com",
+          "hasLogo": true,
+          "website": "https://blueribbonrestaurants.com",
+          "suite": "O10",
+          "unitStatus": "Occupied",
+          "spaceSf": "3250"
+        },
+        {
+          "name": "Brandy Melville",
+          "logoDomain": "brandymelville.com",
+          "hasLogo": true,
+          "website": "https://brandymelville.com",
+          "suite": "C10",
+          "unitStatus": "Occupied",
+          "spaceSf": "3000"
+        },
+        {
+          "name": "Byredo",
+          "logoDomain": "byredo.com",
+          "hasLogo": true,
+          "website": "https://byredo.com",
+          "suite": "F60",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "charlotte tilbury",
+          "logoDomain": "charlottetilbury.com",
+          "hasLogo": true,
+          "website": "https://charlottetilbury.com",
+          "suite": "O30",
+          "unitStatus": "Occupied",
+          "spaceSf": "1800"
+        },
+        {
+          "name": "Chill Since 93",
+          "logoDomain": "chillsince93.com",
+          "hasLogo": true,
+          "website": "https://chillsince93.com",
+          "suite": "F90B",
+          "unitStatus": "Occupied",
+          "spaceSf": "5060"
+        },
+        {
+          "name": "Coach",
+          "logoDomain": "coach.com",
+          "hasLogo": true,
+          "website": "https://coach.com",
+          "suite": "G50",
+          "unitStatus": "Occupied",
+          "spaceSf": "5060"
+        },
+        {
+          "name": "David Yurman",
+          "logoDomain": "davidyurman.com",
+          "hasLogo": true,
+          "website": "https://davidyurman.com",
+          "suite": "G80",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "DEL - Vans Inc. (VF Sportswear)",
+          "logoDomain": "vans.com",
+          "hasLogo": true,
+          "website": "https://vans.com",
+          "suite": "H40",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Diptyque",
+          "logoDomain": "diptyque.com",
+          "hasLogo": true,
+          "website": "https://diptyque.com",
+          "suite": "Q20",
+          "unitStatus": "Occupied",
+          "spaceSf": "1000"
+        },
+        {
+          "name": "Edikted",
+          "logoDomain": "edikted.com",
+          "hasLogo": true,
+          "website": "https://edikted.com",
+          "suite": "K80",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Eeseol",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "F10",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Gap (Including Gap Kids and Baby Gap)",
+          "logoDomain": "gap.com",
+          "hasLogo": true,
+          "website": "https://gap.com",
+          "suite": "H80",
+          "unitStatus": "Occupied",
+          "spaceSf": "2000"
+        },
+        {
+          "name": "Gucci",
+          "logoDomain": "gucci.com",
+          "hasLogo": true,
+          "website": "https://gucci.com",
+          "suite": "G10",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Haagen Dazs Shoppe Company",
+          "logoDomain": "haagendazs.com",
+          "hasLogo": true,
+          "website": "https://haagendazs.com",
+          "suite": "K3",
+          "unitStatus": "Occupied",
+          "spaceSf": "506"
+        },
+        {
+          "name": "La La Land",
+          "logoDomain": "lalalandcafe.com",
+          "hasLogo": true,
+          "website": "https://lalalandcafe.com",
+          "suite": "S10",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "La Piazza",
+          "logoDomain": "lapiazzaitalian.com",
+          "hasLogo": true,
+          "website": "https://lapiazzaitalian.com",
+          "suite": "G90",
+          "unitStatus": "Occupied",
+          "spaceSf": "5000"
+        },
+        {
+          "name": "Laneige",
+          "logoDomain": "laneige.com",
+          "hasLogo": true,
+          "website": "https://laneige.com",
+          "suite": "S20",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Le Labo Fragrances",
+          "logoDomain": "lelabofragrances.com",
+          "hasLogo": true,
+          "website": "https://lelabofragrances.com",
+          "suite": "Q80",
+          "unitStatus": "Occupied",
+          "spaceSf": "1100"
+        },
+        {
+          "name": "Lil Sweet Treat",
+          "logoDomain": "lilsweettreat.com",
+          "hasLogo": true,
+          "website": "https://lilsweettreat.com",
+          "suite": "PS01",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "lucy zahran & co",
+          "logoDomain": "lucyzahran.com",
+          "hasLogo": true,
+          "website": "https://lucyzahran.com",
+          "suite": "K60",
+          "unitStatus": "Occupied",
+          "spaceSf": "2500"
+        },
+        {
+          "name": "Lululemon Athletica",
+          "logoDomain": "lululemon.com",
+          "hasLogo": true,
+          "website": "https://lululemon.com",
+          "suite": "F20",
+          "unitStatus": "Occupied",
+          "spaceSf": "2000"
+        },
+        {
+          "name": "Maje",
+          "logoDomain": "maje.com",
+          "hasLogo": true,
+          "website": "https://maje.com",
+          "suite": "O20",
+          "unitStatus": "Occupied",
+          "spaceSf": "1800"
+        },
+        {
+          "name": "New Balance",
+          "logoDomain": "newbalance.com",
+          "hasLogo": true,
+          "website": "https://newbalance.com",
+          "suite": "S30",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Nike",
+          "logoDomain": "nike.com",
+          "hasLogo": true,
+          "website": "https://nike.com",
+          "suite": "Q30",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "Nordstrom",
+          "logoDomain": "nordstrom.com",
+          "hasLogo": true,
+          "website": "https://nordstrom.com",
+          "suite": "P80",
+          "unitStatus": "Occupied",
+          "spaceSf": "120000"
+        },
+        {
+          "name": "Octobers Very Own",
+          "logoDomain": "octobersveryown.com",
+          "hasLogo": true,
+          "website": "https://octobersveryown.com",
+          "suite": "F72",
+          "unitStatus": "Occupied",
+          "spaceSf": "15180"
+        },
+        {
+          "name": "Paige",
+          "logoDomain": "paige.com",
+          "hasLogo": true,
+          "website": "https://paige.com",
+          "suite": "Q60",
+          "unitStatus": "Occupied",
+          "spaceSf": "1100"
+        },
+        {
+          "name": "Pressed Juicery",
+          "logoDomain": "pressed.com",
+          "hasLogo": true,
+          "website": "https://pressed.com",
+          "suite": "K4",
+          "unitStatus": "Occupied",
+          "spaceSf": "506"
+        },
+        {
+          "name": "Princess Polly",
+          "logoDomain": "princesspolly.com",
+          "hasLogo": true,
+          "website": "https://princesspolly.com",
+          "suite": "PS02",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Ray Ban",
+          "logoDomain": "ray-ban.com",
+          "hasLogo": true,
+          "website": "https://ray-ban.com",
+          "suite": "Q15",
+          "unitStatus": "Occupied",
+          "spaceSf": "1300"
+        },
+        {
+          "name": "Revolve",
+          "logoDomain": "revolve.com",
+          "hasLogo": true,
+          "website": "https://revolve.com",
+          "suite": "G70",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sandro",
+          "logoDomain": "sandro-paris.com",
+          "hasLogo": true,
+          "website": "https://sandro-paris.com",
+          "suite": "K70",
+          "unitStatus": "Occupied",
+          "spaceSf": "3000"
+        },
+        {
+          "name": "See's Candies",
+          "logoDomain": "sees.com",
+          "hasLogo": true,
+          "website": "https://sees.com",
+          "suite": "F90A",
+          "unitStatus": "Occupied",
+          "spaceSf": "1200"
+        },
+        {
+          "name": "Sephora",
+          "logoDomain": "sephora.com",
+          "hasLogo": true,
+          "website": "https://sephora.com",
+          "suite": "J-10A",
+          "unitStatus": "Occupied",
+          "spaceSf": "5000"
+        },
+        {
+          "name": "Sogno Toscano",
+          "logoDomain": "sognotoscano.com",
+          "hasLogo": true,
+          "website": "https://sognotoscano.com",
+          "suite": "H30",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Starbucks",
+          "logoDomain": "starbucks.com",
+          "hasLogo": true,
+          "website": "https://starbucks.com",
+          "suite": "K30",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Cheesecake Factory",
+          "logoDomain": "thecheesecakefactory.com",
+          "hasLogo": true,
+          "website": "https://thecheesecakefactory.com",
+          "suite": "K90",
+          "unitStatus": "Occupied",
+          "spaceSf": "11000"
+        },
+        {
+          "name": "the fountain bar",
+          "logoDomain": "thegrovela.com",
+          "hasLogo": true,
+          "website": "https://thegrovela.com",
+          "suite": "Fountain",
+          "unitStatus": "Occupied",
+          "spaceSf": "1000"
+        },
+        {
+          "name": "Todd Snyder",
+          "logoDomain": "toddsnyder.com",
+          "hasLogo": true,
+          "website": "https://toddsnyder.com",
+          "suite": "H20",
+          "unitStatus": "Occupied",
+          "spaceSf": "3000"
+        },
+        {
+          "name": "Vince",
+          "logoDomain": "vince.com",
+          "hasLogo": true,
+          "website": "https://vince.com",
+          "suite": "G60",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Wetzel's Pretzels",
+          "logoDomain": "wetzels.com",
+          "hasLogo": true,
+          "website": "https://wetzels.com",
+          "suite": "K1",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "Zara",
+          "logoDomain": "zara.com",
+          "hasLogo": true,
+          "website": "https://zara.com",
+          "suite": "J10",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        }
+      ],
+      "vacancies": []
+    },
+    {
+      "centerName": "The Platform",
+      "slug": "platform",
+      "tenants": [
+        {
+          "name": "Bianca",
+          "logoDomain": "shopbianca.com",
+          "hasLogo": true,
+          "website": "https://shopbianca.com",
+          "suite": "#103",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Blue Bottle Coffee",
+          "logoDomain": "bluebottlecoffee.com",
+          "hasLogo": true,
+          "website": "https://bluebottlecoffee.com",
+          "suite": "#103",
+          "unitStatus": "Occupied",
+          "spaceSf": "1000"
+        },
+        {
+          "name": "Boba Guys",
+          "logoDomain": "bobaguys.com",
+          "hasLogo": true,
+          "website": "https://bobaguys.com",
+          "suite": "#107",
+          "unitStatus": "Occupied",
+          "spaceSf": "1000"
+        },
+        {
+          "name": "Broome Street General",
+          "logoDomain": "broomestgeneral.com",
+          "hasLogo": true,
+          "website": "https://broomestgeneral.com",
+          "suite": "#103",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Catbird",
+          "logoDomain": "catbird.com",
+          "hasLogo": true,
+          "website": "https://catbird.com",
+          "suite": "#105",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Dissh",
+          "logoDomain": "dissh.com",
+          "hasLogo": true,
+          "website": "https://dissh.com",
+          "suite": "105",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Guild",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "#105",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Homebody Studios",
+          "logoDomain": "homebodystudios.com",
+          "hasLogo": true,
+          "website": "https://homebodystudios.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Janessa Leoné",
+          "logoDomain": "janessaleone.com",
+          "hasLogo": true,
+          "website": "https://janessaleone.com",
+          "suite": "#106",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Juliet",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "#101",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Kinn",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "#107",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "LOQUI",
+          "logoDomain": "eatloqui.com",
+          "hasLogo": true,
+          "website": "https://eatloqui.com",
+          "suite": "#104",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Maison Louis Marie",
+          "logoDomain": "maisonlouismarie.com",
+          "hasLogo": true,
+          "website": "https://maisonlouismarie.com",
+          "suite": "108",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Margaux",
+          "logoDomain": "margauxny.com",
+          "hasLogo": true,
+          "website": "https://margauxny.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Margot",
+          "logoDomain": "margot.la",
+          "hasLogo": true,
+          "website": "https://margot.la",
+          "suite": "#301",
+          "unitStatus": "Occupied",
+          "spaceSf": "5000"
+        },
+        {
+          "name": "Miznon",
+          "logoDomain": "miznon.com",
+          "hasLogo": true,
+          "website": "https://miznon.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Reformation",
+          "logoDomain": "thereformation.com",
+          "hasLogo": true,
+          "website": "https://thereformation.com",
+          "suite": "#102",
+          "unitStatus": "Occupied",
+          "spaceSf": "2207"
+        },
+        {
+          "name": "Roberta's",
+          "logoDomain": "robertaspizza.com",
+          "hasLogo": true,
+          "website": "https://robertaspizza.com",
+          "suite": "#104",
+          "unitStatus": "Occupied",
+          "spaceSf": "1500"
+        },
+        {
+          "name": "Shoppe Amber Interiors",
+          "logoDomain": "amberinteriors.com",
+          "hasLogo": true,
+          "website": "https://amberinteriors.com",
+          "suite": "102",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sweetgreen",
+          "logoDomain": "sweetgreen.com",
+          "hasLogo": true,
+          "website": "https://sweetgreen.com",
+          "suite": "#101",
+          "unitStatus": "Occupied",
+          "spaceSf": "1928"
+        },
+        {
+          "name": "Teller",
+          "logoDomain": "teller.io",
+          "hasLogo": true,
+          "website": "https://teller.io",
+          "suite": "#103",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "The Optimist",
+          "logoDomain": "theoptimist.mn",
+          "hasLogo": true,
+          "website": "https://theoptimist.mn",
+          "suite": "#102",
+          "unitStatus": "Occupied",
+          "spaceSf": "2000"
+        },
+        {
+          "name": "Tia",
+          "logoDomain": "asktia.com",
+          "hasLogo": true,
+          "website": "https://asktia.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Van Leeuwen Ice Cream",
+          "logoDomain": "vanleeuwenicecream.com",
+          "hasLogo": true,
+          "website": "https://vanleeuwenicecream.com",
+          "suite": "#106",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Wright's Men",
+          "logoDomain": "wrightsmen.com",
+          "hasLogo": true,
+          "website": "https://wrightsmen.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Wright's Womens",
+          "logoDomain": "wrightsliquidsmoke.com",
+          "hasLogo": true,
+          "website": "https://wrightsliquidsmoke.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        }
+      ],
+      "vacancies": [
+        {
+          "label": "Available space",
+          "suite": null,
+          "spaceSf": null,
+          "spaceLabel": "Space at The Platform",
+          "unitStatus": "Vacant"
+        }
+      ]
+    },
+    {
+      "centerName": "The Point At South Bay",
+      "slug": "the-point",
+      "tenants": [
+        {
+          "name": "Athleta",
+          "logoDomain": "athleta.com",
+          "hasLogo": true,
+          "website": "https://athleta.com",
+          "suite": "D112",
+          "unitStatus": "Occupied",
+          "spaceSf": "3969"
+        },
+        {
+          "name": "Bellacures",
+          "logoDomain": "bellacures.com",
+          "hasLogo": true,
+          "website": "https://bellacures.com",
+          "suite": "A102",
+          "unitStatus": "Occupied",
+          "spaceSf": "909"
+        },
+        {
+          "name": "Bluemercury",
+          "logoDomain": "bluemercury.com",
+          "hasLogo": true,
+          "website": "https://bluemercury.com",
+          "suite": "B106",
+          "unitStatus": "Occupied",
+          "spaceSf": "2700"
+        },
+        {
+          "name": "Brandy Melville",
+          "logoDomain": "brandymelville.com",
+          "hasLogo": true,
+          "website": "https://brandymelville.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "CAVA",
+          "logoDomain": "cava.com",
+          "hasLogo": true,
+          "website": "https://cava.com",
+          "suite": "C116",
+          "unitStatus": "Occupied",
+          "spaceSf": "2231"
+        },
+        {
+          "name": "Cotopaxi",
+          "logoDomain": "cotopaxi.com",
+          "hasLogo": true,
+          "website": "https://cotopaxi.com",
+          "suite": "C110",
+          "unitStatus": "Occupied",
+          "spaceSf": "1995"
+        },
+        {
+          "name": "Evereve",
+          "logoDomain": "evereve.com",
+          "hasLogo": true,
+          "website": "https://evereve.com",
+          "suite": "B102",
+          "unitStatus": "Occupied",
+          "spaceSf": "3147"
+        },
+        {
+          "name": "Facialworks",
+          "logoDomain": "facialworks.com",
+          "hasLogo": true,
+          "website": "https://facialworks.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Herman Miller",
+          "logoDomain": "hermanmiller.com",
+          "hasLogo": true,
+          "website": "https://hermanmiller.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "HomeState",
+          "logoDomain": "myhomestate.com",
+          "hasLogo": true,
+          "website": "https://myhomestate.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Hopdoddy Burger Bar",
+          "logoDomain": "hopdoddy.com",
+          "hasLogo": true,
+          "website": "https://hopdoddy.com",
+          "suite": "D116",
+          "unitStatus": "Occupied",
+          "spaceSf": "3888"
+        },
+        {
+          "name": "Kendra Scott",
+          "logoDomain": "kendrascott.com",
+          "hasLogo": true,
+          "website": "https://kendrascott.com",
+          "suite": "D114",
+          "unitStatus": "Occupied",
+          "spaceSf": "2006"
+        },
+        {
+          "name": "Lil' Simmzy's",
+          "logoDomain": "simmzys.com",
+          "hasLogo": true,
+          "website": "https://simmzys.com",
+          "suite": "G",
+          "unitStatus": "Occupied",
+          "spaceSf": "845"
+        },
+        {
+          "name": "Little Sister",
+          "logoDomain": "dinelittlesister.com",
+          "hasLogo": true,
+          "website": "https://dinelittlesister.com",
+          "suite": "D100",
+          "unitStatus": "Occupied",
+          "spaceSf": "2812"
+        },
+        {
+          "name": "lululemon",
+          "logoDomain": "lululemon.com",
+          "hasLogo": true,
+          "website": "https://lululemon.com",
+          "suite": "B108",
+          "unitStatus": "Occupied",
+          "spaceSf": "3253"
+        },
+        {
+          "name": "Lyon Stahl",
+          "logoDomain": "lyonstahl.com",
+          "hasLogo": true,
+          "website": "https://lyonstahl.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Madewell",
+          "logoDomain": "madewell.com",
+          "hasLogo": true,
+          "website": "https://madewell.com",
+          "suite": "C104",
+          "unitStatus": "Occupied",
+          "spaceSf": "3671"
+        },
+        {
+          "name": "Mendocino Farms",
+          "logoDomain": "mendocinofarms.com",
+          "hasLogo": true,
+          "website": "https://mendocinofarms.com",
+          "suite": "B100",
+          "unitStatus": "Occupied",
+          "spaceSf": "2733"
+        },
+        {
+          "name": "Nike",
+          "logoDomain": "nike.com",
+          "hasLogo": true,
+          "website": "https://nike.com",
+          "suite": "C114",
+          "unitStatus": "Occupied",
+          "spaceSf": "5904"
+        },
+        {
+          "name": "North Italia",
+          "logoDomain": "northitalia.com",
+          "hasLogo": true,
+          "website": "https://northitalia.com",
+          "suite": "B110",
+          "unitStatus": "Occupied",
+          "spaceSf": "5000"
+        },
+        {
+          "name": "Outerknown",
+          "logoDomain": "outerknown.com",
+          "hasLogo": true,
+          "website": "https://outerknown.com",
+          "suite": "D106",
+          "unitStatus": "Occupied",
+          "spaceSf": "2493"
+        },
+        {
+          "name": "Paper Source",
+          "logoDomain": "papersource.com",
+          "hasLogo": true,
+          "website": "https://papersource.com",
+          "suite": "D108",
+          "unitStatus": "Occupied",
+          "spaceSf": "2000"
+        },
+        {
+          "name": "Pause Studio",
+          "logoDomain": "pausestudio.com",
+          "hasLogo": true,
+          "website": "https://pausestudio.com",
+          "suite": "A110",
+          "unitStatus": "Occupied",
+          "spaceSf": "2950"
+        },
+        {
+          "name": "Peet's Coffee",
+          "logoDomain": "peets.com",
+          "hasLogo": true,
+          "website": "https://peets.com",
+          "suite": "A100",
+          "unitStatus": "Occupied",
+          "spaceSf": "1602"
+        },
+        {
+          "name": "Pressed",
+          "logoDomain": "pressed.com",
+          "hasLogo": true,
+          "website": "https://pressed.com",
+          "suite": "E",
+          "unitStatus": "Occupied",
+          "spaceSf": "456"
+        },
+        {
+          "name": "Rabbit Ladders",
+          "logoDomain": "rabbitladders.com",
+          "hasLogo": true,
+          "website": "https://rabbitladders.com",
+          "suite": "C107",
+          "unitStatus": "Occupied",
+          "spaceSf": "1092"
+        },
+        {
+          "name": "State & Liberty",
+          "logoDomain": "stateandliberty.com",
+          "hasLogo": true,
+          "website": "https://stateandliberty.com",
+          "suite": "D111",
+          "unitStatus": "Occupied",
+          "spaceSf": "1328"
+        },
+        {
+          "name": "Sugarfina",
+          "logoDomain": "sugarfina.com",
+          "hasLogo": true,
+          "website": "https://sugarfina.com",
+          "suite": "B104",
+          "unitStatus": "Occupied",
+          "spaceSf": "968"
+        },
+        {
+          "name": "True Food Kitchen",
+          "logoDomain": "truefoodkitchen.com",
+          "hasLogo": true,
+          "website": "https://truefoodkitchen.com",
+          "suite": "C100",
+          "unitStatus": "Occupied",
+          "spaceSf": "6000"
+        },
+        {
+          "name": "Van Leeuwen Ice Cream",
+          "logoDomain": "vanleeuwenicecream.com",
+          "hasLogo": true,
+          "website": "https://vanleeuwenicecream.com",
+          "suite": "F",
+          "unitStatus": "Occupied",
+          "spaceSf": "456"
+        },
+        {
+          "name": "Vicara Aveda Salonspa",
+          "logoDomain": "aveda.com",
+          "hasLogo": true,
+          "website": "https://aveda.com",
+          "suite": "A104",
+          "unitStatus": "Occupied",
+          "spaceSf": "3629"
+        },
+        {
+          "name": "Warby Parker",
+          "logoDomain": "warbyparker.com",
+          "hasLogo": true,
+          "website": "https://warbyparker.com",
+          "suite": "C106",
+          "unitStatus": "Occupied",
+          "spaceSf": "1126"
+        },
+        {
+          "name": "Yeti",
+          "logoDomain": "yeti.com",
+          "hasLogo": true,
+          "website": "https://yeti.com",
+          "suite": "D104",
+          "unitStatus": "Occupied",
+          "spaceSf": "3057"
+        }
+      ],
+      "vacancies": [
+        {
+          "label": "Available space",
+          "suite": null,
+          "spaceSf": null,
+          "spaceLabel": "The Point At South Bay - Vacant -  sf",
+          "unitStatus": "Vacant"
+        }
+      ]
+    },
+    {
+      "centerName": "The Shops at The Sportsman Lodge",
+      "slug": "sportsmen-lodge",
+      "tenants": [
+        {
+          "name": "Alo Yoga",
+          "logoDomain": "aloyoga.com",
+          "hasLogo": true,
+          "website": "https://aloyoga.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Civil Coffee",
+          "logoDomain": "civilcoffee.com",
+          "hasLogo": true,
+          "website": "https://civilcoffee.com",
+          "suite": "100",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cosette Wine Bar",
+          "logoDomain": "cosettewinebar.com",
+          "hasLogo": true,
+          "website": "https://cosettewinebar.com",
+          "suite": "145",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Equinox",
+          "logoDomain": "equinox.com",
+          "hasLogo": true,
+          "website": "https://equinox.com",
+          "suite": "101",
+          "unitStatus": "Occupied",
+          "spaceSf": "10000"
+        },
+        {
+          "name": "Erewhon",
+          "logoDomain": "erewhon.com",
+          "hasLogo": true,
+          "website": "https://erewhon.com",
+          "suite": "105",
+          "unitStatus": "Occupied",
+          "spaceSf": "11000"
+        },
+        {
+          "name": "Feature",
+          "logoDomain": "feature.com",
+          "hasLogo": true,
+          "website": "https://feature.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "FP Movement",
+          "logoDomain": "fpmovement.com",
+          "hasLogo": true,
+          "website": "https://fpmovement.com",
+          "suite": "125",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "HiHo Cheeseburger",
+          "logoDomain": "hiho.la",
+          "hasLogo": true,
+          "website": "https://hiho.la",
+          "suite": "421",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "HOKA",
+          "logoDomain": "hoka.com",
+          "hasLogo": true,
+          "website": "https://hoka.com",
+          "suite": "113",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Kismet Rotisserie",
+          "logoDomain": "kismetrotisserie.com",
+          "hasLogo": true,
+          "website": "https://kismetrotisserie.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Madewell",
+          "logoDomain": "madewell.com",
+          "hasLogo": true,
+          "website": "https://madewell.com",
+          "suite": "137",
+          "unitStatus": "Occupied",
+          "spaceSf": "3000"
+        },
+        {
+          "name": "Madison Reed",
+          "logoDomain": "madison-reed.com",
+          "hasLogo": true,
+          "website": "https://madison-reed.com",
+          "suite": "121",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Marine Layer",
+          "logoDomain": "marinelayer.com",
+          "hasLogo": true,
+          "website": "https://marinelayer.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Myodetox",
+          "logoDomain": "myodetox.com",
+          "hasLogo": true,
+          "website": "https://myodetox.com",
+          "suite": "153",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Next Health",
+          "logoDomain": "next-health.com",
+          "hasLogo": true,
+          "website": "https://next-health.com",
+          "suite": "161",
+          "unitStatus": "Occupied",
+          "spaceSf": "2000"
+        },
+        {
+          "name": "Reformation",
+          "logoDomain": "thereformation.com",
+          "hasLogo": true,
+          "website": "https://thereformation.com",
+          "suite": "144",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "SALT Optics",
+          "logoDomain": "saltoptics.com",
+          "hasLogo": true,
+          "website": "https://saltoptics.com",
+          "suite": "104",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "SUGARFISH",
+          "logoDomain": "sugarfishsushi.com",
+          "hasLogo": true,
+          "website": "https://sugarfishsushi.com",
+          "suite": "129",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "The Great",
+          "logoDomain": "thisisthegreat.com",
+          "hasLogo": true,
+          "website": "https://thisisthegreat.com",
+          "suite": "133",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Tocaya",
+          "logoDomain": "tocaya.com",
+          "hasLogo": true,
+          "website": "https://tocaya.com",
+          "suite": "165",
+          "unitStatus": "Occupied",
+          "spaceSf": "500"
+        },
+        {
+          "name": "UOVO",
+          "logoDomain": "uovo.la",
+          "hasLogo": true,
+          "website": "https://uovo.la",
+          "suite": "157",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Uovu",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Van Leeuwen",
+          "logoDomain": "vanleeuwenicecream.com",
+          "hasLogo": true,
+          "website": "https://vanleeuwenicecream.com",
+          "suite": "149",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Vuori",
+          "logoDomain": "vuoriclothing.com",
+          "hasLogo": true,
+          "website": "https://vuoriclothing.com",
+          "suite": "136",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Winston Pies",
+          "logoDomain": "winstonpies.com",
+          "hasLogo": true,
+          "website": "https://winstonpies.com",
+          "suite": "112",
+          "unitStatus": "Occupied",
+          "spaceSf": "1030"
+        },
+        {
+          "name": "WITTMORE",
+          "logoDomain": "wittmore.com",
+          "hasLogo": true,
+          "website": "https://wittmore.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        }
+      ],
+      "vacancies": [
+        {
+          "label": "Available space",
+          "suite": null,
+          "spaceSf": null,
+          "spaceLabel": "Space at Sportsmen's Lodge",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Available space",
+          "suite": null,
+          "spaceSf": null,
+          "spaceLabel": "Space at Sportsmen's Lodge",
+          "unitStatus": "Vacant"
+        }
+      ]
+    },
+    {
+      "centerName": "Westfield Century City",
+      "slug": "westfield-century-city",
+      "tenants": [
+        {
+          "name": "7 For All Mankind",
+          "logoDomain": "7forallmankind.com",
+          "hasLogo": true,
+          "website": "https://7forallmankind.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "85 Degrees Bakery Cafe",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Abercrombie & Fitch",
+          "logoDomain": "abercrombieandfitch.com",
+          "hasLogo": true,
+          "website": "https://abercrombieandfitch.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "AC Barbeque",
+          "logoDomain": "acbarbeque.com",
+          "hasLogo": true,
+          "website": "https://acbarbeque.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Adidas",
+          "logoDomain": "adidas.com",
+          "hasLogo": true,
+          "website": "https://adidas.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Aerie",
+          "logoDomain": "aerie.com",
+          "hasLogo": true,
+          "website": "https://aerie.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Aesop",
+          "logoDomain": "aesop.com",
+          "hasLogo": true,
+          "website": "https://aesop.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Agua Bendita",
+          "logoDomain": "aguabendita.com",
+          "hasLogo": true,
+          "website": "https://aguabendita.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "All Saints",
+          "logoDomain": "allsaints.com",
+          "hasLogo": true,
+          "website": "https://allsaints.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Allen Edmonds",
+          "logoDomain": "allenedmonds.com",
+          "hasLogo": true,
+          "website": "https://allenedmonds.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Alo Yoga",
+          "logoDomain": "aloyoga.com",
+          "hasLogo": true,
+          "website": "https://aloyoga.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "AMC Entertainment",
+          "logoDomain": "amcentertainment.com",
+          "hasLogo": true,
+          "website": "https://amcentertainment.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "American Eagle Outfitters",
+          "logoDomain": "ae.com",
+          "hasLogo": true,
+          "website": "https://ae.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "American Girl",
+          "logoDomain": "americangirl.com",
+          "hasLogo": true,
+          "website": "https://americangirl.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Anthropologie",
+          "logoDomain": "anthropologie.com",
+          "hasLogo": true,
+          "website": "https://anthropologie.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Apple",
+          "logoDomain": "apple.com",
+          "hasLogo": true,
+          "website": "https://apple.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Aritzia",
+          "logoDomain": "aritzia.com",
+          "hasLogo": true,
+          "website": "https://aritzia.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Auntie Anne's, Inc.",
+          "logoDomain": "auntieannes.com",
+          "hasLogo": true,
+          "website": "https://www.auntieannes.com/",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Aveda",
+          "logoDomain": "aveda.com",
+          "hasLogo": true,
+          "website": "https://aveda.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Ba&sh",
+          "logoDomain": "ba-sh.com",
+          "hasLogo": true,
+          "website": "https://ba-sh.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bacio di Latte",
+          "logoDomain": "baciodilatte.com.br",
+          "hasLogo": true,
+          "website": "https://baciodilatte.com.br",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Bake Cheese Tart",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://bakecheesetart.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Banana Republic",
+          "logoDomain": "bananarepublic.com",
+          "hasLogo": true,
+          "website": "https://bananarepublic.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Beyond Yoga",
+          "logoDomain": "beyondyoga.com",
+          "hasLogo": true,
+          "website": "https://beyondyoga.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "BHLDN",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Blue Bottle Coffee",
+          "logoDomain": "bluebottlecoffee.com",
+          "hasLogo": true,
+          "website": "https://bluebottlecoffee.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Blue Nile",
+          "logoDomain": "bluenile.com",
+          "hasLogo": true,
+          "website": "https://bluenile.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bonobos",
+          "logoDomain": "bonobos.com",
+          "hasLogo": true,
+          "website": "https://bonobos.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Breitling",
+          "logoDomain": "breitling.com",
+          "hasLogo": true,
+          "website": "https://breitling.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Buck Mason",
+          "logoDomain": "buckmason.com",
+          "hasLogo": true,
+          "website": "https://buckmason.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Build-A-Bear Workshop",
+          "logoDomain": "buildabearworkshop.com",
+          "hasLogo": true,
+          "website": "https://buildabearworkshop.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Caddis Eye Appliances",
+          "logoDomain": "caddislife.com",
+          "hasLogo": true,
+          "website": "https://caddislife.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Café Knotted",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Calpak",
+          "logoDomain": "calpaktravel.com",
+          "hasLogo": true,
+          "website": "https://calpaktravel.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Calzedonia",
+          "logoDomain": "calzedonia.com",
+          "hasLogo": true,
+          "website": "https://calzedonia.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "CAMP",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Card Vault",
+          "logoDomain": "cardvault.in",
+          "hasLogo": true,
+          "website": "https://cardvault.in",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Casa Dani",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://casadani.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cava Grill",
+          "logoDomain": "cava.com",
+          "hasLogo": true,
+          "website": "https://cava.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Century City Optometry",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cha Cha Matcha",
+          "logoDomain": "chachamatcha.com",
+          "hasLogo": true,
+          "website": "https://chachamatcha.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Chamberlain Cofee",
+          "logoDomain": "chamberlaincoffee.com",
+          "hasLogo": true,
+          "website": "https://chamberlaincoffee.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Chanel",
+          "logoDomain": "chanel.com",
+          "hasLogo": true,
+          "website": "https://chanel.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Chase Bank",
+          "logoDomain": "chase.com",
+          "hasLogo": true,
+          "website": "https://chase.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Chick-fil-A",
+          "logoDomain": "chick-fil-a.com",
+          "hasLogo": true,
+          "website": "https://chick-fil-a.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Chipotle",
+          "logoDomain": "chipotle.com",
+          "hasLogo": true,
+          "website": "https://chipotle.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Cinnabon",
+          "logoDomain": "cinnabon.com",
+          "hasLogo": true,
+          "website": "https://cinnabon.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cole Haan",
+          "logoDomain": "colehaan.com",
+          "hasLogo": true,
+          "website": "https://colehaan.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "COS",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cotton On",
+          "logoDomain": "cottonongroup.com.au",
+          "hasLogo": true,
+          "website": "https://cottonongroup.com.au",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cotton On Kids",
+          "logoDomain": "cottononkids.com",
+          "hasLogo": true,
+          "website": "https://cottononkids.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Currency Exchange International",
+          "logoDomain": "ceifx.com",
+          "hasLogo": true,
+          "website": "https://ceifx.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Dave's Hot Chicken",
+          "logoDomain": "daveshotchicken.com",
+          "hasLogo": true,
+          "website": "https://daveshotchicken.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "DEL - Vans Inc. (VF Sportswear)",
+          "logoDomain": "vans.com",
+          "hasLogo": true,
+          "website": "https://vans.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Din Tai Fung",
+          "logoDomain": "dtf.com",
+          "hasLogo": true,
+          "website": "https://dtf.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Dopl",
+          "logoDomain": "dopl.com",
+          "hasLogo": true,
+          "website": "https://dopl.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Dr. Martens",
+          "logoDomain": "drmartens.com",
+          "hasLogo": true,
+          "website": "https://drmartens.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Dreame",
+          "logoDomain": "dreame.com",
+          "hasLogo": true,
+          "website": "https://dreame.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "DRM-LND",
+          "logoDomain": "drm-lnd.com",
+          "hasLogo": true,
+          "website": "https://drm-lnd.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Dyson",
+          "logoDomain": "dyson.com",
+          "hasLogo": true,
+          "website": "https://dyson.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Eataly",
+          "logoDomain": "eataly.com",
+          "hasLogo": true,
+          "website": "https://eataly.com",
+          "suite": "Level 2 & 3",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Equinox",
+          "logoDomain": "equinox.com",
+          "hasLogo": true,
+          "website": "https://equinox.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Everything But Water",
+          "logoDomain": "everythingbutwater.com",
+          "hasLogo": true,
+          "website": "https://everythingbutwater.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Fabletics",
+          "logoDomain": "fabletics.com",
+          "hasLogo": true,
+          "website": "https://fabletics.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Family lounge",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Fast Fix Jewelry and Watch Repairs",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://fastfixjewelry.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "FIGS",
+          "logoDomain": "wearfigs.com",
+          "hasLogo": true,
+          "website": "https://wearfigs.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "FP Movement",
+          "logoDomain": "fpmovement.com",
+          "hasLogo": true,
+          "website": "https://fpmovement.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Free People",
+          "logoDomain": "freepeople.com",
+          "hasLogo": true,
+          "website": "https://freepeople.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Fuwa Teriyaki Grill",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Gabriela Ceballos",
+          "logoDomain": "gabrielaceballos.com",
+          "hasLogo": true,
+          "website": "https://gabrielaceballos.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Geary's Rolex",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Gelson's Market",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Good American",
+          "logoDomain": "goodamerican.com",
+          "hasLogo": true,
+          "website": "https://goodamerican.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Good Quality Human",
+          "logoDomain": "goodqualityhuman.com",
+          "hasLogo": true,
+          "website": "https://goodqualityhuman.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "gorjana",
+          "logoDomain": "gorjana.com",
+          "hasLogo": true,
+          "website": "https://gorjana.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "H&M",
+          "logoDomain": "hm.com",
+          "hasLogo": true,
+          "website": "https://hm.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Haidilao Hot Pot",
+          "logoDomain": "haidilaohotpot.us",
+          "hasLogo": true,
+          "website": "https://haidilaohotpot.us",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Herman Miller",
+          "logoDomain": "hermanmiller.com",
+          "hasLogo": true,
+          "website": "https://hermanmiller.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Hokey Pokey LA",
+          "logoDomain": "hokeypokeyla.com",
+          "hasLogo": true,
+          "website": "https://hokeypokeyla.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Honey Birdette",
+          "logoDomain": "honeybirdette.com",
+          "hasLogo": true,
+          "website": "https://honeybirdette.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Hugo Boss",
+          "logoDomain": "hugoboss.com",
+          "hasLogo": true,
+          "website": "https://hugoboss.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Indochino",
+          "logoDomain": "indochino.com",
+          "hasLogo": true,
+          "website": "https://indochino.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Industrie Australia",
+          "logoDomain": "industrieaustralia.com",
+          "hasLogo": true,
+          "website": "https://industrieaustralia.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "J Crew",
+          "logoDomain": "jcrew.com",
+          "hasLogo": true,
+          "website": "https://jcrew.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Janie And Jack",
+          "logoDomain": "janieandjack.com",
+          "hasLogo": true,
+          "website": "https://janieandjack.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Javiers",
+          "logoDomain": "javiers-cantina.com",
+          "hasLogo": true,
+          "website": "https://javiers-cantina.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Jo Malone",
+          "logoDomain": "jomalone.com",
+          "hasLogo": true,
+          "website": "https://jomalone.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "John Varvatos",
+          "logoDomain": "johnvarvatos.com",
+          "hasLogo": true,
+          "website": "https://johnvarvatos.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Juice Crafters",
+          "logoDomain": "juicecrafters.com",
+          "hasLogo": true,
+          "website": "https://juicecrafters.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "KÄNDI",
+          "logoDomain": "swedishkandi.com",
+          "hasLogo": true,
+          "website": "https://swedishkandi.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Kate Spade",
+          "logoDomain": "katespade.com.au",
+          "hasLogo": true,
+          "website": "https://katespade.com.au",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Katsuya",
+          "logoDomain": "katsuya.com",
+          "hasLogo": true,
+          "website": "https://katsuya.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Kendra Scott",
+          "logoDomain": "kendrascott.com",
+          "hasLogo": true,
+          "website": "https://kendrascott.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Kiehl's",
+          "logoDomain": "kiehls.com",
+          "hasLogo": true,
+          "website": "https://kiehls.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "L'Occitane En Provence",
+          "logoDomain": "loccitaneenprovence.com",
+          "hasLogo": true,
+          "website": "https://loccitaneenprovence.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "La Colombe",
+          "logoDomain": "lacolombe.com",
+          "hasLogo": true,
+          "website": "https://lacolombe.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "La Vaca Brazilian Grill",
+          "logoDomain": "lavacabraziliangrill.com",
+          "hasLogo": true,
+          "website": "https://lavacabraziliangrill.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Lacoste",
+          "logoDomain": "lacoste.com",
+          "hasLogo": true,
+          "website": "https://lacoste.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Läderach Chocolatier Suisse",
+          "logoDomain": "laderach.com",
+          "hasLogo": true,
+          "website": "https://laderach.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Lenscrafters",
+          "logoDomain": "lenscrafters.com",
+          "hasLogo": true,
+          "website": "https://lenscrafters.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Levi's",
+          "logoDomain": "levi.com",
+          "hasLogo": true,
+          "website": "https://www.levi.com/",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Little Kitchen Academy",
+          "logoDomain": "littlekitchenacademy.com",
+          "hasLogo": true,
+          "website": "https://littlekitchenacademy.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Little Posh",
+          "logoDomain": "littleposhpeople.com",
+          "hasLogo": true,
+          "website": "https://littleposhpeople.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Lovepop",
+          "logoDomain": "lovepop.com",
+          "hasLogo": true,
+          "website": "https://lovepop.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Lucid Motors",
+          "logoDomain": "lucidmotors.com",
+          "hasLogo": true,
+          "website": "https://lucidmotors.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Lululemon Athletica",
+          "logoDomain": "lululemon.com",
+          "hasLogo": true,
+          "website": "https://lululemon.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Lush Fresh Handmade Cosmetics",
+          "logoDomain": "lush.com",
+          "hasLogo": true,
+          "website": "https://lush.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Mac Cosmetics",
+          "logoDomain": "maccosmetics.com",
+          "hasLogo": true,
+          "website": "https://maccosmetics.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Madewell",
+          "logoDomain": "madewell.com",
+          "hasLogo": true,
+          "website": "https://madewell.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Maje",
+          "logoDomain": "maje.com",
+          "hasLogo": true,
+          "website": "https://maje.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Marc Jacobs",
+          "logoDomain": "marcjacobs.com",
+          "hasLogo": true,
+          "website": "https://marcjacobs.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Marine Layer",
+          "logoDomain": "marinelayer.com",
+          "hasLogo": true,
+          "website": "https://marinelayer.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Massis Kabob",
+          "logoDomain": "massiskabob.com",
+          "hasLogo": true,
+          "website": "https://massiskabob.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "MC2 Saint Barth",
+          "logoDomain": "mc2saintbarth.com",
+          "hasLogo": true,
+          "website": "https://mc2saintbarth.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Meizhou Dongpo Restaurant",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://meizhourestaurants.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Mejuri",
+          "logoDomain": "mejuri.com",
+          "hasLogo": true,
+          "website": "https://mejuri.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Melin",
+          "logoDomain": "melin.com",
+          "hasLogo": true,
+          "website": "https://melin.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Messika",
+          "logoDomain": "messika.com",
+          "hasLogo": true,
+          "website": "https://messika.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Michael Kors",
+          "logoDomain": "michaelkors.com",
+          "hasLogo": true,
+          "website": "https://michaelkors.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Minamoto Kitchoan",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Moleskine",
+          "logoDomain": "moleskine.com",
+          "hasLogo": true,
+          "website": "https://moleskine.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Moody Tiger",
+          "logoDomain": "moodytiger.com",
+          "hasLogo": true,
+          "website": "https://moodytiger.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "MZ Wallace",
+          "logoDomain": "mzwallace.com",
+          "hasLogo": true,
+          "website": "https://mzwallace.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Nati Boutique",
+          "logoDomain": "natiboutique.com",
+          "hasLogo": true,
+          "website": "https://natiboutique.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Nespresso",
+          "logoDomain": "nespresso.com",
+          "hasLogo": true,
+          "website": "https://nespresso.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Next Health",
+          "logoDomain": "next-health.com",
+          "hasLogo": true,
+          "website": "https://next-health.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "O'gusto",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Oak + Fort",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Oakberry Acai",
+          "logoDomain": "oakberryacai.com",
+          "hasLogo": true,
+          "website": "https://oakberryacai.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Old Navy",
+          "logoDomain": "oldnavy.com.ph",
+          "hasLogo": true,
+          "website": "https://oldnavy.com.ph",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Olive Young",
+          "logoDomain": "oliveyoung.co.kr",
+          "hasLogo": true,
+          "website": "https://oliveyoung.co.kr",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "ON",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "One Medical",
+          "logoDomain": "onemedical.com",
+          "hasLogo": true,
+          "website": "https://onemedical.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Orange Theory Fitness",
+          "logoDomain": "orangetheoryfitness.de",
+          "hasLogo": true,
+          "website": "https://orangetheoryfitness.de",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "PacSun",
+          "logoDomain": "pacsun.com",
+          "hasLogo": true,
+          "website": "https://pacsun.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Panda Express",
+          "logoDomain": "pandaexpress.com",
+          "hasLogo": true,
+          "website": "https://pandaexpress.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Pandora Jewelry",
+          "logoDomain": "pandora-jewelry.com",
+          "hasLogo": true,
+          "website": "https://pandora-jewelry.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Panini Kabob Grill",
+          "logoDomain": "paninikabobgrill.com",
+          "hasLogo": true,
+          "website": "https://paninikabobgrill.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Pixi Beauty",
+          "logoDomain": "pixibeauty.com",
+          "hasLogo": true,
+          "website": "https://pixibeauty.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Pop Mart",
+          "logoDomain": "popmart.com",
+          "hasLogo": true,
+          "website": "https://popmart.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Poukei",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Princess Polly",
+          "logoDomain": "princesspolly.com",
+          "hasLogo": true,
+          "website": "https://princesspolly.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Psycho Bunny",
+          "logoDomain": "psychobunny.com",
+          "hasLogo": true,
+          "website": "https://psychobunny.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Ramen Nagi",
+          "logoDomain": "ramennagi.com",
+          "hasLogo": true,
+          "website": "https://ramennagi.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Razer",
+          "logoDomain": "razer.com",
+          "hasLogo": true,
+          "website": "https://razer.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Redstraw Tea Bar",
+          "logoDomain": "redstrawteabar.com",
+          "hasLogo": true,
+          "website": "https://redstrawteabar.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Reiss",
+          "logoDomain": "reiss.com",
+          "hasLogo": true,
+          "website": "https://reiss.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Rhone",
+          "logoDomain": "rhone.com",
+          "hasLogo": true,
+          "website": "https://rhone.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Rideshare Lounge",
+          "logoDomain": "rideshare.com",
+          "hasLogo": true,
+          "website": "https://rideshare.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Ring Concierge",
+          "logoDomain": "ringconcierge.com",
+          "hasLogo": true,
+          "website": "https://ringconcierge.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Rumi's Kitchen",
+          "logoDomain": "rumiskitchen.com",
+          "hasLogo": true,
+          "website": "https://rumiskitchen.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Saje Natural Wellness",
+          "logoDomain": "saje.com",
+          "hasLogo": true,
+          "website": "https://saje.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Samsonite",
+          "logoDomain": "samsonite.com",
+          "hasLogo": true,
+          "website": "https://samsonite.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sandro",
+          "logoDomain": "sandro-paris.com",
+          "hasLogo": true,
+          "website": "https://sandro-paris.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "See's Candies",
+          "logoDomain": "sees.com",
+          "hasLogo": true,
+          "website": "https://sees.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sephora",
+          "logoDomain": "sephora.com",
+          "hasLogo": true,
+          "website": "https://sephora.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Shake Shack",
+          "logoDomain": "shakeshack.com",
+          "hasLogo": true,
+          "website": "https://shakeshack.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Shoe Lab",
+          "logoDomain": "shoelabnyc.com",
+          "hasLogo": true,
+          "website": "https://shoelabnyc.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Skechers",
+          "logoDomain": "skechers.com",
+          "hasLogo": true,
+          "website": "https://skechers.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "SMFK",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Squishable",
+          "logoDomain": "squishable.com",
+          "hasLogo": true,
+          "website": "https://squishable.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "State and Liberty Clothing Company",
+          "logoDomain": "stateandliberty.com",
+          "hasLogo": true,
+          "website": "https://stateandliberty.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Steve Madden",
+          "logoDomain": "stevemadden.com",
+          "hasLogo": true,
+          "website": "https://stevemadden.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Studs",
+          "logoDomain": "studs.com",
+          "hasLogo": true,
+          "website": "https://studs.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sugar Nail",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sugarfina",
+          "logoDomain": "sugarfina.com",
+          "hasLogo": true,
+          "website": "https://sugarfina.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Suit Supply",
+          "logoDomain": "suitsupply.com",
+          "hasLogo": true,
+          "website": "https://suitsupply.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sunglass Hut",
+          "logoDomain": "sunglasshut.com",
+          "hasLogo": true,
+          "website": "https://sunglasshut.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "SunLife Organics",
+          "logoDomain": "sunlifeorganics.com",
+          "hasLogo": true,
+          "website": "https://sunlifeorganics.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Super Peach",
+          "logoDomain": "superpeach.com",
+          "hasLogo": true,
+          "website": "https://superpeach.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Swarovski",
+          "logoDomain": "swarovski.com",
+          "hasLogo": true,
+          "website": "https://swarovski.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sweetgreen",
+          "logoDomain": "sweetgreen.com",
+          "hasLogo": true,
+          "website": "https://sweetgreen.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "TAG Heuer",
+          "logoDomain": "tagheuer.com",
+          "hasLogo": true,
+          "website": "https://tagheuer.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Tender Greens",
+          "logoDomain": "tendergreens.com",
+          "hasLogo": true,
+          "website": "https://tendergreens.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Terrain (Anthropologie)",
+          "logoDomain": "shopterrain.com",
+          "hasLogo": true,
+          "website": "https://www.shopterrain.com/",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "TESLA",
+          "logoDomain": "tesla.com",
+          "hasLogo": true,
+          "website": "https://tesla.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Coffee Bean & Tea Leaf",
+          "logoDomain": "coffeebean.com",
+          "hasLogo": true,
+          "website": "https://coffeebean.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "The Container Store",
+          "logoDomain": "thecontainerstore.com",
+          "hasLogo": true,
+          "website": "https://thecontainerstore.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Escape Game",
+          "logoDomain": "theescapegame.com",
+          "hasLogo": true,
+          "website": "https://theescapegame.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The HRB Experience",
+          "logoDomain": "thehrbexperience.com",
+          "hasLogo": true,
+          "website": "https://thehrbexperience.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "The LEGO Group",
+          "logoDomain": "thelegogroup.com",
+          "hasLogo": true,
+          "website": "https://thelegogroup.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Ordinary",
+          "logoDomain": "theordinary.com",
+          "hasLogo": true,
+          "website": "https://theordinary.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Therabody",
+          "logoDomain": "therabody.com",
+          "hasLogo": true,
+          "website": "https://therabody.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Tiffany & Company",
+          "logoDomain": "tiffany.com",
+          "hasLogo": true,
+          "website": "https://tiffany.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Tocaya Organica",
+          "logoDomain": "tocayaorganica.com",
+          "hasLogo": true,
+          "website": "https://tocayaorganica.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Tonal",
+          "logoDomain": "tonal.com",
+          "hasLogo": true,
+          "website": "https://tonal.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Topologie",
+          "logoDomain": "topologie.com",
+          "hasLogo": true,
+          "website": "https://topologie.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Tosai Sushi",
+          "logoDomain": "tosaisushi.com",
+          "hasLogo": true,
+          "website": "https://tosaisushi.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Toscanova",
+          "logoDomain": "toscanova.com",
+          "hasLogo": true,
+          "website": "https://toscanova.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "True Food Kitchen",
+          "logoDomain": "truefoodkitchen.com",
+          "hasLogo": true,
+          "website": "https://truefoodkitchen.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Tudor",
+          "logoDomain": "tudor.com",
+          "hasLogo": true,
+          "website": "https://tudor.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Tumi",
+          "logoDomain": "tumi.com",
+          "hasLogo": true,
+          "website": "https://tumi.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "TuTu Fun",
+          "logoDomain": "tutu.ru",
+          "hasLogo": true,
+          "website": "https://tutu.ru",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "U Los Angeles",
+          "logoDomain": "ulosangeles.com",
+          "hasLogo": true,
+          "website": "https://ulosangeles.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "UCLA Health",
+          "logoDomain": "uclahealth.org",
+          "hasLogo": true,
+          "website": "https://uclahealth.org",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Uniqlo",
+          "logoDomain": "uniqlo.com",
+          "hasLogo": true,
+          "website": "https://uniqlo.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Untuckit",
+          "logoDomain": "untuckit.com",
+          "hasLogo": true,
+          "website": "https://untuckit.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "USPS",
+          "logoDomain": "usps.com",
+          "hasLogo": true,
+          "website": "https://usps.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Venchi",
+          "logoDomain": "venchi.com",
+          "hasLogo": true,
+          "website": "https://venchi.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Verge Motorcycles",
+          "logoDomain": "vergemotorcycles.com",
+          "hasLogo": true,
+          "website": "https://vergemotorcycles.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Very Thai",
+          "logoDomain": "verythai.com",
+          "hasLogo": true,
+          "website": "https://verythai.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Video & Audio Center",
+          "logoDomain": "videoandaudiocenter.com",
+          "hasLogo": true,
+          "website": "https://videoandaudiocenter.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Vineyard Vines",
+          "logoDomain": "vineyardvines.com",
+          "hasLogo": true,
+          "website": "https://vineyardvines.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Vuori",
+          "logoDomain": "vuoriclothing.com",
+          "hasLogo": true,
+          "website": "https://vuoriclothing.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Warby Parker",
+          "logoDomain": "warbyparker.com",
+          "hasLogo": true,
+          "website": "https://warbyparker.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Arts - Bernard J. (Tony) Rosenthal",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Arts - Elyse Dodge",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Arts - Jene Highstein",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Arts - Jun Kaneko",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Arts - Michael Todd",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Arts - Stan Bitters",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Arts - Woods Davy",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Cabana Space",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Community Room",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Concierge",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Dog Park",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Management",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Oasis Space",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Parking Office",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Security Office",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Westfield Terrace",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Wushiland Boba",
+          "logoDomain": "wushilandboba.com",
+          "hasLogo": true,
+          "website": "https://wushilandboba.com",
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Yogurtland",
+          "logoDomain": "yogurtland.com",
+          "hasLogo": true,
+          "website": "https://yogurtland.com",
+          "suite": "Level 1",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        },
+        {
+          "name": "Zadig & Voltaire",
+          "logoDomain": "zadig-et-voltaire.com",
+          "hasLogo": true,
+          "website": "https://zadig-et-voltaire.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Zara",
+          "logoDomain": "zara.com",
+          "hasLogo": true,
+          "website": "https://zara.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Zinque",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "Level 2",
+          "unitStatus": "Occupied",
+          "spaceSf": "0"
+        }
+      ],
+      "vacancies": [
+        {
+          "label": "Suite Level 1",
+          "suite": "Level 1",
+          "spaceSf": "3000",
+          "spaceLabel": "Westfield Century City - Suite Level 1 - 3,000 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite Level 2",
+          "suite": "Level 2",
+          "spaceSf": "2500",
+          "spaceLabel": "Westfield Century City - Suite Level 2 - 2,500 sf",
+          "unitStatus": "Vacant"
+        },
+        {
+          "label": "Suite Level 2",
+          "suite": "Level 2",
+          "spaceSf": "2500",
+          "spaceLabel": "Westfield Century City - Suite Level 2 - 2,500 sf",
+          "unitStatus": "Vacant"
+        }
+      ]
+    },
+    {
+      "centerName": "The Paseo",
+      "slug": "the-paseo",
+      "tenants": [
+        {
+          "name": "AT&T",
+          "logoDomain": "att.com",
+          "hasLogo": true,
+          "website": "https://att.com",
+          "suite": "154",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bank of Montreal",
+          "logoDomain": "bmo.com",
+          "hasLogo": true,
+          "website": "https://bmo.com",
+          "suite": "140",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bath & Body Works",
+          "logoDomain": "bathandbodyworks.com",
+          "hasLogo": true,
+          "website": "https://bathandbodyworks.com",
+          "suite": "145",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Brighton Collectibles",
+          "logoDomain": "brighton.com",
+          "hasLogo": true,
+          "website": "https://brighton.com",
+          "suite": "137",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Buttercup",
+          "logoDomain": "buttercupbabystore.com",
+          "hasLogo": true,
+          "website": "https://buttercupbabystore.com",
+          "suite": "131",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Cosmo",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "158",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Daily Needs",
+          "logoDomain": "dailystationery.com",
+          "hasLogo": true,
+          "website": "https://dailystationery.com",
+          "suite": "160",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Darbini Jewelry",
+          "logoDomain": "darbinijewelry.com",
+          "hasLogo": true,
+          "website": "https://darbinijewelry.com",
+          "suite": "179",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "DSW Shoes",
+          "logoDomain": "dsw.com",
+          "hasLogo": true,
+          "website": "https://dsw.com",
+          "suite": "250",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Equinox Fitness Center",
+          "logoDomain": "equinox.com",
+          "hasLogo": true,
+          "website": "https://equinox.com",
+          "suite": "201",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Escapology",
+          "logoDomain": "escapology.com",
+          "hasLogo": true,
+          "website": "https://escapology.com",
+          "suite": "153",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Happy Nails & Spa",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "171",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Hawaii Fluid Art",
+          "logoDomain": "hawaiifluidart.com",
+          "hasLogo": true,
+          "website": "https://hawaiifluidart.com",
+          "suite": "170",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Hyatt Place Hotel",
+          "logoDomain": "hyatt.com",
+          "hasLogo": true,
+          "website": "https://hyatt.com",
+          "suite": "B001",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "K-Lyn",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": "143",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Lenscrafters",
+          "logoDomain": "lenscrafters.com",
+          "hasLogo": true,
+          "website": "https://lenscrafters.com",
+          "suite": "128",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Monarca Sol Collective",
+          "logoDomain": "monarcasol.com",
+          "hasLogo": true,
+          "website": "https://monarcasol.com",
+          "suite": "139",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "My Gym",
+          "logoDomain": "mygym.com",
+          "hasLogo": true,
+          "website": "https://mygym.com",
+          "suite": "209",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "NOOR",
+          "logoDomain": "noorevents.com",
+          "hasLogo": true,
+          "website": "https://noorevents.com",
+          "suite": "200 & 208",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Panini Kabob Grill",
+          "logoDomain": "paninikabobgrill.com",
+          "hasLogo": true,
+          "website": "https://paninikabobgrill.com",
+          "suite": "114",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Pasadena Antique Mall",
+          "logoDomain": "pasadenaantiquemall.com",
+          "hasLogo": true,
+          "website": "https://pasadenaantiquemall.com",
+          "suite": "125",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Regal Cinemas",
+          "logoDomain": "regmovies.com",
+          "hasLogo": true,
+          "website": "https://regmovies.com",
+          "suite": "271",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Salon Republic",
+          "logoDomain": "salonrepublic.com",
+          "hasLogo": true,
+          "website": "https://salonrepublic.com",
+          "suite": "241",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Starbucks",
+          "logoDomain": "starbucks.com",
+          "hasLogo": true,
+          "website": "https://starbucks.com",
+          "suite": "152",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Good Feet Store",
+          "logoDomain": "goodfeet.com",
+          "hasLogo": true,
+          "website": "https://goodfeet.com",
+          "suite": "118",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Open Book",
+          "logoDomain": "theopenbookpasadena.com",
+          "hasLogo": true,
+          "website": "https://theopenbookpasadena.com",
+          "suite": "161",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Tommy Bahama",
+          "logoDomain": "tommybahama.com",
+          "hasLogo": true,
+          "website": "https://tommybahama.com",
+          "suite": "129",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Wagyu Master Shabu House",
+          "logoDomain": "wagyumastershabu.com",
+          "hasLogo": true,
+          "website": "https://wagyumastershabu.com",
+          "suite": "240",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "West Elm",
+          "logoDomain": "westelm.com",
+          "hasLogo": true,
+          "website": "https://westelm.com",
+          "suite": "101",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Wushiland Boba",
+          "logoDomain": "wushilandboba.com",
+          "hasLogo": true,
+          "website": "https://wushilandboba.com",
+          "suite": "124",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Yard House",
+          "logoDomain": "yardhouse.com",
+          "hasLogo": true,
+          "website": "https://yardhouse.com",
+          "suite": "220",
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        }
+      ],
+      "vacancies": []
+    },
+    {
+      "centerName": "One Colorado",
+      "slug": "one-colorado",
+      "tenants": [
+        {
+          "name": "21 Choices Frozen Yogurt",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Aesop",
+          "logoDomain": "aesop.com",
+          "hasLogo": true,
+          "website": "https://aesop.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Alfred Coffee",
+          "logoDomain": "alfred.la",
+          "hasLogo": true,
+          "website": "https://alfred.la",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Allbirds",
+          "logoDomain": "allbirds.com",
+          "hasLogo": true,
+          "website": "https://allbirds.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Alo Yoga",
+          "logoDomain": "aloyoga.com",
+          "hasLogo": true,
+          "website": "https://aloyoga.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Anthropologie",
+          "logoDomain": "anthropologie.com",
+          "hasLogo": true,
+          "website": "https://anthropologie.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Bokaos Aveda",
+          "logoDomain": "bokaos.com",
+          "hasLogo": true,
+          "website": "https://bokaos.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Brilliant Earth",
+          "logoDomain": "brilliantearth.com",
+          "hasLogo": true,
+          "website": "https://brilliantearth.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Champion's Curry",
+          "logoDomain": "japanesecurry.com",
+          "hasLogo": true,
+          "website": "https://japanesecurry.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "gorjana",
+          "logoDomain": "gorjana.com",
+          "hasLogo": true,
+          "website": "https://gorjana.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "IPIC Theaters",
+          "logoDomain": "ipictheaters.com",
+          "hasLogo": true,
+          "website": "https://ipictheaters.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Javier's",
+          "logoDomain": "javiers-cantina.com",
+          "hasLogo": true,
+          "website": "https://javiers-cantina.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "M Andonia",
+          "logoDomain": "mandonia.com",
+          "hasLogo": true,
+          "website": "https://mandonia.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Main Chick",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://mainchick.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Milli Matcha",
+          "logoDomain": "millimatcha.com",
+          "hasLogo": true,
+          "website": "https://millimatcha.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Monarch Athletic Club",
+          "logoDomain": "monarchathleticclub.com",
+          "hasLogo": true,
+          "website": "https://monarchathleticclub.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Nike",
+          "logoDomain": "nike.com",
+          "hasLogo": true,
+          "website": "https://nike.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Paper Rice",
+          "logoDomain": "paperrice.com",
+          "hasLogo": true,
+          "website": "https://paperrice.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Parachute",
+          "logoDomain": "parachutehome.com",
+          "hasLogo": true,
+          "website": "https://parachutehome.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Patagonia",
+          "logoDomain": "patagonia.com",
+          "hasLogo": true,
+          "website": "https://patagonia.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Place Vendome Jewelry",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://plvendome.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "PlayLab Beauty",
+          "logoDomain": "playlabbeauty.com",
+          "hasLogo": true,
+          "website": "https://playlabbeauty.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "rag & bone",
+          "logoDomain": "rag-bone.com",
+          "hasLogo": true,
+          "website": "https://rag-bone.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Rothy's",
+          "logoDomain": "rothys.com",
+          "hasLogo": true,
+          "website": "https://rothys.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Russell's",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Salt & Straw",
+          "logoDomain": "saltandstraw.com",
+          "hasLogo": true,
+          "website": "https://saltandstraw.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sephora",
+          "logoDomain": "sephora.com",
+          "hasLogo": true,
+          "website": "https://sephora.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Shopaholic Sample Sales",
+          "logoDomain": null,
+          "hasLogo": true,
+          "website": "https://shopaholicsamplesales.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Skin Laundry",
+          "logoDomain": "skinlaundry.com",
+          "hasLogo": true,
+          "website": "https://skinlaundry.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sockerbit",
+          "logoDomain": "sockerbit.com",
+          "hasLogo": true,
+          "website": "https://sockerbit.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sundays",
+          "logoDomain": "sundays-studio.com",
+          "hasLogo": true,
+          "website": "https://sundays-studio.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Sushi Roku",
+          "logoDomain": "sushiroku.com",
+          "hasLogo": true,
+          "website": "https://sushiroku.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Thaim",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "The Unicorn Store",
+          "logoDomain": "theunicorn.dk",
+          "hasLogo": true,
+          "website": "https://theunicorn.dk",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Top Drawer",
+          "logoDomain": "topdrawer.com",
+          "hasLogo": true,
+          "website": "https://topdrawer.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Twigzz",
+          "logoDomain": null,
+          "hasLogo": false,
+          "website": null,
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Vuori",
+          "logoDomain": "vuoriclothing.com",
+          "hasLogo": true,
+          "website": "https://vuoriclothing.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        },
+        {
+          "name": "Wetzel's Pretzels",
+          "logoDomain": "wetzels.com",
+          "hasLogo": true,
+          "website": "https://wetzels.com",
+          "suite": null,
+          "unitStatus": "Occupied",
+          "spaceSf": null
+        }
+      ],
+      "vacancies": []
     }
   ]
 }

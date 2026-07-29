@@ -1,31 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Tenant } from "../types/tenant";
-import { getLogoDevImageUrl } from "../utils/logoDev";
+import { useLogoProvider } from "../hooks/useLogoProvider";
+import { loadBrandLogoImage } from "../utils/logoProvider";
 import { getTenantInitial } from "../utils/tenantInitial";
 
 interface TenantLogoProps {
   tenant: Tenant;
   className?: string;
+  /** Requested logo raster size (CSS still controls display size). */
+  size?: number;
 }
 
-export function TenantLogo({ tenant, className = "info-window__logo" }: TenantLogoProps) {
+export function TenantLogo({
+  tenant,
+  className = "info-window__logo",
+  size = 200,
+}: TenantLogoProps) {
+  const [provider] = useLogoProvider();
+  const [logoSrc, setLogoSrc] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
   const initial = getTenantInitial(tenant.tenantName);
-  // Only show an image when a verified brand domain resolved for this tenant;
-  // otherwise show the initial (the full name sits next to it).
-  const logoUrl = !failed && getLogoDevImageUrl(tenant.logoDomain);
+  const sourceKey = `${provider}:${tenant.logoDomain ?? ""}:${size}`;
 
-  if (!logoUrl) {
-    return (
-      <div className={`${className} info-window__logo--fallback`} aria-hidden>
-        {initial}
-      </div>
-    );
-  }
+  useEffect(() => {
+    let cancelled = false;
+    setLogoSrc(null);
+    setFailed(false);
 
-  if (failed) {
+    (async () => {
+      const img = await loadBrandLogoImage(tenant.logoDomain, { size });
+      if (cancelled) return;
+      if (img?.src) setLogoSrc(img.src);
+      else setFailed(true);
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [sourceKey, tenant.logoDomain, size]);
+
+  if (!logoSrc || failed) {
     return (
-      <div className={`${className} info-window__logo--fallback`} aria-hidden>
+      <div className={`${className} lettermark`} aria-hidden>
         {initial}
       </div>
     );
@@ -33,10 +49,15 @@ export function TenantLogo({ tenant, className = "info-window__logo" }: TenantLo
 
   return (
     <img
+      key={sourceKey}
       className={className}
-      src={logoUrl}
+      src={logoSrc}
       alt=""
-      referrerPolicy="no-referrer"
+      referrerPolicy={
+        provider === "brandfetch"
+          ? "strict-origin-when-cross-origin"
+          : "no-referrer"
+      }
       onError={() => setFailed(true)}
     />
   );

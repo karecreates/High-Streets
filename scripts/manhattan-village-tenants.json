@@ -1,0 +1,352 @@
+[
+  {
+    "name": "7th Avenue",
+    "logoDomain": null,
+    "suite": "3208C"
+  },
+  {
+    "name": "Aerie",
+    "logoDomain": "ae.com",
+    "suite": "A6"
+  },
+  {
+    "name": "Alo",
+    "logoDomain": "aloyoga.com",
+    "suite": "N125"
+  },
+  {
+    "name": "Anthropologie",
+    "logoDomain": "anthropologie.com",
+    "suite": "3100B"
+  },
+  {
+    "name": "Apple",
+    "logoDomain": "apple.com",
+    "suite": "B1"
+  },
+  {
+    "name": "Banter & Bliss Candle Co.",
+    "logoDomain": null,
+    "suite": "A1"
+  },
+  {
+    "name": "Bath & Body Works",
+    "logoDomain": "bathandbodyworks.com",
+    "suite": "D8"
+  },
+  {
+    "name": "Black Clover",
+    "logoDomain": "blackclover.com",
+    "suite": "E2"
+  },
+  {
+    "name": "BOA Steakhouse",
+    "logoDomain": null,
+    "suite": "3110"
+  },
+  {
+    "name": "California Pizza Kitchen",
+    "logoDomain": "cpk.com",
+    "suite": "3320"
+  },
+  {
+    "name": "Cellat",
+    "logoDomain": null,
+    "suite": "Kiosk"
+  },
+  {
+    "name": "Chili's Grill & Bar",
+    "logoDomain": "chilis.com",
+    "suite": "2620"
+  },
+  {
+    "name": "Coffee Bean & Tea Leaf",
+    "logoDomain": "coffeebean.com",
+    "suite": "2616"
+  },
+  {
+    "name": "Coreology Fitness",
+    "logoDomain": null,
+    "suite": "S130"
+  },
+  {
+    "name": "CorePower Yoga",
+    "logoDomain": "corepoweryoga.com",
+    "suite": "E16"
+  },
+  {
+    "name": "CVS Pharmacy",
+    "logoDomain": "cvs.com",
+    "suite": "2900"
+  },
+  {
+    "name": "dan modern chinese",
+    "logoDomain": null,
+    "suite": "S140"
+  },
+  {
+    "name": "Faherty",
+    "logoDomain": "fahertybrand.com",
+    "suite": "S120"
+  },
+  {
+    "name": "FIFA World Cup 2026™ Store",
+    "logoDomain": "fifa.com",
+    "suite": "A5"
+  },
+  {
+    "name": "Free People",
+    "logoDomain": "freepeople.com",
+    "suite": "S135"
+  },
+  {
+    "name": "French Touch",
+    "logoDomain": null,
+    "suite": "D11"
+  },
+  {
+    "name": "Gap",
+    "logoDomain": "gap.com",
+    "suite": "C4"
+  },
+  {
+    "name": "gorjana",
+    "logoDomain": "gorjana.com",
+    "suite": "S115"
+  },
+  {
+    "name": "Handel's Homemade Ice Cream",
+    "logoDomain": "handelsicecream.com",
+    "suite": "N145"
+  },
+  {
+    "name": "Heyday Skincare",
+    "logoDomain": "heydayskincare.com",
+    "suite": "N110"
+  },
+  {
+    "name": "Holly & Hudson",
+    "logoDomain": null,
+    "suite": "C15"
+  },
+  {
+    "name": "Islands Fine Burgers & Drinks",
+    "logoDomain": "islandsrestaurants.com",
+    "suite": "D1"
+  },
+  {
+    "name": "J.Jill",
+    "logoDomain": "jjill.com",
+    "suite": "D4"
+  },
+  {
+    "name": "JOEY Manhattan Beach",
+    "logoDomain": "joeyrestaurants.com",
+    "suite": "3120"
+  },
+  {
+    "name": "Johnny Was",
+    "logoDomain": "johnnywas.com",
+    "suite": "N130"
+  },
+  {
+    "name": "Kamana Palace",
+    "logoDomain": null,
+    "suite": "E17"
+  },
+  {
+    "name": "Kiehl's",
+    "logoDomain": "kiehls.com",
+    "suite": "E5"
+  },
+  {
+    "name": "Las Olas",
+    "logoDomain": null,
+    "suite": "D12"
+  },
+  {
+    "name": "Lovesac",
+    "logoDomain": "lovesac.com",
+    "suite": "D3"
+  },
+  {
+    "name": "MAC Cosmetics",
+    "logoDomain": "maccosmetics.com",
+    "suite": "B5"
+  },
+  {
+    "name": "Macy's",
+    "logoDomain": "macys.com",
+    "suite": "3400"
+  },
+  {
+    "name": "Mercado",
+    "logoDomain": null,
+    "suite": "3212A"
+  },
+  {
+    "name": "Mia's",
+    "logoDomain": null,
+    "suite": "D9"
+  },
+  {
+    "name": "Minutes + Hours",
+    "logoDomain": null,
+    "suite": "C12"
+  },
+  {
+    "name": "Olive Garden",
+    "logoDomain": "olivegarden.com",
+    "suite": "2610"
+  },
+  {
+    "name": "Pottery Barn",
+    "logoDomain": "potterybarn.com",
+    "suite": "E10"
+  },
+  {
+    "name": "Quatrine Home",
+    "logoDomain": "quatrine.com",
+    "suite": "D6"
+  },
+  {
+    "name": "Rails",
+    "logoDomain": "rails.com",
+    "suite": "S110"
+  },
+  {
+    "name": "Ralphs Fresh Fare",
+    "logoDomain": "ralphs.com",
+    "suite": "2700"
+  },
+  {
+    "name": "Reborn Coffee",
+    "logoDomain": "reborncoffee.com",
+    "suite": "3180"
+  },
+  {
+    "name": "Rowan",
+    "logoDomain": "rowan.com",
+    "suite": "N128"
+  },
+  {
+    "name": "Saint & Second",
+    "logoDomain": null,
+    "suite": "3160"
+  },
+  {
+    "name": "See's Candies",
+    "logoDomain": "sees.com",
+    "suite": "2614"
+  },
+  {
+    "name": "Sephora",
+    "logoDomain": "sephora.com",
+    "suite": "C2"
+  },
+  {
+    "name": "Sidecar Doughnuts",
+    "logoDomain": "sidecardoughnuts.com",
+    "suite": "G102"
+  },
+  {
+    "name": "Silverlake Ramen",
+    "logoDomain": "silverlakeramen.com",
+    "suite": "N140"
+  },
+  {
+    "name": "Smashburger",
+    "logoDomain": "smashburger.com",
+    "suite": "G100"
+  },
+  {
+    "name": "Spectrum",
+    "logoDomain": "spectrum.com",
+    "suite": "2680"
+  },
+  {
+    "name": "Stein Optometric Center",
+    "logoDomain": null,
+    "suite": "E4"
+  },
+  {
+    "name": "Sunglass Hut",
+    "logoDomain": "sunglasshut.com",
+    "suite": "E6"
+  },
+  {
+    "name": "SunLife Organics",
+    "logoDomain": "sunlifeorganics.com",
+    "suite": "E14"
+  },
+  {
+    "name": "Super Sports",
+    "logoDomain": null,
+    "suite": "2930"
+  },
+  {
+    "name": "Supercuts",
+    "logoDomain": "supercuts.com",
+    "suite": "H100"
+  },
+  {
+    "name": "Sushi Roku",
+    "logoDomain": "sushiroku.com",
+    "suite": "3110"
+  },
+  {
+    "name": "Sweetgreen",
+    "logoDomain": "sweetgreen.com",
+    "suite": "E18"
+  },
+  {
+    "name": "Tempur-Pedic",
+    "logoDomain": "tempurpedic.com",
+    "suite": "A2"
+  },
+  {
+    "name": "The 1916 Company",
+    "logoDomain": "the1916company.com",
+    "suite": "3208A"
+  },
+  {
+    "name": "The Game Chest",
+    "logoDomain": null,
+    "suite": "C14"
+  },
+  {
+    "name": "Urban Outfitters",
+    "logoDomain": "urbanoutfitters.com",
+    "suite": "3100C"
+  },
+  {
+    "name": "Urban Plates",
+    "logoDomain": "urbanplates.com",
+    "suite": "2650"
+  },
+  {
+    "name": "Vans",
+    "logoDomain": "vans.com",
+    "suite": "B2"
+  },
+  {
+    "name": "Victoria's Secret",
+    "logoDomain": "victoriassecret.com",
+    "suite": "C10"
+  },
+  {
+    "name": "West Elm",
+    "logoDomain": "westelm.com",
+    "suite": "3100A"
+  },
+  {
+    "name": "Williams Sonoma",
+    "logoDomain": "williams-sonoma.com",
+    "suite": "A10"
+  },
+  {
+    "name": "Wilson",
+    "logoDomain": "wilson.com",
+    "suite": "N137"
+  }
+]

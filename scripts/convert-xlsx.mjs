@@ -11,13 +11,14 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import XLSX from "xlsx";
+import { sanitizeLogoDomain } from "./lib/logoDomains.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 
 const defaultXlsx = path.resolve(
   projectRoot,
-  "assets/MASTER HIGH STREET DATA.xlsx"
+  "assets/Occupied_AND_Vacant_Space_7.28.xlsx"
 );
 const xlsxPath = process.argv[2]
   ? path.resolve(process.argv[2])
@@ -133,11 +134,47 @@ if (fs.existsSync(cacheFile)) {
 /**
  * Verified brand domain per tenant account name (or null → render as text).
  * Built by `npm run resolve-logos` via logo.dev's Brand Search API.
+ * Manual fixes live in logo-overrides.json (global) and optional `@byStreet`
+ * map for location-specific brands (same name, different business).
  * @type {Record<string, string | null>}
  */
 let logoCache = {};
 if (fs.existsSync(logoCacheFile)) {
   logoCache = JSON.parse(fs.readFileSync(logoCacheFile, "utf8"));
+}
+
+/** @type {Record<string, string | null>} */
+let logoNameOverrides = {};
+/** @type {Record<string, Record<string, string | null>>} */
+let logoByStreet = {};
+const logoOverridesFile = path.join(outDir, "logo-overrides.json");
+if (fs.existsSync(logoOverridesFile)) {
+  const raw = JSON.parse(fs.readFileSync(logoOverridesFile, "utf8"));
+  const { ["@byStreet"]: byStreet, ...nameOverrides } = raw;
+  logoNameOverrides = nameOverrides;
+  logoByStreet =
+    byStreet && typeof byStreet === "object" && !Array.isArray(byStreet)
+      ? byStreet
+      : {};
+  logoCache = { ...logoCache, ...logoNameOverrides };
+}
+
+/**
+ * Resolve logo domain with street context first, then global override/cache.
+ * Street/name keys present with `null` force a text label (clear a bad auto-match).
+ */
+function resolveLogoDomain(tenantName, highStreet) {
+  const name = tenantName.trim();
+  const streetMap = highStreet ? logoByStreet[highStreet] : null;
+  let raw = "";
+  if (streetMap && Object.prototype.hasOwnProperty.call(streetMap, name)) {
+    raw = streetMap[name] || "";
+  } else if (Object.prototype.hasOwnProperty.call(logoNameOverrides, name)) {
+    raw = logoNameOverrides[name] || "";
+  } else {
+    raw = logoCache[name] ?? "";
+  }
+  return sanitizeLogoDomain(raw);
 }
 
 const highStreetSet = new Set();
@@ -236,8 +273,8 @@ for (const row of rows) {
     domain: cell(row, "Domain Guess"),
     faviconUrl: cell(row, "Favicon URL"),
     unitStatus,
-    logoDomain: logoCache[tenantName.trim()] ?? "",
-    hasLogo: Boolean(logoCache[tenantName.trim()]),
+    logoDomain: resolveLogoDomain(tenantName, highStreet),
+    hasLogo: Boolean(resolveLogoDomain(tenantName, highStreet)),
     lat: cached?.lat ?? null,
     lng: cached?.lng ?? null,
   });

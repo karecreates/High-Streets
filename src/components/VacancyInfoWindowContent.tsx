@@ -1,5 +1,6 @@
 import { betaMarkerSvg } from "../utils/createVacancyPinIcon";
 import type { Vacancy } from "../types/vacancy";
+import { BetaContactCta } from "./BetaContactCta";
 
 interface VacancyInfoWindowContentProps {
   vacancy: Vacancy;
@@ -31,21 +32,24 @@ export function VacancyInfoWindowContent({ vacancy }: VacancyInfoWindowContentPr
             <dd>{vacancy.space}</dd>
           </>
         )}
-        {vacancy.costarUrl && (
+        {vacancy.address && (
           <>
-            <dt>CoStar</dt>
+            <dt>Address</dt>
             <dd>
-              <a
-                href={vacancy.costarUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View property in CoStar
-              </a>
+              {vacancy.address}
+              {vacancy.suite ? ` · ${vacancy.suite}` : ""}
             </dd>
           </>
         )}
+        {vacancy.highStreet && (
+          <>
+            <dt>High street</dt>
+            <dd>{vacancy.highStreet.replace(/^Street - /, "")}</dd>
+          </>
+        )}
       </dl>
+
+      <BetaContactCta />
     </article>
   );
 }
