@@ -1,6 +1,6 @@
 {
-  "sourceFile": "Shopping_Center_Occupied_AND_Vacant_7.028.xlsx",
-  "generatedAt": "2026-07-28T23:08:30.326Z",
+  "sourceFile": "Final_Center_Data.xlsx",
+  "generatedAt": "2026-08-06T23:40:05.236Z",
   "centers": [
     {
       "centerName": "Brentwood Country Mart",
@@ -261,8 +261,8 @@
         {
           "name": "Turpan",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://turpan.com",
+          "hasLogo": false,
+          "website": null,
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -271,7 +271,7 @@
           "name": "US Post Office",
           "logoDomain": "usps.com",
           "hasLogo": true,
-          "website": "https://www.usps.com",
+          "website": "https://usps.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -295,8 +295,8 @@
         {
           "name": "9026-Eyes",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://9026eyes.com",
+          "hasLogo": false,
+          "website": null,
           "suite": "20",
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -772,8 +772,8 @@
         {
           "name": "Tra di Noi",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://tradinoimalibu.com",
+          "hasLogo": false,
+          "website": null,
           "suite": "8A",
           "unitStatus": "Occupied",
           "spaceSf": "2278"
@@ -1005,9 +1005,9 @@
         },
         {
           "name": "Shell Gas",
-          "logoDomain": null,
+          "logoDomain": "shell.com",
           "hasLogo": true,
-          "website": "https://darnestownshell.com",
+          "website": "https://shell.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": "500"
@@ -1199,8 +1199,8 @@
         {
           "name": "BOA Steakhouse",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://boasteak.com",
+          "hasLogo": false,
+          "website": null,
           "suite": "3110",
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -1568,8 +1568,8 @@
         {
           "name": "Naked Med Spa",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://nakedmedspa.com",
+          "hasLogo": false,
+          "website": null,
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -1765,9 +1765,9 @@
         },
         {
           "name": "Super Sports",
-          "logoDomain": "supersports.co.th",
+          "logoDomain": "supersports.com",
           "hasLogo": true,
-          "website": "https://supersports.co.th",
+          "website": "https://supersports.com",
           "suite": "2930",
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -1910,8 +1910,8 @@
         {
           "name": "Westside Pediatrics",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://westsidepediatrics.com",
+          "hasLogo": false,
+          "website": null,
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -3168,7 +3168,7 @@
           "name": "The Shade Store, Inc.",
           "logoDomain": "theshadestore.com",
           "hasLogo": true,
-          "website": "https://www.theshadestore.com/",
+          "website": "https://theshadestore.com",
           "suite": "228 S Brand Blvd",
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -3433,7 +3433,7 @@
           "spaceSf": null
         },
         {
-          "name": "Eeseol",
+          "name": "Eeseol*",
           "logoDomain": null,
           "hasLogo": false,
           "website": null,
@@ -4701,7 +4701,7 @@
           "name": "Auntie Anne's, Inc.",
           "logoDomain": "auntieannes.com",
           "hasLogo": true,
-          "website": "https://www.auntieannes.com/",
+          "website": "https://auntieannes.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -4736,8 +4736,8 @@
         {
           "name": "Bake Cheese Tart",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://bakecheesetart.com",
+          "hasLogo": false,
+          "website": null,
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": "0"
@@ -4880,8 +4880,8 @@
         {
           "name": "Casa Dani",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://casadani.com",
+          "hasLogo": false,
+          "website": null,
           "suite": "Level 1",
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -5132,8 +5132,8 @@
         {
           "name": "Fast Fix Jewelry and Watch Repairs",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://fastfixjewelry.com",
+          "hasLogo": false,
+          "website": null,
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -5457,7 +5457,7 @@
           "name": "Levi's",
           "logoDomain": "levi.com",
           "hasLogo": true,
-          "website": "https://www.levi.com/",
+          "website": "https://levi.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -5582,8 +5582,8 @@
         {
           "name": "Meizhou Dongpo Restaurant",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://meizhourestaurants.com",
+          "hasLogo": false,
+          "website": null,
           "suite": "Level 2",
           "unitStatus": "Occupied",
           "spaceSf": "0"
@@ -6123,7 +6123,7 @@
           "name": "Terrain (Anthropologie)",
           "logoDomain": "shopterrain.com",
           "hasLogo": true,
-          "website": "https://www.shopterrain.com/",
+          "website": "https://shopterrain.com",
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -7022,8 +7022,8 @@
         {
           "name": "Main Chick",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://mainchick.com",
+          "hasLogo": false,
+          "website": null,
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -7085,8 +7085,8 @@
         {
           "name": "Place Vendome Jewelry",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://plvendome.com",
+          "hasLogo": false,
+          "website": null,
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null
@@ -7148,8 +7148,8 @@
         {
           "name": "Shopaholic Sample Sales",
           "logoDomain": null,
-          "hasLogo": true,
-          "website": "https://shopaholicsamplesales.com",
+          "hasLogo": false,
+          "website": null,
           "suite": null,
           "unitStatus": "Occupied",
           "spaceSf": null

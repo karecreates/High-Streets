@@ -118,9 +118,7 @@ export function DashboardOverviewMap() {
   const corridorLocations = useMemo(
     () =>
       getActiveDashboardMapLocations().filter(
-        (location) =>
-          location.category === "high-streets" ||
-          location.category === "shopping-districts"
+        (location) => location.category === "high-streets"
       ),
     []
   );

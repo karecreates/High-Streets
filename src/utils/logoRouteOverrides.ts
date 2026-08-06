@@ -13,6 +13,17 @@
 import coreologyLogo from "@assets/extra logos/coreology.avif";
 import loquiLogo from "@assets/extra logos/loqui.svg";
 import pressedJuiceryLogo from "@assets/extra logos/pressed-juicery.svg";
+import rvrVeniceLogo from "@assets/logos/rvr-venice.png";
+import abbotsPizzaLogo from "@assets/logos/lil_guy_logo_w_text-03_1767391610.webp";
+import levainBakeryLogo from "@assets/logos/levain_bakery.svg";
+import pinkLogo from "@assets/logos/080626_PINK_Masthead.svg";
+import tmntPizzeriaLogo from "@assets/logos/tmntlogo_web.avif";
+import casaMartinLogo from "@assets/logos/wupqnzob0lcrlxvsvyfa.avif";
+import westsideComedyLogo from "@assets/logos/WSC-logo-web.webp";
+import dragonAlleyLogo from "@assets/logos/Dragon-Alley-Coffee-Shop-Logo.png";
+import puzzleZooLogo from "@assets/logos/puzzle-zoo.jpeg";
+import santaMonicaSouvenirsLogo from "@assets/logos/santa-monica-souvenirs.webp";
+import shellLogo from "@assets/logos/Shell_logo.svg";
 
 export type LogoRouteOverride =
   | "logo.dev"
@@ -45,6 +56,8 @@ const LOGO_ROUTE_BY_DOMAIN: Record<string, LogoRouteOverride> = {
   "colonycleanersonline.com": "logo.dev",
   "dieselbookstore.com": "logo.dev",
   "luckys-steakhouse.com": "logo.dev",
+  "jimmyjohns.com": "logo.dev",
+  "visualcomfort.com": "logo.dev",
 
   // Brandfetch light logo (colored under theme=light)
   "thekettle.net": "brandfetch-light",
@@ -53,6 +66,8 @@ const LOGO_ROUTE_BY_DOMAIN: Record<string, LogoRouteOverride> = {
   "gotoycrazy.com": "brandfetch-light",
   "lenscrafters.com": "brandfetch-light",
   "dinelittlesister.com": "brandfetch-light",
+  "melsdrive-in.com": "brandfetch-light",
+  "sunsetplazadental.com": "brandfetch-light",
 
   // Brandfetch dark logo
   "auntieannes.com": "brandfetch-logo-dark",
@@ -60,10 +75,14 @@ const LOGO_ROUTE_BY_DOMAIN: Record<string, LogoRouteOverride> = {
   "shopterrain.com": "brandfetch-logo-dark",
   "themacstudio.com": "brandfetch-logo-dark",
   "thewin-dow.la": "brandfetch-logo-dark",
+  "rh.com": "brandfetch-logo-dark",
+  "rag-bone.com": "brandfetch-logo-dark",
+  "vans.com": "brandfetch-logo-dark",
 
   // Brandfetch dark icon
   "smashburger.com": "brandfetch-icon-dark",
-  "rag-bone.com": "brandfetch-icon-dark",
+  "hotpilates.com": "brandfetch-icon-dark",
+  "prospectwise.com": "brandfetch-icon-dark",
 
   // Brandfetch dark symbol
   "usps.com": "brandfetch-symbol-dark",
@@ -75,9 +94,22 @@ const LOGO_ROUTE_BY_DOMAIN: Record<string, LogoRouteOverride> = {
   "eatloqui.com": "local",
   "loqui.com": "local",
   "pressed.com": "local",
+  "rvr.la": "local",
+  "abbotspizzaco.com": "local",
+  "levainbakery.com": "local",
+  // Victoria's Secret PINK — no standalone Brandfetch entry
+  "pink.com": "local",
+  "tmntpizzeriala.com": "local",
+  "casamartinsm.com": "local",
+  "westsidecomedyclub.com": "local",
+  "dragonalleycoffeeshop.com": "local",
+  "puzzlezoo.com": "local",
+  "santamonicasouvenirs.com": "local",
+  "shell.com": "local",
 
   // Plain text only
-  "casamartinsm.com": "text",
+  "adivineh2o.com": "text",
+  "beautybarclinic.com": "text",
   "speedwaycarwash.com": "text",
   "houseoflaserandaesthetics.co.uk": "text",
   "medicalweightlossbeauty.com": "text",
@@ -99,6 +131,15 @@ const LOGO_ROUTE_BY_DOMAIN: Record<string, LogoRouteOverride> = {
   "meizhourestaurants.com": "text",
   "sakehousebyhikari.com": "text",
   "nclla.org": "text",
+  // Abbot Kinney: Brandfetch returns another company's mark or a washed-out one.
+  "san-damian.com": "text",
+  "cooksgarden.com": "text",
+  "reserve-venice.com": "text",
+  "americanvintage-store.com": "text",
+  "coutula.com": "text",
+  "onegoldenthread.com": "text",
+  "peakdesign.com": "text",
+  "pardeeproperties.com": "text",
 };
 
 /** Domain → Vite-bundled asset URL for `local` route. */
@@ -108,6 +149,17 @@ const LOCAL_LOGO_BY_DOMAIN: Record<string, string> = {
   "eatloqui.com": loquiLogo,
   "loqui.com": loquiLogo,
   "pressed.com": pressedJuiceryLogo,
+  "rvr.la": rvrVeniceLogo,
+  "abbotspizzaco.com": abbotsPizzaLogo,
+  "levainbakery.com": levainBakeryLogo,
+  "pink.com": pinkLogo,
+  "tmntpizzeriala.com": tmntPizzeriaLogo,
+  "casamartinsm.com": casaMartinLogo,
+  "westsidecomedyclub.com": westsideComedyLogo,
+  "dragonalleycoffeeshop.com": dragonAlleyLogo,
+  "puzzlezoo.com": puzzleZooLogo,
+  "santamonicasouvenirs.com": santaMonicaSouvenirsLogo,
+  "shell.com": shellLogo,
 };
 
 function cleanDomain(domain: string | null | undefined): string | null {

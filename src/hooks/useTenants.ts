@@ -5,15 +5,12 @@ import type { VacanciesDataset, Vacancy } from "../types/vacancy";
 import { isNamedTenant } from "../utils/tenantDisplay";
 
 /**
- * Only active high streets + shopping districts from the dashboard sidebar.
+ * Only active high streets from the dashboard sidebar.
  * Shopping centers use logo pins / their own directory — not Excel street rows.
  */
 export const SIDEBAR_TENANT_DATA_KEYS = new Set(
   HIGH_STREET_CORRIDORS.filter(
-    (c) =>
-      c.active &&
-      Boolean(c.dataKey) &&
-      (c.category === "high-streets" || c.category === "shopping-districts")
+    (c) => c.active && Boolean(c.dataKey) && c.category === "high-streets"
   ).flatMap((c) => (c.dataKey ? [c.dataKey] : []))
 );
 

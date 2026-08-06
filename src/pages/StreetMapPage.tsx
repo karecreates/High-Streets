@@ -6,13 +6,25 @@ import {
 } from "../components/MapControlsBar";
 import { MajorTenantsToggle } from "../components/MajorTenantsToggle";
 import { PillButton } from "../components/PillButton";
+import { ShoppingCenterDirectoryModal } from "../components/ShoppingCenterDirectoryModal";
 import { StaticModeChrome } from "../components/StaticModeChrome";
 import { TenantMapView } from "../components/TenantMap";
-import { useStreetTenants, useStreetVacancies } from "../context/TenantsContext";
+import {
+  useAllStreetTenants,
+  useAllStreetVacancies,
+  useStreetTenants,
+  useStreetVacancies,
+} from "../context/TenantsContext";
 import { useMajorTenantsFilter } from "../hooks/useMajorTenantsFilter";
 import { useStaticMapMode } from "../hooks/useStaticMapMode";
 import { getCorridorBySlug, getCorridorDetail } from "../data/highStreets";
+import type { ShoppingCenter } from "../data/shoppingCenters";
+import {
+  isWithinMeters,
+  NEARBY_TENANT_RADIUS_M,
+} from "../utils/geoProximity";
 import { getMasterMapId } from "../utils/mapConfig";
+import { getNearbyShoppingCenters } from "../utils/mapContextOverlays";
 import { groupVacanciesByLocation } from "../utils/groupVacanciesByLocation";
 import { isNamedTenant } from "../utils/tenantDisplay";
 import type { VacancyLocationGroup } from "../types/vacancy";
@@ -29,27 +41,26 @@ export function StreetMapPage() {
   const locationState = location.state as StreetMapLocationState | null;
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
   const detail = slug ? getCorridorDetail(slug) : undefined;
-  const tenants = useStreetTenants(corridor?.dataKey ?? "");
-  const vacancies = useStreetVacancies(corridor?.dataKey ?? "");
+  const corridorTenants = useStreetTenants(corridor?.dataKey ?? "");
+  const corridorVacancies = useStreetVacancies(corridor?.dataKey ?? "");
+  const allTenants = useAllStreetTenants();
+  const allVacancies = useAllStreetVacancies();
   const [displayMode, setDisplayMode] = useState<MapDisplayMode>("both");
   const [majorTenantsOnly, setMajorTenantsOnly] = useState(false);
-  const [showMeteredParking, setShowMeteredParking] = useState(true);
+  const [showMeteredParking, setShowMeteredParking] = useState(false);
   const [showParkingLots, setShowParkingLots] = useState(false);
   const [focusedVacancyGroupKey, setFocusedVacancyGroupKey] = useState<
     string | null
   >(null);
+  const [directoryCenter, setDirectoryCenter] = useState<ShoppingCenter | null>(
+    null
+  );
   const [introZoomComplete, setIntroZoomComplete] = useState(
     () => !locationState?.introZoom
   );
   const mapFrameRef = useRef<HTMLDivElement>(null);
   const { staticMode, enterStaticMode, exitStaticMode } =
     useStaticMapMode(mapFrameRef);
-
-  const {
-    tenants: mapTenants,
-    filtering: majorTenantsFiltering,
-    majorCount,
-  } = useMajorTenantsFilter(tenants, majorTenantsOnly);
 
   const introTarget = useMemo(() => {
     if (!locationState?.introZoom) return null;
@@ -62,20 +73,78 @@ export function StreetMapPage() {
   const mapCenter = introTarget?.center ?? detail?.mapCenter;
   const mapZoom = introTarget?.center ? introTarget.zoom : detail?.mapZoom;
 
+  const focusCenter = mapCenter ?? detail?.mapCenter;
+
+  /** This corridor + only nearby tenants from other corridors. */
+  const proximityTenants = useMemo(() => {
+    if (!focusCenter || !corridor?.dataKey) return corridorTenants;
+    const nearby = allTenants.filter(
+      (tenant) =>
+        tenant.highStreet !== corridor.dataKey &&
+        tenant.lat != null &&
+        tenant.lng != null &&
+        isWithinMeters(
+          focusCenter,
+          { lat: tenant.lat, lng: tenant.lng },
+          NEARBY_TENANT_RADIUS_M
+        )
+    );
+    if (!nearby.length) return corridorTenants;
+    const byId = new Map<string, (typeof corridorTenants)[number]>();
+    for (const tenant of [...corridorTenants, ...nearby]) {
+      byId.set(tenant.id, tenant);
+    }
+    return [...byId.values()];
+  }, [allTenants, corridor?.dataKey, corridorTenants, focusCenter]);
+
+  const proximityVacancies = useMemo(() => {
+    if (!focusCenter || !corridor?.dataKey) return corridorVacancies;
+    const nearby = allVacancies.filter(
+      (vacancy) =>
+        vacancy.highStreet !== corridor.dataKey &&
+        vacancy.lat != null &&
+        vacancy.lng != null &&
+        isWithinMeters(
+          focusCenter,
+          { lat: vacancy.lat, lng: vacancy.lng },
+          NEARBY_TENANT_RADIUS_M
+        )
+    );
+    if (!nearby.length) return corridorVacancies;
+    const byId = new Map<string, (typeof corridorVacancies)[number]>();
+    for (const vacancy of [...corridorVacancies, ...nearby]) {
+      byId.set(vacancy.id, vacancy);
+    }
+    return [...byId.values()];
+  }, [allVacancies, corridor?.dataKey, corridorVacancies, focusCenter]);
+
+  const shoppingCenters = useMemo(() => {
+    if (!focusCenter) return [];
+    return getNearbyShoppingCenters(focusCenter);
+  }, [focusCenter]);
+
+  const {
+    tenants: mapTenants,
+    filtering: majorTenantsFiltering,
+  } = useMajorTenantsFilter(proximityTenants, majorTenantsOnly);
+
   const vacancyGroups = useMemo(
-    () => groupVacanciesByLocation(vacancies),
-    [vacancies]
+    () => groupVacanciesByLocation(corridorVacancies),
+    [corridorVacancies]
   );
 
   const tenantsCount = useMemo(() => {
-    if (majorTenantsOnly) return majorCount;
-    return tenants.filter(
+    if (majorTenantsOnly) {
+      return mapTenants.filter((t) => t.highStreet === corridor?.dataKey)
+        .length;
+    }
+    return corridorTenants.filter(
       (tenant) =>
         tenant.lat != null &&
         tenant.lng != null &&
         isNamedTenant(tenant.tenantName)
     ).length;
-  }, [majorCount, majorTenantsOnly, tenants]);
+  }, [corridor?.dataKey, corridorTenants, majorTenantsOnly, mapTenants]);
 
   const handleMajorTenantsChange = useCallback(
     (active: boolean) => {
@@ -102,6 +171,10 @@ export function StreetMapPage() {
 
   const handleVacancyFocusComplete = useCallback(() => {
     setFocusedVacancyGroupKey(null);
+  }, []);
+
+  const handleShoppingCenterSelect = useCallback((center: ShoppingCenter) => {
+    setDirectoryCenter(center);
   }, []);
 
   if (!corridor?.active || !detail) {
@@ -154,7 +227,7 @@ export function StreetMapPage() {
 
         <TenantMapView
           tenants={mapTenants}
-          vacancies={vacancies}
+          vacancies={proximityVacancies}
           defaultCenter={mapCenter}
           defaultZoom={mapZoom}
           autoFitBounds={false}
@@ -170,7 +243,18 @@ export function StreetMapPage() {
           onIntroZoomComplete={() => setIntroZoomComplete(true)}
           mapIdOverride={getMasterMapId()}
           staticMode={staticMode}
+          shoppingCenters={shoppingCenters}
+          onShoppingCenterSelect={
+            staticMode ? undefined : handleShoppingCenterSelect
+          }
         />
+
+        {directoryCenter && !staticMode ? (
+          <ShoppingCenterDirectoryModal
+            center={directoryCenter}
+            onClose={() => setDirectoryCenter(null)}
+          />
+        ) : null}
       </div>
     </div>
   );

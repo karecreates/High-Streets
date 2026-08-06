@@ -28,7 +28,10 @@ import {
   getFirstMappedTenantForStreet,
   STREET_FOCUS_ZOOM,
 } from "../utils/streetMapFocus";
-import { getActiveDashboardMapLocations } from "../utils/dashboardMapLocations";
+import {
+  getActiveShoppingCenters,
+  getStreetAndDistrictCallouts,
+} from "../utils/mapContextOverlays";
 import { SIDEBAR_TENANT_DATA_KEYS } from "../hooks/useTenants";
 
 export function MasterMapPage() {
@@ -44,7 +47,7 @@ export function MasterMapPage() {
   } = useTenantsContext();
   const [corridorSlug, setCorridorSlug] = useState("all");
   const [displayMode, setDisplayMode] = useState<MapDisplayMode>("both");
-  const [showMeteredParking, setShowMeteredParking] = useState(true);
+  const [showMeteredParking, setShowMeteredParking] = useState(false);
   const [showParkingLots, setShowParkingLots] = useState(false);
   const [focusedVacancyGroupKey, setFocusedVacancyGroupKey] = useState<
     string | null
@@ -55,15 +58,7 @@ export function MasterMapPage() {
   const [focusNonce, setFocusNonce] = useState(0);
   const [mobileControlsOpen, setMobileControlsOpen] = useState(false);
 
-  const shoppingCenters = useMemo(
-    () =>
-      HIGH_STREET_CORRIDORS.filter(
-        (c) => c.category === "shopping-centers" && c.active
-      )
-        .map((c) => getShoppingCenter(c.slug))
-        .filter((c): c is ShoppingCenter => Boolean(c)),
-    []
-  );
+  const shoppingCenters = useMemo(() => getActiveShoppingCenters(), []);
 
   const shoppingCenterPositions = useMemo(
     () => shoppingCenters.map((c) => c.mapCenter),
@@ -71,12 +66,7 @@ export function MasterMapPage() {
   );
 
   const corridorCallouts = useMemo(
-    () =>
-      getActiveDashboardMapLocations().filter(
-        (location) =>
-          location.category === "high-streets" ||
-          location.category === "shopping-districts"
-      ),
+    () => getStreetAndDistrictCallouts(),
     []
   );
 

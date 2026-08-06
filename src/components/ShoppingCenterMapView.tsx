@@ -13,6 +13,10 @@ interface ShoppingCenterMapViewProps {
   staticMode?: boolean;
 }
 
+/**
+ * Lightweight single-center map (unused by dedicated center pages — those use
+ * TenantMapView with full street context). Kept for any simpler embeds.
+ */
 export function ShoppingCenterMapView({
   center,
   staticMode = false,

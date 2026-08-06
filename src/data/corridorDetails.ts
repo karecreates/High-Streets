@@ -6,22 +6,29 @@ import galleryAbbotKinney4 from "@assets/Abbot Kinney Photos/abbot_kinney_4.jpg"
 import galleryAviator from "@assets/Aviator-Nation-Abbot-Kinney-Blvd-in-the-heart-of-Venice-CA.jpg";
 import galleryBlueBottle from "@assets/blue-bottle-exterior.jpg";
 import gallerySaltStraw from "@assets/2016-01-13-salt-straw-005.0.0.jpg";
+import galleryDowntownLa1 from "@assets/Downtown LA Photos/downtown_la_1.jpeg";
+import galleryDowntownLa2 from "@assets/Downtown LA Photos/downtown_la_2.webp";
+import galleryDowntownLa3 from "@assets/Downtown LA Photos/downtown_la_3.jpg";
+import galleryDowntownLa4 from "@assets/Downtown LA Photos/downtown_la_4.jpg";
+import logoPandora from "@assets/logos/Pandora_Logo_2019.svg";
+import logoJohnnyWas from "@assets/logos/johnny-was.svg";
+import logoIntimissimi from "@assets/logos/Intimissimi_vector_logo.svg";
 import galleryLaBrea1 from "@assets/La Brea Photos/La_Brea_1.jpg";
 import galleryLaBrea2 from "@assets/La Brea Photos/La_Brea_2.jpg";
 import galleryLaBrea3 from "@assets/La Brea Photos/La_Brea_3.jpg";
-import galleryLaBrea4 from "@assets/La Brea Photos/La_Brea_4.jpg";
+import galleryLaBrea4 from "@assets/La Brea Photos/la_brea_4_new.jpg";
 import galleryLarchmont1 from "@assets/Larchmont Photos/Larchmont_1.jpg";
 import galleryLarchmont2 from "@assets/Larchmont Photos/Larchmont_2.jpg";
 import galleryLarchmont3 from "@assets/Larchmont Photos/Larchmont_3.jpg";
-import galleryLarchmont4 from "@assets/Larchmont Photos/Larchmont_4.jpg";
+import galleryLarchmont4 from "@assets/Larchmont Photos/larchmont_4_new.jpg";
 import galleryMelrose1 from "@assets/Melrose Photos/melrose_1.jpg";
 import galleryMelrose2 from "@assets/Melrose Photos/melrose_2.jpg";
-import galleryMelrose3 from "@assets/Melrose Photos/melrose_3.jpg";
+import galleryMelrose3 from "@assets/Melrose Photos/melrose_3_new.jpg";
 import galleryMelrose4 from "@assets/Melrose Photos/melrose_4.jpg";
 import gallerySilverlake1 from "@assets/Silverlake Photos/silverlake_1.jpg";
 import gallerySilverlake2 from "@assets/Silverlake Photos/silverlake_2.jpg";
 import gallerySilverlake3 from "@assets/Silverlake Photos/silverlake_3.jpg";
-import gallerySilverlake4 from "@assets/Silverlake Photos/silverlake_4.jpg";
+import gallerySilverlake4 from "@assets/Silverlake Photos/silverlake_4_new.jpeg";
 import galleryMalibu1 from "@assets/Malibu Country Mart/malibu_country_mart_1.jpg";
 import galleryMalibu2 from "@assets/Malibu Country Mart/malibu_country_mart_2.jpg";
 import galleryMalibu3 from "@assets/Malibu Country Mart/malibu_country_mart_3.jpg";
@@ -46,7 +53,7 @@ import galleryMontana1 from "@assets/Montana Photos/montana_1.jpg";
 import galleryMontana2 from "@assets/Montana Photos/montana_2.jpg";
 import galleryMontana3 from "@assets/Montana Photos/montana_3.jpg";
 import galleryMontana4 from "@assets/Montana Photos/montana_4.jpg";
-import gallerySunsetStrip1 from "@assets/Sunset Strip Photos/sunset_strip_1.jpg";
+import gallerySunsetStrip1 from "@assets/Sunset Strip Photos/Sunset_Strip_1_new.jpg";
 import gallerySunsetStrip2 from "@assets/Sunset Strip Photos/sunset_strip_2.jpg";
 import gallerySunsetStrip3 from "@assets/Sunset Strip Photos/sunset_strip_3.jpg";
 import gallerySunsetStrip4 from "@assets/Sunset Strip Photos/sunset_strip_4.jpg";
@@ -67,8 +74,8 @@ import galleryWestfield2 from "@assets/Westfield Century City Photos/Westfield_C
 import galleryWestfield3 from "@assets/Westfield Century City Photos/Westfield_Century_City_3.jpg";
 import galleryWestfield4 from "@assets/Westfield Century City Photos/Westfield_Century_City_4.jpg";
 import galleryThirdStreet1 from "@assets/Third Street Promenade Photos/Third_Street_Promenade_1.jpg";
-import galleryThirdStreet2 from "@assets/Third Street Promenade Photos/Third_Street_Promenade_2.jpg";
-import galleryThirdStreet3 from "@assets/Third Street Promenade Photos/Third_Street_Promenade_3.jpg";
+import galleryThirdStreet2 from "@assets/Third Street Promenade Photos/Third_Street_2_new.jpg";
+import galleryThirdStreet3 from "@assets/Third Street Promenade Photos/Third_Street_3_new.jpg";
 import galleryThirdStreet4 from "@assets/Third Street Promenade Photos/Third_Street_Promenade_4.jpg";
 import galleryOldTownPasadena1 from "@assets/Old Town Pasadena Photos/Old_Town_Pasadena_1.jpg";
 import galleryOldTownPasadena2 from "@assets/Old Town Pasadena Photos/Old_Town_Pasadena_2.jpg";
@@ -102,6 +109,14 @@ import galleryManhattanVillage1 from "@assets/Manhattan Village Photos/Manhattan
 import galleryManhattanVillage2 from "@assets/Manhattan Village Photos/Manhattan_Village_2.webp";
 import galleryManhattanVillage3 from "@assets/Manhattan Village Photos/Manhattan_Village_3.jpg";
 import galleryManhattanVillage4 from "@assets/Manhattan Village Photos/Manhattan_Village_4.jpg";
+import galleryLaArtsDistrict1 from "@assets/La Arts District Photos/la_arts_district_1.jpg";
+import galleryLaArtsDistrict2 from "@assets/La Arts District Photos/la_arts_district_2.jpg";
+import galleryLaArtsDistrict3 from "@assets/La Arts District Photos/la_arts_district_3.jpg";
+import galleryLaArtsDistrict4 from "@assets/La Arts District Photos/la_arts_district_4.jpg";
+import galleryGoldenTriangle1 from "@assets/Golden Traingle Photos/golden_triangle_1.jpg";
+import galleryGoldenTriangle2 from "@assets/Golden Traingle Photos/golden_triangle_2.jpg";
+import galleryGoldenTriangle3 from "@assets/Golden Traingle Photos/golden_triangle_3.jpg";
+import galleryGoldenTriangle4 from "@assets/Golden Traingle Photos/golden_triangle_4.jpg";
 
 export interface GalleryImage {
   src: string;
@@ -122,6 +137,8 @@ export interface NotableBrand {
   name: string;
   /** Verified brand domain for an exact logo.dev logo. */
   domain: string;
+  /** Local logo asset that bypasses the Brandfetch lookup. */
+  src?: string;
 }
 
 export interface StreetCorridorDetail {
@@ -156,16 +173,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryAbbotKinney4, alt: "Retail storefront on Abbot Kinney Blvd" },
     ],
     notableBrands: [
+      { name: "Alo", domain: "aloyoga.com" },
+      { name: "Vuori", domain: "vuoriclothing.com" },
+      { name: "On", domain: "on.com" },
       { name: "Adidas", domain: "adidas.com" },
-      { name: "American Express", domain: "americanexpress.com" },
+      { name: "Ray-Ban", domain: "ray-ban.com" },
+      { name: "Lululemon", domain: "lululemon.com" },
+      { name: "HOKA", domain: "hoka.com" },
       { name: "Aesop", domain: "aesop.com" },
-      { name: "Blue Bottle Coffee", domain: "bluebottlecoffee.com" },
-      { name: "Equinox", domain: "equinox.com" },
-      { name: "Salt & Straw", domain: "saltandstraw.com" },
-      { name: "Allbirds", domain: "allbirds.com" },
-      { name: "& Other Stories", domain: "and-other-stories.com" },
       { name: "Aviator Nation", domain: "aviatornation.com" },
-      { name: "Intelligentsia Coffee", domain: "intelligentsia.com" },
+      { name: "Salt & Straw", domain: "saltandstraw.com" },
     ],
     bikeScore: 95,
     walkScore: 95,
@@ -238,16 +255,18 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryLarchmont4, alt: "Go Get Em Tiger on Larchmont Blvd" },
     ],
     notableBrands: [
-      { name: "Starbucks", domain: "starbucks.com" },
+      { name: "Levain Bakery", domain: "levainbakery.com" },
       { name: "Salt & Straw", domain: "saltandstraw.com" },
       { name: "Aesop", domain: "aesop.com" },
       { name: "Bluemercury", domain: "bluemercury.com" },
-      { name: "Jeni's Splendid Ice Cream", domain: "jenissplendidicecream.com" },
+      { name: "Noah's Bagels", domain: "noahs.com" },
       { name: "Beyond Yoga", domain: "beyondyoga.com" },
       { name: "Pressed Juicery", domain: "pressed.com" },
       { name: "Buck Mason", domain: "buckmason.com" },
-      { name: "Sweet Lady Jane", domain: "sweetladyjane.com" },
+      { name: "Sweetfin", domain: "sweetfin.com" },
       { name: "Credo Beauty", domain: "credobeauty.com" },
+      { name: "Sweet Lady Jane", domain: "sweetladyjane.com" },
+      { name: "Jeni's Splendid Ice Cream", domain: "jenis.com" },
     ],
     bikeScore: 66,
     walkScore: 86,
@@ -282,13 +301,14 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { name: "Adidas", domain: "adidas.com" },
       { name: "Ralph Lauren", domain: "ralphlauren.com" },
       { name: "Glossier", domain: "glossier.com" },
-      { name: "Reformation", domain: "thereformation.com" },
+      { name: "Fred Segal", domain: "fredsegal.com" },
       { name: "Balmain", domain: "balmain.com" },
       { name: "Chloé", domain: "chloe.com" },
       { name: "Golden Goose", domain: "goldengoose.com" },
       { name: "TheRealReal", domain: "therealreal.com" },
-      { name: "Casper", domain: "casper.com" },
-      { name: "Away", domain: "awaytravel.com" },
+      { name: "Aesop", domain: "aesop.com" },
+      { name: "Maison Margiela", domain: "maisonmargiela.com" },
+      { name: "La La Land Kind Cafe", domain: "lalalandkindcafe.com" },
     ],
     bikeScore: 62,
     walkScore: 88,
@@ -320,16 +340,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: gallerySaltStraw, alt: "Robertson Blvd corridor" },
     ],
     notableBrands: [
-      { name: "Starbucks", domain: "starbucks.com" },
+      { name: "The Ivy", domain: "theivyrestaurants.com" },
       { name: "Blue Bottle Coffee", domain: "bluebottlecoffee.com" },
-      { name: "Herman Miller", domain: "hermanmiller.com" },
-      { name: "Bang & Olufsen", domain: "bang-olufsen.com" },
-      { name: "Armani Casa", domain: "armanicasa.com" },
-      { name: "Technogym", domain: "technogym.com" },
       { name: "James Perse", domain: "jamesperse.com" },
-      { name: "Z Gallerie", domain: "zgallerie.com" },
+      { name: "Kitson", domain: "kitsonlosangeles.com" },
+      { name: "Herman Miller", domain: "hermanmiller.com" },
+      { name: "Armani Casa", domain: "armanicasa.com" },
       { name: "Alfred Coffee", domain: "alfred.la" },
-      { name: "Petrossian", domain: "petrosian.ca" },
+      { name: "H. Lorenzo", domain: "hlorenzo.com" },
+      { name: "The Henry", domain: "thehenryrestaurant.com" },
+      { name: "Starbucks", domain: "starbucks.com" },
     ],
     bikeScore: 62,
     walkScore: 93,
@@ -373,7 +393,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { name: "Intelligentsia", domain: "intelligentsia.com" },
       { name: "Undefeated", domain: "undefeated.com" },
       { name: "Salt & Straw", domain: "saltandstraw.com" },
-      { name: "A.P.C.", domain: "apc.com" },
+      { name: "Erewhon", domain: "erewhonmarket.com" },
+      { name: "La Colombe", domain: "lacolombe.com" },
     ],
     bikeScore: 67,
     walkScore: 95,
@@ -397,7 +418,7 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
   "third-street-promenade": {
     title: "Third Street Promenade",
     description:
-      "Located in the heart of Downtown Santa Monica, Third Street Promenade is the primary shopping, entertainment, and dining node on the Westside. The Third Street Promenade features three city blocks of luxury shops, local boutiques, and national retailers and is anchored by the Santa Monica Place mall on the South end of the street. The close proximity to the beach and the large concentration of surrounding office buildings gives the Third Street Promenade a unique combination of being a major tourist destination with a significant day time population.",
+      "Downtown Santa Monica is equal parts shopping haven and street-performer stage. Just east of the Pier, the 3rd Street Promenade consists of three open-air, car-free blocks that are anchored by upscale Santa Monica Place, home to more than 80 retailers. With everything from fresh farmers market produce to designer fashions, it's a shopper's nirvana.",
     estimatedRents: "$84-$180 PSF/yr NNN",
     galleryImages: [
       {
@@ -423,7 +444,7 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { name: "Google", domain: "google.com" },
       { name: "Adidas", domain: "adidas.com" },
       { name: "Tesla", domain: "tesla.com" },
-      { name: "Starbucks", domain: "starbucks.com" },
+      { name: "Alo", domain: "aloyoga.com" },
       { name: "Zara", domain: "zara.com" },
       { name: "Lululemon", domain: "lululemon.com" },
       { name: "Sephora", domain: "sephora.com" },
@@ -480,15 +501,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     ],
     notableBrands: [
       { name: "Trader Joe's", domain: "traderjoes.com" },
-      { name: "lululemon", domain: "lululemon.com" },
+      { name: "Sephora", domain: "sephora.com" },
+      { name: "Lululemon", domain: "lululemon.com" },
       { name: "Urban Outfitters", domain: "urbanoutfitters.com" },
-      { name: "Joan's on Third", domain: "joansonthird.com" },
-      { name: "Alfred Coffee", domain: "alfred.la" },
-      { name: "Mendocino Farms", domain: "mendocinofarms.com" },
-      { name: "Starbucks", domain: "starbucks.com" },
-      { name: "Chipotle", domain: "chipotle.com" },
-      { name: "Panera Bread", domain: "panerabread.com" },
-      { name: "Road Runner Sports", domain: "roadrunnersports.com" },
+      { name: "Free People", domain: "freepeople.com" },
+      { name: "Warby Parker", domain: "warbyparker.com" },
+      { name: "Salt & Straw", domain: "saltandstraw.com" },
+      { name: "Blue Bottle Coffee", domain: "bluebottlecoffee.com" },
+      { name: "Buck Mason", domain: "buckmason.com" },
+      { name: "Aesop", domain: "aesop.com" },
     ],
     bikeScore: 55,
     walkScore: 94,
@@ -528,16 +549,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       },
     ],
     notableBrands: [
-      { name: "Erewhon", domain: "erewhon.com" },
+      { name: "Erewhon", domain: "erewhonmarket.com" },
       { name: "Equinox", domain: "equinox.com" },
-      { name: "Alo Yoga", domain: "aloyoga.com" },
-      { name: "Vuori", domain: "vuoriclothing.com" },
       { name: "Reformation", domain: "thereformation.com" },
-      { name: "HOKA", domain: "hoka.com" },
+      { name: "Vuori", domain: "vuoriclothing.com" },
       { name: "Madewell", domain: "madewell.com" },
-      { name: "FP Movement", domain: "fpmovement.com" },
-      { name: "SUGARFISH", domain: "sugarfishsushi.com" },
-      { name: "UOVO", domain: "uovo.la" },
+      { name: "Alo", domain: "aloyoga.com" },
+      { name: "Marine Layer", domain: "marinelayer.com" },
+      { name: "HOKA", domain: "hoka.com" },
+      { name: "Sugarfish", domain: "sugarfishsushi.com" },
+      { name: "The Great", domain: "thisisthegreat.com" },
     ],
     bikeScore: 57,
     walkScore: 87,
@@ -618,15 +639,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     ],
     notableBrands: [
       { name: "Nike", domain: "nike.com" },
+      { name: "Madewell", domain: "madewell.com" },
       { name: "Lululemon", domain: "lululemon.com" },
       { name: "Warby Parker", domain: "warbyparker.com" },
-      { name: "Madewell", domain: "madewell.com" },
-      { name: "CAVA", domain: "cava.com" },
       { name: "Athleta", domain: "athleta.com" },
-      { name: "Mendocino Farms", domain: "mendocinofarms.com" },
-      { name: "Van Leeuwen", domain: "vanleeuwenicecream.com" },
-      { name: "Pressed Juicery", domain: "pressed.com" },
       { name: "YETI", domain: "yeti.com" },
+      { name: "Kendra Scott", domain: "kendrascott.com" },
+      { name: "North Italia", domain: "northitalia.com" },
+      { name: "Herman Miller", domain: "hermanmiller.com" },
+      { name: "CAVA", domain: "cava.com" },
     ],
     bikeScore: 50,
     walkScore: 69,
@@ -674,15 +695,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     ],
     notableBrands: [
       { name: "Apple", domain: "apple.com" },
+      { name: "Macy's", domain: "macys.com" },
       { name: "Alo", domain: "aloyoga.com" },
       { name: "Anthropologie", domain: "anthropologie.com" },
-      { name: "Macy's", domain: "macys.com" },
       { name: "Sephora", domain: "sephora.com" },
-      { name: "Free People", domain: "freepeople.com" },
-      { name: "Pottery Barn", domain: "potterybarn.com" },
-      { name: "West Elm", domain: "westelm.com" },
       { name: "Urban Outfitters", domain: "urbanoutfitters.com" },
       { name: "Sweetgreen", domain: "sweetgreen.com" },
+      { name: "Free People", domain: "freepeople.com" },
+      { name: "Pottery Barn", domain: "potterybarn.com" },
+      { name: "Gap", domain: "gap.com" },
     ],
     bikeScore: 60,
     walkScore: 87,
@@ -710,16 +731,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryPlatform4, alt: "Platform courtyard and murals" },
     ],
     notableBrands: [
+      { name: "Reformation", domain: "thereformation.com" },
       { name: "Blue Bottle Coffee", domain: "bluebottlecoffee.com" },
       { name: "Sweetgreen", domain: "sweetgreen.com" },
       { name: "Van Leeuwen", domain: "vanleeuwenicecream.com" },
-      { name: "Reformation", domain: "thereformation.com" },
-      { name: "Boba Guys", domain: "bobaguys.com" },
-      { name: "LOQUI", domain: "eatloqui.com" },
-      { name: "Roberta's", domain: "robertas.com" },
       { name: "Catbird", domain: "catbird.com" },
-      { name: "Miznon", domain: "miznon.com" },
-      { name: "Amber Interiors", domain: "amberinteriors.com" },
+      { name: "Roberta's", domain: "robertas.com" },
+      { name: "Margaux", domain: "margauxny.com" },
+      { name: "Margot", domain: "margot.la" },
+      { name: "Janessa Leoné", domain: "janessaleone.com" },
+      { name: "Kinn Studio", domain: "kinnstudio.com" },
     ],
     bikeScore: 75,
     walkScore: 84,
@@ -952,16 +973,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryBrentwood4, alt: "Farmshop entrance at Brentwood Country Mart" },
     ],
     notableBrands: [
-      { name: "Goop", domain: "goop.com" },
-      { name: "Farmshop", domain: "farmshop.com" },
-      { name: "Diesel", domain: "diesel.com" },
       { name: "James Perse", domain: "jamesperse.com" },
       { name: "Jenni Kayne", domain: "jennikayne.com" },
-      { name: "Caffe Luxxe", domain: "caffeluxxe.com" },
       { name: "Dôen", domain: "doen.com" },
       { name: "Sezane", domain: "sezane.com" },
+      { name: "Clare V.", domain: "clarev.com" },
+      { name: "Goop", domain: "goop.com" },
       { name: "Sid Mashburn", domain: "sidmashburn.com" },
-      { name: "Sweet Rose Creamery", domain: "sweetrosecreamery.com" },
+      { name: "Cos Bar", domain: "cosbar.com" },
+      { name: "Orlebar Brown", domain: "orlebarbrown.com" },
+      { name: "Varley", domain: "varley.com" },
     ],
     bikeScore: 47,
     walkScore: 35,
@@ -1002,15 +1023,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     ],
     notableBrands: [
       { name: "Ralph Lauren", domain: "ralphlauren.com" },
-      { name: "Oliver Peoples", domain: "oliverpeoples.com" },
-      { name: "Brandy Melville", domain: "brandymelville.com" },
+      { name: "Chrome Hearts", domain: "chromehearts.com" },
       { name: "Vuori", domain: "vuoriclothing.com" },
       { name: "Vince", domain: "vince.com" },
-      { name: "Chrome Hearts", domain: "chromehearts.com" },
-      { name: "Faherty", domain: "fahertybrand.com" },
+      { name: "John Varvatos", domain: "johnvarvatos.com" },
       { name: "Gorjana", domain: "gorjana.com" },
-      { name: "MR CHOW", domain: "mrchow.com" },
-      { name: "Planet Blue", domain: "planetblue.com" },
+      { name: "Outerknown", domain: "outerknown.com" },
+      { name: "L'Agence", domain: "lagence.com" },
+      { name: "Oliver Peoples", domain: "oliverpeoples.com" },
+      { name: "PAIGE", domain: "paige.com" },
     ],
     bikeScore: 55,
     walkScore: 45,
@@ -1046,15 +1067,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryMalibuVillage4, alt: "Lululemon storefront at Malibu Village" },
     ],
     notableBrands: [
-      { name: "Lululemon", domain: "lululemon.com" },
       { name: "Sephora", domain: "sephora.com" },
-      { name: "Chipotle", domain: "chipotle.com" },
+      { name: "Lululemon", domain: "lululemon.com" },
       { name: "Fred Segal", domain: "fredsegal.com" },
       { name: "Marine Layer", domain: "marinelayer.com" },
-      { name: "LiveWire", domain: "livewire.com" },
       { name: "Kitson", domain: "kitsonlosangeles.com" },
+      { name: "Chipotle", domain: "chipotle.com" },
+      { name: "Kreation", domain: "kreationorganic.com" },
       { name: "Marmalade Cafe", domain: "marmaladecafe.com" },
-      { name: "Catch Surf", domain: "catchsurf.com" },
+      { name: "Wells Fargo", domain: "wellsfargo.com" },
       { name: "Broad Street Oyster Co.", domain: "broadstreetoyster.com" },
     ],
     bikeScore: 55,
@@ -1091,15 +1112,15 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: gallerySantaMonicaPlace4, alt: "Nordstrom and plaza at Santa Monica Place" },
     ],
     notableBrands: [
-      { name: "Nordstrom", domain: "nordstrom.com" },
+      { name: "AllSaints", domain: "allsaints.com" },
       { name: "Nike", domain: "nike.com" },
-      { name: "Rolex", domain: "rolex.com" },
+      { name: "Tumi", domain: "tumi.com" },
       { name: "Tesla", domain: "tesla.com" },
-      { name: "Disney", domain: "disney.com" },
-      { name: "Coach", domain: "coach.com" },
+      { name: "Pandora", domain: "pandora.net", src: logoPandora },
+      { name: "The Cheesecake Factory", domain: "thecheesecakefactory.com" },
       { name: "Hugo Boss", domain: "hugoboss.com" },
-      { name: "Free People", domain: "freepeople.com" },
-      { name: "Aesop", domain: "aesop.com" },
+      { name: "Johnny Was", domain: "johnnywas.com", src: logoJohnnyWas },
+      { name: "Intimissimi", domain: "intimissimi.com", src: logoIntimissimi },
       { name: "Din Tai Fung", domain: "dintaifungusa.com" },
     ],
     bikeScore: 85,
@@ -1135,16 +1156,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryManhattan2, alt: "Skechers storefront near Manhattan Beach Pier" },
     ],
     notableBrands: [
-      { name: "Skechers", domain: "skechers.com" },
-      { name: "Starbucks", domain: "starbucks.com" },
-      { name: "Free People", domain: "freepeople.com" },
-      { name: "Salt & Straw", domain: "saltandstraw.com" },
-      { name: "Pressed Juicery", domain: "pressed.com" },
       { name: "Vuori", domain: "vuoriclothing.com" },
+      { name: "Skechers", domain: "skechers.com" },
+      { name: "Free People", domain: "freepeople.com" },
       { name: "Marine Layer", domain: "marinelayer.com" },
       { name: "Beyond Yoga", domain: "beyondyoga.com" },
-      { name: "Everything But Water", domain: "everythingbutwater.com" },
+      { name: "Salt & Straw", domain: "saltandstraw.com" },
+      { name: "Simmzy's", domain: "simmzys.com" },
+      { name: "Hennessey's Tavern", domain: "hennesseystavern.com" },
       { name: "Splendid", domain: "splendid.com" },
+      { name: "The Arthur J", domain: "thearthurj.com" },
     ],
     bikeScore: 52,
     walkScore: 73,
@@ -1193,11 +1214,11 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { name: "Equinox", domain: "equinox.com" },
       { name: "Intelligentsia", domain: "intelligentsia.com" },
       { name: "Lululemon", domain: "lululemon.com" },
-      { name: "Nike", domain: "nike.com" },
+      { name: "Free People", domain: "freepeople.com" },
       { name: "Patagonia", domain: "patagonia.com" },
       { name: "Tesla", domain: "tesla.com" },
       { name: "Warby Parker", domain: "warbyparker.com" },
-      { name: "Allbirds", domain: "allbirds.com" },
+      { name: "Tiffany & Co.", domain: "tiffany.com" },
       { name: "Apple", domain: "apple.com" },
     ],
     bikeScore: 95,
@@ -1237,16 +1258,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryCulver4, alt: "Equinox entrance in Downtown Culver City" },
     ],
     notableBrands: [
-      { name: "IN-N-Out Burger", domain: "innoutburger.com" },
+      { name: "Erewhon", domain: "erewhonmarket.com" },
+      { name: "Mendocino Farms", domain: "mendocinofarms.com" },
       { name: "Trader Joe's", domain: "traderjoes.com" },
+      { name: "In-N-Out Burger", domain: "in-n-out.com" },
       { name: "CAVA", domain: "cava.com" },
-      { name: "Tender Greens", domain: "tendergreens.com" },
-      { name: "Ippudo", domain: "ippudo.com" },
-      { name: "Drybar", domain: "drybarshops.com" },
-      { name: "Luna Grill", domain: "lunagrill.com" },
-      { name: "Breakfast Republic", domain: "breakfastrepublic.com" },
       { name: "Sephora", domain: "sephora.com" },
-      { name: "Equinox", domain: "equinox.com" },
+      { name: "CorePower Yoga", domain: "corepoweryoga.com" },
+      { name: "Salt & Straw", domain: "saltandstraw.com" },
+      { name: "Rocco's Tavern", domain: "roccostavern.com" },
+      { name: "Chase", domain: "chase.com" },
     ],
     bikeScore: 74,
     walkScore: 96,
@@ -1272,7 +1293,7 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
   montana: {
     title: "Montana Ave",
     description:
-      "Located between Brentwood and Santa Monica, Montana Avenue is one of the Westside's most chic and charming shopping destinations. Stretching about 10 city blocks, Montana Avenue is filled with upscale boutiques, restaurants, and cafes. Montana Avenue's blend of elegant boutiques and neighborhood appeal has given it a reputation of being a more polished and established alternative to the promotional Third Street Promenade or edgy Abbot Kinney.",
+      "Located in Santa Monica, Montana Avenue is one of the Westside's most chic and charming shopping destinations. Stretching about 10 city blocks, Montana Avenue is filled with upscale boutiques, restaurants, and cafes. Montana Avenue's blend of elegant boutiques and neighborhood appeal has given it a reputation of being a more polished and established alternative to the promotional Third Street Promenade or edgy Abbot Kinney.",
     estimatedRents: "$72-$110 PSF/yr NNN",
     galleryImages: [
       { src: galleryMontana1, alt: "Williams-Sonoma storefront on Montana Ave" },
@@ -1331,6 +1352,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { name: "Bluemercury", domain: "bluemercury.com" },
       { name: "Drybar", domain: "drybarshops.com" },
       { name: "Alice + Olivia", domain: "aliceandolivia.com" },
+      { name: "Joe & The Juice", domain: "joejuice.com" },
+      { name: "Sunlife Organics", domain: "sunlifeorganics.com" },
     ],
     bikeScore: 29,
     walkScore: 89,
@@ -1352,6 +1375,170 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     trafficCounts: [{ street: "Sunset Blvd", count: "31,000 CPD" }],
     mapCenter: { lat: 34.092648330681776, lng: -118.37921673409075 },
     mapZoom: 17,
+  },
+  "la-arts-district": {
+    title: "LA Arts District",
+    description:
+      "Once an industrial warehouse district, the Los Angeles Arts District has evolved into one of Downtown LA’s most distinctive creative neighborhoods. Located immediately east of Little Tokyo, the area combines historic industrial buildings and converted lofts with murals, contemporary galleries, design-focused retail, acclaimed restaurants, breweries and nightlife. Its growing residential community, cultural destinations and concentration of dining and entertainment create activity throughout the day and evening while maintaining the district’s artist-led character.",
+    estimatedRents: "$30-$36 PSF/yr",
+    galleryImages: [
+      {
+        src: galleryLaArtsDistrict1,
+        alt: "Streetscape in the Los Angeles Arts District",
+      },
+      {
+        src: galleryLaArtsDistrict2,
+        alt: "Retail and dining in the LA Arts District",
+      },
+      {
+        src: galleryLaArtsDistrict3,
+        alt: "Creative storefronts in the LA Arts District",
+      },
+      {
+        src: galleryLaArtsDistrict4,
+        alt: "Arts District neighborhood atmosphere",
+      },
+    ],
+    notableBrands: [
+      { name: "Sanrio", domain: "sanrio.com" },
+      { name: "Le Labo", domain: "lelabofragrances.com" },
+      { name: "Wurstkuche", domain: "wurstkuche.com" },
+      { name: "Kreation Juicery", domain: "kreationjuice.com" },
+      { name: "Tsujita", domain: "tsujita.com" },
+      { name: "Honeymee", domain: "honeymee.com" },
+      { name: "PIZZANISTA!", domain: "pizzanista.com" },
+      { name: "Everson Royce", domain: "eversonroyce.com" },
+      { name: "Nijiya Market", domain: "nijiya.com" },
+      { name: "Cafe Dulce", domain: "cafedulce.co" },
+    ],
+    bikeScore: 69,
+    walkScore: 85,
+    areaStats: [
+      {
+        value: "$90,214",
+        label: "AVERAGE HOUSEHOLD INCOME WITHIN ONE MILE",
+      },
+      { value: "61,584", label: "EMPLOYEES WITHIN ONE MILE" },
+      { value: "210.7K", label: "YEARLY VISITS" },
+      { value: "110K", label: "SQ FT" },
+    ],
+    trafficCounts: [
+      { street: "Alameda Street", count: "32,019 CPD" },
+      { street: "3rd Street", count: "20,494 CPD" },
+      { street: "Mateo Street", count: "8,930 CPD" },
+      { street: "Santa Fe Avenue", count: "34,839 CPD" },
+    ],
+    mapCenter: { lat: 34.0419269462015, lng: -118.23259777697568 },
+    mapZoom: 16,
+  },
+  "golden-triangle": {
+    title: "Beverly Hills Golden Triangle",
+    description:
+      "Beverly Hills and the surrounding 'Golden Triangle' shopping district is one of the most luxurious and well known shopping destinations in the world. Easily walkable, Beverly Hills is recognized for its commitment to extravagance, fashion, fine dining, and lifestyle and attracts tourists and locals alike. Located within the Golden Triangle, the renowned Rodeo Drive reflects Beverly Hills’ prestige and exclusivity with its designer boutiques, elite restaurants, and posh hotels. Other dominant streets within the Golden Triangle include Beverly Drive and Canon Drive, which offer more promotional retail and forward-thinking retailers and restaurants.",
+    estimatedRents: "$150-$800 PSF/yr NNN",
+    galleryImages: [
+      {
+        src: galleryGoldenTriangle1,
+        alt: "Rodeo Drive shopping in the Beverly Hills Golden Triangle",
+      },
+      {
+        src: galleryGoldenTriangle2,
+        alt: "Luxury retail storefronts in the Golden Triangle",
+      },
+      {
+        src: galleryGoldenTriangle3,
+        alt: "Streetscape in the Beverly Hills Golden Triangle",
+      },
+      {
+        src: galleryGoldenTriangle4,
+        alt: "Designer boutiques along Rodeo Drive",
+      },
+    ],
+    notableBrands: [
+      { name: "Louis Vuitton", domain: "louisvuitton.com" },
+      { name: "Gucci", domain: "gucci.com" },
+      { name: "Dior", domain: "dior.com" },
+      { name: "Prada", domain: "prada.com" },
+      { name: "Chanel", domain: "chanel.com" },
+      { name: "Hermès", domain: "hermes.com" },
+      { name: "Cartier", domain: "cartier.com" },
+      { name: "Tom Ford", domain: "tomford.com" },
+      { name: "Tiffany & Co.", domain: "tiffany.com" },
+      { name: "Versace", domain: "versace.com" },
+    ],
+    bikeScore: 48,
+    walkScore: 98,
+    areaStats: [
+      {
+        value: "7.4M",
+        label: "PEOPLE VISIT THE GOLDEN TRIANGLE ANNUALLY",
+      },
+      {
+        value: "$2.7B",
+        label: "TOTAL CONSUMER EXPENDITURE ANNUALLY",
+      },
+      {
+        value: "$230K",
+        label: "AVG. HOUSEHOLD INCOME WITHIN ONE MILE",
+      },
+      {
+        value: "$900",
+        label:
+          "PER DAY IS SPENT BY BEVERLY HILLS HOTEL GUESTS AND ACCOUNT FOR 50% OF THE TOTAL VISITOR SPENDING",
+      },
+    ],
+    trafficCounts: [
+      { street: "Rodeo Dr", count: "9,000 CPD" },
+      { street: "Beverly Dr", count: "17,000 CPD" },
+      { street: "Santa Monica Blvd", count: "60,000 CPD" },
+    ],
+    mapCenter: { lat: 34.06935214693885, lng: -118.40180470244921 },
+    mapZoom: 16,
+  },
+  "downtown-la": {
+    title: "Downtown LA",
+    description:
+      "Between incoming national flagships, luxury shops and restaurants, and grand mixed used projects, Downtown has seen the most development and change than any other district in Los Angeles. Highlights of Downtown's developments include Oceanwide Plaza, a $1 Billion mixed-use project with over 500 condos, a luxury hotel, and over 150,000 SF of commercial space near Staples Center and a much-anticipated Apple flagship along the up and coming Broadway Corridor. The Arts District has experienced a renaissance, featuring a number of high-profile restaurants, shops, and art galleries.",
+    estimatedRents: "$45-$110 PSF/yr NNN",
+    galleryImages: [
+      { src: galleryDowntownLa1, alt: "Downtown LA retail corridor" },
+      { src: galleryDowntownLa2, alt: "Storefronts in Downtown Los Angeles" },
+      { src: galleryDowntownLa3, alt: "Dining and shopping in Downtown LA" },
+      { src: galleryDowntownLa4, alt: "Downtown LA streetscape" },
+    ],
+    notableBrands: [
+      { name: "Zara", domain: "zara.com" },
+      { name: "Sephora", domain: "sephora.com" },
+      { name: "H&M", domain: "hm.com" },
+      { name: "Target", domain: "target.com" },
+      { name: "Nordstrom Rack", domain: "nordstromrack.com" },
+      { name: "Urban Outfitters", domain: "urbanoutfitters.com" },
+      { name: "Aesop", domain: "aesop.com" },
+      { name: "West Elm", domain: "westelm.com" },
+      { name: "Shake Shack", domain: "shakeshack.com" },
+      { name: "Sweetgreen", domain: "sweetgreen.com" },
+      { name: "Foot Locker", domain: "footlocker.com" },
+      { name: "Victoria's Secret", domain: "victoriassecret.com" },
+    ],
+    bikeScore: 73,
+    walkScore: 98,
+    areaStats: [
+      { value: "22M", label: "ESTIMATED TOTAL RETAIL GLA" },
+      { value: "19M", label: "ANNUAL VISITORS" },
+      { value: "1.35M", label: "SQUARE FEET OF RETAIL UNDER CONSTRUCTION" },
+      {
+        value: "8,800",
+        label:
+          "HOTEL ROOMS WITH OVER 1,200 HOTEL ROOMS UNDER CONSTRUCTION",
+      },
+    ],
+    trafficCounts: [
+      { street: "Broadway", count: "18,000 CPD" },
+      { street: "Figueroa", count: "14,000 CPD" },
+      { street: "Hill St", count: "24,000 CPD" },
+    ],
+    mapCenter: { lat: 34.047124, lng: -118.261168 },
+    mapZoom: 16,
   },
 };
 

@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { loadBrandfetchDarkLogo } from "../utils/logoProvider";
+import { getLocalLogoUrl } from "../utils/logoRouteOverrides";
 
 export interface BrandLogoItem {
   name: string;
   /** Verified brand domain for Brandfetch dark logo. */
   domain?: string;
+  /** Local logo asset that bypasses the Brandfetch lookup. */
+  src?: string;
 }
 
 interface BrandLogoGridProps {
@@ -58,11 +61,15 @@ export function BrandLogoGrid({ brands, limit = 10 }: BrandLogoGridProps) {
         if (cancelled || unique.length >= limit) break;
         if (!brand.domain) continue;
 
-        const img = await loadBrandfetchDarkLogo(brand.domain, { size: 220 });
-        if (!img?.src || seenSrc.has(img.src)) continue;
+        let src = brand.src ?? getLocalLogoUrl(brand.domain) ?? undefined;
+        if (!src) {
+          const img = await loadBrandfetchDarkLogo(brand.domain, { size: 220 });
+          src = img?.src;
+        }
+        if (!src || seenSrc.has(src)) continue;
 
-        seenSrc.add(img.src);
-        unique.push({ name: brand.name, src: img.src });
+        seenSrc.add(src);
+        unique.push({ name: brand.name, src });
         if (!cancelled) setResolved([...unique]);
       }
 

@@ -5,7 +5,7 @@ import { BrandLogoGrid } from "../components/BrandLogoGrid";
 import { BetaLogo } from "../components/BetaLogo";
 import { PillButton } from "../components/PillButton";
 import { ScoreRing } from "../components/ScoreRing";
-import { useDataset } from "../context/TenantsContext";
+import { useTenantsContext } from "../context/TenantsContext";
 import { getShoppingCenter } from "../data/shoppingCenters";
 import {
   CATEGORY_LABELS,
@@ -16,6 +16,7 @@ import {
   pickNotableBrandsFromCenterTenants,
   pickNotableBrandsFromStreetTenants,
 } from "../utils/pickNotableBrands";
+import { isNamedTenant } from "../utils/tenantDisplay";
 
 function categoryEyebrow(category: string | undefined): string {
   if (!category) return "High Streets";
@@ -26,27 +27,24 @@ function categoryEyebrow(category: string | undefined): string {
     .replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
+/** Vacancy rate = vacancies ÷ occupied spaces. */
+function formatVacancyRate(vacancies: number, occupied: number): string | null {
+  if (occupied <= 0) return null;
+  const rate = (vacancies / occupied) * 100;
+  const rounded = Math.round(rate * 10) / 10;
+  return Number.isInteger(rounded) ? `${rounded}%` : `${rounded.toFixed(1)}%`;
+}
+
 export function StreetDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
   const detail = slug ? getCorridorDetail(slug) : undefined;
-  const dataset = useDataset();
+  const { dataset, vacanciesDataset } = useTenantsContext();
   const shoppingCenter = slug ? getShoppingCenter(slug) : undefined;
 
-  if (!corridor?.active || !detail) {
-    return (
-      <div className="street-page street-page--empty">
-        <p>This corridor is not available yet.</p>
-        <PillButton to="/dashboard">← Back to Dashboard</PillButton>
-      </div>
-    );
-  }
-
-  const staticLogos = detail.brandLogos;
-
-  // Large candidate pool: curated notables first, then ranked street tenants.
-  // BrandLogoGrid keeps only Brandfetch dark wordmarks (max 10) — no letters.
   const brandItems = useMemo(() => {
+    if (!corridor || !detail) return [];
+
     const liveBrands =
       corridor.category === "shopping-centers" && shoppingCenter
         ? pickNotableBrandsFromCenterTenants(shoppingCenter.tenants, 60)
@@ -61,20 +59,53 @@ export function StreetDetailPage() {
       Boolean(b.domain)
     );
 
-    const byDomain = new Map<string, { name: string; domain: string }>();
+    const byDomain = new Map<
+      string,
+      { name: string; domain: string; src?: string }
+    >();
     for (const brand of [...curatedBrands, ...liveBrands]) {
       if (!brand.domain || byDomain.has(brand.domain)) continue;
-      byDomain.set(brand.domain, { name: brand.name, domain: brand.domain });
+      byDomain.set(brand.domain, {
+        name: brand.name,
+        domain: brand.domain,
+        src: "src" in brand ? (brand.src as string | undefined) : undefined,
+      });
     }
     return [...byDomain.values()];
-  }, [
-    corridor.category,
-    corridor.dataKey,
-    dataset,
-    detail.notableBrands,
-    shoppingCenter,
-  ]);
+  }, [corridor, dataset, detail, shoppingCenter]);
 
+  const vacancyRate = useMemo(() => {
+    if (!corridor) return null;
+
+    if (corridor.category === "shopping-centers" && shoppingCenter) {
+      const occupied = shoppingCenter.tenants.filter((t) =>
+        isNamedTenant(t.name)
+      ).length;
+      return formatVacancyRate(shoppingCenter.vacancies.length, occupied);
+    }
+
+    if (!corridor.dataKey || !dataset) return null;
+    const occupied = dataset.tenants.filter(
+      (t) =>
+        t.highStreet === corridor.dataKey && isNamedTenant(t.tenantName)
+    ).length;
+    const vacancies =
+      vacanciesDataset?.vacancies.filter(
+        (v) => v.highStreet === corridor.dataKey
+      ).length ?? 0;
+    return formatVacancyRate(vacancies, occupied);
+  }, [corridor, dataset, shoppingCenter, vacanciesDataset]);
+
+  if (!corridor?.active || !detail) {
+    return (
+      <div className="street-page street-page--empty">
+        <p>This corridor is not available yet.</p>
+        <PillButton to="/dashboard">← Back to Dashboard</PillButton>
+      </div>
+    );
+  }
+
+  const staticLogos = detail.brandLogos;
   const mapPath =
     corridor.category === "shopping-centers"
       ? `/center/${slug}/map`
@@ -114,32 +145,53 @@ export function StreetDetailPage() {
             </div>
 
             <div className="street-detail__row">
-              <div className="info-card info-card--compact">
-                <div className="info-card__header">ESTIMATED RENTS</div>
-                <p className="info-card__value">{detail.estimatedRents}</p>
+              <div className="info-card info-card--compact info-card--rents">
+                <div className="info-card__header">
+                  ESTIMATED RENTS &amp; VACANCY RATE
+                </div>
+                <div className="info-card__metrics">
+                  <div className="info-card__metric">
+                    <p className="info-card__metric-value">
+                      {detail.estimatedRents}
+                    </p>
+                    <span className="info-card__metric-label">
+                      Estimated rents
+                    </span>
+                  </div>
+                  {vacancyRate ? (
+                    <div className="info-card__metric">
+                      <p className="info-card__metric-value">{vacancyRate}</p>
+                      <span className="info-card__metric-label">
+                        Vacancy rate
+                      </span>
+                    </div>
+                  ) : null}
+                </div>
               </div>
 
-              <div className="traffic-card">
-                <h3 className="traffic-card__title">Traffic Counts</h3>
-                <ul className="traffic-card__list">
-                  {detail.trafficCounts.map((row, index) => (
-                    <li key={row.street}>
-                      <span>{row.street}</span>
-                      <strong>
-                        <AnimatedDisplay
-                          value={row.count}
-                          delay={1000 + index * 160}
-                          duration={1300}
-                        />
-                      </strong>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {detail.trafficCounts.length ? (
+                <div className="traffic-card">
+                  <h3 className="traffic-card__title">Traffic Counts</h3>
+                  <ul className="traffic-card__list">
+                    {detail.trafficCounts.map((row, index) => (
+                      <li key={`${row.street}-${row.count}-${index}`}>
+                        <span>{row.street}</span>
+                        <strong>
+                          <AnimatedDisplay
+                            value={row.count}
+                            delay={1000 + index * 160}
+                            duration={1300}
+                          />
+                        </strong>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
 
             <div className="info-card">
-              <div className="info-card__header">ESTIMATED AREA STATISTICS</div>
+              <div className="info-card__header">TRADE AREA STATISTICS</div>
               <ul className="stat-list">
                 {detail.areaStats.map((stat, index) => (
                   <li key={stat.label} className="stat-list__item">
@@ -156,7 +208,7 @@ export function StreetDetailPage() {
             </div>
 
             <div className="info-card info-card--brands info-card--compact">
-              <div className="info-card__header">NOTABLE BRANDS</div>
+              <div className="info-card__header">SELECTIVE BRANDS</div>
               {brandItems.length ? (
                 <BrandLogoGrid brands={brandItems} limit={10} />
               ) : staticLogos?.length ? (

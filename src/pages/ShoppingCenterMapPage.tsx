@@ -1,19 +1,67 @@
-import { useRef } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PillButton } from "../components/PillButton";
-import { ShoppingCenterMapView } from "../components/ShoppingCenterMapView";
+import { ShoppingCenterDirectoryModal } from "../components/ShoppingCenterDirectoryModal";
 import { StaticModeChrome } from "../components/StaticModeChrome";
-import { getCorridorBySlug } from "../data/highStreets";
-import { getShoppingCenter } from "../data/shoppingCenters";
+import { TenantMapView } from "../components/TenantMap";
+import {
+  useAllStreetTenants,
+  useAllStreetVacancies,
+} from "../context/TenantsContext";
 import { useStaticMapMode } from "../hooks/useStaticMapMode";
+import { getCorridorBySlug } from "../data/highStreets";
+import {
+  getShoppingCenter,
+  type ShoppingCenter,
+} from "../data/shoppingCenters";
+import {
+  filterByProximity,
+  NEARBY_TENANT_RADIUS_M,
+} from "../utils/geoProximity";
+import { getMasterMapId } from "../utils/mapConfig";
+import { getNearbyShoppingCenters } from "../utils/mapContextOverlays";
 
 export function ShoppingCenterMapPage() {
   const { slug } = useParams<{ slug: string }>();
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
   const center = slug ? getShoppingCenter(slug) : undefined;
+  const allTenants = useAllStreetTenants();
+  const allVacancies = useAllStreetVacancies();
+  const [directoryCenter, setDirectoryCenter] = useState<ShoppingCenter | null>(
+    null
+  );
   const mapFrameRef = useRef<HTMLDivElement>(null);
   const { staticMode, enterStaticMode, exitStaticMode } =
     useStaticMapMode(mapFrameRef);
+
+  const nearbyTenants = useMemo(() => {
+    if (!center) return [];
+    return filterByProximity(
+      allTenants,
+      center.mapCenter,
+      NEARBY_TENANT_RADIUS_M
+    );
+  }, [allTenants, center]);
+
+  const nearbyVacancies = useMemo(() => {
+    if (!center) return [];
+    return filterByProximity(
+      allVacancies,
+      center.mapCenter,
+      NEARBY_TENANT_RADIUS_M
+    );
+  }, [allVacancies, center]);
+
+  const shoppingCenters = useMemo(() => {
+    if (!center) return [];
+    return getNearbyShoppingCenters(center.mapCenter, {
+      alwaysIncludeSlug: center.slug,
+    });
+  }, [center]);
+
+  const handleShoppingCenterSelect = useCallback((selected: ShoppingCenter) => {
+    setDirectoryCenter(selected);
+  }, []);
 
   if (!corridor?.active || !center) {
     return (
@@ -42,7 +90,30 @@ export function ShoppingCenterMapPage() {
           onExit={exitStaticMode}
         />
 
-        <ShoppingCenterMapView center={center} staticMode={staticMode} />
+        <TenantMapView
+          tenants={nearbyTenants}
+          vacancies={nearbyVacancies}
+          defaultCenter={center.mapCenter}
+          defaultZoom={center.mapZoom}
+          autoFitBounds={false}
+          embedded
+          displayMode="both"
+          showMeteredParking={false}
+          showParkingLots={false}
+          mapIdOverride={getMasterMapId()}
+          staticMode={staticMode}
+          shoppingCenters={shoppingCenters}
+          onShoppingCenterSelect={
+            staticMode ? undefined : handleShoppingCenterSelect
+          }
+        />
+
+        {directoryCenter && !staticMode ? (
+          <ShoppingCenterDirectoryModal
+            center={directoryCenter}
+            onClose={() => setDirectoryCenter(null)}
+          />
+        ) : null}
       </div>
     </div>
   );

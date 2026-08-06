@@ -24,11 +24,11 @@ import heroStudioCity from "@assets/Studio City Photos/Studio_Cover.jpg";
 import heroSportsmenLodge from "@assets/Sportsmens Lodge Photos/Sportsmens_Lodge_Cover.jpg";
 import heroOneColorado from "@assets/One Colorado Photos/One_Colorado_Cover.jpg";
 import heroManhattanVillage from "@assets/Manhattan Village Photos/Manhattan_Village_Cover.jpg";
+import heroLaArtsDistrict from "@assets/La Arts District Photos/la_arts_district_cover.jpg";
+import heroGoldenTriangle from "@assets/Golden Traingle Photos/golden_triangle_cover.jpg";
+import heroDowntownLa from "@assets/Downtown LA Photos/downtown_cover.jpeg";
 
-export type CorridorCategory =
-  | "high-streets"
-  | "shopping-districts"
-  | "shopping-centers";
+export type CorridorCategory = "high-streets" | "shopping-centers";
 
 export interface HighStreetCorridor {
   slug: string;
@@ -40,18 +40,25 @@ export interface HighStreetCorridor {
   heroImage?: string;
   /** CSS object-position for the hero crop (defaults to center). */
   heroObjectPosition?: string;
+  /** Sidebar group when it differs from `category` (which drives routing). */
+  sidebarGroup?: CorridorCategory;
+  /** Sidebar nesting depth under the preceding corridor. */
+  sidebarIndent?: 1 | 2;
   active: boolean;
+}
+
+/** Sidebar group for a corridor — falls back to its routing category. */
+export function getSidebarGroup(corridor: HighStreetCorridor): CorridorCategory {
+  return corridor.sidebarGroup ?? corridor.category;
 }
 
 export const CATEGORY_LABELS: Record<CorridorCategory, string> = {
   "high-streets": "HIGH STREETS",
-  "shopping-districts": "SHOPPING DISTRICTS",
   "shopping-centers": "SHOPPING CENTERS",
 };
 
 export const CATEGORY_ORDER: CorridorCategory[] = [
   "high-streets",
-  "shopping-districts",
   "shopping-centers",
 ];
 
@@ -139,31 +146,39 @@ export const HIGH_STREET_CORRIDORS: HighStreetCorridor[] = [
     heroImage: heroStudioCity,
     active: true,
   },
+  {
+    slug: "la-arts-district",
+    name: "LA Arts District",
+    city: "Los Angeles, CA",
+    category: "high-streets",
+    dataKey: "Street - Arts District",
+    heroImage: heroLaArtsDistrict,
+    active: true,
+  },
+  {
+    slug: "golden-triangle",
+    name: "Golden Triangle",
+    city: "Beverly Hills, CA",
+    category: "high-streets",
+    dataKey: "Street - Rodeo",
+    heroImage: heroGoldenTriangle,
+    active: true,
+  },
+  {
+    slug: "downtown-la",
+    name: "Downtown LA",
+    city: "Los Angeles, CA",
+    category: "high-streets",
+    dataKey: "Street - Figueroa St",
+    heroImage: heroDowntownLa,
+    active: true,
+  },
 
-  // ——— SHOPPING DISTRICTS ———
-  {
-    slug: "culver-city",
-    name: "Culver City",
-    city: "Culver City, CA",
-    category: "shopping-districts",
-    dataKey: "Street - Culver City",
-    heroImage: heroCulverCity,
-    active: true,
-  },
-  {
-    slug: "downtown-manhattan-beach",
-    name: "Manhattan Beach",
-    city: "Manhattan Beach, CA",
-    category: "shopping-districts",
-    dataKey: "Street - Manhattan Beach",
-    heroImage: heroManhattanBeach,
-    active: true,
-  },
   {
     slug: "old-town-pasadena",
     name: "Old Town Pasadena",
     city: "Pasadena, CA",
-    category: "shopping-districts",
+    category: "high-streets",
     dataKey: "Street - Colorado Blvd",
     heroImage: heroOldTownPasadena,
     active: true,
@@ -176,13 +191,43 @@ export const HIGH_STREET_CORRIDORS: HighStreetCorridor[] = [
     // Broader Old Pasadena corridor dataset (same source as Old Town Pasadena)
     dataKey: "Street - Colorado Blvd",
     heroImage: heroOneColorado,
+    sidebarGroup: "high-streets",
+    sidebarIndent: 1,
+    active: true,
+  },
+  {
+    slug: "the-paseo",
+    name: "The Paseo",
+    city: "Pasadena, CA",
+    category: "shopping-centers",
+    heroImage: heroThePaseo,
+    sidebarGroup: "high-streets",
+    sidebarIndent: 1,
+    active: true,
+  },
+  {
+    slug: "culver-city",
+    name: "Culver City",
+    city: "Culver City, CA",
+    category: "high-streets",
+    dataKey: "Street - Culver City",
+    heroImage: heroCulverCity,
+    active: true,
+  },
+  {
+    slug: "downtown-manhattan-beach",
+    name: "Manhattan Beach",
+    city: "Manhattan Beach, CA",
+    category: "high-streets",
+    dataKey: "Street - Manhattan Beach",
+    heroImage: heroManhattanBeach,
     active: true,
   },
   {
     slug: "sunset-strip",
     name: "Sunset Strip",
     city: "West Hollywood, CA",
-    category: "shopping-districts",
+    category: "high-streets",
     dataKey: "Street - Sunset Blvd",
     heroImage: heroSunsetStrip,
     active: true,
@@ -259,14 +304,6 @@ export const HIGH_STREET_CORRIDORS: HighStreetCorridor[] = [
     city: "Los Angeles, CA",
     category: "shopping-centers",
     heroImage: heroTheGrove,
-    active: true,
-  },
-  {
-    slug: "the-paseo",
-    name: "The Paseo",
-    city: "Pasadena, CA",
-    category: "shopping-centers",
-    heroImage: heroThePaseo,
     active: true,
   },
   {

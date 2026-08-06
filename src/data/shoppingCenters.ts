@@ -140,6 +140,9 @@ const CENTER_META: Record<string, ShoppingCenterMeta> = {
     logo: santaMonicaPlaceLogo,
     mapCenter: { lat: 34.013694718714774, lng: -118.49380813415459 },
     mapZoom: 18,
+    logoMarkerBg: "#FFFFFF",
+    // Wider than default compact (52) — wordmark was hard to read near 3rd St
+    masterMapLogoWidth: 88,
     tenantDirectoryUrl: "https://www.santamonicaplace.com/shop",
     sitePlanUrl: "https://www.santamonicaplace.com/directory#/",
   },
@@ -215,6 +218,7 @@ const CENTER_META: Record<string, ShoppingCenterMeta> = {
     // Hang below so it clears One Colorado — lat/lng unchanged
     masterMapLogoPlacement: "below",
     tenantDirectoryUrl: "https://www.thepaseopasadena.com/shops",
+    sitePlanUrl: "https://www.thepaseopasadena.com/shops",
   },
   "sportsmen-lodge": {
     slug: "sportsmen-lodge",

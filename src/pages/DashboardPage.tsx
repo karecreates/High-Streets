@@ -8,6 +8,7 @@ import {
   CATEGORY_LABELS,
   CATEGORY_ORDER,
   getCorridorDetail,
+  getSidebarGroup,
   HIGH_STREET_CORRIDORS,
   HERO_SLIDES,
   type HighStreetCorridor,
@@ -95,8 +96,7 @@ export function DashboardPage() {
 
     if (
       (corridor.category === "high-streets" && corridor.active) ||
-      (corridor.category === "shopping-centers" && hasDetailPage) ||
-      (corridor.category === "shopping-districts" && hasDetailPage)
+      (corridor.category === "shopping-centers" && hasDetailPage)
     ) {
       setPreviewSlug(corridor.slug);
       if (inCarousel) {
@@ -195,14 +195,12 @@ export function DashboardPage() {
                 {CATEGORY_LABELS[category]}
               </h2>
               {HIGH_STREET_CORRIDORS.filter(
-                (c) => c.category === category
+                (c) => getSidebarGroup(c) === category
               ).map((corridor) => {
                 const hasData = Boolean(corridor.dataKey);
                 const hasCorridorDetail = Boolean(getCorridorDetail(corridor.slug));
                 const hasCenterDetail =
                   corridor.category === "shopping-centers" && hasCorridorDetail;
-                const hasDistrictDetail =
-                  corridor.category === "shopping-districts" && hasCorridorDetail;
                 const isShoppingCenterReady =
                   corridor.category === "shopping-centers" &&
                   corridor.active &&
@@ -214,7 +212,6 @@ export function DashboardPage() {
                 const isInteractive =
                   isHighStreetReady ||
                   hasCenterDetail ||
-                  hasDistrictDetail ||
                   isShoppingCenterReady ||
                   (corridor.active && hasData);
                 const isSelected = corridor.slug === displayCorridor?.slug;
@@ -228,16 +225,20 @@ export function DashboardPage() {
                     } ${
                       !isInteractive
                         ? "corridor-list__item--pending"
-                        : isHighStreetReady || hasCenterDetail || hasDistrictDetail
+                        : isHighStreetReady || hasCenterDetail
                           ? "corridor-list__item--detail"
                           : "corridor-list__item--map-only"
+                    } ${
+                      corridor.sidebarIndent
+                        ? `corridor-list__item--indent-${corridor.sidebarIndent}`
+                        : ""
                     }`}
                     onClick={() => handleCorridorClick(corridor)}
                     disabled={!isInteractive}
                     title={
                       !isInteractive
                         ? `${corridor.name} — data coming soon`
-                        : isHighStreetReady || hasCenterDetail || hasDistrictDetail
+                        : isHighStreetReady || hasCenterDetail
                           ? `Preview ${corridor.name}`
                           : isShoppingCenterReady
                             ? `View ${corridor.name} directory map`

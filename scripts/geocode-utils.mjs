@@ -40,7 +40,7 @@ const CITY_SUFFIX_RULES = [
   [/san diego|kettner|hawthorn|fourth ave|fifth ave/i, "San Diego, CA"],
   [/pasadena|fair oaks/i, "Pasadena, CA"],
   [/santa monica|(3rd|third)\s+st(reet)?\s+promenade|montana/i, "Santa Monica, CA"],
-  [/venice|abbot kinney/i, "Venice, CA"],
+  [/venice|abbot kinney|california ave/i, "Venice, CA"],
   [/manhattan beach/i, "Manhattan Beach, CA"],
   [/beverly hills|rodeo|canon dr|wilshire/i, "Beverly Hills, CA"],
   // 3300-4200 Sunset is Silver Lake (LA); 8000+ is the West Hollywood strip

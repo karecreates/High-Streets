@@ -1,6 +1,7 @@
-import { createContext, useContext, type ReactNode } from "react";
-import { useTenants } from "../hooks/useTenants";
+import { createContext, useContext, useMemo, type ReactNode } from "react";
+import { SIDEBAR_TENANT_DATA_KEYS, useTenants } from "../hooks/useTenants";
 import type { Tenant, TenantsDataset } from "../types/tenant";
+import type { Vacancy } from "../types/vacancy";
 import { isNamedTenant } from "../utils/tenantDisplay";
 
 type TenantsContextValue = ReturnType<typeof useTenants>;
@@ -56,6 +57,35 @@ export function useStreetVacancies(dataKey: string) {
   return vacanciesDataset.vacancies.filter(
     (v) => v.highStreet === dataKey && v.lat != null && v.lng != null
   );
+}
+
+/** All mapped high-street + district tenants (master-map style context). */
+export function useAllStreetTenants(): Tenant[] {
+  const { dataset } = useTenantsContext();
+  return useMemo(() => {
+    if (!dataset) return [];
+    return dataset.tenants.filter(
+      (t) =>
+        SIDEBAR_TENANT_DATA_KEYS.has(t.highStreet) &&
+        t.lat != null &&
+        t.lng != null &&
+        isNamedTenant(t.tenantName)
+    );
+  }, [dataset]);
+}
+
+/** All mapped high-street + district vacancies. */
+export function useAllStreetVacancies(): Vacancy[] {
+  const { vacanciesDataset } = useTenantsContext();
+  return useMemo(() => {
+    if (!vacanciesDataset) return [];
+    return vacanciesDataset.vacancies.filter(
+      (v) =>
+        SIDEBAR_TENANT_DATA_KEYS.has(v.highStreet) &&
+        v.lat != null &&
+        v.lng != null
+    );
+  }, [vacanciesDataset]);
 }
 
 export function useDataset(): TenantsDataset | null {

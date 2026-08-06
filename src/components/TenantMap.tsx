@@ -80,6 +80,11 @@ export interface TenantMapViewProps {
   zoomGatedStreetMarkers?: boolean;
   corridorCallouts?: DashboardMapLocation[];
   onCorridorCalloutSelect?: (slug: string) => void;
+  /**
+   * Dedicated maps: keep street/district callouts visible at all zooms
+   * (alongside the current corridor's tenant markers).
+   */
+  alwaysShowCorridorCallouts?: boolean;
   /** Bypass zoom gate (e.g. active tenant search). */
   forceShowStreetMarkers?: boolean;
   /**
@@ -239,7 +244,7 @@ function MapWithTenants({
   displayMode = "both",
   focusedVacancyGroupKey = null,
   onVacancyFocusComplete,
-  showMeteredParking = true,
+  showMeteredParking = false,
   showParkingLots = false,
   shoppingCenters = [],
   onShoppingCenterSelect,
@@ -247,6 +252,7 @@ function MapWithTenants({
   zoomGatedStreetMarkers = false,
   corridorCallouts = [],
   onCorridorCalloutSelect,
+  alwaysShowCorridorCallouts = false,
   forceShowStreetMarkers = false,
   staticMode = false,
 }: TenantMapViewProps) {
@@ -261,10 +267,11 @@ function MapWithTenants({
     forceShowStreetMarkers ||
     (zoom != null && zoom >= MASTER_MAP_TENANT_REVEAL_ZOOM);
   const corridorCalloutsVisible =
-    zoomGatedStreetMarkers &&
     corridorCallouts.length > 0 &&
-    !forceShowStreetMarkers &&
-    (zoom == null || zoom < MASTER_MAP_TENANT_REVEAL_ZOOM);
+    (alwaysShowCorridorCallouts ||
+      (zoomGatedStreetMarkers &&
+        !forceShowStreetMarkers &&
+        (zoom == null || zoom < MASTER_MAP_TENANT_REVEAL_ZOOM)));
 
   const showTenants = displayMode !== "vacancies" && streetMarkersVisible;
   const showVacancies = displayMode !== "tenants" && streetMarkersVisible;
@@ -348,7 +355,7 @@ export function TenantMapView({
   displayMode = "both",
   focusedVacancyGroupKey = null,
   onVacancyFocusComplete,
-  showMeteredParking = true,
+  showMeteredParking = false,
   showParkingLots = false,
   introZoom,
   onIntroZoomComplete,
@@ -358,6 +365,7 @@ export function TenantMapView({
   zoomGatedStreetMarkers = false,
   corridorCallouts = [],
   onCorridorCalloutSelect,
+  alwaysShowCorridorCallouts = false,
   forceShowStreetMarkers = false,
   mapIdOverride,
   staticMode = false,
@@ -429,6 +437,7 @@ export function TenantMapView({
           zoomGatedStreetMarkers={zoomGatedStreetMarkers}
           corridorCallouts={corridorCallouts}
           onCorridorCalloutSelect={onCorridorCalloutSelect}
+          alwaysShowCorridorCallouts={alwaysShowCorridorCallouts}
           forceShowStreetMarkers={forceShowStreetMarkers}
           staticMode={staticMode}
         />

@@ -113,6 +113,9 @@ const LOGO_DOMAIN_BY_CENTER = {
   "the-grove": {
     "Apple Store": "apple.com",
   },
+  "malibu-village": {
+    "Shell Gas": "shell.com",
+  },
 };
 
 /**

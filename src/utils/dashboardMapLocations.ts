@@ -56,6 +56,15 @@ const LABEL_OVERRIDES: Record<string, DashboardLabelOverride> = {
   // Central / East — Old Town below so it clears One Colorado / The Paseo logos
   larchmont: { labelPlacement: "above" },
   silverlake: { labelPlacement: "below" },
+  "la-arts-district": {
+    labelPlacement: "above",
+    label: "Arts District",
+  },
+  "golden-triangle": {
+    labelPlacement: "above",
+    label: "Golden Triangle",
+  },
+  "downtown-la": { labelPlacement: "below", label: "Downtown LA" },
   "americana-at-brand": { labelPlacement: "above", label: "Americana" },
   "old-town-pasadena": { labelPlacement: "below", label: "Old Town Pasadena" },
   "the-paseo": { labelPlacement: "below", label: "The Paseo" },
