@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { FilterBar } from "../components/FilterBar";
 import {
   MapControlsBar,
@@ -21,6 +21,7 @@ import {
   type ShoppingCenter,
 } from "../data/shoppingCenters";
 import { getMasterMapId } from "../utils/mapConfig";
+import { leaveMapTo } from "../utils/leaveMapTo";
 import type { VacancyLocationGroup } from "../types/vacancy";
 import { groupVacanciesByLocation } from "../utils/groupVacanciesByLocation";
 import { isNamedTenant } from "../utils/tenantDisplay";
@@ -255,9 +256,13 @@ export function MasterMapPage() {
         }
       />
       <div className="master-map-page__toolbar">
-        <Link className="master-map-page__back" to="/dashboard">
+        <button
+          type="button"
+          className="master-map-page__back"
+          onClick={() => leaveMapTo("/dashboard")}
+        >
           ← Dashboard
-        </Link>
+        </button>
         <button
           type="button"
           className="master-map-page__controls-toggle"

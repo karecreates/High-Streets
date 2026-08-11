@@ -190,6 +190,7 @@ const CENTER_META: Record<string, ShoppingCenterMeta> = {
     mapZoom: 18,
     tenantDirectoryUrl:
       "https://www.westfield.com/en/united-states/centurycity/retailers",
+    sitePlanUrl: "https://www.westfield.com/en/united-states/centurycity/maps",
   },
   "americana-at-brand": {
     slug: "americana-at-brand",

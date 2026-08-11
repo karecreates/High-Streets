@@ -1,8 +1,8 @@
 {
   "generatedAt": "2026-08-10T20:47:15.437Z",
   "sourceFile": "Final_Street_Data.xlsx + Final_Vacancy_Report.xlsx",
-  "totalRows": 369,
-  "geocodedCount": 369,
+  "totalRows": 365,
+  "geocodedCount": 365,
   "highStreets": [
     "Street - Abbot Kinney",
     "Street - Arts District",
@@ -3696,54 +3696,6 @@
       "sqft": 13005
     },
     {
-      "id": "vacancy-300",
-      "address": "1355 3rd Street Promenade",
-      "suite": "BSMT",
-      "space": "1355 3rd Street Promenade - Suite BSMT - 6,859 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0160579,
-      "lng": -118.4960217,
-      "sqft": 6859
-    },
-    {
-      "id": "vacancy-301",
-      "address": "1355 3rd Street Promenade",
-      "suite": "Entire 4th",
-      "space": "1355 3rd Street Promenade - Suite Entire 4th - 6,945 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0160579,
-      "lng": -118.4960217,
-      "sqft": 6945
-    },
-    {
-      "id": "vacancy-302",
-      "address": "1355 3rd Street Promenade",
-      "suite": "Entire 3rd",
-      "space": "1355 3rd Street Promenade - Suite Entire 3rd - 7,008 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0160579,
-      "lng": -118.4960217,
-      "sqft": 7008
-    },
-    {
-      "id": "vacancy-303",
-      "address": "1355 3rd Street Promenade",
-      "suite": "Entire 2nd",
-      "space": "1355 3rd Street Promenade - Suite Entire 2nd - 7,008 sf",
-      "highStreet": "Street - Third Street Promenade",
-      "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
-      "unitStatus": "Vacant",
-      "lat": 34.0160579,
-      "lng": -118.4960217,
-      "sqft": 7008
-    },
-    {
       "id": "vacancy-304",
       "address": "1360 3rd Street Promenade, Santa Monica",
       "suite": "",
@@ -4670,9 +4622,9 @@
       "knownSfSpaces": 13
     },
     "Street - Third Street Promenade": {
-      "spaces": 41,
-      "sqft": 204282,
-      "knownSfSpaces": 38
+      "spaces": 37,
+      "sqft": 176462,
+      "knownSfSpaces": 34
     },
     "Street - Ventura Blvd": {
       "spaces": 25,

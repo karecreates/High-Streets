@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import {
   MapControlsBar,
   type MapDisplayMode,
@@ -33,6 +33,7 @@ import {
   getNearbyStreetCallouts,
 } from "../utils/mapContextOverlays";
 import { corridorInfoPath, corridorMapPath } from "../utils/corridorPaths";
+import { leaveMapTo } from "../utils/leaveMapTo";
 import { groupVacanciesByLocation } from "../utils/groupVacanciesByLocation";
 import { isNamedTenant } from "../utils/tenantDisplay";
 import type { VacancyLocationGroup } from "../types/vacancy";
@@ -45,7 +46,6 @@ interface StreetMapLocationState {
 
 export function StreetMapPage() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const location = useLocation();
   const locationState = location.state as StreetMapLocationState | null;
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
@@ -208,12 +208,9 @@ export function StreetMapPage() {
     setDirectoryCenter(center);
   }, []);
 
-  const handleCorridorCalloutSelect = useCallback(
-    (calloutSlug: string) => {
-      navigate(corridorMapPath(calloutSlug));
-    },
-    [navigate]
-  );
+  const handleCorridorCalloutSelect = useCallback((calloutSlug: string) => {
+    leaveMapTo(corridorMapPath(calloutSlug));
+  }, []);
 
   const infoPath = slug ? corridorInfoPath(slug) : "/dashboard";
 
@@ -237,9 +234,7 @@ export function StreetMapPage() {
             type="button"
             className="pill-btn pill-btn--primary map-fullscreen__back"
             onClick={() => {
-              // Full navigation — client-side routing from the Google Map view
-              // was updating the URL without swapping off StreetMapPage.
-              window.location.assign(infoPath);
+              leaveMapTo(infoPath);
             }}
           >
             ← Back

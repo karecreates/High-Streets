@@ -119,11 +119,7 @@ function PsychographicsTab({ data }: { data: PlacerInsightsData }) {
       </p>
       <ol className="placer-psycho">
         {data.psychographics.topGroups.map((group, index) => (
-          <li
-            key={group.code}
-            className="placer-psycho__card"
-            title={group.description}
-          >
+          <li key={group.code} className="placer-psycho__card">
             <div className="placer-psycho__rank" aria-hidden>
               {index + 1}
             </div>
@@ -150,6 +146,11 @@ function PsychographicsTab({ data }: { data: PlacerInsightsData }) {
                   : null}
               </p>
             </div>
+            {group.description ? (
+              <span className="placer-psycho__tooltip" role="tooltip">
+                {group.description}
+              </span>
+            ) : null}
           </li>
         ))}
       </ol>
@@ -181,6 +182,7 @@ function TradeAreaTab({
           mapKey="placer-trade-area-inline"
           polygons={data.tradeArea.polygons}
           site={data.tradeArea.site}
+          showLandmarks={false}
         />
       </div>
     </div>
@@ -242,7 +244,8 @@ function TradeAreaModal({
             polygons={data.tradeArea.polygons}
             site={data.tradeArea.site}
             fitPadding={80}
-            zoomInSteps={-1}
+            zoomInSteps={1}
+            showLandmarks
           />
         </div>
       </div>

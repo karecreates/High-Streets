@@ -17,14 +17,17 @@ interface TradeAreaOverlayProps {
   fitPadding?: number;
   /** Zoom delta after fitBounds (positive = closer, negative = further out). */
   zoomInSteps?: number;
+  /** Orientation landmarks — keep off on the compact inline map. */
+  showLandmarks?: boolean;
 }
 
-/** Draws trade-area polygons, site pin, and orientation landmarks — trade-area maps only. */
+/** Draws trade-area polygons, site pin, and optional orientation landmarks. */
 function TradeAreaOverlay({
   polygons,
   site,
   fitPadding = 24,
   zoomInSteps = 0,
+  showLandmarks = false,
 }: TradeAreaOverlayProps) {
   const map = useMap();
   const drawnRef = useRef<google.maps.Polygon[]>([]);
@@ -32,8 +35,8 @@ function TradeAreaOverlay({
   const landmarkMarkersRef = useRef<google.maps.Marker[]>([]);
 
   const landmarks = useMemo(
-    () => getLandmarksForTradeArea(polygons),
-    [polygons]
+    () => (showLandmarks ? getLandmarksForTradeArea(polygons) : []),
+    [polygons, showLandmarks]
   );
 
   useEffect(() => {
@@ -119,6 +122,8 @@ interface PlacerTradeAreaMapProps {
   fitPadding?: number;
   /** Zoom delta after fitBounds (positive = closer, negative = further out). */
   zoomInSteps?: number;
+  /** Show orientation landmarks (expanded modal only). */
+  showLandmarks?: boolean;
 }
 
 export function PlacerTradeAreaMap({
@@ -127,6 +132,7 @@ export function PlacerTradeAreaMap({
   mapKey,
   fitPadding,
   zoomInSteps = 1,
+  showLandmarks = false,
 }: PlacerTradeAreaMapProps) {
   const mapId = useMemo(() => getMasterMapId(), []);
 
@@ -151,6 +157,7 @@ export function PlacerTradeAreaMap({
           site={site}
           fitPadding={fitPadding}
           zoomInSteps={zoomInSteps}
+          showLandmarks={showLandmarks}
         />
         <StreetViewControl />
       </Map>

@@ -36,7 +36,7 @@ const LABEL_OVERRIDES: Record<string, DashboardLabelOverride> = {
   // Santa Monica / Brentwood cluster
   "brentwood-country-mart": { labelPlacement: "above", label: "Brentwood Mart" },
   montana: { labelPlacement: "below", label: "Montana Ave" },
-  "third-street-promenade": { labelPlacement: "above", label: "3rd St Promenade" },
+  "third-street-promenade": { labelPlacement: "above", label: "Third Street Promenade" },
   "santa-monica-place": { labelPlacement: "above", label: "Santa Monica Place" },
   "abbot-kinney": { labelPlacement: "below" },
 

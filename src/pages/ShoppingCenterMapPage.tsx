@@ -15,6 +15,7 @@ import {
   type ShoppingCenter,
 } from "../data/shoppingCenters";
 import { corridorInfoPath } from "../utils/corridorPaths";
+import { leaveMapTo } from "../utils/leaveMapTo";
 import {
   filterByProximity,
   NEARBY_TENANT_RADIUS_M,
@@ -87,7 +88,7 @@ export function ShoppingCenterMapPage() {
             type="button"
             className="pill-btn pill-btn--primary map-fullscreen__back"
             onClick={() => {
-              window.location.assign(infoPath);
+              leaveMapTo(infoPath);
             }}
           >
             ← Back

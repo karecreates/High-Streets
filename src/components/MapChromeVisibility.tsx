@@ -11,14 +11,30 @@ export function MapChromeVisibility({ visible }: { visible: boolean }) {
     // entering static/fullscreen mode (major-tenant logos disappeared).
     map.setOptions({
       zoomControl: visible,
-      // Keep native fullscreen off — custom Street View pegman docks beside zoom.
       fullscreenControl: false,
       streetViewControl: false,
       mapTypeControl: false,
       scaleControl: false,
       rotateControl: false,
       keyboardShortcuts: visible,
+      clickableIcons: visible,
     });
+
+    // Extra pass: some Google control nodes linger in the DOM after options change.
+    if (!visible) {
+      const root = map.getDiv();
+      root
+        .querySelectorAll(
+          ".gm-bundled-control, .gmnoprint, .gm-svpc, .gm-fullscreen-control, button.gm-control-active"
+        )
+        .forEach((node) => {
+          if (node instanceof HTMLElement) {
+            node.style.setProperty("display", "none", "important");
+            node.style.setProperty("visibility", "hidden", "important");
+            node.style.setProperty("opacity", "0", "important");
+          }
+        });
+    }
   }, [map, visible]);
 
   return null;

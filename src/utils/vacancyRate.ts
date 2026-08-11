@@ -4,10 +4,13 @@ import { groupVacanciesByLocation } from "./groupVacanciesByLocation";
 import { isNamedTenant } from "./tenantDisplay";
 
 /**
- * Vacancy rate = vacancies ÷ (vacancies + occupied).
+ * Vacancy rate = vacant locations ÷ (vacant locations + occupied tenants).
  *
- * Vacancy count = total vacant spaces for the corridor.
- * Occupied count = named, mapped tenants (same as the map occupied total).
+ * Vacancy count matches the map (one pin per geocoded location, even when
+ * CoStar lists several vacant suites at the same address). Occupied count
+ * matches the map's named, mapped tenant total.
+ *
+ * Example — Third Street Promenade: 21 locations / (21 + 84 occupied) = 20.0%.
  */
 export function countOccupiedTenants(tenants: Tenant[]): number {
   return tenants.filter(
@@ -45,7 +48,7 @@ export function vacancyRateFromStreetData(
   vacancies: Vacancy[]
 ): string | null {
   return formatVacancyRate(
-    countVacancySpaces(vacancies),
+    countVacancyLocations(vacancies),
     countOccupiedTenants(tenants)
   );
 }

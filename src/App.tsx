@@ -1,6 +1,6 @@
+import type { ReactNode } from "react";
 import { APIProvider } from "@vis.gl/react-google-maps";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { ProtectedOutlet } from "./components/ProtectedOutlet";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { AccessProvider } from "./context/AccessContext";
 import { TenantsProvider } from "./context/TenantsContext";
@@ -14,47 +14,29 @@ import { StreetMapPage } from "./pages/StreetMapPage";
 
 const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY ?? "";
 
+function withAuth(page: ReactNode) {
+  return <ProtectedRoute>{page}</ProtectedRoute>;
+}
+
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<AccessGatePage />} />
-      <Route
-        path="/dashboard"
-        element={
-          <ProtectedRoute>
-            <DashboardPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/map"
-        element={
-          <ProtectedRoute>
-            <MasterMapPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/dev/geocode"
-        element={
-          <ProtectedRoute>
-            <DevGeocodePage />
-          </ProtectedRoute>
-        }
-      />
+      <Route path="/dashboard" element={withAuth(<DashboardPage />)} />
+      <Route path="/map" element={withAuth(<MasterMapPage />)} />
+      <Route path="/dev/geocode" element={withAuth(<DevGeocodePage />)} />
       {/*
-        Nested under /street/:slug and /center/:slug so map ↔ info swaps via
-        Outlet. Keep these route trees stable (no useLocation keys here) —
-        remounting Routes mid-navigate was leaving the map mounted.
+        Sibling routes (not nested Outlet) so map ↔ dedicated-page navigation
+        fully unmounts the Google Map view. Nested /:slug + /:slug/map left the
+        map mounted after client-side Back navigation.
       */}
-      <Route path="/street/:slug" element={<ProtectedOutlet />}>
-        <Route index element={<StreetDetailPage />} />
-        <Route path="map" element={<StreetMapPage />} />
-      </Route>
-      <Route path="/center/:slug" element={<ProtectedOutlet />}>
-        <Route index element={<StreetDetailPage />} />
-        <Route path="map" element={<ShoppingCenterMapPage />} />
-      </Route>
+      <Route path="/street/:slug" element={withAuth(<StreetDetailPage />)} />
+      <Route path="/street/:slug/map" element={withAuth(<StreetMapPage />)} />
+      <Route path="/center/:slug" element={withAuth(<StreetDetailPage />)} />
+      <Route
+        path="/center/:slug/map"
+        element={withAuth(<ShoppingCenterMapPage />)}
+      />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

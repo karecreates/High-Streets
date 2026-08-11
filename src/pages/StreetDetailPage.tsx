@@ -22,10 +22,6 @@ import {
 import { corridorMapPath } from "../utils/corridorPaths";
 import { isNamedTenant } from "../utils/tenantDisplay";
 import {
-  formatVacantSfTotal,
-  sumVacantSf,
-} from "../utils/vacancyDisplay";
-import {
   formatVacancyRate,
   vacancyRateFromStreetData,
 } from "../utils/vacancyRate";
@@ -100,32 +96,6 @@ export function StreetDetailPage() {
     return vacancyRateFromStreetData(streetTenants, streetVacancies);
   }, [corridor, dataset, shoppingCenter, vacanciesDataset]);
 
-  const vacantSfLabel = useMemo(() => {
-    if (!corridor) return null;
-
-    if (corridor.category === "shopping-centers" && shoppingCenter) {
-      const total = shoppingCenter.vacancies.reduce((sum, vacancy) => {
-        const raw = vacancy.spaceSf ?? vacancy.spaceLabel ?? "";
-        const match = String(raw).match(/([\d,]+)/);
-        if (!match) return sum;
-        const sqft = Number(match[1].replace(/,/g, ""));
-        return Number.isFinite(sqft) && sqft > 0 ? sum + sqft : sum;
-      }, 0);
-      return total > 0 ? formatVacantSfTotal(total) : null;
-    }
-
-    if (!corridor.dataKey) return null;
-    const rollup = vacanciesDataset?.vacantSfByHighStreet?.[corridor.dataKey];
-    if (rollup && rollup.sqft > 0) return formatVacantSfTotal(rollup.sqft);
-
-    const streetVacancies =
-      vacanciesDataset?.vacancies.filter(
-        (v) => v.highStreet === corridor.dataKey
-      ) ?? [];
-    const total = sumVacantSf(streetVacancies);
-    return total > 0 ? formatVacantSfTotal(total) : null;
-  }, [corridor, shoppingCenter, vacanciesDataset]);
-
   if (!corridor?.active || !detail) {
     return (
       <div className="street-page street-page--empty">
@@ -190,14 +160,6 @@ export function StreetDetailPage() {
                       <p className="info-card__metric-value">{vacancyRate}</p>
                       <span className="info-card__metric-label">
                         Vacancy rate
-                      </span>
-                    </div>
-                  ) : null}
-                  {vacantSfLabel ? (
-                    <div className="info-card__metric">
-                      <p className="info-card__metric-value">{vacantSfLabel}</p>
-                      <span className="info-card__metric-label">
-                        Vacant SF
                       </span>
                     </div>
                   ) : null}
