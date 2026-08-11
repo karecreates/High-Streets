@@ -138,3 +138,22 @@ export function groupTenantsByLocation(tenants: Tenant[]): TenantLocationGroup[]
 
   return mergeNearbySameBrandGroups([...map.values()]);
 }
+
+/**
+ * One logo pin per tenant. Used for major-tenant deconflict so co-located
+ * brands (e.g. Alo + Vans) can sit above/below the same anchor cleanly.
+ */
+export function splitTenantGroupsForDeconflict(
+  groups: TenantLocationGroup[]
+): TenantLocationGroup[] {
+  return groups.flatMap((group) => {
+    if (group.tenants.length <= 1) return [group];
+    return group.tenants.map((tenant, index) => ({
+      key: `${group.key}::${tenant.id || index}`,
+      lat: group.lat,
+      lng: group.lng,
+      address: tenant.address || group.address,
+      tenants: [tenant],
+    }));
+  });
+}

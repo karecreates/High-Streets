@@ -11,6 +11,8 @@ import thePaseoLogo from "@assets/The Paseo Photos/465016768_1026507899486082_33
 import sportsmenLodgeLogo from "@assets/Sportsmens Lodge Photos/sportsmens_lodge_logo.png";
 import oneColoradoLogo from "@assets/One Colorado Photos/One_Colorado_logo.svg";
 import manhattanVillageLogo from "@assets/Manhattan Village Photos/Manhattan_Village_Logo.png";
+import figat7thLogo from "@assets/logos/figat7th-logo.jpg";
+import laLiveLogo from "@assets/logos/la-live-logo.svg";
 import thePointSitePlan from "@assets/site_plans/the_point_site_plan.jpg";
 import platformSitePlan from "@assets/site_plans/Platform_site_plan.webp";
 import manhattanVillageSitePlan from "@assets/site_plans/manhattan_village_site_plan.pdf?url";
@@ -74,6 +76,11 @@ export interface ShoppingCenter {
   sitePlan?: string;
   /** Optional external site plan / directory map URL (opens in a new tab). */
   sitePlanUrl?: string;
+  /**
+   * Logo-only map pin — no dedicated page/directory.
+   * Shown on master + nearby corridor maps for context.
+   */
+  mapPinOnly?: boolean;
   tenants: ShoppingCenterTenant[];
   vacancies: ShoppingCenterVacancy[];
 }
@@ -143,6 +150,8 @@ const CENTER_META: Record<string, ShoppingCenterMeta> = {
     logoMarkerBg: "#FFFFFF",
     // Wider than default compact (52) — wordmark was hard to read near 3rd St
     masterMapLogoWidth: 88,
+    // Above Abbot Kinney / Promenade coast labels on the overview map
+    masterMapLogoPlacement: "above",
     tenantDirectoryUrl: "https://www.santamonicaplace.com/shop",
     sitePlanUrl: "https://www.santamonicaplace.com/directory#/",
   },
@@ -155,7 +164,7 @@ const CENTER_META: Record<string, ShoppingCenterMeta> = {
     mapCenter: { lat: 33.90285063536709, lng: -118.39505288392672 },
     mapZoom: 18,
     lightLogoMarker: true,
-    // Opposite of Manhattan Village — plot stays on mapCenter
+    // Opposite of Manhattan Beach street label — plot stays on mapCenter
     masterMapLogoPlacement: "above",
     tenantDirectoryUrl: "https://thepointsb.com/shop-dine-more/",
     sitePlan: thePointSitePlan,
@@ -282,8 +291,46 @@ function buildShoppingCenters(): Record<string, ShoppingCenter> {
 
 export const SHOPPING_CENTERS = buildShoppingCenters();
 
+/**
+ * Context logos plotted on maps only (no sidebar entry / directory).
+ * DTLA anchors that should appear near Downtown LA, Arts District, etc.
+ */
+export const MAP_CONTEXT_LANDMARKS: ShoppingCenter[] = [
+  {
+    slug: "figat7th",
+    name: "FIGat7th",
+    city: "Los Angeles, CA",
+    address: "735 S Figueroa St, Los Angeles, CA 90017",
+    logo: figat7thLogo,
+    mapCenter: { lat: 34.04913731001974, lng: -118.26118985465939 },
+    mapZoom: 18,
+    logoMarkerBg: "#FFFFFF",
+    masterMapLogoWidth: 56,
+    mapPinOnly: true,
+    tenants: [],
+    vacancies: [],
+  },
+  {
+    slug: "la-live",
+    name: "L.A. Live",
+    city: "Los Angeles, CA",
+    address: "800 W Olympic Blvd, Los Angeles, CA 90015",
+    logo: laLiveLogo,
+    mapCenter: { lat: 34.04477741566373, lng: -118.26534274183653 },
+    mapZoom: 18,
+    logoMarkerBg: "#FFFFFF",
+    masterMapLogoWidth: 56,
+    mapPinOnly: true,
+    tenants: [],
+    vacancies: [],
+  },
+];
+
 export function getShoppingCenter(slug: string): ShoppingCenter | undefined {
-  return SHOPPING_CENTERS[slug];
+  return (
+    SHOPPING_CENTERS[slug] ??
+    MAP_CONTEXT_LANDMARKS.find((center) => center.slug === slug)
+  );
 }
 
 export function isShoppingCenterSlug(slug: string): boolean {
@@ -292,4 +339,8 @@ export function isShoppingCenterSlug(slug: string): boolean {
 
 export function getAllShoppingCenters(): ShoppingCenter[] {
   return Object.values(SHOPPING_CENTERS);
+}
+
+export function getMapContextLandmarks(): ShoppingCenter[] {
+  return MAP_CONTEXT_LANDMARKS;
 }

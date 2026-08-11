@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { MAP_Z_INDEX } from "../config/mapZIndex";
 import type { ShoppingCenter } from "../data/shoppingCenters";
 import { createShoppingCenterMarkerIcon } from "../utils/createShoppingCenterMarkerIcon";
+import type { OverviewMarkerLayout } from "../utils/overviewMarkerLayout";
 
 interface ShoppingCenterPinProps {
   center: ShoppingCenter;
@@ -11,6 +12,10 @@ interface ShoppingCenterPinProps {
   zIndex?: number;
   /** Smaller logo callout for overview maps. */
   compact?: boolean;
+  /** Collision-resolved placement / offset (same as dashboard overview). */
+  layout?: OverviewMarkerLayout;
+  /** When false, pin is display-only (e.g. static screenshot mode). */
+  interactive?: boolean;
 }
 
 export function ShoppingCenterPin({
@@ -18,8 +23,15 @@ export function ShoppingCenterPin({
   onClick,
   zIndex = MAP_Z_INDEX.tenantMarker,
   compact = false,
+  layout,
+  interactive = true,
 }: ShoppingCenterPinProps) {
   const map = useMap();
+  const placement =
+    layout?.placement ??
+    (compact ? center.masterMapLogoPlacement : undefined) ??
+    "above";
+  const offsetX = layout?.offsetX ?? 0;
 
   useEffect(() => {
     if (!map) return;
@@ -30,6 +42,7 @@ export function ShoppingCenterPin({
       title: center.name,
       optimized: false,
       zIndex,
+      clickable: interactive && !center.mapPinOnly,
     });
 
     let cancelled = false;
@@ -37,21 +50,35 @@ export function ShoppingCenterPin({
       lightBox: center.lightLogoMarker,
       boxBg: center.logoMarkerBg,
       compact,
-      placement: compact ? center.masterMapLogoPlacement : undefined,
+      placement,
+      offsetX,
+      showStem: false,
       logoWidth: compact ? center.masterMapLogoWidth : undefined,
       logoCrop: center.logoCrop,
     }).then((icon) => {
       if (!cancelled) marker.setIcon(icon);
     });
 
-    const listener = marker.addListener("click", onClick);
+    const listener =
+      interactive && !center.mapPinOnly
+        ? marker.addListener("click", onClick)
+        : null;
 
     return () => {
       cancelled = true;
-      listener.remove();
+      listener?.remove();
       marker.setMap(null);
     };
-  }, [map, center, onClick, zIndex, compact]);
+  }, [
+    map,
+    center,
+    onClick,
+    zIndex,
+    compact,
+    placement,
+    offsetX,
+    interactive,
+  ]);
 
   return null;
 }

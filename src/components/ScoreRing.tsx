@@ -21,6 +21,7 @@ export function ScoreRing({
   delay = 0,
 }: ScoreRingProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
+  /** Slightly tighter ring stroke leaves more clear space for the centered label. */
   const radius = 42;
   const circumference = 2 * Math.PI * radius;
 

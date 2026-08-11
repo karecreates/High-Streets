@@ -27,12 +27,14 @@ export function parseDisplayValue(raw: string): ParsedDisplayValue {
   if (moneyMatch && moneyMatch[2]) {
     const target = Number.parseFloat(moneyMatch[2]);
     if (!Number.isNaN(target)) {
+      // Keep the source's decimal precision ("1.63M" must not settle at "2M").
+      const decimals = (moneyMatch[2].split(".")[1] ?? "").length;
       return {
         type: "number",
         target,
         prefix: moneyMatch[1] ?? "",
         suffix: moneyMatch[3] ?? "",
-        format: (n) => String(Math.round(n)),
+        format: (n) => n.toFixed(decimals),
       };
     }
   }

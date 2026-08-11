@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import {
   MapControlsBar,
   type MapDisplayMode,
@@ -18,13 +18,21 @@ import {
 import { useMajorTenantsFilter } from "../hooks/useMajorTenantsFilter";
 import { useStaticMapMode } from "../hooks/useStaticMapMode";
 import { getCorridorBySlug, getCorridorDetail } from "../data/highStreets";
+import {
+  getMajorTenantAllowlist,
+  MAJOR_TENANTS_DEFAULT_ON,
+} from "../data/majorTenants";
 import type { ShoppingCenter } from "../data/shoppingCenters";
 import {
   isWithinMeters,
   NEARBY_TENANT_RADIUS_M,
 } from "../utils/geoProximity";
 import { getMasterMapId } from "../utils/mapConfig";
-import { getNearbyShoppingCenters } from "../utils/mapContextOverlays";
+import {
+  getNearbyShoppingCenters,
+  getNearbyStreetCallouts,
+} from "../utils/mapContextOverlays";
+import { corridorInfoPath, corridorMapPath } from "../utils/corridorPaths";
 import { groupVacanciesByLocation } from "../utils/groupVacanciesByLocation";
 import { isNamedTenant } from "../utils/tenantDisplay";
 import type { VacancyLocationGroup } from "../types/vacancy";
@@ -37,6 +45,7 @@ interface StreetMapLocationState {
 
 export function StreetMapPage() {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const location = useLocation();
   const locationState = location.state as StreetMapLocationState | null;
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
@@ -45,8 +54,12 @@ export function StreetMapPage() {
   const corridorVacancies = useStreetVacancies(corridor?.dataKey ?? "");
   const allTenants = useAllStreetTenants();
   const allVacancies = useAllStreetVacancies();
-  const [displayMode, setDisplayMode] = useState<MapDisplayMode>("both");
-  const [majorTenantsOnly, setMajorTenantsOnly] = useState(false);
+  const [displayMode, setDisplayMode] = useState<MapDisplayMode>(() =>
+    slug && MAJOR_TENANTS_DEFAULT_ON.has(slug) ? "tenants" : "both"
+  );
+  const [majorTenantsOnly, setMajorTenantsOnly] = useState(
+    () => Boolean(slug && MAJOR_TENANTS_DEFAULT_ON.has(slug))
+  );
   const [showMeteredParking, setShowMeteredParking] = useState(false);
   const [showParkingLots, setShowParkingLots] = useState(false);
   const [focusedVacancyGroupKey, setFocusedVacancyGroupKey] = useState<
@@ -120,13 +133,30 @@ export function StreetMapPage() {
 
   const shoppingCenters = useMemo(() => {
     if (!focusCenter) return [];
-    return getNearbyShoppingCenters(focusCenter);
-  }, [focusCenter]);
+    return getNearbyShoppingCenters(focusCenter, {
+      // Anchor logo for Promenade static screenshots (south end of the street).
+      alwaysIncludeSlug:
+        slug === "third-street-promenade" ? "santa-monica-place" : undefined,
+    });
+  }, [focusCenter, slug]);
+
+  const corridorCallouts = useMemo(() => {
+    if (!focusCenter) return [];
+    return getNearbyStreetCallouts(focusCenter, slug);
+  }, [focusCenter, slug]);
+
+  const majorTenantAllowlist = useMemo(
+    () => getMajorTenantAllowlist(slug),
+    [slug]
+  );
 
   const {
     tenants: mapTenants,
     filtering: majorTenantsFiltering,
-  } = useMajorTenantsFilter(proximityTenants, majorTenantsOnly);
+  } = useMajorTenantsFilter(proximityTenants, majorTenantsOnly, {
+    allowlist: majorTenantAllowlist,
+    slug,
+  });
 
   const vacancyGroups = useMemo(
     () => groupVacanciesByLocation(corridorVacancies),
@@ -174,8 +204,18 @@ export function StreetMapPage() {
   }, []);
 
   const handleShoppingCenterSelect = useCallback((center: ShoppingCenter) => {
+    if (center.mapPinOnly) return;
     setDirectoryCenter(center);
   }, []);
+
+  const handleCorridorCalloutSelect = useCallback(
+    (calloutSlug: string) => {
+      navigate(corridorMapPath(calloutSlug));
+    },
+    [navigate]
+  );
+
+  const infoPath = slug ? corridorInfoPath(slug) : "/dashboard";
 
   if (!corridor?.active || !detail) {
     return (
@@ -193,9 +233,17 @@ export function StreetMapPage() {
         className={`map-fullscreen${staticMode ? " map-fullscreen--static" : ""}`}
       >
         {!staticMode ? (
-          <PillButton to={`/street/${slug}`} className="map-fullscreen__back">
+          <button
+            type="button"
+            className="pill-btn pill-btn--primary map-fullscreen__back"
+            onClick={() => {
+              // Full navigation — client-side routing from the Google Map view
+              // was updating the URL without swapping off StreetMapPage.
+              window.location.assign(infoPath);
+            }}
+          >
             ← Back
-          </PillButton>
+          </button>
         ) : null}
 
         {!staticMode ? (
@@ -246,6 +294,17 @@ export function StreetMapPage() {
           shoppingCenters={shoppingCenters}
           onShoppingCenterSelect={
             staticMode ? undefined : handleShoppingCenterSelect
+          }
+          corridorCallouts={corridorCallouts}
+          onCorridorCalloutSelect={
+            staticMode ? undefined : handleCorridorCalloutSelect
+          }
+          alwaysShowCorridorCallouts
+          deconflictLogos={
+            majorTenantsOnly && Boolean(majorTenantAllowlist)
+          }
+          deconflictLayoutSlug={
+            majorTenantsOnly && majorTenantAllowlist ? slug : undefined
           }
         />
 

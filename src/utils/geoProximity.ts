@@ -27,11 +27,15 @@ export function isWithinMeters(
 }
 
 /**
- * Nearby context on dedicated maps — tight enough for Pasadena / Malibu pairs
- * without loading every LA corridor.
+ * Nearby context on dedicated maps — wide enough for Downtown LA ↔ Arts District
+ * (~2.7 km center-to-center) without loading every LA corridor.
  */
-export const NEARBY_TENANT_RADIUS_M = 1_200; // ~0.75 mi
+export const NEARBY_TENANT_RADIUS_M = 3_500; // ~2.2 mi
 export const NEARBY_CENTER_RADIUS_M = 2_000; // ~1.25 mi
+/** Wider radius so DTLA landmarks (FIGat7th, L.A. Live) reach Arts District maps. */
+export const NEARBY_LANDMARK_RADIUS_M = 4_000; // ~2.5 mi
+/** Nearby high-street callouts on dedicated maps (same band as tenants). */
+export const NEARBY_CALLOUT_RADIUS_M = 3_500; // ~2.2 mi
 
 export function filterByProximity<
   T extends { lat: number | null; lng: number | null },

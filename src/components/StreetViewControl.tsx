@@ -10,11 +10,22 @@ import {
 
 const PEGMAN_SIZE_PX = 40;
 const PEGMAN_CONTROL_GAP_PX = 10;
+/** Fallback when Google’s bottom-right controls aren’t queryable yet. */
+const FALLBACK_BOTTOM_PX = 24;
+const FALLBACK_RIGHT_PX = 68;
 
 function findBottomRightMapControl(mapDiv: HTMLElement): HTMLElement | null {
   const mapRect = mapDiv.getBoundingClientRect();
   const candidates = mapDiv.querySelectorAll<HTMLElement>(
-    'button.gm-fullscreen-control, gmp-internal-camera-control button[aria-label="Map camera controls"]'
+    [
+      "button.gm-fullscreen-control",
+      'gmp-internal-camera-control button[aria-label="Map camera controls"]',
+      'button[aria-label="Toggle fullscreen view"]',
+      'button[title="Toggle fullscreen view"]',
+      ".gm-bundled-control .gmnoprint button",
+      'button[aria-label="Zoom in"]',
+      'button[title="Zoom in"]',
+    ].join(", ")
   );
 
   let anchor: HTMLElement | null = null;
@@ -26,9 +37,12 @@ function findBottomRightMapControl(mapDiv: HTMLElement): HTMLElement | null {
 
     const fromBottom = mapRect.bottom - rect.bottom;
     const fromRight = mapRect.right - rect.right;
-    if (fromBottom < -4 || fromBottom > 120 || fromRight < -4) continue;
+    if (fromBottom < -4 || fromBottom > 160 || fromRight < -4 || fromRight > 80) {
+      continue;
+    }
 
-    const score = fromBottom + fromRight;
+    // Prefer the top-most control in the bottom-right stack (fullscreen / camera).
+    const score = fromBottom * 2 + fromRight;
     if (score < bestScore) {
       bestScore = score;
       anchor = candidate;
@@ -38,13 +52,23 @@ function findBottomRightMapControl(mapDiv: HTMLElement): HTMLElement | null {
   return anchor;
 }
 
+function applyFallbackDockPosition(dock: HTMLElement) {
+  dock.style.left = "auto";
+  dock.style.top = "auto";
+  dock.style.right = `${FALLBACK_RIGHT_PX}px`;
+  dock.style.bottom = `${FALLBACK_BOTTOM_PX}px`;
+}
+
 function syncStreetViewDockPosition(
   map: google.maps.Map,
   shell: HTMLElement,
   dock: HTMLElement
 ): boolean {
   const anchor = findBottomRightMapControl(map.getDiv());
-  if (!anchor) return false;
+  if (!anchor) {
+    applyFallbackDockPosition(dock);
+    return false;
+  }
 
   const anchorRect = anchor.getBoundingClientRect();
   const shellRect = shell.getBoundingClientRect();
@@ -94,7 +118,11 @@ export function StreetViewControl() {
 
   useEffect(() => {
     if (!map) return;
-    setShellTarget(map.getDiv().closest(".map-shell") as HTMLElement | null);
+    setShellTarget(
+      map.getDiv().closest(
+        ".map-shell, .dashboard-overview-map, .placer-trade-map, .placer-modal__map"
+      ) as HTMLElement | null
+    );
   }, [map]);
 
   useEffect(() => {
@@ -110,10 +138,15 @@ export function StreetViewControl() {
       });
     };
 
+    applyFallbackDockPosition(dock);
     scheduleSync();
 
+    // Keep retrying briefly — Google injects zoom/fullscreen controls async.
+    let attempts = 0;
     const retryInterval = window.setInterval(() => {
-      if (syncStreetViewDockPosition(map, shellTarget, dock)) {
+      attempts += 1;
+      const docked = syncStreetViewDockPosition(map, shellTarget, dock);
+      if (docked || attempts >= 40) {
         window.clearInterval(retryInterval);
       }
     }, 100);

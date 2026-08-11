@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-06T23:36:24.187Z",
-  "sourceFile": "Final_Street_Data.xlsx",
-  "totalRows": 346,
-  "geocodedCount": 346,
+  "generatedAt": "2026-08-10T20:47:15.437Z",
+  "sourceFile": "Final_Street_Data.xlsx + Final_Vacancy_Report.xlsx",
+  "totalRows": 369,
+  "geocodedCount": 369,
   "highStreets": [
     "Street - Abbot Kinney",
     "Street - Arts District",
@@ -16,7 +16,6 @@
     "Street - Figueroa St",
     "Street - La Brea",
     "Street - Larchmont",
-    "Street - Liberty Station",
     "Street - Manhattan Beach",
     "Street - Melrose",
     "Street - Montana",
@@ -27,20 +26,21 @@
     "Street - Silver Lake",
     "Street - Sunset Blvd",
     "Street - Third Street Promenade",
-    "Street - Ventura Blvd",
-    "Street - York Blvd"
+    "Street - Ventura Blvd"
   ],
   "vacancies": [
     {
       "id": "vacancy-1",
       "address": "1212 Abbot Kinney Blvd",
       "suite": "",
-      "space": "1212 Abbot Kinney Blvd -  -  sf",
+      "space": "1212 Abbot Kinney Blvd -  - 4,291 sf",
       "highStreet": "Street - Abbot Kinney",
       "costarUrl": "https://product.costar.com/detail/all-properties/5356069/summary",
       "unitStatus": "Vacant",
       "lat": 33.9910807,
-      "lng": -118.4688547
+      "lng": -118.4688547,
+      "sqft": 4291,
+      "askingRate": 67.08
     },
     {
       "id": "vacancy-2",
@@ -51,18 +51,21 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5356069/summary",
       "unitStatus": "Vacant",
       "lat": 33.9910807,
-      "lng": -118.4688547
+      "lng": -118.4688547,
+      "sqft": 3775,
+      "askingRate": 76.8
     },
     {
       "id": "vacancy-3",
       "address": "1214 Abbot Kinney Blvd",
       "suite": "",
-      "space": "1214 Abbot Kinney Blvd - Media Monks",
+      "space": "1214 Abbot Kinney Blvd - Media Monks - 2,038 sf",
       "highStreet": "Street - Abbot Kinney",
       "costarUrl": "https://product.costar.com/detail/all-properties/8411798/summary",
       "unitStatus": "Vacant",
       "lat": 33.9910972,
-      "lng": -118.4686432
+      "lng": -118.4686432,
+      "sqft": 2038
     },
     {
       "id": "vacancy-4",
@@ -73,7 +76,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/12736723/summary",
       "unitStatus": "Vacant",
       "lat": 33.9914886,
-      "lng": -118.4685562
+      "lng": -118.4685562,
+      "sqft": null
     },
     {
       "id": "vacancy-5",
@@ -84,29 +88,32 @@
       "costarUrl": "https://product.costar.com/detail/lookup/8088583/summary",
       "unitStatus": "Vacant",
       "lat": 33.9912066,
-      "lng": -118.4675627
+      "lng": -118.4675627,
+      "sqft": null
     },
     {
       "id": "vacancy-6",
       "address": "1349-1357 Abbot Kinney Blvd, Venice",
       "suite": "",
-      "space": "1349-1357 Abbot Kinney Blvd, Venice - Vacant -  sf",
+      "space": "1349-1357 Abbot Kinney Blvd, Venice - Vacant - 989 sf",
       "highStreet": "Street - Abbot Kinney",
       "costarUrl": "https://product.costar.com/detail/lookup/9142563/summary",
       "unitStatus": "Vacant",
       "lat": 33.990941,
-      "lng": -118.4662904
+      "lng": -118.4662904,
+      "sqft": 989
     },
     {
       "id": "vacancy-7",
       "address": "1401 Abbot Kinney Boulevard, Los Angeles",
       "suite": "",
-      "space": "1401 Abbot Kinney Boulevard, Los Angeles - Vacant -  sf",
+      "space": "1401 Abbot Kinney Boulevard, Los Angeles - Vacant - 860 sf",
       "highStreet": "Street - Abbot Kinney",
       "costarUrl": "https://product.costar.com/detail/lookup/6418057/summary",
       "unitStatus": "Vacant",
       "lat": 33.990722,
-      "lng": -118.46586
+      "lng": -118.46586,
+      "sqft": 860
     },
     {
       "id": "vacancy-8",
@@ -117,7 +124,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/9810100/summary",
       "unitStatus": "Vacant",
       "lat": 33.9903263,
-      "lng": -118.4657295
+      "lng": -118.4657295,
+      "sqft": null
     },
     {
       "id": "vacancy-9",
@@ -128,7 +136,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/816504/summary",
       "unitStatus": "Vacant",
       "lat": 33.9906027,
-      "lng": -118.4651706
+      "lng": -118.4651706,
+      "sqft": 1680
     },
     {
       "id": "vacancy-10",
@@ -139,7 +148,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/9047540/summary",
       "unitStatus": "Vacant",
       "lat": 33.9904517,
-      "lng": -118.4644733
+      "lng": -118.4644733,
+      "sqft": 490
     },
     {
       "id": "vacancy-11",
@@ -150,7 +160,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/9047540/summary",
       "unitStatus": "Vacant",
       "lat": 33.9904479,
-      "lng": -118.464477
+      "lng": -118.464477,
+      "sqft": 2614
     },
     {
       "id": "vacancy-12",
@@ -161,7 +172,9 @@
       "costarUrl": "https://product.costar.com/detail/lookup/8798415/summary",
       "unitStatus": "Vacant",
       "lat": 33.9904328,
-      "lng": -118.4642774
+      "lng": -118.4642774,
+      "sqft": 6230,
+      "askingRate": 96
     },
     {
       "id": "vacancy-13",
@@ -172,7 +185,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/18886015/summary",
       "unitStatus": "Vacant",
       "lat": 33.9894426,
-      "lng": -118.4633841
+      "lng": -118.4633841,
+      "sqft": null
     },
     {
       "id": "vacancy-14",
@@ -183,7 +197,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/7258414/summary",
       "unitStatus": "Vacant",
       "lat": 33.9896056,
-      "lng": -118.4629814
+      "lng": -118.4629814,
+      "sqft": null
     },
     {
       "id": "vacancy-15",
@@ -194,62 +209,71 @@
       "costarUrl": "https://product.costar.com/detail/lookup/4283596/summary",
       "unitStatus": "Vacant",
       "lat": 33.9895356,
-      "lng": -118.4629281
+      "lng": -118.4629281,
+      "sqft": null
     },
     {
       "id": "vacancy-16",
       "address": "1333-1335 Willow St",
       "suite": "1RD",
-      "space": "SPACE-00180",
+      "space": "SPACE-00180 - 1,000 sf",
       "highStreet": "Street - Arts District",
       "costarUrl": "https://product.costar.com/detail/all-properties/5553721/summary",
       "unitStatus": "Vacant",
       "lat": 34.03939,
-      "lng": -118.23157
+      "lng": -118.23157,
+      "sqft": 1000,
+      "askingRate": 36
     },
     {
       "id": "vacancy-17",
       "address": "1333-1335 Willow St",
       "suite": "100",
-      "space": "SPACE-00181",
+      "space": "SPACE-00181 - 8,500 sf",
       "highStreet": "Street - Arts District",
       "costarUrl": "https://product.costar.com/detail/all-properties/5553721/summary",
       "unitStatus": "Vacant",
       "lat": 34.03939,
-      "lng": -118.23157
+      "lng": -118.23157,
+      "sqft": 8500,
+      "askingRate": 42
     },
     {
       "id": "vacancy-18",
       "address": "1938-1948 E 7th St",
       "suite": "",
-      "space": "1938-1948 E 7th St - Vacant Storefront",
+      "space": "1938-1948 E 7th St - Vacant Storefront - 2,760 sf",
       "highStreet": "Street - Arts District",
       "costarUrl": "https://product.costar.com/detail/all-properties/824754/summary",
       "unitStatus": "Vacant",
       "lat": 34.0344678,
-      "lng": -118.2325596
+      "lng": -118.2325596,
+      "sqft": 2760,
+      "askingRate": 42
     },
     {
       "id": "vacancy-19",
       "address": "2001 E 7th St",
       "suite": "",
-      "space": "2001 E 7th St - Vacant Storefront",
+      "space": "2001 E 7th St - Vacant Storefront - 7,400 sf",
       "highStreet": "Street - Arts District",
       "costarUrl": "https://product.costar.com/detail/all-properties/21215408/summary",
       "unitStatus": "Vacant",
       "lat": 34.0348903,
-      "lng": -118.2321724
+      "lng": -118.2321724,
+      "sqft": 7400
     },
     {
       "id": "vacancy-20",
       "address": "734-744 E 3rd St, Los Angeles",
       "suite": "",
-      "space": "734-744 E 3rd St, Los Angeles - Vacant Storefront",
+      "space": "734-744 E 3rd St, Los Angeles - Vacant Storefront - 1,200 sf",
       "highStreet": "Street - Arts District",
       "costarUrl": "https://product.costar.com/detail/all-properties/509496/summary",
       "unitStatus": "Vacant",
       "lat": 34.0454578,
-      "lng": -118.2367066
+      "lng": -118.2367066,
+      "sqft": 1200
     },
     {
       "id": "vacancy-21",
@@ -260,62 +284,68 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/8268657/summary",
       "unitStatus": "Vacant",
       "lat": 34.0455912,
-      "lng": -118.2358993
+      "lng": -118.2358993,
+      "sqft": 1551
     },
     {
       "id": "vacancy-22",
       "address": "821-835 E 3rd St",
       "suite": "831",
-      "space": "SPACE-00144",
+      "space": "SPACE-00144 - 2,100 sf",
       "highStreet": "Street - Arts District",
       "costarUrl": "https://product.costar.com/detail/lookup/276140/tenant",
       "unitStatus": "Vacant",
       "lat": 34.0461177,
-      "lng": -118.2357116
+      "lng": -118.2357116,
+      "sqft": 2100
     },
     {
       "id": "vacancy-23",
       "address": "821-835 E 3rd St",
       "suite": "825",
-      "space": "SPACE-00145",
+      "space": "SPACE-00145 - 3,500 sf",
       "highStreet": "Street - Arts District",
       "costarUrl": "https://product.costar.com/detail/lookup/276140/tenant",
       "unitStatus": "Vacant",
       "lat": 34.0461177,
-      "lng": -118.2357116
+      "lng": -118.2357116,
+      "sqft": 3500
     },
     {
       "id": "vacancy-24",
       "address": "821-835 E 3rd St",
       "suite": "835",
-      "space": "SPACE-00146",
+      "space": "SPACE-00146 - 4,100 sf",
       "highStreet": "Street - Arts District",
       "costarUrl": "https://product.costar.com/detail/lookup/276140/tenant",
       "unitStatus": "Vacant",
       "lat": 34.0461177,
-      "lng": -118.2357116
+      "lng": -118.2357116,
+      "sqft": 4100
     },
     {
       "id": "vacancy-25",
       "address": "821-835 E 3rd St",
       "suite": "821",
-      "space": "SPACE-00147",
+      "space": "SPACE-00147 - 4,720 sf",
       "highStreet": "Street - Arts District",
       "costarUrl": "https://product.costar.com/detail/lookup/276140/tenant",
       "unitStatus": "Vacant",
       "lat": 34.0461177,
-      "lng": -118.2357116
+      "lng": -118.2357116,
+      "sqft": 4720
     },
     {
       "id": "vacancy-26",
       "address": "1053 S Main St",
       "suite": "",
-      "space": "1053 S Main St - Vacant Storefront",
+      "space": "1053 S Main St - Vacant Storefront - 12,880 sf",
       "highStreet": "Street - Broadway",
       "costarUrl": "https://product.costar.com/detail/all-properties/10453370/summary",
       "unitStatus": "Vacant",
       "lat": 34.0395826,
-      "lng": -118.2582021
+      "lng": -118.2582021,
+      "sqft": 12880
     },
     {
       "id": "vacancy-27",
@@ -326,7 +356,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1408706/summary",
       "unitStatus": "Vacant",
       "lat": 34.0501597,
-      "lng": -118.248571
+      "lng": -118.248571,
+      "sqft": null
     },
     {
       "id": "vacancy-28",
@@ -337,7 +368,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7626336/summary",
       "unitStatus": "Vacant",
       "lat": 34.050388,
-      "lng": -118.249048
+      "lng": -118.249048,
+      "sqft": null
     },
     {
       "id": "vacancy-29",
@@ -348,40 +380,44 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5667433/summary",
       "unitStatus": "Vacant",
       "lat": 34.05028,
-      "lng": -118.249
+      "lng": -118.249,
+      "sqft": null
     },
     {
       "id": "vacancy-30",
       "address": "341-345 S Broadway, Los Angeles",
       "suite": "",
-      "space": "341-345 S Broadway, Los Angeles - Vacant Storefront",
+      "space": "341-345 S Broadway, Los Angeles - Vacant Storefront - 1,500 sf",
       "highStreet": "Street - Broadway",
       "costarUrl": "https://product.costar.com/detail/all-properties/9560712/summary",
       "unitStatus": "Vacant",
       "lat": 34.0500872,
-      "lng": -118.2490579
+      "lng": -118.2490579,
+      "sqft": 1500
     },
     {
       "id": "vacancy-31",
       "address": "445 S Broadway",
       "suite": "",
-      "space": "445 S Broadway - Vacant Storefront",
+      "space": "445 S Broadway - Vacant Storefront - 42,982 sf",
       "highStreet": "Street - Broadway",
       "costarUrl": "https://product.costar.com/detail/all-properties/253994/summary",
       "unitStatus": "Vacant",
       "lat": 34.0486797,
-      "lng": -118.2507077
+      "lng": -118.2507077,
+      "sqft": 42982
     },
     {
       "id": "vacancy-32",
       "address": "525 S Broadway, Los Angeles",
       "suite": "",
-      "space": "525 S Broadway, Los Angeles - Vacant Storefront",
+      "space": "525 S Broadway, Los Angeles - Vacant Storefront - 500 sf",
       "highStreet": "Street - Broadway",
       "costarUrl": "https://product.costar.com/detail/all-properties/5589120/summary",
       "unitStatus": "Vacant",
       "lat": 34.0476713,
-      "lng": -118.2515988
+      "lng": -118.2515988,
+      "sqft": 500
     },
     {
       "id": "vacancy-33",
@@ -392,51 +428,56 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5589127/summary",
       "unitStatus": "Vacant",
       "lat": 34.047463,
-      "lng": -118.2518107
+      "lng": -118.2518107,
+      "sqft": null
     },
     {
       "id": "vacancy-34",
       "address": "618-622 S Broadway, Los Angeles",
       "suite": "",
-      "space": "618-622 S Broadway, Los Angeles - Vacant Storefront",
+      "space": "618-622 S Broadway, Los Angeles - Vacant Storefront - 26,643 sf",
       "highStreet": "Street - Broadway",
       "costarUrl": "https://product.costar.com/detail/all-properties/8229996/summary",
       "unitStatus": "Vacant",
       "lat": 34.0460917,
-      "lng": -118.2523742
+      "lng": -118.2523742,
+      "sqft": 26643
     },
     {
       "id": "vacancy-35",
       "address": "631-635 S Broadway",
       "suite": "",
-      "space": "631-635 S Broadway - Vacant Storefront",
+      "space": "631-635 S Broadway - Vacant Storefront - 2,000 sf",
       "highStreet": "Street - Broadway",
       "costarUrl": "https://product.costar.com/detail/all-properties/9131526/summary",
       "unitStatus": "Vacant",
       "lat": 34.046,
-      "lng": -118.25293
+      "lng": -118.25293,
+      "sqft": 2000
     },
     {
       "id": "vacancy-36",
       "address": "631-635 S Broadway",
       "suite": "",
-      "space": "631-635 S Broadway - Czar Jewerly",
+      "space": "631-635 S Broadway - Czar Jewerly - 500 sf",
       "highStreet": "Street - Broadway",
       "costarUrl": "https://product.costar.com/detail/all-properties/9131526/summary",
       "unitStatus": "Vacant",
       "lat": 34.046,
-      "lng": -118.25293
+      "lng": -118.25293,
+      "sqft": 500
     },
     {
       "id": "vacancy-37",
       "address": "900 S Broadway, Los Angeles",
       "suite": "",
-      "space": "900 S Broadway, Los Angeles - Vacant Storefront",
+      "space": "900 S Broadway, Los Angeles - Vacant Storefront - 500 sf",
       "highStreet": "Street - Broadway",
       "costarUrl": "https://product.costar.com/detail/all-properties/7873601/summary",
       "unitStatus": "Vacant",
       "lat": 34.042167,
-      "lng": -118.2560484
+      "lng": -118.2560484,
+      "sqft": 500
     },
     {
       "id": "vacancy-38",
@@ -447,7 +488,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/5930338/summary",
       "unitStatus": "Vacant",
       "lat": 34.1453141,
-      "lng": -118.1532737
+      "lng": -118.1532737,
+      "sqft": 12500
     },
     {
       "id": "vacancy-39",
@@ -458,7 +500,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/255405/summary",
       "unitStatus": "Vacant",
       "lat": 34.1461477,
-      "lng": -118.1227923
+      "lng": -118.1227923,
+      "sqft": 3217,
+      "askingRate": 30
     },
     {
       "id": "vacancy-40",
@@ -469,7 +513,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/250162/summary",
       "unitStatus": "Vacant",
       "lat": 34.1454059,
-      "lng": -118.1535479
+      "lng": -118.1535479,
+      "sqft": 5629
     },
     {
       "id": "vacancy-41",
@@ -480,7 +525,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7261369/summary",
       "unitStatus": "Vacant",
       "lat": 34.1453777,
-      "lng": -118.1506432
+      "lng": -118.1506432,
+      "sqft": 700
     },
     {
       "id": "vacancy-42",
@@ -491,7 +537,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9983463/summary",
       "unitStatus": "Vacant",
       "lat": 34.1455506,
-      "lng": -118.1500828
+      "lng": -118.1500828,
+      "sqft": null
     },
     {
       "id": "vacancy-43",
@@ -502,7 +549,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9983463/summary",
       "unitStatus": "Vacant",
       "lat": 34.1455506,
-      "lng": -118.1500828
+      "lng": -118.1500828,
+      "sqft": 727,
+      "askingRate": 46.22
     },
     {
       "id": "vacancy-44",
@@ -513,7 +562,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1237585/summary",
       "unitStatus": "Vacant",
       "lat": 34.1452858,
-      "lng": -118.1506012
+      "lng": -118.1506012,
+      "sqft": 700
     },
     {
       "id": "vacancy-45",
@@ -524,7 +574,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256303/summary",
       "unitStatus": "Vacant",
       "lat": 34.1455518,
-      "lng": -118.1502731
+      "lng": -118.1502731,
+      "sqft": 5663
     },
     {
       "id": "vacancy-46",
@@ -535,7 +586,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256303/summary",
       "unitStatus": "Vacant",
       "lat": 34.1466271,
-      "lng": -118.0822889
+      "lng": -118.0822889,
+      "sqft": 2528
     },
     {
       "id": "vacancy-47",
@@ -546,18 +598,20 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256303/summary",
       "unitStatus": "Vacant",
       "lat": 34.1466271,
-      "lng": -118.0822889
+      "lng": -118.0822889,
+      "sqft": 3044
     },
     {
       "id": "vacancy-48",
       "address": "34 E Colorado Blvd, Pasadena",
       "suite": "30-32 E Colorado Blvd",
-      "space": "30-32 E Colorado Blvd",
+      "space": "30-32 E Colorado Blvd - 1,824 sf",
       "highStreet": "Street - Colorado Blvd",
       "costarUrl": "https://product.costar.com/detail/all-properties/256303/summary",
       "unitStatus": "Vacant",
       "lat": 34.1456472,
-      "lng": -118.1497292
+      "lng": -118.1497292,
+      "sqft": 1824
     },
     {
       "id": "vacancy-49",
@@ -568,7 +622,9 @@
       "costarUrl": "https://product.costar.com/detail/lookup/697773/summary",
       "unitStatus": "Vacant",
       "lat": 34.1469539,
-      "lng": -118.0690999
+      "lng": -118.0690999,
+      "sqft": 6500,
+      "askingRate": 71.4
     },
     {
       "id": "vacancy-50",
@@ -579,18 +635,20 @@
       "costarUrl": "https://product.costar.com/detail/lookup/8249097/summary",
       "unitStatus": "Vacant",
       "lat": 34.1460892,
-      "lng": -118.1496233
+      "lng": -118.1496233,
+      "sqft": 2800
     },
     {
       "id": "vacancy-51",
       "address": "55-61 E Colorado Blvd, Pasadena",
       "suite": "Partial 1st",
-      "space": "55-61 E Colorado Blvd",
+      "space": "55-61 E Colorado Blvd - 3,624 sf",
       "highStreet": "Street - Colorado Blvd",
       "costarUrl": "https://product.costar.com/detail/all-properties/252234/summary",
       "unitStatus": "Vacant",
       "lat": 34.1460697,
-      "lng": -118.1493084
+      "lng": -118.1493084,
+      "sqft": 3624
     },
     {
       "id": "vacancy-52",
@@ -601,7 +659,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/82291/summary",
       "unitStatus": "Vacant",
       "lat": 34.1455818,
-      "lng": -118.1491311
+      "lng": -118.1491311,
+      "sqft": 2030
     },
     {
       "id": "vacancy-53",
@@ -612,7 +671,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/428748/lease",
       "unitStatus": "Vacant",
       "lat": 34.1454884,
-      "lng": -118.1523581
+      "lng": -118.1523581,
+      "sqft": 4757
     },
     {
       "id": "vacancy-54",
@@ -623,7 +683,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/8166207/summary",
       "unitStatus": "Vacant",
       "lat": 34.1460488,
-      "lng": -118.1525309
+      "lng": -118.1525309,
+      "sqft": 2640
     },
     {
       "id": "vacancy-55",
@@ -634,7 +695,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/10383234/summary",
       "unitStatus": "Vacant",
       "lat": 33.6006466,
-      "lng": -117.8722952
+      "lng": -117.8722952,
+      "sqft": null
     },
     {
       "id": "vacancy-56",
@@ -645,7 +707,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6974843/summary",
       "unitStatus": "Vacant",
       "lat": 33.5978595,
-      "lng": -117.8730142
+      "lng": -117.8730142,
+      "sqft": 1200
     },
     {
       "id": "vacancy-57",
@@ -656,7 +719,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/4266328/summary",
       "unitStatus": "Vacant",
       "lat": 34.0250441,
-      "lng": -118.3949427
+      "lng": -118.3949427,
+      "sqft": null
     },
     {
       "id": "vacancy-58",
@@ -667,18 +731,22 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5449341/summary",
       "unitStatus": "Vacant",
       "lat": 34.0251924,
-      "lng": -118.3944708
+      "lng": -118.3944708,
+      "sqft": 2292,
+      "askingRate": 81
     },
     {
       "id": "vacancy-59",
       "address": "3849 Main Street",
       "suite": "",
-      "space": "3849 Main Street - Vacant -  sf",
+      "space": "3849 Main Street - Vacant - 8,693 sf",
       "highStreet": "Street - Culver City",
       "costarUrl": "https://product.costar.com/detail/all-properties/257989/summary",
       "unitStatus": "Vacant",
       "lat": 34.0122394,
-      "lng": -118.2743241
+      "lng": -118.2743241,
+      "sqft": 8693,
+      "askingRate": 107
     },
     {
       "id": "vacancy-60",
@@ -689,29 +757,32 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/257989/summary",
       "unitStatus": "Vacant",
       "lat": 34.0122327,
-      "lng": -118.2743241
+      "lng": -118.2743241,
+      "sqft": 500
     },
     {
       "id": "vacancy-61",
       "address": "9400-9412 Washington Blvd",
       "suite": "",
-      "space": "9400-9412 Washington Blvd - Vacant -  sf",
+      "space": "9400-9412 Washington Blvd - Vacant - 4,437 sf",
       "highStreet": "Street - Culver City",
       "costarUrl": "https://product.costar.com/detail/all-properties/4029897/summary",
       "unitStatus": "Vacant",
       "lat": 34.0237214,
-      "lng": -118.3934364
+      "lng": -118.3934364,
+      "sqft": 4437
     },
     {
       "id": "vacancy-62",
       "address": "9400-9412 Washington Blvd",
       "suite": "",
-      "space": "9400-9412 Washington Blvd - Vacant - 0 sf",
+      "space": "9400-9412 Washington Blvd - Vacant - 5,366 sf",
       "highStreet": "Street - Culver City",
       "costarUrl": "https://product.costar.com/detail/all-properties/4029897/summary",
       "unitStatus": "Vacant",
       "lat": 34.0237214,
-      "lng": -118.3934364
+      "lng": -118.3934364,
+      "sqft": 5366
     },
     {
       "id": "vacancy-63",
@@ -722,7 +793,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/888113/summary",
       "unitStatus": "Vacant",
       "lat": 34.023122,
-      "lng": -118.3946881
+      "lng": -118.3946881,
+      "sqft": 7264
     },
     {
       "id": "vacancy-64",
@@ -733,7 +805,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/253256/summary",
       "unitStatus": "Vacant",
       "lat": 34.0230729,
-      "lng": -118.3955535
+      "lng": -118.3955535,
+      "sqft": 5400
     },
     {
       "id": "vacancy-65",
@@ -744,7 +817,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/667483/summary",
       "unitStatus": "Vacant",
       "lat": 34.0214822,
-      "lng": -118.3981267
+      "lng": -118.3981267,
+      "sqft": null
     },
     {
       "id": "vacancy-66",
@@ -755,7 +829,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/667483/summary",
       "unitStatus": "Vacant",
       "lat": 34.0214822,
-      "lng": -118.3981267
+      "lng": -118.3981267,
+      "sqft": null
     },
     {
       "id": "vacancy-67",
@@ -766,7 +841,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/11447277/summary",
       "unitStatus": "Vacant",
       "lat": 33.1852232,
-      "lng": -117.3709
+      "lng": -117.3709,
+      "sqft": null
     },
     {
       "id": "vacancy-68",
@@ -777,7 +853,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4037205/summary",
       "unitStatus": "Vacant",
       "lat": 33.0444366,
-      "lng": -117.2933864
+      "lng": -117.2933864,
+      "sqft": 500
     },
     {
       "id": "vacancy-69",
@@ -788,7 +865,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/13810020/summary",
       "unitStatus": "Vacant",
       "lat": 33.043792,
-      "lng": -117.2931453
+      "lng": -117.2931453,
+      "sqft": null
     },
     {
       "id": "vacancy-70",
@@ -799,7 +877,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5503347/summary",
       "unitStatus": "Vacant",
       "lat": 33.0426169,
-      "lng": -117.2936587
+      "lng": -117.2936587,
+      "sqft": 3445
     },
     {
       "id": "vacancy-71",
@@ -810,7 +889,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/35489/summary",
       "unitStatus": "Vacant",
       "lat": 37.1277368,
-      "lng": -121.6491673
+      "lng": -121.6491673,
+      "sqft": 417
     },
     {
       "id": "vacancy-72",
@@ -821,7 +901,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/35489/summary",
       "unitStatus": "Vacant",
       "lat": 37.1277368,
-      "lng": -121.6491673
+      "lng": -121.6491673,
+      "sqft": 1591
     },
     {
       "id": "vacancy-73",
@@ -832,7 +913,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/35489/summary",
       "unitStatus": "Vacant",
       "lat": 37.1277368,
-      "lng": -121.6491673
+      "lng": -121.6491673,
+      "sqft": 630
     },
     {
       "id": "vacancy-74",
@@ -843,7 +925,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/35489/summary",
       "unitStatus": "Vacant",
       "lat": 37.1277368,
-      "lng": -121.6491673
+      "lng": -121.6491673,
+      "sqft": 1425
     },
     {
       "id": "vacancy-75",
@@ -854,7 +937,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/35489/summary",
       "unitStatus": "Vacant",
       "lat": 37.1277368,
-      "lng": -121.6491673
+      "lng": -121.6491673,
+      "sqft": 402
     },
     {
       "id": "vacancy-76",
@@ -865,7 +949,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/35489/summary",
       "unitStatus": "Vacant",
       "lat": 37.1277368,
-      "lng": -121.6491673
+      "lng": -121.6491673,
+      "sqft": 1517
     },
     {
       "id": "vacancy-77",
@@ -876,7 +961,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/35489/summary",
       "unitStatus": "Vacant",
       "lat": 37.1277368,
-      "lng": -121.6491673
+      "lng": -121.6491673,
+      "sqft": 3780
     },
     {
       "id": "vacancy-78",
@@ -887,7 +973,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/348470/summary",
       "unitStatus": "Vacant",
       "lat": 33.0186248,
-      "lng": -117.2026129
+      "lng": -117.2026129,
+      "sqft": null
     },
     {
       "id": "vacancy-79",
@@ -898,7 +985,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/11194730/summary",
       "unitStatus": "Vacant",
       "lat": 34.0479062,
-      "lng": -118.2428028
+      "lng": -118.2428028,
+      "sqft": null
     },
     {
       "id": "vacancy-80",
@@ -909,7 +997,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/10495499/summary",
       "unitStatus": "Vacant",
       "lat": 33.5410842,
-      "lng": -117.782162
+      "lng": -117.782162,
+      "sqft": null
     },
     {
       "id": "vacancy-81",
@@ -920,7 +1009,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/361678/summary",
       "unitStatus": "Vacant",
       "lat": 34.0284054,
-      "lng": -118.2156571
+      "lng": -118.2156571,
+      "sqft": 5600
     },
     {
       "id": "vacancy-82",
@@ -931,7 +1021,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/8303608/summary",
       "unitStatus": "Vacant",
       "lat": 32.7245799,
-      "lng": -117.1700395
+      "lng": -117.1700395,
+      "sqft": 6000
     },
     {
       "id": "vacancy-83",
@@ -942,7 +1033,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/408182/summary",
       "unitStatus": "Vacant",
       "lat": 32.727476,
-      "lng": -117.1706598
+      "lng": -117.1706598,
+      "sqft": 2100
     },
     {
       "id": "vacancy-84",
@@ -953,7 +1045,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/315435/summary",
       "unitStatus": "Vacant",
       "lat": 32.7289864,
-      "lng": -117.1719422
+      "lng": -117.1719422,
+      "sqft": null
     },
     {
       "id": "vacancy-85",
@@ -964,7 +1057,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/315435/summary",
       "unitStatus": "Vacant",
       "lat": 32.7289864,
-      "lng": -117.1719422
+      "lng": -117.1719422,
+      "sqft": null
     },
     {
       "id": "vacancy-86",
@@ -975,7 +1069,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/315435/summary",
       "unitStatus": "Vacant",
       "lat": 32.7289864,
-      "lng": -117.1719422
+      "lng": -117.1719422,
+      "sqft": null
     },
     {
       "id": "vacancy-87",
@@ -986,7 +1081,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/408162/summary",
       "unitStatus": "Vacant",
       "lat": 32.7273599,
-      "lng": -117.1705449
+      "lng": -117.1705449,
+      "sqft": 1734
     },
     {
       "id": "vacancy-88",
@@ -997,7 +1093,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9296190/summary",
       "unitStatus": "Vacant",
       "lat": 32.7260492,
-      "lng": -117.1700318
+      "lng": -117.1700318,
+      "sqft": 1750
     },
     {
       "id": "vacancy-89",
@@ -1008,7 +1105,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/358597/summary",
       "unitStatus": "Vacant",
       "lat": 32.7144577,
-      "lng": -117.1608614
+      "lng": -117.1608614,
+      "sqft": null
     },
     {
       "id": "vacancy-90",
@@ -1019,370 +1117,428 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/35549/summary",
       "unitStatus": "Vacant",
       "lat": 32.714822,
-      "lng": -117.160455
+      "lng": -117.160455,
+      "sqft": null
     },
     {
       "id": "vacancy-91",
       "address": "1000 S Olive St",
       "suite": "Entire 1st",
-      "space": "SPACE-00082",
+      "space": "SPACE-00082 - 7,600 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/5781493/summary",
       "unitStatus": "Vacant",
       "lat": 34.0420927,
-      "lng": -118.2595131
+      "lng": -118.2595131,
+      "sqft": 7600
     },
     {
       "id": "vacancy-92",
       "address": "1360 South Figueroa Street",
       "suite": "E",
-      "space": "SPACE-00086",
+      "space": "SPACE-00086 - 2,100 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/8225222/summary",
       "unitStatus": "Vacant",
       "lat": 34.0390069,
-      "lng": -118.2686802
+      "lng": -118.2686802,
+      "sqft": 2100
     },
     {
       "id": "vacancy-93",
       "address": "215 7th Street",
       "suite": "Partial 1st - 205",
-      "space": "SPACE-00090",
+      "space": "SPACE-00090 - 1,200 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/7284392/summary",
       "unitStatus": "Vacant",
       "lat": 34.0448994,
-      "lng": -118.2526862
+      "lng": -118.2526862,
+      "sqft": 1200,
+      "askingRate": 24.96
     },
     {
       "id": "vacancy-94",
       "address": "215 7th Street",
       "suite": "Partial 1st - 1",
-      "space": "SPACE-00091",
+      "space": "SPACE-00091 - 1,950 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/7284392/summary",
       "unitStatus": "Vacant",
       "lat": 34.0448994,
-      "lng": -118.2526862
+      "lng": -118.2526862,
+      "sqft": 1950,
+      "askingRate": 14.16
     },
     {
       "id": "vacancy-95",
       "address": "300-310 South Broadway",
       "suite": "304 Partial 1st - 220",
-      "space": "SPACE-00093",
+      "space": "SPACE-00093 - 1,847 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248121/summary",
       "unitStatus": "Vacant",
       "lat": 34.050786,
-      "lng": -118.247916
+      "lng": -118.247916,
+      "sqft": 1847,
+      "askingRate": 39
     },
     {
       "id": "vacancy-96",
       "address": "300-310 South Broadway",
       "suite": "304 Partial 1st - 310",
-      "space": "SPACE-00094",
+      "space": "SPACE-00094 - 3,506 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248121/summary",
       "unitStatus": "Vacant",
       "lat": 34.050786,
-      "lng": -118.247916
+      "lng": -118.247916,
+      "sqft": 3506,
+      "askingRate": 42
     },
     {
       "id": "vacancy-97",
       "address": "301 West Olympic Boulevard, Los Angeles",
       "suite": "Unit 3",
-      "space": "SPACE-00095",
+      "space": "SPACE-00095 - 2,048 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248121/summary",
       "unitStatus": "Vacant",
       "lat": 34.041941,
-      "lng": -118.2585998
+      "lng": -118.2585998,
+      "sqft": 2048
     },
     {
       "id": "vacancy-98",
       "address": "301 West Olympic Boulevard, Los Angeles",
       "suite": "Unit 4",
-      "space": "SPACE-00096",
+      "space": "SPACE-00096 - 2,372 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248121/summary",
       "unitStatus": "Vacant",
       "lat": 34.041941,
-      "lng": -118.2585998
+      "lng": -118.2585998,
+      "sqft": 2372
     },
     {
       "id": "vacancy-99",
       "address": "301 West Olympic Boulevard, Los Angeles",
       "suite": "Unit 1",
-      "space": "SPACE-00097",
+      "space": "SPACE-00097 - 2,961 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248121/summary",
       "unitStatus": "Vacant",
       "lat": 34.041941,
-      "lng": -118.2585998
+      "lng": -118.2585998,
+      "sqft": 2961
     },
     {
       "id": "vacancy-100",
       "address": "445 South Figueroa Street, Los Angeles",
       "suite": "101",
-      "space": "SPACE-00098",
+      "space": "SPACE-00098 - 1,106 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248520/summary",
       "unitStatus": "Vacant",
       "lat": 34.053328,
-      "lng": -118.2570789
+      "lng": -118.2570789,
+      "sqft": 1106,
+      "askingRate": 39
     },
     {
       "id": "vacancy-101",
       "address": "445 South Figueroa Street, Los Angeles",
       "suite": "130",
-      "space": "SPACE-00099",
+      "space": "SPACE-00099 - 2,045 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248520/summary",
       "unitStatus": "Vacant",
       "lat": 34.053328,
-      "lng": -118.2570789
+      "lng": -118.2570789,
+      "sqft": 2045,
+      "askingRate": 39
     },
     {
       "id": "vacancy-102",
       "address": "445 South Figueroa Street, Los Angeles",
       "suite": "110",
-      "space": "SPACE-00100",
+      "space": "SPACE-00100 - 2,431 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248520/summary",
       "unitStatus": "Vacant",
       "lat": 34.053328,
-      "lng": -118.2570789
+      "lng": -118.2570789,
+      "sqft": 2431,
+      "askingRate": 39
     },
     {
       "id": "vacancy-103",
       "address": "445 South Figueroa Street, Los Angeles",
       "suite": "100",
-      "space": "SPACE-00101",
+      "space": "SPACE-00101 - 2,501 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248520/summary",
       "unitStatus": "Vacant",
       "lat": 34.053328,
-      "lng": -118.2570789
+      "lng": -118.2570789,
+      "sqft": 2501,
+      "askingRate": 39
     },
     {
       "id": "vacancy-104",
       "address": "500 West 7th Street",
       "suite": "Partial 1st",
-      "space": "SPACE-00102",
+      "space": "SPACE-00102 - 1,200 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/6009513/summary",
       "unitStatus": "Vacant",
       "lat": 34.046592,
-      "lng": -118.2557916
+      "lng": -118.2557916,
+      "sqft": 1200
     },
     {
       "id": "vacancy-105",
       "address": "500 West 7th Street",
       "suite": "Partial 1st - 500",
-      "space": "SPACE-00103",
+      "space": "SPACE-00103 - 2,000 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/6009513/summary",
       "unitStatus": "Vacant",
       "lat": 34.046592,
-      "lng": -118.2557916
+      "lng": -118.2557916,
+      "sqft": 2000
     },
     {
       "id": "vacancy-106",
       "address": "521-527 West 7th Street",
       "suite": "527 - Partial 1st",
-      "space": "SPACE-00106",
+      "space": "SPACE-00106 - 2,000 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/256390/summary",
       "unitStatus": "Vacant",
       "lat": 34.0471236,
-      "lng": -118.2561055
+      "lng": -118.2561055,
+      "sqft": 2000,
+      "askingRate": 33.72
     },
     {
       "id": "vacancy-107",
       "address": "541 South Spring Street",
       "suite": "131",
-      "space": "SPACE-00112",
+      "space": "SPACE-00112 - 547 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/8878375/summary",
       "unitStatus": "Vacant",
       "lat": 34.0468054,
-      "lng": -118.2511091
+      "lng": -118.2511091,
+      "sqft": 547,
+      "askingRate": 48
     },
     {
       "id": "vacancy-108",
       "address": "541 South Spring Street",
       "suite": "128",
-      "space": "SPACE-00113",
+      "space": "SPACE-00113 - 810 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/8878375/summary",
       "unitStatus": "Vacant",
       "lat": 34.0468054,
-      "lng": -118.2511091
+      "lng": -118.2511091,
+      "sqft": 810,
+      "askingRate": 36
     },
     {
       "id": "vacancy-109",
       "address": "541 South Spring Street",
       "suite": "132",
-      "space": "SPACE-00114",
+      "space": "SPACE-00114 - 833 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/8878375/summary",
       "unitStatus": "Vacant",
       "lat": 34.0468054,
-      "lng": -118.2511091
+      "lng": -118.2511091,
+      "sqft": 833,
+      "askingRate": 39
     },
     {
       "id": "vacancy-110",
       "address": "541 South Spring Street",
       "suite": "120-122",
-      "space": "SPACE-00115",
+      "space": "SPACE-00115 - 1,770 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/8878375/summary",
       "unitStatus": "Vacant",
       "lat": 34.0468054,
-      "lng": -118.2511091
+      "lng": -118.2511091,
+      "sqft": 1770,
+      "askingRate": 45
     },
     {
       "id": "vacancy-111",
       "address": "541 South Spring Street",
       "suite": "116-119",
-      "space": "SPACE-00116",
+      "space": "SPACE-00116 - 2,100 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/8878375/summary",
       "unitStatus": "Vacant",
       "lat": 34.0468054,
-      "lng": -118.2511091
+      "lng": -118.2511091,
+      "sqft": 2100,
+      "askingRate": 45
     },
     {
       "id": "vacancy-112",
       "address": "541 South Spring Street",
       "suite": "124-126",
-      "space": "SPACE-00117",
+      "space": "SPACE-00117 - 2,347 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/8878375/summary",
       "unitStatus": "Vacant",
       "lat": 34.0468054,
-      "lng": -118.2511091
+      "lng": -118.2511091,
+      "sqft": 2347,
+      "askingRate": 42
     },
     {
       "id": "vacancy-113",
       "address": "541 South Spring Street",
       "suite": "134-137",
-      "space": "SPACE-00118",
+      "space": "SPACE-00118 - 3,500 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/8878375/summary",
       "unitStatus": "Vacant",
       "lat": 34.0468054,
-      "lng": -118.2511091
+      "lng": -118.2511091,
+      "sqft": 3500,
+      "askingRate": 48
     },
     {
       "id": "vacancy-114",
       "address": "617 West 7th Street",
       "suite": "Plaza",
-      "space": "SPACE-00119",
+      "space": "SPACE-00119 - 16,141 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/248863/summary",
       "unitStatus": "Vacant",
       "lat": 34.0479628,
-      "lng": -118.2572405
+      "lng": -118.2572405,
+      "sqft": 16141,
+      "askingRate": 15.5
     },
     {
       "id": "vacancy-115",
       "address": "648-654 S Broadway, Los Angeles",
       "suite": "Level 1",
-      "space": "SPACE-00120",
+      "space": "SPACE-00120 - 9,600 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/1524987/summary",
       "unitStatus": "Vacant",
       "lat": 34.0453504,
-      "lng": -118.2529238
+      "lng": -118.2529238,
+      "sqft": 9600
     },
     {
       "id": "vacancy-116",
       "address": "710-714 West Olympic Boulevard",
       "suite": "GRND - 712",
-      "space": "SPACE-00122",
+      "space": "SPACE-00122 - 10,000 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/47729/summary",
       "unitStatus": "Vacant",
       "lat": 34.0444837,
-      "lng": -118.2633424
+      "lng": -118.2633424,
+      "sqft": 10000,
+      "askingRate": 30
     },
     {
       "id": "vacancy-117",
       "address": "800 West 7th, Los Angeles",
       "suite": "Partial GRND - 808",
-      "space": "SPACE-00126",
+      "space": "SPACE-00126 - 1,756 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/249265/summary",
       "unitStatus": "Vacant",
       "lat": 34.0486865,
-      "lng": -118.2590467
+      "lng": -118.2590467,
+      "sqft": 1756,
+      "askingRate": 42
     },
     {
       "id": "vacancy-118",
       "address": "800 West 7th, Los Angeles",
       "suite": "Partial GRND - 868",
-      "space": "SPACE-00127",
+      "space": "SPACE-00127 - 2,074 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/249265/summary",
       "unitStatus": "Vacant",
       "lat": 34.0486865,
-      "lng": -118.2590467
+      "lng": -118.2590467,
+      "sqft": 2074,
+      "askingRate": 49.8
     },
     {
       "id": "vacancy-119",
       "address": "800 West 7th, Los Angeles",
       "suite": "Partial GRND - 804",
-      "space": "SPACE-00128",
+      "space": "SPACE-00128 - 2,747 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/249265/summary",
       "unitStatus": "Vacant",
       "lat": 34.0486865,
-      "lng": -118.2590467
+      "lng": -118.2590467,
+      "sqft": 2747,
+      "askingRate": 49.8
     },
     {
       "id": "vacancy-120",
       "address": "800 West 7th, Los Angeles",
       "suite": "Partial GRND - 880",
-      "space": "SPACE-00129",
+      "space": "SPACE-00129 - 3,948 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/249265/summary",
       "unitStatus": "Vacant",
       "lat": 34.0486865,
-      "lng": -118.2590467
+      "lng": -118.2590467,
+      "sqft": 3948,
+      "askingRate": 37
     },
     {
       "id": "vacancy-121",
       "address": "816 South Figueroa Street",
       "suite": "",
-      "space": "816 South Figueroa Street -  -  sf",
+      "space": "816 South Figueroa Street -  - 7,191 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/83648/summary",
       "unitStatus": "Vacant",
       "lat": 34.0473332,
-      "lng": -118.2612733
+      "lng": -118.2612733,
+      "sqft": 7191
     },
     {
       "id": "vacancy-122",
       "address": "888 Figueroa, Los Angeles",
       "suite": "170",
-      "space": "SPACE-00137",
+      "space": "SPACE-00137 - 2,880 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/254124/summary",
       "unitStatus": "Vacant",
       "lat": 34.0466826,
-      "lng": -118.2619572
+      "lng": -118.2619572,
+      "sqft": 2880,
+      "askingRate": 36
     },
     {
       "id": "vacancy-123",
       "address": "888 Figueroa, Los Angeles",
       "suite": "100",
-      "space": "SPACE-00138",
+      "space": "SPACE-00138 - 10,072 sf",
       "highStreet": "Street - Figueroa St",
       "costarUrl": "https://product.costar.com/detail/all-properties/254124/summary",
       "unitStatus": "Vacant",
       "lat": 34.0466826,
-      "lng": -118.2619572
+      "lng": -118.2619572,
+      "sqft": 10072,
+      "askingRate": 48
     },
     {
       "id": "vacancy-124",
@@ -1393,7 +1549,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 21377
     },
     {
       "id": "vacancy-125",
@@ -1404,7 +1561,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 81
     },
     {
       "id": "vacancy-126",
@@ -1415,7 +1573,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 621
     },
     {
       "id": "vacancy-127",
@@ -1426,7 +1585,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 744
     },
     {
       "id": "vacancy-128",
@@ -1437,7 +1597,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 2294
     },
     {
       "id": "vacancy-129",
@@ -1448,7 +1609,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 924
     },
     {
       "id": "vacancy-130",
@@ -1459,7 +1621,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 757
     },
     {
       "id": "vacancy-131",
@@ -1470,7 +1633,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 8298
     },
     {
       "id": "vacancy-132",
@@ -1481,7 +1645,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 590
     },
     {
       "id": "vacancy-133",
@@ -1492,7 +1657,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0490218,
-      "lng": -118.2611684
+      "lng": -118.2611684,
+      "sqft": 655
     },
     {
       "id": "vacancy-134",
@@ -1503,18 +1669,20 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1181487/summary",
       "unitStatus": "Vacant",
       "lat": 34.0415469,
-      "lng": -118.266125
+      "lng": -118.266125,
+      "sqft": null
     },
     {
       "id": "vacancy-135",
       "address": "101-127 S La Brea Ave",
       "suite": "123",
-      "space": "101-127 S La Brea Ave - Vacant Storefront",
+      "space": "101-127 S La Brea Ave - Vacant Storefront - 3,000 sf",
       "highStreet": "Street - La Brea",
       "costarUrl": "https://product.costar.com/detail/all-properties/275176/summary",
       "unitStatus": "Vacant",
       "lat": 34.07338920000001,
-      "lng": -118.3444124
+      "lng": -118.3444124,
+      "sqft": 3000
     },
     {
       "id": "vacancy-136",
@@ -1525,7 +1693,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9884976/summary",
       "unitStatus": "Vacant",
       "lat": 34.0730149,
-      "lng": -118.3437508
+      "lng": -118.3437508,
+      "sqft": 2700,
+      "askingRate": 44.28
     },
     {
       "id": "vacancy-137",
@@ -1536,7 +1706,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1195800/summary",
       "unitStatus": "Vacant",
       "lat": 34.0729564,
-      "lng": -118.3437851
+      "lng": -118.3437851,
+      "sqft": 1070,
+      "askingRate": 59.4
     },
     {
       "id": "vacancy-138",
@@ -1547,7 +1719,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1195800/summary",
       "unitStatus": "Vacant",
       "lat": 34.0729564,
-      "lng": -118.3437851
+      "lng": -118.3437851,
+      "sqft": 973,
+      "askingRate": 59.4
     },
     {
       "id": "vacancy-139",
@@ -1558,7 +1732,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/10979345/summary",
       "unitStatus": "Vacant",
       "lat": 34.07284,
-      "lng": -118.34383
+      "lng": -118.34383,
+      "sqft": 995
     },
     {
       "id": "vacancy-140",
@@ -1569,7 +1744,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/10979345/summary",
       "unitStatus": "Vacant",
       "lat": 34.07284,
-      "lng": -118.34383
+      "lng": -118.34383,
+      "sqft": 1802
     },
     {
       "id": "vacancy-141",
@@ -1580,7 +1756,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/10236574/summary",
       "unitStatus": "Vacant",
       "lat": 34.0727034,
-      "lng": -118.3437518
+      "lng": -118.3437518,
+      "sqft": 1049
     },
     {
       "id": "vacancy-142",
@@ -1591,7 +1768,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/10236574/summary",
       "unitStatus": "Vacant",
       "lat": 34.0727034,
-      "lng": -118.3437518
+      "lng": -118.3437518,
+      "sqft": 494
     },
     {
       "id": "vacancy-143",
@@ -1602,7 +1780,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9801746/summary",
       "unitStatus": "Vacant",
       "lat": 34.074563,
-      "lng": -118.3437992
+      "lng": -118.3437992,
+      "sqft": 2400,
+      "askingRate": 45
     },
     {
       "id": "vacancy-144",
@@ -1613,7 +1793,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/258831/summary",
       "unitStatus": "Vacant",
       "lat": 34.0747125,
-      "lng": -118.3442894
+      "lng": -118.3442894,
+      "sqft": 3809
     },
     {
       "id": "vacancy-145",
@@ -1624,7 +1805,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7026834/summary",
       "unitStatus": "Vacant",
       "lat": 34.0724099,
-      "lng": -118.3437871
+      "lng": -118.3437871,
+      "sqft": 2000
     },
     {
       "id": "vacancy-146",
@@ -1635,7 +1817,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7170377/summary",
       "unitStatus": "Vacant",
       "lat": 34.0720008,
-      "lng": -118.343728
+      "lng": -118.343728,
+      "sqft": 5520
     },
     {
       "id": "vacancy-147",
@@ -1646,7 +1829,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7162717/summary",
       "unitStatus": "Vacant",
       "lat": 34.0751058,
-      "lng": -118.3437079
+      "lng": -118.3437079,
+      "sqft": 1550,
+      "askingRate": 42
     },
     {
       "id": "vacancy-148",
@@ -1657,7 +1842,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7615902/summary",
       "unitStatus": "Vacant",
       "lat": 34.0719325,
-      "lng": -118.344364
+      "lng": -118.344364,
+      "sqft": 4000
     },
     {
       "id": "vacancy-149",
@@ -1668,7 +1854,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/275746/summary",
       "unitStatus": "Vacant",
       "lat": 34.0754929,
-      "lng": -118.3443244
+      "lng": -118.3443244,
+      "sqft": 7000,
+      "askingRate": 34.2
     },
     {
       "id": "vacancy-150",
@@ -1679,7 +1867,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7616746/summary",
       "unitStatus": "Vacant",
       "lat": 34.071455,
-      "lng": -118.344243
+      "lng": -118.344243,
+      "sqft": 659
     },
     {
       "id": "vacancy-151",
@@ -1690,7 +1879,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/469571/summary",
       "unitStatus": "Vacant",
       "lat": 34.0707216,
-      "lng": -118.3437302
+      "lng": -118.3437302,
+      "sqft": 8797
     },
     {
       "id": "vacancy-152",
@@ -1701,7 +1891,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6203392/summary",
       "unitStatus": "Vacant",
       "lat": 34.073761,
-      "lng": -118.3233952
+      "lng": -118.3233952,
+      "sqft": 883
     },
     {
       "id": "vacancy-153",
@@ -1712,7 +1903,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1427881/summary",
       "unitStatus": "Vacant",
       "lat": 34.0748789,
-      "lng": -118.3233659
+      "lng": -118.3233659,
+      "sqft": 10135
     },
     {
       "id": "vacancy-154",
@@ -1723,7 +1915,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/253969/summary",
       "unitStatus": "Vacant",
       "lat": 34.0760358,
-      "lng": -118.3240034
+      "lng": -118.3240034,
+      "sqft": 4000,
+      "askingRate": 132
     },
     {
       "id": "vacancy-155",
@@ -1734,7 +1928,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/255123/summary",
       "unitStatus": "Vacant",
       "lat": 34.076042,
-      "lng": -118.3238903
+      "lng": -118.3238903,
+      "sqft": 535,
+      "askingRate": 132
     },
     {
       "id": "vacancy-156",
@@ -1745,7 +1941,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/255123/summary",
       "unitStatus": "Vacant",
       "lat": 34.076042,
-      "lng": -118.3238903
+      "lng": -118.3238903,
+      "sqft": 3985,
+      "askingRate": 72
     },
     {
       "id": "vacancy-157",
@@ -1756,7 +1954,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/255123/summary",
       "unitStatus": "Vacant",
       "lat": 34.076042,
-      "lng": -118.3238903
+      "lng": -118.3238903,
+      "sqft": 4000
     },
     {
       "id": "vacancy-158",
@@ -1767,7 +1966,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/11077564/summary",
       "unitStatus": "Vacant",
       "lat": 34.0767369,
-      "lng": -118.3232785
+      "lng": -118.3232785,
+      "sqft": null
     },
     {
       "id": "vacancy-159",
@@ -1778,7 +1978,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/8248515/summary",
       "unitStatus": "Vacant",
       "lat": 34.0770644,
-      "lng": -118.3233068
+      "lng": -118.3233068,
+      "sqft": 1250
     },
     {
       "id": "vacancy-160",
@@ -1789,7 +1990,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7586359/summary",
       "unitStatus": "Vacant",
       "lat": 34.078099,
-      "lng": -118.323311
+      "lng": -118.323311,
+      "sqft": 1500,
+      "askingRate": 35.4
     },
     {
       "id": "vacancy-161",
@@ -1800,7 +2003,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7743331/summary",
       "unitStatus": "Vacant",
       "lat": 34.0783949,
-      "lng": -118.3240132
+      "lng": -118.3240132,
+      "sqft": null
     },
     {
       "id": "vacancy-162",
@@ -1811,7 +2015,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/10356303/summary",
       "unitStatus": "Vacant",
       "lat": 34.079101,
-      "lng": -118.3239467
+      "lng": -118.3239467,
+      "sqft": 1500
     },
     {
       "id": "vacancy-163",
@@ -1822,7 +2027,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/255011/summary",
       "unitStatus": "Vacant",
       "lat": 34.0793852,
-      "lng": -118.3234348
+      "lng": -118.3234348,
+      "sqft": 4480
     },
     {
       "id": "vacancy-164",
@@ -1833,7 +2039,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256785/summary",
       "unitStatus": "Vacant",
       "lat": 34.0815271,
-      "lng": -118.3239626
+      "lng": -118.3239626,
+      "sqft": 3300
     },
     {
       "id": "vacancy-165",
@@ -1844,7 +2051,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/248825/summary",
       "unitStatus": "Vacant",
       "lat": 34.0801915,
-      "lng": -118.3233873
+      "lng": -118.3233873,
+      "sqft": 1460,
+      "askingRate": 30.6
     },
     {
       "id": "vacancy-166",
@@ -1855,7 +2064,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/248825/summary",
       "unitStatus": "Vacant",
       "lat": 34.0801915,
-      "lng": -118.3233873
+      "lng": -118.3233873,
+      "sqft": 829,
+      "askingRate": 30.6
     },
     {
       "id": "vacancy-167",
@@ -1866,7 +2077,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/248825/summary",
       "unitStatus": "Vacant",
       "lat": 34.0801915,
-      "lng": -118.3233873
+      "lng": -118.3233873,
+      "sqft": 1032,
+      "askingRate": 30.6
     },
     {
       "id": "vacancy-168",
@@ -1877,7 +2090,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/248825/summary",
       "unitStatus": "Vacant",
       "lat": 34.0801915,
-      "lng": -118.3233873
+      "lng": -118.3233873,
+      "sqft": 1060,
+      "askingRate": 30.6
     },
     {
       "id": "vacancy-169",
@@ -1888,7 +2103,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/252377/summary",
       "unitStatus": "Vacant",
       "lat": 34.0823874,
-      "lng": -118.3233745
+      "lng": -118.3233745,
+      "sqft": 1385
     },
     {
       "id": "vacancy-170",
@@ -1899,7 +2115,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1510959/summary",
       "unitStatus": "Vacant",
       "lat": 34.0825307,
-      "lng": -118.3233351
+      "lng": -118.3233351,
+      "sqft": 750
     },
     {
       "id": "vacancy-171",
@@ -1910,7 +2127,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1510959/summary",
       "unitStatus": "Vacant",
       "lat": 34.0825307,
-      "lng": -118.3233351
+      "lng": -118.3233351,
+      "sqft": 1422
     },
     {
       "id": "vacancy-172",
@@ -1921,7 +2139,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5384835/summary",
       "unitStatus": "Vacant",
       "lat": 34.082866,
-      "lng": -118.324055
+      "lng": -118.324055,
+      "sqft": null
     },
     {
       "id": "vacancy-173",
@@ -1932,7 +2151,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/15610239/summary",
       "unitStatus": "Vacant",
       "lat": 33.8840056,
-      "lng": -118.4101075
+      "lng": -118.4101075,
+      "sqft": null
     },
     {
       "id": "vacancy-174",
@@ -1943,7 +2163,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/249745/summary",
       "unitStatus": "Vacant",
       "lat": 33.8840822,
-      "lng": -118.410971
+      "lng": -118.410971,
+      "sqft": 1953
     },
     {
       "id": "vacancy-175",
@@ -1954,7 +2175,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/249745/summary",
       "unitStatus": "Vacant",
       "lat": 33.8840822,
-      "lng": -118.410971
+      "lng": -118.410971,
+      "sqft": 2000
     },
     {
       "id": "vacancy-176",
@@ -1965,7 +2187,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9122397/summary",
       "unitStatus": "Vacant",
       "lat": 33.8855598,
-      "lng": -118.4097837
+      "lng": -118.4097837,
+      "sqft": null
     },
     {
       "id": "vacancy-177",
@@ -1976,7 +2199,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4028950/summary",
       "unitStatus": "Vacant",
       "lat": 33.8621982,
-      "lng": -118.3991555
+      "lng": -118.3991555,
+      "sqft": 840
     },
     {
       "id": "vacancy-178",
@@ -1987,7 +2211,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9106966/summary",
       "unitStatus": "Vacant",
       "lat": 34.1389743,
-      "lng": -117.9662074
+      "lng": -117.9662074,
+      "sqft": null
     },
     {
       "id": "vacancy-179",
@@ -1998,7 +2223,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/10481260/summary",
       "unitStatus": "Vacant",
       "lat": 33.8847836,
-      "lng": -118.4112252
+      "lng": -118.4112252,
+      "sqft": 1720
     },
     {
       "id": "vacancy-180",
@@ -2009,7 +2235,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9244537/summary",
       "unitStatus": "Vacant",
       "lat": 33.8850889,
-      "lng": -118.4104686
+      "lng": -118.4104686,
+      "sqft": 4816
     },
     {
       "id": "vacancy-181",
@@ -2020,7 +2247,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7700917/summary",
       "unitStatus": "Vacant",
       "lat": 33.8847491,
-      "lng": -118.4097434
+      "lng": -118.4097434,
+      "sqft": 622
     },
     {
       "id": "vacancy-182",
@@ -2031,7 +2259,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/251356/summary",
       "unitStatus": "Vacant",
       "lat": 33.8850066,
-      "lng": -118.4093204
+      "lng": -118.4093204,
+      "sqft": null
     },
     {
       "id": "vacancy-183",
@@ -2042,7 +2271,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6203352/summary",
       "unitStatus": "Vacant",
       "lat": 33.8851323,
-      "lng": -118.4088184
+      "lng": -118.4088184,
+      "sqft": null
     },
     {
       "id": "vacancy-184",
@@ -2053,7 +2283,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7715856/summary",
       "unitStatus": "Vacant",
       "lat": 34.082238,
-      "lng": -118.3767509
+      "lng": -118.3767509,
+      "sqft": null
     },
     {
       "id": "vacancy-185",
@@ -2064,7 +2295,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/664053/summary",
       "unitStatus": "Vacant",
       "lat": 34.08324570000001,
-      "lng": -118.3761439
+      "lng": -118.3761439,
+      "sqft": 3468,
+      "askingRate": 70
     },
     {
       "id": "vacancy-186",
@@ -2075,7 +2308,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/664053/summary",
       "unitStatus": "Vacant",
       "lat": 34.08324570000001,
-      "lng": -118.3761439
+      "lng": -118.3761439,
+      "sqft": 10595,
+      "askingRate": 70
     },
     {
       "id": "vacancy-187",
@@ -2086,7 +2321,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5390663/summary",
       "unitStatus": "Vacant",
       "lat": 34.0840226,
-      "lng": -118.3642286
+      "lng": -118.3642286,
+      "sqft": 2955,
+      "askingRate": 66
     },
     {
       "id": "vacancy-188",
@@ -2097,7 +2334,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1388707/summary",
       "unitStatus": "Vacant",
       "lat": 34.08403,
-      "lng": -118.364355
+      "lng": -118.364355,
+      "sqft": 1300,
+      "askingRate": 62.76
     },
     {
       "id": "vacancy-189",
@@ -2108,7 +2347,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6055599/summary",
       "unitStatus": "Vacant",
       "lat": 34.0839741,
-      "lng": -118.2885395
+      "lng": -118.2885395,
+      "sqft": 2000,
+      "askingRate": 70
     },
     {
       "id": "vacancy-190",
@@ -2119,7 +2360,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4150425/summary",
       "unitStatus": "Vacant",
       "lat": 34.0839741,
-      "lng": -118.2885395
+      "lng": -118.2885395,
+      "sqft": 4000
     },
     {
       "id": "vacancy-191",
@@ -2130,7 +2372,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/87658/summary",
       "unitStatus": "Vacant",
       "lat": 34.0838981,
-      "lng": -118.3666092
+      "lng": -118.3666092,
+      "sqft": 979
     },
     {
       "id": "vacancy-192",
@@ -2141,7 +2384,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/87658/summary",
       "unitStatus": "Vacant",
       "lat": 34.0838981,
-      "lng": -118.3666092
+      "lng": -118.3666092,
+      "sqft": 1836
     },
     {
       "id": "vacancy-193",
@@ -2152,7 +2396,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/87658/summary",
       "unitStatus": "Vacant",
       "lat": 34.0838981,
-      "lng": -118.3666092
+      "lng": -118.3666092,
+      "sqft": 2407
     },
     {
       "id": "vacancy-194",
@@ -2163,7 +2408,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5869940/summary",
       "unitStatus": "Vacant",
       "lat": 34.0839781,
-      "lng": -118.3672095
+      "lng": -118.3672095,
+      "sqft": 6904,
+      "askingRate": 60
     },
     {
       "id": "vacancy-195",
@@ -2174,7 +2421,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6055618/summary",
       "unitStatus": "Vacant",
       "lat": 34.0835352,
-      "lng": -118.3675441
+      "lng": -118.3675441,
+      "sqft": 800,
+      "askingRate": 84
     },
     {
       "id": "vacancy-196",
@@ -2185,7 +2434,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4152763/summary",
       "unitStatus": "Vacant",
       "lat": 34.0835186,
-      "lng": -118.3686206
+      "lng": -118.3686206,
+      "sqft": 2251
     },
     {
       "id": "vacancy-197",
@@ -2196,7 +2446,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4233324/summary",
       "unitStatus": "Vacant",
       "lat": 34.0835197,
-      "lng": -118.3692944
+      "lng": -118.3692944,
+      "sqft": 2620,
+      "askingRate": 74.4
     },
     {
       "id": "vacancy-198",
@@ -2207,7 +2459,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6055612/summary",
       "unitStatus": "Vacant",
       "lat": 34.083475,
-      "lng": -118.3697021
+      "lng": -118.3697021,
+      "sqft": 1000,
+      "askingRate": 69
     },
     {
       "id": "vacancy-199",
@@ -2218,7 +2472,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/27481/summary",
       "unitStatus": "Vacant",
       "lat": 34.0838847,
-      "lng": -118.3696949
+      "lng": -118.3696949,
+      "sqft": 1700,
+      "askingRate": 27
     },
     {
       "id": "vacancy-200",
@@ -2229,7 +2485,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/253470/summary",
       "unitStatus": "Vacant",
       "lat": 34.0834328,
-      "lng": -118.3705325
+      "lng": -118.3705325,
+      "sqft": 2200,
+      "askingRate": 82
     },
     {
       "id": "vacancy-201",
@@ -2240,7 +2498,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/255139/summary",
       "unitStatus": "Vacant",
       "lat": 34.0834742,
-      "lng": -118.3723845
+      "lng": -118.3723845,
+      "sqft": 1104
     },
     {
       "id": "vacancy-202",
@@ -2251,7 +2510,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/255139/summary",
       "unitStatus": "Vacant",
       "lat": 34.0834742,
-      "lng": -118.3723845
+      "lng": -118.3723845,
+      "sqft": 1363
     },
     {
       "id": "vacancy-203",
@@ -2262,7 +2522,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256061/summary",
       "unitStatus": "Vacant",
       "lat": 34.0835365,
-      "lng": -118.3728326
+      "lng": -118.3728326,
+      "sqft": 2000,
+      "askingRate": 70
     },
     {
       "id": "vacancy-204",
@@ -2273,7 +2535,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256061/summary",
       "unitStatus": "Vacant",
       "lat": 34.0835365,
-      "lng": -118.3728326
+      "lng": -118.3728326,
+      "sqft": 2062,
+      "askingRate": 70
     },
     {
       "id": "vacancy-205",
@@ -2284,7 +2548,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256061/summary",
       "unitStatus": "Vacant",
       "lat": 34.0835365,
-      "lng": -118.3728326
+      "lng": -118.3728326,
+      "sqft": 2073,
+      "askingRate": 70
     },
     {
       "id": "vacancy-206",
@@ -2295,7 +2561,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256061/summary",
       "unitStatus": "Vacant",
       "lat": 34.0835365,
-      "lng": -118.3728326
+      "lng": -118.3728326,
+      "sqft": 2422
     },
     {
       "id": "vacancy-207",
@@ -2306,7 +2573,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256061/summary",
       "unitStatus": "Vacant",
       "lat": 34.0835365,
-      "lng": -118.3728326
+      "lng": -118.3728326,
+      "sqft": 7422
     },
     {
       "id": "vacancy-208",
@@ -2317,7 +2585,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/256061/summary",
       "unitStatus": "Vacant",
       "lat": 34.0835365,
-      "lng": -118.3728326
+      "lng": -118.3728326,
+      "sqft": 5400
     },
     {
       "id": "vacancy-209",
@@ -2328,7 +2597,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9943289/summary",
       "unitStatus": "Vacant",
       "lat": 34.0832349,
-      "lng": -118.3735264
+      "lng": -118.3735264,
+      "sqft": 1438
     },
     {
       "id": "vacancy-210",
@@ -2339,7 +2609,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5618347/summary",
       "unitStatus": "Vacant",
       "lat": 34.0830618,
-      "lng": -118.373681
+      "lng": -118.373681,
+      "sqft": 1470
     },
     {
       "id": "vacancy-211",
@@ -2350,7 +2621,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5618347/summary",
       "unitStatus": "Vacant",
       "lat": 34.0830618,
-      "lng": -118.373681
+      "lng": -118.373681,
+      "sqft": 1528
     },
     {
       "id": "vacancy-212",
@@ -2361,29 +2633,32 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5953898/summary",
       "unitStatus": "Vacant",
       "lat": 34.0829765,
-      "lng": -118.3737469
+      "lng": -118.3737469,
+      "sqft": 2117
     },
     {
       "id": "vacancy-213",
       "address": "8461-8463 Melrose Ave, West Hollywood",
       "suite": "",
-      "space": "8461-8463 Melrose Ave, West Hollywood - Vacant Storefront",
+      "space": "8461-8463 Melrose Ave, West Hollywood - Vacant Storefront - 4,122 sf",
       "highStreet": "Street - Melrose",
       "costarUrl": "https://product.costar.com/detail/all-properties/6039412/summary",
       "unitStatus": "Vacant",
       "lat": 34.082783,
-      "lng": -118.375417
+      "lng": -118.375417,
+      "sqft": 4122
     },
     {
       "id": "vacancy-214",
       "address": "8469-8473 Melrose Ave",
       "suite": "8469",
-      "space": "8469-8473 Melrose Ave - Vacant Storefront",
+      "space": "8469-8473 Melrose Ave - Vacant Storefront - 3,467 sf",
       "highStreet": "Street - Melrose",
       "costarUrl": "https://product.costar.com/detail/all-properties/11195197/summary",
       "unitStatus": "Vacant",
       "lat": 34.0826764,
-      "lng": -118.375607
+      "lng": -118.375607,
+      "sqft": 3467
     },
     {
       "id": "vacancy-215",
@@ -2394,7 +2669,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5531115/summary",
       "unitStatus": "Vacant",
       "lat": 34.0825585,
-      "lng": -118.3758925
+      "lng": -118.3758925,
+      "sqft": 4010
     },
     {
       "id": "vacancy-216",
@@ -2405,7 +2681,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/27484/summary",
       "unitStatus": "Vacant",
       "lat": 34.0816583,
-      "lng": -118.3773304
+      "lng": -118.3773304,
+      "sqft": 1174
     },
     {
       "id": "vacancy-217",
@@ -2416,7 +2693,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/27484/summary",
       "unitStatus": "Vacant",
       "lat": 34.0816583,
-      "lng": -118.3773304
+      "lng": -118.3773304,
+      "sqft": 4157
     },
     {
       "id": "vacancy-218",
@@ -2427,7 +2705,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6872171/summary",
       "unitStatus": "Vacant",
       "lat": 34.0297059,
-      "lng": -118.4985595
+      "lng": -118.4985595,
+      "sqft": 302
     },
     {
       "id": "vacancy-219",
@@ -2438,7 +2717,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/255299/summary",
       "unitStatus": "Vacant",
       "lat": 34.0308962,
-      "lng": -118.4970911
+      "lng": -118.4970911,
+      "sqft": 850
     },
     {
       "id": "vacancy-220",
@@ -2449,40 +2729,47 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/255975/summary",
       "unitStatus": "Vacant",
       "lat": 34.0313769,
-      "lng": -118.49579
+      "lng": -118.49579,
+      "sqft": 6944
     },
     {
       "id": "vacancy-221",
       "address": "625 Montana Ave",
       "suite": "C",
-      "space": "SPACE-00227",
+      "space": "SPACE-00227 - 1,260 sf",
       "highStreet": "Street - Montana",
       "costarUrl": "https://product.costar.com/detail/all-properties/761340/summary",
       "unitStatus": "Vacant",
       "lat": 34.0267859,
-      "lng": -118.5023167
+      "lng": -118.5023167,
+      "sqft": 1260,
+      "askingRate": 95
     },
     {
       "id": "vacancy-222",
       "address": "625 Montana Ave",
       "suite": "A",
-      "space": "SPACE-00228",
+      "space": "SPACE-00228 - 1,330 sf",
       "highStreet": "Street - Montana",
       "costarUrl": "https://product.costar.com/detail/all-properties/761340/summary",
       "unitStatus": "Vacant",
       "lat": 34.0267859,
-      "lng": -118.5023167
+      "lng": -118.5023167,
+      "sqft": 1330,
+      "askingRate": 105
     },
     {
       "id": "vacancy-223",
       "address": "625 Montana Ave",
       "suite": "E",
-      "space": "SPACE-00229",
+      "space": "SPACE-00229 - 1,550 sf",
       "highStreet": "Street - Montana",
       "costarUrl": "https://product.costar.com/detail/all-properties/761340/summary",
       "unitStatus": "Vacant",
       "lat": 34.0267859,
-      "lng": -118.5023167
+      "lng": -118.5023167,
+      "sqft": 1550,
+      "askingRate": 90
     },
     {
       "id": "vacancy-224",
@@ -2493,7 +2780,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5449017/summary",
       "unitStatus": "Vacant",
       "lat": 34.02721289999999,
-      "lng": -118.3877267
+      "lng": -118.3877267,
+      "sqft": 24180
     },
     {
       "id": "vacancy-225",
@@ -2504,7 +2792,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5930709/summary",
       "unitStatus": "Vacant",
       "lat": 34.056991,
-      "lng": -118.3833473
+      "lng": -118.3833473,
+      "sqft": null
     },
     {
       "id": "vacancy-226",
@@ -2515,7 +2804,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5928163/summary",
       "unitStatus": "Vacant",
       "lat": 34.0754574,
-      "lng": -118.3834782
+      "lng": -118.3834782,
+      "sqft": null
     },
     {
       "id": "vacancy-227",
@@ -2526,7 +2816,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/249577/summary",
       "unitStatus": "Vacant",
       "lat": 34.075469,
-      "lng": -118.383935
+      "lng": -118.383935,
+      "sqft": null
     },
     {
       "id": "vacancy-228",
@@ -2537,7 +2828,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5930711/summary",
       "unitStatus": "Vacant",
       "lat": 34.074884,
-      "lng": -118.3839753
+      "lng": -118.3839753,
+      "sqft": null
     },
     {
       "id": "vacancy-229",
@@ -2548,7 +2840,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/246977/summary",
       "unitStatus": "Vacant",
       "lat": 34.0748515,
-      "lng": -118.3835832
+      "lng": -118.3835832,
+      "sqft": 1200
     },
     {
       "id": "vacancy-230",
@@ -2559,7 +2852,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/246917/summary",
       "unitStatus": "Vacant",
       "lat": 34.076195,
-      "lng": -118.3831734
+      "lng": -118.3831734,
+      "sqft": null
     },
     {
       "id": "vacancy-231",
@@ -2570,7 +2864,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/520642/summary",
       "unitStatus": "Vacant",
       "lat": 34.0758462,
-      "lng": -118.3840008
+      "lng": -118.3840008,
+      "sqft": 3000
     },
     {
       "id": "vacancy-232",
@@ -2581,7 +2876,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/520642/summary",
       "unitStatus": "Vacant",
       "lat": 34.0758462,
-      "lng": -118.3840008
+      "lng": -118.3840008,
+      "sqft": 1500
     },
     {
       "id": "vacancy-233",
@@ -2592,7 +2888,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5930708/summary",
       "unitStatus": "Vacant",
       "lat": 34.0744274,
-      "lng": -118.3835129
+      "lng": -118.3835129,
+      "sqft": null
     },
     {
       "id": "vacancy-234",
@@ -2603,7 +2900,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5930713/summary",
       "unitStatus": "Vacant",
       "lat": 34.074114,
-      "lng": -118.3841197
+      "lng": -118.3841197,
+      "sqft": null
     },
     {
       "id": "vacancy-235",
@@ -2614,7 +2912,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/254471/summary",
       "unitStatus": "Vacant",
       "lat": 34.0765404,
-      "lng": -118.3840903
+      "lng": -118.3840903,
+      "sqft": null
     },
     {
       "id": "vacancy-236",
@@ -2625,7 +2924,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5917532/summary",
       "unitStatus": "Vacant",
       "lat": 34.0734666,
-      "lng": -118.3835381
+      "lng": -118.3835381,
+      "sqft": null
     },
     {
       "id": "vacancy-237",
@@ -2636,7 +2936,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5691636/summary",
       "unitStatus": "Vacant",
       "lat": 34.0731644,
-      "lng": -118.3835336
+      "lng": -118.3835336,
+      "sqft": null
     },
     {
       "id": "vacancy-238",
@@ -2647,7 +2948,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4705223/summary",
       "unitStatus": "Vacant",
       "lat": 34.0729298,
-      "lng": -118.38379
+      "lng": -118.38379,
+      "sqft": null
     },
     {
       "id": "vacancy-239",
@@ -2658,7 +2960,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6938223/summary",
       "unitStatus": "Vacant",
       "lat": 34.0677444,
-      "lng": -118.3999845
+      "lng": -118.3999845,
+      "sqft": null
     },
     {
       "id": "vacancy-240",
@@ -2669,7 +2972,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6938223/summary",
       "unitStatus": "Vacant",
       "lat": 34.068757,
-      "lng": -118.398708
+      "lng": -118.398708,
+      "sqft": null
     },
     {
       "id": "vacancy-241",
@@ -2680,7 +2984,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/10280011/summary",
       "unitStatus": "Vacant",
       "lat": 34.0685938,
-      "lng": -118.4011047
+      "lng": -118.4011047,
+      "sqft": 4564
     },
     {
       "id": "vacancy-242",
@@ -2691,7 +2996,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/10280011/summary",
       "unitStatus": "Vacant",
       "lat": 34.0685938,
-      "lng": -118.4011047
+      "lng": -118.4011047,
+      "sqft": 5535
     },
     {
       "id": "vacancy-243",
@@ -2702,29 +3008,32 @@
       "costarUrl": "https://product.costar.com/detail/lookup/10280011/summary",
       "unitStatus": "Vacant",
       "lat": 34.0685938,
-      "lng": -118.4011047
+      "lng": -118.4011047,
+      "sqft": 3552
     },
     {
       "id": "vacancy-244",
       "address": "321-325 N Beverly Dr",
       "suite": "",
-      "space": "321-325 N Beverly Dr - Boulmiche",
+      "space": "321-325 N Beverly Dr - Boulmiche - 1,973 sf",
       "highStreet": "Street - Rodeo",
       "costarUrl": "https://product.costar.com/detail/all-properties/5778148/summary",
       "unitStatus": "Vacant",
       "lat": 34.068856,
-      "lng": -118.4010596
+      "lng": -118.4010596,
+      "sqft": 1973
     },
     {
       "id": "vacancy-245",
       "address": "418 N Rodeo Dr, Beverly Hills",
       "suite": "",
-      "space": "418 N Rodeo Dr, Beverly Hills - Philipp Plein",
+      "space": "418 N Rodeo Dr, Beverly Hills - Philipp Plein - 4,853 sf",
       "highStreet": "Street - Rodeo",
       "costarUrl": "https://product.costar.com/detail/all-properties/672667/summary",
       "unitStatus": "Vacant",
       "lat": 34.0696993,
-      "lng": -118.4032441
+      "lng": -118.4032441,
+      "sqft": 4853
     },
     {
       "id": "vacancy-246",
@@ -2735,7 +3044,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/840802/summary",
       "unitStatus": "Vacant",
       "lat": 34.0704415,
-      "lng": -118.4022107
+      "lng": -118.4022107,
+      "sqft": 9195,
+      "askingRate": 168
     },
     {
       "id": "vacancy-247",
@@ -2746,7 +3057,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6021527/summary",
       "unitStatus": "Vacant",
       "lat": 34.07037770000001,
-      "lng": -118.4027779
+      "lng": -118.4027779,
+      "sqft": 1000
     },
     {
       "id": "vacancy-248",
@@ -2757,7 +3069,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/251994/summary",
       "unitStatus": "Vacant",
       "lat": 34.069689,
-      "lng": -118.4037002
+      "lng": -118.4037002,
+      "sqft": null
     },
     {
       "id": "vacancy-249",
@@ -2768,7 +3081,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5451633/summary",
       "unitStatus": "Vacant",
       "lat": 34.0707602,
-      "lng": -118.4030061
+      "lng": -118.4030061,
+      "sqft": null
     },
     {
       "id": "vacancy-250",
@@ -2779,7 +3093,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5805818/summary",
       "unitStatus": "Vacant",
       "lat": 34.0700841,
-      "lng": -118.4043375
+      "lng": -118.4043375,
+      "sqft": null
     },
     {
       "id": "vacancy-251",
@@ -2790,7 +3105,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1547280/summary",
       "unitStatus": "Vacant",
       "lat": 34.0706111,
-      "lng": -118.4039189
+      "lng": -118.4039189,
+      "sqft": null
     },
     {
       "id": "vacancy-252",
@@ -2801,7 +3117,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/5805821/summary",
       "unitStatus": "Vacant",
       "lat": 34.0708279,
-      "lng": -118.4043297
+      "lng": -118.4043297,
+      "sqft": null
     },
     {
       "id": "vacancy-253",
@@ -2812,7 +3129,8 @@
       "costarUrl": "https://product.costar.com/detail/lookup/93731/summary",
       "unitStatus": "Vacant",
       "lat": 34.0713036,
-      "lng": -118.4036386
+      "lng": -118.4036386,
+      "sqft": null
     },
     {
       "id": "vacancy-254",
@@ -2823,7 +3141,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5778151/summary",
       "unitStatus": "Vacant",
       "lat": 34.0710794,
-      "lng": -118.4039646
+      "lng": -118.4039646,
+      "sqft": null
     },
     {
       "id": "vacancy-255",
@@ -2834,7 +3153,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5778151/summary",
       "unitStatus": "Vacant",
       "lat": 34.070982,
-      "lng": -118.404091
+      "lng": -118.404091,
+      "sqft": null
     },
     {
       "id": "vacancy-256",
@@ -2845,7 +3165,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/840810/summary",
       "unitStatus": "Vacant",
       "lat": 34.0695431,
-      "lng": -118.4055945
+      "lng": -118.4055945,
+      "sqft": null
     },
     {
       "id": "vacancy-257",
@@ -2856,7 +3177,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4388919/summary",
       "unitStatus": "Vacant",
       "lat": 33.6358649,
-      "lng": -117.9188426
+      "lng": -117.9188426,
+      "sqft": null
     },
     {
       "id": "vacancy-258",
@@ -2867,7 +3189,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5676877/summary",
       "unitStatus": "Vacant",
       "lat": 33.7878356,
-      "lng": -118.1872584
+      "lng": -118.1872584,
+      "sqft": null
     },
     {
       "id": "vacancy-259",
@@ -2878,7 +3201,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/777068/summary",
       "unitStatus": "Vacant",
       "lat": 33.6299614,
-      "lng": -117.9104171
+      "lng": -117.9104171,
+      "sqft": null
     },
     {
       "id": "vacancy-260",
@@ -2889,7 +3213,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1253322/summary",
       "unitStatus": "Vacant",
       "lat": 34.087444,
-      "lng": -118.2754793
+      "lng": -118.2754793,
+      "sqft": 1200,
+      "askingRate": 99
     },
     {
       "id": "vacancy-261",
@@ -2900,7 +3226,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7288694/summary",
       "unitStatus": "Vacant",
       "lat": 34.0892178,
-      "lng": -118.2769067
+      "lng": -118.2769067,
+      "sqft": 700
     },
     {
       "id": "vacancy-262",
@@ -2911,7 +3238,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5814114/summary",
       "unitStatus": "Vacant",
       "lat": 34.08975,
-      "lng": -118.27715
+      "lng": -118.27715,
+      "sqft": 13382,
+      "askingRate": 40
     },
     {
       "id": "vacancy-263",
@@ -2922,7 +3251,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5630803/summary",
       "unitStatus": "Vacant",
       "lat": 34.0913625,
-      "lng": -118.2790436
+      "lng": -118.2790436,
+      "sqft": 987
     },
     {
       "id": "vacancy-264",
@@ -2933,7 +3263,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6326242/summary",
       "unitStatus": "Vacant",
       "lat": 34.0915798,
-      "lng": -118.2798641
+      "lng": -118.2798641,
+      "sqft": 1746
     },
     {
       "id": "vacancy-265",
@@ -2944,7 +3275,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6326243/summary",
       "unitStatus": "Vacant",
       "lat": 34.09272,
-      "lng": -118.2803857
+      "lng": -118.2803857,
+      "sqft": 1000,
+      "askingRate": 84
     },
     {
       "id": "vacancy-266",
@@ -2955,7 +3288,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6326243/summary",
       "unitStatus": "Vacant",
       "lat": 34.09272,
-      "lng": -118.2803857
+      "lng": -118.2803857,
+      "sqft": 1000,
+      "askingRate": 84
     },
     {
       "id": "vacancy-267",
@@ -2966,29 +3301,33 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4681337/summary",
       "unitStatus": "Vacant",
       "lat": 34.0386234,
-      "lng": -118.4677246
+      "lng": -118.4677246,
+      "sqft": null
     },
     {
       "id": "vacancy-268",
       "address": "4330-4334 W Sunset Blvd",
       "suite": "4334",
-      "space": "SPACE-00250",
+      "space": "SPACE-00250 - 1,300 sf",
       "highStreet": "Street - Silver Lake",
       "costarUrl": "https://product.costar.com/detail/all-properties/6346789/summary",
       "unitStatus": "Vacant",
       "lat": 34.0951285,
-      "lng": -118.2837922
+      "lng": -118.2837922,
+      "sqft": 1300
     },
     {
       "id": "vacancy-269",
       "address": "8519-8527 W Sunset Blvd",
       "suite": "",
-      "space": "8519-8527 W Sunset Blvd - Vacant Storefront",
+      "space": "8519-8527 W Sunset Blvd - Vacant Storefront - 1,774 sf",
       "highStreet": "Street - Sunset Blvd",
       "costarUrl": "https://product.costar.com/detail/all-properties/664340/summary",
       "unitStatus": "Vacant",
       "lat": 34.0941458,
-      "lng": -118.3771977
+      "lng": -118.3771977,
+      "sqft": 1774,
+      "askingRate": 48
     },
     {
       "id": "vacancy-270",
@@ -2999,7 +3338,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/664340/summary",
       "unitStatus": "Vacant",
       "lat": 34.0939873,
-      "lng": -118.3774242
+      "lng": -118.3774242,
+      "sqft": 3340
     },
     {
       "id": "vacancy-271",
@@ -3010,7 +3350,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/664340/summary",
       "unitStatus": "Vacant",
       "lat": 34.0939873,
-      "lng": -118.3774242
+      "lng": -118.3774242,
+      "sqft": 3640
     },
     {
       "id": "vacancy-272",
@@ -3021,7 +3362,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/664340/summary",
       "unitStatus": "Vacant",
       "lat": 34.0939873,
-      "lng": -118.3774242
+      "lng": -118.3774242,
+      "sqft": 3640
     },
     {
       "id": "vacancy-273",
@@ -3032,7 +3374,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/664340/summary",
       "unitStatus": "Vacant",
       "lat": 34.0939873,
-      "lng": -118.3774242
+      "lng": -118.3774242,
+      "sqft": 1220
     },
     {
       "id": "vacancy-274",
@@ -3043,7 +3386,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/656672/summary",
       "unitStatus": "Vacant",
       "lat": 34.0937986,
-      "lng": -118.3778904
+      "lng": -118.3778904,
+      "sqft": 600,
+      "askingRate": 51
     },
     {
       "id": "vacancy-275",
@@ -3054,7 +3399,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1026877/summary",
       "unitStatus": "Vacant",
       "lat": 34.0934777,
-      "lng": -118.3782623
+      "lng": -118.3782623,
+      "sqft": 1764
     },
     {
       "id": "vacancy-276",
@@ -3065,7 +3411,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/852453/summary",
       "unitStatus": "Vacant",
       "lat": 34.0926357,
-      "lng": -118.3785592
+      "lng": -118.3785592,
+      "sqft": 2818
     },
     {
       "id": "vacancy-277",
@@ -3076,7 +3423,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/852453/summary",
       "unitStatus": "Vacant",
       "lat": 34.0926357,
-      "lng": -118.3785592
+      "lng": -118.3785592,
+      "sqft": 4057
     },
     {
       "id": "vacancy-278",
@@ -3087,7 +3435,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/852540/summary",
       "unitStatus": "Vacant",
       "lat": 34.0923346,
-      "lng": -118.3788778
+      "lng": -118.3788778,
+      "sqft": 4207
     },
     {
       "id": "vacancy-279",
@@ -3098,7 +3447,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/253090/summary",
       "unitStatus": "Vacant",
       "lat": 34.092377,
-      "lng": -118.3800237
+      "lng": -118.3800237,
+      "sqft": 988
     },
     {
       "id": "vacancy-280",
@@ -3109,7 +3459,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/253090/summary",
       "unitStatus": "Vacant",
       "lat": 34.09185,
-      "lng": -118.3801137
+      "lng": -118.3801137,
+      "sqft": 2127
     },
     {
       "id": "vacancy-281",
@@ -3120,7 +3471,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6995012/summary",
       "unitStatus": "Vacant",
       "lat": 34.09119680000001,
-      "lng": -118.3818262
+      "lng": -118.3818262,
+      "sqft": null
     },
     {
       "id": "vacancy-282",
@@ -3131,18 +3483,21 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/9432289/summary",
       "unitStatus": "Vacant",
       "lat": 34.0910613,
-      "lng": -118.3824661
+      "lng": -118.3824661,
+      "sqft": null
     },
     {
       "id": "vacancy-283",
       "address": "8776-8778 W Sunset Blvd",
       "suite": "",
-      "space": "8776-8778 W Sunset Blvd - Vacant Storefront",
+      "space": "8776-8778 W Sunset Blvd - Vacant Storefront - 1,900 sf",
       "highStreet": "Street - Sunset Blvd",
       "costarUrl": "https://product.costar.com/detail/all-properties/365286/summary",
       "unitStatus": "Vacant",
       "lat": 34.0909665,
-      "lng": -118.3825838
+      "lng": -118.3825838,
+      "sqft": 1900,
+      "askingRate": 72
     },
     {
       "id": "vacancy-284",
@@ -3153,7 +3508,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/757197/summary",
       "unitStatus": "Vacant",
       "lat": 34.0182106,
-      "lng": -118.4985078
+      "lng": -118.4985078,
+      "sqft": null
     },
     {
       "id": "vacancy-285",
@@ -3164,7 +3520,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4473603/summary",
       "unitStatus": "Vacant",
       "lat": 34.0170489,
-      "lng": -118.49812
+      "lng": -118.49812,
+      "sqft": 3818
     },
     {
       "id": "vacancy-286",
@@ -3175,18 +3532,20 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/757203/summary",
       "unitStatus": "Vacant",
       "lat": 34.0177248,
-      "lng": -118.4987555
+      "lng": -118.4987555,
+      "sqft": 15000
     },
     {
       "id": "vacancy-287",
       "address": "1227 3rd Street Promenade",
       "suite": "1227",
-      "space": "1227 3rd Street Promenade",
+      "space": "1227 3rd Street Promenade - 3,000 sf",
       "highStreet": "Street - Third Street Promenade",
       "costarUrl": "https://product.costar.com/detail/all-properties/757203/summary",
       "unitStatus": "Vacant",
       "lat": 34.017907,
-      "lng": -118.498214
+      "lng": -118.498214,
+      "sqft": 3000
     },
     {
       "id": "vacancy-288",
@@ -3197,7 +3556,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6965753/summary",
       "unitStatus": "Vacant",
       "lat": 34.0175046,
-      "lng": -118.4987451
+      "lng": -118.4987451,
+      "sqft": 7500,
+      "askingRate": 59.4
     },
     {
       "id": "vacancy-289",
@@ -3208,7 +3569,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7000294/summary",
       "unitStatus": "Vacant",
       "lat": 34.0176573,
-      "lng": -118.498006
+      "lng": -118.498006,
+      "sqft": 3000
     },
     {
       "id": "vacancy-290",
@@ -3219,18 +3581,20 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7000294/summary",
       "unitStatus": "Vacant",
       "lat": 34.0176573,
-      "lng": -118.498006
+      "lng": -118.498006,
+      "sqft": 7500
     },
     {
       "id": "vacancy-291",
       "address": "1315 3rd Street Promenade",
       "suite": "Partial 1st",
-      "space": "1315 3rd Street Promenade",
+      "space": "1315 3rd Street Promenade - 5,821 sf",
       "highStreet": "Street - Third Street Promenade",
       "costarUrl": "https://product.costar.com/detail/all-properties/6965849/summary",
       "unitStatus": "Vacant",
       "lat": 34.01672180000001,
-      "lng": -118.4969629
+      "lng": -118.4969629,
+      "sqft": 5821
     },
     {
       "id": "vacancy-292",
@@ -3241,7 +3605,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/247059/summary",
       "unitStatus": "Vacant",
       "lat": 34.0164671,
-      "lng": -118.4975726
+      "lng": -118.4975726,
+      "sqft": 1864,
+      "askingRate": 35.88
     },
     {
       "id": "vacancy-293",
@@ -3252,7 +3618,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/247059/summary",
       "unitStatus": "Vacant",
       "lat": 34.0164671,
-      "lng": -118.4975726
+      "lng": -118.4975726,
+      "sqft": 3073,
+      "askingRate": 35.88
     },
     {
       "id": "vacancy-294",
@@ -3263,7 +3631,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/247059/summary",
       "unitStatus": "Vacant",
       "lat": 34.0164671,
-      "lng": -118.4975726
+      "lng": -118.4975726,
+      "sqft": 8017,
+      "askingRate": 35.88
     },
     {
       "id": "vacancy-295",
@@ -3274,7 +3644,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4030257/summary",
       "unitStatus": "Vacant",
       "lat": 34.0167237,
-      "lng": -118.4968314
+      "lng": -118.4968314,
+      "sqft": 2561
     },
     {
       "id": "vacancy-296",
@@ -3285,7 +3656,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/348165/summary",
       "unitStatus": "Vacant",
       "lat": 34.0162732,
-      "lng": -118.4973902
+      "lng": -118.4973902,
+      "sqft": 6033
     },
     {
       "id": "vacancy-297",
@@ -3296,7 +3668,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/348165/summary",
       "unitStatus": "Vacant",
       "lat": 34.0162732,
-      "lng": -118.4973902
+      "lng": -118.4973902,
+      "sqft": 6577
     },
     {
       "id": "vacancy-298",
@@ -3307,7 +3680,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/348165/summary",
       "unitStatus": "Vacant",
       "lat": 34.0162732,
-      "lng": -118.4973902
+      "lng": -118.4973902,
+      "sqft": 8500
     },
     {
       "id": "vacancy-299",
@@ -3318,7 +3692,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/348165/summary",
       "unitStatus": "Vacant",
       "lat": 34.0162732,
-      "lng": -118.4973902
+      "lng": -118.4973902,
+      "sqft": 13005
     },
     {
       "id": "vacancy-300",
@@ -3329,7 +3704,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
       "unitStatus": "Vacant",
       "lat": 34.0160579,
-      "lng": -118.4960217
+      "lng": -118.4960217,
+      "sqft": 6859
     },
     {
       "id": "vacancy-301",
@@ -3340,7 +3716,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
       "unitStatus": "Vacant",
       "lat": 34.0160579,
-      "lng": -118.4960217
+      "lng": -118.4960217,
+      "sqft": 6945
     },
     {
       "id": "vacancy-302",
@@ -3351,7 +3728,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
       "unitStatus": "Vacant",
       "lat": 34.0160579,
-      "lng": -118.4960217
+      "lng": -118.4960217,
+      "sqft": 7008
     },
     {
       "id": "vacancy-303",
@@ -3362,7 +3740,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6965866/summary",
       "unitStatus": "Vacant",
       "lat": 34.0160579,
-      "lng": -118.4960217
+      "lng": -118.4960217,
+      "sqft": 7008
     },
     {
       "id": "vacancy-304",
@@ -3373,7 +3752,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/836231/summary",
       "unitStatus": "Vacant",
       "lat": 34.0156233,
-      "lng": -118.4964779
+      "lng": -118.4964779,
+      "sqft": null
     },
     {
       "id": "vacancy-305",
@@ -3384,7 +3764,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/890809/summary",
       "unitStatus": "Vacant",
       "lat": 34.0156783,
-      "lng": -118.495862
+      "lng": -118.495862,
+      "sqft": 3297,
+      "askingRate": 30
     },
     {
       "id": "vacancy-306",
@@ -3395,7 +3777,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/6965972/summary",
       "unitStatus": "Vacant",
       "lat": 34.0147905,
-      "lng": -118.4956568
+      "lng": -118.4956568,
+      "sqft": null
     },
     {
       "id": "vacancy-307",
@@ -3406,7 +3789,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/584438/summary",
       "unitStatus": "Vacant",
       "lat": 34.0152347,
-      "lng": -118.4953624
+      "lng": -118.4953624,
+      "sqft": 2342
     },
     {
       "id": "vacancy-308",
@@ -3417,7 +3801,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/584438/summary",
       "unitStatus": "Vacant",
       "lat": 34.0152347,
-      "lng": -118.4953624
+      "lng": -118.4953624,
+      "sqft": 3470
     },
     {
       "id": "vacancy-309",
@@ -3428,7 +3813,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/7000301/summary",
       "unitStatus": "Vacant",
       "lat": 34.015231,
-      "lng": -118.495082
+      "lng": -118.495082,
+      "sqft": 3582
     },
     {
       "id": "vacancy-310",
@@ -3439,7 +3825,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
       "unitStatus": "Vacant",
       "lat": 34.0147509,
-      "lng": -118.494689
+      "lng": -118.494689,
+      "sqft": 1239
     },
     {
       "id": "vacancy-311",
@@ -3450,7 +3837,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
       "unitStatus": "Vacant",
       "lat": 34.0147509,
-      "lng": -118.494689
+      "lng": -118.494689,
+      "sqft": 3250
     },
     {
       "id": "vacancy-312",
@@ -3461,7 +3849,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/99621/summary",
       "unitStatus": "Vacant",
       "lat": 34.0147509,
-      "lng": -118.494689
+      "lng": -118.494689,
+      "sqft": 3537
     },
     {
       "id": "vacancy-313",
@@ -3472,7 +3861,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/361502/summary",
       "unitStatus": "Vacant",
       "lat": 34.0144578,
-      "lng": -118.4949415
+      "lng": -118.4949415,
+      "sqft": 1200
     },
     {
       "id": "vacancy-314",
@@ -3483,7 +3873,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/361502/summary",
       "unitStatus": "Vacant",
       "lat": 34.0144578,
-      "lng": -118.4949415
+      "lng": -118.4949415,
+      "sqft": 5127
     },
     {
       "id": "vacancy-315",
@@ -3494,7 +3885,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/361502/summary",
       "unitStatus": "Vacant",
       "lat": 34.0144578,
-      "lng": -118.4949415
+      "lng": -118.4949415,
+      "sqft": 4000
     },
     {
       "id": "vacancy-316",
@@ -3505,7 +3897,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/361502/summary",
       "unitStatus": "Vacant",
       "lat": 34.0144578,
-      "lng": -118.4949415
+      "lng": -118.4949415,
+      "sqft": 7459
     },
     {
       "id": "vacancy-317",
@@ -3516,7 +3909,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/248103/summary",
       "unitStatus": "Vacant",
       "lat": 34.0167872,
-      "lng": -118.4981812
+      "lng": -118.4981812,
+      "sqft": 2645,
+      "askingRate": 59.4
     },
     {
       "id": "vacancy-318",
@@ -3527,7 +3922,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/248103/summary",
       "unitStatus": "Vacant",
       "lat": 34.0173466,
-      "lng": -118.4975726
+      "lng": -118.4975726,
+      "sqft": 7623
     },
     {
       "id": "vacancy-319",
@@ -3538,7 +3934,9 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/248103/summary",
       "unitStatus": "Vacant",
       "lat": 34.0173466,
-      "lng": -118.4975726
+      "lng": -118.4975726,
+      "sqft": 3002,
+      "askingRate": 63
     },
     {
       "id": "vacancy-320",
@@ -3549,7 +3947,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/12403930/summary",
       "unitStatus": "Vacant",
       "lat": 34.0157629,
-      "lng": -118.4956453
+      "lng": -118.4956453,
+      "sqft": 1600
     },
     {
       "id": "vacancy-321",
@@ -3560,7 +3959,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5438195/summary",
       "unitStatus": "Vacant",
       "lat": 34.1432476,
-      "lng": -118.3914706
+      "lng": -118.3914706,
+      "sqft": null
     },
     {
       "id": "vacancy-322",
@@ -3571,7 +3971,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5439338/summary",
       "unitStatus": "Vacant",
       "lat": 34.1432844,
-      "lng": -118.3916827
+      "lng": -118.3916827,
+      "sqft": null
     },
     {
       "id": "vacancy-323",
@@ -3582,7 +3983,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1171754/summary",
       "unitStatus": "Vacant",
       "lat": 34.1433427,
-      "lng": -118.3927377
+      "lng": -118.3927377,
+      "sqft": 3269
     },
     {
       "id": "vacancy-324",
@@ -3593,7 +3995,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1171754/summary",
       "unitStatus": "Vacant",
       "lat": 34.1433427,
-      "lng": -118.3927377
+      "lng": -118.3927377,
+      "sqft": 5630
     },
     {
       "id": "vacancy-325",
@@ -3604,7 +4007,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1338951/summary",
       "unitStatus": "Vacant",
       "lat": 34.1439272,
-      "lng": -118.3941887
+      "lng": -118.3941887,
+      "sqft": null
     },
     {
       "id": "vacancy-326",
@@ -3615,7 +4019,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/27897/summary",
       "unitStatus": "Vacant",
       "lat": 34.1438445,
-      "lng": -118.3944129
+      "lng": -118.3944129,
+      "sqft": null
     },
     {
       "id": "vacancy-327",
@@ -3626,7 +4031,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5449629/summary",
       "unitStatus": "Vacant",
       "lat": 34.1432737,
-      "lng": -118.3945849
+      "lng": -118.3945849,
+      "sqft": 1625
     },
     {
       "id": "vacancy-328",
@@ -3637,7 +4043,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5449629/summary",
       "unitStatus": "Vacant",
       "lat": 34.1432737,
-      "lng": -118.3945849
+      "lng": -118.3945849,
+      "sqft": 3269
     },
     {
       "id": "vacancy-329",
@@ -3648,7 +4055,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5449629/summary",
       "unitStatus": "Vacant",
       "lat": 34.1432737,
-      "lng": -118.3945849
+      "lng": -118.3945849,
+      "sqft": 1210
     },
     {
       "id": "vacancy-330",
@@ -3659,7 +4067,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1460972/summary",
       "unitStatus": "Vacant",
       "lat": 34.1442299,
-      "lng": -118.397141
+      "lng": -118.397141,
+      "sqft": 3000
     },
     {
       "id": "vacancy-331",
@@ -3670,7 +4079,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1460972/summary",
       "unitStatus": "Vacant",
       "lat": 34.1442299,
-      "lng": -118.397141
+      "lng": -118.397141,
+      "sqft": null
     },
     {
       "id": "vacancy-332",
@@ -3681,7 +4091,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5439739/summary",
       "unitStatus": "Vacant",
       "lat": 34.1436344,
-      "lng": -118.3973241
+      "lng": -118.3973241,
+      "sqft": null
     },
     {
       "id": "vacancy-333",
@@ -3692,7 +4103,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5444127/summary",
       "unitStatus": "Vacant",
       "lat": 34.143068,
-      "lng": -118.3984696
+      "lng": -118.3984696,
+      "sqft": null
     },
     {
       "id": "vacancy-334",
@@ -3703,7 +4115,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/888954/summary",
       "unitStatus": "Vacant",
       "lat": 34.1430125,
-      "lng": -118.39878
+      "lng": -118.39878,
+      "sqft": null
     },
     {
       "id": "vacancy-335",
@@ -3714,7 +4127,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/611295/summary",
       "unitStatus": "Vacant",
       "lat": 34.1440625,
-      "lng": -118.3989211
+      "lng": -118.3989211,
+      "sqft": null
     },
     {
       "id": "vacancy-336",
@@ -3725,7 +4139,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5439244/summary",
       "unitStatus": "Vacant",
       "lat": 34.1429838,
-      "lng": -118.3991122
+      "lng": -118.3991122,
+      "sqft": null
     },
     {
       "id": "vacancy-337",
@@ -3736,7 +4151,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5443864/summary",
       "unitStatus": "Vacant",
       "lat": 34.1429497,
-      "lng": -118.4004213
+      "lng": -118.4004213,
+      "sqft": null
     },
     {
       "id": "vacancy-338",
@@ -3747,7 +4163,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/42206/summary",
       "unitStatus": "Vacant",
       "lat": 34.143539,
-      "lng": -118.4003878
+      "lng": -118.4003878,
+      "sqft": 1750
     },
     {
       "id": "vacancy-339",
@@ -3758,7 +4175,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/42206/summary",
       "unitStatus": "Vacant",
       "lat": 34.143539,
-      "lng": -118.4003878
+      "lng": -118.4003878,
+      "sqft": 580
     },
     {
       "id": "vacancy-340",
@@ -3769,7 +4187,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5439651/summary",
       "unitStatus": "Vacant",
       "lat": 34.1425511,
-      "lng": -118.4043025
+      "lng": -118.4043025,
+      "sqft": 2400
     },
     {
       "id": "vacancy-341",
@@ -3780,7 +4199,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/4506407/summary",
       "unitStatus": "Vacant",
       "lat": 34.142652,
-      "lng": -118.4065661
+      "lng": -118.4065661,
+      "sqft": 3500
     },
     {
       "id": "vacancy-342",
@@ -3791,7 +4211,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5440279/summary",
       "unitStatus": "Vacant",
       "lat": 34.1426688,
-      "lng": -118.4066818
+      "lng": -118.4066818,
+      "sqft": null
     },
     {
       "id": "vacancy-343",
@@ -3802,7 +4223,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/5440279/summary",
       "unitStatus": "Vacant",
       "lat": 34.14361940000001,
-      "lng": -118.4069082
+      "lng": -118.4069082,
+      "sqft": null
     },
     {
       "id": "vacancy-344",
@@ -3813,7 +4235,8 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1526783/summary",
       "unitStatus": "Vacant",
       "lat": 34.1619047,
-      "lng": -118.5180388
+      "lng": -118.5180388,
+      "sqft": null
     },
     {
       "id": "vacancy-345",
@@ -3824,18 +4247,437 @@
       "costarUrl": "https://product.costar.com/detail/all-properties/1577677/summary",
       "unitStatus": "Vacant",
       "lat": 34.1682032,
-      "lng": -118.6048269
+      "lng": -118.6048269,
+      "sqft": null
     },
     {
-      "id": "vacancy-346",
-      "address": "Test 1",
+      "id": "vacancy-347",
+      "address": "1321-1325 Abbot Kinney Blvd",
       "suite": "",
-      "space": "Test 1 - Vacant - 12,455,899 sf",
-      "highStreet": "Street - York Blvd",
-      "costarUrl": "https://product.costar.com/detail/all-properties/522/summary",
+      "space": "1321-1325 Abbot Kinney Blvd, Venice - On Market Available - 1,683 sf",
+      "highStreet": "Street - Abbot Kinney",
+      "costarUrl": "",
+      "unitStatus": "Available",
+      "sqft": 1683,
+      "askingRate": null,
+      "lat": 33.991195,
+      "lng": -118.467285
+    },
+    {
+      "id": "vacancy-348",
+      "address": "618-622 S Broadway",
+      "suite": "",
+      "space": "618-622 S Broadway, Los Angeles - Vacant Storefront - 4,000 sf",
+      "highStreet": "Street - Broadway",
+      "costarUrl": "",
       "unitStatus": "Vacant",
-      "lat": 34.0741136,
-      "lng": -118.3321667
+      "sqft": 4000,
+      "askingRate": null,
+      "lat": 34.0460917,
+      "lng": -118.2523742
+    },
+    {
+      "id": "vacancy-349",
+      "address": "900 S Broadway",
+      "suite": "",
+      "space": "900 S Broadway, Los Angeles - Vacant Storefront - 500 sf",
+      "highStreet": "Street - Broadway",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 500,
+      "askingRate": null,
+      "lat": 34.042167,
+      "lng": -118.2560484
+    },
+    {
+      "id": "vacancy-350",
+      "address": "535 S Broadway",
+      "suite": "",
+      "space": "535 S Broadway, Los Angeles - Vacant Storefront",
+      "highStreet": "Street - Broadway",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": null,
+      "askingRate": null,
+      "lat": 34.047463,
+      "lng": -118.2518107
+    },
+    {
+      "id": "vacancy-351",
+      "address": "631-635 S Broadway",
+      "suite": "",
+      "space": "631-635 S Broadway - Vacant Storefront - 1,000 sf",
+      "highStreet": "Street - Broadway",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 1000,
+      "askingRate": null,
+      "lat": 34.046,
+      "lng": -118.25293
+    },
+    {
+      "id": "vacancy-352",
+      "address": "631-635 S Broadway",
+      "suite": "",
+      "space": "631-635 S Broadway - Vacant Storefront - 1,000 sf",
+      "highStreet": "Street - Broadway",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 1000,
+      "askingRate": null,
+      "lat": 34.046,
+      "lng": -118.25293
+    },
+    {
+      "id": "vacancy-353",
+      "address": "631-635 S Broadway",
+      "suite": "",
+      "space": "631-635 S Broadway - Vacant Storefront - 500 sf",
+      "highStreet": "Street - Broadway",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 500,
+      "askingRate": null,
+      "lat": 34.046,
+      "lng": -118.25293
+    },
+    {
+      "id": "vacancy-354",
+      "address": "445 S Broadway",
+      "suite": "",
+      "space": "445 S Broadway - Vacant Storefront - 1,000 sf",
+      "highStreet": "Street - Broadway",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 1000,
+      "askingRate": null,
+      "lat": 34.0486797,
+      "lng": -118.2507077
+    },
+    {
+      "id": "vacancy-355",
+      "address": "445 S Broadway",
+      "suite": "",
+      "space": "445 S Broadway - Vacant Storefront - 500 sf",
+      "highStreet": "Street - Broadway",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 500,
+      "askingRate": null,
+      "lat": 34.0486797,
+      "lng": -118.2507077
+    },
+    {
+      "id": "vacancy-356",
+      "address": "3809 Main Street",
+      "suite": "",
+      "space": "3809 Main Street - Vacant -  sf",
+      "highStreet": "Street - Culver City",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": null,
+      "askingRate": null,
+      "lat": 34.01271,
+      "lng": -118.27417
+    },
+    {
+      "id": "vacancy-357",
+      "address": "FIGat7th",
+      "suite": "KC",
+      "space": "FIGat7th - Suite KC-3 - 81 sf",
+      "highStreet": "Street - Figueroa St",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 81,
+      "askingRate": null,
+      "lat": 34.0490218,
+      "lng": -118.2611684
+    },
+    {
+      "id": "vacancy-358",
+      "address": "141-143 N La Brea Ave",
+      "suite": "141",
+      "space": "141-143 N La Brea Ave - Suite 141-143 - 5,200 sf",
+      "highStreet": "Street - La Brea",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 5200,
+      "askingRate": 2750000,
+      "lat": 34.074792,
+      "lng": -118.344383
+    },
+    {
+      "id": "vacancy-359",
+      "address": "1212",
+      "suite": "",
+      "space": "1212 - 1220 Highland Ave - Vacant -  sf",
+      "highStreet": "Street - Manhattan Beach",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": null,
+      "askingRate": null,
+      "lat": 33.9910807,
+      "lng": -118.4688547
+    },
+    {
+      "id": "vacancy-360",
+      "address": "8303-8315 Melrose Ave",
+      "suite": "8303 Level 1",
+      "space": "8303-8315 Melrose Ave - Suite 8303 Level 1 - 6,359 sf",
+      "highStreet": "Street - Melrose",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 6359,
+      "askingRate": null,
+      "lat": 34.0839299,
+      "lng": -118.3705208
+    },
+    {
+      "id": "vacancy-361",
+      "address": "100-104 S Robertson Blvd",
+      "suite": "",
+      "space": "100-104 S Robertson Blvd, Los Angeles - Vacant -  sf",
+      "highStreet": "Street - Robertson",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": null,
+      "askingRate": null,
+      "lat": 34.056991,
+      "lng": -118.3833473
+    },
+    {
+      "id": "vacancy-362",
+      "address": "100-108 N Robertson Blvd",
+      "suite": "",
+      "space": "100-108 N Robertson Blvd, Los Angeles - Vacant -  sf",
+      "highStreet": "Street - Robertson",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": null,
+      "askingRate": null,
+      "lat": 34.0754574,
+      "lng": -118.3834782
+    },
+    {
+      "id": "vacancy-363",
+      "address": "112-122 S Robertson Blvd",
+      "suite": "",
+      "space": "112-122 S Robertson Blvd, Los Angeles - Vacant - 1,200 sf",
+      "highStreet": "Street - Robertson",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 1200,
+      "askingRate": null,
+      "lat": 34.0748515,
+      "lng": -118.3835832
+    },
+    {
+      "id": "vacancy-364",
+      "address": "116-120 N Robertson Blvd",
+      "suite": "",
+      "space": "116-120 N Robertson Blvd - Vacant - 0 sf",
+      "highStreet": "Street - Robertson",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": null,
+      "askingRate": null,
+      "lat": 34.076195,
+      "lng": -118.3831734
+    },
+    {
+      "id": "vacancy-365",
+      "address": "141-145 S Robertson Blvd",
+      "suite": "",
+      "space": "141-145 S Robertson Blvd, Los Angeles - Vacant -  sf",
+      "highStreet": "Street - Robertson",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": null,
+      "askingRate": null,
+      "lat": 34.074114,
+      "lng": -118.3841197
+    },
+    {
+      "id": "vacancy-366",
+      "address": "302-306 N Robertson Blvd",
+      "suite": "",
+      "space": "302-306 N Robertson Blvd - Vacant -  sf",
+      "highStreet": "Street - Robertson",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": null,
+      "askingRate": null,
+      "lat": 34.0734666,
+      "lng": -118.3835381
+    },
+    {
+      "id": "vacancy-367",
+      "address": "1348 3rd Street Promenade",
+      "suite": "BSMT",
+      "space": "1348 3rd Street Promenade - Suite BSMT - 6,859 sf",
+      "highStreet": "Street - Third Street Promenade",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 6859,
+      "askingRate": null,
+      "lat": 34.01586,
+      "lng": -118.4967287
+    },
+    {
+      "id": "vacancy-368",
+      "address": "1348 3rd Street Promenade",
+      "suite": "Entire 4th",
+      "space": "1348 3rd Street Promenade - Suite Entire 4th - 6,945 sf",
+      "highStreet": "Street - Third Street Promenade",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 6945,
+      "askingRate": null,
+      "lat": 34.01586,
+      "lng": -118.4967287
+    },
+    {
+      "id": "vacancy-369",
+      "address": "1348 3rd Street Promenade",
+      "suite": "Entire 3rd",
+      "space": "1348 3rd Street Promenade - Suite Entire 3rd - 7,008 sf",
+      "highStreet": "Street - Third Street Promenade",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 7008,
+      "askingRate": null,
+      "lat": 34.01586,
+      "lng": -118.4967287
+    },
+    {
+      "id": "vacancy-370",
+      "address": "1348 3rd Street Promenade",
+      "suite": "Entire 2nd",
+      "space": "1348 3rd Street Promenade - Suite Entire 2nd - 7,008 sf",
+      "highStreet": "Street - Third Street Promenade",
+      "costarUrl": "",
+      "unitStatus": "Vacant",
+      "sqft": 7008,
+      "askingRate": null,
+      "lat": 34.01586,
+      "lng": -118.4967287
     }
-  ]
+  ],
+  "vacantSfByHighStreet": {
+    "Street - Abbot Kinney": {
+      "spaces": 16,
+      "sqft": 24650,
+      "knownSfSpaces": 10
+    },
+    "Street - Arts District": {
+      "spaces": 10,
+      "sqft": 36831,
+      "knownSfSpaces": 10
+    },
+    "Street - Broadway": {
+      "spaces": 20,
+      "sqft": 96005,
+      "knownSfSpaces": 15
+    },
+    "Street - Colorado Blvd": {
+      "spaces": 17,
+      "sqft": 58883,
+      "knownSfSpaces": 16
+    },
+    "Street - Corona Del Mar": {
+      "spaces": 2,
+      "sqft": 1200,
+      "knownSfSpaces": 1
+    },
+    "Street - Culver City": {
+      "spaces": 11,
+      "sqft": 33952,
+      "knownSfSpaces": 7
+    },
+    "Street - Downtown Encinitas": {
+      "spaces": 12,
+      "sqft": 13707,
+      "knownSfSpaces": 9
+    },
+    "Street - Downtown Laguna Beach": {
+      "spaces": 2,
+      "sqft": 0,
+      "knownSfSpaces": 0
+    },
+    "Street - Downtown San Diego": {
+      "spaces": 10,
+      "sqft": 17184,
+      "knownSfSpaces": 5
+    },
+    "Street - Figueroa St": {
+      "spaces": 45,
+      "sqft": 153605,
+      "knownSfSpaces": 44
+    },
+    "Street - La Brea": {
+      "spaces": 18,
+      "sqft": 53018,
+      "knownSfSpaces": 18
+    },
+    "Street - Larchmont": {
+      "spaces": 21,
+      "sqft": 43506,
+      "knownSfSpaces": 18
+    },
+    "Street - Manhattan Beach": {
+      "spaces": 12,
+      "sqft": 11951,
+      "knownSfSpaces": 6
+    },
+    "Street - Melrose": {
+      "spaces": 35,
+      "sqft": 100703,
+      "knownSfSpaces": 34
+    },
+    "Street - Montana": {
+      "spaces": 6,
+      "sqft": 12236,
+      "knownSfSpaces": 6
+    },
+    "Street - Platform": {
+      "spaces": 1,
+      "sqft": 24180,
+      "knownSfSpaces": 1
+    },
+    "Street - Robertson": {
+      "spaces": 20,
+      "sqft": 6900,
+      "knownSfSpaces": 4
+    },
+    "Street - Rodeo": {
+      "spaces": 18,
+      "sqft": 30672,
+      "knownSfSpaces": 7
+    },
+    "Street - Seventeenth Street/West Cliff Drive": {
+      "spaces": 3,
+      "sqft": 0,
+      "knownSfSpaces": 0
+    },
+    "Street - Silver Lake": {
+      "spaces": 9,
+      "sqft": 21315,
+      "knownSfSpaces": 8
+    },
+    "Street - Sunset Blvd": {
+      "spaces": 15,
+      "sqft": 32075,
+      "knownSfSpaces": 13
+    },
+    "Street - Third Street Promenade": {
+      "spaces": 41,
+      "sqft": 204282,
+      "knownSfSpaces": 38
+    },
+    "Street - Ventura Blvd": {
+      "spaces": 25,
+      "sqft": 26233,
+      "knownSfSpaces": 10
+    }
+  }
 }

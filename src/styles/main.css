@@ -281,6 +281,9 @@ body {
 
 .street-view-dock {
   position: absolute;
+  /* Visible immediately; JS repositions beside Google’s bottom-right controls. */
+  right: 68px;
+  bottom: 24px;
   z-index: 6;
   display: flex;
   flex-direction: column;
@@ -673,16 +676,32 @@ body {
   color: #6b7c88;
 }
 
-.map-controls__vacancy-sqft {
+.map-controls__vacancy-meta {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.map-controls__vacancy-sqft,
+.map-controls__vacancy-rate {
   padding: 0.2rem 0.45rem;
   border-radius: 6px;
-  background: rgba(62, 111, 126, 0.08);
-  color: #3e6f7e;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   white-space: nowrap;
+}
+
+.map-controls__vacancy-sqft {
+  background: rgba(62, 111, 126, 0.08);
+  color: #3e6f7e;
+}
+
+.map-controls__vacancy-rate {
+  background: rgba(196, 122, 58, 0.12);
+  color: #9a5d1f;
 }
 
 .map-controls__dropdown-empty {
@@ -1022,6 +1041,32 @@ body {
 .info-window--group {
   max-height: 320px;
   overflow-y: auto;
+}
+
+.info-window__center-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.85rem;
+  padding: 0.65rem 0.75rem 0.75rem;
+  background: #f7f9fa;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.info-window__center-logo {
+  display: block;
+  max-width: 160px;
+  max-height: 44px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.info-window__center-header .info-window__group-label {
+  margin: 0;
+  text-align: center;
 }
 
 .info-window__group-label {

@@ -58,6 +58,9 @@ const LOGO_ROUTE_BY_DOMAIN: Record<string, LogoRouteOverride> = {
   "luckys-steakhouse.com": "logo.dev",
   "jimmyjohns.com": "logo.dev",
   "visualcomfort.com": "logo.dev",
+  "pizzanista.com": "logo.dev",
+  "loteriagrill.com": "logo.dev",
+  "wokcanorestaurant.com": "logo.dev",
 
   // Brandfetch light logo (colored under theme=light)
   "thekettle.net": "brandfetch-light",
@@ -83,6 +86,8 @@ const LOGO_ROUTE_BY_DOMAIN: Record<string, LogoRouteOverride> = {
   "smashburger.com": "brandfetch-icon-dark",
   "hotpilates.com": "brandfetch-icon-dark",
   "prospectwise.com": "brandfetch-icon-dark",
+  "laconventioncenter.com": "brandfetch-icon-dark",
+  "mango.com": "brandfetch-icon-dark",
 
   // Brandfetch dark symbol
   "usps.com": "brandfetch-symbol-dark",
@@ -140,6 +145,11 @@ const LOGO_ROUTE_BY_DOMAIN: Record<string, LogoRouteOverride> = {
   "onegoldenthread.com": "text",
   "peakdesign.com": "text",
   "pardeeproperties.com": "text",
+  "shoplovestitch.com": "text",
+  "auditoriumbooks.com": "text",
+  "petermarco.com": "text",
+  "impulsecalifornia.com": "text",
+  "qrestaurantorland.com": "text",
 };
 
 /** Domain → Vite-bundled asset URL for `local` route. */

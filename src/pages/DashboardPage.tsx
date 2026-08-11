@@ -33,7 +33,7 @@ export function DashboardPage() {
       : slides[0]?.slug ?? "";
   const [selectedSlug, setSelectedSlug] = useState(initialSlug);
   const [previewSlug, setPreviewSlug] = useState<string | null>(null);
-  const [showMappingVisual, setShowMappingVisual] = useState(false);
+  const [showMappingVisual, setShowMappingVisual] = useState(true);
   const [navOpen, setNavOpen] = useState(false);
   const [fromGate] = useState(() => Boolean(locationState.fromGate));
   const [revealed, setRevealed] = useState(() => !locationState.fromGate);
@@ -284,7 +284,7 @@ export function DashboardPage() {
             setShowMappingVisual((current) => !current);
           }}
         >
-          {showMappingVisual ? "Hero Visual" : "Mapping Visual"}
+          {showMappingVisual ? "Photo Gallery View" : "Mapping Visual"}
         </button>
 
         {showMappingVisual ? (

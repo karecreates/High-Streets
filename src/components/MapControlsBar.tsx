@@ -211,9 +211,18 @@ export function MapControlsBar({
                               </span>
                             ) : null}
                           </div>
-                          {meta.sqft ? (
-                            <span className="map-controls__vacancy-sqft">
-                              {meta.sqft}
+                          {meta.sqft || meta.askingRate ? (
+                            <span className="map-controls__vacancy-meta">
+                              {meta.sqft ? (
+                                <span className="map-controls__vacancy-sqft">
+                                  {meta.sqft}
+                                </span>
+                              ) : null}
+                              {meta.askingRate ? (
+                                <span className="map-controls__vacancy-rate">
+                                  {meta.askingRate}
+                                </span>
+                              ) : null}
                             </span>
                           ) : null}
                         </button>

@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
+import placerLogo from "@assets/logos/placer_logo_ai402x-onc6yw63cdv2bi8m8eps8fr1sczb4qf1x8fx55sc2o.png";
 import { AnimatedDisplay } from "../components/AnimatedDisplay";
 import { BrandLogoGrid } from "../components/BrandLogoGrid";
 import { BetaLogo } from "../components/BetaLogo";
@@ -12,11 +13,22 @@ import {
   getCorridorBySlug,
   getCorridorDetail,
 } from "../data/highStreets";
+import { getPlacerInsights } from "../data/placer";
+import { PlacerInsights } from "../components/PlacerInsights";
 import {
   pickNotableBrandsFromCenterTenants,
   pickNotableBrandsFromStreetTenants,
 } from "../utils/pickNotableBrands";
+import { corridorMapPath } from "../utils/corridorPaths";
 import { isNamedTenant } from "../utils/tenantDisplay";
+import {
+  formatVacantSfTotal,
+  sumVacantSf,
+} from "../utils/vacancyDisplay";
+import {
+  formatVacancyRate,
+  vacancyRateFromStreetData,
+} from "../utils/vacancyRate";
 
 function categoryEyebrow(category: string | undefined): string {
   if (!category) return "High Streets";
@@ -27,20 +39,13 @@ function categoryEyebrow(category: string | undefined): string {
     .replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-/** Vacancy rate = vacancies ÷ occupied spaces. */
-function formatVacancyRate(vacancies: number, occupied: number): string | null {
-  if (occupied <= 0) return null;
-  const rate = (vacancies / occupied) * 100;
-  const rounded = Math.round(rate * 10) / 10;
-  return Number.isInteger(rounded) ? `${rounded}%` : `${rounded.toFixed(1)}%`;
-}
-
 export function StreetDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
   const detail = slug ? getCorridorDetail(slug) : undefined;
   const { dataset, vacanciesDataset } = useTenantsContext();
   const shoppingCenter = slug ? getShoppingCenter(slug) : undefined;
+  const placerData = getPlacerInsights(slug);
 
   const brandItems = useMemo(() => {
     if (!corridor || !detail) return [];
@@ -85,16 +90,41 @@ export function StreetDetailPage() {
     }
 
     if (!corridor.dataKey || !dataset) return null;
-    const occupied = dataset.tenants.filter(
-      (t) =>
-        t.highStreet === corridor.dataKey && isNamedTenant(t.tenantName)
-    ).length;
-    const vacancies =
+    const streetTenants = dataset.tenants.filter(
+      (t) => t.highStreet === corridor.dataKey
+    );
+    const streetVacancies =
       vacanciesDataset?.vacancies.filter(
         (v) => v.highStreet === corridor.dataKey
-      ).length ?? 0;
-    return formatVacancyRate(vacancies, occupied);
+      ) ?? [];
+    return vacancyRateFromStreetData(streetTenants, streetVacancies);
   }, [corridor, dataset, shoppingCenter, vacanciesDataset]);
+
+  const vacantSfLabel = useMemo(() => {
+    if (!corridor) return null;
+
+    if (corridor.category === "shopping-centers" && shoppingCenter) {
+      const total = shoppingCenter.vacancies.reduce((sum, vacancy) => {
+        const raw = vacancy.spaceSf ?? vacancy.spaceLabel ?? "";
+        const match = String(raw).match(/([\d,]+)/);
+        if (!match) return sum;
+        const sqft = Number(match[1].replace(/,/g, ""));
+        return Number.isFinite(sqft) && sqft > 0 ? sum + sqft : sum;
+      }, 0);
+      return total > 0 ? formatVacantSfTotal(total) : null;
+    }
+
+    if (!corridor.dataKey) return null;
+    const rollup = vacanciesDataset?.vacantSfByHighStreet?.[corridor.dataKey];
+    if (rollup && rollup.sqft > 0) return formatVacantSfTotal(rollup.sqft);
+
+    const streetVacancies =
+      vacanciesDataset?.vacancies.filter(
+        (v) => v.highStreet === corridor.dataKey
+      ) ?? [];
+    const total = sumVacantSf(streetVacancies);
+    return total > 0 ? formatVacantSfTotal(total) : null;
+  }, [corridor, shoppingCenter, vacanciesDataset]);
 
   if (!corridor?.active || !detail) {
     return (
@@ -106,10 +136,7 @@ export function StreetDetailPage() {
   }
 
   const staticLogos = detail.brandLogos;
-  const mapPath =
-    corridor.category === "shopping-centers"
-      ? `/center/${slug}/map`
-      : `/street/${slug}/map`;
+  const mapPath = slug ? corridorMapPath(slug) : "/dashboard";
   const backPath = "/dashboard";
 
   return (
@@ -147,7 +174,7 @@ export function StreetDetailPage() {
             <div className="street-detail__row">
               <div className="info-card info-card--compact info-card--rents">
                 <div className="info-card__header">
-                  ESTIMATED RENTS &amp; VACANCY RATE
+                  ESTIMATED RENTS &amp; VACANCY
                 </div>
                 <div className="info-card__metrics">
                   <div className="info-card__metric">
@@ -166,12 +193,30 @@ export function StreetDetailPage() {
                       </span>
                     </div>
                   ) : null}
+                  {vacantSfLabel ? (
+                    <div className="info-card__metric">
+                      <p className="info-card__metric-value">{vacantSfLabel}</p>
+                      <span className="info-card__metric-label">
+                        Vacant SF
+                      </span>
+                    </div>
+                  ) : null}
                 </div>
               </div>
 
               {detail.trafficCounts.length ? (
                 <div className="traffic-card">
-                  <h3 className="traffic-card__title">Traffic Counts</h3>
+                  <div className="traffic-card__header">
+                    <h3 className="traffic-card__title">
+                      Traffic Counts (Cars per Day)
+                    </h3>
+                    <img
+                      className="traffic-card__proof-logo"
+                      src={placerLogo}
+                      alt="Placer.ai"
+                      title="Powered by Placer.ai"
+                    />
+                  </div>
                   <ul className="traffic-card__list">
                     {detail.trafficCounts.map((row, index) => (
                       <li key={`${row.street}-${row.count}-${index}`}>
@@ -190,22 +235,28 @@ export function StreetDetailPage() {
               ) : null}
             </div>
 
-            <div className="info-card">
-              <div className="info-card__header">TRADE AREA STATISTICS</div>
-              <ul className="stat-list">
-                {detail.areaStats.map((stat, index) => (
-                  <li key={stat.label} className="stat-list__item">
-                    <AnimatedDisplay
-                      className="stat-list__value"
-                      value={stat.value}
-                      delay={450 + index * 130}
-                      duration={1200}
-                    />
-                    <span className="stat-list__label">{stat.label}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {placerData ? (
+              <PlacerInsights data={placerData} />
+            ) : (
+              <div className="info-card">
+                <div className="info-card__header">
+                  TRADE AREA POLYGON* STATISTICS
+                </div>
+                <ul className="stat-list">
+                  {detail.areaStats.map((stat, index) => (
+                    <li key={stat.label} className="stat-list__item">
+                      <AnimatedDisplay
+                        className="stat-list__value"
+                        value={stat.value}
+                        delay={450 + index * 130}
+                        duration={1200}
+                      />
+                      <span className="stat-list__label">{stat.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div className="info-card info-card--brands info-card--compact">
               <div className="info-card__header">SELECTIVE BRANDS</div>
@@ -223,8 +274,12 @@ export function StreetDetailPage() {
             </div>
 
             <div className="street-detail__actions">
-              <PillButton to={backPath}>← Back to Dashboard</PillButton>
-              <PillButton to={mapPath}>View Interactive Map →</PillButton>
+              <PillButton to={backPath} variant="outline">
+                ← Back to Dashboard
+              </PillButton>
+              <PillButton to={mapPath} variant="outline">
+                View Interactive Map →
+              </PillButton>
             </div>
           </div>
 

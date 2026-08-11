@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "convert": "node scripts/convert-xlsx.mjs",
     "convert:vacancies": "node scripts/convert-vacancies-xlsx.mjs",
+    "apply:vacancy-sf": "node scripts/apply-vacancy-sf.mjs",
     "convert:all": "npm run convert",
     "convert:shopping-centers": "node scripts/convert-shopping-centers-xlsx.mjs",
     "geocode": "node scripts/geocode.mjs",

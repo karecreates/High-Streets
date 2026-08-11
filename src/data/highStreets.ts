@@ -24,7 +24,7 @@ import heroStudioCity from "@assets/Studio City Photos/Studio_Cover.jpg";
 import heroSportsmenLodge from "@assets/Sportsmens Lodge Photos/Sportsmens_Lodge_Cover.jpg";
 import heroOneColorado from "@assets/One Colorado Photos/One_Colorado_Cover.jpg";
 import heroManhattanVillage from "@assets/Manhattan Village Photos/Manhattan_Village_Cover.jpg";
-import heroLaArtsDistrict from "@assets/La Arts District Photos/la_arts_district_cover.jpg";
+import heroLaArtsDistrict from "@assets/La Arts District Photos/LA_Arts_Cover_New.avif";
 import heroGoldenTriangle from "@assets/Golden Traingle Photos/golden_triangle_cover.jpg";
 import heroDowntownLa from "@assets/Downtown LA Photos/downtown_cover.jpeg";
 

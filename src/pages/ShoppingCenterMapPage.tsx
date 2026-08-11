@@ -9,11 +9,12 @@ import {
   useAllStreetVacancies,
 } from "../context/TenantsContext";
 import { useStaticMapMode } from "../hooks/useStaticMapMode";
-import { getCorridorBySlug } from "../data/highStreets";
+import { getCorridorBySlug, getCorridorDetail } from "../data/highStreets";
 import {
   getShoppingCenter,
   type ShoppingCenter,
 } from "../data/shoppingCenters";
+import { corridorInfoPath } from "../utils/corridorPaths";
 import {
   filterByProximity,
   NEARBY_TENANT_RADIUS_M,
@@ -25,6 +26,8 @@ export function ShoppingCenterMapPage() {
   const { slug } = useParams<{ slug: string }>();
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
   const center = slug ? getShoppingCenter(slug) : undefined;
+  const infoPath =
+    slug && getCorridorDetail(slug) ? corridorInfoPath(slug) : "/dashboard";
   const allTenants = useAllStreetTenants();
   const allVacancies = useAllStreetVacancies();
   const [directoryCenter, setDirectoryCenter] = useState<ShoppingCenter | null>(
@@ -60,6 +63,7 @@ export function ShoppingCenterMapPage() {
   }, [center]);
 
   const handleShoppingCenterSelect = useCallback((selected: ShoppingCenter) => {
+    if (selected.mapPinOnly) return;
     setDirectoryCenter(selected);
   }, []);
 
@@ -79,9 +83,15 @@ export function ShoppingCenterMapPage() {
         className={`map-fullscreen${staticMode ? " map-fullscreen--static" : ""}`}
       >
         {!staticMode ? (
-          <PillButton to={`/center/${slug}`} className="map-fullscreen__back">
+          <button
+            type="button"
+            className="pill-btn pill-btn--primary map-fullscreen__back"
+            onClick={() => {
+              window.location.assign(infoPath);
+            }}
+          >
             ← Back
-          </PillButton>
+          </button>
         ) : null}
 
         <StaticModeChrome

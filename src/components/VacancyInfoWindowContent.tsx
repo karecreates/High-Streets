@@ -1,5 +1,6 @@
 import { betaMarkerSvg } from "../utils/createVacancyPinIcon";
 import type { Vacancy } from "../types/vacancy";
+import { formatAskingRate, formatVacancySqft } from "../utils/vacancyDisplay";
 import { BetaContactCta } from "./BetaContactCta";
 
 interface VacancyInfoWindowContentProps {
@@ -7,6 +8,9 @@ interface VacancyInfoWindowContentProps {
 }
 
 export function VacancyInfoWindowContent({ vacancy }: VacancyInfoWindowContentProps) {
+  const sqft = formatVacancySqft(vacancy);
+  const askingRate = formatAskingRate(vacancy);
+
   return (
     <article className="info-window info-window--vacancy">
       <header className="info-window__header">
@@ -26,6 +30,18 @@ export function VacancyInfoWindowContent({ vacancy }: VacancyInfoWindowContentPr
       </header>
 
       <dl className="info-window__details">
+        {sqft ? (
+          <>
+            <dt>Size</dt>
+            <dd>{sqft}</dd>
+          </>
+        ) : null}
+        {askingRate ? (
+          <>
+            <dt>Asking rate</dt>
+            <dd>{askingRate}</dd>
+          </>
+        ) : null}
         {vacancy.space && (
           <>
             <dt>Space</dt>

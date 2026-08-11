@@ -61,7 +61,10 @@ export function MasterMapPage() {
   const shoppingCenters = useMemo(() => getActiveShoppingCenters(), []);
 
   const shoppingCenterPositions = useMemo(
-    () => shoppingCenters.map((c) => c.mapCenter),
+    () =>
+      shoppingCenters
+        .filter((center) => !center.mapPinOnly)
+        .map((center) => center.mapCenter),
     [shoppingCenters]
   );
 
@@ -121,6 +124,7 @@ export function MasterMapPage() {
 
   const handleShoppingCenterLogoClick = useCallback(
     (center: ShoppingCenter) => {
+      if (center.mapPinOnly) return;
       focusShoppingCenter(center, { openDirectory: true });
     },
     [focusShoppingCenter]

@@ -270,15 +270,40 @@ function isNearlyInvisibleOnBackground(
 }
 
 /**
+ * Every tenant logo resolves at one size so a domain always lands on the same
+ * cascade step — otherwise a marker and its info window can show different
+ * assets for the same brand.
+ */
+const CANONICAL_LOGO_SIZE = 256;
+
+const resolvedLogoCache = new Map<string, Promise<HTMLImageElement | null>>();
+
+/**
  * Load a map/directory brand logo with cascade:
  *   Brandfetch dark logo → Brandfetch dark icon → Logo.dev → null (plain text)
  * Skips Brandfetch branding tiles and white-on-white ghosts.
+ *
+ * Resolution is cached per domain and shared by markers, info windows and
+ * directories so one brand never renders two different logos.
  */
-export async function loadBrandLogoImage(
-  domain: string | null | undefined,
-  options?: { size?: number }
+export function loadBrandLogoImage(
+  domain: string | null | undefined
 ): Promise<HTMLImageElement | null> {
-  const urls = getBrandLogoImageUrls(domain, options);
+  const clean = cleanBrandDomain(domain);
+  if (!clean) return Promise.resolve(null);
+
+  const cached = resolvedLogoCache.get(clean);
+  if (cached) return cached;
+
+  const pending = resolveBrandLogoImage(clean);
+  resolvedLogoCache.set(clean, pending);
+  return pending;
+}
+
+async function resolveBrandLogoImage(
+  domain: string
+): Promise<HTMLImageElement | null> {
+  const urls = getBrandLogoImageUrls(domain, { size: CANONICAL_LOGO_SIZE });
   for (const url of urls) {
     try {
       const img = await loadHtmlImage(url);

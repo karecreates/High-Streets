@@ -6,22 +6,40 @@ import { InfoWindow, Map, useMap } from "@vis.gl/react-google-maps";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { USE_LOGO_DEV_MARKERS } from "../config/mapMarkers";
 import { MAP_Z_INDEX } from "../config/mapZIndex";
+import { getMajorTenantLayoutOverride } from "../data/majorTenants";
 import type { ShoppingCenter } from "../data/shoppingCenters";
 import { useLogoProvider } from "../hooks/useLogoProvider";
 import { useMapZoom } from "../hooks/useMapZoom";
+import { useOverviewMarkerLayouts } from "../hooks/useOverviewMarkerLayouts";
 import type { Tenant } from "../types/tenant";
 import type { Vacancy } from "../types/vacancy";
 import { createBetaClusterRenderer } from "../utils/createClusterRenderer";
 import { createCalloutIcon } from "../utils/createCalloutIcon";
-import { createGroupedLogoMarkerIcon } from "../utils/createGroupedLogoMarkerIcon";
+import {
+  createGroupedLogoMarkerIcon,
+  estimateGroupedLogoMarkerSize,
+} from "../utils/createGroupedLogoMarkerIcon";
+import {
+  estimateLogoMarkerSize,
+  type LogoMarkerLayoutOptions,
+} from "../utils/createLogoMarkerIcon";
 import type { DashboardMapLocation } from "../utils/dashboardMapLocations";
 import {
   groupTenantsByLocation,
+  splitTenantGroupsForDeconflict,
   type TenantLocationGroup,
 } from "../utils/groupTenantsByLocation";
 import { getMapId } from "../utils/mapConfig";
 import { MAP_STYLES_WITH_STREET_LABELS } from "../utils/mapStyles";
+import {
+  resolveStreetLogoLayouts,
+  type StreetLogoLayoutItem,
+} from "../utils/streetLogoLayout";
 import { isNamedTenant } from "../utils/tenantDisplay";
+import {
+  getTenantGroupCenterSlugs,
+  resolveTenantGroupCenter,
+} from "../utils/tenantGroupCenter";
 import { groupVacanciesByLocation } from "../utils/groupVacanciesByLocation";
 import { GroupedInfoWindowContent } from "./GroupedInfoWindowContent";
 import type { MapDisplayMode } from "./MapControlsBar";
@@ -45,6 +63,12 @@ const CLUSTER_RADIUS = 72;
 
 /** Master map: street tenants appear at this zoom and above. */
 export const MASTER_MAP_TENANT_REVEAL_ZOOM = 14;
+
+/**
+ * Master map: DTLA context logos (FIGat7th, L.A. Live) stay hidden until
+ * you've zoomed in past the regional overview.
+ */
+export const MASTER_MAP_LANDMARK_REVEAL_ZOOM = 15;
 
 export interface TenantMapViewProps {
   tenants: Tenant[];
@@ -94,19 +118,61 @@ export interface TenantMapViewProps {
   mapIdOverride?: string;
   /** Hide map UI chrome for screenshot / static books capture. */
   staticMode?: boolean;
+  /**
+   * Keep lat/lng anchors fixed; fan logo boxes with callout stems so none
+   * overlap (major-tenant allowlist corridors).
+   */
+  deconflictLogos?: boolean;
+  /** Corridor slug for curated logo placement overrides. */
+  deconflictLayoutSlug?: string;
 }
 
 async function resolveMarkerIcon(
-  group: TenantLocationGroup
+  group: TenantLocationGroup,
+  layout?: LogoMarkerLayoutOptions
 ): Promise<google.maps.Icon> {
+  const centerGroup = resolveTenantGroupCenter(group);
   if (USE_LOGO_DEV_MARKERS) {
-    return createGroupedLogoMarkerIcon(group.tenants);
+    if (centerGroup) {
+      return createGroupedLogoMarkerIcon(
+        centerGroup.tenants,
+        {
+          name: centerGroup.center.name,
+          logoUrl: centerGroup.center.logo,
+        },
+        layout
+      );
+    }
+    return createGroupedLogoMarkerIcon(group.tenants, null, layout);
   }
   const label =
     group.tenants.length === 1
       ? group.tenants[0].tenantName
-      : `${group.tenants.length} tenants`;
-  return createCalloutIcon(label);
+      : centerGroup
+        ? `${centerGroup.center.name} · ${centerGroup.tenants.length} tenants`
+        : `${group.tenants.length} tenants`;
+  return createCalloutIcon(label, {
+    placement: layout?.placement,
+    offsetX: layout?.offsetX ?? 0,
+    showStem: layout?.showStem ?? true,
+    offsetY: layout?.stemHeight,
+  });
+}
+
+function estimateGroupMarkerSize(group: TenantLocationGroup): {
+  width: number;
+  height: number;
+} {
+  const centerGroup = resolveTenantGroupCenter(group);
+  if (centerGroup) {
+    return estimateGroupedLogoMarkerSize(centerGroup.tenants.length, {
+      hasCenterHeader: true,
+    });
+  }
+  if (group.tenants.length <= 1) {
+    return estimateLogoMarkerSize();
+  }
+  return estimateGroupedLogoMarkerSize(group.tenants.length);
 }
 
 function ClusteredMarkers({
@@ -116,6 +182,9 @@ function ClusteredMarkers({
   defaultCenter,
   defaultZoom,
   extraFitPositions = [],
+  deconflictLogos = false,
+  deconflictLayoutSlug,
+  staticMode = false,
 }: {
   locationGroups: TenantLocationGroup[];
   onSelect: (group: TenantLocationGroup) => void;
@@ -123,14 +192,24 @@ function ClusteredMarkers({
   defaultCenter?: google.maps.LatLngLiteral;
   defaultZoom?: number;
   extraFitPositions?: google.maps.LatLngLiteral[];
+  deconflictLogos?: boolean;
+  deconflictLayoutSlug?: string;
+  staticMode?: boolean;
 }) {
   const map = useMap();
   const [logoProvider] = useLogoProvider();
   const markersRef = useRef<google.maps.Marker[]>([]);
+  const groupsRef = useRef<TenantLocationGroup[]>([]);
   const clustererRef = useRef<MarkerClusterer | null>(null);
   const listenersRef = useRef<google.maps.MapsEventListener[]>([]);
   const fittedRef = useRef(false);
+  const layoutGenRef = useRef(0);
+  const lastLayoutZoomRef = useRef<number | null>(null);
+  const onSelectRef = useRef(onSelect);
+  const applyLayoutsRef = useRef<((force?: boolean) => void) | null>(null);
   const clusterRenderer = useMemo(() => createBetaClusterRenderer(), []);
+
+  onSelectRef.current = onSelect;
 
   useEffect(() => {
     fittedRef.current = false;
@@ -142,10 +221,13 @@ function ClusteredMarkers({
     let cancelled = false;
 
     clustererRef.current?.clearMarkers();
+    clustererRef.current = null;
     listenersRef.current.forEach((l) => l.remove());
     listenersRef.current = [];
     markersRef.current.forEach((m) => m.setMap(null));
     markersRef.current = [];
+    groupsRef.current = locationGroups;
+    lastLayoutZoomRef.current = null;
 
     if (!locationGroups.length && !extraFitPositions.length) return;
 
@@ -160,21 +242,27 @@ function ClusteredMarkers({
         title,
         optimized: false,
         zIndex: MAP_Z_INDEX.tenantMarker,
+        // Attach directly so clustering can't hide deconflicted logos.
+        map: deconflictLogos ? map : undefined,
       });
 
-      const listener = marker.addListener("click", () => onSelect(group));
+      const listener = marker.addListener("click", () => {
+        onSelectRef.current(group);
+      });
       listenersRef.current.push(listener);
 
-      resolveMarkerIcon(group).then((icon) => {
-        if (!cancelled) marker.setIcon(icon);
-      });
+      if (!deconflictLogos) {
+        resolveMarkerIcon(group).then((icon) => {
+          if (!cancelled) marker.setIcon(icon);
+        });
+      }
 
       return marker;
     });
 
     markersRef.current = markers;
 
-    if (markers.length) {
+    if (markers.length && !deconflictLogos) {
       clustererRef.current = new MarkerClusterer({
         map,
         markers,
@@ -212,9 +300,91 @@ function ClusteredMarkers({
       fittedRef.current = true;
     }
 
+    const applyDeconflictLayouts = (force = false) => {
+      if (!deconflictLogos || cancelled) return;
+      const groups = groupsRef.current;
+      const currentMarkers = markersRef.current;
+      if (!groups.length || currentMarkers.length !== groups.length) return;
+
+      const zoom = map.getZoom();
+      if (zoom == null) return;
+      // Pan/idle must not reshuffle callouts — only zoom (or first paint).
+      if (
+        !force &&
+        lastLayoutZoomRef.current != null &&
+        Math.abs(lastLayoutZoomRef.current - zoom) < 0.001
+      ) {
+        return;
+      }
+      lastLayoutZoomRef.current = zoom;
+
+      // Fullscreen / chrome toggles can detach overlays — keep pins on the map.
+      currentMarkers.forEach((marker) => {
+        if (marker.getMap() !== map) marker.setMap(map);
+      });
+
+      const items: StreetLogoLayoutItem[] = groups.map((group) => {
+        const size = estimateGroupMarkerSize(group);
+        const override = getMajorTenantLayoutOverride(
+          deconflictLayoutSlug,
+          group.tenants.map((t) => t.tenantName)
+        );
+        return {
+          id: group.key,
+          position: { lat: group.lat, lng: group.lng },
+          width: size.width,
+          height: size.height,
+          forcePlacement: override?.placement,
+          forceOffsetX: override?.offsetX,
+          forceStemHeight: override?.stemHeight,
+        };
+      });
+
+      const layouts = resolveStreetLogoLayouts(map, items);
+
+      const gen = ++layoutGenRef.current;
+      groups.forEach((group, index) => {
+        const marker = currentMarkers[index];
+        if (!marker) return;
+        const layout = layouts[group.key];
+        resolveMarkerIcon(group, {
+          placement: layout?.placement ?? "above",
+          offsetX: layout?.offsetX ?? 0,
+          stemHeight: layout?.stemHeight,
+          showStem: true,
+        }).then((icon) => {
+          if (cancelled || layoutGenRef.current !== gen) return;
+          marker.setIcon(icon);
+          if (marker.getMap() !== map) marker.setMap(map);
+        });
+      });
+    };
+
+    applyLayoutsRef.current = applyDeconflictLayouts;
+
+    let zoomListener: google.maps.MapsEventListener | null = null;
+    if (deconflictLogos) {
+      // Wait for projection, then lay out once — do not listen to idle/pan.
+      const boot = () => {
+        if (cancelled) return;
+        if (!map.getProjection()) {
+          google.maps.event.addListenerOnce(map, "projection_changed", boot);
+          return;
+        }
+        applyDeconflictLayouts(true);
+      };
+      boot();
+      zoomListener = map.addListener("zoom_changed", () => {
+        applyDeconflictLayouts(false);
+      });
+    }
+
     return () => {
       cancelled = true;
+      applyLayoutsRef.current = null;
+      zoomListener?.remove();
       clustererRef.current?.clearMarkers();
+      clustererRef.current = null;
       listenersRef.current.forEach((l) => l.remove());
       listenersRef.current = [];
       markersRef.current.forEach((m) => m.setMap(null));
@@ -222,14 +392,28 @@ function ClusteredMarkers({
   }, [
     map,
     locationGroups,
-    onSelect,
     autoFitBounds,
     defaultCenter,
     defaultZoom,
     clusterRenderer,
     extraFitPositions,
     logoProvider,
+    deconflictLogos,
+    deconflictLayoutSlug,
   ]);
+
+  // Static/fullscreen chrome changes must not wipe markers — re-attach + redraw.
+  useEffect(() => {
+    if (!map || !deconflictLogos) return;
+    markersRef.current.forEach((marker) => {
+      if (marker.getMap() !== map) marker.setMap(map);
+    });
+    // After fullscreen transition, wait a tick then force layout/icons again.
+    const timer = window.setTimeout(() => {
+      applyLayoutsRef.current?.(true);
+    }, 100);
+    return () => window.clearTimeout(timer);
+  }, [map, deconflictLogos, staticMode]);
 
   return null;
 }
@@ -255,6 +439,8 @@ function MapWithTenants({
   alwaysShowCorridorCallouts = false,
   forceShowStreetMarkers = false,
   staticMode = false,
+  deconflictLogos = false,
+  deconflictLayoutSlug,
 }: TenantMapViewProps) {
   const [selected, setSelected] = useState<TenantLocationGroup | null>(null);
   const zoom = useMapZoom();
@@ -266,6 +452,10 @@ function MapWithTenants({
     !zoomGatedStreetMarkers ||
     forceShowStreetMarkers ||
     (zoom != null && zoom >= MASTER_MAP_TENANT_REVEAL_ZOOM);
+  const landmarksVisible =
+    !zoomGatedStreetMarkers ||
+    forceShowStreetMarkers ||
+    (zoom != null && zoom >= MASTER_MAP_LANDMARK_REVEAL_ZOOM);
   const corridorCalloutsVisible =
     corridorCallouts.length > 0 &&
     (alwaysShowCorridorCallouts ||
@@ -282,13 +472,35 @@ function MapWithTenants({
       ),
     [tenants]
   );
-  const locationGroups = useMemo(
-    () => groupTenantsByLocation(mapTenants),
-    [mapTenants]
-  );
+  const locationGroups = useMemo(() => {
+    const grouped = groupTenantsByLocation(mapTenants);
+    // Third Street only — Abbot Kinney keeps co-located grouped logos.
+    const splitForDeconflict =
+      deconflictLogos && deconflictLayoutSlug === "third-street-promenade";
+    return splitForDeconflict
+      ? splitTenantGroupsForDeconflict(grouped)
+      : grouped;
+  }, [mapTenants, deconflictLogos, deconflictLayoutSlug]);
   const vacancyGroups = useMemo(
     () => groupVacanciesByLocation(vacancies),
     [vacancies]
+  );
+
+  const shoppingCenterPins = useMemo(() => {
+    const headedSlugs = showTenants
+      ? getTenantGroupCenterSlugs(locationGroups)
+      : new Set<string>();
+    return shoppingCenters.filter((center) => {
+      if (center.mapPinOnly && !landmarksVisible) return false;
+      if (center.mapPinOnly && headedSlugs.has(center.slug)) return false;
+      return true;
+    });
+  }, [locationGroups, shoppingCenters, showTenants, landmarksVisible]);
+
+  const layoutCorridors = corridorCalloutsVisible ? corridorCallouts : [];
+  const { layouts } = useOverviewMarkerLayouts(
+    layoutCorridors,
+    shoppingCenterPins
   );
 
   return (
@@ -305,18 +517,24 @@ function MapWithTenants({
           defaultCenter={mapFocus?.center ?? defaultCenter}
           defaultZoom={mapFocus?.zoom ?? defaultZoom}
           extraFitPositions={extraFitPositions}
+          deconflictLogos={deconflictLogos}
+          deconflictLayoutSlug={deconflictLayoutSlug}
+          staticMode={staticMode}
         />
       ) : null}
       {corridorCalloutsVisible && onCorridorCalloutSelect ? (
         <MasterCorridorCalloutsLayer
           locations={corridorCallouts}
           onSelect={onCorridorCalloutSelect}
+          layouts={layouts}
         />
       ) : null}
-      {shoppingCenters.length && onShoppingCenterSelect ? (
+      {shoppingCenterPins.length ? (
         <ShoppingCenterPinsLayer
-          centers={shoppingCenters}
-          onSelect={onShoppingCenterSelect}
+          centers={shoppingCenterPins}
+          onSelect={onShoppingCenterSelect ?? (() => undefined)}
+          layouts={layouts}
+          interactive={!staticMode && Boolean(onShoppingCenterSelect)}
         />
       ) : null}
       {showVacancies ? (
@@ -337,7 +555,10 @@ function MapWithTenants({
           maxWidth={360}
           zIndex={MAP_Z_INDEX.tenantInfo}
         >
-          <GroupedInfoWindowContent tenants={selected.tenants} />
+          <GroupedInfoWindowContent
+            tenants={selected.tenants}
+            address={selected.address}
+          />
         </InfoWindow>
       ) : null}
     </>
@@ -369,6 +590,8 @@ export function TenantMapView({
   forceShowStreetMarkers = false,
   mapIdOverride,
   staticMode = false,
+  deconflictLogos = false,
+  deconflictLayoutSlug,
 }: TenantMapViewProps) {
   const mapId = mapIdOverride ?? getMapId();
   const useCloudStyle = Boolean(mapIdOverride);
@@ -440,6 +663,8 @@ export function TenantMapView({
           alwaysShowCorridorCallouts={alwaysShowCorridorCallouts}
           forceShowStreetMarkers={forceShowStreetMarkers}
           staticMode={staticMode}
+          deconflictLogos={deconflictLogos}
+          deconflictLayoutSlug={deconflictLayoutSlug}
         />
       </Map>
     </div>

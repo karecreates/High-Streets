@@ -1,5 +1,5 @@
-const CALLOUT_BG = "#3E6F7E";
-const CALLOUT_BORDER = "#FFFFFF";
+const BETA_BLUE = "#3E6F7E";
+const WHITE = "#FFFFFF";
 const MIN_BOX_WIDTH = 48;
 const SCALE = 2;
 const SHADOW_PAD = 8;
@@ -9,10 +9,13 @@ const SHADOW_OFFSET_Y = 4;
 
 export type CalloutPlacement = "above" | "below";
 export type CalloutSize = "compact" | "default" | "large";
+/** default = beta-blue fill / white text; inverse = white fill / beta-blue text */
+export type CalloutVariant = "default" | "inverse";
 
 export interface CalloutIconOptions {
   placement?: CalloutPlacement;
   size?: CalloutSize;
+  variant?: CalloutVariant;
   /** Horizontal shift of the label box from the anchor (px). Positive = right. */
   offsetX?: number;
   /** Gap between the anchor point and the label box (px). No connector line is drawn. */
@@ -105,6 +108,11 @@ export function createCalloutIcon(
   const offsetX = options.offsetX ?? 0;
   const showStem = options.showStem ?? true;
   const showAnchorDot = options.showAnchorDot ?? false;
+  const inverse = (options.variant ?? "default") === "inverse";
+  const boxFill = inverse ? WHITE : BETA_BLUE;
+  const boxStroke = inverse ? BETA_BLUE : WHITE;
+  const textColor = inverse ? BETA_BLUE : WHITE;
+  const stemColor = inverse ? BETA_BLUE : WHITE;
   const preset = SIZE_PRESETS[options.size ?? "default"];
   const measure = document.createElement("canvas").getContext("2d")!;
   measure.font = preset.font;
@@ -145,24 +153,26 @@ export function createCalloutIcon(
   const stemStartY = placement === "above" ? boxHeight : 0;
   const stemEndY = placement === "above" ? boxHeight + stemHeight : stemHeight;
 
+  const tipY = placement === "above" ? stemEndY : stemStartY;
+
   if (showStem) {
     applyDropShadow(ctx);
     ctx.beginPath();
     ctx.moveTo(anchorX, stemStartY);
     ctx.lineTo(anchorX, stemEndY);
-    ctx.strokeStyle = CALLOUT_BORDER;
+    ctx.strokeStyle = stemColor;
     ctx.lineWidth = 1;
     ctx.stroke();
   }
 
   applyDropShadow(ctx);
   roundRect(ctx, boxLeft + 0.5, boxTop + 0.5, boxWidth - 1, boxHeight - 1, preset.borderRadius);
-  ctx.fillStyle = CALLOUT_BG;
+  ctx.fillStyle = boxFill;
   ctx.fill();
   clearDropShadow(ctx);
 
   roundRect(ctx, boxLeft + 0.5, boxTop + 0.5, boxWidth - 1, boxHeight - 1, preset.borderRadius);
-  ctx.strokeStyle = CALLOUT_BORDER;
+  ctx.strokeStyle = boxStroke;
   ctx.lineWidth = 1;
   ctx.stroke();
 
@@ -170,23 +180,22 @@ export function createCalloutIcon(
     ctx.beginPath();
     ctx.moveTo(anchorX, stemStartY);
     ctx.lineTo(anchorX, stemEndY);
-    ctx.strokeStyle = CALLOUT_BORDER;
+    ctx.strokeStyle = stemColor;
     ctx.lineWidth = 1;
     ctx.stroke();
   }
 
   if (showAnchorDot) {
-    const dotY = placement === "above" ? stemEndY : stemStartY;
     ctx.beginPath();
-    ctx.arc(anchorX, dotY, anchorDotRadius, 0, Math.PI * 2);
-    ctx.fillStyle = CALLOUT_BG;
+    ctx.arc(anchorX, tipY, anchorDotRadius, 0, Math.PI * 2);
+    ctx.fillStyle = BETA_BLUE;
     ctx.fill();
-    ctx.strokeStyle = CALLOUT_BORDER;
+    ctx.strokeStyle = WHITE;
     ctx.lineWidth = 1.5;
     ctx.stroke();
   }
 
-  ctx.fillStyle = CALLOUT_BORDER;
+  ctx.fillStyle = textColor;
   ctx.font = preset.font;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";

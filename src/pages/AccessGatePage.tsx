@@ -1,5 +1,5 @@
-import { FormEvent, useCallback, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { FormEvent, useCallback, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import betaLogoWhite from "@assets/Beta_Logo_white.svg";
 import { GlobeCanvas } from "../components/GlobeCanvas";
 import { ACCESS_PASSWORD } from "../config/access";
@@ -9,11 +9,28 @@ const EXIT_DURATION_MS = 900;
 
 export function AccessGatePage() {
   const navigate = useNavigate();
-  const { grantAccess } = useAccess();
+  const location = useLocation();
+  const { grantAccess, isAuthenticated } = useAccess();
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isExiting, setIsExiting] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const returnTo =
+    typeof location.state === "object" &&
+    location.state &&
+    "from" in location.state &&
+    typeof (location.state as { from?: unknown }).from === "string"
+      ? (location.state as { from: string }).from
+      : null;
+
+  // Already signed in (e.g. session restore) — skip the gate.
+  useEffect(() => {
+    if (!isAuthenticated || isExiting) return;
+    navigate(returnTo && returnTo !== "/" ? returnTo : "/dashboard", {
+      replace: true,
+    });
+  }, [isAuthenticated, isExiting, navigate, returnTo]);
 
   const handleSubmit = useCallback(
     (event: FormEvent) => {
@@ -30,17 +47,23 @@ export function AccessGatePage() {
       grantAccess();
       setIsExiting(true);
 
+      const destination =
+        returnTo && returnTo !== "/" ? returnTo : "/dashboard";
+
       window.setTimeout(() => {
-        navigate("/dashboard", {
+        navigate(destination, {
           replace: true,
-          state: {
-            fromGate: true,
-            selectedSlug: "abbot-kinney",
-          },
+          state:
+            destination === "/dashboard"
+              ? {
+                  fromGate: true,
+                  selectedSlug: "abbot-kinney",
+                }
+              : undefined,
         });
       }, EXIT_DURATION_MS);
     },
-    [grantAccess, isSubmitting, navigate, password]
+    [grantAccess, isSubmitting, navigate, password, returnTo]
   );
 
   return (

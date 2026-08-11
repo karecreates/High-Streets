@@ -7,6 +7,8 @@ import {
   type ReactNode,
 } from "react";
 
+const ACCESS_SESSION_KEY = "high-streets-access";
+
 interface AccessContextValue {
   isAuthenticated: boolean;
   grantAccess: () => void;
@@ -15,14 +17,32 @@ interface AccessContextValue {
 
 const AccessContext = createContext<AccessContextValue | null>(null);
 
+function readStoredAccess(): boolean {
+  try {
+    return sessionStorage.getItem(ACCESS_SESSION_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
 export function AccessProvider({ children }: { children: ReactNode }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(readStoredAccess);
 
   const grantAccess = useCallback(() => {
+    try {
+      sessionStorage.setItem(ACCESS_SESSION_KEY, "1");
+    } catch {
+      /* ignore quota / private mode */
+    }
     setIsAuthenticated(true);
   }, []);
 
   const revokeAccess = useCallback(() => {
+    try {
+      sessionStorage.removeItem(ACCESS_SESSION_KEY);
+    } catch {
+      /* ignore */
+    }
     setIsAuthenticated(false);
   }, []);
 

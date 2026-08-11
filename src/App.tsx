@@ -1,5 +1,6 @@
 import { APIProvider } from "@vis.gl/react-google-maps";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { ProtectedOutlet } from "./components/ProtectedOutlet";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { AccessProvider } from "./context/AccessContext";
 import { TenantsProvider } from "./context/TenantsContext";
@@ -41,38 +42,19 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route
-        path="/street/:slug"
-        element={
-          <ProtectedRoute>
-            <StreetDetailPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/street/:slug/map"
-        element={
-          <ProtectedRoute>
-            <StreetMapPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/center/:slug"
-        element={
-          <ProtectedRoute>
-            <StreetDetailPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/center/:slug/map"
-        element={
-          <ProtectedRoute>
-            <ShoppingCenterMapPage />
-          </ProtectedRoute>
-        }
-      />
+      {/*
+        Nested under /street/:slug and /center/:slug so map ↔ info swaps via
+        Outlet. Keep these route trees stable (no useLocation keys here) —
+        remounting Routes mid-navigate was leaving the map mounted.
+      */}
+      <Route path="/street/:slug" element={<ProtectedOutlet />}>
+        <Route index element={<StreetDetailPage />} />
+        <Route path="map" element={<StreetMapPage />} />
+      </Route>
+      <Route path="/center/:slug" element={<ProtectedOutlet />}>
+        <Route index element={<StreetDetailPage />} />
+        <Route path="map" element={<ShoppingCenterMapPage />} />
+      </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

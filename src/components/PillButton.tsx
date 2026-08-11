@@ -1,9 +1,9 @@
-import type { ReactNode } from "react";
+import type { MouseEventHandler, ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 interface PillButtonProps {
   to?: string;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
   children: ReactNode;
   variant?: "primary" | "outline";
   className?: string;
@@ -20,7 +20,7 @@ export function PillButton({
 
   if (to) {
     return (
-      <Link to={to} className={cls}>
+      <Link to={to} className={cls} onClick={onClick}>
         {children}
       </Link>
     );

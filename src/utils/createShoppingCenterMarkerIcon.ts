@@ -32,6 +32,10 @@ export interface ShoppingCenterMarkerOptions {
    * Plot coordinate stays fixed — only the callout direction changes.
    */
   placement?: ShoppingCenterLogoPlacement;
+  /** Horizontal shift of the logo box; geographic anchor stays on lat/lng. */
+  offsetX?: number;
+  /** White stem from pin to logo box. Default false. */
+  showStem?: boolean;
   /** Crop empty artboard margins so the callout can be a tighter rectangle. */
   logoCrop?: ShoppingCenterLogoCrop;
 }
@@ -84,6 +88,8 @@ export async function createShoppingCenterMarkerIcon(
   const markerOptions = {
     boxBg: options.boxBg ?? (options.lightBox ? LIGHT_MARKER_BOX_BG : undefined),
     placement,
+    offsetX: options.offsetX,
+    showStem: options.showStem,
   };
 
   try {
@@ -99,8 +105,8 @@ export async function createShoppingCenterMarkerIcon(
     return drawCalloutMarker(
       dims.boxWidth,
       dims.boxHeight,
-      (ctx, _x, boxY) => {
-        const x = (dims.boxWidth - dims.logoWidth) / 2;
+      (ctx, boxX, boxY) => {
+        const x = boxX + (dims.boxWidth - dims.logoWidth) / 2;
         const y = boxY + (dims.boxHeight - dims.logoHeight) / 2;
         ctx.drawImage(
           img,
@@ -122,14 +128,14 @@ export async function createShoppingCenterMarkerIcon(
     return drawCalloutMarker(
       boxWidth,
       boxHeight,
-      (ctx, _x, boxY, width) => {
+      (ctx, boxX, boxY, width) => {
         ctx.fillStyle = "#3E6F7E";
         ctx.font = compact
           ? '600 14px "proxima-nova", system-ui, sans-serif'
           : '600 22px "proxima-nova", system-ui, sans-serif';
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText("MCM", width / 2, boxY + boxHeight / 2);
+        ctx.fillText("MCM", boxX + width / 2, boxY + boxHeight / 2);
       },
       markerOptions
     );

@@ -1,5 +1,10 @@
 import type { Tenant } from "../types/tenant";
 import {
+  COMPACT_LETTERMARK_SIZE,
+  COMPACT_LOGO_HEIGHT,
+  COMPACT_LOGO_PADDING_X,
+  COMPACT_LOGO_PADDING_Y,
+  COMPACT_LOGO_WIDTH,
   createLogoMarkerIcon,
   drawLettermark,
   GROUP_CELL_HEIGHT,
@@ -7,6 +12,7 @@ import {
   LETTERMARK_SIZE,
   MAX_LOGO_HEIGHT,
   MAX_LOGO_WIDTH,
+  type LogoMarkerLayoutOptions,
 } from "./createLogoMarkerIcon";
 import { dedupeTenants } from "./dedupeTenants";
 import { getTenantInitial } from "./tenantInitial";
@@ -14,16 +20,54 @@ import { loadBrandLogoImage } from "./logoProvider";
 import {
   drawCalloutMarker,
   drawImageContained,
+  loadLogoImage,
+  MARKER_BORDER_RADIUS,
+  MARKER_STEM_HEIGHT_CALLOUT,
   roundRect,
 } from "./markerCalloutCanvas";
 
 const CELL_GAP = 8;
+const COMPACT_CELL_GAP = 5;
 const PADDING = 10;
+const COMPACT_PADDING = 6;
 const CELL_RADIUS = 8;
 const MAX_ROWS = 7;
+const HEADER_PADDING_X = 14;
+const HEADER_PADDING_Y = 12;
+const HEADER_LOGO_MAX_WIDTH = 148;
+const HEADER_LOGO_MAX_HEIGHT = 40;
+const HEADER_DIVIDER_GAP = 8;
+
+export interface GroupedMarkerCenterHeader {
+  name: string;
+  logoUrl: string;
+}
 
 async function loadTenantLogo(tenant: Tenant): Promise<HTMLImageElement | null> {
-  return loadBrandLogoImage(tenant.logoDomain, { size: 160 });
+  return loadBrandLogoImage(tenant.logoDomain);
+}
+
+function cellMetrics(compact?: boolean) {
+  if (compact) {
+    return {
+      cellW: COMPACT_LOGO_WIDTH + COMPACT_LOGO_PADDING_X * 2,
+      cellH: COMPACT_LOGO_HEIGHT + COMPACT_LOGO_PADDING_Y * 2,
+      logoW: COMPACT_LOGO_WIDTH,
+      logoH: COMPACT_LOGO_HEIGHT,
+      letter: COMPACT_LETTERMARK_SIZE,
+      gap: COMPACT_CELL_GAP,
+      pad: COMPACT_PADDING,
+    };
+  }
+  return {
+    cellW: GROUP_CELL_WIDTH,
+    cellH: GROUP_CELL_HEIGHT,
+    logoW: MAX_LOGO_WIDTH,
+    logoH: MAX_LOGO_HEIGHT,
+    letter: LETTERMARK_SIZE,
+    gap: CELL_GAP,
+    pad: PADDING,
+  };
 }
 
 function gridDimensions(count: number): { cols: number; rows: number } {
@@ -41,67 +85,235 @@ function gridDimensions(count: number): { cols: number; rows: number } {
   return { cols, rows };
 }
 
+function drawTenantCell(
+  ctx: CanvasRenderingContext2D,
+  tenant: Tenant,
+  img: HTMLImageElement | null,
+  x: number,
+  y: number,
+  compact?: boolean
+) {
+  const m = cellMetrics(compact);
+  if (img) {
+    ctx.save();
+    roundRect(ctx, x, y, m.cellW, m.cellH, CELL_RADIUS);
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fill();
+    ctx.clip();
+    drawImageContained(
+      ctx,
+      img,
+      x + (m.cellW - m.logoW) / 2,
+      y + (m.cellH - m.logoH) / 2,
+      m.logoW,
+      m.logoH
+    );
+    ctx.restore();
+    return;
+  }
+
+  const lx = x + (m.cellW - m.letter) / 2;
+  const ly = y + (m.cellH - m.letter) / 2;
+  drawLettermark(
+    ctx,
+    lx,
+    ly,
+    m.letter,
+    getTenantInitial(tenant.tenantName)
+  );
+}
+
+function calloutOptions(layout?: LogoMarkerLayoutOptions) {
+  return {
+    placement: layout?.placement,
+    offsetX: layout?.offsetX ?? 0,
+    showStem: layout?.showStem,
+    stemHeight: layout?.showStem
+      ? (layout.stemHeight ?? MARKER_STEM_HEIGHT_CALLOUT)
+      : undefined,
+  };
+}
+
 /**
  * Grouped marker = grid of tenants at one address. Logos match standalone size;
  * missing logos use the shared beta-blue lettermark.
+ * Optional center header (FIGat7th / L.A. Live) sits above the tenant grid.
  */
 export async function createGroupedLogoMarkerIcon(
-  tenants: Tenant[]
+  tenants: Tenant[],
+  centerHeader?: GroupedMarkerCenterHeader | null,
+  layout?: LogoMarkerLayoutOptions
 ): Promise<google.maps.Icon> {
   const unique = dedupeTenants(tenants);
 
-  if (unique.length === 1) {
-    return createLogoMarkerIcon(unique[0]);
+  if (unique.length === 1 && !centerHeader) {
+    return createLogoMarkerIcon(unique[0], layout);
   }
 
-  const logos = await Promise.all(unique.map(loadTenantLogo));
+  if (unique.length === 0 && centerHeader) {
+    // Fall back to the standalone shopping-center pin look via its logo URL.
+    try {
+      const img = await loadLogoImage(centerHeader.logoUrl);
+      return drawCalloutMarker(
+        HEADER_LOGO_MAX_WIDTH + HEADER_PADDING_X * 2,
+        HEADER_LOGO_MAX_HEIGHT + HEADER_PADDING_Y * 2,
+        (ctx, boxX, boxY, width, height) => {
+          drawImageContained(
+            ctx,
+            img,
+            boxX + HEADER_PADDING_X,
+            boxY + HEADER_PADDING_Y,
+            width - HEADER_PADDING_X * 2,
+            height - HEADER_PADDING_Y * 2
+          );
+        },
+        calloutOptions(layout)
+      );
+    } catch {
+      return createLogoMarkerIcon(
+        {
+          id: "center-header",
+          tenantName: centerHeader.name,
+          address: centerHeader.name,
+          suite: "",
+          highStreet: "",
+          costarUrl: "",
+          domain: "",
+          faviconUrl: "",
+          unitStatus: "Occupied",
+          logoDomain: undefined,
+          hasLogo: false,
+          lat: null,
+          lng: null,
+        },
+        layout
+      );
+    }
+  }
+
+  const [logos, headerLogo] = await Promise.all([
+    Promise.all(unique.map(loadTenantLogo)),
+    centerHeader
+      ? loadLogoImage(centerHeader.logoUrl).catch(() => null)
+      : Promise.resolve(null),
+  ]);
   const count = unique.length;
+  const compact = layout?.compact;
+  const m = cellMetrics(compact);
 
-  const { cols, rows } = gridDimensions(count);
-  const stepX = GROUP_CELL_WIDTH + CELL_GAP;
-  const stepY = GROUP_CELL_HEIGHT + CELL_GAP;
+  const { cols, rows } = gridDimensions(Math.max(count, 1));
+  const stepX = m.cellW + m.gap;
+  const stepY = m.cellH + m.gap;
 
-  const boxWidth =
-    PADDING * 2 + cols * GROUP_CELL_WIDTH + (cols - 1) * CELL_GAP;
-  const boxHeight =
-    PADDING * 2 + rows * GROUP_CELL_HEIGHT + (rows - 1) * CELL_GAP;
+  const gridWidth =
+    m.pad * 2 +
+    Math.max(cols, 1) * m.cellW +
+    Math.max(cols - 1, 0) * m.gap;
+  const gridHeight =
+    count === 0
+      ? 0
+      : m.pad * 2 + rows * m.cellH + Math.max(rows - 1, 0) * m.gap;
 
-  return drawCalloutMarker(boxWidth, boxHeight, (ctx) => {
-    unique.forEach((tenant, index) => {
-      const row = Math.floor(index / cols);
-      const col = index % cols;
-      const itemsInRow = Math.min(cols, count - row * cols);
-      const rowOffset = ((cols - itemsInRow) * stepX) / 2;
-      const x = PADDING + rowOffset + col * stepX;
-      const y = PADDING + row * stepY;
-      const img = logos[index];
+  const headerBandHeight = centerHeader
+    ? HEADER_PADDING_Y * 2 + HEADER_LOGO_MAX_HEIGHT + HEADER_DIVIDER_GAP
+    : 0;
+  const boxWidth = Math.max(
+    gridWidth,
+    centerHeader ? HEADER_LOGO_MAX_WIDTH + HEADER_PADDING_X * 2 : 0
+  );
+  const boxHeight = headerBandHeight + gridHeight;
 
-      if (img) {
+  return drawCalloutMarker(
+    boxWidth,
+    boxHeight,
+    (ctx, boxX, boxY) => {
+      let contentTop = boxY;
+
+      if (centerHeader) {
+        const headerHeight = HEADER_PADDING_Y * 2 + HEADER_LOGO_MAX_HEIGHT;
         ctx.save();
-        roundRect(ctx, x, y, GROUP_CELL_WIDTH, GROUP_CELL_HEIGHT, CELL_RADIUS);
-        ctx.fillStyle = "#FFFFFF";
-        ctx.fill();
+        roundRect(
+          ctx,
+          boxX + 0.5,
+          boxY + 0.5,
+          boxWidth - 1,
+          boxHeight - 1,
+          MARKER_BORDER_RADIUS
+        );
         ctx.clip();
-        drawImageContained(
-          ctx,
-          img,
-          x + (GROUP_CELL_WIDTH - MAX_LOGO_WIDTH) / 2,
-          y + (GROUP_CELL_HEIGHT - MAX_LOGO_HEIGHT) / 2,
-          MAX_LOGO_WIDTH,
-          MAX_LOGO_HEIGHT
-        );
+        ctx.fillStyle = "#F7F9FA";
+        ctx.fillRect(boxX, contentTop, boxWidth, headerHeight);
         ctx.restore();
-      } else {
-        const lx = x + (GROUP_CELL_WIDTH - LETTERMARK_SIZE) / 2;
-        const ly = y + (GROUP_CELL_HEIGHT - LETTERMARK_SIZE) / 2;
-        drawLettermark(
-          ctx,
-          lx,
-          ly,
-          LETTERMARK_SIZE,
-          getTenantInitial(tenant.tenantName)
+
+        if (headerLogo) {
+          drawImageContained(
+            ctx,
+            headerLogo,
+            boxX + HEADER_PADDING_X,
+            contentTop + HEADER_PADDING_Y,
+            boxWidth - HEADER_PADDING_X * 2,
+            HEADER_LOGO_MAX_HEIGHT
+          );
+        } else {
+          ctx.fillStyle = "#3E6F7E";
+          ctx.font = '700 16px "proxima-nova", system-ui, sans-serif';
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText(
+            centerHeader.name,
+            boxX + boxWidth / 2,
+            contentTop + headerHeight / 2
+          );
+        }
+
+        contentTop += headerHeight;
+        ctx.strokeStyle = "#E2E8EB";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(boxX + m.pad, contentTop + HEADER_DIVIDER_GAP / 2);
+        ctx.lineTo(
+          boxX + boxWidth - m.pad,
+          contentTop + HEADER_DIVIDER_GAP / 2
         );
+        ctx.stroke();
+        contentTop += HEADER_DIVIDER_GAP;
       }
-    });
-  });
+
+      unique.forEach((tenant, index) => {
+        const row = Math.floor(index / cols);
+        const col = index % cols;
+        const itemsInRow = Math.min(cols, count - row * cols);
+        const rowOffset = ((cols - itemsInRow) * stepX) / 2;
+        const x = boxX + m.pad + rowOffset + col * stepX;
+        const y = contentTop + m.pad + row * stepY;
+        drawTenantCell(ctx, tenant, logos[index], x, y, compact);
+      });
+    },
+    calloutOptions(layout)
+  );
+}
+
+/** Screen-space estimate for collision layout of a tenant group pin (box only). */
+export function estimateGroupedLogoMarkerSize(
+  tenantCount: number,
+  options?: { hasCenterHeader?: boolean; compact?: boolean }
+): { width: number; height: number } {
+  const count = Math.max(tenantCount, 1);
+  const m = cellMetrics(options?.compact);
+  const { cols, rows } = gridDimensions(count);
+  const gridWidth =
+    m.pad * 2 + cols * m.cellW + Math.max(cols - 1, 0) * m.gap;
+  const gridHeight =
+    m.pad * 2 + rows * m.cellH + Math.max(rows - 1, 0) * m.gap;
+  const hasCenterHeader = options?.hasCenterHeader ?? false;
+  const headerBandHeight = hasCenterHeader
+    ? HEADER_PADDING_Y * 2 + HEADER_LOGO_MAX_HEIGHT + HEADER_DIVIDER_GAP
+    : 0;
+  return {
+    width: Math.max(
+      gridWidth,
+      hasCenterHeader ? HEADER_LOGO_MAX_WIDTH + HEADER_PADDING_X * 2 : 0
+    ),
+    height: headerBandHeight + gridHeight,
+  };
 }

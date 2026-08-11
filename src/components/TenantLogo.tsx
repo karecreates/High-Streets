@@ -7,20 +7,17 @@ import { getTenantInitial } from "../utils/tenantInitial";
 interface TenantLogoProps {
   tenant: Tenant;
   className?: string;
-  /** Requested logo raster size (CSS still controls display size). */
-  size?: number;
 }
 
 export function TenantLogo({
   tenant,
   className = "info-window__logo",
-  size = 200,
 }: TenantLogoProps) {
   const [provider] = useLogoProvider();
   const [logoSrc, setLogoSrc] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
   const initial = getTenantInitial(tenant.tenantName);
-  const sourceKey = `${provider}:${tenant.logoDomain ?? ""}:${size}`;
+  const sourceKey = `${provider}:${tenant.logoDomain ?? ""}`;
 
   useEffect(() => {
     let cancelled = false;
@@ -28,7 +25,7 @@ export function TenantLogo({
     setFailed(false);
 
     (async () => {
-      const img = await loadBrandLogoImage(tenant.logoDomain, { size });
+      const img = await loadBrandLogoImage(tenant.logoDomain);
       if (cancelled) return;
       if (img?.src) setLogoSrc(img.src);
       else setFailed(true);
@@ -37,7 +34,7 @@ export function TenantLogo({
     return () => {
       cancelled = true;
     };
-  }, [sourceKey, tenant.logoDomain, size]);
+  }, [sourceKey, tenant.logoDomain]);
 
   if (!logoSrc || failed) {
     return (

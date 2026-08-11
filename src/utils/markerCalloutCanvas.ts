@@ -1,8 +1,11 @@
 export const MARKER_SCALE = 2;
 export const MARKER_STEM_HEIGHT = 11;
+/** Longer leader for dense street corridors (major-tenant deconflict). */
+export const MARKER_STEM_HEIGHT_CALLOUT = 18;
 export const MARKER_BORDER_RADIUS = 8;
 export const MARKER_BORDER_COLOR = "#FFFFFF";
 export const MARKER_BOX_BG = "#FFFFFF";
+export const MARKER_STEM_COLOR = "#3E6F7E";
 
 export function roundRect(
   ctx: CanvasRenderingContext2D,
@@ -132,6 +135,9 @@ export async function loadLogoImage(url: string): Promise<HTMLImageElement> {
   }
 }
 
+/** Gap between callout box and lat/lng when no stem is drawn. */
+const MARKER_GAP_NO_STEM = 6;
+
 export function drawCalloutMarker(
   boxWidth: number,
   boxHeight: number,
@@ -142,13 +148,29 @@ export function drawCalloutMarker(
     width: number,
     height: number
   ) => void,
-  options: { boxBg?: string; placement?: "above" | "below" } = {}
+  options: {
+    boxBg?: string;
+    placement?: "above" | "below";
+    /** Shift the logo/label box horizontally; geographic anchor stays on lat/lng. */
+    offsetX?: number;
+    /** Leader line from pin to box. Default false. */
+    showStem?: boolean;
+    /** Override stem length (px). */
+    stemHeight?: number;
+  } = {}
 ): google.maps.Icon {
   const boxBg = options.boxBg ?? MARKER_BOX_BG;
   const placement = options.placement ?? "above";
-  const width = boxWidth;
-  const height = boxHeight + MARKER_STEM_HEIGHT;
-  const boxY = placement === "above" ? 0 : MARKER_STEM_HEIGHT;
+  const offsetX = options.offsetX ?? 0;
+  const showStem = options.showStem ?? false;
+  const stemHeight = showStem
+    ? (options.stemHeight ?? MARKER_STEM_HEIGHT)
+    : MARKER_GAP_NO_STEM;
+  const width = boxWidth + Math.abs(offsetX);
+  const height = boxHeight + stemHeight;
+  const boxY = placement === "above" ? 0 : stemHeight;
+  const boxX = offsetX >= 0 ? offsetX : 0;
+  const anchorX = offsetX >= 0 ? boxWidth / 2 : boxWidth / 2 - offsetX;
 
   const canvas = document.createElement("canvas");
   canvas.width = width * MARKER_SCALE;
@@ -156,11 +178,51 @@ export function drawCalloutMarker(
   const ctx = canvas.getContext("2d")!;
   ctx.scale(MARKER_SCALE, MARKER_SCALE);
 
+  // Stem under the box so the leader reads clearly on light basemaps.
+  // With offsetX=0 this is a clean vertical line (preferred for street logos).
+  if (showStem) {
+    const tipY = placement === "above" ? height : 0;
+    const boxEdgeY = placement === "above" ? boxY + boxHeight : boxY;
+    const attachX =
+      offsetX === 0
+        ? anchorX
+        : Math.max(boxX + 6, Math.min(boxX + boxWidth - 6, anchorX));
+
+    ctx.beginPath();
+    ctx.moveTo(anchorX, tipY);
+    ctx.lineTo(attachX, boxEdgeY);
+    ctx.strokeStyle = "#FFFFFF";
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(anchorX, tipY);
+    ctx.lineTo(attachX, boxEdgeY);
+    ctx.strokeStyle = MARKER_STEM_COLOR;
+    ctx.lineWidth = 1.25;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(anchorX, tipY, 2.25, 0, Math.PI * 2);
+    ctx.fillStyle = MARKER_STEM_COLOR;
+    ctx.fill();
+    ctx.strokeStyle = "#FFFFFF";
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
   ctx.shadowColor = "rgba(26, 35, 50, 0.22)";
   ctx.shadowBlur = 8;
   ctx.shadowOffsetY = 3;
 
-  roundRect(ctx, 0.5, boxY + 0.5, width - 1, boxHeight - 1, MARKER_BORDER_RADIUS);
+  roundRect(
+    ctx,
+    boxX + 0.5,
+    boxY + 0.5,
+    boxWidth - 1,
+    boxHeight - 1,
+    MARKER_BORDER_RADIUS
+  );
   ctx.fillStyle = boxBg;
   ctx.fill();
   ctx.strokeStyle = MARKER_BORDER_COLOR;
@@ -171,23 +233,14 @@ export function drawCalloutMarker(
   ctx.shadowBlur = 0;
   ctx.shadowOffsetY = 0;
 
-  drawContent(ctx, 0, boxY, width, boxHeight);
-
-  const stemFrom = placement === "above" ? boxHeight : MARKER_STEM_HEIGHT;
-  const stemTo = placement === "above" ? height : 0;
-  ctx.beginPath();
-  ctx.moveTo(width / 2, stemFrom);
-  ctx.lineTo(width / 2, stemTo);
-  ctx.strokeStyle = MARKER_BORDER_COLOR;
-  ctx.lineWidth = 1;
-  ctx.stroke();
+  drawContent(ctx, boxX, boxY, boxWidth, boxHeight);
 
   return {
     url: canvas.toDataURL(),
     scaledSize: new google.maps.Size(width, height),
-    // Tip of the stem stays on the true lat/lng for both placements
+    // Geographic point stays on the true lat/lng for both placements
     anchor: new google.maps.Point(
-      width / 2,
+      anchorX,
       placement === "above" ? height : 0
     ),
   };

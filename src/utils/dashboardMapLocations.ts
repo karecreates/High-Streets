@@ -37,23 +37,23 @@ const LABEL_OVERRIDES: Record<string, DashboardLabelOverride> = {
   "brentwood-country-mart": { labelPlacement: "above", label: "Brentwood Mart" },
   montana: { labelPlacement: "below", label: "Montana Ave" },
   "third-street-promenade": { labelPlacement: "above", label: "3rd St Promenade" },
-  "santa-monica-place": { labelPlacement: "below", label: "Santa Monica Place" },
-  "abbot-kinney": { labelPlacement: "above" },
+  "santa-monica-place": { labelPlacement: "above", label: "Santa Monica Place" },
+  "abbot-kinney": { labelPlacement: "below" },
 
   // Westside / Culver
   "westfield-century-city": { labelPlacement: "above", label: "Century City" },
   platform: { labelPlacement: "below" },
   "culver-city": { labelPlacement: "above" },
 
-  // WeHo / Mid-City
+  // WeHo / Mid-City — preferred sides; overview collision resolver may offset further
   "sunset-strip": { labelPlacement: "above" },
   robertson: { labelPlacement: "below" },
-  melrose: { labelPlacement: "above" },
-  "la-brea": { labelPlacement: "below" },
+  melrose: { labelPlacement: "below" },
+  "la-brea": { labelPlacement: "above" },
   "studio-city": { labelPlacement: "above", label: "Studio City" },
   "sportsmen-lodge": { labelPlacement: "below", label: "Sportsmen's Lodge" },
 
-  // Central / East — Old Town below so it clears One Colorado / The Paseo logos
+  // Central / East
   larchmont: { labelPlacement: "above" },
   silverlake: { labelPlacement: "below" },
   "la-arts-district": {
@@ -61,8 +61,8 @@ const LABEL_OVERRIDES: Record<string, DashboardLabelOverride> = {
     label: "Arts District",
   },
   "golden-triangle": {
-    labelPlacement: "above",
-    label: "Golden Triangle",
+    labelPlacement: "below",
+    label: "Triangle",
   },
   "downtown-la": { labelPlacement: "below", label: "Downtown LA" },
   "americana-at-brand": { labelPlacement: "above", label: "Americana" },
@@ -77,7 +77,7 @@ const LABEL_OVERRIDES: Record<string, DashboardLabelOverride> = {
     label: "Manhattan Village",
   },
   "downtown-manhattan-beach": {
-    labelPlacement: "above",
+    labelPlacement: "below",
     label: "Manhattan Beach",
   },
 };
