@@ -71,6 +71,74 @@ export const TRADE_AREA_LANDMARKS: TradeAreaLandmark[] = [
     position: { lat: 33.9535, lng: -118.3392 },
     placement: "below",
   },
+  {
+    id: "farmers-market",
+    name: "Farmers Market",
+    position: { lat: 34.0722, lng: -118.3606 },
+    placement: "above",
+  },
+  {
+    id: "lacma",
+    name: "LACMA",
+    position: { lat: 34.0639, lng: -118.3591 },
+    placement: "below",
+  },
+  {
+    id: "hollywood",
+    name: "Hollywood",
+    position: { lat: 34.1016, lng: -118.3267 },
+    placement: "above",
+  },
+
+  // Orange County (South Coast Plaza trade area)
+  {
+    id: "segerstrom-center",
+    name: "Segerstrom Center",
+    position: { lat: 33.6924, lng: -117.8833 },
+    placement: "above",
+  },
+  {
+    id: "ocma",
+    name: "OCMA",
+    position: { lat: 33.6917, lng: -117.8809 },
+    placement: "below",
+  },
+  {
+    id: "john-wayne-airport",
+    name: "John Wayne Airport",
+    position: { lat: 33.6757, lng: -117.8682 },
+    placement: "below",
+  },
+  {
+    id: "newport-beach",
+    name: "Newport Beach",
+    position: { lat: 33.6189, lng: -117.9298 },
+    placement: "below",
+  },
+  {
+    id: "huntington-beach",
+    name: "Huntington Beach",
+    position: { lat: 33.6595, lng: -117.9988 },
+    placement: "below",
+  },
+  {
+    id: "disneyland",
+    name: "Disneyland",
+    position: { lat: 33.8121, lng: -117.919 },
+    placement: "above",
+  },
+  {
+    id: "anaheim",
+    name: "Anaheim",
+    position: { lat: 33.8366, lng: -117.9143 },
+    placement: "above",
+  },
+  {
+    id: "irvine",
+    name: "Irvine",
+    position: { lat: 33.6846, lng: -117.8265 },
+    placement: "above",
+  },
 ];
 
 /** Degrees of padding around trade-area bounds when filtering landmarks. */
@@ -78,7 +146,7 @@ const BOUNDS_PAD_DEG = 0.04;
 
 /**
  * Landmarks that fall inside (or just outside) the trade-area extent.
- * Keeps Abbot Kinney / Third Street maps relevant without cluttering far-away POIs.
+ * Keeps corridor trade-area maps relevant without cluttering far-away POIs.
  */
 export function getLandmarksForTradeArea(
   polygons: Array<{ outer: Array<{ lat: number; lng: number }> }>

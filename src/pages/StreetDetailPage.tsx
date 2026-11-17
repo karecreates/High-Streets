@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useMemo } from "react";
+import { useParams, useSearchParams } from "react-router-dom";
 import placerLogo from "@assets/logos/placer_logo_ai402x-onc6yw63cdv2bi8m8eps8fr1sczb4qf1x8fx55sc2o.png";
 import { AnimatedDisplay } from "../components/AnimatedDisplay";
 import { BrandLogoGrid } from "../components/BrandLogoGrid";
@@ -14,6 +14,7 @@ import {
   getCorridorDetail,
 } from "../data/highStreets";
 import { getPlacerInsights } from "../data/placer";
+import { enableThrottledLogoRetries } from "../utils/logoProvider";
 import { PlacerInsights } from "../components/PlacerInsights";
 import {
   pickNotableBrandsFromCenterTenants,
@@ -35,13 +36,31 @@ function categoryEyebrow(category: string | undefined): string {
     .replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-export function StreetDetailPage() {
-  const { slug } = useParams<{ slug: string }>();
+interface StreetDetailPageProps {
+  /** Booklet export: render this corridor instead of the route param. */
+  slug?: string;
+  /** Booklet export: Overview tab pinned open, navigation actions removed. */
+  pdfMode?: boolean;
+}
+
+export function StreetDetailPage({
+  slug: slugOverride,
+  pdfMode: pdfModeProp = false,
+}: StreetDetailPageProps = {}) {
+  const params = useParams<{ slug: string }>();
+  const [searchParams] = useSearchParams();
+  const pdfMode = pdfModeProp || searchParams.get("mode") === "pdf";
+  const slug = slugOverride ?? params.slug;
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
   const detail = slug ? getCorridorDetail(slug) : undefined;
   const { dataset, vacanciesDataset } = useTenantsContext();
   const shoppingCenter = slug ? getShoppingCenter(slug) : undefined;
   const placerData = getPlacerInsights(slug);
+
+  useEffect(() => {
+    if (!pdfMode) return;
+    enableThrottledLogoRetries();
+  }, [pdfMode]);
 
   const brandItems = useMemo(() => {
     if (!corridor || !detail) return [];
@@ -110,7 +129,11 @@ export function StreetDetailPage() {
   const backPath = "/dashboard";
 
   return (
-    <div className="street-page street-page--detail">
+    <div
+      className={`street-page street-page--detail${
+        pdfMode ? " street-page--pdf" : ""
+      }`}
+    >
       <div className="street-detail">
         <div className="street-detail__content">
           <div className="street-detail__stack">
@@ -126,17 +149,21 @@ export function StreetDetailPage() {
               <p className="street-detail__body">{detail.description}</p>
               <div className="score-panel">
                 <div className="score-rings">
-                  <ScoreRing
-                    label="BIKE SCORE"
-                    value={detail.bikeScore}
-                    variant="teal"
-                  />
-                  <ScoreRing
-                    label="WALK SCORE"
-                    value={detail.walkScore}
-                    variant="slate"
-                    delay={120}
-                  />
+                  {detail.bikeScore > 0 ? (
+                    <ScoreRing
+                      label="BIKE SCORE"
+                      value={detail.bikeScore}
+                      variant="teal"
+                    />
+                  ) : null}
+                  {detail.walkScore > 0 ? (
+                    <ScoreRing
+                      label="WALK SCORE"
+                      value={detail.walkScore}
+                      variant="slate"
+                      delay={detail.bikeScore > 0 ? 120 : 0}
+                    />
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -144,7 +171,7 @@ export function StreetDetailPage() {
             <div className="street-detail__row">
               <div className="info-card info-card--compact info-card--rents">
                 <div className="info-card__header">
-                  ESTIMATED RENTS &amp; VACANCY
+                  {pdfMode ? "ESTIMATED RENTS" : "ESTIMATED RENTS & VACANCY"}
                 </div>
                 <div className="info-card__metrics">
                   <div className="info-card__metric">
@@ -155,7 +182,7 @@ export function StreetDetailPage() {
                       Estimated rents
                     </span>
                   </div>
-                  {vacancyRate ? (
+                  {!pdfMode && vacancyRate ? (
                     <div className="info-card__metric">
                       <p className="info-card__metric-value">{vacancyRate}</p>
                       <span className="info-card__metric-label">
@@ -198,7 +225,10 @@ export function StreetDetailPage() {
             </div>
 
             {placerData ? (
-              <PlacerInsights data={placerData} />
+              <PlacerInsights
+                data={placerData}
+                forcedTab={pdfMode ? "demographics" : undefined}
+              />
             ) : (
               <div className="info-card">
                 <div className="info-card__header">
@@ -223,26 +253,36 @@ export function StreetDetailPage() {
             <div className="info-card info-card--brands info-card--compact">
               <div className="info-card__header">SELECTIVE BRANDS</div>
               {brandItems.length ? (
-                <BrandLogoGrid brands={brandItems} limit={10} />
+                <BrandLogoGrid
+                  brands={brandItems}
+                  limit={10}
+                  eager={pdfMode}
+                />
               ) : staticLogos?.length ? (
                 <div className="brand-grid brand-grid--large">
                   {staticLogos.slice(0, 10).map((src) => (
                     <div key={src} className="brand-grid__cell">
-                      <img src={src} alt="" loading="lazy" />
+                      <img
+                        src={src}
+                        alt=""
+                        loading={pdfMode ? "eager" : "lazy"}
+                      />
                     </div>
                   ))}
                 </div>
               ) : null}
             </div>
 
-            <div className="street-detail__actions">
-              <PillButton to={backPath} variant="outline">
-                ← Back to Dashboard
-              </PillButton>
-              <PillButton to={mapPath} variant="outline">
-                View Interactive Map →
-              </PillButton>
-            </div>
+            {pdfMode ? null : (
+              <div className="street-detail__actions">
+                <PillButton to={backPath} variant="outline">
+                  ← Back to Dashboard
+                </PillButton>
+                <PillButton to={mapPath} variant="outline">
+                  View Interactive Map →
+                </PillButton>
+              </div>
+            )}
           </div>
 
           <footer className="street-detail__footer">
@@ -257,7 +297,7 @@ export function StreetDetailPage() {
                 key={img.src}
                 className={`gallery-grid__item gallery-grid__item--${i}`}
               >
-                <img src={img.src} alt={img.alt} loading="lazy" />
+                        <img src={img.src} alt={img.alt} loading={pdfMode ? "eager" : "lazy"} />
               </div>
             ))}
           </div>

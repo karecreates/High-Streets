@@ -13,6 +13,16 @@ function easeOutCubic(t: number): number {
   return 1 - (1 - t) ** 3;
 }
 
+function isPdfCapture(): boolean {
+  if (typeof document === "undefined") return false;
+  if (document.documentElement.classList.contains("playbook-mode")) return true;
+  try {
+    return new URLSearchParams(window.location.search).get("mode") === "pdf";
+  } catch {
+    return false;
+  }
+}
+
 export function ScoreRing({
   label,
   value,
@@ -20,7 +30,7 @@ export function ScoreRing({
   duration = 1200,
   delay = 0,
 }: ScoreRingProps) {
-  const prefersReducedMotion = usePrefersReducedMotion();
+  const prefersReducedMotion = usePrefersReducedMotion() || isPdfCapture();
   /** Slightly tighter ring stroke leaves more clear space for the centered label. */
   const radius = 42;
   const circumference = 2 * Math.PI * radius;
@@ -68,14 +78,23 @@ export function ScoreRing({
   }, [value, duration, delay, circumference, prefersReducedMotion]);
 
   return (
-    <div className={`score-ring score-ring--${variant}`}>
-      <svg className="score-ring__svg" viewBox="0 0 100 100" aria-hidden>
+    <div
+      className={`score-ring score-ring--${variant}`}
+      style={{ ["--score" as string]: displayValue }}
+    >
+      <svg
+        className="score-ring__svg"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden
+      >
         <circle
           className="score-ring__track"
           cx="50"
           cy="50"
           r={radius}
           fill="none"
+          stroke="#e8ecef"
           strokeWidth="6"
         />
         <circle
@@ -84,11 +103,14 @@ export function ScoreRing({
           cy="50"
           r={radius}
           fill="none"
+          stroke={variant === "teal" ? "#3e6f7e" : "#8fa3ad"}
           strokeWidth="6"
-          strokeDasharray={circumference}
-          strokeDashoffset={strokeOffset}
           strokeLinecap="round"
           transform="rotate(-90 50 50)"
+          style={{
+            strokeDasharray: circumference,
+            strokeDashoffset: strokeOffset,
+          }}
         />
       </svg>
       <div className="score-ring__content">

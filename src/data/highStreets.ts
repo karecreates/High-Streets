@@ -24,6 +24,7 @@ import heroStudioCity from "@assets/Studio City Photos/Studio_Cover.jpg";
 import heroSportsmenLodge from "@assets/Sportsmens Lodge Photos/Sportsmens_Lodge_Cover.jpg";
 import heroOneColorado from "@assets/One Colorado Photos/One_Colorado_Cover.jpg";
 import heroManhattanVillage from "@assets/Manhattan Village Photos/Manhattan_Village_Cover.jpg";
+import heroSouthCoastPlaza from "@assets/South Coast Plaza Photos/new_hero.jpg";
 import heroLaArtsDistrict from "@assets/La Arts District Photos/LA_Arts_Cover_New.avif";
 import heroGoldenTriangle from "@assets/Golden Traingle Photos/golden_triangle_cover.jpg";
 import heroDowntownLa from "@assets/Downtown LA Photos/downtown_cover.jpeg";
@@ -320,6 +321,14 @@ export const HIGH_STREET_CORRIDORS: HighStreetCorridor[] = [
     city: "Los Angeles, CA",
     category: "shopping-centers",
     heroImage: heroWestfieldCenturyCity,
+    active: true,
+  },
+  {
+    slug: "south-coast-plaza",
+    name: "South Coast Plaza",
+    city: "Costa Mesa, CA",
+    category: "shopping-centers",
+    heroImage: heroSouthCoastPlaza,
     active: true,
   },
 ];

@@ -49,7 +49,7 @@ const LABEL_OVERRIDES: Record<string, DashboardLabelOverride> = {
   "sunset-strip": { labelPlacement: "above" },
   robertson: { labelPlacement: "below" },
   melrose: { labelPlacement: "below" },
-  "la-brea": { labelPlacement: "above" },
+  "la-brea": { labelPlacement: "below" },
   "studio-city": { labelPlacement: "above", label: "Studio City" },
   "sportsmen-lodge": { labelPlacement: "below", label: "Sportsmen's Lodge" },
 
@@ -70,8 +70,12 @@ const LABEL_OVERRIDES: Record<string, DashboardLabelOverride> = {
   "the-paseo": { labelPlacement: "below", label: "The Paseo" },
   "one-colorado": { labelPlacement: "above", label: "One Colorado" },
 
-  // South Bay
+  // South Bay / OC
   "the-point": { labelPlacement: "above" },
+  "south-coast-plaza": {
+    labelPlacement: "above",
+    label: "South Coast Plaza",
+  },
   "manhattan-village": {
     labelPlacement: "below",
     label: "Manhattan Village",

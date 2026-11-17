@@ -6,6 +6,15 @@ export const MARKER_BORDER_RADIUS = 8;
 export const MARKER_BORDER_COLOR = "#FFFFFF";
 export const MARKER_BOX_BG = "#FFFFFF";
 export const MARKER_STEM_COLOR = "#3E6F7E";
+/** Illustrator drop shadow: Multiply, 25% black, 7 / 7, blur 5. */
+const LOGO_SHADOW_COLOR = "rgba(0, 0, 0, 0.25)";
+const LOGO_SHADOW_BLUR = 5;
+const LOGO_SHADOW_OFFSET_X = 7;
+const LOGO_SHADOW_OFFSET_Y = 7;
+const LOGO_SHADOW_PAD_LEFT = LOGO_SHADOW_BLUR;
+const LOGO_SHADOW_PAD_TOP = LOGO_SHADOW_BLUR;
+const LOGO_SHADOW_PAD_RIGHT = LOGO_SHADOW_OFFSET_X + LOGO_SHADOW_BLUR;
+const LOGO_SHADOW_PAD_BOTTOM = LOGO_SHADOW_OFFSET_Y + LOGO_SHADOW_BLUR;
 
 export function roundRect(
   ctx: CanvasRenderingContext2D,
@@ -150,70 +159,136 @@ export function drawCalloutMarker(
   ) => void,
   options: {
     boxBg?: string;
-    placement?: "above" | "below";
+    placement?: "above" | "below" | "left" | "right" | "center";
     /** Shift the logo/label box horizontally; geographic anchor stays on lat/lng. */
     offsetX?: number;
     /** Leader line from pin to box. Default false. */
     showStem?: boolean;
-    /** Override stem length (px). */
+    /** Override stem length (px). Vertical for above/below; horizontal for left/right. */
     stemHeight?: number;
+    /** Small tip at the geographic point. Default true when a stem is drawn. */
+    showAnchorDot?: boolean;
+    /** White halo behind the leader. Default true. */
+    stemHalo?: boolean;
   } = {}
 ): google.maps.Icon {
   const boxBg = options.boxBg ?? MARKER_BOX_BG;
   const placement = options.placement ?? "above";
   const offsetX = options.offsetX ?? 0;
   const showStem = options.showStem ?? false;
-  const stemHeight = showStem
-    ? (options.stemHeight ?? MARKER_STEM_HEIGHT)
-    : MARKER_GAP_NO_STEM;
-  const width = boxWidth + Math.abs(offsetX);
-  const height = boxHeight + stemHeight;
-  const boxY = placement === "above" ? 0 : stemHeight;
-  const boxX = offsetX >= 0 ? offsetX : 0;
-  const anchorX = offsetX >= 0 ? boxWidth / 2 : boxWidth / 2 - offsetX;
+  const showAnchorDot = options.showAnchorDot ?? showStem;
+  const stemHalo = options.stemHalo ?? true;
+  const centered = placement === "center";
+  const stemLen = centered
+    ? 0
+    : showStem
+      ? (options.stemHeight ?? MARKER_STEM_HEIGHT)
+      : MARKER_GAP_NO_STEM;
 
-  const canvas = document.createElement("canvas");
-  canvas.width = width * MARKER_SCALE;
-  canvas.height = height * MARKER_SCALE;
-  const ctx = canvas.getContext("2d")!;
-  ctx.scale(MARKER_SCALE, MARKER_SCALE);
+  const isSide = placement === "left" || placement === "right";
+  const width = centered
+    ? boxWidth
+    : isSide
+      ? boxWidth + stemLen
+      : boxWidth + Math.abs(offsetX);
+  const height = centered ? boxHeight : isSide ? boxHeight : boxHeight + stemLen;
 
-  // Stem under the box so the leader reads clearly on light basemaps.
-  // With offsetX=0 this is a clean vertical line (preferred for street logos).
-  if (showStem) {
-    const tipY = placement === "above" ? height : 0;
-    const boxEdgeY = placement === "above" ? boxY + boxHeight : boxY;
-    const attachX =
-      offsetX === 0
-        ? anchorX
-        : Math.max(boxX + 6, Math.min(boxX + boxWidth - 6, anchorX));
+  let boxX: number;
+  let boxY: number;
+  let anchorX: number;
+  let anchorY: number;
 
-    ctx.beginPath();
-    ctx.moveTo(anchorX, tipY);
-    ctx.lineTo(attachX, boxEdgeY);
-    ctx.strokeStyle = "#FFFFFF";
-    ctx.lineWidth = 3;
-    ctx.lineCap = "round";
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(anchorX, tipY);
-    ctx.lineTo(attachX, boxEdgeY);
-    ctx.strokeStyle = MARKER_STEM_COLOR;
-    ctx.lineWidth = 1.25;
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.arc(anchorX, tipY, 2.25, 0, Math.PI * 2);
-    ctx.fillStyle = MARKER_STEM_COLOR;
-    ctx.fill();
-    ctx.strokeStyle = "#FFFFFF";
-    ctx.lineWidth = 1;
-    ctx.stroke();
+  if (placement === "center") {
+    boxX = 0;
+    boxY = 0;
+    anchorX = width / 2;
+    anchorY = height / 2;
+  } else if (placement === "left") {
+    boxX = 0;
+    boxY = 0;
+    anchorX = width;
+    anchorY = height / 2;
+  } else if (placement === "right") {
+    boxX = stemLen;
+    boxY = 0;
+    anchorX = 0;
+    anchorY = height / 2;
+  } else {
+    boxY = placement === "above" ? 0 : stemLen;
+    boxX = offsetX >= 0 ? offsetX : 0;
+    anchorX = offsetX >= 0 ? boxWidth / 2 : boxWidth / 2 - offsetX;
+    anchorY = placement === "above" ? height : 0;
   }
 
-  ctx.shadowColor = "rgba(26, 35, 50, 0.22)";
-  ctx.shadowBlur = 8;
-  ctx.shadowOffsetY = 3;
+  const canvasW = width + LOGO_SHADOW_PAD_LEFT + LOGO_SHADOW_PAD_RIGHT;
+  const canvasH = height + LOGO_SHADOW_PAD_TOP + LOGO_SHADOW_PAD_BOTTOM;
+  const canvas = document.createElement("canvas");
+  canvas.width = canvasW * MARKER_SCALE;
+  canvas.height = canvasH * MARKER_SCALE;
+  const ctx = canvas.getContext("2d")!;
+  ctx.scale(MARKER_SCALE, MARKER_SCALE);
+  ctx.translate(LOGO_SHADOW_PAD_LEFT, LOGO_SHADOW_PAD_TOP);
+
+  // Stem: vertical (above/below) or horizontal (left/right) — never diagonal/L.
+  if (showStem) {
+    let tipX = anchorX;
+    let tipY = anchorY;
+    let attachX = tipX;
+    let attachY = tipY;
+
+    if (placement === "left") {
+      tipX = anchorX;
+      tipY = anchorY;
+      attachX = boxX + boxWidth;
+      attachY = tipY;
+    } else if (placement === "right") {
+      tipX = anchorX;
+      tipY = anchorY;
+      attachX = boxX;
+      attachY = tipY;
+    } else {
+      tipY = placement === "above" ? height : 0;
+      tipX = anchorX;
+      const boxEdgeY = placement === "above" ? boxY + boxHeight : boxY;
+      attachX =
+        offsetX === 0
+          ? tipX
+          : Math.max(boxX + 6, Math.min(boxX + boxWidth - 6, tipX));
+      attachY = boxEdgeY;
+    }
+
+    if (stemHalo) {
+      ctx.beginPath();
+      ctx.moveTo(tipX, tipY);
+      ctx.lineTo(attachX, attachY);
+      ctx.strokeStyle = "#FFFFFF";
+      ctx.lineWidth = 3;
+      ctx.lineCap = "butt";
+      ctx.stroke();
+    }
+    ctx.beginPath();
+    ctx.moveTo(tipX, tipY);
+    ctx.lineTo(attachX, attachY);
+    ctx.strokeStyle = MARKER_STEM_COLOR;
+    ctx.lineWidth = stemHalo ? 1.25 : 2.25;
+    ctx.lineCap = "butt";
+    ctx.stroke();
+
+    if (showAnchorDot) {
+      ctx.beginPath();
+      ctx.arc(tipX, tipY, 2.25, 0, Math.PI * 2);
+      ctx.fillStyle = MARKER_STEM_COLOR;
+      ctx.fill();
+      ctx.strokeStyle = "#FFFFFF";
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  }
+
+  ctx.shadowColor = LOGO_SHADOW_COLOR;
+  ctx.shadowBlur = LOGO_SHADOW_BLUR;
+  ctx.shadowOffsetX = LOGO_SHADOW_OFFSET_X;
+  ctx.shadowOffsetY = LOGO_SHADOW_OFFSET_Y;
 
   roundRect(
     ctx,
@@ -225,23 +300,27 @@ export function drawCalloutMarker(
   );
   ctx.fillStyle = boxBg;
   ctx.fill();
+
+  // Shadow stays on the filled card only. Stroking while a 7px offset is
+  // still on paints the top/left outline's shadow inside the white fill.
+  ctx.shadowColor = "transparent";
+  ctx.shadowBlur = 0;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+  ctx.fill();
   ctx.strokeStyle = MARKER_BORDER_COLOR;
   ctx.lineWidth = 1;
   ctx.stroke();
-
-  ctx.shadowColor = "transparent";
-  ctx.shadowBlur = 0;
-  ctx.shadowOffsetY = 0;
 
   drawContent(ctx, boxX, boxY, boxWidth, boxHeight);
 
   return {
     url: canvas.toDataURL(),
-    scaledSize: new google.maps.Size(width, height),
-    // Geographic point stays on the true lat/lng for both placements
+    scaledSize: new google.maps.Size(canvasW, canvasH),
+    // Geographic point stays on the true lat/lng for all placements
     anchor: new google.maps.Point(
-      anchorX,
-      placement === "above" ? height : 0
+      anchorX + LOGO_SHADOW_PAD_LEFT,
+      anchorY + LOGO_SHADOW_PAD_TOP
     ),
   };
 }

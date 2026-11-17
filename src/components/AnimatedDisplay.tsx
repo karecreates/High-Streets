@@ -18,12 +18,17 @@ export function AnimatedDisplay({
 }: AnimatedDisplayProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const parsed = useMemo(() => parseDisplayValue(value), [value]);
+  const instant =
+    prefersReducedMotion ||
+    (typeof document !== "undefined" &&
+      (document.documentElement.classList.contains("playbook-mode") ||
+        new URLSearchParams(window.location.search).get("mode") === "pdf"));
 
   const target = parsed.type === "number" ? parsed.target : 0;
   const current = useCountUp(target, {
     duration,
     delay,
-    enabled: parsed.type === "number" && !prefersReducedMotion,
+    enabled: parsed.type === "number" && !instant,
   });
 
   if (parsed.type === "text") {

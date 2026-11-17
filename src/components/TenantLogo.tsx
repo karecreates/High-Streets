@@ -17,7 +17,7 @@ export function TenantLogo({
   const [logoSrc, setLogoSrc] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
   const initial = getTenantInitial(tenant.tenantName);
-  const sourceKey = `${provider}:${tenant.logoDomain ?? ""}`;
+  const sourceKey = `${provider}:${tenant.logoDomain ?? ""}:${tenant.tenantName}`;
 
   useEffect(() => {
     let cancelled = false;
@@ -25,7 +25,10 @@ export function TenantLogo({
     setFailed(false);
 
     (async () => {
-      const img = await loadBrandLogoImage(tenant.logoDomain);
+      const img = await loadBrandLogoImage(
+        tenant.logoDomain,
+        tenant.tenantName
+      );
       if (cancelled) return;
       if (img?.src) setLogoSrc(img.src);
       else setFailed(true);

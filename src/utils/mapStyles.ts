@@ -99,6 +99,82 @@ export const MAP_STYLES_MINIMAL_WHITE: google.maps.MapTypeStyle[] = [
 ];
 
 /**
+ * Booklet cover map — same light overview look, but city names and highway
+ * shields stay on. Cloud Map IDs cannot take JSON styles, so print uses this
+ * instead of the live dashboard Map ID.
+ */
+export const MAP_STYLES_DASHBOARD_BASE_LABELS: google.maps.MapTypeStyle[] = [
+  { featureType: "poi", stylers: [{ visibility: "off" }] },
+  { featureType: "poi.business", stylers: [{ visibility: "off" }] },
+  { featureType: "transit", stylers: [{ visibility: "off" }] },
+  {
+    featureType: "landscape",
+    elementType: "geometry",
+    stylers: [{ color: "#f4f5f6" }],
+  },
+  {
+    featureType: "water",
+    elementType: "geometry",
+    stylers: [{ color: "#b7c9d6" }],
+  },
+  {
+    featureType: "road",
+    elementType: "geometry",
+    stylers: [{ color: "#ffffff" }],
+  },
+  {
+    featureType: "road",
+    elementType: "geometry.stroke",
+    stylers: [{ color: "#e4eaee" }],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry",
+    stylers: [{ color: "#c8d6e3" }],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry.stroke",
+    stylers: [{ color: "#b3c4d3" }],
+  },
+  {
+    featureType: "road.local",
+    elementType: "labels",
+    stylers: [{ visibility: "off" }],
+  },
+  {
+    featureType: "administrative.locality",
+    elementType: "labels",
+    stylers: [{ visibility: "on" }],
+  },
+  {
+    featureType: "administrative.locality",
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#5c5c5c" }],
+  },
+  {
+    featureType: "administrative.neighborhood",
+    elementType: "labels",
+    stylers: [{ visibility: "on" }],
+  },
+  {
+    featureType: "administrative.neighborhood",
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#6b6b6b" }],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "labels",
+    stylers: [{ visibility: "on" }],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "labels.icon",
+    stylers: [{ visibility: "on" }],
+  },
+];
+
+/**
  * Dashboard overview — matches the Beta 2018 reference overlay:
  * light gray land, solid gray water, white roads, major city/district labels only.
  */

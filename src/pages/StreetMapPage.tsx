@@ -1,5 +1,6 @@
-import { useCallback, useMemo, useRef, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
+import { reportPlaybookGates, usePlaybookReady } from "../pdf/usePlaybookReady";
 import {
   MapControlsBar,
   type MapDisplayMode,
@@ -7,6 +8,7 @@ import {
 import { MajorTenantsToggle } from "../components/MajorTenantsToggle";
 import { PillButton } from "../components/PillButton";
 import { ShoppingCenterDirectoryModal } from "../components/ShoppingCenterDirectoryModal";
+import { MapPrintButton } from "../components/MapPrintButton";
 import { StaticModeChrome } from "../components/StaticModeChrome";
 import { TenantMapView } from "../components/TenantMap";
 import {
@@ -35,6 +37,7 @@ import {
 import { corridorInfoPath, corridorMapPath } from "../utils/corridorPaths";
 import { leaveMapTo } from "../utils/leaveMapTo";
 import { groupVacanciesByLocation } from "../utils/groupVacanciesByLocation";
+import { enableThrottledLogoRetries } from "../utils/logoProvider";
 import { isNamedTenant } from "../utils/tenantDisplay";
 import type { VacancyLocationGroup } from "../types/vacancy";
 
@@ -44,22 +47,65 @@ interface StreetMapLocationState {
   zoom?: number;
 }
 
-export function StreetMapPage() {
-  const { slug } = useParams<{ slug: string }>();
+export interface StreetMapPdfOptions {
+  /** Corridor to render instead of the route param. */
+  slug: string;
+  /** Fires once the map is idle with tenant markers drawn. */
+  onReady?: () => void;
+}
+
+interface StreetMapPageProps {
+  /**
+   * Booklet export: the Static Mode view exactly as the app renders it —
+   * curated camera, curated Major Tenants, curated logo layout — with the
+   * interactive chrome removed. The booklet must not re-frame or re-pick
+   * anything, or the page stops matching what the broker just looked at.
+   */
+  pdf?: StreetMapPdfOptions;
+}
+
+export function StreetMapPage({ pdf }: StreetMapPageProps = {}) {
+  const params = useParams<{ slug: string }>();
+  const [searchParams] = useSearchParams();
+  /**
+   * The exporter loads this same route (`/street/:slug/map?mode=pdf`) so the
+   * booklet gets the Interactive Map camera and logo layout, not a restyled
+   * playbook clone.
+   */
+  const pdfMode = Boolean(pdf) || searchParams.get("mode") === "pdf";
+  const slug = pdf?.slug ?? params.slug;
   const location = useLocation();
-  const locationState = location.state as StreetMapLocationState | null;
+  const locationState = pdfMode
+    ? null
+    : (location.state as StreetMapLocationState | null);
   const corridor = slug ? getCorridorBySlug(slug) : undefined;
   const detail = slug ? getCorridorDetail(slug) : undefined;
   const corridorTenants = useStreetTenants(corridor?.dataKey ?? "");
   const corridorVacancies = useStreetVacancies(corridor?.dataKey ?? "");
   const allTenants = useAllStreetTenants();
   const allVacancies = useAllStreetVacancies();
+  /**
+   * Booklet pages show Occupied only — vacancy pins are a leasing tool, not
+   * presentation content.
+   */
   const [displayMode, setDisplayMode] = useState<MapDisplayMode>(() =>
-    slug && MAJOR_TENANTS_DEFAULT_ON.has(slug) ? "tenants" : "both"
+    pdfMode || (slug && MAJOR_TENANTS_DEFAULT_ON.has(slug))
+      ? "tenants"
+      : "both"
   );
-  const [majorTenantsOnly, setMajorTenantsOnly] = useState(
-    () => Boolean(slug && MAJOR_TENANTS_DEFAULT_ON.has(slug))
+  /**
+   * Major Tenants is pre-filtered only where the corridor has a curated
+   * allowlist. Elsewhere the filter falls back to a Brandfetch wordmark
+   * heuristic that can strip a corridor to two or three pins, so the booklet
+   * reproduces what a broker sees on the Interactive Map instead.
+   */
+  const [majorTenantsOnly, setMajorTenantsOnly] = useState(() =>
+    Boolean(
+      slug &&
+        (MAJOR_TENANTS_DEFAULT_ON.has(slug) || getMajorTenantAllowlist(slug))
+    )
   );
+  const [textOnly, setTextOnly] = useState(false);
   const [showMeteredParking, setShowMeteredParking] = useState(false);
   const [showParkingLots, setShowParkingLots] = useState(false);
   const [focusedVacancyGroupKey, setFocusedVacancyGroupKey] = useState<
@@ -72,8 +118,40 @@ export function StreetMapPage() {
     () => !locationState?.introZoom
   );
   const mapFrameRef = useRef<HTMLDivElement>(null);
-  const { staticMode, enterStaticMode, exitStaticMode } =
-    useStaticMapMode(mapFrameRef);
+  const mapRef = useRef<google.maps.Map | null>(null);
+  const handleMapReady = useCallback((map: google.maps.Map) => {
+    mapRef.current = map;
+  }, []);
+  const { staticMode, enterStaticMode, exitStaticMode } = useStaticMapMode(
+    mapFrameRef,
+    { forceStatic: pdfMode }
+  );
+  const [mapIdle, setMapIdle] = useState(false);
+  const [iconsReady, setIconsReady] = useState(false);
+
+  usePlaybookReady(pdfMode && mapIdle && iconsReady);
+
+  useEffect(() => {
+    if (!pdfMode) return;
+    enableThrottledLogoRetries();
+    document.documentElement.classList.add("pdf-map-capture");
+    return () => document.documentElement.classList.remove("pdf-map-capture");
+  }, [pdfMode]);
+
+  useEffect(() => {
+    if (!pdfMode) return;
+    reportPlaybookGates({ map: mapIdle, logos: iconsReady });
+    if (mapIdle && iconsReady) pdf?.onReady?.();
+  }, [iconsReady, mapIdle, pdf, pdfMode]);
+
+  useEffect(() => {
+    if (!pdfMode) return;
+    const fallback = window.setTimeout(() => {
+      setMapIdle(true);
+      setIconsReady(true);
+    }, 10_000);
+    return () => window.clearTimeout(fallback);
+  }, [pdfMode]);
 
   const introTarget = useMemo(() => {
     if (!locationState?.introZoom) return null;
@@ -84,7 +162,7 @@ export function StreetMapPage() {
   }, [detail?.mapCenter, detail?.mapZoom, locationState]);
 
   const mapCenter = introTarget?.center ?? detail?.mapCenter;
-  const mapZoom = introTarget?.center ? introTarget.zoom : detail?.mapZoom;
+  const baseMapZoom = introTarget?.center ? introTarget.zoom : detail?.mapZoom;
 
   const focusCenter = mapCenter ?? detail?.mapCenter;
 
@@ -134,9 +212,14 @@ export function StreetMapPage() {
   const shoppingCenters = useMemo(() => {
     if (!focusCenter) return [];
     return getNearbyShoppingCenters(focusCenter, {
-      // Anchor logo for Promenade static screenshots (south end of the street).
+      // Promenade: Santa Monica Place at the south end.
+      // Old Town Pasadena: One Colorado in the courtyard.
       alwaysIncludeSlug:
-        slug === "third-street-promenade" ? "santa-monica-place" : undefined,
+        slug === "third-street-promenade"
+          ? "santa-monica-place"
+          : slug === "old-town-pasadena"
+            ? "one-colorado"
+            : undefined,
     });
   }, [focusCenter, slug]);
 
@@ -150,12 +233,27 @@ export function StreetMapPage() {
     [slug]
   );
 
+  const filterSourceTenants = useMemo(() => {
+    const corridorOnly =
+      slug === "third-street-promenade" ||
+      slug === "abbot-kinney" ||
+      slug === "golden-triangle" ||
+      slug === "old-town-pasadena";
+    if (!corridorOnly || !corridor?.dataKey) {
+      return proximityTenants;
+    }
+    return proximityTenants.filter(
+      (tenant) => tenant.highStreet === corridor.dataKey
+    );
+  }, [corridor?.dataKey, proximityTenants, slug]);
+
   const {
     tenants: mapTenants,
     filtering: majorTenantsFiltering,
-  } = useMajorTenantsFilter(proximityTenants, majorTenantsOnly, {
+  } = useMajorTenantsFilter(filterSourceTenants, majorTenantsOnly, {
     allowlist: majorTenantAllowlist,
     slug,
+    dataKey: corridor?.dataKey,
   });
 
   const vacancyGroups = useMemo(
@@ -179,12 +277,21 @@ export function StreetMapPage() {
   const handleMajorTenantsChange = useCallback(
     (active: boolean) => {
       setMajorTenantsOnly(active);
+      if (active) setTextOnly(false);
       if (active && displayMode === "vacancies") {
         setDisplayMode("both");
       }
     },
     [displayMode]
   );
+
+  const handleTextOnlyChange = useCallback((active: boolean) => {
+    setTextOnly(active);
+    if (active) {
+      setMajorTenantsOnly(false);
+      setDisplayMode("tenants");
+    }
+  }, []);
 
   const handleVacancyFocus = useCallback(
     (group: VacancyLocationGroup) => {
@@ -213,6 +320,57 @@ export function StreetMapPage() {
   }, []);
 
   const infoPath = slug ? corridorInfoPath(slug) : "/dashboard";
+
+  const isThirdStreet = slug === "third-street-promenade";
+  const supportsTextOnly = isThirdStreet || slug === "abbot-kinney";
+  const deconflictActive =
+    isThirdStreet ||
+    textOnly ||
+    (majorTenantsOnly && Boolean(majorTenantAllowlist));
+  /**
+   * Promenade is three long blocks — stay in tight so logos stay readable.
+   * Brokers pan along the street for additional captures.
+   */
+  /**
+   * Abbot Kinney Text Only shows every tenant along the full corridor —
+   * wider camera than the curated Major Tenants framing.
+   */
+  const abbotKinneyTextOnly = slug === "abbot-kinney" && textOnly;
+  const mapZoom = isThirdStreet
+    ? textOnly
+      ? 18.15
+      : majorTenantsOnly
+        ? (baseMapZoom ?? 18.55)
+        : Math.max(baseMapZoom ?? 18, 18.7)
+    : abbotKinneyTextOnly
+      ? 17.1
+      : baseMapZoom;
+  const effectiveMapCenter = abbotKinneyTextOnly
+    ? { lat: 33.99065, lng: -118.4673 }
+    : mapCenter;
+  const mapFocus = useMemo(() => {
+    const lockCamera =
+      isThirdStreet ||
+      slug === "abbot-kinney" ||
+      slug === "golden-triangle" ||
+      slug === "old-town-pasadena" ||
+      slug === "melrose" ||
+      slug === "studio-city" ||
+      slug === "sunset-strip" ||
+      slug === "downtown-manhattan-beach" ||
+      slug === "culver-city" ||
+      slug === "la-brea" ||
+      slug === "larchmont" ||
+      slug === "montana" ||
+      slug === "robertson" ||
+      slug === "silver-lake" ||
+      slug === "la-arts-district" ||
+      slug === "downtown-la";
+    if (!lockCamera || !effectiveMapCenter || mapZoom == null) {
+      return null;
+    }
+    return { center: effectiveMapCenter, zoom: mapZoom };
+  }, [isThirdStreet, effectiveMapCenter, mapZoom, slug]);
 
   if (!corridor?.active || !detail) {
     return (
@@ -259,20 +417,37 @@ export function StreetMapPage() {
               filtering={majorTenantsFiltering}
               onChange={handleMajorTenantsChange}
             />
+            {supportsTextOnly ? (
+              <MajorTenantsToggle
+                label="Text Only"
+                active={textOnly}
+                onChange={handleTextOnlyChange}
+              />
+            ) : null}
           </div>
         ) : null}
 
-        <StaticModeChrome
-          staticMode={staticMode}
-          onEnter={enterStaticMode}
-          onExit={exitStaticMode}
-        />
+        {pdfMode ? null : (
+          <>
+            <StaticModeChrome
+              staticMode={staticMode}
+              onEnter={enterStaticMode}
+              onExit={exitStaticMode}
+            />
+            <MapPrintButton
+              mapRef={mapRef}
+              mapId={getMasterMapId()}
+              filename={`${corridor.name} Map.pdf`}
+            />
+          </>
+        )}
 
         <TenantMapView
           tenants={mapTenants}
-          vacancies={proximityVacancies}
+          vacancies={pdfMode ? [] : proximityVacancies}
           defaultCenter={mapCenter}
           defaultZoom={mapZoom}
+          mapFocus={mapFocus}
           autoFitBounds={false}
           embedded
           displayMode={displayMode}
@@ -286,21 +461,28 @@ export function StreetMapPage() {
           onIntroZoomComplete={() => setIntroZoomComplete(true)}
           mapIdOverride={getMasterMapId()}
           staticMode={staticMode}
-          shoppingCenters={shoppingCenters}
+          shoppingCenters={textOnly ? [] : shoppingCenters}
           onShoppingCenterSelect={
             staticMode ? undefined : handleShoppingCenterSelect
           }
-          corridorCallouts={corridorCallouts}
+          corridorCallouts={textOnly ? [] : corridorCallouts}
           onCorridorCalloutSelect={
             staticMode ? undefined : handleCorridorCalloutSelect
           }
           alwaysShowCorridorCallouts
-          deconflictLogos={
-            majorTenantsOnly && Boolean(majorTenantAllowlist)
-          }
+          deconflictLogos={deconflictActive}
           deconflictLayoutSlug={
-            majorTenantsOnly && majorTenantAllowlist ? slug : undefined
+            isThirdStreet || textOnly
+              ? slug
+              : majorTenantsOnly && majorTenantAllowlist
+                ? slug
+                : undefined
           }
+          deconflictDense={isThirdStreet && !majorTenantsOnly && !textOnly}
+          textOnly={textOnly}
+          onMapIdle={pdfMode ? () => setMapIdle(true) : undefined}
+          onIconsReady={pdfMode ? () => setIconsReady(true) : undefined}
+          onMapReady={pdfMode ? undefined : handleMapReady}
         />
 
         {directoryCenter && !staticMode ? (

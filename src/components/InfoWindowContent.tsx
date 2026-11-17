@@ -1,6 +1,7 @@
 import type { Tenant } from "../types/tenant";
 import { TenantLogo } from "./TenantLogo";
 import { isUsableBrandLogoDomain } from "../utils/logoDev";
+import { formatTenantDisplayName } from "../utils/tenantDisplay";
 
 interface InfoWindowContentProps {
   tenant: Tenant;
@@ -30,7 +31,9 @@ export function InfoWindowContent({ tenant }: InfoWindowContentProps) {
       <header className="info-window__header">
         <TenantLogo tenant={tenant} />
         <div>
-          <h2 className="info-window__title">{tenant.tenantName}</h2>
+          <h2 className="info-window__title">
+            {formatTenantDisplayName(tenant.tenantName)}
+          </h2>
           {tenant.unitStatus && (
             <span className="info-window__badge">{tenant.unitStatus}</span>
           )}

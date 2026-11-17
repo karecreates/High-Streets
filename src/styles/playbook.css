@@ -1,0 +1,331 @@
+/*
+ * Booklet export (/playbook) — tabloid landscape, 17 x 11in.
+ *
+ * These rules only apply under `.playbook-mode`, which the playbook route adds
+ * to <html>. The interactive app is never affected.
+ */
+
+@page {
+  size: 17in 11in;
+  margin: 0;
+}
+
+.playbook-mode,
+.playbook-mode body,
+.playbook-mode #root {
+  /* 17 x 11in at 96 CSS dpi. Pinning --app-height makes every existing
+     full-height app layout fill the page exactly. */
+  --app-height: 1056px;
+  width: 1632px;
+  height: 1056px;
+  min-width: 1632px;
+  min-height: 1056px;
+  max-width: 1632px;
+  max-height: 1056px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.playbook-mode ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Deterministic capture: nothing may be mid-animation when the page is ready. */
+.playbook-mode *,
+.playbook-mode *::before,
+.playbook-mode *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+.playbook-page {
+  position: relative;
+  width: 1632px;
+  height: 1056px;
+  overflow: hidden;
+  background: #fff;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.playbook-page--error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 4rem;
+  font-family: var(--font-family);
+  text-align: center;
+  color: #a52b2b;
+}
+
+/* ——— Master map / location map pages ——— */
+.playbook-map-frame,
+.playbook-map-frame .dashboard-overview-map,
+.playbook-map-frame .dashboard-overview-map__canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.playbook-map-frame {
+  position: relative;
+}
+
+.playbook-mode .dashboard-map-hero {
+  padding: 8.75rem 2.15rem 1.35rem 2.15rem;
+}
+
+/* Hide Google UI chrome only. `.gmnoprint` also wraps city/highway labels. */
+.playbook-mode .gm-bundled-control,
+.playbook-mode .gm-svpc,
+.playbook-mode .gm-fullscreen-control,
+.playbook-mode button.gm-control-active {
+  display: none !important;
+}
+
+.playbook-mode .map-empty-overlay {
+  display: none !important;
+}
+
+/*
+ * Real Interactive Map capture (`/street/:slug/map?mode=pdf`). Hide leftover
+ * Google chrome only — do not pin --app-height or the camera changes.
+ */
+.pdf-map-capture .gm-style-cc,
+.pdf-map-capture .gmnoprint,
+.pdf-map-capture .gm-svpc,
+.pdf-map-capture .gm-fullscreen-control,
+.pdf-map-capture button.gm-control-active,
+.pdf-map-capture .map-empty-overlay {
+  display: none !important;
+}
+
+/* ——— Photo gallery / hero page ——— */
+.playbook-hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0b1c24;
+}
+
+.playbook-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* Fill the page without distorting the photo. */
+  object-fit: cover;
+  object-position: center;
+}
+
+.playbook-hero .hero-panel__caption {
+  left: 3rem;
+  bottom: 3rem;
+}
+
+.playbook-hero .hero-panel__name {
+  font-size: 3.4rem;
+}
+
+.playbook-hero .hero-panel__city {
+  font-size: 1.35rem;
+}
+
+/* ——— Overview page ——— */
+.playbook-fit {
+  width: 1632px;
+  height: 1056px;
+  overflow: hidden;
+}
+
+/*
+ * Overview capture (`/street/:slug?mode=pdf`) must look like the dedicated
+ * page. Do not restyle type, rings, metrics, or demographic cards here —
+ * only pin the booklet frame and keep brand cells visible for html-to-image.
+ */
+.street-page--pdf {
+  width: 1632px;
+  height: 1056px;
+  max-width: 1632px;
+  max-height: 1056px;
+  overflow: hidden;
+}
+
+.playbook-mode .brand-grid__cell,
+.street-page--pdf .brand-grid__cell,
+.street-page--pdf .brand-grid__cell--eager {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+/* Keep labels on one line without forcing boxes wider than the column
+   (min-width: max-content was the horizontal scrollbar). */
+.street-page--pdf .info-card__metric-value,
+.street-page--pdf .info-card__metric-label,
+.street-page--pdf .traffic-card__title,
+.street-page--pdf .traffic-card__list li span,
+.street-page--pdf .traffic-card__list li strong,
+.street-page--pdf .placer-card__header > span:first-child,
+.street-page--pdf .placer-tabs__tab,
+.street-page--pdf .placer-stats--featured .placer-stats__label,
+.street-page--pdf .placer-stats--featured .placer-stats__value {
+  white-space: nowrap !important;
+  min-width: 0;
+}
+
+.street-page--pdf,
+.street-page--pdf * {
+  scrollbar-width: none !important;
+}
+
+.street-page--pdf *::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+.street-page--pdf .street-detail,
+.street-page--pdf .street-detail__content,
+.street-page--pdf .street-detail__stack,
+.street-page--pdf .info-card--brands {
+  overflow: hidden !important;
+}
+
+/* Fill leftover height so demographics do not scroll. */
+.street-page--pdf .placer-card {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.street-page--pdf .placer-tabpanel {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden !important;
+  /* The fade starts at opacity 0. A PDF snapshot copies that computed
+     opacity and the demographic tiles never paint. */
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.street-page--pdf .placer-tabpanel__inner,
+.street-page--pdf .placer-tabpanel__inner--demo {
+  overflow: hidden !important;
+  height: 100%;
+  min-height: 0;
+}
+
+.street-page--pdf .placer-tabpanel__inner--demo > .placer-stats--secondary {
+  flex: 1 1 0;
+  min-height: 0;
+  grid-auto-rows: 1fr;
+}
+
+.street-page--pdf .placer-columns {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.street-page--pdf .placer-section .placer-stats--featured {
+  flex: 1 1 auto;
+  min-height: 0;
+  grid-auto-rows: 1fr;
+}
+
+.street-page--pdf .placer-tabpanel__inner--demo > .placer-stats--secondary .placer-stats__item,
+.street-page--pdf .placer-section .placer-stats--featured .placer-stats__item {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem 0.7rem;
+  gap: 0.28rem;
+}
+
+.street-page--pdf .placer-tabpanel__inner--demo > .placer-stats--secondary .placer-stats__value {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.street-page--pdf .placer-tabpanel__inner--demo > .placer-stats--secondary .placer-stats__label {
+  display: block;
+  /* One line in the layout so values stay aligned; extra "or higher"
+     line paints into the empty space already below the label. */
+  height: 1.25em;
+  line-height: 1.25;
+  overflow: visible;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Satellite / WebGL tile holes over water. */
+.playbook-map-frame .gm-err-container,
+.playbook-map-frame .gm-err-content,
+.playbook-map-frame .gm-err-title,
+.playbook-map-frame .gm-err-icon {
+  display: none !important;
+}
+
+/* ——— Shopping center tenant directory (kept: presentation content) ——— */
+.shopping-center-directory--pdf {
+  position: absolute;
+  inset: 0;
+  /* Let the map read as the frame around the directory. */
+  background: transparent;
+  padding: 3.25rem 4.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopping-center-directory--pdf .shopping-center-directory__panel {
+  width: 100%;
+  max-width: none;
+  /* Shrink-wrap the panel so short tenant grids don't leave dead space. */
+  height: auto;
+  max-height: 100%;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(26, 35, 50, 0.28);
+}
+
+.shopping-center-directory--pdf .shopping-center-directory__body,
+.shopping-center-directory--pdf .shopping-center-directory__main,
+.shopping-center-directory--pdf .shopping-center-directory__vacancy-list {
+  overflow: hidden;
+}
+
+.shopping-center-directory--pdf .shopping-center-directory__main {
+  padding-bottom: 0.5rem;
+}
+
+.playbook-mode .placer-expand-btn {
+  display: none !important;
+}
+
+.playbook-mode .placer-print-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.playbook-mode .placer-print-section__title {
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5a6a73;
+}

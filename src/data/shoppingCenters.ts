@@ -7,6 +7,7 @@ import malibuVillageLogo from "@assets/Malibu Village Photos/Malibu+Logo.webp";
 import santaMonicaPlaceLogo from "@assets/Santa Monica Place Photos/Santa-Monica-Place---Blue-Logo.webp";
 import americanaAtBrandLogo from "@assets/Americana at Brand Photos/Americana-Logo-Vector.svg";
 import theGroveLogo from "@assets/The Grove Photos/GAF_Logo_RGB_Charcoal.png";
+import southCoastPlazaLogo from "@assets/South Coast Plaza Photos/scp-logo-ko-1.svg";
 import thePaseoLogo from "@assets/The Paseo Photos/465016768_1026507899486082_3310924949729474811_n.jpg";
 import sportsmenLodgeLogo from "@assets/Sportsmens Lodge Photos/sportsmens_lodge_logo.png";
 import oneColoradoLogo from "@assets/One Colorado Photos/One_Colorado_logo.svg";
@@ -37,6 +38,8 @@ export interface ShoppingCenterTenant {
   suite: string | null;
   unitStatus: string | null;
   spaceSf: string | null;
+  /** Season label when the tenant is announced but not yet open (e.g. "Fall"). */
+  comingSoon?: string | null;
 }
 
 export interface ShoppingCenterVacancy {
@@ -145,8 +148,8 @@ const CENTER_META: Record<string, ShoppingCenterMeta> = {
     city: "Santa Monica, CA",
     address: "395 Santa Monica Pl, Santa Monica, CA 90401",
     logo: santaMonicaPlaceLogo,
-    mapCenter: { lat: 34.013694718714774, lng: -118.49380813415459 },
-    mapZoom: 18,
+    mapCenter: { lat: 34.01345, lng: -118.49355 },
+    mapZoom: 18.58,
     logoMarkerBg: "#FFFFFF",
     // Wider than default compact (52) — wordmark was hard to read near 3rd St
     masterMapLogoWidth: 88,
@@ -214,6 +217,19 @@ const CENTER_META: Record<string, ShoppingCenterMeta> = {
     masterMapLogoWidth: 28,
     tenantDirectoryUrl: "https://thegrovela.com/shopping/",
   },
+  "south-coast-plaza": {
+    slug: "south-coast-plaza",
+    name: "South Coast Plaza",
+    city: "Costa Mesa, CA",
+    address: "3333 Bristol St, Costa Mesa, CA 92626",
+    logo: southCoastPlazaLogo,
+    mapCenter: { lat: 33.69113613390609, lng: -117.88898025852322 },
+    mapZoom: 16,
+    logoMarkerBg: "#FFFFFF",
+    // Square wordmark — keep compact so it doesn't dwarf nearby pins
+    masterMapLogoWidth: 36,
+    tenantDirectoryUrl: "https://www.southcoastplaza.com/directory/",
+  },
   "the-paseo": {
     slug: "the-paseo",
     name: "The Paseo",
@@ -248,8 +264,8 @@ const CENTER_META: Record<string, ShoppingCenterMeta> = {
     city: "Pasadena, CA",
     address: "41 Hugus Alley, Pasadena, CA 91103",
     logo: oneColoradoLogo,
-    mapCenter: { lat: 34.14666478402269, lng: -118.15138820680242 },
-    mapZoom: 18,
+    mapCenter: { lat: 34.14582, lng: -118.15185 },
+    mapZoom: 18.6,
     logoMarkerBg: "#FFFFFF",
     // Stay above — opposite of The Paseo; lat/lng unchanged
     masterMapLogoPlacement: "above",

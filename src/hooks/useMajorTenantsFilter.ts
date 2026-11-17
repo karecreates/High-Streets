@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { isMajorTenantAllowed } from "../data/majorTenants";
+import {
+  isMajorTenantAllowed,
+  keepOneTenantPerBrand,
+  resolveMajorTenantLayoutSlug,
+} from "../data/majorTenants";
 import type { Tenant } from "../types/tenant";
 import { hasBrandfetchLogoAttribution } from "../utils/logoProvider";
 import { isNamedTenant } from "../utils/tenantDisplay";
@@ -12,6 +16,12 @@ export interface MajorTenantsFilterOptions {
   allowlist?: ReadonlySet<string> | null;
   /** Corridor slug — used for address exclusions on curated allowlists. */
   slug?: string;
+  /**
+   * Corridor data key. A curated allowlist is curated for one corridor, so a
+   * same-brand store on a neighbouring street must not be promoted into it —
+   * one stray pin miles away also drags the auto-fit camera wide open.
+   */
+  dataKey?: string;
 }
 
 /**
@@ -26,6 +36,7 @@ export function useMajorTenantsFilter(
 ): { tenants: Tenant[]; filtering: boolean; majorCount: number } {
   const allowlist = options?.allowlist ?? null;
   const slug = options?.slug;
+  const dataKey = options?.dataKey;
   const [allowedDomains, setAllowedDomains] = useState<Set<string> | null>(
     null
   );
@@ -89,17 +100,27 @@ export function useMajorTenantsFilter(
     if (!enabled) return candidateTenants;
 
     if (allowlist) {
-      return candidateTenants.filter((tenant) =>
-        isMajorTenantAllowed(slug, tenant, allowlist)
+      const allowed = candidateTenants.filter(
+        (tenant) =>
+          (!dataKey || tenant.highStreet === dataKey) &&
+          isMajorTenantAllowed(slug, tenant, allowlist)
       );
+      // Abbot Kinney and Old Town were curated with every listed storefront.
+      const layoutSlug = resolveMajorTenantLayoutSlug(slug);
+      if (slug === "abbot-kinney" || layoutSlug === "old-town-pasadena") {
+        return allowed;
+      }
+      return keepOneTenantPerBrand(allowed);
     }
 
     if (!allowedDomains) return candidateTenants;
-    return candidateTenants.filter((tenant) => {
-      const domain = tenant.logoDomain?.trim().toLowerCase();
-      return Boolean(domain && allowedDomains.has(domain));
-    });
-  }, [allowedDomains, allowlist, candidateTenants, enabled, slug]);
+    return keepOneTenantPerBrand(
+      candidateTenants.filter((tenant) => {
+        const domain = tenant.logoDomain?.trim().toLowerCase();
+        return Boolean(domain && allowedDomains.has(domain));
+      })
+    );
+  }, [allowedDomains, allowlist, candidateTenants, dataKey, enabled, slug]);
 
   return {
     tenants: enabled ? filtered : tenants,

@@ -144,10 +144,11 @@ export function groupTenantsByLocation(tenants: Tenant[]): TenantLocationGroup[]
  * brands (e.g. Alo + Vans) can sit above/below the same anchor cleanly.
  */
 export function splitTenantGroupsForDeconflict(
-  groups: TenantLocationGroup[]
+  groups: TenantLocationGroup[],
+  keepGrouped?: (group: TenantLocationGroup) => boolean
 ): TenantLocationGroup[] {
   return groups.flatMap((group) => {
-    if (group.tenants.length <= 1) return [group];
+    if (group.tenants.length <= 1 || keepGrouped?.(group)) return [group];
     return group.tenants.map((tenant, index) => ({
       key: `${group.key}::${tenant.id || index}`,
       lat: group.lat,
@@ -156,4 +157,80 @@ export function splitTenantGroupsForDeconflict(
       tenants: [tenant],
     }));
   });
+}
+
+/**
+ * Fold named neighbours into the group that holds `anchor` (anchor keeps its
+ * lat/lng). Used for curated major-tenant corridors where storefronts a few
+ * metres apart read better as one stacked callout.
+ */
+export function mergeTenantGroupsByName(
+  groups: TenantLocationGroup[],
+  merges: ReadonlyArray<{ anchor: string; members: readonly string[] }>,
+  normalize: (name: string) => string = (name) => name.trim().toLowerCase()
+): TenantLocationGroup[] {
+  if (!merges.length) return groups;
+  const result = groups.map((group) => ({
+    ...group,
+    tenants: [...group.tenants],
+  }));
+  for (const merge of merges) {
+    const anchorName = normalize(merge.anchor);
+    const target = result.find((group) =>
+      group.tenants.some((t) => normalize(t.tenantName) === anchorName)
+    );
+    if (!target) continue;
+    const memberNames = new Set(merge.members.map(normalize));
+    for (const group of result) {
+      if (group === target) continue;
+      const moving = group.tenants.filter((t) =>
+        memberNames.has(normalize(t.tenantName))
+      );
+      if (!moving.length) continue;
+      group.tenants = group.tenants.filter((t) => !moving.includes(t));
+      target.tenants.push(...moving);
+    }
+  }
+  return result.filter((group) => group.tenants.length > 0);
+}
+
+/**
+ * Give co-geocoded storefronts distinct anchors along a bearing so logos
+ * don't triangulate from a single lat/lng.
+ */
+export function spreadCoLocatedAnchors(
+  groups: TenantLocationGroup[],
+  options?: { bearingDeg?: number; spacingMeters?: number }
+): TenantLocationGroup[] {
+  const bearingDeg = options?.bearingDeg ?? -40;
+  const spacingMeters = options?.spacingMeters ?? 11;
+  const rad = (bearingDeg * Math.PI) / 180;
+  const metersToLat = 1 / 111_320;
+
+  const clusters = new Map<string, TenantLocationGroup[]>();
+  for (const group of groups) {
+    const key = `${group.lat.toFixed(6)},${group.lng.toFixed(6)}`;
+    const list = clusters.get(key);
+    if (list) list.push(group);
+    else clusters.set(key, [group]);
+  }
+
+  const result: TenantLocationGroup[] = [];
+  for (const cluster of clusters.values()) {
+    if (cluster.length === 1) {
+      result.push(cluster[0]);
+      continue;
+    }
+    const mid = (cluster.length - 1) / 2;
+    const cosLat = Math.cos((cluster[0].lat * Math.PI) / 180);
+    cluster.forEach((group, index) => {
+      const dist = (index - mid) * spacingMeters;
+      result.push({
+        ...group,
+        lat: group.lat + dist * Math.cos(rad) * metersToLat,
+        lng: group.lng + (dist * Math.sin(rad) * metersToLat) / cosLat,
+      });
+    });
+  }
+  return result;
 }

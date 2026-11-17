@@ -130,6 +130,8 @@ const DIRECTORY_HIDDEN_TENANTS = new Set([
   "Seabutter Sushi- Handrolls",
   // Malibu: Double RL already represents the Ralph Lauren logo tile
   "Ralph Lauren",
+  // Grove: placeholder / non-brand listing
+  "Eeseol*",
 ]);
 
 function normalizeHeader(header) {
@@ -334,6 +336,10 @@ const MANUAL_TENANT_FILES = {
     centerName: "Manhattan Village",
     file: path.join(__dirname, "manhattan-village-tenants.json"),
   },
+  "south-coast-plaza": {
+    centerName: "South Coast Plaza",
+    file: path.join(__dirname, "south-coast-plaza-tenants.json"),
+  },
 };
 
 for (const [slug, config] of Object.entries(MANUAL_TENANT_FILES)) {
@@ -343,7 +349,7 @@ for (const [slug, config] of Object.entries(MANUAL_TENANT_FILES)) {
     continue;
   }
 
-  /** @type {Array<{ name: string, suite?: string | null, logoDomain?: string | null }>} */
+  /** @type {Array<{ name: string, suite?: string | null, logoDomain?: string | null, comingSoon?: string | null }>} */
   const manualTenants = JSON.parse(fs.readFileSync(config.file, "utf8"));
   const tenants = new Map();
 
@@ -352,6 +358,9 @@ for (const [slug, config] of Object.entries(MANUAL_TENANT_FILES)) {
     if (!name || DIRECTORY_HIDDEN_TENANTS.has(name)) continue;
 
     const logoDomain = resolveTenantLogoDomain(name, slug, tenant.logoDomain);
+    const comingSoon = tenant.comingSoon
+      ? String(tenant.comingSoon).trim()
+      : null;
 
     tenants.set(name, {
       name,
@@ -359,8 +368,9 @@ for (const [slug, config] of Object.entries(MANUAL_TENANT_FILES)) {
       hasLogo: Boolean(logoDomain),
       website: websiteFromDomain(logoDomain),
       suite: tenant.suite ?? null,
-      unitStatus: "Occupied",
+      unitStatus: comingSoon ? `Coming Soon · ${comingSoon}` : "Occupied",
       spaceSf: null,
+      comingSoon,
     });
   }
 

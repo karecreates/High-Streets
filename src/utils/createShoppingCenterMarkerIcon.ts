@@ -8,7 +8,12 @@ const COMPACT_PADDING_X = 8;
 const COMPACT_PADDING_Y = 10;
 const LIGHT_MARKER_BOX_BG = "#e8ecef";
 
-export type ShoppingCenterLogoPlacement = "above" | "below";
+export type ShoppingCenterLogoPlacement =
+  | "above"
+  | "below"
+  | "left"
+  | "right"
+  | "center";
 
 /** Fractional insets (0–1) cropped from the source logo before sizing the box. */
 export interface ShoppingCenterLogoCrop {
@@ -36,6 +41,12 @@ export interface ShoppingCenterMarkerOptions {
   offsetX?: number;
   /** White stem from pin to logo box. Default false. */
   showStem?: boolean;
+  /** Leader length (px). Vertical for above/below; horizontal for left/right. */
+  stemHeight?: number;
+  /** Small tip at the geographic point. Default follows showStem. */
+  showAnchorDot?: boolean;
+  /** White halo behind the leader. Default true. */
+  stemHalo?: boolean;
   /** Crop empty artboard margins so the callout can be a tighter rectangle. */
   logoCrop?: ShoppingCenterLogoCrop;
 }
@@ -90,6 +101,9 @@ export async function createShoppingCenterMarkerIcon(
     placement,
     offsetX: options.offsetX,
     showStem: options.showStem,
+    stemHeight: options.stemHeight,
+    showAnchorDot: options.showAnchorDot,
+    stemHalo: options.stemHalo,
   };
 
   try {

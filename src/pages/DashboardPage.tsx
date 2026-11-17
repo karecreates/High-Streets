@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BetaLogo } from "../components/BetaLogo";
 import { DashboardOverviewMap } from "../components/DashboardOverviewMap";
+import { ExportBookletModal } from "../components/ExportBookletModal";
 import { GlassNavButton } from "../components/GlassNavButton";
 import { HeroClickLottie } from "../components/HeroClickLottie";
 import {
@@ -35,6 +36,7 @@ export function DashboardPage() {
   const [previewSlug, setPreviewSlug] = useState<string | null>(null);
   const [showMappingVisual, setShowMappingVisual] = useState(true);
   const [navOpen, setNavOpen] = useState(false);
+  const [exportOpen, setExportOpen] = useState(false);
   const [fromGate] = useState(() => Boolean(locationState.fromGate));
   const [revealed, setRevealed] = useState(() => !locationState.fromGate);
 
@@ -188,6 +190,16 @@ export function DashboardPage() {
         >
           Master High Street Map
         </button>
+        <button
+          type="button"
+          className="pill-btn pill-btn--outline dashboard-sidebar__export"
+          onClick={() => {
+            setNavOpen(false);
+            setExportOpen(true);
+          }}
+        >
+          Export Booklet (PDF)
+        </button>
         <nav className="corridor-list" aria-label="High streets">
           {CATEGORY_ORDER.map((category) => (
             <div key={category} className="corridor-list__group">
@@ -331,6 +343,10 @@ export function DashboardPage() {
           </>
         )}
       </section>
+
+      {exportOpen ? (
+        <ExportBookletModal onClose={() => setExportOpen(false)} />
+      ) : null}
     </div>
   );
 }

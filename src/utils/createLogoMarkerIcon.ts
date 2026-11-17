@@ -37,15 +37,21 @@ export const GROUP_CELL_WIDTH = MAX_LOGO_WIDTH + LOGO_PADDING_X;
 export const GROUP_CELL_HEIGHT = MAX_LOGO_HEIGHT + LOGO_PADDING_Y;
 
 export interface LogoMarkerLayoutOptions {
-  placement?: "above" | "below";
+  placement?: "above" | "below" | "left" | "right";
   /** Shift the logo box horizontally; geographic anchor stays on lat/lng. */
   offsetX?: number;
   /** Draw a leader from the true lat/lng to the logo box. */
   showStem?: boolean;
-  /** Vertical leader length (px). When set with showStem, overrides default. */
+  /** Leader length (px). Vertical for above/below; horizontal for left/right. */
   stemHeight?: number;
   /** Use compact logo sizing (dense major-tenant corridors). */
   compact?: boolean;
+  /** Shrink/grow the logo box (1 = default). */
+  scale?: number;
+  /** When no logo loads, draw the full tenant name instead of a lettermark. */
+  preferNameFallback?: boolean;
+  /** Tiny beta-blue name boxes — no logos. */
+  textOnly?: boolean;
 }
 
 export function drawLettermark(
@@ -69,22 +75,23 @@ export function drawLettermark(
   ctx.fillText(letter, x + size / 2, y + size / 2 + 1);
 }
 
-function logoDims(compact?: boolean) {
+function logoDims(compact?: boolean, scale = 1) {
+  const s = scale > 0 ? scale : 1;
   if (compact) {
     return {
-      maxW: COMPACT_LOGO_WIDTH,
-      maxH: COMPACT_LOGO_HEIGHT,
+      maxW: Math.max(16, Math.round(COMPACT_LOGO_WIDTH * s)),
+      maxH: Math.max(12, Math.round(COMPACT_LOGO_HEIGHT * s)),
       padX: COMPACT_LOGO_PADDING_X,
       padY: COMPACT_LOGO_PADDING_Y,
-      letter: COMPACT_LETTERMARK_SIZE,
+      letter: Math.max(14, Math.round(COMPACT_LETTERMARK_SIZE * s)),
     };
   }
   return {
-    maxW: MAX_LOGO_WIDTH,
-    maxH: MAX_LOGO_HEIGHT,
+    maxW: Math.max(16, Math.round(MAX_LOGO_WIDTH * s)),
+    maxH: Math.max(12, Math.round(MAX_LOGO_HEIGHT * s)),
     padX: LOGO_PADDING_X,
     padY: LOGO_PADDING_Y,
-    letter: LETTERMARK_SIZE,
+    letter: Math.max(16, Math.round(LETTERMARK_SIZE * s)),
   };
 }
 
@@ -99,11 +106,60 @@ function calloutOptions(layout?: LogoMarkerLayoutOptions) {
   };
 }
 
+function nameCalloutMetrics(tenantName: string, compact?: boolean) {
+  const fontSize = compact ? 11 : 12;
+  const padX = compact ? 8 : 11;
+  const padY = compact ? 5 : 7;
+  const label = tenantName.trim();
+  const charW = fontSize * 0.62;
+  const width = Math.max(48, Math.ceil(label.length * charW + padX * 2));
+  const height = fontSize + padY * 2;
+  return { label, fontSize, padX, padY, width, height };
+}
+
+/** Screen-space size for a full-name callout (no truncation). */
+export function estimateNameCalloutSize(
+  tenantName: string,
+  compact?: boolean
+): { width: number; height: number } {
+  const metrics = nameCalloutMetrics(tenantName, compact);
+  return { width: metrics.width, height: metrics.height };
+}
+
+function createNameCalloutIcon(
+  tenantName: string,
+  layout?: LogoMarkerLayoutOptions
+): google.maps.Icon {
+  const compact = layout?.compact;
+  const { label, fontSize, padX, padY } = nameCalloutMetrics(tenantName, compact);
+  const measure = document.createElement("canvas").getContext("2d")!;
+  measure.font = `600 ${fontSize}px "proxima-nova", system-ui, sans-serif`;
+  const textWidth = measure.measureText(label).width;
+  const boxWidth = Math.max(48, Math.ceil(textWidth + padX * 2));
+  const boxHeight = fontSize + padY * 2;
+
+  return drawCalloutMarker(
+    boxWidth,
+    boxHeight,
+    (ctx, boxX, boxY) => {
+      ctx.fillStyle = "#1A2332";
+      ctx.font = `600 ${fontSize}px "proxima-nova", system-ui, sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(label, boxX + boxWidth / 2, boxY + boxHeight / 2 + 0.5);
+    },
+    calloutOptions(layout)
+  );
+}
+
 function createLettermarkFallback(
   tenantName: string,
   layout?: LogoMarkerLayoutOptions
 ): google.maps.Icon {
-  const dims = logoDims(layout?.compact);
+  if (layout?.preferNameFallback) {
+    return createNameCalloutIcon(tenantName, layout);
+  }
+  const dims = logoDims(layout?.compact, layout?.scale);
   const letter = getTenantInitial(tenantName);
   const box = dims.letter + dims.padY;
   const pad = (box - dims.letter) / 2;
@@ -122,7 +178,7 @@ function createFromLogoImage(
   img: HTMLImageElement,
   layout?: LogoMarkerLayoutOptions
 ): google.maps.Icon {
-  const dims = logoDims(layout?.compact);
+  const dims = logoDims(layout?.compact, layout?.scale);
   const { width: logoWidth, height: logoHeight } = fitContained(
     img.naturalWidth,
     img.naturalHeight,
@@ -148,8 +204,8 @@ export async function createLogoMarkerIcon(
   tenant: Tenant,
   layout?: LogoMarkerLayoutOptions
 ): Promise<google.maps.Icon> {
-  // Cascade: BF dark logo → BF dark icon → logo.dev → plain-text lettermark.
-  const img = await loadBrandLogoImage(tenant.logoDomain);
+  // Cascade: Brandfetch dark logo → icon → Logo.dev → local library → lettermark.
+  const img = await loadBrandLogoImage(tenant.logoDomain, tenant.tenantName);
   if (!img) return createLettermarkFallback(tenant.tenantName, layout);
   return createFromLogoImage(img, layout);
 }
@@ -157,8 +213,9 @@ export async function createLogoMarkerIcon(
 /** Conservative screen-space size for collision layout (logo box only). */
 export function estimateLogoMarkerSize(options?: {
   compact?: boolean;
+  scale?: number;
 }): { width: number; height: number } {
-  const dims = logoDims(options?.compact);
+  const dims = logoDims(options?.compact, options?.scale ?? 1);
   return {
     width: dims.maxW + dims.padX * 2,
     height: dims.maxH + dims.padY * 2,

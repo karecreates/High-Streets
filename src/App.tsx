@@ -11,6 +11,7 @@ import { DevGeocodePage } from "./pages/DevGeocodePage";
 import { StreetDetailPage } from "./pages/StreetDetailPage";
 import { ShoppingCenterMapPage } from "./pages/ShoppingCenterMapPage";
 import { StreetMapPage } from "./pages/StreetMapPage";
+import { PlaybookRoute } from "./pdf/PlaybookRoute";
 
 const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY ?? "";
 
@@ -37,6 +38,8 @@ function AppRoutes() {
         path="/center/:slug/map"
         element={withAuth(<ShoppingCenterMapPage />)}
       />
+      {/* Internal booklet renderer driven by the PDF exporter. */}
+      <Route path="/playbook" element={withAuth(<PlaybookRoute />)} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

@@ -37,7 +37,7 @@ export interface PlacerInsightsData {
   /** Trade-area definition + reporting window, shown as the data's fine print. */
   methodology: string;
   reportingPeriod: string;
-  overview: {
+  overview?: {
     headline: PlacerStat[];
     secondary: PlacerStat[];
   };
@@ -50,10 +50,10 @@ export interface PlacerInsightsData {
     };
     workplace: PlacerStat[];
   };
-  psychographics: {
+  psychographics?: {
     topGroups: PlacerPsychographicGroup[];
   };
-  tradeArea: {
+  tradeArea?: {
     polygons: PlacerPolygon[];
     /** Marker anchor for the property itself. */
     site: { lat: number; lng: number };

@@ -10,9 +10,10 @@ import galleryDowntownLa1 from "@assets/Downtown LA Photos/downtown_la_1.jpeg";
 import galleryDowntownLa2 from "@assets/Downtown LA Photos/downtown_la_2.webp";
 import galleryDowntownLa3 from "@assets/Downtown LA Photos/downtown_la_3.jpg";
 import galleryDowntownLa4 from "@assets/Downtown LA Photos/downtown_la_4.jpg";
-import logoPandora from "@assets/logos/Pandora_Logo_2019.svg";
-import logoJohnnyWas from "@assets/logos/johnny-was.svg";
-import logoIntimissimi from "@assets/logos/Intimissimi_vector_logo.svg";
+import logoJohnnyWas from "@assets/extra logos/johnny_cali.png";
+import logoIntimissimi from "@assets/extra logos/Intimissimi_vector_logo (1).svg";
+import logoSalonRepublic from "@assets/logos/SR+Sign_transparent (1).webp";
+import logoSuitSupply from "@assets/logos/suitsupply.svg";
 import galleryLaBrea1 from "@assets/La Brea Photos/La_Brea_1.jpg";
 import galleryLaBrea2 from "@assets/La Brea Photos/La_Brea_2.jpg";
 import galleryLaBrea3 from "@assets/La Brea Photos/La_Brea_3.jpg";
@@ -89,6 +90,10 @@ import galleryTheGrove1 from "@assets/The Grove Photos/The_Grove_1.jpg";
 import galleryTheGrove2 from "@assets/The Grove Photos/The_Grove_2.jpg";
 import galleryTheGrove3 from "@assets/The Grove Photos/The_Grove_3.jpg";
 import galleryTheGrove4 from "@assets/The Grove Photos/The_Grove_4.jpg";
+import gallerySouthCoastPlaza1 from "@assets/South Coast Plaza Photos/SCP_1.webp";
+import gallerySouthCoastPlaza2 from "@assets/South Coast Plaza Photos/SCP_2.jpg";
+import gallerySouthCoastPlaza3 from "@assets/South Coast Plaza Photos/SCP_3.jpeg";
+import gallerySouthCoastPlaza4 from "@assets/South Coast Plaza Photos/SCP_4.jpg";
 import galleryThePaseo1 from "@assets/The Paseo Photos/The_Paseo_1.jpg";
 import galleryThePaseo2 from "@assets/The Paseo Photos/The_Paseo_2.jpg";
 import galleryThePaseo3 from "@assets/The Paseo Photos/The_Paseo_3.jpg";
@@ -177,7 +182,7 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { name: "Vuori", domain: "vuoriclothing.com" },
       { name: "On", domain: "on.com" },
       { name: "Adidas", domain: "adidas.com" },
-      { name: "Suit Supply", domain: "suitsupply.com" },
+      { name: "Suit Supply", domain: "suitsupply.com", src: logoSuitSupply },
       { name: "Lululemon", domain: "lululemon.com" },
       { name: "HOKA", domain: "hoka.com" },
       { name: "Aesop", domain: "aesop.com" },
@@ -226,7 +231,7 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { name: "Undefeated", domain: "undefeated.com" },
       { name: "Sugarfish", domain: "sugarfish.com" },
       { name: "Fjällräven", domain: "fjallraven.com" },
-      { name: "American Rag Cie", domain: "americanrag.com" },
+      { name: "Japan LA", domain: "japanla.com" },
     ],
     bikeScore: 60,
     walkScore: 89,
@@ -240,8 +245,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { value: "70%", label: "OF POPULATION ARE YOUNGER THAN 40 YEARS OLD" },
     ],
     trafficCounts: [{ street: "La Brea Ave", count: "48,000 CPD" }],
-    mapCenter: { lat: 34.0731, lng: -118.3441 },
-    mapZoom: 16,
+    mapCenter: { lat: 34.07155, lng: -118.34405 },
+    mapZoom: 17.62,
   },
   larchmont: {
     title: "Larchmont Blvd",
@@ -283,8 +288,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       },
     ],
     trafficCounts: [{ street: "Larchmont Blvd", count: "15,000 CPD" }],
-    mapCenter: { lat: 34.0778, lng: -118.3237 },
-    mapZoom: 16,
+    mapCenter: { lat: 34.07448, lng: -118.32352 },
+    mapZoom: 17.62,
   },
   melrose: {
     title: "Melrose Ave & Melrose Place",
@@ -298,17 +303,16 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { src: galleryMelrose4, alt: "Melrose corridor shopping district" },
     ],
     notableBrands: [
-      { name: "Adidas", domain: "adidas.com" },
       { name: "Ralph Lauren", domain: "ralphlauren.com" },
-      { name: "Glossier", domain: "glossier.com" },
-      { name: "Fred Segal", domain: "fredsegal.com" },
-      { name: "Balmain", domain: "balmain.com" },
+      { name: "Bottega Veneta", domain: "bottegaveneta.com" },
+      { name: "The Row", domain: "therow.com" },
+      { name: "Maison Margiela", domain: "maisonmargiela.com" },
       { name: "Chloé", domain: "chloe.com" },
       { name: "Golden Goose", domain: "goldengoose.com" },
+      { name: "Isabel Marant", domain: "isabelmarant.com" },
+      { name: "Glossier", domain: "glossier.com" },
       { name: "TheRealReal", domain: "therealreal.com" },
-      { name: "Aesop", domain: "aesop.com" },
-      { name: "Maison Margiela", domain: "maisonmargiela.com" },
-      { name: "La La Land Kind Cafe", domain: "lalalandkindcafe.com" },
+      { name: "Mejuri", domain: "mejuri.com" },
     ],
     bikeScore: 62,
     walkScore: 88,
@@ -325,8 +329,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { street: "Melrose Ave", count: "42,000 CPD" },
       { street: "La Cienega Blvd", count: "39,000 CPD" },
     ],
-    mapCenter: { lat: 34.0838834, lng: -118.3758989 },
-    mapZoom: 16,
+    mapCenter: { lat: 34.08275, lng: -118.37665 },
+    mapZoom: 18,
   },
   robertson: {
     title: "Robertson Blvd",
@@ -369,8 +373,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { street: "Robertson Blvd", count: "36,000 CPD" },
       { street: "3rd St", count: "22,000 CPD" },
     ],
-    mapCenter: { lat: 34.0754807, lng: -118.3839494 },
-    mapZoom: 17,
+    mapCenter: { lat: 34.07592, lng: -118.38270 },
+    mapZoom: 18.08,
   },
   "silver-lake": {
     title: "Silver Lake & Echo Park",
@@ -412,8 +416,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { street: "Alvarado St", count: "36,000 CPD" },
       { street: "Glendale Blvd", count: "30,000 CPD" },
     ],
-    mapCenter: { lat: 34.087444, lng: -118.2754793 },
-    mapZoom: 16,
+    mapCenter: { lat: 34.08935, lng: -118.2776 },
+    mapZoom: 16.55,
   },
   "third-street-promenade": {
     title: "Third Street Promenade",
@@ -471,8 +475,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { street: "Santa Monica Blvd", count: "21,000 CPD" },
       { street: "Wilshire Blvd", count: "24,000 CPD" },
     ],
-    mapCenter: { lat: 34.0150135, lng: -118.4948687 },
-    mapZoom: 18.06,
+    mapCenter: { lat: 34.01518, lng: -118.49450 },
+    mapZoom: 18.42,
   },
   "studio-city": {
     title: "Studio City",
@@ -520,8 +524,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     trafficCounts: [
       { street: "Ventura Blvd", count: "41,000 CPD" },
     ],
-    mapCenter: { lat: 34.1435, lng: -118.3955 },
-    mapZoom: 16,
+    mapCenter: { lat: 34.14325, lng: -118.39640 },
+    mapZoom: 17.7,
   },
   "sportsmen-lodge": {
     title: "Sportsmen's Lodge",
@@ -621,7 +625,7 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { street: "Colorado Blvd", count: "19,381 CPD" },
       { street: "Fair Oaks Ave", count: "24,431 CPD" },
     ],
-    mapCenter: { lat: 34.14666478402269, lng: -118.15138820680242 },
+    mapCenter: { lat: 34.146574260670704, lng: -118.15144322568419 },
     mapZoom: 18,
   },
   "the-point": {
@@ -858,6 +862,56 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     mapCenter: { lat: 34.07198357761211, lng: -118.35748715851972 },
     mapZoom: 18,
   },
+  "south-coast-plaza": {
+    title: "South Coast Plaza",
+    description:
+      "South Coast Plaza in Costa Mesa is the largest shopping center in California and one of the most successful retail destinations in the world, drawing shoppers from across Southern California and abroad. Home to more than 280 luxury and contemporary brands, the center is known for pairing an unmatched concentration of flagship boutiques with a broader lifestyle offering that includes fine dining, art, and entertainment. Adjacent to the Segerstrom Center for the Arts and the Orange County Museum of Art, South Coast Plaza sits at the heart of a thriving arts and business district. Its scale and tenant roster — spanning Chanel, Hermès, Louis Vuitton, and Harry Winston alongside newer contemporary and West Coast-exclusive concepts — position it as Orange County's premier retail landmark.",
+    estimatedRents: "$50–$72+ PSF/yr",
+    galleryImages: [
+      {
+        src: gallerySouthCoastPlaza1,
+        alt: "South Coast Plaza exterior and plaza",
+      },
+      {
+        src: gallerySouthCoastPlaza2,
+        alt: "Luxury retail at South Coast Plaza",
+      },
+      {
+        src: gallerySouthCoastPlaza3,
+        alt: "Interior corridors at South Coast Plaza",
+      },
+      {
+        src: gallerySouthCoastPlaza4,
+        alt: "South Coast Plaza shopping destination",
+      },
+    ],
+    notableBrands: [
+      { name: "Chanel", domain: "chanel.com" },
+      { name: "Hermès", domain: "hermes.com" },
+      { name: "Louis Vuitton", domain: "louisvuitton.com" },
+      { name: "Harry Winston", domain: "harrywinston.com" },
+      { name: "Gucci", domain: "gucci.com" },
+      { name: "Prada", domain: "prada.com" },
+      { name: "Dior", domain: "dior.com" },
+      { name: "Cartier", domain: "cartier.com" },
+      { name: "Tiffany & Co.", domain: "tiffany.com" },
+      { name: "Rolex", domain: "rolex.com" },
+    ],
+    bikeScore: 43,
+    walkScore: 58,
+    areaStats: [
+      { value: "14.2M", label: "ANNUAL VISITS" },
+      { value: "5.1M SF", label: "OF RETAIL SPACE" },
+      { value: "280+", label: "LUXURY AND CONTEMPORARY BRANDS" },
+      { value: "$171K", label: "AVG. HOUSEHOLD INCOME IN TRADE AREA" },
+    ],
+    trafficCounts: [
+      { street: "I-405 (San Diego Freeway)", count: "254,000 CPD" },
+      { street: "Bristol St", count: "43,000 CPD" },
+    ],
+    mapCenter: { lat: 33.69113613390609, lng: -117.88898025852322 },
+    mapZoom: 16,
+  },
   "the-paseo": {
     title: "The Paseo",
     description:
@@ -891,7 +945,7 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { name: "LensCrafters", domain: "lenscrafters.com" },
       { name: "Yard House", domain: "yardhouse.com" },
       { name: "Regal Cinemas", domain: "regmovies.com" },
-      { name: "Salon Republic", domain: "salonrepublic.com" },
+      { name: "Salon Republic", domain: "salonrepublic.com", src: logoSalonRepublic },
     ],
     bikeScore: 75,
     walkScore: 96,
@@ -904,8 +958,6 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     trafficCounts: [
       { street: "Colorado Blvd", count: "22,369 CPD" },
       { street: "Marengo Ave", count: "19,804 CPD" },
-      { street: "Los Robles Ave", count: "15,664 CPD" },
-      { street: "Green St", count: "12,617 CPD" },
     ],
     mapCenter: { lat: 34.14585, lng: -118.14355 },
     mapZoom: 18,
@@ -1114,7 +1166,6 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { name: "Nike", domain: "nike.com" },
       { name: "Tumi", domain: "tumi.com" },
       { name: "Tesla", domain: "tesla.com" },
-      { name: "Pandora", domain: "pandora.net", src: logoPandora },
       { name: "The Cheesecake Factory", domain: "thecheesecakefactory.com" },
       { name: "Hugo Boss", domain: "hugoboss.com" },
       { name: "Johnny Was", domain: "johnnywas.com", src: logoJohnnyWas },
@@ -1139,8 +1190,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { street: "4th St", count: "16,000 CPD" },
       { street: "Colorado Ave", count: "16,000 CPD" },
     ],
-    mapCenter: { lat: 34.013694718714774, lng: -118.49380813415459 },
-    mapZoom: 18,
+    mapCenter: { lat: 34.01345, lng: -118.49355 },
+    mapZoom: 18.58,
   },
   "downtown-manhattan-beach": {
     title: "Downtown Manhattan Beach",
@@ -1181,8 +1232,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     trafficCounts: [
       { street: "Manhattan Beach Blvd", count: "14,565 CPD" },
     ],
-    mapCenter: { lat: 33.88637850892859, lng: -118.40589150089282 },
-    mapZoom: 17,
+    mapCenter: { lat: 33.88500, lng: -118.40945 },
+    mapZoom: 18.38,
   },
   "old-town-pasadena": {
     title: "Old Town Pasadena",
@@ -1241,8 +1292,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { street: "Colorado Blvd", count: "22,000 CPD" },
       { street: "Fair Oaks Ave", count: "31,000 CPD" },
     ],
-    mapCenter: { lat: 34.14575060769234, lng: -118.14410287615394 },
-    mapZoom: 17,
+    mapCenter: { lat: 34.14568, lng: -118.15150 },
+    mapZoom: 18.68,
   },
   "culver-city": {
     title: "Culver City",
@@ -1285,8 +1336,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { street: "Culver Blvd", count: "20,000 CPD" },
       { street: "Washington Blvd", count: "29,000 CPD" },
     ],
-    mapCenter: { lat: 34.0238822, lng: -118.396119 },
-    mapZoom: 17,
+    mapCenter: { lat: 34.02415, lng: -118.39485 },
+    mapZoom: 17.18,
   },
   montana: {
     title: "Montana Ave",
@@ -1325,7 +1376,7 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { value: "$125K", label: "AVG. HOUSEHOLD INCOME WITHIN ONE MILE" },
     ],
     trafficCounts: [{ street: "Montana Ave", count: "21,000 CPD" }],
-    mapCenter: { lat: 34.0311253, lng: -118.4962138 },
+    mapCenter: { lat: 34.0315699, lng: -118.4962138 },
     mapZoom: 17,
   },
   "sunset-strip": {
@@ -1371,8 +1422,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       },
     ],
     trafficCounts: [{ street: "Sunset Blvd", count: "31,000 CPD" }],
-    mapCenter: { lat: 34.092648330681776, lng: -118.37921673409075 },
-    mapZoom: 17,
+    mapCenter: { lat: 34.09262, lng: -118.37880 },
+    mapZoom: 18.42,
   },
   "la-arts-district": {
     title: "LA Arts District",
@@ -1423,11 +1474,9 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
     trafficCounts: [
       { street: "Alameda Street", count: "32,019 CPD" },
       { street: "3rd Street", count: "20,494 CPD" },
-      { street: "Mateo Street", count: "8,930 CPD" },
-      { street: "Santa Fe Avenue", count: "34,839 CPD" },
     ],
-    mapCenter: { lat: 34.0419269462015, lng: -118.23259777697568 },
-    mapZoom: 16,
+    mapCenter: { lat: 34.04528, lng: -118.23455 },
+    mapZoom: 17.88,
   },
   "golden-triangle": {
     title: "Beverly Hills Golden Triangle",
@@ -1490,8 +1539,8 @@ export const CORRIDOR_DETAILS: Record<string, StreetCorridorDetail> = {
       { street: "Beverly Dr", count: "17,000 CPD" },
       { street: "Santa Monica Blvd", count: "60,000 CPD" },
     ],
-    mapCenter: { lat: 34.06935214693885, lng: -118.40180470244921 },
-    mapZoom: 16,
+    mapCenter: { lat: 34.06885, lng: -118.40235 },
+    mapZoom: 18,
   },
   "downtown-la": {
     title: "Downtown LA",

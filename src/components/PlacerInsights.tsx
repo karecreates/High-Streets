@@ -14,18 +14,50 @@ const TABS: Array<{ id: TabId; label: string }> = [
   { id: "psychographics", label: "Psychographics" },
 ];
 
+function tabsFor(data: PlacerInsightsData) {
+  return TABS.filter((tab) => {
+    if (tab.id === "overview") return Boolean(data.overview);
+    if (tab.id === "trade-area") return Boolean(data.tradeArea);
+    if (tab.id === "psychographics") {
+      return Boolean(data.psychographics?.topGroups.length);
+    }
+    return true;
+  });
+}
+
+function StatLabel({ label }: { label: string }) {
+  const match = /^(.*?)\s+(or higher)$/i.exec(label.trim());
+  if (!match) return label;
+  return (
+    <>
+      {match[1]}
+      <br />
+      {match[2]}
+    </>
+  );
+}
+
 function StatTiles({
   stats,
   large = false,
+  featured = false,
   animateFrom = 0,
 }: {
   stats: PlacerStat[];
   large?: boolean;
+  /** Larger centered tiles for Workplace / Income panels. */
+  featured?: boolean;
   animateFrom?: number;
 }) {
   return (
     <ul
-      className={`placer-stats ${large ? "placer-stats--headline" : "placer-stats--secondary"}`}
+      className={`placer-stats ${
+        featured
+          ? "placer-stats--featured"
+          : large
+            ? "placer-stats--headline"
+            : "placer-stats--secondary"
+      }`}
     >
       {stats.map((stat, index) => (
         <li key={stat.label} className="placer-stats__item">
@@ -35,7 +67,9 @@ function StatTiles({
             delay={animateFrom + index * 120}
             duration={1100}
           />
-          <span className="placer-stats__label">{stat.label}</span>
+          <span className="placer-stats__label">
+            <StatLabel label={stat.label} />
+          </span>
           {stat.hint ? (
             <span className="placer-stats__hint">{stat.hint}</span>
           ) : null}
@@ -46,11 +80,14 @@ function StatTiles({
 }
 
 function OverviewTab({ data }: { data: PlacerInsightsData }) {
+  const overview = data.overview;
+  if (!overview) return null;
+
   return (
     <div className="placer-tabpanel__inner placer-tabpanel__inner--overview">
       <div className="placer-bento">
         <ul className="placer-bento__hero">
-          {data.overview.headline.map((stat, index) => (
+          {overview.headline.map((stat, index) => (
             <li key={stat.label} className="placer-bento__tile placer-bento__tile--hero">
               <AnimatedDisplay
                 className="placer-bento__value"
@@ -62,9 +99,9 @@ function OverviewTab({ data }: { data: PlacerInsightsData }) {
             </li>
           ))}
         </ul>
-        {data.overview.secondary.length ? (
+        {overview.secondary.length ? (
           <ul className="placer-bento__secondary">
-            {data.overview.secondary.map((stat, index) => (
+            {overview.secondary.map((stat, index) => (
               <li
                 key={stat.label}
                 className="placer-bento__tile placer-bento__tile--secondary"
@@ -97,14 +134,16 @@ function DemographicsTab({ data }: { data: PlacerInsightsData }) {
       <StatTiles stats={stats} />
 
       <div className="placer-columns">
-        <section className="placer-section" aria-label="Workplace">
-          <h4 className="placer-section__title">Workplace</h4>
-          <StatTiles stats={workplace} />
-        </section>
+        {workplace.length ? (
+          <section className="placer-section" aria-label="Workplace">
+            <h4 className="placer-section__title">Workplace</h4>
+            <StatTiles stats={workplace} featured />
+          </section>
+        ) : null}
 
         <section className="placer-section" aria-label="Household income">
           <h4 className="placer-section__title">Household income</h4>
-          <StatTiles stats={incomeStats} />
+          <StatTiles stats={incomeStats} featured />
         </section>
       </div>
     </div>
@@ -112,13 +151,16 @@ function DemographicsTab({ data }: { data: PlacerInsightsData }) {
 }
 
 function PsychographicsTab({ data }: { data: PlacerInsightsData }) {
+  const groups = data.psychographics?.topGroups ?? [];
+  if (!groups.length) return null;
+
   return (
     <div className="placer-tabpanel__inner placer-tabpanel__inner--psycho">
       <p className="placer-note">
         Top Experian Mosaic groups by trade-area population.
       </p>
       <ol className="placer-psycho">
-        {data.psychographics.topGroups.map((group, index) => (
+        {groups.map((group, index) => (
           <li key={group.code} className="placer-psycho__card">
             <div className="placer-psycho__rank" aria-hidden>
               {index + 1}
@@ -165,6 +207,9 @@ function TradeAreaTab({
   data: PlacerInsightsData;
   onExpand: () => void;
 }) {
+  const tradeArea = data.tradeArea;
+  if (!tradeArea) return null;
+
   return (
     <div className="placer-tabpanel__inner placer-tabpanel__inner--trade">
       <div className="placer-trade-head">
@@ -180,8 +225,8 @@ function TradeAreaTab({
       <div className="placer-trade-map">
         <PlacerTradeAreaMap
           mapKey="placer-trade-area-inline"
-          polygons={data.tradeArea.polygons}
-          site={data.tradeArea.site}
+          polygons={tradeArea.polygons}
+          site={tradeArea.site}
           showLandmarks={false}
         />
       </div>
@@ -239,14 +284,16 @@ function TradeAreaModal({
           </button>
         </header>
         <div className="placer-modal__map">
-          <PlacerTradeAreaMap
-            mapKey="placer-trade-area-modal"
-            polygons={data.tradeArea.polygons}
-            site={data.tradeArea.site}
-            fitPadding={80}
-            zoomInSteps={1}
-            showLandmarks
-          />
+          {data.tradeArea ? (
+            <PlacerTradeAreaMap
+              mapKey="placer-trade-area-modal"
+              polygons={data.tradeArea.polygons}
+              site={data.tradeArea.site}
+              fitPadding={80}
+              zoomInSteps={1}
+              showLandmarks
+            />
+          ) : null}
         </div>
       </div>
     </div>,
@@ -254,14 +301,34 @@ function TradeAreaModal({
   );
 }
 
-export function PlacerInsights({ data }: { data: PlacerInsightsData }) {
-  const [activeTab, setActiveTab] = useState<TabId>("demographics");
+export function PlacerInsights({
+  data,
+  forcedTab,
+}: {
+  data: PlacerInsightsData;
+  /** Booklet export: pin one tab, or print every tab stacked. */
+  forcedTab?: TabId | "all";
+}) {
+  const showAllTabs = forcedTab === "all";
+  const pdfTab = forcedTab && forcedTab !== "all" ? forcedTab : null;
+  const visibleTabs = tabsFor(data).filter((tab) =>
+    pdfTab ? tab.id === pdfTab : true
+  );
+  const [selectedTab, setSelectedTab] = useState<TabId>(
+    showAllTabs || !forcedTab ? "demographics" : forcedTab
+  );
+  const activeTab = showAllTabs ? null : (forcedTab ?? selectedTab);
+  const setActiveTab = setSelectedTab;
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = useCallback(() => setModalOpen(true), []);
   const closeModal = useCallback(() => setModalOpen(false), []);
 
   return (
-    <div className="info-card placer-card">
+    <div
+      className={`info-card placer-card${
+        showAllTabs ? " placer-card--print-all" : ""
+      }`}
+    >
       <div className="info-card__header placer-card__header">
         <span>TRADE AREA POLYGON* STATISTICS</span>
         <span
@@ -272,43 +339,69 @@ export function PlacerInsights({ data }: { data: PlacerInsightsData }) {
         </span>
       </div>
 
-      <div
-        className="placer-tabs"
-        role="tablist"
-        aria-label="Placer.ai trade area polygon statistics"
-      >
-        {TABS.map((tab) => (
-          <button
-            key={tab.id}
-            type="button"
-            role="tab"
-            id={`placer-tab-${tab.id}`}
-            aria-selected={activeTab === tab.id}
-            aria-controls={`placer-panel-${tab.id}`}
-            className={`placer-tabs__tab ${
-              activeTab === tab.id ? "placer-tabs__tab--active" : ""
-            }`}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
+      {showAllTabs ? null : (
+        <div
+          className="placer-tabs"
+          role="tablist"
+          aria-label="Placer.ai trade area polygon statistics"
+        >
+          {visibleTabs.map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              role="tab"
+              id={`placer-tab-${tab.id}`}
+              aria-selected={activeTab === tab.id}
+              aria-controls={`placer-panel-${tab.id}`}
+              className={`placer-tabs__tab ${
+                activeTab === tab.id ? "placer-tabs__tab--active" : ""
+              }`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      )}
 
-      <div
-        key={activeTab}
-        id={`placer-panel-${activeTab}`}
-        role="tabpanel"
-        aria-labelledby={`placer-tab-${activeTab}`}
-        className="placer-tabpanel"
-      >
-        {activeTab === "overview" && <OverviewTab data={data} />}
-        {activeTab === "demographics" && <DemographicsTab data={data} />}
-        {activeTab === "psychographics" && <PsychographicsTab data={data} />}
-        {activeTab === "trade-area" && (
-          <TradeAreaTab data={data} onExpand={openModal} />
-        )}
-      </div>
+      {showAllTabs ? (
+        <div className="placer-print-stack">
+          {visibleTabs.map((tab) => (
+            <section
+              key={tab.id}
+              className="placer-print-section"
+              aria-label={tab.label}
+            >
+              <h3 className="placer-print-section__title">{tab.label}</h3>
+              {tab.id === "overview" ? <OverviewTab data={data} /> : null}
+              {tab.id === "demographics" ? (
+                <DemographicsTab data={data} />
+              ) : null}
+              {tab.id === "psychographics" ? (
+                <PsychographicsTab data={data} />
+              ) : null}
+              {tab.id === "trade-area" ? (
+                <TradeAreaTab data={data} onExpand={openModal} />
+              ) : null}
+            </section>
+          ))}
+        </div>
+      ) : (
+        <div
+          key={activeTab}
+          id={`placer-panel-${activeTab}`}
+          role="tabpanel"
+          aria-labelledby={`placer-tab-${activeTab}`}
+          className="placer-tabpanel"
+        >
+          {activeTab === "overview" && <OverviewTab data={data} />}
+          {activeTab === "demographics" && <DemographicsTab data={data} />}
+          {activeTab === "psychographics" && <PsychographicsTab data={data} />}
+          {activeTab === "trade-area" && (
+            <TradeAreaTab data={data} onExpand={openModal} />
+          )}
+        </div>
+      )}
 
       <footer className="placer-footnote">
         <p className="placer-footnote__text">

@@ -4,3 +4,6 @@ dist
 .env.local
 .DS_Store
 public/data/geocode-cache.json
+*.tsbuildinfo
+tmp/
+Third-Street-Promenade-Text-Map.pdf

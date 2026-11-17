@@ -1,5 +1,5 @@
 import { useMap } from "@vis.gl/react-google-maps";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { MAP_Z_INDEX } from "../config/mapZIndex";
 import type { ShoppingCenter } from "../data/shoppingCenters";
 import { createShoppingCenterMarkerIcon } from "../utils/createShoppingCenterMarkerIcon";
@@ -27,6 +27,9 @@ export function ShoppingCenterPin({
   interactive = true,
 }: ShoppingCenterPinProps) {
   const map = useMap();
+  const markerRef = useRef<google.maps.Marker | null>(null);
+  const onClickRef = useRef(onClick);
+  onClickRef.current = onClick;
   const placement =
     layout?.placement ??
     (compact ? center.masterMapLogoPlacement : undefined) ??
@@ -42,8 +45,9 @@ export function ShoppingCenterPin({
       title: center.name,
       optimized: false,
       zIndex,
-      clickable: interactive && !center.mapPinOnly,
+      clickable: !center.mapPinOnly,
     });
+    markerRef.current = marker;
 
     let cancelled = false;
     createShoppingCenterMarkerIcon(center.logo, {
@@ -59,26 +63,23 @@ export function ShoppingCenterPin({
       if (!cancelled) marker.setIcon(icon);
     });
 
-    const listener =
-      interactive && !center.mapPinOnly
-        ? marker.addListener("click", onClick)
-        : null;
+    const listener = center.mapPinOnly
+      ? null
+      : marker.addListener("click", () => onClickRef.current());
 
     return () => {
       cancelled = true;
       listener?.remove();
       marker.setMap(null);
+      markerRef.current = null;
     };
-  }, [
-    map,
-    center,
-    onClick,
-    zIndex,
-    compact,
-    placement,
-    offsetX,
-    interactive,
-  ]);
+  }, [map, center, zIndex, compact, placement, offsetX]);
+
+  useEffect(() => {
+    const marker = markerRef.current;
+    if (!marker) return;
+    marker.setClickable(interactive && !center.mapPinOnly);
+  }, [center.mapPinOnly, interactive]);
 
   return null;
 }

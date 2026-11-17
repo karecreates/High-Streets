@@ -6,6 +6,7 @@ import "./styles/variables.css";
 import "./styles/main.css";
 import "./styles/dashboard.css";
 import "./styles/access-gate.css";
+import "./styles/playbook.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

@@ -6,7 +6,15 @@ import { InfoWindow, Map, useMap } from "@vis.gl/react-google-maps";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { USE_LOGO_DEV_MARKERS } from "../config/mapMarkers";
 import { MAP_Z_INDEX } from "../config/mapZIndex";
-import { getMajorTenantLayoutOverride } from "../data/majorTenants";
+import {
+  getMajorTenantLayoutOverride,
+  MAJOR_TENANT_KEEP_GROUPED_SLUGS,
+  MAJOR_TENANT_MERGE_GROUPS_BY_SLUG,
+  MAJOR_TENANT_PACK_BY_SLUG,
+  MAJOR_TENANT_SPREAD_BY_SLUG,
+  normalizeTenantName,
+} from "../data/majorTenants";
+import { getTextOnlyLayoutOverride } from "../data/textOnlyLayout";
 import type { ShoppingCenter } from "../data/shoppingCenters";
 import { useLogoProvider } from "../hooks/useLogoProvider";
 import { useMapZoom } from "../hooks/useMapZoom";
@@ -14,19 +22,25 @@ import { useOverviewMarkerLayouts } from "../hooks/useOverviewMarkerLayouts";
 import type { Tenant } from "../types/tenant";
 import type { Vacancy } from "../types/vacancy";
 import { createBetaClusterRenderer } from "../utils/createClusterRenderer";
-import { createCalloutIcon } from "../utils/createCalloutIcon";
+import {
+  createCalloutIcon,
+  estimateCalloutBoxSize,
+} from "../utils/createCalloutIcon";
 import {
   createGroupedLogoMarkerIcon,
   estimateGroupedLogoMarkerSize,
 } from "../utils/createGroupedLogoMarkerIcon";
 import {
   estimateLogoMarkerSize,
+  estimateNameCalloutSize,
   type LogoMarkerLayoutOptions,
 } from "../utils/createLogoMarkerIcon";
 import type { DashboardMapLocation } from "../utils/dashboardMapLocations";
 import {
   groupTenantsByLocation,
+  mergeTenantGroupsByName,
   splitTenantGroupsForDeconflict,
+  spreadCoLocatedAnchors,
   type TenantLocationGroup,
 } from "../utils/groupTenantsByLocation";
 import { getMapId } from "../utils/mapConfig";
@@ -34,10 +48,12 @@ import { MAP_STYLES_WITH_STREET_LABELS } from "../utils/mapStyles";
 import {
   resolveStreetLogoLayouts,
   type StreetLogoLayoutItem,
+  type StreetLogoLayoutOptions,
 } from "../utils/streetLogoLayout";
-import { isNamedTenant } from "../utils/tenantDisplay";
+import { formatTenantDisplayName, isNamedTenant } from "../utils/tenantDisplay";
 import {
   getTenantGroupCenterSlugs,
+  isTenantGroupCenter,
   resolveTenantGroupCenter,
 } from "../utils/tenantGroupCenter";
 import { groupVacanciesByLocation } from "../utils/groupVacanciesByLocation";
@@ -56,6 +72,10 @@ import { MapTypeToggle } from "./MapTypeToggle";
 
 const CALIFORNIA_CENTER = { lat: 36.7783, lng: -119.4179 };
 const DEFAULT_ZOOM = 6;
+
+const DEFAULT_FIT_BOUNDS_PADDING = { top: 56, right: 56, bottom: 56, left: 56 };
+/** Stable default so ClusteredMarkers does not remount markers every render. */
+const EMPTY_FIT_POSITIONS: google.maps.LatLngLiteral[] = [];
 
 /** Cluster until mid street-level; individual markers at 17+ */
 const CLUSTER_MAX_ZOOM = 16;
@@ -116,6 +136,11 @@ export interface TenantMapViewProps {
    * When set, JSON `styles` are omitted so the cloud style can apply.
    */
   mapIdOverride?: string;
+  /**
+   * When set, skip the cloud Map ID and apply these JSON styles instead
+   * (needed to hide Google POI icons on a white basemap).
+   */
+  jsonMapStyles?: google.maps.MapTypeStyle[];
   /** Hide map UI chrome for screenshot / static books capture. */
   staticMode?: boolean;
   /**
@@ -125,12 +150,95 @@ export interface TenantMapViewProps {
   deconflictLogos?: boolean;
   /** Corridor slug for curated logo placement overrides. */
   deconflictLayoutSlug?: string;
+  /**
+   * Dense all-occupied packing: compact logos, full-name fallbacks, and a
+   * 4-way collision solver. Used when Major Tenants is off on crowded streets.
+   */
+  deconflictDense?: boolean;
+  /**
+   * Third Street capture mode: tiny beta-blue name boxes, no logos.
+   */
+  textOnly?: boolean;
+  /**
+   * Fires when the map has finished loading tiles and stopped moving.
+   * Used by the booklet exporter as one input to its page-ready signal.
+   */
+  onMapIdle?: () => void;
+  /** Fires once every tenant logo callout has been drawn. */
+  onIconsReady?: () => void;
+  /** Overrides the auto-fit inset (booklet pages need room for callouts). */
+  fitBoundsPadding?: google.maps.Padding;
+  /** Caps how far auto-fit may zoom in. */
+  maxZoom?: number;
+  /** Live map instance, for viewport PDF capture. */
+  onMapReady?: (map: google.maps.Map) => void;
+}
+
+/** Reports the Google Maps `idle` event (tiles drawn, no pending camera move). */
+function MapReadySignal({
+  onReady,
+}: {
+  onReady: (map: google.maps.Map) => void;
+}) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (map) onReady(map);
+  }, [map, onReady]);
+
+  return null;
+}
+
+function MapIdleSignal({ onIdle }: { onIdle: () => void }) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (!map) return;
+    const listener = map.addListener("idle", () => onIdle());
+    return () => listener.remove();
+  }, [map, onIdle]);
+
+  return null;
+}
+
+function tenantGroupTextLabel(group: TenantLocationGroup): string {
+  const centerGroup = resolveTenantGroupCenter(group);
+  if (group.tenants.length === 1) {
+    return formatTenantDisplayName(group.tenants[0].tenantName);
+  }
+  if (centerGroup) {
+    return `${centerGroup.center.name} · ${centerGroup.tenants.length} tenants`;
+  }
+  return group.tenants
+    .map((tenant) => formatTenantDisplayName(tenant.tenantName))
+    .join("\n");
 }
 
 async function resolveMarkerIcon(
   group: TenantLocationGroup,
   layout?: LogoMarkerLayoutOptions
 ): Promise<google.maps.Icon> {
+  const placement =
+    layout?.placement === "below" ||
+    layout?.placement === "left" ||
+    layout?.placement === "right"
+      ? layout.placement
+      : "above";
+
+  if (layout?.textOnly) {
+    return createCalloutIcon(tenantGroupTextLabel(group), {
+      size: "tiny",
+      placement,
+      offsetX: layout.offsetX ?? 0,
+      showStem: layout.showStem ?? true,
+      stemHeight: layout.stemHeight,
+      offsetY: layout.stemHeight,
+      truncate: true,
+      stemColor: "#3E6F7E",
+      stemHalo: true,
+    });
+  }
+
   const centerGroup = resolveTenantGroupCenter(group);
   if (USE_LOGO_DEV_MARKERS) {
     if (centerGroup) {
@@ -152,27 +260,51 @@ async function resolveMarkerIcon(
         ? `${centerGroup.center.name} · ${centerGroup.tenants.length} tenants`
         : `${group.tenants.length} tenants`;
   return createCalloutIcon(label, {
-    placement: layout?.placement,
+    placement,
     offsetX: layout?.offsetX ?? 0,
     showStem: layout?.showStem ?? true,
+    stemHeight: layout?.stemHeight,
     offsetY: layout?.stemHeight,
+    truncate: false,
   });
 }
 
-function estimateGroupMarkerSize(group: TenantLocationGroup): {
+function estimateGroupMarkerSize(
+  group: TenantLocationGroup,
+  compact = false,
+  scale?: number,
+  preferNameFallback = false,
+  textOnly = false
+): {
   width: number;
   height: number;
 } {
+  if (textOnly) {
+    return estimateCalloutBoxSize(tenantGroupTextLabel(group), "tiny", {
+      truncate: true,
+    });
+  }
   const centerGroup = resolveTenantGroupCenter(group);
   if (centerGroup) {
     return estimateGroupedLogoMarkerSize(centerGroup.tenants.length, {
       hasCenterHeader: true,
+      compact,
+      nameCells: preferNameFallback,
+      scale,
     });
   }
   if (group.tenants.length <= 1) {
-    return estimateLogoMarkerSize();
+    const logoSize = estimateLogoMarkerSize({ compact, scale });
+    const tenant = group.tenants[0];
+    if (!preferNameFallback || !tenant) return logoSize;
+    if (tenant.logoDomain?.trim()) return logoSize;
+    return estimateNameCalloutSize(tenant.tenantName, compact);
   }
-  return estimateGroupedLogoMarkerSize(group.tenants.length);
+  return estimateGroupedLogoMarkerSize(group.tenants.length, {
+    compact,
+    nameCells: preferNameFallback,
+    scale,
+  });
 }
 
 function ClusteredMarkers({
@@ -181,10 +313,14 @@ function ClusteredMarkers({
   autoFitBounds,
   defaultCenter,
   defaultZoom,
-  extraFitPositions = [],
+  extraFitPositions = EMPTY_FIT_POSITIONS,
   deconflictLogos = false,
   deconflictLayoutSlug,
+  deconflictDense = false,
+  textOnly = false,
   staticMode = false,
+  fitBoundsPadding = DEFAULT_FIT_BOUNDS_PADDING,
+  onIconsReady,
 }: {
   locationGroups: TenantLocationGroup[];
   onSelect: (group: TenantLocationGroup) => void;
@@ -194,7 +330,11 @@ function ClusteredMarkers({
   extraFitPositions?: google.maps.LatLngLiteral[];
   deconflictLogos?: boolean;
   deconflictLayoutSlug?: string;
+  deconflictDense?: boolean;
+  textOnly?: boolean;
   staticMode?: boolean;
+  fitBoundsPadding?: google.maps.Padding;
+  onIconsReady?: () => void;
 }) {
   const map = useMap();
   const [logoProvider] = useLogoProvider();
@@ -206,10 +346,12 @@ function ClusteredMarkers({
   const layoutGenRef = useRef(0);
   const lastLayoutZoomRef = useRef<number | null>(null);
   const onSelectRef = useRef(onSelect);
+  const onIconsReadyRef = useRef(onIconsReady);
   const applyLayoutsRef = useRef<((force?: boolean) => void) | null>(null);
   const clusterRenderer = useMemo(() => createBetaClusterRenderer(), []);
 
   onSelectRef.current = onSelect;
+  onIconsReadyRef.current = onIconsReady;
 
   useEffect(() => {
     fittedRef.current = false;
@@ -229,13 +371,19 @@ function ClusteredMarkers({
     groupsRef.current = locationGroups;
     lastLayoutZoomRef.current = null;
 
-    if (!locationGroups.length && !extraFitPositions.length) return;
+    if (!locationGroups.length && !extraFitPositions.length) {
+      onIconsReadyRef.current?.();
+      return;
+    }
 
+    const iconWork: Promise<void>[] = [];
     const markers = locationGroups.map((group) => {
       const title =
         group.tenants.length === 1
-          ? group.tenants[0].tenantName
-          : group.tenants.map((t) => t.tenantName).join(", ");
+          ? formatTenantDisplayName(group.tenants[0].tenantName)
+          : group.tenants
+              .map((t) => formatTenantDisplayName(t.tenantName))
+              .join(", ");
 
       const marker = new google.maps.Marker({
         position: { lat: group.lat, lng: group.lng },
@@ -244,6 +392,17 @@ function ClusteredMarkers({
         zIndex: MAP_Z_INDEX.tenantMarker,
         // Attach directly so clustering can't hide deconflicted logos.
         map: deconflictLogos ? map : undefined,
+        // Hide default Google pin until the logo callout is ready.
+        ...(deconflictLogos
+          ? {
+              icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 0,
+                fillOpacity: 0,
+                strokeOpacity: 0,
+              },
+            }
+          : {}),
       });
 
       const listener = marker.addListener("click", () => {
@@ -252,15 +411,24 @@ function ClusteredMarkers({
       listenersRef.current.push(listener);
 
       if (!deconflictLogos) {
-        resolveMarkerIcon(group).then((icon) => {
-          if (!cancelled) marker.setIcon(icon);
-        });
+        iconWork.push(
+          resolveMarkerIcon(group).then((icon) => {
+            if (cancelled) return;
+            marker.setIcon(icon);
+          })
+        );
       }
 
       return marker;
     });
 
     markersRef.current = markers;
+
+    if (!deconflictLogos) {
+      void Promise.all(iconWork).then(() => {
+        if (!cancelled) onIconsReadyRef.current?.();
+      });
+    }
 
     if (markers.length && !deconflictLogos) {
       clustererRef.current = new MarkerClusterer({
@@ -292,10 +460,12 @@ function ClusteredMarkers({
       if (autoFitBounds && fitPoints.length >= 1) {
         const bounds = new google.maps.LatLngBounds();
         fitPoints.forEach((point) => bounds.extend(point));
-        map.fitBounds(bounds, { top: 56, right: 56, bottom: 56, left: 56 });
+        map.fitBounds(bounds, fitBoundsPadding);
       } else if (defaultCenter) {
         map.setCenter(defaultCenter);
         map.setZoom(defaultZoom ?? 16);
+        map.setTilt(0);
+        map.setHeading(0);
       }
       fittedRef.current = true;
     }
@@ -322,12 +492,66 @@ function ClusteredMarkers({
       currentMarkers.forEach((marker) => {
         if (marker.getMap() !== map) marker.setMap(map);
       });
+      if (textOnly) {
+        map.setTilt(0);
+        map.setHeading(0);
+      }
+
+      const compact = false;
+      const preferNameFallback = deconflictDense && !textOnly;
+      const markerScale = deconflictDense && !textOnly ? 1.2 : undefined;
+      const pack = deconflictLayoutSlug
+        ? MAJOR_TENANT_PACK_BY_SLUG[deconflictLayoutSlug]
+        : undefined;
+      const layoutOptions: StreetLogoLayoutOptions | undefined = textOnly
+        ? {
+            textOnlyPack: true,
+            allowSidePlacement: true,
+            allowAutoOffsetX: true,
+            // Abbot Kinney runs diagonally — fan labels into the empty
+            // blocks above/below the corridor with longer leaders, unlike
+            // the Promenade's left/right columns.
+            maxStem: deconflictLayoutSlug === "abbot-kinney" ? 380 : 132,
+            preferredSides:
+              deconflictLayoutSlug === "abbot-kinney"
+                ? ["above", "below"]
+                : undefined,
+          }
+        : deconflictDense
+          ? {
+              allowSidePlacement: true,
+              allowAutoOffsetX: true,
+              relaxForcedStems: true,
+              maxStem: 480,
+            }
+          : pack
+            ? {
+                preferredSides:
+                  pack.sides === "horizontal"
+                    ? ["left", "right"]
+                    : ["above", "below"],
+                maxStem: pack.maxStem,
+              }
+            : undefined;
 
       const items: StreetLogoLayoutItem[] = groups.map((group) => {
-        const size = estimateGroupMarkerSize(group);
-        const override = getMajorTenantLayoutOverride(
-          deconflictLayoutSlug,
-          group.tenants.map((t) => t.tenantName)
+        const override = textOnly
+          ? getTextOnlyLayoutOverride(
+              deconflictLayoutSlug,
+              group.tenants.map((t) => t.tenantName)
+            )
+          : deconflictDense
+            ? null
+            : getMajorTenantLayoutOverride(
+                deconflictLayoutSlug,
+                group.tenants.map((t) => t.tenantName)
+              );
+        const size = estimateGroupMarkerSize(
+          group,
+          compact,
+          override?.scale,
+          preferNameFallback,
+          textOnly
         );
         return {
           id: group.key,
@@ -340,23 +564,42 @@ function ClusteredMarkers({
         };
       });
 
-      const layouts = resolveStreetLogoLayouts(map, items);
+      const layouts = resolveStreetLogoLayouts(map, items, layoutOptions);
 
       const gen = ++layoutGenRef.current;
-      groups.forEach((group, index) => {
+      const iconWork = groups.map((group, index) => {
         const marker = currentMarkers[index];
-        if (!marker) return;
+        if (!marker) return Promise.resolve();
         const layout = layouts[group.key];
-        resolveMarkerIcon(group, {
+        const override = textOnly
+          ? getTextOnlyLayoutOverride(
+              deconflictLayoutSlug,
+              group.tenants.map((t) => t.tenantName)
+            )
+          : deconflictDense
+            ? null
+            : getMajorTenantLayoutOverride(
+                deconflictLayoutSlug,
+                group.tenants.map((t) => t.tenantName)
+              );
+        return resolveMarkerIcon(group, {
           placement: layout?.placement ?? "above",
           offsetX: layout?.offsetX ?? 0,
           stemHeight: layout?.stemHeight,
           showStem: true,
+          scale: override?.scale ?? markerScale,
+          compact,
+          preferNameFallback,
+          textOnly,
         }).then((icon) => {
           if (cancelled || layoutGenRef.current !== gen) return;
           marker.setIcon(icon);
           if (marker.getMap() !== map) marker.setMap(map);
         });
+      });
+      void Promise.all(iconWork).then(() => {
+        if (cancelled || layoutGenRef.current !== gen) return;
+        onIconsReadyRef.current?.();
       });
     };
 
@@ -400,6 +643,8 @@ function ClusteredMarkers({
     logoProvider,
     deconflictLogos,
     deconflictLayoutSlug,
+    deconflictDense,
+    textOnly,
   ]);
 
   // Static/fullscreen chrome changes must not wipe markers — re-attach + redraw.
@@ -432,7 +677,7 @@ function MapWithTenants({
   showParkingLots = false,
   shoppingCenters = [],
   onShoppingCenterSelect,
-  extraFitPositions = [],
+  extraFitPositions = EMPTY_FIT_POSITIONS,
   zoomGatedStreetMarkers = false,
   corridorCallouts = [],
   onCorridorCalloutSelect,
@@ -441,6 +686,10 @@ function MapWithTenants({
   staticMode = false,
   deconflictLogos = false,
   deconflictLayoutSlug,
+  deconflictDense = false,
+  textOnly = false,
+  fitBoundsPadding,
+  onIconsReady,
 }: TenantMapViewProps) {
   const [selected, setSelected] = useState<TenantLocationGroup | null>(null);
   const zoom = useMapZoom();
@@ -474,13 +723,37 @@ function MapWithTenants({
   );
   const locationGroups = useMemo(() => {
     const grouped = groupTenantsByLocation(mapTenants);
-    // Third Street only — Abbot Kinney keeps co-located grouped logos.
-    const splitForDeconflict =
-      deconflictLogos && deconflictLayoutSlug === "third-street-promenade";
-    return splitForDeconflict
-      ? splitTenantGroupsForDeconflict(grouped)
-      : grouped;
-  }, [mapTenants, deconflictLogos, deconflictLayoutSlug]);
+    // Text Only uses the same one-callout-per-address groups as all-tenants logos.
+    if (textOnly) return grouped;
+    // All-tenants Third Street keeps one callout per address.
+    // Other curated major-tenant corridors keep the split layout.
+    const splitForDeconflict = deconflictLogos && !deconflictDense;
+    if (!splitForDeconflict) return grouped;
+    // Abbot Kinney / Montana keep co-located brands on one grouped pin (Away +
+    // Blue Bottle, Casper + Geek Eyewear), and Montana also folds a few
+    // near-neighbours into one stacked callout.
+    if (deconflictLayoutSlug && MAJOR_TENANT_KEEP_GROUPED_SLUGS.has(deconflictLayoutSlug)) {
+      const merges = MAJOR_TENANT_MERGE_GROUPS_BY_SLUG[deconflictLayoutSlug];
+      return merges
+        ? mergeTenantGroupsByName(grouped, merges, normalizeTenantName)
+        : grouped;
+    }
+    const split = splitTenantGroupsForDeconflict(
+      grouped,
+      isTenantGroupCenter
+    );
+    const spread =
+      deconflictLayoutSlug &&
+      MAJOR_TENANT_SPREAD_BY_SLUG[deconflictLayoutSlug];
+    if (spread) return spreadCoLocatedAnchors(split, spread);
+    return split;
+  }, [
+    mapTenants,
+    deconflictLogos,
+    deconflictLayoutSlug,
+    deconflictDense,
+    textOnly,
+  ]);
   const vacancyGroups = useMemo(
     () => groupVacanciesByLocation(vacancies),
     [vacancies]
@@ -519,7 +792,11 @@ function MapWithTenants({
           extraFitPositions={extraFitPositions}
           deconflictLogos={deconflictLogos}
           deconflictLayoutSlug={deconflictLayoutSlug}
+          deconflictDense={deconflictDense}
+          textOnly={textOnly}
           staticMode={staticMode}
+          fitBoundsPadding={fitBoundsPadding}
+          onIconsReady={onIconsReady}
         />
       ) : null}
       {corridorCalloutsVisible && onCorridorCalloutSelect ? (
@@ -582,19 +859,27 @@ export function TenantMapView({
   onIntroZoomComplete,
   shoppingCenters = [],
   onShoppingCenterSelect,
-  extraFitPositions = [],
+  extraFitPositions = EMPTY_FIT_POSITIONS,
   zoomGatedStreetMarkers = false,
   corridorCallouts = [],
   onCorridorCalloutSelect,
   alwaysShowCorridorCallouts = false,
   forceShowStreetMarkers = false,
   mapIdOverride,
+  jsonMapStyles,
   staticMode = false,
   deconflictLogos = false,
   deconflictLayoutSlug,
+  deconflictDense = false,
+  textOnly = false,
+  onMapIdle,
+  onIconsReady,
+  fitBoundsPadding,
+  maxZoom,
+  onMapReady,
 }: TenantMapViewProps) {
-  const mapId = mapIdOverride ?? getMapId();
-  const useCloudStyle = Boolean(mapIdOverride);
+  const mapId = jsonMapStyles ? undefined : mapIdOverride ?? getMapId();
+  const useCloudStyle = Boolean(mapId) && !jsonMapStyles;
   const shouldAutoFit = autoFitBounds && !mapFocus;
   const mapTenants = tenants.filter(
     (t) => t.lat != null && t.lng != null && isNamedTenant(t.tenantName)
@@ -633,15 +918,24 @@ export function TenantMapView({
         defaultZoom={defaultZoom}
         {...(mapId ? { mapId } : {})}
         gestureHandling="greedy"
+        clickableIcons={false}
         zoomControl={!staticMode}
         fullscreenControl={!embedded && !staticMode}
         mapTypeControl={false}
         streetViewControl={false}
-        {...(useCloudStyle ? {} : { styles: MAP_STYLES_WITH_STREET_LABELS })}
+        defaultHeading={0}
+        defaultTilt={0}
+        {...(staticMode ? { heading: 0, tilt: 0 } : {})}
+        {...(maxZoom != null ? { maxZoom } : {})}
+        {...(useCloudStyle
+          ? {}
+          : { styles: jsonMapStyles ?? MAP_STYLES_WITH_STREET_LABELS })}
       >
         {introZoom ? (
           <MapIntroZoom target={introZoom} onComplete={onIntroZoomComplete} />
         ) : null}
+        {onMapReady ? <MapReadySignal onReady={onMapReady} /> : null}
+        {onMapIdle ? <MapIdleSignal onIdle={onMapIdle} /> : null}
         <MapWithTenants
           tenants={tenants}
           vacancies={vacancies}
@@ -665,6 +959,10 @@ export function TenantMapView({
           staticMode={staticMode}
           deconflictLogos={deconflictLogos}
           deconflictLayoutSlug={deconflictLayoutSlug}
+          deconflictDense={deconflictDense}
+          textOnly={textOnly}
+          fitBoundsPadding={fitBoundsPadding}
+          onIconsReady={onIconsReady}
         />
       </Map>
     </div>

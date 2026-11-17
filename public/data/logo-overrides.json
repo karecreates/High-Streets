@@ -1,6 +1,7 @@
 {
   "LOQUI": "eatloqui.com",
   "Chamberlain Cofee": "chamberlaincoffee.com",
+  "Cotti Coffee": "cotti.com",
   "Double RL & Co.": "ralphlauren.com",
   "CB2": "cb2.com",
   "K Chocolatier By Diane Kron": "dianekronchocolates.com",
@@ -269,6 +270,7 @@
   "Undercover Fries": "undercoverfries.com",
   "Venchi": "venchi.com",
   "H & M": "hm.com",
+  "H&M": "hm.com",
   "Le Shrimp Noodle Bar": "leshrimpnoodlebar.com",
   "Barney's Gourmet Hamburgers": "barneyshamburgers.com",
   "Cynthia Benjamin": "cynthia-benjamin.com",
@@ -362,6 +364,12 @@
   "Aveda Vicara Salon": "aveda.com",
   "Bellacures": "bellacures.com",
   "Cava Grill": "cava.com",
+  "Rivian Automotive": "rivian.com",
+  "Lucid Motors": "lucid.com",
+  "Room & Board": "roomandboard.com",
+  "Crate & Barrel": "crateandbarrel.com",
+  "Pandora Jewelry": "pandora.net",
+  "Abercrombie & Fitch": "abercrombie.com",
   "Evereve": "evereve.com",
   "Facialworks": "facialworks.com",
   "Herman Miller": "hermanmiller.com",
@@ -655,5 +663,8 @@
   "Levi's": "levi.com",
   "Meizhou Dongpo Restaurant": null,
   "Terrain (Anthropologie)": "shopterrain.com",
-  "Sake House by Hikari": null
+  "Sake House by Hikari": null,
+  "Dolce & Gabbana, D&G": "dolcegabbana.com",
+  "A.P.C.": "apc-us.com",
+  "Apc": "apc-us.com"
 }

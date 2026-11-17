@@ -60,8 +60,20 @@ export function resolveTenantGroupCenter(group: {
   const tenants = group.tenants.filter(
     (tenant) => !excluded.has(normalizeName(tenant.tenantName))
   );
+  if (!tenants.length) return null;
 
   return { center, tenants };
+}
+
+function matchingCenterRule(address: string): TenantGroupCenterRule | undefined {
+  return TENANT_GROUP_CENTER_RULES.find((entry) => entry.addressTest(address));
+}
+
+/** Keep FIGat7th / L.A. Live as one headed pin instead of exploding them. */
+export function isTenantGroupCenter(
+  group: { address: string; tenants: Tenant[] }
+): boolean {
+  return Boolean(matchingCenterRule(group.address?.trim() ?? ""));
 }
 
 /** Landmark slugs already represented by a headed tenant-group marker. */
@@ -70,8 +82,8 @@ export function getTenantGroupCenterSlugs(
 ): Set<string> {
   const slugs = new Set<string>();
   for (const group of groups) {
-    const resolved = resolveTenantGroupCenter(group);
-    if (resolved) slugs.add(resolved.center.slug);
+    const rule = matchingCenterRule(group.address?.trim() ?? "");
+    if (rule) slugs.add(rule.slug);
   }
   return slugs;
 }

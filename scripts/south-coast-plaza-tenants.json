@@ -1,0 +1,816 @@
+[
+  {
+    "name": "A. Lange & Söhne"
+  },
+  {
+    "name": "A.P.C.",
+    "logoDomain": "apc-us.com"
+  },
+  {
+    "name": "Abercrombie & Fitch"
+  },
+  {
+    "name": "Abercrombie Kids"
+  },
+  {
+    "name": "Acne Studio"
+  },
+  {
+    "name": "Alaïa"
+  },
+  {
+    "name": "Alexander McQueen"
+  },
+  {
+    "name": "Alexander Wang"
+  },
+  {
+    "name": "All Saints"
+  },
+  {
+    "name": "Allen Edmonds"
+  },
+  {
+    "name": "Alo Yoga"
+  },
+  {
+    "name": "AMI Paris"
+  },
+  {
+    "name": "Amiri"
+  },
+  {
+    "name": "Anine Bing"
+  },
+  {
+    "name": "Ann Taylor"
+  },
+  {
+    "name": "Anne Fontaine"
+  },
+  {
+    "name": "AnQi"
+  },
+  {
+    "name": "Anthropologie"
+  },
+  {
+    "name": "ANTONELLO"
+  },
+  {
+    "name": "Apple"
+  },
+  {
+    "name": "Aritzia"
+  },
+  {
+    "name": "Armani Caffe"
+  },
+  {
+    "name": "Audemars Piguet"
+  },
+  {
+    "name": "Baccaarat"
+  },
+  {
+    "name": "Balenciaga"
+  },
+  {
+    "name": "Bally"
+  },
+  {
+    "name": "Balmain"
+  },
+  {
+    "name": "Bath and Body Works"
+  },
+  {
+    "name": "Bear Street Gallery"
+  },
+  {
+    "name": "Berluti"
+  },
+  {
+    "name": "Bloomingdale's Inc"
+  },
+  {
+    "name": "Bottega Veneta"
+  },
+  {
+    "name": "Breitling"
+  },
+  {
+    "name": "Brunello Cucinelli"
+  },
+  {
+    "name": "BRUXIE"
+  },
+  {
+    "name": "Buccellati"
+  },
+  {
+    "name": "Bucherer 1888"
+  },
+  {
+    "name": "Burberry"
+  },
+  {
+    "name": "Bvlgari"
+  },
+  {
+    "name": "Byredo"
+  },
+  {
+    "name": "Calo Kitchen + Tequila"
+  },
+  {
+    "name": "Camilla"
+  },
+  {
+    "name": "Canada Goose"
+  },
+  {
+    "name": "Capital Grille"
+  },
+  {
+    "name": "Cartier Inc."
+  },
+  {
+    "name": "Casper"
+  },
+  {
+    "name": "CB2"
+  },
+  {
+    "name": "Celine"
+  },
+  {
+    "name": "Cha Redefine"
+  },
+  {
+    "name": "Chanel"
+  },
+  {
+    "name": "Chloé"
+  },
+  {
+    "name": "Chopard"
+  },
+  {
+    "name": "Christian Dior"
+  },
+  {
+    "name": "Christian Louboutin"
+  },
+  {
+    "name": "Churriño Gourmet Dessert"
+  },
+  {
+    "name": "Claim Jumper"
+  },
+  {
+    "name": "Coach"
+  },
+  {
+    "name": "Cole Haan"
+  },
+  {
+    "name": "Collegium"
+  },
+  {
+    "name": "Corner Bakery"
+  },
+  {
+    "name": "COS"
+  },
+  {
+    "name": "Courrèges"
+  },
+  {
+    "name": "Crate & Barrel"
+  },
+  {
+    "name": "crewcuts by J. Crew"
+  },
+  {
+    "name": "Darya Restaurant"
+  },
+  {
+    "name": "David Yurman"
+  },
+  {
+    "name": "Delvaux"
+  },
+  {
+    "name": "Diesel"
+  },
+  {
+    "name": "Din Tai Fung"
+  },
+  {
+    "name": "Dior Beauty"
+  },
+  {
+    "name": "Dior Men's"
+  },
+  {
+    "name": "Diptyque"
+  },
+  {
+    "name": "Dolce & Gabbana, D&G"
+  },
+  {
+    "name": "Eileen Fisher"
+  },
+  {
+    "name": "Eleventy Milano"
+  },
+  {
+    "name": "Eres"
+  },
+  {
+    "name": "Everything But Water"
+  },
+  {
+    "name": "Fendi"
+  },
+  {
+    "name": "Frette"
+  },
+  {
+    "name": "Friar Tuxedo Shop"
+  },
+  {
+    "name": "Fueguia 1833"
+  },
+  {
+    "name": "Gap (Including Gap Kids and Baby Gap)"
+  },
+  {
+    "name": "Gentle Monster"
+  },
+  {
+    "name": "Gianvito Rossi"
+  },
+  {
+    "name": "Giorgio Armani"
+  },
+  {
+    "name": "Givenchy"
+  },
+  {
+    "name": "Golden Goose"
+  },
+  {
+    "name": "Grace Tailoring"
+  },
+  {
+    "name": "Graff"
+  },
+  {
+    "name": "Gucci"
+  },
+  {
+    "name": "Guerlain"
+  },
+  {
+    "name": "H & M"
+  },
+  {
+    "name": "Hallmark"
+  },
+  {
+    "name": "Hamamori Restaurant & Sushi Bar"
+  },
+  {
+    "name": "Harry Winston"
+  },
+  {
+    "name": "Hastens"
+  },
+  {
+    "name": "Hermes of Paris"
+  },
+  {
+    "name": "Hoka"
+  },
+  {
+    "name": "House of Sun"
+  },
+  {
+    "name": "Hublot"
+  },
+  {
+    "name": "Hugo Boss"
+  },
+  {
+    "name": "IWC"
+  },
+  {
+    "name": "J Crew"
+  },
+  {
+    "name": "J.Jill"
+  },
+  {
+    "name": "Jacques Marie Mage"
+  },
+  {
+    "name": "Jaeger-LeCoultre"
+  },
+  {
+    "name": "JD Sports"
+  },
+  {
+    "name": "Jimmy Choo"
+  },
+  {
+    "name": "Jo Malone"
+  },
+  {
+    "name": "Joes Jeans"
+  },
+  {
+    "name": "John Varvatos"
+  },
+  {
+    "name": "K Soul Food"
+  },
+  {
+    "name": "Kate Spade"
+  },
+  {
+    "name": "Khaite"
+  },
+  {
+    "name": "Kids Atelier"
+  },
+  {
+    "name": "Kiehl's Since 1851"
+  },
+  {
+    "name": "Knife Pleat"
+  },
+  {
+    "name": "L'Occitane En Provence"
+  },
+  {
+    "name": "Lacoste"
+  },
+  {
+    "name": "Lacoste"
+  },
+  {
+    "name": "Lanvin"
+  },
+  {
+    "name": "Le Shrimp Noodle Bar"
+  },
+  {
+    "name": "Leatherby's Cafe Rouge"
+  },
+  {
+    "name": "Loewe"
+  },
+  {
+    "name": "Loro Piana"
+  },
+  {
+    "name": "Louis Vuitton"
+  },
+  {
+    "name": "Louis Vuitton Men's"
+  },
+  {
+    "name": "Lululemon Athletica"
+  },
+  {
+    "name": "Läderach Chocolatier Suisse"
+  },
+  {
+    "name": "Mac Cosmetics"
+  },
+  {
+    "name": "Macy's"
+  },
+  {
+    "name": "Macy's Furniture"
+  },
+  {
+    "name": "Macy's Men's Store"
+  },
+  {
+    "name": "Madewell"
+  },
+  {
+    "name": "Madhappy"
+  },
+  {
+    "name": "Maggiano's Little Italy"
+  },
+  {
+    "name": "Maison Margiela"
+  },
+  {
+    "name": "Maje"
+  },
+  {
+    "name": "Mango"
+  },
+  {
+    "name": "Manolo Blahnik"
+  },
+  {
+    "name": "Marni"
+  },
+  {
+    "name": "Martin Lawrence Galleries"
+  },
+  {
+    "name": "Marugame Udon"
+  },
+  {
+    "name": "Max Mara"
+  },
+  {
+    "name": "Mejuri"
+  },
+  {
+    "name": "Mejuri"
+  },
+  {
+    "name": "MIAN"
+  },
+  {
+    "name": "Mikimoto"
+  },
+  {
+    "name": "Mitra's Complete Beauty Care"
+  },
+  {
+    "name": "Miu Miu"
+  },
+  {
+    "name": "Mochinut"
+  },
+  {
+    "name": "Moncler"
+  },
+  {
+    "name": "Monique Lhuillier"
+  },
+  {
+    "name": "Mont Blanc"
+  },
+  {
+    "name": "Morton's, The Steakhouse"
+  },
+  {
+    "name": "Moulin"
+  },
+  {
+    "name": "Moynat"
+  },
+  {
+    "name": "New Balance"
+  },
+  {
+    "name": "Nike"
+  },
+  {
+    "name": "Nordstrom"
+  },
+  {
+    "name": "Oliver Peoples"
+  },
+  {
+    "name": "Omega"
+  },
+  {
+    "name": "Optica"
+  },
+  {
+    "name": "Oscar de la Renta"
+  },
+  {
+    "name": "Outpost Kitchen"
+  },
+  {
+    "name": "Pandora"
+  },
+  {
+    "name": "Panerai"
+  },
+  {
+    "name": "Paradise Dynasty Restaurant"
+  },
+  {
+    "name": "Patek Philippe"
+  },
+  {
+    "name": "PhoHolic"
+  },
+  {
+    "name": "Piaget"
+  },
+  {
+    "name": "Pop Mart"
+  },
+  {
+    "name": "populaire"
+  },
+  {
+    "name": "Porsche Design"
+  },
+  {
+    "name": "Pottery Barn"
+  },
+  {
+    "name": "Pottery Barn Baby"
+  },
+  {
+    "name": "Pottery Barn Kids"
+  },
+  {
+    "name": "Pottery Barn Outdoor"
+  },
+  {
+    "name": "Pottery Barn Teen"
+  },
+  {
+    "name": "Prada"
+  },
+  {
+    "name": "Pressed Juicery"
+  },
+  {
+    "name": "Psycho Bunny"
+  },
+  {
+    "name": "Pura Vida Miami"
+  },
+  {
+    "name": "Quattro Caffé"
+  },
+  {
+    "name": "Ramen Nagi"
+  },
+  {
+    "name": "Reformation"
+  },
+  {
+    "name": "Rimowa"
+  },
+  {
+    "name": "Roger Dubuis"
+  },
+  {
+    "name": "Roger Vivier"
+  },
+  {
+    "name": "Rolex"
+  },
+  {
+    "name": "Ruby's Diner"
+  },
+  {
+    "name": "Saint Laurent"
+  },
+  {
+    "name": "SALVATORE FERRAGAMO"
+  },
+  {
+    "name": "Sandro"
+  },
+  {
+    "name": "Santa Maria Novella"
+  },
+  {
+    "name": "Seasons 52"
+  },
+  {
+    "name": "See's Candies"
+  },
+  {
+    "name": "Sephora"
+  },
+  {
+    "name": "SKIMS"
+  },
+  {
+    "name": "Soma Intimates LLC"
+  },
+  {
+    "name": "Starbucks"
+  },
+  {
+    "name": "STAUD"
+  },
+  {
+    "name": "Stella McCartney"
+  },
+  {
+    "name": "Steve Madden"
+  },
+  {
+    "name": "Stone Island"
+  },
+  {
+    "name": "Sugarfina"
+  },
+  {
+    "name": "Sunglass Hut"
+  },
+  {
+    "name": "Sur la Table"
+  },
+  {
+    "name": "Swarovski"
+  },
+  {
+    "name": "TAG Heuer"
+  },
+  {
+    "name": "Talbots"
+  },
+  {
+    "name": "Tempur-Pedic"
+  },
+  {
+    "name": "Terrace By Mix Mix"
+  },
+  {
+    "name": "The LEGO Group"
+  },
+  {
+    "name": "The North Face"
+  },
+  {
+    "name": "The Vox Kitchen"
+  },
+  {
+    "name": "The Webster"
+  },
+  {
+    "name": "Thom Browne"
+  },
+  {
+    "name": "Tiffany & Co"
+  },
+  {
+    "name": "Tinder Box"
+  },
+  {
+    "name": "Tiny's Burgers"
+  },
+  {
+    "name": "Tory Burch"
+  },
+  {
+    "name": "Tourneau"
+  },
+  {
+    "name": "Tudor"
+  },
+  {
+    "name": "Tumi"
+  },
+  {
+    "name": "Uniqlo"
+  },
+  {
+    "name": "Untuckit"
+  },
+  {
+    "name": "Vaca"
+  },
+  {
+    "name": "Vacheron Constantin"
+  },
+  {
+    "name": "Valentino"
+  },
+  {
+    "name": "Van Cleef & Arpels"
+  },
+  {
+    "name": "Venchi"
+  },
+  {
+    "name": "Versace"
+  },
+  {
+    "name": "Victoria's Secret"
+  },
+  {
+    "name": "Vitra Eyewear"
+  },
+  {
+    "name": "Wahoo's Fish Tacos"
+  },
+  {
+    "name": "Warby Parker"
+  },
+  {
+    "name": "Water Grill"
+  },
+  {
+    "name": "Weekend Max Mara"
+  },
+  {
+    "name": "West Elm"
+  },
+  {
+    "name": "Williams-Sonoma"
+  },
+  {
+    "name": "Wolford"
+  },
+  {
+    "name": "Yu Cake"
+  },
+  {
+    "name": "Zara"
+  },
+  {
+    "name": "Zegna"
+  },
+  {
+    "name": "Zimmermann"
+  },
+  {
+    "name": "Barnes & Noble",
+    "logoDomain": "barnesandnoble.com",
+    "comingSoon": "Summer"
+  },
+  {
+    "name": "Blue Box Café",
+    "logoDomain": "tiffany.com",
+    "comingSoon": "Summer"
+  },
+  {
+    "name": "Cult Gaia",
+    "logoDomain": "cultgaia.com",
+    "comingSoon": "Summer"
+  },
+  {
+    "name": "Jessica McCormack",
+    "logoDomain": "jessicamccormack.com",
+    "comingSoon": "Summer"
+  },
+  {
+    "name": "Joe & The Juice",
+    "logoDomain": "joejuice.com",
+    "comingSoon": "Summer"
+  },
+  {
+    "name": "Boucheron",
+    "logoDomain": "boucheron.com",
+    "comingSoon": "Fall"
+  },
+  {
+    "name": "Heytea",
+    "logoDomain": "heytea.com",
+    "comingSoon": "Fall"
+  },
+  {
+    "name": "Maison Francis Kurkdjian",
+    "logoDomain": "franciskurkdjian.com",
+    "comingSoon": "Fall"
+  },
+  {
+    "name": "Maria Tash",
+    "logoDomain": "mariatash.com",
+    "comingSoon": "Fall"
+  },
+  {
+    "name": "Messika",
+    "logoDomain": "messika.com",
+    "comingSoon": "Fall"
+  },
+  {
+    "name": "Polène",
+    "logoDomain": "polene-paris.com",
+    "comingSoon": "Fall"
+  },
+  {
+    "name": "Rick Owens",
+    "logoDomain": "rickowens.eu",
+    "comingSoon": "Fall"
+  },
+  {
+    "name": "Tom Ford",
+    "logoDomain": "tomford.com",
+    "comingSoon": "Fall"
+  },
+  {
+    "name": "Toteme",
+    "logoDomain": "toteme.com",
+    "comingSoon": "Fall"
+  },
+  {
+    "name": "Longchamp",
+    "logoDomain": "longchamp.com",
+    "comingSoon": "Winter"
+  }
+]

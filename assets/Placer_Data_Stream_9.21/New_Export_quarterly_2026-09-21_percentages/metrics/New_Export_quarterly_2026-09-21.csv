@@ -1,0 +1,105 @@
+publication_date,id,type,name,time_frame,start_date,end_date,visit_duration_segmentation,census_captured_labor_force_employed_percentage,census_captured_labor_force_unemployed_percentage,popstats_captured_education_elementary_percentage,popstats_captured_education_high_school_graduate_percentage,popstats_captured_education_some_high_school_percentage,popstats_captured_education_some_college_percentage,popstats_captured_education_associates_degree_only_percentage,popstats_captured_education_bachelors_degree_only_percentage,popstats_captured_education_masters_degree_percentage,popstats_captured_education_doctorate_degree_percentage,popstats_captured_education_professional_degree_percentage
+2026-09-21,597a5010173f567783b2fff2,complex,Westfield Century City,quarterly,2025-10-01,2025-12-31,all_visits,0.92,0.08,0.04,0.1,0.03,0.13,0.05,0.36,0.16,0.04,0.09
+2026-09-21,5a72fc1816af4c7d635868cb,complex,Manhattan Village,quarterly,2025-10-01,2025-12-31,all_visits,0.94,0.06,0.05,0.13,0.04,0.15,0.06,0.33,0.16,0.02,0.06
+2026-09-21,5a7303db16af4c7eab5868c3,complex,The Grove,quarterly,2025-10-01,2025-12-31,all_visits,0.92,0.08,0.09,0.15,0.06,0.16,0.06,0.31,0.11,0.02,0.04
+2026-09-21,5b46ff0a16af4c323f0521ba,complex,Malibu Village,quarterly,2025-10-01,2025-12-31,all_visits,0.93,0.07,0.03,0.1,0.02,0.15,0.06,0.35,0.16,0.05,0.08
+2026-09-21,5b4702cd16af4c358f0521ba,complex,Malibu Country Mart,quarterly,2025-10-01,2025-12-31,all_visits,0.93,0.07,0.03,0.1,0.02,0.15,0.05,0.36,0.16,0.05,0.09
+2026-09-21,5b470c6216af4c3b0d0521ba,complex,Brentwood Country Mart,quarterly,2025-10-01,2025-12-31,all_visits,0.93,0.07,0.02,0.06,0.01,0.1,0.04,0.39,0.19,0.05,0.13
+2026-09-21,5b542c691b5c0a6fce3eb86e,complex,The Point,quarterly,2025-10-01,2025-12-31,all_visits,0.94,0.06,0.05,0.12,0.04,0.16,0.06,0.34,0.16,0.02,0.05
+2026-09-21,5d0ca1aa7afe4d479c08a516,complex,"Robertson Blvd, Los Angeles",quarterly,2025-10-01,2025-12-31,all_visits,0.92,0.08,0.05,0.12,0.03,0.13,0.05,0.35,0.14,0.03,0.08
+2026-09-21,5d0ca25b7a6c0c2c2861ec57,complex,"Larchmont Blvd, Los Angeles",quarterly,2025-10-01,2025-12-31,all_visits,0.92,0.08,0.07,0.14,0.05,0.16,0.05,0.34,0.12,0.02,0.05
+2026-09-21,5d0ca28e7a6c0c24fa61ec6e,complex,La Brea Avenue,quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.91,0.09,0.08,0.14,0.05,0.16,0.05,0.34,0.12,0.02,0.05
+2026-09-21,5d7ce4567afe4d7c9d704a11,complex,The Golden Triangle,quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.92,0.08,0.04,0.11,0.03,0.13,0.05,0.36,0.16,0.04,0.1
+2026-09-21,5e78cc597a6c0c5c36ec4986,complex,The Americana at Brand,quarterly,2025-10-01,2025-12-31,all_visits,0.92,0.08,0.09,0.19,0.06,0.16,0.08,0.28,0.1,0.02,0.03
+2026-09-21,5ef5c17f7afe4d15a8699368,complex,The Shops at Sportsmen’s Lodge,quarterly,2025-10-01,2025-12-31,all_visits,0.91,0.09,0.03,0.12,0.03,0.17,0.07,0.36,0.13,0.03,0.07
+2026-09-21,6740eb030e1afeebd3cd743a,complex,Sunset Blvd High Street,quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.92,0.08,0.05,0.12,0.03,0.14,0.06,0.37,0.14,0.03,0.07
+2026-09-21,69a0c3a00d864dbd2a7e980d,complex,Abbot Kinney,quarterly,2025-10-01,2025-12-31,all_visits,0.93,0.07,0.03,0.09,0.03,0.13,0.05,0.39,0.17,0.04,0.07
+2026-09-21,6a7277b9f43c3964ae3c5c23,complex,Melrose Ave & Place,quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.92,0.08,0.05,0.11,0.03,0.14,0.05,0.37,0.14,0.03,0.07
+2026-09-21,6a727aaeef0c9636a095bb07,complex,Montana Ave,quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.93,0.07,0.02,0.07,0.02,0.1,0.05,0.39,0.18,0.05,0.11
+2026-09-21,6a735b43880a8faf9b8a99a6,complex,Silverlake Blvd,quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.91,0.09,0.09,0.14,0.05,0.15,0.06,0.34,0.12,0.02,0.04
+2026-09-21,6a73633d49262b07729b30ed,complex,Old Town Pasadena (One Colorado & The Paseo),quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.94,0.06,0.07,0.16,0.05,0.15,0.07,0.29,0.14,0.03,0.05
+2026-09-21,6a73a085c9bde401d3ac7a47,complex,Arts District,quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.92,0.08,0.13,0.18,0.08,0.16,0.06,0.25,0.09,0.02,0.03
+2026-09-21,6a73a156654f3efb9d1f975f,complex,3rd St Promenade & Santa Monica Place,quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.93,0.07,0.05,0.1,0.03,0.13,0.05,0.37,0.15,0.04,0.07
+2026-09-21,6a7505219ac0cbce3a17af68,complex,Figueroa/7th St,quarterly,2025-10-01,2025-12-31,10_min_or_longer,0.92,0.08,0.15,0.18,0.09,0.16,0.06,0.23,0.09,0.02,0.03
+2026-09-21,87cc744b60afd879c9d25891,complex,Downtown Culver City,quarterly,2025-10-01,2025-12-31,market_visitors,0.93,0.07,0.06,0.11,0.04,0.15,0.06,0.34,0.16,0.03,0.06
+2026-09-21,8f245157994e005440e8d2a2,complex,Downtown Manhattan Beach,quarterly,2025-10-01,2025-12-31,market_visitors,0.95,0.05,0.03,0.09,0.02,0.13,0.05,0.38,0.19,0.03,0.07
+2026-09-21,a8e58a8dd49952807c0984f7,complex,Platform,quarterly,2025-10-01,2025-12-31,all_visits,0.93,0.07,0.05,0.11,0.05,0.15,0.06,0.33,0.15,0.03,0.07
+2026-09-21,eea3ebf80cc1877bf3d97242,complex,Studio City BID,quarterly,2025-10-01,2025-12-31,market_visitors,0.91,0.09,0.04,0.12,0.03,0.17,0.07,0.36,0.13,0.02,0.06
+2026-09-21,597a5010173f567783b2fff2,complex,Westfield Century City,quarterly,2025-07-01,2025-09-30,all_visits,0.92,0.08,0.04,0.1,0.03,0.13,0.05,0.36,0.16,0.04,0.09
+2026-09-21,5a72fc1816af4c7d635868cb,complex,Manhattan Village,quarterly,2025-07-01,2025-09-30,all_visits,0.94,0.06,0.05,0.13,0.04,0.15,0.06,0.33,0.16,0.02,0.06
+2026-09-21,5a7303db16af4c7eab5868c3,complex,The Grove,quarterly,2025-07-01,2025-09-30,all_visits,0.92,0.08,0.08,0.14,0.05,0.15,0.06,0.33,0.12,0.02,0.05
+2026-09-21,5b46ff0a16af4c323f0521ba,complex,Malibu Village,quarterly,2025-07-01,2025-09-30,all_visits,0.92,0.08,0.03,0.11,0.03,0.15,0.06,0.35,0.15,0.04,0.08
+2026-09-21,5b4702cd16af4c358f0521ba,complex,Malibu Country Mart,quarterly,2025-07-01,2025-09-30,all_visits,0.93,0.07,0.03,0.1,0.02,0.15,0.05,0.36,0.16,0.04,0.09
+2026-09-21,5b470c6216af4c3b0d0521ba,complex,Brentwood Country Mart,quarterly,2025-07-01,2025-09-30,all_visits,0.94,0.06,0.02,0.07,0.01,0.1,0.04,0.39,0.19,0.05,0.13
+2026-09-21,5b542c691b5c0a6fce3eb86e,complex,The Point,quarterly,2025-07-01,2025-09-30,all_visits,0.94,0.06,0.05,0.12,0.04,0.16,0.06,0.34,0.16,0.02,0.05
+2026-09-21,5d0ca1aa7afe4d479c08a516,complex,"Robertson Blvd, Los Angeles",quarterly,2025-07-01,2025-09-30,all_visits,0.92,0.08,0.06,0.12,0.04,0.14,0.05,0.34,0.14,0.03,0.08
+2026-09-21,5d0ca25b7a6c0c2c2861ec57,complex,"Larchmont Blvd, Los Angeles",quarterly,2025-07-01,2025-09-30,all_visits,0.92,0.08,0.08,0.14,0.05,0.16,0.05,0.34,0.12,0.02,0.05
+2026-09-21,5d0ca28e7a6c0c24fa61ec6e,complex,La Brea Avenue,quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.91,0.09,0.07,0.14,0.04,0.16,0.05,0.34,0.12,0.02,0.05
+2026-09-21,5d7ce4567afe4d7c9d704a11,complex,The Golden Triangle,quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.92,0.08,0.04,0.11,0.03,0.13,0.05,0.36,0.15,0.04,0.1
+2026-09-21,5e78cc597a6c0c5c36ec4986,complex,The Americana at Brand,quarterly,2025-07-01,2025-09-30,all_visits,0.92,0.08,0.09,0.19,0.06,0.16,0.08,0.28,0.1,0.02,0.03
+2026-09-21,5ef5c17f7afe4d15a8699368,complex,The Shops at Sportsmen’s Lodge,quarterly,2025-07-01,2025-09-30,all_visits,0.91,0.09,0.03,0.12,0.03,0.17,0.07,0.36,0.13,0.03,0.07
+2026-09-21,6740eb030e1afeebd3cd743a,complex,Sunset Blvd High Street,quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.92,0.08,0.05,0.12,0.03,0.14,0.05,0.37,0.14,0.03,0.08
+2026-09-21,69a0c3a00d864dbd2a7e980d,complex,Abbot Kinney,quarterly,2025-07-01,2025-09-30,all_visits,0.93,0.07,0.03,0.09,0.03,0.13,0.05,0.39,0.16,0.04,0.07
+2026-09-21,6a7277b9f43c3964ae3c5c23,complex,Melrose Ave & Place,quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.92,0.08,0.05,0.11,0.03,0.14,0.05,0.36,0.14,0.03,0.07
+2026-09-21,6a727aaeef0c9636a095bb07,complex,Montana Ave,quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.93,0.07,0.02,0.07,0.02,0.11,0.05,0.39,0.18,0.05,0.11
+2026-09-21,6a735b43880a8faf9b8a99a6,complex,Silverlake Blvd,quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.91,0.09,0.09,0.14,0.05,0.15,0.06,0.34,0.12,0.02,0.04
+2026-09-21,6a73633d49262b07729b30ed,complex,Old Town Pasadena (One Colorado & The Paseo),quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.94,0.06,0.08,0.16,0.05,0.15,0.07,0.29,0.14,0.03,0.05
+2026-09-21,6a73a085c9bde401d3ac7a47,complex,Arts District,quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.92,0.08,0.13,0.18,0.08,0.16,0.06,0.25,0.09,0.02,0.03
+2026-09-21,6a73a156654f3efb9d1f975f,complex,3rd St Promenade & Santa Monica Place,quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.93,0.07,0.05,0.11,0.04,0.13,0.05,0.36,0.15,0.04,0.07
+2026-09-21,6a7505219ac0cbce3a17af68,complex,Figueroa/7th St,quarterly,2025-07-01,2025-09-30,10_min_or_longer,0.92,0.08,0.15,0.19,0.09,0.16,0.06,0.23,0.09,0.02,0.03
+2026-09-21,87cc744b60afd879c9d25891,complex,Downtown Culver City,quarterly,2025-07-01,2025-09-30,market_visitors,0.93,0.07,0.05,0.11,0.04,0.15,0.06,0.34,0.16,0.03,0.06
+2026-09-21,8f245157994e005440e8d2a2,complex,Downtown Manhattan Beach,quarterly,2025-07-01,2025-09-30,market_visitors,0.94,0.06,0.03,0.1,0.03,0.13,0.05,0.37,0.18,0.03,0.07
+2026-09-21,a8e58a8dd49952807c0984f7,complex,Platform,quarterly,2025-07-01,2025-09-30,all_visits,0.93,0.07,0.06,0.11,0.04,0.14,0.06,0.34,0.15,0.03,0.06
+2026-09-21,eea3ebf80cc1877bf3d97242,complex,Studio City BID,quarterly,2025-07-01,2025-09-30,market_visitors,0.91,0.09,0.04,0.12,0.03,0.17,0.07,0.36,0.13,0.02,0.06
+2026-09-21,597a5010173f567783b2fff2,complex,Westfield Century City,quarterly,2025-04-01,2025-06-30,all_visits,0.92,0.08,0.04,0.1,0.03,0.13,0.05,0.36,0.16,0.04,0.09
+2026-09-21,5a72fc1816af4c7d635868cb,complex,Manhattan Village,quarterly,2025-04-01,2025-06-30,all_visits,0.94,0.06,0.05,0.12,0.04,0.15,0.06,0.33,0.16,0.02,0.06
+2026-09-21,5a7303db16af4c7eab5868c3,complex,The Grove,quarterly,2025-04-01,2025-06-30,all_visits,0.92,0.08,0.08,0.14,0.05,0.15,0.06,0.33,0.12,0.02,0.05
+2026-09-21,5b46ff0a16af4c323f0521ba,complex,Malibu Village,quarterly,2025-04-01,2025-06-30,all_visits,0.93,0.07,0.03,0.1,0.02,0.15,0.06,0.35,0.16,0.05,0.09
+2026-09-21,5b4702cd16af4c358f0521ba,complex,Malibu Country Mart,quarterly,2025-04-01,2025-06-30,all_visits,0.93,0.07,0.03,0.1,0.02,0.15,0.05,0.36,0.16,0.05,0.08
+2026-09-21,5b470c6216af4c3b0d0521ba,complex,Brentwood Country Mart,quarterly,2025-04-01,2025-06-30,all_visits,0.94,0.06,0.02,0.07,0.01,0.09,0.04,0.39,0.19,0.06,0.13
+2026-09-21,5b542c691b5c0a6fce3eb86e,complex,The Point,quarterly,2025-04-01,2025-06-30,all_visits,0.94,0.06,0.05,0.12,0.04,0.15,0.06,0.34,0.16,0.02,0.05
+2026-09-21,5d0ca1aa7afe4d479c08a516,complex,"Robertson Blvd, Los Angeles",quarterly,2025-04-01,2025-06-30,all_visits,0.93,0.07,0.05,0.13,0.04,0.14,0.05,0.34,0.14,0.03,0.08
+2026-09-21,5d0ca25b7a6c0c2c2861ec57,complex,"Larchmont Blvd, Los Angeles",quarterly,2025-04-01,2025-06-30,all_visits,0.92,0.08,0.08,0.14,0.05,0.16,0.05,0.34,0.12,0.02,0.05
+2026-09-21,5d0ca28e7a6c0c24fa61ec6e,complex,La Brea Avenue,quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.91,0.09,0.08,0.14,0.04,0.16,0.05,0.34,0.12,0.02,0.05
+2026-09-21,5d7ce4567afe4d7c9d704a11,complex,The Golden Triangle,quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.92,0.08,0.03,0.1,0.03,0.13,0.05,0.36,0.16,0.04,0.1
+2026-09-21,5e78cc597a6c0c5c36ec4986,complex,The Americana at Brand,quarterly,2025-04-01,2025-06-30,all_visits,0.92,0.08,0.09,0.19,0.06,0.16,0.08,0.28,0.1,0.02,0.03
+2026-09-21,5ef5c17f7afe4d15a8699368,complex,The Shops at Sportsmen’s Lodge,quarterly,2025-04-01,2025-06-30,all_visits,0.91,0.09,0.03,0.11,0.03,0.17,0.07,0.36,0.13,0.03,0.07
+2026-09-21,6740eb030e1afeebd3cd743a,complex,Sunset Blvd High Street,quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.92,0.08,0.05,0.12,0.03,0.14,0.05,0.37,0.14,0.03,0.07
+2026-09-21,69a0c3a00d864dbd2a7e980d,complex,Abbot Kinney,quarterly,2025-04-01,2025-06-30,all_visits,0.93,0.07,0.03,0.09,0.02,0.13,0.05,0.39,0.16,0.04,0.07
+2026-09-21,6a7277b9f43c3964ae3c5c23,complex,Melrose Ave & Place,quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.92,0.08,0.05,0.11,0.03,0.14,0.05,0.37,0.14,0.03,0.07
+2026-09-21,6a727aaeef0c9636a095bb07,complex,Montana Ave,quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.93,0.07,0.02,0.07,0.02,0.11,0.05,0.39,0.18,0.05,0.11
+2026-09-21,6a735b43880a8faf9b8a99a6,complex,Silverlake Blvd,quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.91,0.09,0.09,0.14,0.05,0.15,0.06,0.34,0.12,0.02,0.03
+2026-09-21,6a73633d49262b07729b30ed,complex,Old Town Pasadena (One Colorado & The Paseo),quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.94,0.06,0.07,0.15,0.05,0.15,0.07,0.29,0.14,0.03,0.05
+2026-09-21,6a73a085c9bde401d3ac7a47,complex,Arts District,quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.92,0.08,0.13,0.18,0.08,0.16,0.06,0.25,0.09,0.02,0.03
+2026-09-21,6a73a156654f3efb9d1f975f,complex,3rd St Promenade & Santa Monica Place,quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.93,0.07,0.05,0.11,0.04,0.13,0.05,0.36,0.15,0.04,0.07
+2026-09-21,6a7505219ac0cbce3a17af68,complex,Figueroa/7th St,quarterly,2025-04-01,2025-06-30,10_min_or_longer,0.92,0.08,0.15,0.19,0.09,0.16,0.06,0.23,0.09,0.02,0.03
+2026-09-21,87cc744b60afd879c9d25891,complex,Downtown Culver City,quarterly,2025-04-01,2025-06-30,market_visitors,0.93,0.07,0.06,0.11,0.04,0.15,0.06,0.34,0.15,0.03,0.06
+2026-09-21,8f245157994e005440e8d2a2,complex,Downtown Manhattan Beach,quarterly,2025-04-01,2025-06-30,market_visitors,0.94,0.06,0.03,0.1,0.03,0.14,0.05,0.37,0.19,0.03,0.07
+2026-09-21,a8e58a8dd49952807c0984f7,complex,Platform,quarterly,2025-04-01,2025-06-30,all_visits,0.93,0.07,0.06,0.12,0.04,0.14,0.06,0.33,0.15,0.03,0.06
+2026-09-21,eea3ebf80cc1877bf3d97242,complex,Studio City BID,quarterly,2025-04-01,2025-06-30,market_visitors,0.91,0.09,0.04,0.12,0.03,0.17,0.07,0.36,0.13,0.02,0.06
+2026-09-21,597a5010173f567783b2fff2,complex,Westfield Century City,quarterly,2025-01-01,2025-03-31,all_visits,0.92,0.08,0.04,0.1,0.03,0.13,0.05,0.36,0.16,0.04,0.09
+2026-09-21,5a72fc1816af4c7d635868cb,complex,Manhattan Village,quarterly,2025-01-01,2025-03-31,all_visits,0.94,0.06,0.05,0.12,0.04,0.15,0.06,0.33,0.16,0.02,0.06
+2026-09-21,5a7303db16af4c7eab5868c3,complex,The Grove,quarterly,2025-01-01,2025-03-31,all_visits,0.92,0.08,0.08,0.14,0.05,0.16,0.06,0.32,0.12,0.02,0.05
+2026-09-21,5b46ff0a16af4c323f0521ba,complex,Malibu Village,quarterly,2025-01-01,2025-03-31,all_visits,0.93,0.07,0.02,0.1,0.02,0.15,0.05,0.34,0.16,0.05,0.09
+2026-09-21,5b4702cd16af4c358f0521ba,complex,Malibu Country Mart,quarterly,2025-01-01,2025-03-31,all_visits,0.93,0.07,0.02,0.1,0.02,0.14,0.05,0.36,0.16,0.05,0.09
+2026-09-21,5b470c6216af4c3b0d0521ba,complex,Brentwood Country Mart,quarterly,2025-01-01,2025-03-31,all_visits,0.94,0.06,0.02,0.06,0.01,0.1,0.04,0.38,0.2,0.05,0.14
+2026-09-21,5b542c691b5c0a6fce3eb86e,complex,The Point,quarterly,2025-01-01,2025-03-31,all_visits,0.94,0.06,0.04,0.12,0.03,0.15,0.06,0.35,0.16,0.02,0.05
+2026-09-21,5d0ca1aa7afe4d479c08a516,complex,"Robertson Blvd, Los Angeles",quarterly,2025-01-01,2025-03-31,all_visits,0.92,0.08,0.06,0.12,0.04,0.14,0.05,0.34,0.14,0.03,0.08
+2026-09-21,5d0ca25b7a6c0c2c2861ec57,complex,"Larchmont Blvd, Los Angeles",quarterly,2025-01-01,2025-03-31,all_visits,0.92,0.08,0.08,0.14,0.05,0.15,0.05,0.34,0.12,0.02,0.05
+2026-09-21,5d0ca28e7a6c0c24fa61ec6e,complex,La Brea Avenue,quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.91,0.09,0.07,0.14,0.04,0.16,0.05,0.35,0.13,0.02,0.05
+2026-09-21,5d7ce4567afe4d7c9d704a11,complex,The Golden Triangle,quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.92,0.08,0.03,0.1,0.03,0.13,0.05,0.36,0.16,0.04,0.1
+2026-09-21,5e78cc597a6c0c5c36ec4986,complex,The Americana at Brand,quarterly,2025-01-01,2025-03-31,all_visits,0.92,0.08,0.09,0.19,0.06,0.16,0.08,0.28,0.1,0.02,0.03
+2026-09-21,5ef5c17f7afe4d15a8699368,complex,The Shops at Sportsmen’s Lodge,quarterly,2025-01-01,2025-03-31,all_visits,0.91,0.09,0.03,0.11,0.03,0.17,0.07,0.36,0.13,0.03,0.07
+2026-09-21,6740eb030e1afeebd3cd743a,complex,Sunset Blvd High Street,quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.92,0.08,0.04,0.11,0.03,0.14,0.05,0.38,0.14,0.03,0.08
+2026-09-21,69a0c3a00d864dbd2a7e980d,complex,Abbot Kinney,quarterly,2025-01-01,2025-03-31,all_visits,0.92,0.08,0.03,0.09,0.03,0.13,0.05,0.39,0.17,0.04,0.07
+2026-09-21,6a7277b9f43c3964ae3c5c23,complex,Melrose Ave & Place,quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.92,0.08,0.05,0.12,0.03,0.15,0.05,0.36,0.14,0.03,0.07
+2026-09-21,6a727aaeef0c9636a095bb07,complex,Montana Ave,quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.93,0.07,0.02,0.07,0.02,0.11,0.05,0.38,0.18,0.05,0.11
+2026-09-21,6a735b43880a8faf9b8a99a6,complex,Silverlake Blvd,quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.91,0.09,0.09,0.14,0.05,0.15,0.06,0.34,0.12,0.02,0.03
+2026-09-21,6a73633d49262b07729b30ed,complex,Old Town Pasadena (One Colorado & The Paseo),quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.94,0.06,0.07,0.15,0.05,0.15,0.07,0.29,0.14,0.03,0.05
+2026-09-21,6a73a085c9bde401d3ac7a47,complex,Arts District,quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.92,0.08,0.13,0.18,0.08,0.16,0.06,0.25,0.09,0.02,0.03
+2026-09-21,6a73a156654f3efb9d1f975f,complex,3rd St Promenade & Santa Monica Place,quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.93,0.07,0.05,0.11,0.03,0.13,0.05,0.37,0.15,0.04,0.07
+2026-09-21,6a7505219ac0cbce3a17af68,complex,Figueroa/7th St,quarterly,2025-01-01,2025-03-31,10_min_or_longer,0.92,0.08,0.14,0.19,0.09,0.16,0.06,0.23,0.09,0.02,0.03
+2026-09-21,87cc744b60afd879c9d25891,complex,Downtown Culver City,quarterly,2025-01-01,2025-03-31,market_visitors,0.93,0.07,0.06,0.11,0.04,0.15,0.06,0.33,0.15,0.03,0.06
+2026-09-21,8f245157994e005440e8d2a2,complex,Downtown Manhattan Beach,quarterly,2025-01-01,2025-03-31,market_visitors,0.95,0.05,0.03,0.09,0.02,0.13,0.05,0.38,0.19,0.03,0.07
+2026-09-21,a8e58a8dd49952807c0984f7,complex,Platform,quarterly,2025-01-01,2025-03-31,all_visits,0.92,0.08,0.06,0.11,0.04,0.14,0.06,0.34,0.15,0.04,0.06
+2026-09-21,eea3ebf80cc1877bf3d97242,complex,Studio City BID,quarterly,2025-01-01,2025-03-31,market_visitors,0.91,0.09,0.04,0.12,0.03,0.17,0.07,0.37,0.13,0.02,0.06

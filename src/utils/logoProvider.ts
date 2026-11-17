@@ -3,7 +3,9 @@ import {
   getLogoDevNameImageUrl,
   isUsableBrandLogoDomain,
 } from "./logoDev";
+import { findBetaLogoUrls } from "./betaLogoLibrary";
 import { getLocalLogoUrl, getLogoRouteOverride } from "./logoRouteOverrides";
+import { trackPendingAsset } from "./pendingAssetWork";
 
 export type LogoProviderId = "logo.dev" | "brandfetch";
 export type BrandfetchAssetType = "logo" | "icon" | "symbol";
@@ -97,6 +99,7 @@ export function getBrandfetchImageUrl(
  *   1) Brandfetch dark logo
  *   2) Brandfetch dark icon
  *   3) Logo.dev
+ *   4) Local Beta library, only when the steps above miss
  * Logo.dev mode: Logo.dev only.
  * Per-domain overrides in logoRouteOverrides.ts win over the cascade.
  * Callers show plain-text / lettermark when all URLs fail.
@@ -223,14 +226,128 @@ if (typeof document !== "undefined") {
   syncLogoProviderDom(currentProvider);
 }
 
+/** A decode that never settles would stall the booklet's readiness gate. */
+const IMAGE_LOAD_TIMEOUT_MS = 15_000;
+
 function loadHtmlImage(url: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image();
+    let timer = 0;
+    const settle = (fn: () => void) => {
+      window.clearTimeout(timer);
+      fn();
+    };
     img.crossOrigin = "anonymous";
-    img.onload = () => resolve(img);
-    img.onerror = () => reject(new Error(`Logo failed to load: ${url}`));
+    img.onload = () => settle(() => resolve(img));
+    img.onerror = () =>
+      settle(() => reject(new Error(`Logo failed to load: ${url}`)));
+    timer = window.setTimeout(() => {
+      img.src = "";
+      reject(new ThrottledLogoError(`Logo timed out: ${url}`));
+    }, IMAGE_LOAD_TIMEOUT_MS);
     img.src = url;
   });
+}
+
+/**
+ * Booklet export only.
+ *
+ * A booklet page asks for every tenant logo at once — a hundred parallel
+ * requests — which trips the Brandfetch CDN's rate limit. A plain <img> reports
+ * 429 as a generic error, so those logos would silently vanish from the PDF.
+ * When enabled, loads are queued at a modest concurrency and go through fetch()
+ * so a 429 is visible and can be retried with backoff.
+ */
+let retryThrottledLogos = false;
+const THROTTLE_RETRIES = 5;
+const THROTTLE_BASE_DELAY_MS = 500;
+const MAX_CONCURRENT_LOGO_LOADS = 6;
+const THROTTLE_FETCH_TIMEOUT_MS = 12_000;
+/** Cool-off rounds before a throttled candidate is finally given up on. */
+const THROTTLE_COOLOFF_MS = [4_000, 8_000, 16_000];
+
+/** A rate limit or timeout — says nothing about whether the asset exists. */
+class ThrottledLogoError extends Error {
+  override name = "ThrottledLogoError";
+}
+
+export function enableThrottledLogoRetries(): void {
+  retryThrottledLogos = true;
+}
+
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => window.setTimeout(resolve, ms));
+}
+
+let activeLogoLoads = 0;
+const logoLoadQueue: Array<() => void> = [];
+
+function acquireLogoSlot(): Promise<void> {
+  if (activeLogoLoads < MAX_CONCURRENT_LOGO_LOADS) {
+    activeLogoLoads += 1;
+    return Promise.resolve();
+  }
+  return new Promise((resolve) => {
+    logoLoadQueue.push(() => {
+      activeLogoLoads += 1;
+      resolve();
+    });
+  });
+}
+
+function releaseLogoSlot(): void {
+  activeLogoLoads = Math.max(0, activeLogoLoads - 1);
+  logoLoadQueue.shift()?.();
+}
+
+async function loadHtmlImageWithRetries(
+  url: string
+): Promise<HTMLImageElement> {
+  if (!retryThrottledLogos) return loadHtmlImage(url);
+
+  await acquireLogoSlot();
+  try {
+    return await fetchImageWithBackoff(url);
+  } finally {
+    releaseLogoSlot();
+  }
+}
+
+async function fetchImageWithBackoff(
+  url: string
+): Promise<HTMLImageElement> {
+  for (let attempt = 0; attempt <= THROTTLE_RETRIES; attempt += 1) {
+    let response: Response;
+    try {
+      response = await fetch(url, {
+        mode: "cors",
+        credentials: "omit",
+        signal: AbortSignal.timeout(THROTTLE_FETCH_TIMEOUT_MS),
+      });
+    } catch {
+      // CORS/network refusal says nothing about throttling; use the <img> path.
+      return loadHtmlImage(url);
+    }
+
+    if (response.status === 429 || response.status >= 500) {
+      if (attempt === THROTTLE_RETRIES) {
+        throw new ThrottledLogoError(
+          `Logo throttled (${response.status}): ${url}`
+        );
+      }
+      await delay(THROTTLE_BASE_DELAY_MS * 2 ** attempt);
+      continue;
+    }
+
+    if (!response.ok) {
+      throw new Error(`Logo failed to load (${response.status}): ${url}`);
+    }
+
+    const blob = await response.blob();
+    return loadHtmlImage(URL.createObjectURL(blob));
+  }
+
+  throw new Error(`Logo failed to load: ${url}`);
 }
 
 /** True when the raster has almost no contrast against `bg`. */
@@ -250,7 +367,6 @@ function isNearlyInvisibleOnBackground(
     ctx.fillRect(0, 0, w, h);
     ctx.drawImage(img, 0, 0, w, h);
     const { data } = ctx.getImageData(0, 0, w, h);
-    // Parse bg roughly for distance check.
     const bgMatch = /^#?([0-9a-f]{6})$/i.exec(bg.trim());
     const br = bgMatch ? parseInt(bgMatch[1].slice(0, 2), 16) : 255;
     const bgG = bgMatch ? parseInt(bgMatch[1].slice(2, 4), 16) : 255;
@@ -270,6 +386,46 @@ function isNearlyInvisibleOnBackground(
 }
 
 /**
+ * White and pale-yellow artwork disappears in the white callout.
+ * Gold and other real brand colors still count.
+ */
+function isTooLightOnWhite(img: HTMLImageElement): boolean {
+  try {
+    const canvas = document.createElement("canvas");
+    const w = Math.min(32, img.naturalWidth || 32);
+    const h = Math.min(32, img.naturalHeight || 32);
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return false;
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillRect(0, 0, w, h);
+    ctx.drawImage(img, 0, 0, w, h);
+    const { data } = ctx.getImageData(0, 0, w, h);
+    let readable = 0;
+    for (let i = 0; i < data.length; i += 4) {
+      const alpha = data[i + 3] / 255;
+      if (alpha < 0.08) continue;
+      const r = data[i] * alpha + 255 * (1 - alpha);
+      const g = data[i + 1] * alpha + 255 * (1 - alpha);
+      const b = data[i + 2] * alpha + 255 * (1 - alpha);
+      if (relativeLuminance(r, g, b) <= 0.62) readable += 1;
+    }
+    return readable < 8;
+  } catch {
+    return false;
+  }
+}
+
+function relativeLuminance(r: number, g: number, b: number): number {
+  const channel = (value: number) => {
+    const s = value / 255;
+    return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  };
+  return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b);
+}
+
+/**
  * Every tenant logo resolves at one size so a domain always lands on the same
  * cascade step — otherwise a marker and its info window can show different
  * assets for the same brand.
@@ -280,41 +436,101 @@ const resolvedLogoCache = new Map<string, Promise<HTMLImageElement | null>>();
 
 /**
  * Load a map/directory brand logo with cascade:
- *   Brandfetch dark logo → Brandfetch dark icon → Logo.dev → null (plain text)
+ *   Brandfetch dark logo → local Beta library → Brandfetch dark icon → Logo.dev → null
  * Skips Brandfetch branding tiles and white-on-white ghosts.
  *
  * Resolution is cached per domain and shared by markers, info windows and
  * directories so one brand never renders two different logos.
  */
 export function loadBrandLogoImage(
-  domain: string | null | undefined
+  domain: string | null | undefined,
+  brandName?: string | null
 ): Promise<HTMLImageElement | null> {
   const clean = cleanBrandDomain(domain);
-  if (!clean) return Promise.resolve(null);
+  const name = brandName?.trim() ?? "";
+  if (!clean && !name) return Promise.resolve(null);
 
-  const cached = resolvedLogoCache.get(clean);
+  const cacheKey = `${clean ?? ""}|${name.toLowerCase()}`;
+  const cached = resolvedLogoCache.get(cacheKey);
   if (cached) return cached;
 
-  const pending = resolveBrandLogoImage(clean);
-  resolvedLogoCache.set(clean, pending);
+  const pending = trackPendingAsset(resolveBrandLogoImage(clean, name));
+  resolvedLogoCache.set(cacheKey, pending);
   return pending;
 }
 
+/**
+ * Hand-picked local files stay exclusive. Everything else may fall through
+ * to the retail/restaurant folders when the earlier asset is missing or too
+ * light to read on white. A letter-only ("text") route is a missing logo,
+ * so the folder is allowed to fill it.
+ */
+function withLocalLogoBackup(
+  domain: string | null,
+  brandName: string,
+  urls: string[]
+): string[] {
+  const route = domain ? getLogoRouteOverride(domain) : null;
+  if (route === "local") return urls;
+  const local = findBetaLogoUrls(brandName, domain);
+  if (!local.length) return urls;
+  const next = [...urls];
+  const curatedFirst =
+    route === "logo.dev" ||
+    route === "brandfetch-light" ||
+    route === "brandfetch-icon-dark" ||
+    route === "brandfetch-symbol-dark" ||
+    route === "text";
+  if (curatedFirst) {
+    next.push(...local.filter((url) => !next.includes(url)));
+    return next;
+  }
+  const darkLogo = next.findIndex(
+    (url) => url.includes("/theme/dark/") && url.includes("/type/logo")
+  );
+  const at = darkLogo >= 0 ? darkLogo + 1 : next.length;
+  next.splice(
+    at,
+    0,
+    ...local.filter((url) => !next.includes(url))
+  );
+  return next;
+}
+
 async function resolveBrandLogoImage(
-  domain: string
+  domain: string | null,
+  brandName: string
 ): Promise<HTMLImageElement | null> {
-  const urls = getBrandLogoImageUrls(domain, { size: CANONICAL_LOGO_SIZE });
-  for (const url of urls) {
+  const urls = withLocalLogoBackup(
+    domain,
+    brandName,
+    domain ? getBrandLogoImageUrls(domain, { size: CANONICAL_LOGO_SIZE }) : []
+  );
+  for (let i = 0; i < urls.length; i += 1) {
+    const url = urls[i];
     try {
-      const img = await loadHtmlImage(url);
+      const img = await loadHtmlImageWithRetries(url);
       const fromBrandfetch = url.includes("cdn.brandfetch.io");
       if (fromBrandfetch && (await isBrandfetchPlaceholderImage(img))) {
         continue;
       }
-      if (isNearlyInvisibleOnBackground(img, "#FFFFFF")) continue;
+      // White and pale marks disappear in the white callout, whatever the source.
+      if (isTooLightOnWhite(img)) continue;
       return img;
-    } catch {
-      /* try next */
+    } catch (error) {
+      /*
+       * Rate-limit / timeout is not "this brand has no wordmark." Falling
+       * through to type=icon is how J.Crew becomes a green circle in the PDF
+       * while the Interactive Map still shows the black wordmark.
+       */
+      if (
+        error instanceof ThrottledLogoError &&
+        url.includes("/type/logo")
+      ) {
+        while (i + 1 < urls.length && urls[i + 1].includes("/type/icon")) {
+          i += 1;
+        }
+      }
     }
   }
   return null;
@@ -334,7 +550,14 @@ export async function loadBrandfetchDarkLogo(
   });
 }
 
-async function loadBrandfetchTypeLogo(
+function loadBrandfetchTypeLogo(
+  domain: string | null | undefined,
+  options: { size?: number; theme: BrandfetchTheme }
+): Promise<HTMLImageElement | null> {
+  return trackPendingAsset(fetchBrandfetchTypeLogo(domain, options));
+}
+
+async function fetchBrandfetchTypeLogo(
   domain: string | null | undefined,
   options: { size?: number; theme: BrandfetchTheme }
 ): Promise<HTMLImageElement | null> {
@@ -347,7 +570,7 @@ async function loadBrandfetchTypeLogo(
   });
   if (!url) return null;
   try {
-    const img = await loadHtmlImage(url);
+    const img = await loadHtmlImageWithRetries(url);
     if (await isBrandfetchPlaceholderImage(img)) return null;
     if (isNearlyInvisibleOnBackground(img, "#FFFFFF")) return null;
     return img;

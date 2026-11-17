@@ -1,10 +1,12 @@
 interface MajorTenantsToggleProps {
+  label?: string;
   active: boolean;
   filtering?: boolean;
   onChange: (active: boolean) => void;
 }
 
 export function MajorTenantsToggle({
+  label = "Major Tenants",
   active,
   filtering = false,
   onChange,
@@ -19,7 +21,7 @@ export function MajorTenantsToggle({
       aria-busy={filtering || undefined}
       onClick={() => onChange(!active)}
     >
-      Major Tenants
+      {label}
     </button>
   );
 }
