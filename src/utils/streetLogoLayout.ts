@@ -416,13 +416,11 @@ export function packTextOnlyStreetLayouts(
             };
           }
           if (blocked(rect, stem, item.id)) continue;
-          if (!chosen || stemHeight < chosen.layout.stemHeight) {
-            chosen = {
-              layout: { placement, stemHeight, offsetX },
-              rect,
-              stem,
-            };
-          }
+          chosen = {
+            layout: { placement, stemHeight, offsetX },
+            rect,
+            stem,
+          };
           break;
         }
         if (chosen) break;

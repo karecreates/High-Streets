@@ -263,8 +263,6 @@ const THROTTLE_RETRIES = 5;
 const THROTTLE_BASE_DELAY_MS = 500;
 const MAX_CONCURRENT_LOGO_LOADS = 6;
 const THROTTLE_FETCH_TIMEOUT_MS = 12_000;
-/** Cool-off rounds before a throttled candidate is finally given up on. */
-const THROTTLE_COOLOFF_MS = [4_000, 8_000, 16_000];
 
 /** A rate limit or timeout — says nothing about whether the asset exists. */
 class ThrottledLogoError extends Error {
